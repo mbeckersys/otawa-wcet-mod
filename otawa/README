@@ -1,0 +1,41 @@
+====== OTAWA Builder ======
+
+This package is not OTAWA itself but the script used to generate
+an OTAWA distribution. Basically, the only think to do is to run
+the ''build.sh'' script with:
+
+<code sh>
+./build.sh
+</code>
+
+And the script will donwload and compile automatically all dependencies
+required to build OTAWA. Notice that this script works only for
+Linux or Unix users.
+
+Before launching the script, notice that the following dependencies are required:
+  * C and C++ compiler,
+  * Python,
+  * OCAML,
+  * GNUMake,
+  * CMake,
+  * libxml2-dev,
+  * libxslt1-dev,
+  * Mercurial,
+  * Bazaar,
+  * Flex,
+  * Bison.
+
+As a result, this script produces a package named ''otawa-core-''...
+that you can unpack anywhere to get a working version of OTAWA
+(no relocation procedure is needed, just maintain the relative position
+of programs and libraries).
+
+The obtained directory will contain:
+  * ''bin/'' -- programs (feel free to add it to PATH),
+  * ''lib/'' -- libraries and plugins,
+  * ''include/'' -- header files,
+  * ''share/Otawa'' -- documentation, scripts, etc.
+
+For any problem, contact our team at <otawa@irit.fr>.
+
+

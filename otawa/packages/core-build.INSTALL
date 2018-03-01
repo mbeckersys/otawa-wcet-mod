@@ -1,0 +1,26 @@
+====== To install ======
+
+===== Dependencies =====
+
+  * GCC (at least version 3.x.x)
+  * LibTool
+
+===== To build =====
+
+Unpack the archive, go into the obtained directory and build the plugin:
+
+<code sh>
+> tar xvfj otawa-core-XXX.tar.gz2
+> cd otawa-core
+> make PREFIX=INSTALLATION_PREFIX
+</code>
+
+INSTALL_PREFIX is the directory where OTAWA is installed.
+
+===== To install =====
+
+If the build is successfully performed, you install it with:
+<code sh>
+> make install PREFIX=INSTALLATION_PREFIX
+</code>
+

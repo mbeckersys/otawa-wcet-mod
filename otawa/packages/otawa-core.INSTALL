@@ -1,0 +1,13 @@
+Dependencies
+============
+
+libxml
+libxslt
+GraphViz (not required but adviced)
+
+
+Install it
+==========
+
+Just uncompact it.
+> tar xvfj otawa-core-XXX.tar.bz2
