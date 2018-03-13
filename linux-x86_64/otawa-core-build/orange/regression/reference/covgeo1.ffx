@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="11" source="calipso/covgeo1.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="14" source="calipso/covgeo1.c" isexecuted="true" expcond="" expcondinit="k&gt;0"> </condition>
+                <case cond="1" executed="true" line="16" source="calipso/covgeo1.c">
+                </case>
+                <case cond="0" executed="true" line="22" source="calipso/covgeo1.c">
+                </case>
+            </conditional>
+        </loop>
+    </function>
+</flowfacts>
+

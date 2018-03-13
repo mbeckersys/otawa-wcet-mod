@@ -1,0 +1,695 @@
+"inputFacts.ml" 9 217 223 "inputFacts.ml" 9 217 227
+type(
+  string -> int -> t
+)
+ident(
+  def make "inputFacts.ml" 11 297 299 "inputFacts.ml" 13 399 402
+)
+"inputFacts.ml" 9 217 228 "inputFacts.ml" 9 217 232
+type(
+  string
+)
+ident(
+  def file "inputFacts.ml" 9 217 233 "inputFacts.ml" 9 217 268
+)
+"inputFacts.ml" 9 217 233 "inputFacts.ml" 9 217 237
+type(
+  int
+)
+ident(
+  def line "inputFacts.ml" 9 217 240 "inputFacts.ml" 9 217 268
+)
+"inputFacts.ml" 9 217 249 "inputFacts.ml" 9 217 253
+type(
+  string
+)
+ident(
+  int_ref file "inputFacts.ml" 9 217 228 "inputFacts.ml" 9 217 232
+)
+"inputFacts.ml" 9 217 262 "inputFacts.ml" 9 217 266
+type(
+  int
+)
+ident(
+  int_ref line "inputFacts.ml" 9 217 233 "inputFacts.ml" 9 217 237
+)
+"inputFacts.ml" 9 217 240 "inputFacts.ml" 9 217 268
+type(
+  t
+)
+"inputFacts.ml" 11 297 303 "inputFacts.ml" 11 297 308
+type(
+  Format.formatter -> t -> unit
+)
+ident(
+  def print "inputFacts.ml" 12 364 366 "inputFacts.ml" 13 399 402
+)
+"inputFacts.ml" 11 297 309 "inputFacts.ml" 11 297 312
+type(
+  Format.formatter
+)
+ident(
+  def fmt "inputFacts.ml" 11 297 313 "inputFacts.ml" 11 297 363
+)
+"inputFacts.ml" 11 297 313 "inputFacts.ml" 11 297 316
+type(
+  t
+)
+ident(
+  def loc "inputFacts.ml" 11 297 319 "inputFacts.ml" 11 297 363
+)
+"inputFacts.ml" 11 297 319 "inputFacts.ml" 11 297 333
+type(
+  Format.formatter ->
+  (string -> int -> unit, Format.formatter, unit) format ->
+  string -> int -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"inputFacts.ml" 11 297 334 "inputFacts.ml" 11 297 337
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "inputFacts.ml" 11 297 309 "inputFacts.ml" 11 297 312
+)
+"inputFacts.ml" 11 297 338 "inputFacts.ml" 11 297 345
+type(
+  (string -> int -> unit, Format.formatter, unit) format
+)
+"inputFacts.ml" 11 297 346 "inputFacts.ml" 11 297 349
+type(
+  t
+)
+ident(
+  int_ref loc "inputFacts.ml" 11 297 313 "inputFacts.ml" 11 297 316
+)
+"inputFacts.ml" 11 297 346 "inputFacts.ml" 11 297 354
+type(
+  string
+)
+"inputFacts.ml" 11 297 355 "inputFacts.ml" 11 297 358
+type(
+  t
+)
+ident(
+  int_ref loc "inputFacts.ml" 11 297 313 "inputFacts.ml" 11 297 316
+)
+"inputFacts.ml" 11 297 355 "inputFacts.ml" 11 297 363
+type(
+  int
+)
+"inputFacts.ml" 11 297 319 "inputFacts.ml" 11 297 363
+call(
+  tail
+)
+type(
+  unit
+)
+"inputFacts.ml" 12 364 370 "inputFacts.ml" 12 364 377
+type(
+  'a -> 'a -> int
+)
+ident(
+  def compare "inputFacts.ml" 12 364 398 "inputFacts.ml" 13 399 402
+)
+"inputFacts.ml" 12 364 380 "inputFacts.ml" 12 364 398
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"inputFacts.ml" 15 404 420 "inputFacts.ml" 15 404 433
+call(
+  stack
+)
+"inputFacts.ml" 21 479 483 "inputFacts.ml" 21 479 489
+type(
+  string -> t
+)
+ident(
+  def of_ffx "inputFacts.ml" 39 1006 1006 "inputFacts.ml" 1 0 -1
+)
+"inputFacts.ml" 21 479 490 "inputFacts.ml" 21 479 494
+type(
+  string
+)
+ident(
+  def file "inputFacts.ml" 22 497 499 "inputFacts.ml" 37 981 1004
+)
+"inputFacts.ml" 22 497 503 "inputFacts.ml" 22 497 506
+type(
+  Xml.xml
+)
+ident(
+  def xml "inputFacts.ml" 23 532 534 "inputFacts.ml" 37 981 1004
+)
+"inputFacts.ml" 22 497 509 "inputFacts.ml" 22 497 523
+type(
+  string -> Xml.xml
+)
+ident(
+  ext_ref Xml.parse_file
+)
+"inputFacts.ml" 22 497 524 "inputFacts.ml" 22 497 528
+type(
+  string
+)
+ident(
+  int_ref file "inputFacts.ml" 21 479 490 "inputFacts.ml" 21 479 494
+)
+"inputFacts.ml" 22 497 509 "inputFacts.ml" 22 497 528
+call(
+  stack
+)
+type(
+  Xml.xml
+)
+"inputFacts.ml" 23 532 542 "inputFacts.ml" 23 532 550
+type(
+  int LocMap.t -> Xml.xml -> int LocMap.t
+)
+ident(
+  def traverse "inputFacts.ml" 23 532 534 "inputFacts.ml" 37 981 1004
+)
+"inputFacts.ml" 23 532 551 "inputFacts.ml" 23 532 554
+type(
+  int LocMap.t
+)
+ident(
+  def acc "inputFacts.ml" 23 532 555 "inputFacts.ml" 35 912 937
+)
+"inputFacts.ml" 23 532 555 "inputFacts.ml" 23 532 558
+type(
+  Xml.xml
+)
+ident(
+  def xml "inputFacts.ml" 23 532 561 "inputFacts.ml" 35 912 937
+)
+"inputFacts.ml" 23 532 567 "inputFacts.ml" 23 532 570
+type(
+  Xml.xml
+)
+ident(
+  int_ref xml "inputFacts.ml" 23 532 555 "inputFacts.ml" 23 532 558
+)
+"inputFacts.ml" 24 576 595 "inputFacts.ml" 24 576 599
+type(
+  string
+)
+ident(
+  def name "inputFacts.ml" 25 621 627 "inputFacts.ml" 34 869 911
+)
+"inputFacts.ml" 24 576 601 "inputFacts.ml" 24 576 606
+type(
+  (string * string) list
+)
+ident(
+  def attrs "inputFacts.ml" 25 621 627 "inputFacts.ml" 34 869 911
+)
+"inputFacts.ml" 24 576 608 "inputFacts.ml" 24 576 616
+type(
+  Xml.xml list
+)
+ident(
+  def children "inputFacts.ml" 25 621 627 "inputFacts.ml" 34 869 911
+)
+"inputFacts.ml" 24 576 594 "inputFacts.ml" 24 576 617
+type(
+  string * (string * string) list * Xml.xml list
+)
+"inputFacts.ml" 24 576 582 "inputFacts.ml" 24 576 617
+type(
+  Xml.xml
+)
+"inputFacts.ml" 25 621 631 "inputFacts.ml" 25 621 634
+type(
+  int LocMap.t
+)
+ident(
+  def acc "inputFacts.ml" 34 869 875 "inputFacts.ml" 34 869 911
+)
+"inputFacts.ml" 26 637 641 "inputFacts.ml" 26 637 645
+type(
+  string
+)
+ident(
+  int_ref name "inputFacts.ml" 24 576 595 "inputFacts.ml" 24 576 599
+)
+"inputFacts.ml" 26 637 646 "inputFacts.ml" 26 637 647
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"inputFacts.ml" 26 637 648 "inputFacts.ml" 26 637 654
+type(
+  string
+)
+"inputFacts.ml" 26 637 641 "inputFacts.ml" 26 637 654
+type(
+  bool
+)
+"inputFacts.ml" 28 661 668 "inputFacts.ml" 28 661 671
+type(
+  string -> string
+)
+ident(
+  def get "inputFacts.ml" 29 692 695 "inputFacts.ml" 32 813 855
+)
+"inputFacts.ml" 28 661 674 "inputFacts.ml" 28 661 684
+type(
+  Xml.xml -> string -> string
+)
+ident(
+  ext_ref Xml.attrib
+)
+"inputFacts.ml" 28 661 685 "inputFacts.ml" 28 661 688
+type(
+  Xml.xml
+)
+ident(
+  int_ref xml "inputFacts.ml" 23 532 555 "inputFacts.ml" 23 532 558
+)
+"inputFacts.ml" 28 661 674 "inputFacts.ml" 28 661 688
+call(
+  stack
+)
+type(
+  string -> string
+)
+"inputFacts.ml" 29 692 699 "inputFacts.ml" 29 692 703
+type(
+  string
+)
+ident(
+  def file "inputFacts.ml" 30 722 725 "inputFacts.ml" 32 813 855
+)
+"inputFacts.ml" 29 692 706 "inputFacts.ml" 29 692 709
+type(
+  string -> string
+)
+ident(
+  int_ref get "inputFacts.ml" 28 661 668 "inputFacts.ml" 28 661 671
+)
+"inputFacts.ml" 29 692 710 "inputFacts.ml" 29 692 718
+type(
+  string
+)
+"inputFacts.ml" 29 692 706 "inputFacts.ml" 29 692 718
+call(
+  stack
+)
+type(
+  string
+)
+"inputFacts.ml" 30 722 729 "inputFacts.ml" 30 722 733
+type(
+  int
+)
+ident(
+  def line "inputFacts.ml" 31 766 769 "inputFacts.ml" 32 813 855
+)
+"inputFacts.ml" 30 722 736 "inputFacts.ml" 30 722 749
+type(
+  string -> int
+)
+ident(
+  ext_ref Pervasives.int_of_string
+)
+"inputFacts.ml" 30 722 751 "inputFacts.ml" 30 722 754
+type(
+  string -> string
+)
+ident(
+  int_ref get "inputFacts.ml" 28 661 668 "inputFacts.ml" 28 661 671
+)
+"inputFacts.ml" 30 722 755 "inputFacts.ml" 30 722 761
+type(
+  string
+)
+"inputFacts.ml" 30 722 750 "inputFacts.ml" 30 722 762
+call(
+  stack
+)
+type(
+  string
+)
+"inputFacts.ml" 30 722 736 "inputFacts.ml" 30 722 762
+type(
+  int
+)
+"inputFacts.ml" 31 766 773 "inputFacts.ml" 31 766 776
+type(
+  int
+)
+ident(
+  def max "inputFacts.ml" 32 813 816 "inputFacts.ml" 32 813 855
+)
+"inputFacts.ml" 31 766 779 "inputFacts.ml" 31 766 792
+type(
+  string -> int
+)
+ident(
+  ext_ref Pervasives.int_of_string
+)
+"inputFacts.ml" 31 766 794 "inputFacts.ml" 31 766 797
+type(
+  string -> string
+)
+ident(
+  int_ref get "inputFacts.ml" 28 661 668 "inputFacts.ml" 28 661 671
+)
+"inputFacts.ml" 31 766 798 "inputFacts.ml" 31 766 808
+type(
+  string
+)
+"inputFacts.ml" 31 766 793 "inputFacts.ml" 31 766 809
+call(
+  stack
+)
+type(
+  string
+)
+"inputFacts.ml" 31 766 779 "inputFacts.ml" 31 766 809
+type(
+  int
+)
+"inputFacts.ml" 32 813 816 "inputFacts.ml" 32 813 826
+type(
+  LocMap.key -> int -> int LocMap.t -> int LocMap.t
+)
+ident(
+  ext_ref LocMap.add
+)
+"inputFacts.ml" 32 813 828 "inputFacts.ml" 32 813 836
+type(
+  string -> int -> LocMap.key
+)
+ident(
+  int_ref Loc.make "inputFacts.ml" 9 217 223 "inputFacts.ml" 9 217 227
+)
+"inputFacts.ml" 32 813 837 "inputFacts.ml" 32 813 841
+type(
+  string
+)
+ident(
+  int_ref file "inputFacts.ml" 29 692 699 "inputFacts.ml" 29 692 703
+)
+"inputFacts.ml" 32 813 842 "inputFacts.ml" 32 813 846
+type(
+  int
+)
+ident(
+  int_ref line "inputFacts.ml" 30 722 729 "inputFacts.ml" 30 722 733
+)
+"inputFacts.ml" 32 813 827 "inputFacts.ml" 32 813 847
+call(
+  stack
+)
+type(
+  LocMap.key
+)
+"inputFacts.ml" 32 813 848 "inputFacts.ml" 32 813 851
+type(
+  int
+)
+ident(
+  int_ref max "inputFacts.ml" 31 766 773 "inputFacts.ml" 31 766 776
+)
+"inputFacts.ml" 32 813 852 "inputFacts.ml" 32 813 855
+type(
+  int LocMap.t
+)
+ident(
+  int_ref acc "inputFacts.ml" 23 532 551 "inputFacts.ml" 23 532 554
+)
+"inputFacts.ml" 32 813 816 "inputFacts.ml" 32 813 855
+call(
+  stack
+)
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 31 766 769 "inputFacts.ml" 32 813 855
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 30 722 725 "inputFacts.ml" 32 813 855
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 29 692 695 "inputFacts.ml" 32 813 855
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 28 661 664 "inputFacts.ml" 32 813 855
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 33 856 862 "inputFacts.ml" 33 856 865
+type(
+  int LocMap.t
+)
+ident(
+  int_ref acc "inputFacts.ml" 23 532 551 "inputFacts.ml" 23 532 554
+)
+"inputFacts.ml" 26 637 638 "inputFacts.ml" 33 856 865
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 34 869 875 "inputFacts.ml" 34 869 889
+type(
+  (int LocMap.t -> Xml.xml -> int LocMap.t) ->
+  int LocMap.t -> Xml.xml list -> int LocMap.t
+)
+ident(
+  ext_ref List.fold_left
+)
+"inputFacts.ml" 34 869 890 "inputFacts.ml" 34 869 898
+type(
+  int LocMap.t -> Xml.xml -> int LocMap.t
+)
+ident(
+  int_ref traverse "inputFacts.ml" 23 532 542 "inputFacts.ml" 23 532 550
+)
+"inputFacts.ml" 34 869 899 "inputFacts.ml" 34 869 902
+type(
+  int LocMap.t
+)
+ident(
+  int_ref acc "inputFacts.ml" 25 621 631 "inputFacts.ml" 25 621 634
+)
+"inputFacts.ml" 34 869 903 "inputFacts.ml" 34 869 911
+type(
+  Xml.xml list
+)
+ident(
+  int_ref children "inputFacts.ml" 24 576 608 "inputFacts.ml" 24 576 616
+)
+"inputFacts.ml" 34 869 875 "inputFacts.ml" 34 869 911
+call(
+  tail
+)
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 25 621 627 "inputFacts.ml" 34 869 911
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 35 912 929 "inputFacts.ml" 35 912 930
+type(
+  string
+)
+"inputFacts.ml" 35 912 918 "inputFacts.ml" 35 912 930
+type(
+  Xml.xml
+)
+"inputFacts.ml" 35 912 934 "inputFacts.ml" 35 912 937
+type(
+  int LocMap.t
+)
+ident(
+  int_ref acc "inputFacts.ml" 23 532 551 "inputFacts.ml" 23 532 554
+)
+"inputFacts.ml" 23 532 561 "inputFacts.ml" 35 912 937
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 36 941 947 "inputFacts.ml" 36 941 949
+type(
+  int LocMap.t
+)
+ident(
+  def ub "inputFacts.ml" 37 981 983 "inputFacts.ml" 37 981 1004
+)
+"inputFacts.ml" 36 941 952 "inputFacts.ml" 36 941 960
+type(
+  int LocMap.t -> Xml.xml -> int LocMap.t
+)
+ident(
+  int_ref traverse "inputFacts.ml" 23 532 542 "inputFacts.ml" 23 532 550
+)
+"inputFacts.ml" 36 941 961 "inputFacts.ml" 36 941 973
+type(
+  int LocMap.t
+)
+ident(
+  ext_ref LocMap.empty
+)
+"inputFacts.ml" 36 941 974 "inputFacts.ml" 36 941 977
+type(
+  Xml.xml
+)
+ident(
+  int_ref xml "inputFacts.ml" 22 497 503 "inputFacts.ml" 22 497 506
+)
+"inputFacts.ml" 36 941 952 "inputFacts.ml" 36 941 977
+call(
+  stack
+)
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 37 981 1000 "inputFacts.ml" 37 981 1002
+type(
+  int LocMap.t
+)
+ident(
+  int_ref ub "inputFacts.ml" 36 941 947 "inputFacts.ml" 36 941 949
+)
+"inputFacts.ml" 37 981 983 "inputFacts.ml" 37 981 1004
+type(
+  t
+)
+"inputFacts.ml" 36 941 943 "inputFacts.ml" 37 981 1004
+type(
+  t
+)
+"inputFacts.ml" 23 532 534 "inputFacts.ml" 37 981 1004
+type(
+  t
+)
+"inputFacts.ml" 22 497 499 "inputFacts.ml" 37 981 1004
+type(
+  t
+)
+"inputFacts.ml" 39 1006 1010 "inputFacts.ml" 39 1006 1014
+type(
+  t
+)
+ident(
+  def none "inputFacts.ml" 42 1052 1052 "inputFacts.ml" 1 0 -1
+)
+"inputFacts.ml" 40 1017 1036 "inputFacts.ml" 40 1017 1048
+type(
+  int LocMap.t
+)
+ident(
+  ext_ref LocMap.empty
+)
+"inputFacts.ml" 40 1017 1019 "inputFacts.ml" 40 1017 1050
+type(
+  t
+)
+"inputFacts.ml" 42 1052 1056 "inputFacts.ml" 42 1052 1067
+type(
+  t -> LocMap.key -> int option
+)
+ident(
+  def upper_bound "inputFacts.ml" 45 1159 1170 "inputFacts.ml" 1 0 -1
+)
+"inputFacts.ml" 42 1052 1068 "inputFacts.ml" 42 1052 1070
+type(
+  t
+)
+ident(
+  def ff "inputFacts.ml" 42 1052 1071 "inputFacts.ml" 45 1159 1170
+)
+"inputFacts.ml" 42 1052 1071 "inputFacts.ml" 42 1052 1074
+type(
+  LocMap.key
+)
+ident(
+  def loc "inputFacts.ml" 43 1077 1079 "inputFacts.ml" 45 1159 1170
+)
+"inputFacts.ml" 43 1077 1082 "inputFacts.ml" 43 1077 1092
+type(
+  LocMap.key -> int LocMap.t -> bool
+)
+ident(
+  ext_ref LocMap.mem
+)
+"inputFacts.ml" 43 1077 1093 "inputFacts.ml" 43 1077 1096
+type(
+  LocMap.key
+)
+ident(
+  int_ref loc "inputFacts.ml" 42 1052 1071 "inputFacts.ml" 42 1052 1074
+)
+"inputFacts.ml" 43 1077 1097 "inputFacts.ml" 43 1077 1099
+type(
+  t
+)
+ident(
+  int_ref ff "inputFacts.ml" 42 1052 1068 "inputFacts.ml" 42 1052 1070
+)
+"inputFacts.ml" 43 1077 1097 "inputFacts.ml" 43 1077 1112
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 43 1077 1082 "inputFacts.ml" 43 1077 1112
+call(
+  stack
+)
+type(
+  bool
+)
+"inputFacts.ml" 44 1113 1126 "inputFacts.ml" 44 1113 1137
+type(
+  LocMap.key -> int LocMap.t -> int
+)
+ident(
+  ext_ref LocMap.find
+)
+"inputFacts.ml" 44 1113 1138 "inputFacts.ml" 44 1113 1141
+type(
+  LocMap.key
+)
+ident(
+  int_ref loc "inputFacts.ml" 42 1052 1071 "inputFacts.ml" 42 1052 1074
+)
+"inputFacts.ml" 44 1113 1142 "inputFacts.ml" 44 1113 1144
+type(
+  t
+)
+ident(
+  int_ref ff "inputFacts.ml" 42 1052 1068 "inputFacts.ml" 42 1052 1070
+)
+"inputFacts.ml" 44 1113 1142 "inputFacts.ml" 44 1113 1157
+type(
+  int LocMap.t
+)
+"inputFacts.ml" 44 1113 1125 "inputFacts.ml" 44 1113 1158
+call(
+  stack
+)
+type(
+  int
+)
+"inputFacts.ml" 44 1113 1120 "inputFacts.ml" 44 1113 1158
+type(
+  int option
+)
+"inputFacts.ml" 45 1159 1166 "inputFacts.ml" 45 1159 1170
+type(
+  int option
+)
+"inputFacts.ml" 43 1077 1079 "inputFacts.ml" 45 1159 1170
+type(
+  int option
+)

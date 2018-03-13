@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="binary_search" numcall="1" line="74" source="originaux/bs.c" executed="true" extern="false">
+            <function name="binary_search">
+                <loop loopId="1" line="83" source="originaux/bs.c" exact="false" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(14-0)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(14-0)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+                    <conditional id="IF-1"> <condition varcond="IF-1" line="85" source="originaux/bs.c" isexecuted="true" expcond="" expcondinit="(data[mid]).key==x"> </condition>
+                        <case cond="1" executed="true" line="86" source="originaux/bs.c">
+                        </case>
+                        <case cond="0" executed="true" line="93" source="originaux/bs.c">
+                            <conditional id="IF-2"> <condition varcond="IF-2" line="93" source="originaux/bs.c" isexecuted="true" expcond="" expcondinit="(data[mid]).key&gt;x"> </condition>
+                                <case cond="1" executed="true" line="94" source="originaux/bs.c">
+                                </case>
+                                <case cond="0" executed="true" line="100" source="originaux/bs.c">
+                                </case>
+                            </conditional>
+                        </case>
+                    </conditional>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

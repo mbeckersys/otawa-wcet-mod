@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="9" source="calipso/1.c" exact="true" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)">
+            <loop loopId="2" line="11" source="calipso/1.c" exact="true" maxcount="5" totalcount="50" maxexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)*partieEntiereInf((5-EPSILONINT-0)/1+1)">
+            </loop>
+            <loop loopId="3" line="15" source="calipso/1.c" exact="true" maxcount="15" totalcount="150" maxexpr="partieEntiereInf((15-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)*partieEntiereInf((15-EPSILONINT-0)/1+1)">
+            </loop>
+        </loop>
+    </function>
+</flowfacts>
+

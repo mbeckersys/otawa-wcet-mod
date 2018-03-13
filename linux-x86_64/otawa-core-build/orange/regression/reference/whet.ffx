@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="48" source="originaux/whet.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="2" line="64" source="originaux/whet.c" exact="true" maxcount="120" totalcount="120" maxexpr="partieEntiereInf((12*10-1)/1+1)" totalexpr="partieEntiereInf((12*10-1)/1+1)">
+        </loop>
+        <loop loopId="3" line="76" source="originaux/whet.c" exact="true" maxcount="140" totalcount="140" maxexpr="partieEntiereInf((14*10-1)/1+1)" totalexpr="partieEntiereInf((14*10-1)/1+1)">
+            <call name="pa" numcall="1" line="77" source="originaux/whet.c" executed="true" extern="false">
+                <function name="pa">
+                    <loop loopId="11" line="192" source="originaux/whet.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                        <conditional id="IF-4"> <condition varcond="IF-4" line="201" source="originaux/whet.c" isexecuted="true" expcond="" expcondinit="j_0&lt;6"> </condition>
+                            <case cond="1" executed="true" line="202" source="originaux/whet.c">
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </loop>
+                </function>
+            </call>
+        </loop>
+        <loop loopId="4" line="85" source="originaux/whet.c" exact="true" maxcount="3450" totalcount="3450" maxexpr="partieEntiereInf((345*10-1)/1+1)" totalexpr="partieEntiereInf((345*10-1)/1+1)">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="86" source="originaux/whet.c" isexecuted="true" expcond="" expcondinit="j==1"> </condition>
+                <case cond="1" executed="true" line="87" source="originaux/whet.c">
+                </case>
+                <case cond="0" executed="true" line="89" source="originaux/whet.c">
+                </case>
+            </conditional>
+            <conditional id="IF-2"> <condition varcond="IF-2" line="91" source="originaux/whet.c" isexecuted="true" expcond="" expcondinit="j&gt;2"> </condition>
+                <case cond="1" executed="true" line="92" source="originaux/whet.c">
+                </case>
+                <case cond="0" executed="true" line="94" source="originaux/whet.c">
+                </case>
+            </conditional>
+            <conditional id="IF-3"> <condition varcond="IF-3" line="96" source="originaux/whet.c" isexecuted="true" expcond="" expcondinit="j&lt;1"> </condition>
+                <case cond="1" executed="true" line="97" source="originaux/whet.c">
+                </case>
+                <case cond="0" executed="true" line="99" source="originaux/whet.c">
+                </case>
+            </conditional>
+        </loop>
+        <loop loopId="5" line="113" source="originaux/whet.c" exact="true" maxcount="2100" totalcount="2100" maxexpr="partieEntiereInf((210*10-1)/1+1)" totalexpr="partieEntiereInf((210*10-1)/1+1)">
+        </loop>
+        <loop loopId="6" line="129" source="originaux/whet.c" exact="true" maxcount="320" totalcount="320" maxexpr="partieEntiereInf((32*10-1)/1+1)" totalexpr="partieEntiereInf((32*10-1)/1+1)">
+            <call name="sin" numcall="2" line="130" source="originaux/whet.c" executed="true" extern="true">
+                <function name="sin">
+                </function>
+            </call>
+            <call name="cos" numcall="3" line="130" source="originaux/whet.c" executed="true" extern="true">
+                <function name="cos">
+                </function>
+            </call>
+            <call name="cos" numcall="4" line="130" source="originaux/whet.c" executed="true" extern="true">
+                <function name="cos">
+                </function>
+            </call>
+            <call name="cos" numcall="5" line="130" source="originaux/whet.c" executed="true" extern="true">
+                <function name="cos">
+                </function>
+            </call>
+            <call name="atan" numcall="6" line="130" source="originaux/whet.c" executed="true" extern="true">
+                <function name="atan">
+                </function>
+            </call>
+            <call name="sin" numcall="7" line="131" source="originaux/whet.c" executed="true" extern="true">
+                <function name="sin">
+                </function>
+            </call>
+            <call name="cos" numcall="8" line="131" source="originaux/whet.c" executed="true" extern="true">
+                <function name="cos">
+                </function>
+            </call>
+            <call name="cos" numcall="9" line="131" source="originaux/whet.c" executed="true" extern="true">
+                <function name="cos">
+                </function>
+            </call>
+            <call name="cos" numcall="10" line="131" source="originaux/whet.c" executed="true" extern="true">
+                <function name="cos">
+                </function>
+            </call>
+            <call name="atan" numcall="11" line="131" source="originaux/whet.c" executed="true" extern="true">
+                <function name="atan">
+                </function>
+            </call>
+        </loop>
+        <loop loopId="7" line="141" source="originaux/whet.c" exact="true" maxcount="8990" totalcount="8990" maxexpr="partieEntiereInf((899*10-1)/1+1)" totalexpr="partieEntiereInf((899*10-1)/1+1)">
+            <call name="p3" numcall="12" line="142" source="originaux/whet.c" executed="true" extern="false">
+                <function name="p3">
+                </function>
+            </call>
+        </loop>
+        <loop loopId="8" line="157" source="originaux/whet.c" exact="true" maxcount="6160" totalcount="6160" maxexpr="partieEntiereInf((616*10-1)/1+1)" totalexpr="partieEntiereInf((616*10-1)/1+1)">
+            <call name="p0" numcall="13" line="158" source="originaux/whet.c" executed="true" extern="false">
+                <function name="p0">
+                </function>
+            </call>
+        </loop>
+        <loop loopId="9" line="168" source="originaux/whet.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="10" line="181" source="originaux/whet.c" exact="true" maxcount="930" totalcount="930" maxexpr="partieEntiereInf((93*10-1)/1+1)" totalexpr="partieEntiereInf((93*10-1)/1+1)">
+            <call name="log" numcall="14" line="182" source="originaux/whet.c" executed="true" extern="true">
+                <function name="log">
+                </function>
+            </call>
+            <call name="exp" numcall="15" line="182" source="originaux/whet.c" executed="true" extern="true">
+                <function name="exp">
+                </function>
+            </call>
+            <call name="sqrt" numcall="16" line="182" source="originaux/whet.c" executed="true" extern="true">
+                <function name="sqrt">
+                </function>
+            </call>
+        </loop>
+    </function>
+</flowfacts>
+

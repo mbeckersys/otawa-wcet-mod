@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="5" source="calipso/klem2.c" exact="true" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)">
+            <loop loopId="2" line="6" source="calipso/klem2.c" exact="false" maxcount="9" totalcount="45" maxexpr="MAX(bIt-1,partieEntiereInf((10-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((10-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-EPSILONINT-0)/1+1))">
+            </loop>
+        </loop>
+        <loop loopId="3" line="10" source="calipso/klem2.c" exact="false" maxcount="90" totalcount="90" maxexpr="partieEntiereInf((0+EPSILONINT-(0+(1*(1+SET(-1,8))+0)*(9+1)))/-1+1)" totalexpr="partieEntiereInf((0+EPSILONINT-(0+(1*(1+SET(-1,8))+0)*(9+1)))/-1+1)">
+        </loop>
+        <loop loopId="4" line="11" source="calipso/klem2.c" exact="false" maxcount="90" totalcount="90" maxexpr="partieEntiereInf((0+(1*(1+SET(-1,8))+0)*(9+1)-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((0+(1*(1+SET(-1,8))+0)*(9+1)-EPSILONINT-0)/1+1)">
+        </loop>
+    </function>
+</flowfacts>
+

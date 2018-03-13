@@ -1,0 +1,1188 @@
+====== Development Information ======
+
+Current implementation has for main reference:
+
+	ARM Architecture Reference Manual
+	ARMv7-A and ARMv7-R edition
+
+For each added instruction, please update the table "Instruction List".
+
+
+===== Coding Guidelines =====
+
+ARM support  by GLISS2 has a long history and there has accumulated lots
+of different ways of coding and history has shown that the current implementation
+is hard to debug and to check.
+
+Therefore, a new implementation way is advised: go as close as possible to
+the ARM pseudo-code and ARM instruction organization. The current implementation
+does not meet this line but it would be better if future development follow it.
+
+The goal is that the whole implementation, step  by step, will fulfill
+in the end.
+
+
+===== Future File Organization =====
+
+The ''nmp'' directory contains lots of file to describe ARM ISA
+until v7 version. Some files contains instruction description but
+are not intended to be entry points.
+
+In the opposite, the entry point NMP files allows to select
+different flavors and versions of the ISA:
+  * ''armv4.nmp'' -- ARM v4 ISA
+  * ''armv5.nmp'' -- ARM v5 ISA (without thumb)
+  * ''armv5t.nmp'' -- ARM v5 ISA (with thumb)
+  * ''armv6.nmp'' -- ARM v6 ISA (with thumb)
+  * ''armv7.nmp'' -- ARM v7 ISA (with thumb)
+  
+Other NMP provides definition shared by the instruction description files:
+  * ''types.nmp'' -- base types,
+  * ''state.nmp'' -- state description,
+  * ''var.nmp'' -- temporary variables description,
+  * ''modes.nmp'' -- shared modes,
+  * ''macros.nmp'' -- common macros.
+  
+Some NMP files are designed for third-party tools:
+  * ''exception.nmp'' -- implementation of ARM exception mechanism,
+  * ''used_regs.nmp'' -- complementary information on the register use.
+
+Finally, remaining NMP files provide instruction description:
+  * ''alu.nmp'' -- basic ALU instructions,
+  * ''alu-thumb.nmp'' -- thumb ALU instructions,
+  * ''mem.nmp'' -- memory instructions,
+  * ''mem-thumb.nmp'' -- thumb memory instructions,
+  * ''mult.nmp'' -- multiplication instructions,
+  * ''control.nmp'' -- control instructions,
+  * ''system.nmp'' -- system control instructions,
+  * ''fp.nmp'' -- floating-point instructions.
+
+
+===== Issue about mode for register R8 to R15 and SPSR =====
+
+Depending on the processor mode (CPSR), registers R8 and R15 does not map to the same
+hardware entity. Implementing it as in the processor, that is, with a software map
+that test register number and current mode to select which variable to update,
+is utterly costly (a) in computation time and (b) in program size.
+
+The chosen implementation here is to have a fixed set of general register bank
+(whatever the method) and a specific register bank for duplicated registers.
+The synchronization of value will be performed each time the mode is modified:
+  * old-mode specific register are copied back from generic bank,
+  * new-mode specific register are copied to the generic bank.
+
+This means that a lot of precautions must be taken to write macros dedicated to mode
+change, ''CHANGE_MODE'', and to instruction implementing access to specific registers,
+''msr'' and ''mrs''.
+
+The GPR registers will be organized as follows:
+  * RO .. R15 -- R register bank,
+  * CPSR -- current status register,
+  * SPSR -- current save status register,
+  * SPSR_usr, R8_usr .. R14_usr
+  * SPSR_svc, R13_svc, R14_svc
+  * SPSR_abt, R13_abt, R14_abt
+  * SPSR_und, R13_und, R14_und
+  * SPSR_irq, R13_irq, R14_irq
+  * SPSR_fiq, R8_fiq .. R14_fiq
+
+One macro is introduced to support mode switching operations: ''ModeSwitch''(old_mode, new_mode)
+that is responsible for:
+  * copy R register bank to the old_mode register version,
+  * copy new mode register to the R register bank.
+
+
+===== Handling of Exceptions =====
+
+When writing a simulator, there is two ways to support exception:
+  * out-of-simulator -- as soon an exception is thrown, it calls a dedicated functions
+    to handle the exception; this is a particularly useful when system calls
+    need to be emulated.
+  * in-simulator -- the whole exception mechanism is simulated and the PC
+    is modified as have done the processor itself and the simulated program is
+    responsible to provide the needed exception handler.
+
+This implementation try to provide both way through three files:
+  * nmp/exn-out.nmp
+  * nmp/exn-in.nmp
+  * nmp/exn-none.nmp -- will juste ignore exception for the sake of performances.
+
+The exact handling of exceptions is configured in the Makefile.
+
+
+===== Handling of PC (work in progress) =====
+
+PC should be interpreted as described in ARM manual:
+	* When executing an ARM instruction, PC reads as the address of the current instruction plus 8.
+	* When executing a Thumb instruction, PC reads as the address of the current instruction plus 4.
+	
+NPC should to be used as the 'pc' for gliss: it should contain the address of the next instruction.
+
+Here is an illustration:
+
+reg PC[1, u32] alias = GPR[15]
+reg NPC[1, u32] pc = 1
+
+op instruction(x: instruction_list)
+	...
+	action = {
+		PC = NPC + 8 or 4;
+		NPC = NPC + 4 or 2;
+		x.action;
+	}
+
+macro BranchTo(addr)
+	NPC = addr;
+
+
+===== Notes on handling of IT Blocks =====
+
+op instruction(x: instruction_list)
+	...
+	action = {
+		if IMASK == 0 || ICOND
+			then x.action;
+		endif;
+		ICOND<0..0> = IMASK<3..3>
+		IMASK = IMASK << 1;
+	}
+
+
+===== Instruction List (Normal, Thumb2) =====
+
+Ai -- normal ISA
+Ti -- thumb ISA
+ATi -- same encoding in both ISAs.
+4, 5, 6, 7 -- armv4, v5, v6, v7
+aSIMD -- advanced SIMD
+
+ok		Implemented.
+range	Implemented but need range parameter to be operational.
+check	Need to be checked.
+action	Action not implemented or incomplete.
+
+ADC (immediate)
+	T1		6	ok
+	A1		4	ok
+ADC (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+ADC (register-shifted-register)
+	A1		4	ok
+ADD (immediate, Thumb)
+	T1		4	ok
+	T2		4	ok
+	T3		6	ok
+	T4		6	ok
+ADD (immediate, ARM)
+	A1		4	ok
+ADD (register, Thumb)
+	T1		4	ok
+	T2		4/6	ok
+	T3		6	ok
+ADD (register, ARM)
+	A1		4	ok
+ADD (register-shifted-register)
+	A1		4	ok
+ADD (SP plus immediate)
+	T1		4	ok
+	T2		4	ok
+	T3		6	ok
+	T4		6	ok
+	A1		4	ok
+ADD (SP plus register, Thumb)
+	T1		4	ok
+	T2		4	ok
+	T3		6	ok
+ADD (SP plus register, ARM)
+	A1		4
+ADR
+	T1		4	ok
+	T2		6
+	T3		6
+	A1		4	ok
+	A2		4	ok
+AND (immediate)
+	T1		6	ok
+	A1		4	ok
+AND (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+AND (register-shifted-register)
+	T1		6	ok
+	A1		4	ok
+ASR (immdiate)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+ASR (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+B
+	T1		4	ok
+	T2		4	ok
+	T3		6	ok
+	T4		6	ok
+	A1		4	ok
+BFC
+	T1		6	ok
+	A1		6	test
+BFI
+	T1		6	ok
+	A1		6	test
+BIC (immediate)
+	T1		6	ok
+	A1		4	ok
+BIC (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+BIC (register-shifted register)
+	A1		4	ok
+BKPT
+	T1		5	ok
+	A1		5	ok
+BL, BLX (immediate)
+	T1		4/6	ok
+	T2		5/6	ok
+	A1		4	ok
+	A2		5	ok
+BLX (register)
+	T1		5	ok
+	A1		5	ok
+BX
+	T1		4	ok
+	A1		4	ok
+BXJ (to Jazelle)
+	T1		6
+	A1		5
+CBNZ, CBZ
+	T1		6	ok
+CDP, CDP2
+	T1		6	ok
+	A1		4	check
+	T2		6	ok
+	A2		5	check
+CLREX
+	T1		7	action
+	A1		6
+CLZ
+	T1		6	ok
+	A1		5	ok
+CMN (immediate)
+	T1		6
+	A1		4	ok
+CMN (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+CMN (register - shifted register)
+	A1		4	ok
+CMP (immediate)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+CMP (register)
+	T1		4	ok
+	T2		4	ok
+	T3		6	ok
+	A1		4	ok
+CMP (register - shifted register)
+	A1		4	ok
+DBG
+	T1		7	ok
+	A1		7
+DMB
+	T1		7	action
+	A1		7	action
+DSB
+	T1		7	action
+	A1		7
+EOR (immediate)
+	T1		6	ok
+	A1		4	ok
+EOR (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+EOR (register - shifted register)
+	A1		4	ok
+ISB
+	T1		7	action
+	A1		7
+IT
+	T1		6	action
+LDC, LDC2 (immediate)
+	T1		6	action
+	A1		4
+	T2		6	action
+	A2		5
+LDC, LDC2 (literal)
+	T1		6	action
+	A1		4
+	T2		6	action
+	A2		5
+LDM, LDMIA, LDMFD
+	T1		4	ok
+	T2		6	check
+	A1		4	ok
+LDMDA/LDMFA
+	A1		4	ok
+LDMDB/LDMEA
+	T1		6	action
+	A1		4	ok
+LDMIB/LDMED
+	A1		4	ok
+LDR (immediate)
+	T1		4	ok
+	T2		4	ok
+	T3		6	ok
+	T4		6	ok
+	A1		4	ok
+LDR (literal)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+LDR (register)
+	T1		4	ok
+	T2		6	check
+	A1		4	ok
+LDRB (immediate)
+	T1		4	ok
+	T2		6	ok
+	T3		6	ok
+	A1		4	ok
+LDRB (literal)
+	T1		6	ok
+	A1		4	ok
+LDRB (register)
+	T1		4	ok
+	T2		6	check
+	A1		4	ok
+LDRBT
+	T1		6	check
+	A1		4	check
+	A2		4	check
+LDRD (immediate)
+	T1		6	action
+	A1		5	check
+LDRD (literal)
+	T1		6	action
+	A1		5	check
+LDRD (register)
+	A1		5	check
+LDREX
+	T1		6	check
+	A1		6	check
+LDREXB
+	T1		7	check
+	A1		7	check
+LDREXD
+	T1		7
+	A1		6	check
+LDREXH
+	T1		7	check
+	A1		6	check
+LDRH (immediate)
+	T1		4	ok
+	T2		6	ok
+	T3		6	ok
+	A1		4	ok
+LDRH (literal)
+	T1		6	ok
+	A1		4	ok
+LDRH (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+LDRHT
+	T1		6	ok
+	A1		6
+	A2		6
+LDRSB (immediate)
+	T1		6	ok
+	T2		6	ok
+	A1		4	ok
+LDRSB (literal)
+	T1		6	ok
+	A1		4	ok
+LDRSB (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+LDRSBT
+	T1		6	ok
+	A1		6
+	A2		6
+LDRSH (immediate)
+	T1		6	ok
+	T2		6	ok
+	A1		4	ok
+LDRSH (literal)
+	T1		6	ok
+	A1		4	ok
+LDRSH (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+LDRSHT
+	T1		6	ok
+	A1		6
+	A2		6
+LDRT
+	T1		6	action
+	A1		4	check
+	A2		4	check
+LSL (immediate)
+	T1		4	ok
+	T2		6
+	A1		4	ok
+LSL (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+LSR (immediate)
+	T1		4	ok
+	T2		6
+	A1		4	ok
+LSR (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+MCR, MCR2
+	T1		6	action
+	A1		4	check
+	T2		6	action
+	A2		4	check
+MCRR, MCRR2
+	T1		6	action
+	A1		5	check
+	T2		6	action
+	A2		6	action
+MLA
+	T1		6	check
+	A1		4	ok
+MLS
+	T1		6	ok
+	A1		6
+MOV (immediate)
+	T1		4	ok
+	T2		6	ok
+	T3		6	ok
+	A1		4	ok
+	A2		6	ok
+MOV (register)
+	T1		4/6	check
+	T2		4	ok
+	T3		6	ok
+	A1		4	ok
+MOVT
+	T1		6	ok
+	A1		6	ok
+MRC, MRC2
+	T1		6	action
+	A1		4	action
+	T2		6	action
+	A2		5	action
+MRRC, MRRC2
+	T1		6	action
+	A1		5	check
+	T2		6	action
+	A2		6	action
+MRS
+	T1		6	action
+	A1		4	check
+MSR (immediate)
+	A1		4	check
+MSR (register)
+	T1		6	action
+	A1		4	check
+MUL
+	T1		4	ok
+	T2		6	check
+	A1		4	ok
+MVN (immediate)
+	T1		6	ok
+	A1		4	ok
+MVN (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+MVN (register - shifted register)
+	A1		4	ok
+NOP
+	T1		6	ok
+	T2		6	ok
+	A1		6
+ORN (immediate)
+	T1		6	ok
+ORN (register)
+	T1		6	ok
+ORR (immediate)
+	T1		6	ok
+	A1		4	ok
+ORR (register)
+	T1		4	ok
+	T2		6
+	A1		4	ok
+ORR (register - shifted register)
+	A1		4	ok
+PKH
+	T1		6	ok
+	A1		6
+PLD, PLDW (immediate)
+	T1		6	action
+	T2		6	action
+	A1		5	check
+PLD (literal)
+	T1		6	action
+	A1		5	check
+PLD, PLDW (register)
+	T1		6	action
+	A1		5/7	check
+PLI (immediate, literal)
+	T1		7	action
+	T2		7	action
+	T3		7	action
+	A1		7
+PLI (register)
+	T1		7	action
+	A1		7
+POP
+	T1		4	ok
+	T2		6	ok
+	T3		6	ok
+	A1		4	ok
+	A2		4	ok
+PUSH
+	T1		4	ok
+	T2		6	ok
+	T3		6	ok
+	A1		4	ok
+	A2		4	ok
+QADD
+	T1		6	ok
+	A1		5	check
+QADD16
+	T1		6	ok
+	A1		6
+QADD8
+	T1		6	ok
+	A1		6
+QASX
+	T1		6	check
+	A1		6
+QDADD
+	T1		6	ok
+	A1		5	check
+QDSUB
+	T1		6	ok
+	A1		5	check
+QSAX
+	T1		6	ok
+	A1		6
+QSUB
+	T1		6	ok
+	A1		5	check
+QSUB16
+	T1		6	ok
+	A1		6
+QSUB8
+	T1		6	ok
+	A1		6
+RBIT
+	T1		6	ok
+	A1		6
+REV
+	T1		6	ok
+	T2		6	ok
+	A1		6
+REV16
+	T1		6	ok
+	T2		6	ok
+	A1		6
+REVSH
+	T1		6	ok
+	T2		6	ok
+	A1		6
+ROR (immediate)
+	T1		6	ok
+	A1		4	ok
+ROR (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+RRX
+	T1		6	ok
+	A1		4	ok
+RSB (immediate)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+RSB (register)
+	T1		6	ok
+	A1		4	ok
+RSB (register - shifted register)
+	A1		4	ok
+RSC (immediate)
+	A1		4	ok
+RSC (register)
+	A1		4	ok
+RSC (register - shifted register)
+	A1		4	ok
+SADD16
+	T1		6	ok
+	A1		6
+SADD8
+	T1		6	ok
+	A1		6
+SASX
+	T1		6	ok
+	A1		6
+SBC (immediate)
+	T1		6	ok
+	A1		4	ok
+SBC (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+SBC (register - shifted register)
+	A1		4	ok
+SBFX
+	T1		6	ok
+	A1		6
+SDIV
+	T1		7	check
+	A1		7
+SEL
+	T1		6	ok
+	A1		6
+SETEND
+	T1		6
+	A1		6
+SEV
+	T1		7
+	T2		7	action
+	A1		6
+SHADD16
+	T1		6
+	A1		6
+SHADD8
+	T1		6
+	A1		6
+SHASX
+	T1		6
+	A1		6
+SHSAX
+	T1		6
+	A1		6
+SHSUB16
+	T1		6
+	A1		6
+SHSUB8
+	T1		6
+	A1		6
+SMLABB, SMLABT, SMLATB, SMLATT
+	T1		6	ok
+	A1		5	check
+SMLAD
+	T1		6	ok
+	A1		6
+SMLAL
+	T1		6	ok
+	A1		5	ok
+SMLALBB, SMLALBT, SMLALTB, SMLALTT
+	T1		6	ok
+	A1		5	check
+SMLALD
+	T1		6	ok
+	A1		6
+SMLAWB, SMLAWT
+	T1		6	ok
+	A1		5	check
+SMLSD
+	T1		6	ok
+	A1		6
+SMLSLD
+	T1		6	ok
+	A1		6
+SMMLA
+	T1		6	ok
+	A1		6
+SMMLS
+	T1		6	ok
+	A1		6
+SMMUL
+	T1		6	ok
+	A1		6
+SMUAD
+	T1		6	ok
+	A1		6
+SMULBB, SMULBT, SMULTB, SMULTT
+	T1		6	ok
+	A1		5	check
+SMULL
+	T1		6	ok
+	A1		4	ok
+SMULWB, SMULWT
+	T1		6	ok
+	A1		5	check
+SMUSD
+	T1		6	ok
+	A1		6
+SSAT
+	T1		6	ok
+	A1		6
+SSAT16
+	T1		6	ok
+	A1		6
+SSAX
+	T1		6	ok
+	A1		6
+SSUB16
+	T1		6	ok
+	A1		6
+SSUB8
+	T1		6	ok
+	A1		6
+STC, STC2
+	T1		6	action
+	A1		4
+	T2		6	action
+	A2		5	action
+STM (STMIA, STMEA)
+	T1		4	ok
+	T2		6
+	A1		4	ok
+STMDA (STMED)
+	A1		4	ok
+STMDB (STMFD)
+	T1		6	test
+	A1		4	ok
+STMIB (STMFA)
+	A1		4	ok
+STR (immediate)
+	T1		4	ok
+	T2		4	ok
+	T3		6	ok
+	T4		6	ok
+	A1		4	ok
+STR (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+STRB (immediate)
+	T1		4	ok
+	T2		6	ok
+	T3		6	ok
+	A1		4	ok
+STRB (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+STRBT
+	T1		6	ok
+	A1		4	ok
+	A1		4	ok
+STRD (immediate)
+	T1		6	action
+	A1		5	action
+STRD (register)
+	A1		5
+STREX
+	T1		6	test
+	A1		6	test
+STREXB
+	T1		7	test
+	A1		6	test
+STREXD
+	T1		7
+	A1		6	test
+STREXH
+	T1		7	test
+	A1		6	test
+STRH (immediate)
+	T1		4	ok
+	T2		6	ok
+	T3		6	ok
+	A1		4	ok
+STRH (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+STRHT
+	T1		6	action
+	A1		6
+	A2		6
+STRT
+	T1		6	action
+	A1		4	check
+	A2		4	check
+SUB (immediate)
+	T1		4	ok
+	T2		4	ok
+	T3		6	ok
+	T4		6	ok
+	A1		4
+SUB (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+SUB (register - shifted register)
+	A1		4	ok
+SUB (SP minus immediate)
+	T1		4	ok
+	T2		6	ok
+	T3		6	ok
+	A1		4	ok
+SUB (SP minus register)
+	T1		6	ok
+	A1		4	ok
+SVC (previously SWI)
+	T1		4	action
+	A1		4	to fix
+SWP, SWPB
+	A1		4	ok
+SXTAB
+	T1		6	ok
+	A1		6
+SXTAB16
+	T1		6	ok
+	A1		6
+SXTAH
+	T1		6	ok
+	A1		6
+SXTB
+	T1		6	ok
+	T2		6	ok
+	A1		6
+SXTB16
+	T1		6	ok
+	A1		6
+SXTH
+	T1		6	ok
+	T2		6	ok
+	A1		6
+TBB, TBH
+	T1		6	ok
+TEQ (immediate)
+	T1		6	ok
+	A1		4	ok
+TEQ (register)
+	T1		6	ok
+	A1		4	ok
+TEQ (register - shifted register)
+	A1		4
+TST (immediate)
+	T1		6	ok
+	A1		4	ok
+TST (register)
+	T1		4	ok
+	T2		6	ok
+	A1		4	ok
+TST (register - shifted register)
+	A1		4	ok
+UADD16
+	T1		6	ok
+	A1		6
+UADD8
+	T1		6	ok
+	A1		6
+UASX
+	T1		6	ok
+	A1		6
+UBFX
+	T1		6	ok
+	A1		6
+UDF
+	T1		4	check
+	T2		6
+	A1		4	check
+UDIV
+	T1		7	action
+	A1		7
+UHADD16
+	T1		6	ok
+	A1		6
+UHADD8
+	T1		6	ok
+	A1		6
+UHASX
+	T1		6	ok
+	A1		6
+UHSAX
+	T1		6	ok
+	A1		6
+UHSUB16
+	T1		6	ok
+	A1		6
+UHSUB8
+	T1		6	ok
+	A1		6
+UMAAL
+	T1		6	ok
+	A1		6
+UMLAL
+	T1		6	ok
+	A1		4	ok
+UMULL
+	T1		6	ok
+	A1		4	ok
+UQADD16
+	T1		6	ok
+	A1		6
+UQADD8
+	T1		6	ok
+	A1		6
+UQASX
+	T1		6	ok
+	A1		6
+UQSAX
+	T1		6	ok
+	A1		6
+UQSUB16
+	T1		6	ok
+	A1		6
+UQSUB8
+	T1		6	ok
+	A1		6
+USAD8
+	T1		6	ok
+	A1		6
+USADA8
+	T1		6	ok
+	A1		6
+USAT
+	T1		6	ok
+	A1		6
+USAT16
+	T1		6	ok
+	A1		6
+USAX
+	T1		6	ok
+	A1		6
+USUB16
+	T1		6	ok
+	A1		6
+USUB8
+	T1		6	ok
+	A1		6
+UXTAB
+	T1		6	ok
+	A1		6
+UXTAB16
+	T1		6	ok
+	A1		6
+UXTAH
+	T1		6	ok
+	A1		6
+UXTB
+	T1		6	ok
+	T2		6	ok
+UXTB16
+	T1		6	ok
+	A1		6
+UXTH
+	T1		6	ok
+	T2		6	ok
+	A1		6
+VABA, VABAL
+	AT1		aSIMD
+	AT2		aSIMD
+VABD, VABDL (integer)
+	AT1		aSIMD
+	AT2		aSIMD
+VABD (floating-point)
+	AT1		aSIMD
+VABS
+	AT1		aSIMD
+	AT2		aSIMD
+VACGE, VACGT, VACLE, VACLT
+	AT1		aSIMD
+VADD (integer)
+	AT1		aSIMD
+VADD (floating_point)
+	AT1		aSIMD	action
+	AT2		aSIMD	action
+VADDHN
+	AT1		aSIMD
+VADDL, VADDW
+	AT1		aSIMD
+VAND (register)
+	AT1		aSIMD
+VBIC (immediate)
+	AT1		aSIMD
+VBIC (register)
+	AT1		aSIMD
+VBIF, VBIT, VBSL
+	AT1		aSIMD
+VCEQ (register)
+	AT1		aSIMD
+	AT2		aSIMD
+VCEQ (immediate #0)
+	AT1		aSIMD
+VCGE (register)
+	AT1		aSIMD
+	AT2		aSIMD
+VCGE (immediate #0)
+	AT1		aSIMD
+VCGT (register)
+	AT1		aSIMD
+	AT2		aSIMD
+VCGT (immediate #0)
+	AT1		aSIMD
+VCLE (immediate #0)
+	AT1		aSIMD
+VCLS
+	AT1		aSIMD
+VCLT (immediate #0)
+	AT1		aSIMD
+VCLZ
+	AT1		aSIMD
+VCMP, VCMPE
+	AT1		aSIMD
+	AT2		aSIMD
+VCNT
+	AT1		aSIMD
+VCVT (between floating-point and integer)
+	AT1		aSIMD
+VCVT, VCVTR (between floating-point and integer, floating-point)
+	AT1		aSIMD	action
+VCVT (between floating-point and fixed-point)
+	AT1		aSIMD
+VCVT (between floating-point and fixed-point, floating-point)
+	AT1		aSIMD
+VCVT (between double-precision and single-precision)
+	AT1		aSIMD
+VCVT (between half-precision and single-precision)
+	AT1		aSIMD
+VCVTB, VCVTT
+	AT1		aSIMD
+VDIV
+	T1		VFPv2	action
+	A1		VFPv2	action
+VDUP (scalar)
+	AT1		aSIMD
+VDUP (core register)
+	AT1		aSIMD
+VEOR
+	AT1		aSIMD
+VEXT
+	AT1		aSIMD
+VFMA, VFMS
+	AT1		aSIMD
+	AT2		aSIMD
+VFNMA, VFNMS
+	AT1		aSIMD
+VHADD, VHSUB
+	AT1		aSIMD
+VLD1 (multiple single elements)
+	AT1		aSIMD
+VLD1 (single element to one lane)
+	AT1		aSIMD
+VLD1 (single element to all lanes)
+	AT1		aSIMD
+VLDR
+	T1		VFPv2	ok
+	A1		VFPv2	ok
+	T2		VFPv2	ok
+	A2		VFPv2
+VMOV (immediate)
+	T1		aSIMD
+	A1		aSIMD
+	T2		VFPv3	ok
+	A2		VFPv3	ok
+VMOV (register)
+	T1		aSIMD
+	A1		aSIMD
+	T2		VFPv2	ok
+	A2		VFPv2	ok
+VMOV (ARM core register to scalar)
+	T1		aSIMD
+	A1		aSIMD
+VMOV (scalar to ARM core register)
+	T1		aSIMD
+	A1		aSIMD
+VMOV (between ARM core register and single-precision register)
+	T1		VFPv2	ok
+	A1		VFPv2	ok
+VMOV (between two ARM core registers and two single-precision registers)
+	T1		VFPv2
+	A1		VFPv2
+VMOV (between two ARM core registers and a doubleword extension register)
+	T1		aSIMD	action
+	A1		aSIMD	action
+VMOVL
+	T1		aSIMD
+	A1		aSIMD
+VMOVN
+	T1		aSIMD
+	A1		aSIMD
+VMRS
+	T1		VFPv2	action
+	A1		VFPv2
+VMLA, VMLAL, VMLS, VMLSL (integer)
+	T1		aSIMD
+	A1		aSIMD
+	T2		aSIMD
+	A2		aSIMD
+VMLA, VMLS (floating-point)
+	T1		aSIMD	action
+	A1		aSIMD	action
+	T2		VFPv2	action
+	A2		VFPv2	action
+VMLA, VMLAL, VMLS, VMLSL (by scalar)
+	T1		aSIMD
+	A1		aSIMD
+	T2		aSIMD
+	A2		aSIMD
+VMUL, VMULL (integer and polynomial)
+	T1		aSIMD
+	A1		aSIMD
+	T2		aSIMD
+	A2		aSIMD
+VMUL (floating-point)
+	T1		aSIMD	action
+	A1		aSIMD	action
+	T2		VFPv2	action
+	A2		VFPv2	action
+VMUL, VMULL (by scalar)
+	T1		aSIMD
+	A1		aSIMD
+	T2		aSIMD
+	A2		aSIMD
+VPOP
+	T1		VFPv2	action
+	A1		VFPv2	action
+	T2		VFPv2	action
+	A2		VFPv2	action
+VPUSH
+	T1		VFPv2	action
+	A1		VFPv2	action
+	T2		VFPv2	action
+	A2		VFPv2	action
+VSTR
+	T1		VFPv2	ok
+	A1		VFPv2	ok
+	T2		VFPv2	ok
+	A2		VFPv2
+VSUB (floating-point)
+	T1		aSIMD
+	A1		aSIMD
+	T2		VFPv2	action
+	A2		VFPv2
+WFE
+	T1		7
+	T2		7		action
+	A1		7
+WFI
+	T1		7
+	T2		7		action
+	A1		7
+YIELD
+	T1		7
+	T2		7		action
+	A1		7

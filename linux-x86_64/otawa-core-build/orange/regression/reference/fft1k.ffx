@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="init_w" numcall="13" line="128" source="originaux/fft1k.c" executed="true" extern="false">
+            <function name="init_w">
+                <loop loopId="7" line="171" source="originaux/fft1k.c" exact="true" maxcount="1024" totalcount="1024" maxexpr="partieEntiereInf((1024-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((1024-EPSILONINT-0)/1+1)">
+                    <call name="cos" numcall="26" line="172" source="originaux/fft1k.c" executed="true" extern="false">
+                        <function name="cos">
+                            <call name="sin" numcall="12" line="119" source="originaux/fft1k.c" executed="true" extern="false">
+                                <function name="sin">
+                                    <call name="_BEGIN" numcall="1" line="83" source="originaux/fft1k.c" executed="true" extern="true">
+                                        <function name="_BEGIN">
+                                        </function>
+                                    </call>
+                                    <call name="_BEGIN" numcall="2" line="84" source="originaux/fft1k.c" executed="true" extern="true">
+                                        <function name="_BEGIN">
+                                        </function>
+                                    </call>
+                                    <call name="_BEGIN" numcall="3" line="85" source="originaux/fft1k.c" executed="true" extern="true">
+                                        <function name="_BEGIN">
+                                        </function>
+                                    </call>
+                                    <loop loopId="1" line="87" source="originaux/fft1k.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-7,partieEntiereInf((1024-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159265358979323846+EPSILON-(3.14159265358979323846/2.0-(0+1*(bIt-7-1+1))*(2.0*3.14159265358979323846/1024)))/-6.28319+1))" totalexpr="SYGMA(bIt-7,partieEntiereInf((1024-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159265358979323846+EPSILON-(3.14159265358979323846/2.0-(0+1*(bIt-7-1+1))*(2.0*3.14159265358979323846/1024)))/-6.28319+1))">
+                                        <call name="_COUNT" numcall="4" line="88" source="originaux/fft1k.c" executed="true" extern="true">
+                                            <function name="_COUNT">
+                                            </function>
+                                        </call>
+                                    </loop>
+                                    <loop loopId="2" line="91" source="originaux/fft1k.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-7,partieEntiereInf((1024-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159265358979323846)-EPSILON-(3.14159265358979323846/2.0-(0+1*(bIt-7-1+1))*(2.0*3.14159265358979323846/1024)+-6.28319*(-1+1)))/6.28319+1))" totalexpr="SYGMA(bIt-7,partieEntiereInf((1024-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159265358979323846)-EPSILON-(3.14159265358979323846/2.0-(0+1*(bIt-7-1+1))*(2.0*3.14159265358979323846/1024)+-6.28319*(-1+1)))/6.28319+1))">
+                                        <call name="_COUNT" numcall="5" line="92" source="originaux/fft1k.c" executed="true" extern="true">
+                                            <function name="_COUNT">
+                                            </function>
+                                        </call>
+                                    </loop>
+                                    <call name="fabs" numcall="6" line="100" source="originaux/fft1k.c" executed="true" extern="false">
+                                        <function name="fabs">
+                                            <conditional id="IF-1"> <condition varcond="IF-1" line="71" source="originaux/fft1k.c" isexecuted="true" expcond="" expcondinit="n_0&gt;=0"> </condition>
+                                                <case cond="1" executed="true" line="71" source="originaux/fft1k.c">
+                                                </case>
+                                                <case cond="0" executed="true" line="72" source="originaux/fft1k.c">
+                                                </case>
+                                            </conditional>
+                                        </function>
+                                    </call>
+                                    <loop loopId="3" line="100" source="originaux/fft1k.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                        <call name="_COUNT" numcall="7" line="101" source="originaux/fft1k.c" executed="true" extern="true">
+                                            <function name="_COUNT">
+                                            </function>
+                                        </call>
+                                        <call name="fabs" numcall="8" line="100" source="originaux/fft1k.c" executed="true" extern="false">
+                                            <function name="fabs">
+                                                <conditional id="IF-1"> <condition varcond="IF-1" line="71" source="originaux/fft1k.c" isexecuted="true" expcond="" expcondinit="n_0&gt;=0"> </condition>
+                                                    <case cond="1" executed="true" line="71" source="originaux/fft1k.c">
+                                                    </case>
+                                                    <case cond="0" executed="true" line="72" source="originaux/fft1k.c">
+                                                    </case>
+                                                </conditional>
+                                            </function>
+                                        </call>
+                                    </loop>
+                                    <call name="_END" numcall="9" line="108" source="originaux/fft1k.c" executed="true" extern="true">
+                                        <function name="_END">
+                                        </function>
+                                    </call>
+                                    <call name="_END" numcall="10" line="109" source="originaux/fft1k.c" executed="true" extern="true">
+                                        <function name="_END">
+                                        </function>
+                                    </call>
+                                    <call name="_END" numcall="11" line="110" source="originaux/fft1k.c" executed="true" extern="true">
+                                        <function name="_END">
+                                        </function>
+                                    </call>
+                                </function>
+                            </call>
+                        </function>
+                    </call>
+                    <call name="sin" numcall="27" line="173" source="originaux/fft1k.c" executed="true" extern="false">
+                        <function name="sin">
+                            <call name="_BEGIN" numcall="1" line="83" source="originaux/fft1k.c" executed="true" extern="true">
+                                <function name="_BEGIN">
+                                </function>
+                            </call>
+                            <call name="_BEGIN" numcall="2" line="84" source="originaux/fft1k.c" executed="true" extern="true">
+                                <function name="_BEGIN">
+                                </function>
+                            </call>
+                            <call name="_BEGIN" numcall="3" line="85" source="originaux/fft1k.c" executed="true" extern="true">
+                                <function name="_BEGIN">
+                                </function>
+                            </call>
+                            <loop loopId="1" line="87" source="originaux/fft1k.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-7,partieEntiereInf((1024-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159265358979323846+EPSILON-(0+1*(bIt-7-1+1))*(2.0*3.14159265358979323846/1024))/-6.28319+1))" totalexpr="SYGMA(bIt-7,partieEntiereInf((1024-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159265358979323846+EPSILON-(0+1*(bIt-7-1+1))*(2.0*3.14159265358979323846/1024))/-6.28319+1))">
+                                <call name="_COUNT" numcall="4" line="88" source="originaux/fft1k.c" executed="true" extern="true">
+                                    <function name="_COUNT">
+                                    </function>
+                                </call>
+                            </loop>
+                            <loop loopId="2" line="91" source="originaux/fft1k.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-7,partieEntiereInf((1024-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159265358979323846)-EPSILON-((0+1*(bIt-7-1+1))*(2.0*3.14159265358979323846/1024)+-6.28319*(-1+1)))/6.28319+1))" totalexpr="SYGMA(bIt-7,partieEntiereInf((1024-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159265358979323846)-EPSILON-((0+1*(bIt-7-1+1))*(2.0*3.14159265358979323846/1024)+-6.28319*(-1+1)))/6.28319+1))">
+                                <call name="_COUNT" numcall="5" line="92" source="originaux/fft1k.c" executed="true" extern="true">
+                                    <function name="_COUNT">
+                                    </function>
+                                </call>
+                            </loop>
+                            <call name="fabs" numcall="6" line="100" source="originaux/fft1k.c" executed="true" extern="false">
+                                <function name="fabs">
+                                    <conditional id="IF-1"> <condition varcond="IF-1" line="71" source="originaux/fft1k.c" isexecuted="true" expcond="" expcondinit="n_0&gt;=0"> </condition>
+                                        <case cond="1" executed="true" line="71" source="originaux/fft1k.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="72" source="originaux/fft1k.c">
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <loop loopId="3" line="100" source="originaux/fft1k.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                <call name="_COUNT" numcall="7" line="101" source="originaux/fft1k.c" executed="true" extern="true">
+                                    <function name="_COUNT">
+                                    </function>
+                                </call>
+                                <call name="fabs" numcall="8" line="100" source="originaux/fft1k.c" executed="true" extern="false">
+                                    <function name="fabs">
+                                        <conditional id="IF-1"> <condition varcond="IF-1" line="71" source="originaux/fft1k.c" isexecuted="true" expcond="" expcondinit="n_0&gt;=0"> </condition>
+                                            <case cond="1" executed="true" line="71" source="originaux/fft1k.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="72" source="originaux/fft1k.c">
+                                            </case>
+                                        </conditional>
+                                    </function>
+                                </call>
+                            </loop>
+                            <call name="_END" numcall="9" line="108" source="originaux/fft1k.c" executed="true" extern="true">
+                                <function name="_END">
+                                </function>
+                            </call>
+                            <call name="_END" numcall="10" line="109" source="originaux/fft1k.c" executed="true" extern="true">
+                                <function name="_END">
+                                </function>
+                            </call>
+                            <call name="_END" numcall="11" line="110" source="originaux/fft1k.c" executed="true" extern="true">
+                                <function name="_END">
+                                </function>
+                            </call>
+                        </function>
+                    </call>
+                </loop>
+            </function>
+        </call>
+        <call name="fft_c" numcall="14" line="131" source="originaux/fft1k.c" executed="true" extern="false">
+            <function name="fft_c">
+                <call name="log2" numcall="21" line="142" source="originaux/fft1k.c" executed="true" extern="true">
+                    <function name="log2">
+                    </function>
+                </call>
+                <loop loopId="4" line="156" source="originaux/fft1k.c" exact="true" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((log2(1024)-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((log2(1024)-EPSILONINT-0)/1+1)">
+                    <call name="pow" numcall="22" line="160" source="originaux/fft1k.c" executed="true" extern="true">
+                        <function name="pow">
+                        </function>
+                    </call>
+                    <loop loopId="5" line="160" source="originaux/fft1k.c" exact="false" maxcount="1024" totalcount="10240" maxexpr="MAX(bIt-4,partieEntiereInf((log2(1024)-EPSILON-0)/1+1)-1,partieEntiereInf((1024*pow(2,-(0+1*(bIt-4-1+1)))-EPSILON-0)/1+1))" totalexpr="SYGMA(bIt-4,partieEntiereInf((log2(1024)-EPSILON-0)/1+1)-1,partieEntiereInf((1024*pow(2,-(0+1*(bIt-4-1+1)))-EPSILON-0)/1+1))">
+                        <loop loopId="6" line="163" source="originaux/fft1k.c" exact="false" maxcount="256" totalcount="2621440" maxexpr="MAX(bIt-4,partieEntiereInf((log2(1024)-EPSILON-0)/1+1)-1,MAX(bIt-5,partieEntiereInf((1024*pow(2,-(0+1*(bIt-4-1+1)))-EPSILON-0)/1+1)-1,partieEntiereInf((1024-(0+1*(bIt-5-1+1))-EPSILONINT-0)/(1024*pow(2,0-(0+1*(bIt-4-1+1))+1)+0)+1)))" totalexpr="SYGMA(bIt-4,partieEntiereInf((log2(1024)-EPSILON-0)/1+1)-1,SYGMA(bIt-5,partieEntiereInf((1024*pow(2,-(0+1*(bIt-4-1+1)))-EPSILON-0)/1+1)-1,partieEntiereInf((1024-(0+1*(bIt-5-1+1))-EPSILONINT-0)/(1024*pow(2,0-(0+1*(bIt-4-1+1))+1)+0)+1)))">
+                            <call name="pow" numcall="23" line="164" source="originaux/fft1k.c" executed="true" extern="true">
+                                <function name="pow">
+                                </function>
+                            </call>
+                            <call name="pow" numcall="24" line="163" source="originaux/fft1k.c" executed="true" extern="true">
+                                <function name="pow">
+                                </function>
+                            </call>
+                        </loop>
+                        <call name="pow" numcall="25" line="160" source="originaux/fft1k.c" executed="true" extern="true">
+                            <function name="pow">
+                            </function>
+                        </call>
+                    </loop>
+                </loop>
+            </function>
+        </call>
+        <call name="_PRINT" numcall="15" line="132" source="originaux/fft1k.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+        <call name="_PRINT" numcall="16" line="133" source="originaux/fft1k.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+        <call name="_PRINT" numcall="17" line="134" source="originaux/fft1k.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+        <call name="_PRINT" numcall="18" line="135" source="originaux/fft1k.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+        <call name="_PRINT" numcall="19" line="136" source="originaux/fft1k.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+        <call name="_PRINT" numcall="20" line="137" source="originaux/fft1k.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

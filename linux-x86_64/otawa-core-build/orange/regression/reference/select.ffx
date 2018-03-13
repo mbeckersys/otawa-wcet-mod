@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="select" numcall="13" line="123" source="originaux/select.c" executed="true" extern="false">
+            <function name="select">
+                <call name="_BEGIN" numcall="1" line="67" source="originaux/select.c" executed="true" extern="true">
+                    <function name="_BEGIN">
+                    </function>
+                </call>
+                <loop loopId="1" line="72" source="originaux/select.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                    <call name="_BEGIN" numcall="2" line="73" source="originaux/select.c" executed="true" extern="true">
+                        <function name="_BEGIN">
+                        </function>
+                    </call>
+                    <call name="_COUNT" numcall="3" line="74" source="originaux/select.c" executed="true" extern="true">
+                        <function name="_COUNT">
+                        </function>
+                    </call>
+                    <conditional id="IF-1"> <condition varcond="IF-1" line="75" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="ir&lt;=l+1"> </condition>
+                        <case cond="1" executed="true" line="76" source="originaux/select.c">
+                            <conditional id="IF-2"> <condition varcond="IF-2" line="76" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="ir==l+1"> </condition>
+                                <case cond="1" executed="true" line="77" source="originaux/select.c">
+                                    <conditional id="IF-3"> <condition varcond="IF-3" line="77" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="arr[ir]&lt;arr[l]"> </condition>
+                                        <case cond="1" executed="true" line="78" source="originaux/select.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </case>
+                        <case cond="0" executed="true" line="81" source="originaux/select.c">
+                            <conditional id="IF-4"> <condition varcond="IF-4" line="81" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="!flag"> </condition>
+                                <case cond="1" executed="true" line="82" source="originaux/select.c">
+                                    <conditional id="IF-5"> <condition varcond="IF-5" line="84" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="arr[l+1]&gt;arr[ir]"> </condition>
+                                        <case cond="1" executed="true" line="85" source="originaux/select.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-6"> <condition varcond="IF-6" line="87" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="arr[l]&gt;arr[ir]"> </condition>
+                                        <case cond="1" executed="true" line="88" source="originaux/select.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-7"> <condition varcond="IF-7" line="90" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="arr[l+1]&gt;arr[l]"> </condition>
+                                        <case cond="1" executed="true" line="91" source="originaux/select.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <loop loopId="2" line="96" source="originaux/select.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                        <call name="_BEGIN" numcall="4" line="97" source="originaux/select.c" executed="true" extern="true">
+                                            <function name="_BEGIN">
+                                            </function>
+                                        </call>
+                                        <call name="_BEGIN" numcall="5" line="98" source="originaux/select.c" executed="true" extern="true">
+                                            <function name="_BEGIN">
+                                            </function>
+                                        </call>
+                                        <call name="_COUNT" numcall="6" line="99" source="originaux/select.c" executed="true" extern="true">
+                                            <function name="_COUNT">
+                                            </function>
+                                        </call>
+                                        <loop loopId="3" line="101" source="originaux/select.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((20-1-i)/1+1)">
+                                            <call name="_COUNT" numcall="7" line="101" source="originaux/select.c" executed="true" extern="true">
+                                                <function name="_COUNT">
+                                                </function>
+                                            </call>
+                                        </loop>
+                                        <loop loopId="4" line="103" source="originaux/select.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((0-j)/-1+1)">
+                                            <call name="_COUNT" numcall="8" line="103" source="originaux/select.c" executed="true" extern="true">
+                                                <function name="_COUNT">
+                                                </function>
+                                            </call>
+                                        </loop>
+                                        <conditional id="IF-8"> <condition varcond="IF-8" line="104" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="j&lt;i"> </condition>
+                                            <case cond="1" executed="true" line="104" source="originaux/select.c">
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                        <conditional id="IF-9"> <condition varcond="IF-9" line="105" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="!flag2"> </condition>
+                                            <case cond="1" executed="true" line="105" source="originaux/select.c">
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                        <call name="_END" numcall="9" line="106" source="originaux/select.c" executed="true" extern="true">
+                                            <function name="_END">
+                                            </function>
+                                        </call>
+                                        <call name="_END" numcall="10" line="107" source="originaux/select.c" executed="true" extern="true">
+                                            <function name="_END">
+                                            </function>
+                                        </call>
+                                    </loop>
+                                    <call name="_END" numcall="11" line="109" source="originaux/select.c" executed="true" extern="true">
+                                        <function name="_END">
+                                        </function>
+                                    </call>
+                                    <conditional id="IF-10"> <condition varcond="IF-10" line="112" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="j&gt;=k"> </condition>
+                                        <case cond="1" executed="true" line="112" source="originaux/select.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-11"> <condition varcond="IF-11" line="113" source="originaux/select.c" isexecuted="true" expcond="" expcondinit="j&lt;=k"> </condition>
+                                        <case cond="1" executed="true" line="113" source="originaux/select.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </case>
+                    </conditional>
+                </loop>
+                <call name="_END" numcall="12" line="117" source="originaux/select.c" executed="true" extern="true">
+                    <function name="_END">
+                    </function>
+                </call>
+            </function>
+        </call>
+        <call name="_PRINT" numcall="14" line="124" source="originaux/select.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+        <call name="_PRINT" numcall="15" line="125" source="originaux/select.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+        <call name="_PRINT" numcall="16" line="126" source="originaux/select.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+        <call name="_PRINT" numcall="17" line="127" source="originaux/select.c" executed="true" extern="true">
+            <function name="_PRINT">
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

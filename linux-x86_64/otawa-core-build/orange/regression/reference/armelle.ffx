@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="3" line="18" source="calipso/armelle.c" exact="true" maxcount="20" totalcount="20" maxexpr="partieEntiereInf((0-19)/-1+1)" totalexpr="partieEntiereInf((0-19)/-1+1)">
+            <call name="f" numcall="1" line="20" source="calipso/armelle.c" executed="true" extern="false">
+                <function name="f">
+                    <loop loopId="1" line="4" source="calipso/armelle.c" exact="false" maxcount="19" totalcount="190" maxexpr="MAX(bIt-3,partieEntiereInf((0-19)/-1+1)-1,partieEntiereInf((19+-1*(bIt-3-1+1)-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-3,partieEntiereInf((0-19)/-1+1)-1,partieEntiereInf((19+-1*(bIt-3-1+1)-EPSILONINT-0)/1+1))">
+                        <loop loopId="2" line="5" source="calipso/armelle.c" exact="false" maxcount="18" totalcount="3420" maxexpr="MAX(bIt-3,partieEntiereInf((0-19)/-1+1)-1,MAX(bIt-1,partieEntiereInf((19+-1*(bIt-3-1+1)-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-EPSILONINT-0)/1+1)))" totalexpr="SYGMA(bIt-3,partieEntiereInf((0-19)/-1+1)-1,SYGMA(bIt-1,partieEntiereInf((19+-1*(bIt-3-1+1)-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-EPSILONINT-0)/1+1)))">
+                        </loop>
+                    </loop>
+                </function>
+            </call>
+        </loop>
+    </function>
+</flowfacts>
+

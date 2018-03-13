@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="4" source="calipso/indeterminisme.c" exact="false" maxcount="8" totalcount="8" maxexpr="partieEntiereInf((0+EPSILONINT-8)/-1+1)" totalexpr="partieEntiereInf((0+EPSILONINT-8)/-1+1)">
+        </loop>
+        <loop loopId="2" line="5" source="calipso/indeterminisme.c" exact="false" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((0+EPSILONINT-4)/-1+1)" totalexpr="partieEntiereInf((0+EPSILONINT-4)/-1+1)">
+        </loop>
+    </function>
+</flowfacts>
+

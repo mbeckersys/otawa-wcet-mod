@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="initbuffer" numcall="1" line="383" source="originaux/compress.c" executed="true" extern="false">
+            <function name="initbuffer">
+                <loop loopId="1" line="435" source="originaux/compress.c" exact="true" maxcount="50" totalcount="50" maxexpr="partieEntiereInf((50-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((50-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="compress" numcall="2" line="411" source="originaux/compress.c" executed="true" extern="false">
+            <function name="compress">
+                <call name="getbyte" numcall="3" line="511" source="originaux/compress.c" executed="true" extern="false">
+                    <function name="getbyte">
+                        <conditional id="IF-18"> <condition varcond="IF-18" line="677" source="originaux/compress.c" isexecuted="true" expcond="50&gt;0&amp;&amp;50+3-1&gt;0" expcondinit="InCnt&gt;0&amp;&amp;apsim_InCnt&gt;0"> </condition>
+                            <case cond="1" executed="true" line="678" source="originaux/compress.c">
+                            </case>
+                            <case cond="0" executed="false" line="681" source="originaux/compress.c">
+                            </case>
+                        </conditional>
+                    </function>
+                </call>
+                <loop loopId="2" line="517" source="originaux/compress.c" exact="true" maxcount="8" totalcount="8" maxexpr="partieEntiereInf((log(65536-EPSILONINT)-log(partieEntiereSup(257)))/log(2)+1)" totalexpr="partieEntiereInf((log(65536-EPSILONINT)-log(partieEntiereSup(257)))/log(2)+1)">
+                </loop>
+                <call name="cl_hash" numcall="4" line="533" source="originaux/compress.c" executed="true" extern="false">
+                    <function name="cl_hash">
+                        <loop loopId="5" line="647" source="originaux/compress.c" exact="true" maxcount="16" totalcount="16" maxexpr="partieEntiereInf((0-(257-16))/-16+1)" totalexpr="partieEntiereInf((0-(257-16))/-16+1)">
+                        </loop>
+                        <loop loopId="6" line="668" source="originaux/compress.c" exact="true" maxcount="1" totalcount="1" maxexpr="partieEntiereInf((0+EPSILONINT-(257-16+-16*(15+1)+16))/-1+1)" totalexpr="partieEntiereInf((0+EPSILONINT-(257-16+-16*(15+1)+16))/-1+1)">
+                        </loop>
+                    </function>
+                </call>
+                <loop loopId="3" line="539" source="originaux/compress.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                    <call name="getbyte" numcall="5" line="547" source="originaux/compress.c" executed="true" extern="false">
+                        <function name="getbyte">
+                            <conditional id="IF-18"> <condition varcond="IF-18" line="677" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="InCnt&gt;0&amp;&amp;apsim_InCnt&gt;0"> </condition>
+                                <case cond="1" executed="true" line="678" source="originaux/compress.c">
+                                </case>
+                                <case cond="0" executed="true" line="681" source="originaux/compress.c">
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <conditional id="IF-1"> <condition varcond="IF-1" line="559" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="htab[i]==fcode"> </condition>
+                        <case cond="1" executed="true" line="561" source="originaux/compress.c">
+                        </case>
+                        <case cond="0" executed="true" line="565" source="originaux/compress.c">
+                            <conditional id="IF-2"> <condition varcond="IF-2" line="565" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="(CAST)htab[i]&lt;0"> </condition>
+                                <case cond="1" executed="true" line="567" source="originaux/compress.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </case>
+                    </conditional>
+                    <conditional id="IF-3"> <condition varcond="IF-3" line="570" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                        <case cond="1" executed="true" line="572" source="originaux/compress.c">
+                            <conditional id="IF-4"> <condition varcond="IF-4" line="572" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="!nomatch"> </condition>
+                                <case cond="1" executed="true" line="571" source="originaux/compress.c">
+                                    <loop loopId="4" line="572" source="originaux/compress.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="partieEntiereInf((0-EPSILONINT-0)/NODEF+1)" totalexpr="NODEF" expinit="partieEntiereInf((0-EPSILONINT-probe)/NODEF+1)">
+                                        <conditional id="IF-5"> <condition varcond="IF-5" line="574" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="!probe"> </condition>
+                                            <case cond="1" executed="true" line="573" source="originaux/compress.c">
+                                                <conditional id="IF-6"> <condition varcond="IF-6" line="573" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="i_0==0"> </condition>
+                                                    <case cond="1" executed="true" line="574" source="originaux/compress.c">
+                                                    </case>
+                                                    <case cond="0" executed="true" >
+                                                    </case>
+                                                </conditional>
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                        <conditional id="IF-7"> <condition varcond="IF-7" line="578" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="(i_0-=disp)&lt;0"> </condition>
+                                            <case cond="1" executed="true" line="579" source="originaux/compress.c">
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                        <conditional id="IF-8"> <condition varcond="IF-8" line="582" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="htab[i]==fcode"> </condition>
+                                            <case cond="1" executed="true" line="583" source="originaux/compress.c">
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                        <conditional id="IF-9"> <condition varcond="IF-9" line="586" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                            <case cond="1" executed="true" line="587" source="originaux/compress.c">
+                                                <conditional id="IF-10"> <condition varcond="IF-10" line="587" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="(CAST)htab[i]&gt;0&amp;&amp;apsim_bound111&lt;in_count"> </condition>
+                                                    <case cond="1" executed="true" line="588" source="originaux/compress.c">
+                                                    </case>
+                                                    <case cond="0" executed="true" >
+                                                    </case>
+                                                </conditional>
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-11"> <condition varcond="IF-11" line="593" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                <case cond="1" executed="true" line="595" source="originaux/compress.c">
+                                    <conditional id="IF-12"> <condition varcond="IF-12" line="593" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="free_ent&lt;maxmaxcode"> </condition>
+                                        <case cond="1" executed="true" line="594" source="originaux/compress.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="596" source="originaux/compress.c">
+                                            <conditional id="IF-13"> <condition varcond="IF-13" line="596" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="(CAST)in_count&gt;=checkpoint&amp;&amp;block_compress"> </condition>
+                                                <case cond="1" executed="true" line="598" source="originaux/compress.c">
+                                                    <call name="cl_block" numcall="6" line="598" source="originaux/compress.c" executed="true" extern="false">
+                                                        <function name="cl_block">
+                                                            <conditional id="IF-15"> <condition varcond="IF-15" line="615" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="in_count&gt;0x007fffff"> </condition>
+                                                                <case cond="1" executed="true" line="617" source="originaux/compress.c">
+                                                                    <conditional id="IF-16"> <condition varcond="IF-16" line="619" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="rat==0"> </condition>
+                                                                        <case cond="1" executed="true" line="620" source="originaux/compress.c">
+                                                                        </case>
+                                                                        <case cond="0" executed="true" line="622" source="originaux/compress.c">
+                                                                        </case>
+                                                                    </conditional>
+                                                                </case>
+                                                                <case cond="0" executed="true" line="626" source="originaux/compress.c">
+                                                                </case>
+                                                            </conditional>
+                                                            <conditional id="IF-17"> <condition varcond="IF-17" line="629" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="rat&gt;ratio"> </condition>
+                                                                <case cond="1" executed="true" line="630" source="originaux/compress.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" line="632" source="originaux/compress.c">
+                                                                    <call name="cl_hash" numcall="7" line="633" source="originaux/compress.c" executed="true" extern="false">
+                                                                        <function name="cl_hash">
+                                                                            <loop loopId="5" line="647" source="originaux/compress.c" exact="false" maxcount="16" totalcount="NOCOMP" maxexpr="partieEntiereInf((0-(257-16))/-16+1)" totalexpr="NODEF">
+                                                                            </loop>
+                                                                            <loop loopId="6" line="668" source="originaux/compress.c" exact="false" maxcount="257" totalcount="NOCOMP" maxexpr="partieEntiereInf((0+EPSILONINT-(257-16+-16*(SET(-1,15)+1)+16))/-1+1)" totalexpr="NODEF">
+                                                                            </loop>
+                                                                        </function>
+                                                                    </call>
+                                                                    <call name="output" numcall="8" line="636" source="originaux/compress.c" executed="true" extern="false">
+                                                                        <function name="output">
+                                                                            <conditional id="IF-19"> <condition varcond="IF-19" line="716" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="code&gt;=0"> </condition>
+                                                                                <case cond="1" executed="true" line="723" source="originaux/compress.c">
+                                                                                    <conditional id="IF-20"> <condition varcond="IF-20" line="736" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="bits&gt;=8"> </condition>
+                                                                                        <case cond="1" executed="true" line="737" source="originaux/compress.c">
+                                                                                        </case>
+                                                                                        <case cond="0" executed="true" >
+                                                                                        </case>
+                                                                                    </conditional>
+                                                                                    <conditional id="IF-21"> <condition varcond="IF-21" line="743" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="bits"> </condition>
+                                                                                        <case cond="1" executed="true" line="745" source="originaux/compress.c">
+                                                                                        </case>
+                                                                                        <case cond="0" executed="true" >
+                                                                                        </case>
+                                                                                    </conditional>
+                                                                                    <conditional id="IF-22"> <condition varcond="IF-22" line="750" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="offset==n_bits&lt;&lt;3"> </condition>
+                                                                                        <case cond="1" executed="true" line="751" source="originaux/compress.c">
+                                                                                            <loop loopId="8" line="755" source="originaux/compress.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                                                                                <call name="putbyte" numcall="9" line="756" source="originaux/compress.c" executed="true" extern="false">
+                                                                                                    <function name="putbyte">
+                                                                                                    </function>
+                                                                                                </call>
+                                                                                            </loop>
+                                                                                        </case>
+                                                                                        <case cond="0" executed="true" >
+                                                                                        </case>
+                                                                                    </conditional>
+                                                                                    <conditional id="IF-23"> <condition varcond="IF-23" line="764" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="free_ent&gt;maxcode||clear_flg&gt;0"> </condition>
+                                                                                        <case cond="1" executed="true" line="769" source="originaux/compress.c">
+                                                                                            <conditional id="IF-24"> <condition varcond="IF-24" line="769" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="offset&gt;0"> </condition>
+                                                                                                <case cond="1" executed="true" line="770" source="originaux/compress.c">
+                                                                                                    <call name="writebytes" numcall="10" line="770" source="originaux/compress.c" executed="true" extern="false">
+                                                                                                        <function name="writebytes">
+                                                                                                            <loop loopId="7" line="696" source="originaux/compress.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((MINIMUM(n-EPSILONINT,16-EPSILONINT)-i_2)/1+1)">
+                                                                                                            </loop>
+                                                                                                        </function>
+                                                                                                    </call>
+                                                                                                </case>
+                                                                                                <case cond="0" executed="true" >
+                                                                                                </case>
+                                                                                            </conditional>
+                                                                                            <conditional id="IF-25"> <condition varcond="IF-25" line="774" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="clear_flg"> </condition>
+                                                                                                <case cond="1" executed="true" line="775" source="originaux/compress.c">
+                                                                                                </case>
+                                                                                                <case cond="0" executed="true" line="778" source="originaux/compress.c">
+                                                                                                    <conditional id="IF-26"> <condition varcond="IF-26" line="779" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="n_bits==maxbits"> </condition>
+                                                                                                        <case cond="1" executed="true" line="781" source="originaux/compress.c">
+                                                                                                        </case>
+                                                                                                        <case cond="0" executed="true" line="786" source="originaux/compress.c">
+                                                                                                        </case>
+                                                                                                    </conditional>
+                                                                                                </case>
+                                                                                            </conditional>
+                                                                                        </case>
+                                                                                        <case cond="0" executed="true" >
+                                                                                        </case>
+                                                                                    </conditional>
+                                                                                </case>
+                                                                                <case cond="0" executed="true" line="796" source="originaux/compress.c">
+                                                                                    <conditional id="IF-27"> <condition varcond="IF-27" line="796" source="originaux/compress.c" isexecuted="true" expcond="" expcondinit="offset&gt;0"> </condition>
+                                                                                        <case cond="1" executed="true" line="798" source="originaux/compress.c">
+                                                                                            <call name="writebytes" numcall="11" line="798" source="originaux/compress.c" executed="true" extern="false">
+                                                                                                <function name="writebytes">
+                                                                                                    <loop loopId="7" line="696" source="originaux/compress.c" exact="false" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+                                                                                                    </loop>
+                                                                                                </function>
+                                                                                            </call>
+                                                                                        </case>
+                                                                                        <case cond="0" executed="true" >
+                                                                                        </case>
+                                                                                    </conditional>
+                                                                                </case>
+                                                                            </conditional>
+                                                                        </function>
+                                                                    </call>
+                                                                </case>
+                                                            </conditional>
+                                                        </function>
+                                                    </call>
+                                                </case>
+                                                <case cond="0" executed="true" >
+                                                </case>
+                                            </conditional>
+                                        </case>
+                                    </conditional>
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </loop>
+                <conditional id="IF-14"> <condition varcond="IF-14" line="603" source="originaux/compress.c" isexecuted="true" expcond="3&gt;1+1*(bIt-3+1)" expcondinit="bytes_out&gt;in_count"> </condition>
+                    <case cond="1" executed="true" line="604" source="originaux/compress.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

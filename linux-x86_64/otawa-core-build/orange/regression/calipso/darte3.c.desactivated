@@ -1,0 +1,26 @@
+int indet();
+
+void f(int m)
+{
+	int y=m;
+	int x = m;
+	while(x>=2)
+	{
+		x--; y = y+x;
+			while(y >= x +1 &&  indet())
+			{
+				y--;
+				while(y >= x +3 &&  indet())
+				{
+					x++; y = y-2;
+				}
+				y--;
+			}
+			x--;y = y-x; 
+	}
+}
+
+void main()
+{
+	f(10);
+}

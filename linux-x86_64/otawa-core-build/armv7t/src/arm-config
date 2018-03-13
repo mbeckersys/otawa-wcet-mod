@@ -1,0 +1,28 @@
+#!/bin/bash
+
+function syntax {
+	echo "SYNTAX: gliss-config [--cflags] [--libs]"
+	echo "	--cflags -- output C flags"
+	echo "	--libs -- output linked libraries"
+}
+
+while test "$1" != ""; do
+	case "$1" in
+		--cflags)
+			echo "-I/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/armv7t/include"
+			;;
+        --libs)
+        	echo "-L/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/armv7t/src -larm          "
+			;;
+        --help|-h)
+        		syntax
+        		exit 0
+                ;;
+        *)
+        		echo "ERROR: unknown option $1"
+        		syntax
+                exit 1
+                ;;
+        esac
+        shift
+done

@@ -1,0 +1,1654 @@
+// ARM ref data
+var data8[1, card(8)]
+var data16[1, card(16)]
+var data32[1, card(32)]
+var data64[1, card(64)]
+
+mode REG_INDEX_XPC(r: enum(0..14)) = r
+	syntax = if r < 10 then format("r%d", r) else
+				switch(r<0..3>) {
+				case 10: "sl"
+				case 11: "fp"
+				case 12: "ip"
+				case 13: "sp"
+				case 14: "lr"
+				default: ""
+				}
+			endif
+	image  = format("%4b", r)
+	number = r
+
+mode REG_INDEX_1_P_U_W_rst(val: enum(8..13, 15, 24..29, 31, 40..45,
+		47, 56..61, 63, 72..77, 79, 88..93, 95, 104..109, 111, 120..125, 127,
+		136..141, 143, 152..157, 159, 168..173, 175, 184..189, 191, 200..205,
+		207, 216..221, 223, 232..237, 239, 248..251, 253, 255)) = val<7..4>
+	r = val<7..4>
+	syntax = if r < 10 then format("r%d", r) else
+				switch(r) {
+				case 10: "sl"
+				case 11: "fp"
+				case 12: "ip"
+				case 13: "sp"
+				case 14: "lr"
+				case 15: "pc"
+				default: ""
+				}
+			endif
+	image  = format("%8b", val)
+	number = r
+
+
+op mem_thumb2 = coproc_thumb2
+	| LDR_reg_Thumb
+	| STR_reg_Thumb
+	| LDRB_reg
+	| STRB_reg
+	| LDRSB_reg
+	| LDRBT
+	| STRBT
+	| LDRHT
+	| STRHT
+	| LDRT
+	| STRT
+	| LDRSBT
+	| LDRSHT
+	| LDR_imm_Thumb
+	| LDRH_reg
+	| STRH_reg
+	| LDRSH_reg
+	| LDRH_imm_Thumb
+	| STRH_imm_Thumb
+	| LDM_T2
+	| STR_imm_Thumb
+	| STRB_imm
+	| LDRB_imm
+	| LDRSB_immediate
+	| LDRSB_lit_T1
+	| LDRSH_immediate
+	| STMDB_T1
+	| LDREX_T1
+	| LDREXB_T1
+	| LDREXD_T1
+	| LDREXH_T1
+	| STREX_T1
+	| STREXB_T1
+	| STREXD_T1
+	| STREXH_T1
+	| STRD_Thumb
+	| LDRD
+
+
+op LDR_reg_Thumb(x: LDR_reg_Thumb_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			offset_addr = GPR[x.n] + offset;
+			address = offset_addr;
+			data32 = M32[address];
+			if x.t == 15 then
+				//if address<1..0> == '00' then
+					LoadWritePC(data32);
+				//else UNPREDICTABLE;
+				//endif;
+			else //if UnalignedSupport() || address<1:0> == '00' then
+				GPR[x.t] = data32;
+			//else // Can only apply before ARMv7
+			//	GPR[t] = bits(32) UNKNOWN;
+			endif;
+		endif;
+	}
+
+// should provide t, n, m, index, wback, shift_t, shift_n
+op LDR_reg_Thumb_list = LDR_reg_T2
+
+op LDR_reg_T2(rt: REG_INDEX, rn: REG_INDEX, rm: REG_INDEX, imm2: card(2))
+	// TODO ranging effects
+	//		rn = 1111 -> LDR (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 10 1 %s  %s 0 00000 %2b %s", rn, rt, imm2, rm)
+	syntax =
+		if imm2 then format("ldr%s.w %s, [%s, %s, lsl #%d]", op_cond_syntax_new(ITCOND), rt, rn, rm, imm2)
+		else format("ldr%s.w %s, [%s, %s]", op_cond_syntax_new(ITCOND), rt, rn, rm) endif
+	condition = ITCOND
+	t = UInt(rt)
+	n = UInt(rn)
+	m = UInt(rm)
+	shift_t = SRType_LSL
+	shift_n = imm2
+	//if m IN {13,15} then UNPREDICTABLE;
+	//if t == 15 && InITBlock() && !LastInITBlock() then UNPREDICTABLE;
+
+
+op STR_reg_Thumb(x: STR_reg_Thumb_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			if x.t == 15 then
+				data32 = PCStoreValue();
+			else
+				data32= GPR[x.t];
+			endif;
+			//if UnalignedSupport() || address<1:0> == '00' || CurrentInstrSet() == InstrSet_ARM then
+				M32[address] = data32;
+			//else // Can only occur before ARMv7
+				//MemU[address,4] = bits(32) UNKNOWN; if wback then GPR[n] = offset_addr;
+			//endif;
+		endif;
+	}
+
+// should provide t, n, m, index, wback, shift_t, shift_n
+op STR_reg_Thumb_list = STR_reg_T2
+
+op STR_reg_T2(rt: REG_INDEX, rn: REG_INDEX, rm: REG_INDEX, imm2: card(2))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 10 0 %s  %s 0 00000 %2b %s", rn, rt, imm2, rm)
+	syntax =
+		if imm2 then format("str%s.w %s, [%s, %s, lsl #%d]", op_cond_syntax_new(ITCOND), rt, rn, rm, imm2)
+		else format("str%s.w %s, [%s, %s]", op_cond_syntax_new(ITCOND), rt, rn, rm) endif
+	//if Rn == '1111' then UNDEFINED;
+	condition = ITCOND
+	t = UInt(rt)
+	n = UInt(rn)
+	m = UInt(rm)
+	index = 1
+	add = 1
+	wback = 0
+	shift_t = SRType_LSL
+	shift_n = imm2
+
+
+op LDRH_reg(x: LDRH_reg_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			data16 = M16[address];
+			if x.wback then GPR[x.n] = offset_addr; endif;
+			//if UnalignedSupport() || address<0..0> == 0 then
+				GPR[x.t] = ZeroExtend(data16, 32);
+			//else // Can only apply before ARMv7
+			//	GPR[t] = bits(32) UNKNOWN;
+		endif;
+	}
+
+// should provide t, n, m, index, wback, shift_t, shift_n
+op LDRH_reg_list = LDRH_reg_T2
+
+op LDRH_reg_T2(rt: REG_INDEX_XPC, rn: REG_INDEX, rm: REG_INDEX, imm2: card(2))
+	// TODO ranging effects
+	//		rn = 1111 -> LDRH (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 01 1 %s %s 0 00000 %2b %s", rn, rt, imm2, rm)
+	syntax =
+		if imm2 then format("ldrh%s.w %s, [%s, %s, lsl #%d]", op_cond_syntax_new(ITCOND), rt, rn, rm, imm2)
+		else format("ldrh%s.w %s, [%s, %s]", op_cond_syntax_new(ITCOND), rt, rn, rm) endif
+	condition = ITCOND
+	t = UInt(rt)
+	n = UInt(rn)
+	m = UInt(rm)
+	index = 1
+	add = 1
+	wback = 0
+	shift_t = SRType_LSL
+	shift_n = imm2
+
+
+op STRH_reg(x: STRH_reg_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			//if UnalignedSupport() || address<0> == '0' then
+				M16[address] = GPR[x.t]<15..0>;
+			//else // Can only occur before ARMv7
+				//MemU[address,2] = bits(16) UNKNOWN;
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, m, index, wback, shift_t, shift_n
+op STRH_reg_list = STRH_reg_T2
+
+op STRH_reg_T2(rt: REG_INDEX, rn: REG_INDEX, rm: REG_INDEX, imm2: card(2))
+	// TODO ranging effects
+	//		rn = 1111 -> UNDEFINED
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 01 0 %s %s 0 00000 %2b %s", rn, rt, imm2, rm)
+	syntax =
+		if imm2 then format("strh%s.w %s, [%s, %s, lsl #%d]", op_cond_syntax_new(ITCOND), rt, rn, rm, imm2)
+		else format("strh%s.w %s, [%s, %s]", op_cond_syntax_new(ITCOND), rt, rn, rm) endif
+	condition = ITCOND
+	t = UInt(rt)
+	n = UInt(rn)
+	m = UInt(rm)
+	index = 1
+	add = 1
+	wback = 0
+	shift_t = SRType_LSL
+	shift_n = imm2
+
+
+op LDRSH_reg(x: LDRSH_reg_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			data16 = M16[address];
+			if x.wback then GPR[x.n] = offset_addr; endif;
+			//if UnalignedSupport() || address<0..0> == 0 then
+				GPR[x.t] = SignExtend(data16, 32);
+			//else // Can only apply before ARMv7
+			//	GPR[t] = bits(32) UNKNOWN;
+		endif;
+	}
+
+// should provide t, n, m, index, wback, shift_t, shift_n
+op LDRSH_reg_list = LDRSH_reg_T2
+
+op LDRSH_reg_T2(rt: REG_INDEX_XPC, rn: REG_INDEX, rm: REG_INDEX, imm2: card(2))
+	// TODO ranging effects
+	//		rn = 1111 -> LDRSH (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 1 0 01 1 %s %s 0 00000 %2b %s", rn, rt, imm2, rm)
+	syntax =
+		if imm2 then format("ldrsh%s.w %s, [%s, %s, lsl #%d]", op_cond_syntax_new(ITCOND), rt, rn, rm, imm2)
+		else format("ldrsh%s.w %s, [%s, %s]", op_cond_syntax_new(ITCOND), rt, rn, rm) endif
+	condition = ITCOND
+	t = UInt(rt)
+	n = UInt(rn)
+	m = UInt(rm)
+	index = 1
+	add = 1
+	wback = 0
+	shift_t = SRType_LSL
+	shift_n = imm2
+	//if t == 13 || m IN {13,15} then UNPREDICTABLE;
+
+
+op LDRB_reg(x: LDRB_reg_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			data8 = M[address];
+			GPR[x.t] = ZeroExtend(data8, 32);
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, m, index, wback, shift_t, shift_n
+op LDRB_reg_list = LDRB_reg_T2
+
+op LDRB_reg_T2(rt: REG_INDEX_XPC, rn: REG_INDEX, rm: REG_INDEX, imm2: card(2))
+	// TODO ranging effects
+	//		rn = 1111 -> LDRB (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 00 1 %s  %s 0 00000 %2b %s", rn, rt, imm2, rm)
+	syntax =
+		if imm2 then format("ldrb%s.w %s, [%s, %s, lsl #%d]", op_cond_syntax_new(ITCOND), rt, rn, rm, imm2)
+		else format("ldrb%s.w %s, [%s, %s]", op_cond_syntax_new(ITCOND), rt, rn, rm) endif
+	condition = ITCOND
+	t = UInt(rt)
+	n = UInt(rn)
+	m = UInt(rm)
+	shift_t = SRType_LSL
+	shift_n = imm2
+	index = 1
+	add = 1
+	wback = 0
+	//if m IN {13,15} then UNPREDICTABLE;
+	//if t == 15 && InITBlock() && !LastInITBlock() then UNPREDICTABLE;
+
+
+op STRB_reg(x: STRB_reg_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			M[address] = GPR[x.t]<7..0>;
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, m, index, wback, shift_t, shift_n
+op STRB_reg_list = STRB_reg_T2
+
+op STRB_reg_T2(rt: REG_INDEX, rn: REG_INDEX, rm: REG_INDEX, imm2: card(2))
+	// TODO ranging effects
+	//		rn = 1111 -> UNDEFINED
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 00 0 %s  %s 0 00000 %2b %s", rn, rt, imm2, rm)
+	syntax =
+		if imm2 then format("strb%s.w %s, [%s, %s, lsl #%d]", op_cond_syntax_new(ITCOND), rt, rn, rm, imm2)
+		else format("strb%s.w %s, [%s, %s]", op_cond_syntax_new(ITCOND), rt, rn, rm) endif
+	condition = ITCOND
+	t = UInt(rt)
+	n = UInt(rn)
+	m = UInt(rm)
+	shift_t = SRType_LSL
+	shift_n = imm2
+	index = 1
+	add = 1
+	wback = 0
+	//if m IN {13,15} then UNPREDICTABLE;
+	//if t == 15 && InITBlock() && !LastInITBlock() then UNPREDICTABLE;
+
+
+op LDRSB_reg(x: LDRSB_reg_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			GPR[x.t] = ZeroExtend(M[address], 32);
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, m, index, wback, shift_t, shift_n
+op LDRSB_reg_list = LDRSB_reg_T2
+
+op LDRSB_reg_T2(rt: REG_INDEX_XPC, rn: REG_INDEX_XPC, rm: REG_INDEX, imm2: card(2))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 1 0 00 1 %s  %s 0 00000 %2b %s", rn, rt, imm2, rm)
+	syntax =
+		if imm2 then format("ldrsb%s.w %s, [%s, %s, lsl #%d]", op_cond_syntax_new(ITCOND), rt, rn, rm, imm2)
+		else format("ldrsb%s.w %s, [%s, %s]", op_cond_syntax_new(ITCOND), rt, rn, rm) endif
+	condition = ITCOND
+	t = UInt(rt)
+	n = UInt(rn)
+	m = UInt(rm)
+	shift_t = SRType_LSL
+	shift_n = imm2
+	index = 1
+	add = 1
+	wback = 0
+	//if m IN {13,15} then UNPREDICTABLE;
+
+
+op LDR_imm_Thumb(x: LDR_imm_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			data32 = M32[address];
+			if x.wback then GPR[x.n] = offset_addr; endif;
+			if x.t == 15 then
+				//if address<1..0> == 0b00 then
+					LoadWritePC(data32);
+				//else UNPREDICTABLE;
+				//endif;
+			else //if UnalignedSupport() || address<1:0> == '00' then
+				GPR[x.t] = data32;
+			//else GPR[x.t] = bits(32) UNKNOWN; // Can only apply before ARMv7
+			endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDR_imm_list = LDR_imm_T3 | LDR_imm_T4
+
+op LDR_imm_T3(Rn: REG_INDEX, Rt: REG_INDEX, imm12: card(12))
+	// TODO ranging effects
+	//		rn = 1111 -> LDR (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 1 10 1 %s %s %12b", Rn, Rt, imm12)
+	syntax = format("ldr%s.w %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm12)
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm12
+	index = 1
+	add = 1
+	wback = 0
+
+op LDR_imm_T4(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8), P_U_W: enum(1..5, 7))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDR (literal)
+	// 		Rn = 1101 & P = 0 & U = 1 & W = 1 & imm8 = 00000100 -> POP;
+	ITCOND = "f_get_update_ITSTATE"()
+	P = P_U_W<2..2>
+	U = P_U_W<1..1>
+	W = P_U_W<0..0>
+	image = format("11111 00 0 0 10 1 %s %s 1 %3b %8b", Rn, Rt, P_U_W, imm8)
+	syntax =
+		if P then format("ldr%s %s, [%s, #%s0x%x]%s", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8, if W then '!' else '' endif)
+		else format("ldr%s %s, [%s], #%s0x%x", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8) endif
+	//if P == '0' && W == '0' then UNDEFINED;
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm8
+	index = P
+	add = U
+	wback = W
+	//if (wback && n == t) || (t == 15 && InITBlock() && !LastInITBlock()) then UNPREDICTABLE;
+
+
+op LDRH_imm_Thumb(x: LDRH_imm_Thumb_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			data16 = M16[address];
+			if x.wback then GPR[x.n] = offset_addr; endif;
+			//if UnalignedSupport() || address<1:0> == '00' then
+				GPR[x.t] = ZeroExtend(data16, 32);
+			//else // Can only apply before ARMv7
+				//GPR[x.t] = bits(32) UNKNOWN;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRH_imm_Thumb_list = LDRH_imm_Thumb_T2 | LDRH_imm_Thumb_T3
+
+op LDRH_imm_Thumb_T2(Rn: REG_INDEX, Rt: REG_INDEX_XPC, imm12: card(12))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRH (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 1 01 1 %s  %s %12b", Rn, Rt, imm12)
+	syntax =
+		if imm12 then format("ldrh%s.w %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm12)
+		else format("ldrh%s.w %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm12
+	index = 1
+	add = 1
+	wback = 0
+	//if t == 13 then UNPREDICTABLE;
+
+op LDRH_imm_Thumb_T3(Rn: REG_INDEX, Rt_1_P_U_W: REG_INDEX_1_P_U_W_rst, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRH (literal)
+	// 		P = 0 && W = 0 -> UNDEFINED;
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 01 1 %s  %s %8b", Rn, Rt_1_P_U_W, imm8)
+	P_U_W = Rt_1_P_U_W<7..4>
+	Rt = Rt_1_P_U_W
+	P = P_U_W<2..2>
+	U = P_U_W<1..1>
+	W = P_U_W<0..0>
+	syntax =
+		if P then format("ldrh%s %s, [%s, #%s0x%x]%s", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8, if W then '!' else '' endif)
+		else format("ldrh%s %s, [%s], #%s0x%x", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8) endif
+	//if P == '0' && W == '0' then UNDEFINED;
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm8
+	index = P
+	add = U
+	wback = W
+	//if t == 13 || (t == 15 && W == '1') || (wback && n == t) then UNPREDICTABLE;
+
+
+op STRH_imm_Thumb(x: STRH_imm_Thumb_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			//if UnalignedSupport() || address<0> == '0' then
+				M16[address] = GPR[x.t]<15..0>;
+			//else // Can only occur before ARMv7
+				//MemU[address,2] = bits(16) UNKNOWN;
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op STRH_imm_Thumb_list = STRH_imm_Thumb_T2 | STRH_imm_Thumb_T3
+
+op STRH_imm_Thumb_T2(Rn: REG_INDEX, Rt: REG_INDEX_XPC, imm12: card(12))
+	// TODO ranging effects
+	//		Rn = 1111 -> UNDEFINED
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 1 01 0 %s  %s %12b", Rn, Rt, imm12)
+	syntax =
+		if imm12 then format("strh%s.w %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm12)
+		else format("strh%s.w %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm12
+	index = 1
+	add = 1
+	wback = 0
+	//if t == 13 then UNPREDICTABLE;
+
+op STRH_imm_Thumb_T3(Rn: REG_INDEX, Rt: REG_INDEX, P_U_W: enum(0..5, 7), imm8: card(8))
+	// TODO ranging effects
+	//		if Rn == 1111 || (P == 0 && W == 0) then UNDEFINED;
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 01 0 %s  %s 1 %3b %8b", Rn, Rt, P_U_W, imm8)
+	P = P_U_W<2..2>
+	U = P_U_W<1..1>
+	W = P_U_W<0..0>
+	syntax =
+		if P then format("strh%s %s, [%s, #%s0x%x]%s", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8, if W then '!' else '' endif)
+		else format("strh%s %s, [%s], #%s0x%x", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8) endif
+	//if P == '0' && W == '0' then UNDEFINED;
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm8
+	index = P
+	add = U
+	wback = W
+	//if t IN {13,15} || (wback && n == t) then UNPREDICTABLE;
+
+
+op LDRBT(x: LDRBT_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//if CurrentModeIsHyp() then UNPREDICTABLE; // Hyp mode
+			//NullCheckIfThumbEE(n);
+			if x.registerform then
+				Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			else
+				offset = x.imm32;
+			endif;
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.postindex then GPR[x.n] else offset_addr endif;
+			//GPR[x.t] = ZeroExtend(MemU_unpriv[address], 32);
+			GPR[x.t] = ZeroExtend(M[address], 32);
+			if x.postindex then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRBT_list = LDRBT_T1
+
+op LDRBT_T1(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRB (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 00 1 %s  %s 1 110 %8b", Rn, Rt, imm8)
+	syntax =
+		if imm8 then format("ldrbt%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm8)
+		else format("ldrbt%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	m = 0
+	shift_t = 0
+	shift_n = 0
+	postindex = 0
+	add = 1
+	registerform = 0
+	imm32 = imm8
+	//if t IN {13,15} then UNPREDICTABLE;
+
+
+op STRBT(x: STRBT_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//if CurrentModeIsHyp() then UNPREDICTABLE; // Hyp mode
+			//NullCheckIfThumbEE(n);
+			if x.register_form then
+				Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			else
+				offset = x.imm32;
+			endif;
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.postindex then GPR[x.n] else offset_addr endif;
+			//MemU_unpriv[address,1] = GPR[t]<7:0>;
+			M[address] = GPR[x.t]<7..0>;
+			if x.postindex then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op STRBT_list = STRBT_T1
+
+op STRBT_T1(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> UNDEFINED
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 00 0 %s  %s 1 110 %8b", Rn, Rt, imm8)
+	syntax =
+		if imm8 then format("strbt%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm8)
+		else format("strbt%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	m = 0
+	shift_t = 0
+	shift_n = 0
+	postindex = 0
+	add = 1
+	register_form = 0
+	imm32 = imm8
+	//if t IN {13,15} then UNPREDICTABLE;
+
+
+op LDRSBT(x: LDRSBT_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//if CurrentModeIsHyp() then UNPREDICTABLE; // Hyp mode
+			//NullCheckIfThumbEE(n);
+			offset = if x.register_form then GPR[x.m] else x.imm32 endif;
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.postindex then GPR[x.n] else offset_addr endif;
+			//GPR[x.t] = SignExtend(MemU_unpriv[address], 32);
+			GPR[x.t] = SignExtend(M[address], 32);
+			if x.postindex then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRSBT_list = LDRSBT_T1
+
+op LDRSBT_T1(Rn: REG_INDEX_XPC, Rt: REG_INDEX_XPC, imm8: card(8))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 1 0 00 1 %s  %s 1 110 %8b", Rn, Rt, imm8)
+	syntax =
+		if imm8 then format("ldrsbt%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm8)
+		else format("ldrsbt%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	m = 0
+	postindex = 0
+	add = 1
+	register_form = 0
+	imm32 = imm8
+	//if t IN {13,15} then UNPREDICTABLE;
+
+
+op LDRSHT(x: LDRSHT_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//if CurrentModeIsHyp() then UNPREDICTABLE; // Hyp mode
+			//NullCheckIfThumbEE(n);
+			offset = if x.register_form then GPR[x.m] else x.imm32 endif;
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.postindex then GPR[x.n] else offset_addr endif;
+			//data = MemU_unpriv[address,2];
+			data16 = M16[address];
+			if x.postindex then GPR[x.n] = offset_addr; endif;
+			//if UnalignedSupport() || address<0> == '0' then
+				GPR[x.t] = SignExtend(data16, 32);
+			//else // Can only apply before ARMv7
+				//GPR[t] = bits(32) UNKNOWN;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRSHT_list = LDRSHT_T1
+
+op LDRSHT_T1(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRSH (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 1 0 01 1 %s  %s 1 110 %8b", Rn, Rt, imm8)
+	syntax =
+		if imm8 then format("ldrsht%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm8)
+		else format("ldrsht%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	m = 0
+	postindex = 0
+	add = 1
+	register_form = 0
+	imm32 = imm8
+	//if t IN {13,15} then UNPREDICTABLE;
+
+
+op LDRHT(x: LDRHT_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//if CurrentModeIsHyp() then UNPREDICTABLE; // Hyp mode
+			//NullCheckIfThumbEE(n);
+			offset = if x.register_form then GPR[x.m] else x.imm32 endif;
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.postindex then GPR[x.n] else offset_addr endif;
+			//data16 = MemU_unpriv[address];
+			data16 = M16[address];
+			if x.postindex then GPR[x.n] = offset_addr; endif;
+			//if UnalignedSupport() || address<0> == '0' then
+				GPR[x.t] = ZeroExtend(data16, 32);
+			//else // Can only apply before ARMv7
+				//GPR[t] = bits(32) UNKNOWN;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRHT_list = LDRHT_T1
+
+op LDRHT_T1(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRH (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 01 1 %s  %s 1 110 %8b", Rn, Rt, imm8)
+	syntax =
+		if imm8 then format("ldrht%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm8)
+		else format("ldrht%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	m = 0
+	postindex = 0
+	add = 1
+	register_form = 0
+	imm32 = imm8
+	//if t IN {13,15} then UNPREDICTABLE;
+
+
+op STRHT(x: STRHT_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//if CurrentModeIsHyp() then UNPREDICTABLE; // Hyp mode
+			//NullCheckIfThumbEE(n);
+			offset = if x.register_form then GPR[x.m] else x.imm32 endif;
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.postindex then GPR[x.n] else offset_addr endif;
+			//if UnalignedSupport() || address<0> == '0' then
+				//MemU_unpriv[address,2] = GPR[t]<15:0>;
+				M16[address] = GPR[x.t]<15..0>;
+			//else // Can only occur before ARMv7
+				//MemU_unpriv[address,2] = bits(16) UNKNOWN;
+			if x.postindex then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op STRHT_list = STRHT_T1
+
+op STRHT_T1(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> UNDEFINED
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 01 0 %s  %s 1 110 %8b", Rn, Rt, imm8)
+	syntax =
+		if imm8 then format("strht%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm8)
+		else format("strht%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	m = 0
+	postindex = 0
+	add = 1
+	register_form = 0
+	imm32 = imm8
+	//if t IN {13,15} then UNPREDICTABLE;
+
+
+op LDRT(x: LDRT_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//if CurrentModeIsHyp() then UNPREDICTABLE; // Hyp mode
+			//NullCheckIfThumbEE(n);
+			if x.register_form then
+				Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			else
+				offset = x.imm32;
+			endif;
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.postindex then GPR[x.n] else offset_addr endif;
+			//data = MemU_unpriv[address, 4];
+			data32 = M32[address];
+			if x.postindex then GPR[x.n] = offset_addr; endif;
+			//if UnalignedSupport() || address<1:0> == '00' then
+				GPR[x.t] = data32;
+			//else // Can only apply before ARMv7
+				//if CurrentInstrSet() == InstrSet_ARM then
+					//GPR[t] = ROR(data, 8*UInt(address<1:0>));
+				//else
+					//GPR[t] = bits(32) UNKNOWN;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRT_list = LDRT_T1
+
+op LDRT_T1(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDR (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 10 1 %s  %s 1 110 %8b", Rn, Rt, imm8)
+	syntax =
+		if imm8 then format("ldrt%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm8)
+		else format("ldrt%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	m = 0
+	shift_t = 0
+	shift_n = 0
+	postindex = 0
+	add = 1
+	register_form = 0
+	imm32 = imm8
+	//if t IN {13,15} then UNPREDICTABLE;
+
+
+op STRT(x: STRT_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	shift_n = x.shift_n
+	action = {
+		if ConditionPassed() then
+			//if CurrentModeIsHyp() then UNPREDICTABLE; // Hyp mode
+			//NullCheckIfThumbEE(n);
+			if x.register_form then
+				Shift_C(GPR[x.m], x.shift_t, shift_n, APSR_C, offset, APSR_C);
+			else
+				offset = x.imm32;
+			endif;
+			offset_addr = if x.add then (GPR[x.n] + offset) else (GPR[x.n] - offset) endif;
+			address = if x.postindex then GPR[x.n] else offset_addr endif;
+			if x.t == 15 then // Only possible for encodings A1 and A2
+				data = PCStoreValue();
+			else
+				data = GPR[x.t];
+			endif;
+			//if UnalignedSupport() || address<1:0> == '00' || CurrentInstrSet() == InstrSet_ARM then
+				//MemU_unpriv[address,4] = data;
+				M32[address] = data;
+			//else // Can only occur before ARMv7
+				//MemU_unpriv[address,4] = bits(32) UNKNOWN;
+			if x.postindex then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op STRT_list = STRT_T1
+
+op STRT_T1(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> UNDEFINED
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 10 0 %s  %s 1 110 %8b", Rn, Rt, imm8)
+	syntax =
+		if imm8 then format("strt%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm8)
+		else format("strt%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	m = 0
+	shift_t = 0
+	shift_n = 0
+	postindex = 0
+	add = 1
+	register_form = 0
+	imm32 = imm8
+	//if t IN {13,15} then UNPREDICTABLE;
+
+
+op LDRB_imm(x: LDRB_imm_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			data8 = M[address];
+			GPR[x.t] = ZeroExtend(data8, 32);
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRB_imm_list = LDRB_imm_T2 | LDRB_imm_T3
+
+op LDRB_imm_T2(Rn: REG_INDEX, Rt: REG_INDEX_XPC, imm12: card(12))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRB (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 1 00 1 %s  %s %12b", Rn, Rt, imm12)
+	syntax = format("ldrb%s.w %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm12)
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm12
+	index = 1
+	add = 1
+	wback = 0
+
+//op LDRB_imm_T3(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8), P_U_W: enum(0..5, 7))
+op LDRB_imm_T3(Rn: REG_INDEX, Rt_1_P_U_W: REG_INDEX_1_P_U_W_rst, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRB (literal)
+	//		P = 0 && W = 0 -> UNDEFINED;
+	ITCOND = "f_get_update_ITSTATE"()
+	Rt = Rt_1_P_U_W
+	P_U_W = Rt_1_P_U_W<2..0>
+	image = format("11111 00 0 0 00 1 %s  %s %8b", Rn, Rt_1_P_U_W, imm8)
+	P = P_U_W<2..2>
+	U = P_U_W<1..1>
+	W = P_U_W<0..0>
+	syntax =
+		if P then format("ldrb%s %s, [%s, #%s0x%x]%s", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8, if W then '!' else '' endif)
+		else format("ldrb%s %s, [%s], #%s0x%x", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm8
+	index = P
+	add = U
+	wback = W
+	// if t == 13 || (t == 15 && W == '1') || (wback && n == t) then UNPREDICTABLE;
+
+
+op LDRSB_immediate(x: LDRSB_imm_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			GPR[x.t] = SignExtend(M[address], 32);
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRSB_imm_list = LDRSB_imm_T1 | LDRSB_imm_T2
+
+op LDRSB_imm_T1(Rn: REG_INDEX_XPC, Rt: REG_INDEX_XPC, imm12: card(12))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 1 1 00 1 %s  %s %12b", Rn, Rt, imm12)
+	syntax = format("ldrsb%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm12)
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm12
+	index = 1
+	add = 1
+	wback = 0
+
+op LDRSB_imm_T2(Rn: REG_INDEX_XPC, Rt_1_P_U_W: REG_INDEX_1_P_U_W_rst, imm8: card(8))
+	// TODO ranging effects
+	//		P = 0 && W = 0 -> UNDEFINED;
+	ITCOND = "f_get_update_ITSTATE"()
+	Rt = Rt_1_P_U_W
+	P_U_W = Rt_1_P_U_W<2..0>
+	image = format("11111 00 1 0 00 1 %s  %s %8b", Rn, Rt_1_P_U_W, imm8)
+	P = P_U_W<2..2>
+	U = P_U_W<1..1>
+	W = P_U_W<0..0>
+	syntax =
+		if P then format("ldrsb%s %s, [%s, #%s0x%x]%s", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8, if W then '!' else '' endif)
+		else format("ldrsb%s %s, [%s], #%s0x%x", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm8
+	index = P
+	add = U
+	wback = W
+	// if t == 13 || (t == 15 && W == '1') || (wback && n == t) then UNPREDICTABLE;
+
+
+op LDRSB_lit_T1(Rt: REG_INDEX_XPC, U:card(1), imm12: card(12))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 1 %1b 00 1 1111  %s %12b", U, Rt, imm12)
+	syntax =
+		if imm12 then format("ldrsb%s %s, [pc, #%s0x%x]", op_cond_syntax_new(ITCOND), Rt, if U then '' else '-' endif, imm12)
+		else format("ldrsb%s %s, [pc]", op_cond_syntax_new(ITCOND), Rt) endif
+	condition = ITCOND
+	t = Rt
+	imm32 = imm12
+	add = U
+	// if t == 13 then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			base = Align(PC, 4);
+			address = if add then (base + imm32) else (base - imm32) endif;
+			GPR[t] = SignExtend(M[address], 32);
+		endif;
+	}
+
+
+op LDRSH_immediate(x: LDRSH_imm_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			data16 = M16[address];
+			if x.wback then GPR[x.n] = offset_addr; endif;
+			//if UnalignedSupport() || address<0> == '0' then
+				GPR[x.t] = SignExtend(data16, 32);
+			//else // Can only apply before ARMv7
+				//GPR[t] = bits(32) UNKNOWN;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op LDRSH_imm_list = LDRSH_imm_T1 | LDRSH_imm_T2
+
+op LDRSH_imm_T1(Rn: REG_INDEX, Rt: REG_INDEX_XPC, imm12: card(12))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRSH (literal)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 1 1 01 1 %s  %s %12b", Rn, Rt, imm12)
+	syntax = format("ldrsh%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm12)
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm12
+	index = 1
+	add = 1
+	wback = 0
+
+op LDRSH_imm_T2(Rn: REG_INDEX, Rt_1_P_U_W: REG_INDEX_1_P_U_W_rst, imm8: card(8))
+	// TODO ranging effects
+	//		Rn = 1111 -> LDRSH (literal)
+	//		P = 0 && W = 0 -> UNDEFINED;
+	ITCOND = "f_get_update_ITSTATE"()
+	Rt = Rt_1_P_U_W
+	P_U_W = Rt_1_P_U_W<2..0>
+	image = format("11111 00 1 0 01 1 %s  %s %8b", Rn, Rt_1_P_U_W, imm8)
+	P = P_U_W<2..2>
+	U = P_U_W<1..1>
+	W = P_U_W<0..0>
+	syntax =
+		if P then format("ldrsh%s %s, [%s, #%s0x%x]%s", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8, if W then '!' else '' endif)
+		else format("ldrsh%s %s, [%s], #%s0x%x", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8) endif
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm8
+	index = P
+	add = U
+	wback = W
+	// if t == 13 || (t == 15 && W == '1') || (wback && n == t) then UNPREDICTABLE;
+
+
+op STR_imm_Thumb(x: STR_imm_Thumb_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			data32 = GPR[x.t];
+			//if UnalignedSupport() || address<1:0> == '00' then
+				M32[address] = data32;
+			//else // Can only occur before ARMv7
+				//MemU[address,4] = bits(32) UNKNOWN;
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op STR_imm_Thumb_list = STR_imm_T3 | STR_imm_T4
+
+op STR_imm_T3(Rn: REG_INDEX, Rt: REG_INDEX, imm12: card(12))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 1 10 0 %s  %s %12b", Rn, Rt, imm12)
+	syntax = format("str%s.w %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm12)
+	//if Rn == '1111' then UNDEFINED
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm12
+	index = 1
+	add = 1
+	wback = 0
+	//if t == 15 then UNPREDICTABLE;
+
+op STR_imm_T4(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8), P_U_W: enum(1..5, 7))
+	// TODO ranging effects
+	// 		Rn == '1101' && P == '1' && U == '0' && W == '1' && imm8 == '00000100' -> PUSH;
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 10 0 %s  %s 1 %3b %8b", Rn, Rt, P_U_W, imm8)
+	P = P_U_W<2..2>
+	U = P_U_W<1..1>
+	W = P_U_W<0..0>
+	syntax =
+		if P then format("str%s %s, [%s, #%s0x%x]%s", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8, if W then '!' else '' endif)
+		else format("str%s %s, [%s], #%s0x%x", op_cond_syntax_new(ITCOND), Rt, Rn, if U then '' else '-' endif, imm8) endif
+	//if Rn == '1111' || (P == '0' && W == '0') then UNDEFINED;
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = imm8
+	index = P
+	add = U
+	wback = W
+	//if t == 15 || (wback && n == t) then UNPREDICTABLE;
+
+
+op STRB_imm(x: STRB_imm_list)
+	image = x.image
+	syntax = x.syntax
+	cond = x.condition
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			M[address] = GPR[x.t]<0..7>;
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+// should provide t, n, imm32, index, add, wback
+op STRB_imm_list = STRB_imm_T2 | STRB_imm_T3
+
+op STRB_imm_T2(Rn: REG_INDEX, Rt: REG_INDEX, imm12: card(12))
+	// TODO ranging effects
+	//		Rn = 1111 -> UNDEFINED
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 1 00 0 %s  %s %12b", Rn, Rt, imm12)
+	syntax = format("strb%s.w %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm12)
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = ZeroExtend(imm12, 32)
+	index = 1
+	add = 1
+	wback = 0
+	//if t IN {13,15} then UNPREDICTABLE;
+
+op STRB_imm_T3(Rn: REG_INDEX, Rt: REG_INDEX, P_U_W: enum(0..5, 7), imm8: card(8))
+	// TODO ranging effects
+	//		Rn == 1111 || (P == 0 && W == 0) -> UNDEFINED
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11111 00 0 0 00 0 %s  %s 1 %3b %8b", Rn, Rt, P_U_W, imm8)
+	P = P_U_W<2..2>
+	U = P_U_W<1..1>
+	W = P_U_W<0..0>
+	imm_format = format(", #%s0x%x", if U then "" else "-" endif, imm8)
+	pre_ind_format = format("%s]%s", if imm8 then imm_format else "" endif, if W then "!" else "" endif)
+	post_ind_format = format("]%s", if imm8 then imm_format else "" endif)
+	syntax = format("strb%s %s, [%s%s", op_cond_syntax_new(ITCOND), Rt, Rn, if P then pre_ind_format else post_ind_format endif)
+	condition = ITCOND
+	t = Rt
+	n = Rn
+	imm32 = ZeroExtend(imm8, 32)
+	index = P
+	add = U
+	wback = W
+	//if t IN {13,15} || (wback && n == t) then UNPREDICTABLE;
+
+
+mode RegisterListThumb(_P: card(1), _M: card(1), _l: card(13)) = _l
+	l = _l
+	P = _P
+	MM = _M
+	syntax = format("{%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s}",
+		if _l<0..0> then format("r0%s", if _l<1..12> || _P || _M then ", " else "" endif) else "" endif,
+		if _l<1..1> then format("r1%s", if _l<2..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<2..2> then format("r2%s", if _l<3..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<3..3> then format("r3%s", if _l<4..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<4..4> then format("r4%s", if _l<5..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<5..5> then format("r5%s", if _l<6..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<6..6> then format("r6%s", if _l<7..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<7..7> then format("r7%s", if _l<8..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<8..8> then format("r8%s", if _l<9..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<9..9> then format("r9%s", if _l<10..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<10..10> then format("r10%s", if _l<11..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<11..11> then format("r11%s", if _l<12..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<12..12> then format("r12%s", if _P || _M  then ", " else "" endif) else "" endif,
+		if _M then format("lr%s", if _P then ", " else "" endif) else "" endif,
+		if _P then "pc" else "" endif)
+
+op LDM_T2(W: bool, Rn: REG_INDEX, register_list: RegisterListThumb)
+	// TODO ranging effects
+	// 		Rn = 1101 & W = 1 -> POP (Thumb);
+	ITCOND = "f_get_update_ITSTATE"()
+	syntax = format("ldm%s%s.w %s%s, %s", if Rn.number == 0b1101 then "fd" else "ia" endif, op_cond_syntax_new(ITCOND), Rn, if W then "!" else "" endif, register_list)
+	image = format("11101 00 010 %1b 1 %s %1b %1b 0 %13b", W, Rn, register_list.P, register_list.MM, register_list.l)
+	n = UInt(Rn)
+	registers = register_list.P :: register_list.MM :: 0b0 :: register_list.l
+	wback = (W == 1)
+	// if n == 15 || BitCount(registers) < 2 || (P == '1' && M == '1') then UNPREDICTABLE;
+	// if registers<15> == '1' && InITBlock() && !LastInITBlock() then UNPREDICTABLE;
+	// if wback && registers<n> == '1' then UNPREDICTABLE;
+	action = {
+		address = GPR[n];
+		i = 0; bitcount = 0; loop;
+		if registers<15..15> == 1 then
+			LoadWritePC(M32[address]);
+			bitcount = bitcount + 1;
+		endif;
+		if wback then
+			GPR[n] = GPR[n] + 4 * bitcount;
+		endif;
+	}
+	loop = {
+		if registers<i..i> == 1 then
+			GPR[reg_index(i)] = M32[address];
+			address = address + 4;
+			bitcount = bitcount + 1;
+		endif;
+		i = i + 1;
+		if i <= 14 then
+			loop;
+		endif;
+	}
+
+
+mode RegisterListThumbLtd(_M: card(1), _l: card(13)) = _l
+	_P = 0
+	l = _l
+	P = _P
+	MM = _M
+	syntax = format("{%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s}",
+		if _l<0..0> then format("r0%s", if _l<1..12> || _P || _M then ", " else "" endif) else "" endif,
+		if _l<1..1> then format("r1%s", if _l<2..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<2..2> then format("r2%s", if _l<3..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<3..3> then format("r3%s", if _l<4..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<4..4> then format("r4%s", if _l<5..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<5..5> then format("r5%s", if _l<6..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<6..6> then format("r6%s", if _l<7..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<7..7> then format("r7%s", if _l<8..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<8..8> then format("r8%s", if _l<9..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<9..9> then format("r9%s", if _l<10..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<10..10> then format("r10%s", if _l<11..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<11..11> then format("r11%s", if _l<12..12> || _P || _M  then ", " else "" endif) else "" endif,
+		if _l<12..12> then format("r12%s", if _P || _M  then ", " else "" endif) else "" endif,
+		if _M then format("lr%s", if _P then ", " else "" endif) else "" endif,
+		if _P then "pc" else "" endif)
+
+op STMDB_T1(W: bool, Rn: REG_INDEX, register_list: RegisterListThumbLtd)
+	// TODO ranging effects
+	// 		Rn = 1101 & W = 1 -> PUSH;
+	ITCOND = "f_get_update_ITSTATE"()
+	syntax = format("stm%s%s %s%s, %s", if Rn.number == 0b1101 then "fd" else "db" endif, op_cond_syntax_new(ITCOND), Rn, if W then "!" else "" endif, register_list)
+	image = format("11101 00 100 %1b 0 %s  0 %1b 0 %13b", W, Rn, register_list.MM, register_list.l)
+	n = UInt(Rn)
+	registers = 0b0 :: register_list.MM :: 0b0 :: register_list.l
+	wback = W
+	//if n == 15 || BitCount(registers) < 2 then UNPREDICTABLE;
+	//if wback && registers<n> == '1' then UNPREDICTABLE;
+	action = {
+		i = 14; address = GPR[n]; loop;
+		if wback then GPR[n] = address; endif;
+	}
+	loop = {
+		if registers<i..i> == 1 then
+			address = address - 4;
+			M32[address] = GPR[reg_index(i)];
+		endif;
+		i = i - 1;
+		if i >= 0 then
+			loop;
+		endif;
+	}
+
+
+op LDREX_T1(Rn: REG_INDEX, Rt: REG_INDEX, imm8: card(8))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 00 0 0 1 0 1 %s  %s 1111 %8b", Rn, Rt, imm8)
+	imm32 = ZeroExtend(imm8::0b00, 32)
+	syntax =
+		if imm8 then format("ldrex%s %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rt, Rn, imm32)
+		else format("ldrex%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn) endif
+	t = UInt(Rt)
+	n = UInt(Rn)
+	//if t IN {13,15} || n == 15 then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			address = GPR[n];
+			//SetExclusiveMonitors(address,1);
+			GPR[t] = ZeroExtend(M[address], 32);
+		endif;
+	}
+
+
+op LDREXB_T1 (Rn: REG_INDEX, Rt: REG_INDEX)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 000110 1 %s  %s 1111 0100 1111", Rn, Rt)
+	syntax = format("ldrexb%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn)
+	t = UInt(Rt)
+	n = UInt(Rn)
+	//if t IN {13,15} || n == 15 then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			address = GPR[n] + imm32;
+			//SetExclusiveMonitors(address,4);
+			GPR[t] = M32[address];
+		endif;
+	}
+
+
+op LDREXD_T1 (Rn: REG_INDEX, Rt: REG_INDEX, Rt2: REG_INDEX)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 000110 1 %s  %s %s 0111 1111", Rn, Rt, Rt2)
+	syntax = format("ldrexb%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn)
+	t = UInt(Rt)
+	t2 = UInt(Rt2)
+	n = UInt(Rn)
+	//if t IN {13,15} || t2 IN {13,15} || t == t2 || n == 15 then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			address = GPR[n];
+			// LDREXD requires doubleword-aligned address
+			//if address<2:0> != '000' then AlignmentFault(address, FALSE)
+			//SetExclusiveMonitors(address,8);
+			// See the description of Single-copy atomicity for details of whether // the two loads are 64-bit single-copy atomic.
+			//GPR[t] = MemA[address,4];
+			GPR[t] = M32[address];
+			//GPR[t2] = MemA[address+4,4];
+			GPR[t2] = M32[address+4];
+		endif;
+	}
+
+
+op LDREXH_T1(Rn: REG_INDEX, Rt: REG_INDEX)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 000110 1 %s  %s 1111 0101 1111", Rn, Rt)
+	syntax = format("ldrexh%s %s, [%s]", op_cond_syntax_new(ITCOND), Rt, Rn)
+	t = UInt(Rt)
+	n = UInt(Rn)
+	//if t IN {13,15} || n == 15 then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			address = GPR[n];
+			//SetExclusiveMonitors(address,2);
+			GPR[t] = ZeroExtend(M16[address], 32);
+		endif;
+	}
+
+
+op STREX_T1(Rn: REG_INDEX, Rt: REG_INDEX, Rd: REG_INDEX, imm8: card(8))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 00 0 0 1 0 0 %s  %s %s %8b", Rn, Rt, Rd, imm8)
+	imm32 = ZeroExtend(imm8::0b00, 32)
+	syntax =
+		if imm8 then format("strex%s %s, %s, [%s, #0x%x]", op_cond_syntax_new(ITCOND), Rd, Rt, Rn, imm32)
+		else format("strex%s %s, %s, [%s]", op_cond_syntax_new(ITCOND), Rd, Rt, Rn) endif
+	d = UInt(Rd)
+	t = UInt(Rt)
+	n = UInt(Rn)
+	//if d IN {13,15} || t IN {13,15} || n == 15 then UNPREDICTABLE;
+	//if d == n || d == t then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			address = GPR[n] + imm32;
+			//if ExclusiveMonitorsPass(address,4) then
+				//MemA[address,4] = GPR[t];
+				M32[address] = GPR[t];
+				GPR[d] = ZeroExtend(0b0, 32);
+			//else GPR[d] = ZeroExtend(0b1, 32);
+		endif;
+	}
+
+
+op STREXB_T1 (Rn: REG_INDEX, Rt: REG_INDEX, Rd: REG_INDEX)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 000110 0 %s  %s 1111 0100 %s", Rn, Rt, Rd)
+	syntax = format("strexb%s %s, %s, [%s]", op_cond_syntax_new(ITCOND), Rd, Rt, Rn)
+	d = UInt(Rd)
+	t = UInt(Rt)
+	n = UInt(Rn)
+	//if d IN {13,15} || t IN {13,15} || n == 15 then UNPREDICTABLE;
+	//if d == n || d == t then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			address = GPR[n];
+			//if ExclusiveMonitorsPass(address,1) then
+				//MemA[address,1] = GPR[t]<7:0>;
+				M[address] = GPR[t]<7..0>;
+				GPR[d] = ZeroExtend(0b0, 32);
+			//else GPR[d] = ZeroExtend(0b1, 32);
+		endif;
+	}
+
+
+op STREXD_T1 (Rn: REG_INDEX, Rt: REG_INDEX, Rt2: REG_INDEX, Rd: REG_INDEX)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 000110 0 %s  %s %s 0111 %s", Rn, Rt, Rt2, Rd)
+	syntax = format("strexb%s %s, %s, %s, [%s]", op_cond_syntax_new(ITCOND), Rd, Rt, Rt2, Rn)
+	d = UInt(Rd)
+	t = UInt(Rt)
+	t2 = UInt(Rt2)
+	n = UInt(Rn)
+	//if d IN {13,15} || t IN {13,15} || t2 IN {13,15} || n == 15 then UNPREDICTABLE;
+	//if d == n || d == t || d == t2 then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			address = GPR[n];
+			// For the alignment requirements see "Aborts and alignment"
+			// Create doubleword to store such that GPR[t] will be stored at address and GPR[t2] at address+4.
+			//if BigEndian() then // TODO: BigEndian() tests whether big-endian memory accesses are currently selected.
+				TMP_DOUBLE = GPR[t]::GPR[t2];
+			//else GPR[t2]::GPR[t]; endif;
+			//if ExclusiveMonitorsPass(address,8) then
+				//MemA[address,8] = TMP_DOUBLE;
+				M64[address] = TMP_DOUBLE;
+				GPR[d] = ZeroExtend(0b0, 32);
+			else GPR[d] = ZeroExtend(0b1, 32);
+		endif;
+	}
+
+
+op STREXH_T1(Rn: REG_INDEX, Rt: REG_INDEX, Rd: REG_INDEX)
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 000110 0 %s  %s 1111 0101 %s", Rn, Rt, Rd)
+	syntax = format("strexh%s %s, %s, [%s]", op_cond_syntax_new(ITCOND), Rd, Rt, Rn)
+	d = UInt(Rd)
+	t = UInt(Rt)
+	n = UInt(Rn)
+	//if d IN {13,15} || t IN {13,15} || n == 15 then UNPREDICTABLE;
+	//if d == n || d == t then UNPREDICTABLE;
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			address = GPR[n];
+			//if ExclusiveMonitorsPass(address,2) then
+				//MemA[address,2] = GPR[t]<15:0>;
+				M16[address] = GPR[t]<15..0>;
+				GPR[d] = ZeroExtend(0b0, 32);
+			//else GPR[d] = ZeroExtend(0b1, 32);
+		endif;
+	}
+
+
+op LDRD = LDRD_imm
+	//| LDRD_lit (Handled in LDRD_imm)
+
+op LDRD_imm(x: LDRD_imm_list)
+	syntax = x.syntax
+	image = x.image
+	cond = x.cond
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			//if HaveLPAE() && address<2..0> == 0b000 then // TODO: HaveLPAE() returns TRUE if the implementation includes the Large Physical Address Extension.
+			//	data64 = M64[address];
+			//	if BigEndian() then // TODO: BigEndian() tests whether big-endian memory accesses are currently selected.
+			//		GPR[x.t] = data64<63..32>;
+			//		GPR[x.t2] = data64<31..0>;
+			//	else
+			//		GPR[x.t] = data64<31..0>;
+			//		GPR[x.t2] = data64<63..32>;
+			//	endif;
+			//else
+				GPR[x.t] = M32[address];
+				GPR[x.t2] = M32[address+4];
+			//endif;
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+op LDRD_imm_list = LDRD_imm_T1
+
+op LDRD_imm_T1(P_U_1_W: enum(3, 7, 10, 11, 14, 15), Rn: REG_INDEX, Rt: REG_INDEX, Rt2: REG_INDEX, imm8: card(8))
+	ITCOND = "f_get_update_ITSTATE"()
+	image = format("11101 00 %4b 1 %s  %s %s %8b", P_U_1_W, Rn, Rt, Rt2, imm8)
+	P = P_U_1_W<3..3>
+	U = P_U_1_W<2..2>
+	W = P_U_1_W<0..0>
+	imm_format = format(", #%s0x%x", if U then "" else "-" endif, ZeroExtend(imm8 :: 0b00, 32))
+	pre_ind_format = format("%s]%s", if imm8 then imm_format else "" endif, if W then "!" else "" endif)
+	post_ind_format = format("]%s", if imm8 then imm_format else "" endif)
+	syntax = format("ldrd%s %s, %s, [%s%s", op_cond_syntax_new(ITCOND), Rt, Rt2, Rn, if P then pre_ind_format else post_ind_format endif)
+	//if Rn == '1111' then see LDRD (literal) and if W == '1' then UNPREDICTABLE;
+	t = UInt(Rt)
+	t2 = UInt(Rt2)
+	n = UInt(Rn)
+	imm32 = ZeroExtend(imm8 :: 0b00, 32)
+	index = P
+	add = U
+	wback = W
+	//if wback && (n == t || n == t2) then UNPREDICTABLE;
+	//if n == 15 || t IN {13,15} || t2 IN {13,15} then UNPREDICTABLE;
+	cond = 1
+
+
+op STRD_Thumb = STRD_imm_Thumb
+
+op STRD_imm_Thumb(x: STRD_imm_Thumb_list)
+	syntax = x.syntax
+	image = x.image
+	cond = x.cond
+	action = {
+		if ConditionPassed() then
+			//NullCheckIfThumbEE(n);
+			offset_addr = if x.add then (GPR[x.n] + x.imm32) else (GPR[x.n] - x.imm32) endif;
+			address = if x.index then offset_addr else GPR[x.n] endif;
+			//if HaveLPAE() && address<2..0> == 0b000 then // TODO: HaveLPAE() returns TRUE if the implementation includes the Large Physical Address Extension.
+			//	if BigEndian() then // TODO: BigEndian() tests whether big-endian memory accesses are currently selected.
+			//		data64<63..32> = GPR[x.t];
+			//		data64<31..0> = GPR[x.t2];
+			//	else
+			//		data64<31..0> = GPR[x.t];
+			//		data64<63..32> = GPR[x.t2];
+			//	endif;
+			//	M64[address] = data64;
+			//else
+				M32[address] = GPR[x.t];
+				M32[address+4] = GPR[x.t2];
+			//endif;
+			if x.wback then GPR[x.n] = offset_addr; endif;
+		endif;
+	}
+
+op STRD_imm_Thumb_list = STRD_imm_T1
+
+op STRD_imm_T1(P_U_1_W: enum(3, 7, 10, 11, 14, 15), Rn: REG_INDEX, Rt: REG_INDEX, Rt2: REG_INDEX, imm8: card(8))
+	ITCOND = "f_get_update_ITSTATE"()
+	P = P_U_1_W<3..3>
+	U = P_U_1_W<2..2>
+	W = P_U_1_W<0..0>
+	imm_format = format(", #%s0x%x", if U then "" else "-" endif, ZeroExtend(imm8 :: 0b00, 32))
+	pre_ind_format = format("%s]%s", if imm8 then imm_format else "" endif, if W then "!" else "" endif)
+	post_ind_format = format("]%s", if imm8 then imm_format else "" endif)
+	syntax = format("strd%s %s, %s, [%s%s", op_cond_syntax_new(ITCOND), Rt, Rt2, Rn, if P then pre_ind_format else post_ind_format endif)
+	image = format("11101 00 %4b 0 %s  %s %s %8b", P_U_1_W, Rn, Rt, Rt2, imm8)
+	//if P == '0' && W == '0' then SEE "Related encodings";
+	t = UInt(Rt)
+	t2 = UInt(Rt2)
+	n = UInt(Rn)
+	imm32 = ZeroExtend(imm8 :: 0b00, 32)
+	index = P
+	add = U
+	wback = W
+	//if wback && (n == t || n == t2) then UNPREDICTABLE;
+	//if n == 15 || t IN {13,15} || t2 IN {13,15} then UNPREDICTABLE;
+	cond = 1

@@ -1,0 +1,8396 @@
+"wcee.ml" 45 996 1002 "wcee.ml" 45 996 1007
+type(
+  Format.formatter -> t -> unit
+)
+ident(
+  def print "wcee.ml" 49 1141 1143 "wcee.ml" 50 1176 1179
+)
+"wcee.ml" 45 996 1008 "wcee.ml" 45 996 1011
+type(
+  Format.formatter
+)
+ident(
+  def fmt "wcee.ml" 45 996 1012 "wcee.ml" 48 1115 1140
+)
+"wcee.ml" 45 996 1012 "wcee.ml" 45 996 1013
+type(
+  t
+)
+ident(
+  def f "wcee.ml" 45 996 1016 "wcee.ml" 48 1115 1140
+)
+"wcee.ml" 45 996 1016 "wcee.ml" 45 996 1038
+type(
+  Format.formatter -> string -> unit
+)
+ident(
+  ext_ref Format.pp_print_string
+)
+"wcee.ml" 45 996 1039 "wcee.ml" 45 996 1042
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "wcee.ml" 45 996 1008 "wcee.ml" 45 996 1011
+)
+"wcee.ml" 45 996 1050 "wcee.ml" 45 996 1051
+type(
+  t
+)
+ident(
+  int_ref f "wcee.ml" 45 996 1012 "wcee.ml" 45 996 1013
+)
+"wcee.ml" 46 1057 1063 "wcee.ml" 46 1057 1072
+type(
+  t
+)
+"wcee.ml" 46 1057 1076 "wcee.ml" 46 1057 1087
+type(
+  string
+)
+"wcee.ml" 47 1088 1094 "wcee.ml" 47 1088 1101
+type(
+  t
+)
+"wcee.ml" 47 1088 1105 "wcee.ml" 47 1088 1114
+type(
+  string
+)
+"wcee.ml" 48 1115 1121 "wcee.ml" 48 1115 1127
+type(
+  t
+)
+"wcee.ml" 48 1115 1131 "wcee.ml" 48 1115 1139
+type(
+  string
+)
+"wcee.ml" 45 996 1043 "wcee.ml" 48 1115 1140
+type(
+  string
+)
+"wcee.ml" 45 996 1016 "wcee.ml" 48 1115 1140
+call(
+  tail
+)
+type(
+  unit
+)
+"wcee.ml" 49 1141 1147 "wcee.ml" 49 1141 1154
+type(
+  'a -> 'a -> int
+)
+ident(
+  def compare "wcee.ml" 49 1141 1175 "wcee.ml" 50 1176 1179
+)
+"wcee.ml" 49 1141 1157 "wcee.ml" 49 1141 1175
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"wcee.ml" 67 1412 1418 "wcee.ml" 67 1412 1423
+type(
+  Format.formatter -> t -> unit
+)
+ident(
+  def print "wcee.ml" 71 1737 1739 "wcee.ml" 90 2434 2437
+)
+"wcee.ml" 67 1412 1424 "wcee.ml" 67 1412 1427
+type(
+  Format.formatter
+)
+ident(
+  def fmt "wcee.ml" 67 1412 1428 "wcee.ml" 70 1643 1736
+)
+"wcee.ml" 67 1412 1428 "wcee.ml" 67 1412 1429
+type(
+  t
+)
+ident(
+  def i "wcee.ml" 67 1412 1432 "wcee.ml" 70 1643 1736
+)
+"wcee.ml" 67 1412 1432 "wcee.ml" 67 1412 1454
+type(
+  Format.formatter -> string -> unit
+)
+ident(
+  ext_ref Format.pp_print_string
+)
+"wcee.ml" 67 1412 1455 "wcee.ml" 67 1412 1458
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "wcee.ml" 67 1412 1424 "wcee.ml" 67 1412 1427
+)
+"wcee.ml" 67 1412 1466 "wcee.ml" 67 1412 1467
+type(
+  t
+)
+ident(
+  int_ref i "wcee.ml" 67 1412 1428 "wcee.ml" 67 1412 1429
+)
+"wcee.ml" 68 1473 1479 "wcee.ml" 68 1473 1487
+type(
+  t
+)
+"wcee.ml" 68 1473 1491 "wcee.ml" 68 1473 1501
+type(
+  string
+)
+"wcee.ml" 68 1473 1504 "wcee.ml" 68 1473 1508
+type(
+  t
+)
+"wcee.ml" 68 1473 1512 "wcee.ml" 68 1473 1518
+type(
+  string
+)
+"wcee.ml" 68 1473 1521 "wcee.ml" 68 1473 1524
+type(
+  t
+)
+"wcee.ml" 68 1473 1528 "wcee.ml" 68 1473 1533
+type(
+  string
+)
+"wcee.ml" 69 1534 1540 "wcee.ml" 69 1534 1546
+type(
+  t
+)
+"wcee.ml" 69 1534 1550 "wcee.ml" 69 1534 1558
+type(
+  string
+)
+"wcee.ml" 69 1534 1561 "wcee.ml" 69 1534 1569
+type(
+  t
+)
+"wcee.ml" 69 1534 1573 "wcee.ml" 69 1534 1583
+type(
+  string
+)
+"wcee.ml" 69 1534 1586 "wcee.ml" 69 1534 1592
+type(
+  t
+)
+"wcee.ml" 69 1534 1596 "wcee.ml" 69 1534 1604
+type(
+  string
+)
+"wcee.ml" 69 1534 1607 "wcee.ml" 69 1534 1611
+type(
+  t
+)
+"wcee.ml" 69 1534 1615 "wcee.ml" 69 1534 1621
+type(
+  string
+)
+"wcee.ml" 69 1534 1624 "wcee.ml" 69 1534 1630
+type(
+  t
+)
+"wcee.ml" 69 1534 1634 "wcee.ml" 69 1534 1642
+type(
+  string
+)
+"wcee.ml" 70 1643 1649 "wcee.ml" 70 1643 1656
+type(
+  t
+)
+"wcee.ml" 70 1643 1660 "wcee.ml" 70 1643 1669
+type(
+  string
+)
+"wcee.ml" 70 1643 1672 "wcee.ml" 70 1643 1676
+type(
+  t
+)
+"wcee.ml" 70 1643 1680 "wcee.ml" 70 1643 1686
+type(
+  string
+)
+"wcee.ml" 70 1643 1689 "wcee.ml" 70 1643 1694
+type(
+  t
+)
+"wcee.ml" 70 1643 1698 "wcee.ml" 70 1643 1705
+type(
+  string
+)
+"wcee.ml" 70 1643 1708 "wcee.ml" 70 1643 1719
+type(
+  t
+)
+"wcee.ml" 70 1643 1723 "wcee.ml" 70 1643 1735
+type(
+  string
+)
+"wcee.ml" 67 1412 1459 "wcee.ml" 70 1643 1736
+type(
+  string
+)
+"wcee.ml" 67 1412 1432 "wcee.ml" 70 1643 1736
+call(
+  tail
+)
+type(
+  unit
+)
+"wcee.ml" 71 1737 1743 "wcee.ml" 71 1737 1750
+type(
+  'a -> 'a -> int
+)
+ident(
+  def compare "wcee.ml" 72 1772 1774 "wcee.ml" 90 2434 2437
+)
+"wcee.ml" 71 1737 1753 "wcee.ml" 71 1737 1771
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"wcee.ml" 72 1772 1778 "wcee.ml" 72 1772 1784
+type(
+  t -> CostFamily.t
+)
+ident(
+  def family "wcee.ml" 76 1983 1985 "wcee.ml" 90 2434 2437
+)
+"wcee.ml" 73 1796 1802 "wcee.ml" 73 1796 1810
+type(
+  t
+)
+"wcee.ml" 73 1796 1813 "wcee.ml" 73 1796 1817
+type(
+  t
+)
+"wcee.ml" 73 1796 1802 "wcee.ml" 73 1796 1817
+type(
+  t
+)
+"wcee.ml" 73 1796 1820 "wcee.ml" 73 1796 1823
+type(
+  t
+)
+"wcee.ml" 73 1796 1802 "wcee.ml" 73 1796 1823
+type(
+  t
+)
+"wcee.ml" 73 1796 1826 "wcee.ml" 73 1796 1837
+type(
+  t
+)
+"wcee.ml" 73 1796 1802 "wcee.ml" 73 1796 1837
+type(
+  t
+)
+"wcee.ml" 73 1796 1841 "wcee.ml" 73 1796 1861
+type(
+  CostFamily.t
+)
+"wcee.ml" 74 1862 1868 "wcee.ml" 74 1862 1874
+type(
+  t
+)
+"wcee.ml" 74 1862 1877 "wcee.ml" 74 1862 1885
+type(
+  t
+)
+"wcee.ml" 74 1862 1868 "wcee.ml" 74 1862 1885
+type(
+  t
+)
+"wcee.ml" 74 1862 1888 "wcee.ml" 74 1862 1894
+type(
+  t
+)
+"wcee.ml" 74 1862 1868 "wcee.ml" 74 1862 1894
+type(
+  t
+)
+"wcee.ml" 74 1862 1897 "wcee.ml" 74 1862 1901
+type(
+  t
+)
+"wcee.ml" 74 1862 1868 "wcee.ml" 74 1862 1901
+type(
+  t
+)
+"wcee.ml" 74 1862 1904 "wcee.ml" 74 1862 1910
+type(
+  t
+)
+"wcee.ml" 74 1862 1868 "wcee.ml" 74 1862 1910
+type(
+  t
+)
+"wcee.ml" 74 1862 1914 "wcee.ml" 74 1862 1932
+type(
+  CostFamily.t
+)
+"wcee.ml" 75 1933 1939 "wcee.ml" 75 1933 1946
+type(
+  t
+)
+"wcee.ml" 75 1933 1949 "wcee.ml" 75 1933 1953
+type(
+  t
+)
+"wcee.ml" 75 1933 1939 "wcee.ml" 75 1933 1953
+type(
+  t
+)
+"wcee.ml" 75 1933 1956 "wcee.ml" 75 1933 1961
+type(
+  t
+)
+"wcee.ml" 75 1933 1939 "wcee.ml" 75 1933 1961
+type(
+  t
+)
+"wcee.ml" 75 1933 1965 "wcee.ml" 75 1933 1982
+type(
+  CostFamily.t
+)
+"wcee.ml" 72 1772 1787 "wcee.ml" 75 1933 1982
+type(
+  t -> CostFamily.t
+)
+"wcee.ml" 76 1983 1989 "wcee.ml" 76 1983 2000
+type(
+  t -> float * float
+)
+ident(
+  def cycle_range "wcee.ml" 89 2325 2327 "wcee.ml" 90 2434 2437
+)
+"wcee.ml" 77 2012 2018 "wcee.ml" 77 2012 2026
+type(
+  t
+)
+"wcee.ml" 77 2012 2031 "wcee.ml" 77 2012 2034
+type(
+  float
+)
+"wcee.ml" 77 2012 2036 "wcee.ml" 77 2012 2038
+type(
+  float
+)
+"wcee.ml" 77 2012 2030 "wcee.ml" 77 2012 2039
+type(
+  float * float
+)
+"wcee.ml" 78 2040 2046 "wcee.ml" 78 2040 2050
+type(
+  t
+)
+"wcee.ml" 78 2040 2055 "wcee.ml" 78 2040 2057
+type(
+  float
+)
+"wcee.ml" 78 2040 2059 "wcee.ml" 78 2040 2061
+type(
+  float
+)
+"wcee.ml" 78 2040 2054 "wcee.ml" 78 2040 2062
+type(
+  float * float
+)
+"wcee.ml" 79 2063 2069 "wcee.ml" 79 2063 2072
+type(
+  t
+)
+"wcee.ml" 79 2063 2077 "wcee.ml" 79 2063 2079
+type(
+  float
+)
+"wcee.ml" 79 2063 2081 "wcee.ml" 79 2063 2084
+type(
+  float
+)
+"wcee.ml" 79 2063 2076 "wcee.ml" 79 2063 2085
+type(
+  float * float
+)
+"wcee.ml" 80 2086 2092 "wcee.ml" 80 2086 2098
+type(
+  t
+)
+"wcee.ml" 80 2086 2103 "wcee.ml" 80 2086 2105
+type(
+  float
+)
+"wcee.ml" 80 2086 2107 "wcee.ml" 80 2086 2109
+type(
+  float
+)
+"wcee.ml" 80 2086 2102 "wcee.ml" 80 2086 2110
+type(
+  float * float
+)
+"wcee.ml" 81 2111 2117 "wcee.ml" 81 2111 2125
+type(
+  t
+)
+"wcee.ml" 81 2111 2130 "wcee.ml" 81 2111 2133
+type(
+  float
+)
+"wcee.ml" 81 2111 2135 "wcee.ml" 81 2111 2137
+type(
+  float
+)
+"wcee.ml" 81 2111 2129 "wcee.ml" 81 2111 2138
+type(
+  float * float
+)
+"wcee.ml" 82 2139 2145 "wcee.ml" 82 2139 2151
+type(
+  t
+)
+"wcee.ml" 82 2139 2156 "wcee.ml" 82 2139 2158
+type(
+  float
+)
+"wcee.ml" 82 2139 2160 "wcee.ml" 82 2139 2162
+type(
+  float
+)
+"wcee.ml" 82 2139 2155 "wcee.ml" 82 2139 2163
+type(
+  float * float
+)
+"wcee.ml" 83 2164 2170 "wcee.ml" 83 2164 2174
+type(
+  t
+)
+"wcee.ml" 83 2164 2179 "wcee.ml" 83 2164 2182
+type(
+  float
+)
+"wcee.ml" 83 2164 2184 "wcee.ml" 83 2164 2187
+type(
+  float
+)
+"wcee.ml" 83 2164 2178 "wcee.ml" 83 2164 2188
+type(
+  float * float
+)
+"wcee.ml" 84 2189 2195 "wcee.ml" 84 2189 2201
+type(
+  t
+)
+"wcee.ml" 84 2189 2206 "wcee.ml" 84 2189 2209
+type(
+  float
+)
+"wcee.ml" 84 2189 2211 "wcee.ml" 84 2189 2214
+type(
+  float
+)
+"wcee.ml" 84 2189 2205 "wcee.ml" 84 2189 2215
+type(
+  float * float
+)
+"wcee.ml" 85 2216 2222 "wcee.ml" 85 2216 2229
+type(
+  t
+)
+"wcee.ml" 85 2216 2234 "wcee.ml" 85 2216 2237
+type(
+  float
+)
+"wcee.ml" 85 2216 2239 "wcee.ml" 85 2216 2241
+type(
+  float
+)
+"wcee.ml" 85 2216 2233 "wcee.ml" 85 2216 2242
+type(
+  float * float
+)
+"wcee.ml" 86 2243 2249 "wcee.ml" 86 2243 2253
+type(
+  t
+)
+"wcee.ml" 86 2243 2258 "wcee.ml" 86 2243 2260
+type(
+  float
+)
+"wcee.ml" 86 2243 2262 "wcee.ml" 86 2243 2265
+type(
+  float
+)
+"wcee.ml" 86 2243 2257 "wcee.ml" 86 2243 2266
+type(
+  float * float
+)
+"wcee.ml" 87 2267 2273 "wcee.ml" 87 2267 2278
+type(
+  t
+)
+"wcee.ml" 87 2267 2283 "wcee.ml" 87 2267 2285
+type(
+  float
+)
+"wcee.ml" 87 2267 2287 "wcee.ml" 87 2267 2290
+type(
+  float
+)
+"wcee.ml" 87 2267 2282 "wcee.ml" 87 2267 2291
+type(
+  float * float
+)
+"wcee.ml" 88 2292 2298 "wcee.ml" 88 2292 2309
+type(
+  t
+)
+"wcee.ml" 88 2292 2314 "wcee.ml" 88 2292 2316
+type(
+  float
+)
+"wcee.ml" 88 2292 2318 "wcee.ml" 88 2292 2323
+type(
+  float
+)
+"wcee.ml" 88 2292 2313 "wcee.ml" 88 2292 2324
+type(
+  float * float
+)
+"wcee.ml" 76 1983 2003 "wcee.ml" 88 2292 2324
+type(
+  t -> float * float
+)
+"wcee.ml" 89 2325 2331 "wcee.ml" 89 2325 2334
+type(
+  t list
+)
+ident(
+  def all "wcee.ml" 89 2325 2433 "wcee.ml" 90 2434 2437
+)
+"wcee.ml" 89 2325 2338 "wcee.ml" 89 2325 2346
+type(
+  t
+)
+"wcee.ml" 89 2325 2348 "wcee.ml" 89 2325 2352
+type(
+  t
+)
+"wcee.ml" 89 2325 2354 "wcee.ml" 89 2325 2357
+type(
+  t
+)
+"wcee.ml" 89 2325 2359 "wcee.ml" 89 2325 2365
+type(
+  t
+)
+"wcee.ml" 89 2325 2367 "wcee.ml" 89 2325 2375
+type(
+  t
+)
+"wcee.ml" 89 2325 2377 "wcee.ml" 89 2325 2383
+type(
+  t
+)
+"wcee.ml" 89 2325 2385 "wcee.ml" 89 2325 2389
+type(
+  t
+)
+"wcee.ml" 89 2325 2391 "wcee.ml" 89 2325 2397
+type(
+  t
+)
+"wcee.ml" 89 2325 2399 "wcee.ml" 89 2325 2406
+type(
+  t
+)
+"wcee.ml" 89 2325 2408 "wcee.ml" 89 2325 2412
+type(
+  t
+)
+"wcee.ml" 89 2325 2414 "wcee.ml" 89 2325 2419
+type(
+  t
+)
+"wcee.ml" 89 2325 2421 "wcee.ml" 89 2325 2432
+type(
+  t
+)
+"wcee.ml" 89 2325 2337 "wcee.ml" 89 2325 2433
+type(
+  t list
+)
+"wcee.ml" 96 2551 2567 "wcee.ml" 96 2551 2586
+call(
+  stack
+)
+"wcee.ml" 101 2642 2648 "wcee.ml" 101 2642 2651
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  def add "wcee.ml" 102 2673 2675 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 101 2642 2654 "wcee.ml" 101 2642 2666
+type(
+  (int -> int -> int) -> int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  ext_ref IMap.combine
+)
+"wcee.ml" 101 2642 2667 "wcee.ml" 101 2642 2672
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"wcee.ml" 101 2642 2654 "wcee.ml" 101 2642 2672
+call(
+  stack
+)
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+"wcee.ml" 102 2673 2679 "wcee.ml" 102 2673 2687
+type(
+  (int * IMap.Mappe.key) list -> int IMap.t -> int IMap.t
+)
+ident(
+  def add_list "wcee.ml" 104 2786 2788 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 102 2673 2688 "wcee.ml" 102 2673 2689
+type(
+  (int * IMap.Mappe.key) list
+)
+ident(
+  def l "wcee.ml" 102 2673 2690 "wcee.ml" 103 2735 2785
+)
+"wcee.ml" 102 2673 2690 "wcee.ml" 102 2673 2691
+type(
+  int IMap.t
+)
+ident(
+  def e "wcee.ml" 102 2673 2694 "wcee.ml" 103 2735 2785
+)
+"wcee.ml" 102 2673 2694 "wcee.ml" 102 2673 2709
+type(
+  (int * IMap.Mappe.key -> int IMap.t -> int IMap.t) ->
+  (int * IMap.Mappe.key) list -> int IMap.t -> int IMap.t
+)
+ident(
+  ext_ref List.fold_right
+)
+"wcee.ml" 102 2673 2716 "wcee.ml" 102 2673 2721
+type(
+  int
+)
+ident(
+  def count "wcee.ml" 102 2673 2728 "wcee.ml" 103 2735 2780
+)
+"wcee.ml" 102 2673 2722 "wcee.ml" 102 2673 2726
+type(
+  IMap.Mappe.key
+)
+ident(
+  def item "wcee.ml" 102 2673 2728 "wcee.ml" 103 2735 2780
+)
+"wcee.ml" 102 2673 2715 "wcee.ml" 102 2673 2727
+type(
+  int * IMap.Mappe.key
+)
+"wcee.ml" 102 2673 2728 "wcee.ml" 102 2673 2731
+type(
+  int IMap.t
+)
+ident(
+  def acc "wcee.ml" 103 2735 2739 "wcee.ml" 103 2735 2780
+)
+"wcee.ml" 103 2735 2739 "wcee.ml" 103 2735 2750
+type(
+  (int -> int) -> IMap.Mappe.key -> int IMap.t -> int IMap.t
+)
+ident(
+  ext_ref IMap.update
+)
+"wcee.ml" 103 2735 2756 "wcee.ml" 103 2735 2757
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 103 2735 2761 "wcee.ml" 103 2735 2770
+)
+"wcee.ml" 103 2735 2761 "wcee.ml" 103 2735 2762
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 103 2735 2756 "wcee.ml" 103 2735 2757
+)
+"wcee.ml" 103 2735 2763 "wcee.ml" 103 2735 2764
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"wcee.ml" 103 2735 2765 "wcee.ml" 103 2735 2770
+type(
+  int
+)
+ident(
+  int_ref count "wcee.ml" 102 2673 2716 "wcee.ml" 102 2673 2721
+)
+"wcee.ml" 103 2735 2761 "wcee.ml" 103 2735 2770
+type(
+  int
+)
+"wcee.ml" 103 2735 2751 "wcee.ml" 103 2735 2771
+type(
+  int -> int
+)
+"wcee.ml" 103 2735 2772 "wcee.ml" 103 2735 2776
+type(
+  IMap.Mappe.key
+)
+ident(
+  int_ref item "wcee.ml" 102 2673 2722 "wcee.ml" 102 2673 2726
+)
+"wcee.ml" 103 2735 2777 "wcee.ml" 103 2735 2780
+type(
+  int IMap.t
+)
+ident(
+  int_ref acc "wcee.ml" 102 2673 2728 "wcee.ml" 102 2673 2731
+)
+"wcee.ml" 103 2735 2739 "wcee.ml" 103 2735 2780
+call(
+  tail
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 102 2673 2710 "wcee.ml" 103 2735 2781
+type(
+  int * IMap.Mappe.key -> int IMap.t -> int IMap.t
+)
+"wcee.ml" 103 2735 2782 "wcee.ml" 103 2735 2783
+type(
+  (int * IMap.Mappe.key) list
+)
+ident(
+  int_ref l "wcee.ml" 102 2673 2688 "wcee.ml" 102 2673 2689
+)
+"wcee.ml" 103 2735 2784 "wcee.ml" 103 2735 2785
+type(
+  int IMap.t
+)
+ident(
+  int_ref e "wcee.ml" 102 2673 2690 "wcee.ml" 102 2673 2691
+)
+"wcee.ml" 102 2673 2694 "wcee.ml" 103 2735 2785
+call(
+  tail
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 104 2786 2792 "wcee.ml" 104 2786 2801
+type(
+  int * IMap.Mappe.key -> int IMap.t -> int IMap.t
+)
+ident(
+  def add_items "wcee.ml" 105 2827 2829 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 104 2786 2802 "wcee.ml" 104 2786 2807
+type(
+  int * IMap.Mappe.key
+)
+ident(
+  def items "wcee.ml" 104 2786 2810 "wcee.ml" 104 2786 2826
+)
+"wcee.ml" 104 2786 2810 "wcee.ml" 104 2786 2818
+type(
+  (int * IMap.Mappe.key) list -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref add_list "wcee.ml" 102 2673 2679 "wcee.ml" 102 2673 2687
+)
+"wcee.ml" 104 2786 2820 "wcee.ml" 104 2786 2825
+type(
+  int * IMap.Mappe.key
+)
+ident(
+  int_ref items "wcee.ml" 104 2786 2802 "wcee.ml" 104 2786 2807
+)
+"wcee.ml" 104 2786 2819 "wcee.ml" 104 2786 2826
+type(
+  (int * IMap.Mappe.key) list
+)
+"wcee.ml" 104 2786 2810 "wcee.ml" 104 2786 2826
+call(
+  tail
+)
+type(
+  int IMap.t -> int IMap.t
+)
+"wcee.ml" 105 2827 2833 "wcee.ml" 105 2827 2845
+type(
+  IMap.Mappe.key -> int IMap.t -> int IMap.t
+)
+ident(
+  def add_one_item "wcee.ml" 109 2907 2909 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 105 2827 2846 "wcee.ml" 105 2827 2850
+type(
+  IMap.Mappe.key
+)
+ident(
+  def item "wcee.ml" 105 2827 2853 "wcee.ml" 105 2827 2871
+)
+"wcee.ml" 105 2827 2853 "wcee.ml" 105 2827 2862
+type(
+  int * IMap.Mappe.key -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref add_items "wcee.ml" 104 2786 2792 "wcee.ml" 104 2786 2801
+)
+"wcee.ml" 105 2827 2864 "wcee.ml" 105 2827 2865
+type(
+  int
+)
+"wcee.ml" 105 2827 2866 "wcee.ml" 105 2827 2870
+type(
+  IMap.Mappe.key
+)
+ident(
+  int_ref item "wcee.ml" 105 2827 2846 "wcee.ml" 105 2827 2850
+)
+"wcee.ml" 105 2827 2863 "wcee.ml" 105 2827 2871
+type(
+  int * IMap.Mappe.key
+)
+"wcee.ml" 105 2827 2853 "wcee.ml" 105 2827 2871
+call(
+  tail
+)
+type(
+  int IMap.t -> int IMap.t
+)
+"wcee.ml" 109 2907 2913 "wcee.ml" 109 2907 2920
+type(
+  int IMap.t
+)
+ident(
+  def nothing "wcee.ml" 110 2935 2937 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 109 2907 2923 "wcee.ml" 109 2907 2932
+type(
+  int -> int IMap.t
+)
+ident(
+  ext_ref IMap.make
+)
+"wcee.ml" 109 2907 2933 "wcee.ml" 109 2907 2934
+type(
+  int
+)
+"wcee.ml" 109 2907 2923 "wcee.ml" 109 2907 2934
+call(
+  stack
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 110 2935 2941 "wcee.ml" 110 2935 2951
+type(
+  'a IMap.t -> bool
+)
+ident(
+  def is_nothing "wcee.ml" 111 2974 2976 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 110 2935 2954 "wcee.ml" 110 2935 2973
+type(
+  'a IMap.t -> bool
+)
+ident(
+  ext_ref IMap.has_no_special
+)
+"wcee.ml" 111 2974 2980 "wcee.ml" 111 2974 2984
+type(
+  (int * IMap.Mappe.key) list -> int IMap.t
+)
+ident(
+  def list "wcee.ml" 112 3008 3010 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 111 2974 2985 "wcee.ml" 111 2974 2986
+type(
+  (int * IMap.Mappe.key) list
+)
+ident(
+  def l "wcee.ml" 111 2974 2989 "wcee.ml" 111 2974 3007
+)
+"wcee.ml" 111 2974 2989 "wcee.ml" 111 2974 2997
+type(
+  (int * IMap.Mappe.key) list -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref add_list "wcee.ml" 102 2673 2679 "wcee.ml" 102 2673 2687
+)
+"wcee.ml" 111 2974 2998 "wcee.ml" 111 2974 2999
+type(
+  (int * IMap.Mappe.key) list
+)
+ident(
+  int_ref l "wcee.ml" 111 2974 2985 "wcee.ml" 111 2974 2986
+)
+"wcee.ml" 111 2974 3000 "wcee.ml" 111 2974 3007
+type(
+  int IMap.t
+)
+ident(
+  int_ref nothing "wcee.ml" 109 2907 2913 "wcee.ml" 109 2907 2920
+)
+"wcee.ml" 111 2974 2989 "wcee.ml" 111 2974 3007
+call(
+  tail
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 112 3008 3014 "wcee.ml" 112 3008 3019
+type(
+  int * IMap.Mappe.key -> int IMap.t
+)
+ident(
+  def items "wcee.ml" 113 3052 3054 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 112 3008 3020 "wcee.ml" 112 3008 3025
+type(
+  int * IMap.Mappe.key
+)
+ident(
+  def items "wcee.ml" 112 3008 3028 "wcee.ml" 112 3008 3051
+)
+"wcee.ml" 112 3008 3028 "wcee.ml" 112 3008 3037
+type(
+  int * IMap.Mappe.key -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref add_items "wcee.ml" 104 2786 2792 "wcee.ml" 104 2786 2801
+)
+"wcee.ml" 112 3008 3038 "wcee.ml" 112 3008 3043
+type(
+  int * IMap.Mappe.key
+)
+ident(
+  int_ref items "wcee.ml" 112 3008 3020 "wcee.ml" 112 3008 3025
+)
+"wcee.ml" 112 3008 3044 "wcee.ml" 112 3008 3051
+type(
+  int IMap.t
+)
+ident(
+  int_ref nothing "wcee.ml" 109 2907 2913 "wcee.ml" 109 2907 2920
+)
+"wcee.ml" 112 3008 3028 "wcee.ml" 112 3008 3051
+call(
+  tail
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 113 3052 3058 "wcee.ml" 113 3052 3066
+type(
+  IMap.Mappe.key -> int IMap.t
+)
+ident(
+  def one_item "wcee.ml" 116 3137 3139 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 113 3052 3067 "wcee.ml" 113 3052 3071
+type(
+  IMap.Mappe.key
+)
+ident(
+  def item "wcee.ml" 113 3052 3074 "wcee.ml" 113 3052 3099
+)
+"wcee.ml" 113 3052 3074 "wcee.ml" 113 3052 3086
+type(
+  IMap.Mappe.key -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref add_one_item "wcee.ml" 105 2827 2833 "wcee.ml" 105 2827 2845
+)
+"wcee.ml" 113 3052 3087 "wcee.ml" 113 3052 3091
+type(
+  IMap.Mappe.key
+)
+ident(
+  int_ref item "wcee.ml" 113 3052 3067 "wcee.ml" 113 3052 3071
+)
+"wcee.ml" 113 3052 3092 "wcee.ml" 113 3052 3099
+type(
+  int IMap.t
+)
+ident(
+  int_ref nothing "wcee.ml" 109 2907 2913 "wcee.ml" 109 2907 2920
+)
+"wcee.ml" 113 3052 3074 "wcee.ml" 113 3052 3099
+call(
+  tail
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 116 3137 3143 "wcee.ml" 116 3137 3149
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  def common "wcee.ml" 119 3220 3222 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 116 3137 3152 "wcee.ml" 116 3137 3164
+type(
+  (int -> int -> int) -> int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  ext_ref IMap.combine
+)
+"wcee.ml" 116 3137 3165 "wcee.ml" 116 3137 3168
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.min
+)
+"wcee.ml" 116 3137 3152 "wcee.ml" 116 3137 3168
+call(
+  stack
+)
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+"wcee.ml" 119 3220 3226 "wcee.ml" 119 3220 3232
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  def remove "wcee.ml" 123 3334 3336 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 119 3220 3235 "wcee.ml" 119 3220 3247
+type(
+  (int -> int -> int) -> int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  ext_ref IMap.combine
+)
+"wcee.ml" 119 3220 3253 "wcee.ml" 119 3220 3254
+type(
+  int
+)
+ident(
+  def b "wcee.ml" 119 3220 3255 "wcee.ml" 121 3283 3331
+)
+"wcee.ml" 119 3220 3255 "wcee.ml" 119 3220 3256
+type(
+  int
+)
+ident(
+  def a "wcee.ml" 120 3260 3264 "wcee.ml" 121 3283 3331
+)
+"wcee.ml" 120 3260 3268 "wcee.ml" 120 3260 3271
+type(
+  int
+)
+ident(
+  def rem "wcee.ml" 121 3283 3287 "wcee.ml" 121 3283 3331
+)
+"wcee.ml" 120 3260 3274 "wcee.ml" 120 3260 3275
+type(
+  int
+)
+ident(
+  int_ref a "wcee.ml" 119 3220 3255 "wcee.ml" 119 3220 3256
+)
+"wcee.ml" 120 3260 3276 "wcee.ml" 120 3260 3277
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"wcee.ml" 120 3260 3278 "wcee.ml" 120 3260 3279
+type(
+  int
+)
+ident(
+  int_ref b "wcee.ml" 119 3220 3253 "wcee.ml" 119 3220 3254
+)
+"wcee.ml" 120 3260 3274 "wcee.ml" 120 3260 3279
+type(
+  int
+)
+"wcee.ml" 121 3283 3290 "wcee.ml" 121 3283 3293
+type(
+  int
+)
+ident(
+  int_ref rem "wcee.ml" 120 3260 3268 "wcee.ml" 120 3260 3271
+)
+"wcee.ml" 121 3283 3294 "wcee.ml" 121 3283 3295
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"wcee.ml" 121 3283 3296 "wcee.ml" 121 3283 3297
+type(
+  int
+)
+"wcee.ml" 121 3283 3290 "wcee.ml" 121 3283 3297
+type(
+  bool
+)
+"wcee.ml" 121 3283 3303 "wcee.ml" 121 3283 3311
+type(
+  string -> int
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"wcee.ml" 121 3283 3312 "wcee.ml" 121 3283 3322
+type(
+  string
+)
+"wcee.ml" 121 3283 3303 "wcee.ml" 121 3283 3322
+call(
+  tail
+)
+type(
+  int
+)
+"wcee.ml" 121 3283 3328 "wcee.ml" 121 3283 3331
+type(
+  int
+)
+ident(
+  int_ref rem "wcee.ml" 120 3260 3268 "wcee.ml" 120 3260 3271
+)
+"wcee.ml" 121 3283 3287 "wcee.ml" 121 3283 3331
+type(
+  int
+)
+"wcee.ml" 120 3260 3264 "wcee.ml" 121 3283 3331
+type(
+  int
+)
+"wcee.ml" 119 3220 3248 "wcee.ml" 121 3283 3332
+type(
+  int -> int -> int
+)
+"wcee.ml" 119 3220 3235 "wcee.ml" 121 3283 3332
+call(
+  stack
+)
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+"wcee.ml" 123 3334 3340 "wcee.ml" 123 3334 3350
+type(
+  int -> int IMap.t -> int IMap.t
+)
+ident(
+  def multiplyBy "wcee.ml" 129 3446 3448 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 123 3334 3351 "wcee.ml" 123 3334 3352
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 124 3355 3359 "wcee.ml" 125 3376 3405
+)
+"wcee.ml" 124 3355 3367 "wcee.ml" 124 3355 3368
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 123 3334 3351 "wcee.ml" 123 3334 3352
+)
+"wcee.ml" 124 3355 3369 "wcee.ml" 124 3355 3371
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( >= )
+)
+"wcee.ml" 124 3355 3372 "wcee.ml" 124 3355 3373
+type(
+  int
+)
+"wcee.ml" 124 3355 3366 "wcee.ml" 124 3355 3374
+type(
+  bool
+)
+"wcee.ml" 124 3355 3359 "wcee.ml" 124 3355 3374
+type(
+  unit
+)
+"wcee.ml" 125 3376 3380 "wcee.ml" 125 3376 3388
+type(
+  (int -> int) -> int IMap.t -> int IMap.t
+)
+ident(
+  ext_ref IMap.map
+)
+"wcee.ml" 125 3376 3394 "wcee.ml" 125 3376 3395
+type(
+  int
+)
+ident(
+  def x "wcee.ml" 125 3376 3399 "wcee.ml" 125 3376 3404
+)
+"wcee.ml" 125 3376 3399 "wcee.ml" 125 3376 3400
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 123 3334 3351 "wcee.ml" 123 3334 3352
+)
+"wcee.ml" 125 3376 3401 "wcee.ml" 125 3376 3402
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( * )
+)
+"wcee.ml" 125 3376 3403 "wcee.ml" 125 3376 3404
+type(
+  int
+)
+ident(
+  int_ref x "wcee.ml" 125 3376 3394 "wcee.ml" 125 3376 3395
+)
+"wcee.ml" 125 3376 3399 "wcee.ml" 125 3376 3404
+type(
+  int
+)
+"wcee.ml" 125 3376 3389 "wcee.ml" 125 3376 3405
+type(
+  int -> int
+)
+"wcee.ml" 125 3376 3380 "wcee.ml" 125 3376 3405
+call(
+  tail
+)
+type(
+  int IMap.t -> int IMap.t
+)
+"wcee.ml" 124 3355 3359 "wcee.ml" 125 3376 3405
+type(
+  int IMap.t -> int IMap.t
+)
+"wcee.ml" 129 3446 3452 "wcee.ml" 129 3446 3456
+type(
+  (IMap.Mappe.key -> float) -> int IMap.t -> float
+)
+ident(
+  def eval "wcee.ml" 130 3552 3554 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 129 3446 3457 "wcee.ml" 129 3446 3461
+type(
+  IMap.Mappe.key -> float
+)
+ident(
+  def cost "wcee.ml" 129 3446 3462 "wcee.ml" 129 3446 3551
+)
+"wcee.ml" 129 3446 3462 "wcee.ml" 129 3446 3464
+type(
+  int IMap.t
+)
+ident(
+  def ct "wcee.ml" 129 3446 3467 "wcee.ml" 129 3446 3551
+)
+"wcee.ml" 129 3446 3467 "wcee.ml" 129 3446 3484
+type(
+  (IMap.Mappe.key -> int -> float -> float) -> int IMap.t -> float -> float
+)
+ident(
+  ext_ref IMap.fold_special
+)
+"wcee.ml" 129 3446 3490 "wcee.ml" 129 3446 3494
+type(
+  IMap.Mappe.key
+)
+ident(
+  def item "wcee.ml" 129 3446 3495 "wcee.ml" 129 3446 3544
+)
+"wcee.ml" 129 3446 3495 "wcee.ml" 129 3446 3497
+type(
+  int
+)
+ident(
+  def nb "wcee.ml" 129 3446 3498 "wcee.ml" 129 3446 3544
+)
+"wcee.ml" 129 3446 3498 "wcee.ml" 129 3446 3501
+type(
+  float
+)
+ident(
+  def acc "wcee.ml" 129 3446 3505 "wcee.ml" 129 3446 3544
+)
+"wcee.ml" 129 3446 3505 "wcee.ml" 129 3446 3508
+type(
+  float
+)
+ident(
+  int_ref acc "wcee.ml" 129 3446 3498 "wcee.ml" 129 3446 3501
+)
+"wcee.ml" 129 3446 3509 "wcee.ml" 129 3446 3511
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( +. )
+)
+"wcee.ml" 129 3446 3513 "wcee.ml" 129 3446 3525
+type(
+  int -> float
+)
+ident(
+  ext_ref Pervasives.float_of_int
+)
+"wcee.ml" 129 3446 3526 "wcee.ml" 129 3446 3528
+type(
+  int
+)
+ident(
+  int_ref nb "wcee.ml" 129 3446 3495 "wcee.ml" 129 3446 3497
+)
+"wcee.ml" 129 3446 3512 "wcee.ml" 129 3446 3529
+type(
+  float
+)
+"wcee.ml" 129 3446 3530 "wcee.ml" 129 3446 3532
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( *. )
+)
+"wcee.ml" 129 3446 3534 "wcee.ml" 129 3446 3538
+type(
+  IMap.Mappe.key -> float
+)
+ident(
+  int_ref cost "wcee.ml" 129 3446 3457 "wcee.ml" 129 3446 3461
+)
+"wcee.ml" 129 3446 3539 "wcee.ml" 129 3446 3543
+type(
+  IMap.Mappe.key
+)
+ident(
+  int_ref item "wcee.ml" 129 3446 3490 "wcee.ml" 129 3446 3494
+)
+"wcee.ml" 129 3446 3533 "wcee.ml" 129 3446 3544
+call(
+  stack
+)
+type(
+  float
+)
+"wcee.ml" 129 3446 3512 "wcee.ml" 129 3446 3544
+type(
+  float
+)
+"wcee.ml" 129 3446 3505 "wcee.ml" 129 3446 3544
+type(
+  float
+)
+"wcee.ml" 129 3446 3485 "wcee.ml" 129 3446 3545
+type(
+  IMap.Mappe.key -> int -> float -> float
+)
+"wcee.ml" 129 3446 3546 "wcee.ml" 129 3446 3548
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct "wcee.ml" 129 3446 3462 "wcee.ml" 129 3446 3464
+)
+"wcee.ml" 129 3446 3549 "wcee.ml" 129 3446 3551
+type(
+  float
+)
+"wcee.ml" 129 3446 3467 "wcee.ml" 129 3446 3551
+call(
+  tail
+)
+type(
+  float
+)
+"wcee.ml" 130 3552 3558 "wcee.ml" 130 3552 3568
+type(
+  int IMap.t -> float
+)
+ident(
+  def cheap_eval "wcee.ml" 131 3629 3631 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 130 3552 3571 "wcee.ml" 130 3552 3575
+type(
+  (IMap.Mappe.key -> float) -> int IMap.t -> float
+)
+ident(
+  int_ref eval "wcee.ml" 129 3446 3452 "wcee.ml" 129 3446 3456
+)
+"wcee.ml" 130 3552 3581 "wcee.ml" 130 3552 3585
+type(
+  IMap.Mappe.key
+)
+ident(
+  def item "wcee.ml" 130 3552 3589 "wcee.ml" 130 3552 3627
+)
+"wcee.ml" 130 3552 3589 "wcee.ml" 130 3552 3592
+type(
+  float
+)
+"wcee.ml" 130 3552 3593 "wcee.ml" 130 3552 3595
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( *. )
+)
+"wcee.ml" 130 3552 3596 "wcee.ml" 130 3552 3599
+type(
+  float * float -> float
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"wcee.ml" 130 3552 3601 "wcee.ml" 130 3552 3621
+type(
+  IMap.Mappe.key -> float * float
+)
+ident(
+  int_ref CostItem.cycle_range "wcee.ml" 76 1983 1989 "wcee.ml" 76 1983 2000
+)
+"wcee.ml" 130 3552 3622 "wcee.ml" 130 3552 3626
+type(
+  IMap.Mappe.key
+)
+ident(
+  int_ref item "wcee.ml" 130 3552 3581 "wcee.ml" 130 3552 3585
+)
+"wcee.ml" 130 3552 3600 "wcee.ml" 130 3552 3627
+call(
+  stack
+)
+type(
+  float * float
+)
+"wcee.ml" 130 3552 3596 "wcee.ml" 130 3552 3627
+type(
+  float
+)
+"wcee.ml" 130 3552 3589 "wcee.ml" 130 3552 3627
+type(
+  float
+)
+"wcee.ml" 130 3552 3576 "wcee.ml" 130 3552 3628
+type(
+  IMap.Mappe.key -> float
+)
+"wcee.ml" 130 3552 3571 "wcee.ml" 130 3552 3628
+call(
+  stack
+)
+type(
+  int IMap.t -> float
+)
+"wcee.ml" 131 3629 3635 "wcee.ml" 131 3629 3645
+type(
+  int IMap.t -> float
+)
+ident(
+  def expen_eval "wcee.ml" 134 3753 3755 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 131 3629 3648 "wcee.ml" 131 3629 3652
+type(
+  (IMap.Mappe.key -> float) -> int IMap.t -> float
+)
+ident(
+  int_ref eval "wcee.ml" 129 3446 3452 "wcee.ml" 129 3446 3456
+)
+"wcee.ml" 131 3629 3658 "wcee.ml" 131 3629 3662
+type(
+  IMap.Mappe.key
+)
+ident(
+  def item "wcee.ml" 131 3629 3666 "wcee.ml" 131 3629 3704
+)
+"wcee.ml" 131 3629 3666 "wcee.ml" 131 3629 3669
+type(
+  float
+)
+"wcee.ml" 131 3629 3670 "wcee.ml" 131 3629 3672
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( *. )
+)
+"wcee.ml" 131 3629 3673 "wcee.ml" 131 3629 3676
+type(
+  float * float -> float
+)
+ident(
+  ext_ref Pervasives.snd
+)
+"wcee.ml" 131 3629 3678 "wcee.ml" 131 3629 3698
+type(
+  IMap.Mappe.key -> float * float
+)
+ident(
+  int_ref CostItem.cycle_range "wcee.ml" 76 1983 1989 "wcee.ml" 76 1983 2000
+)
+"wcee.ml" 131 3629 3699 "wcee.ml" 131 3629 3703
+type(
+  IMap.Mappe.key
+)
+ident(
+  int_ref item "wcee.ml" 131 3629 3658 "wcee.ml" 131 3629 3662
+)
+"wcee.ml" 131 3629 3677 "wcee.ml" 131 3629 3704
+call(
+  stack
+)
+type(
+  float * float
+)
+"wcee.ml" 131 3629 3673 "wcee.ml" 131 3629 3704
+type(
+  float
+)
+"wcee.ml" 131 3629 3666 "wcee.ml" 131 3629 3704
+type(
+  float
+)
+"wcee.ml" 131 3629 3653 "wcee.ml" 131 3629 3705
+type(
+  IMap.Mappe.key -> float
+)
+"wcee.ml" 131 3629 3648 "wcee.ml" 131 3629 3705
+call(
+  stack
+)
+type(
+  int IMap.t -> float
+)
+"wcee.ml" 134 3753 3759 "wcee.ml" 134 3753 3764
+type(
+  int IMap.t -> int IMap.t -> Maxima.PosetOrder.t
+)
+ident(
+  def order "wcee.ml" 151 4378 4380 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 134 3753 3765 "wcee.ml" 134 3753 3768
+type(
+  int IMap.t
+)
+ident(
+  def ct1 "wcee.ml" 134 3753 3769 "wcee.ml" 148 4289 4315
+)
+"wcee.ml" 134 3753 3769 "wcee.ml" 134 3753 3772
+type(
+  int IMap.t
+)
+ident(
+  def ct2 "wcee.ml" 135 3775 3779 "wcee.ml" 148 4289 4315
+)
+"wcee.ml" 135 3775 3783 "wcee.ml" 135 3775 3786
+type(
+  int IMap.t
+)
+ident(
+  def ctb "wcee.ml" 136 3807 3811 "wcee.ml" 148 4289 4315
+)
+"wcee.ml" 135 3775 3789 "wcee.ml" 135 3775 3795
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref common "wcee.ml" 116 3137 3143 "wcee.ml" 116 3137 3149
+)
+"wcee.ml" 135 3775 3796 "wcee.ml" 135 3775 3799
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct1 "wcee.ml" 134 3753 3765 "wcee.ml" 134 3753 3768
+)
+"wcee.ml" 135 3775 3800 "wcee.ml" 135 3775 3803
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct2 "wcee.ml" 134 3753 3769 "wcee.ml" 134 3753 3772
+)
+"wcee.ml" 135 3775 3789 "wcee.ml" 135 3775 3803
+call(
+  stack
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 136 3807 3815 "wcee.ml" 136 3807 3821
+type(
+  int IMap.t
+)
+ident(
+  def ct1rem "wcee.ml" 137 3842 3846 "wcee.ml" 148 4289 4315
+)
+"wcee.ml" 136 3807 3824 "wcee.ml" 136 3807 3830
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref remove "wcee.ml" 119 3220 3226 "wcee.ml" 119 3220 3232
+)
+"wcee.ml" 136 3807 3831 "wcee.ml" 136 3807 3834
+type(
+  int IMap.t
+)
+ident(
+  int_ref ctb "wcee.ml" 135 3775 3783 "wcee.ml" 135 3775 3786
+)
+"wcee.ml" 136 3807 3835 "wcee.ml" 136 3807 3838
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct1 "wcee.ml" 134 3753 3765 "wcee.ml" 134 3753 3768
+)
+"wcee.ml" 136 3807 3824 "wcee.ml" 136 3807 3838
+call(
+  stack
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 137 3842 3850 "wcee.ml" 137 3842 3856
+type(
+  int IMap.t
+)
+ident(
+  def ct2rem "wcee.ml" 138 3877 3881 "wcee.ml" 148 4289 4315
+)
+"wcee.ml" 137 3842 3859 "wcee.ml" 137 3842 3865
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref remove "wcee.ml" 119 3220 3226 "wcee.ml" 119 3220 3232
+)
+"wcee.ml" 137 3842 3866 "wcee.ml" 137 3842 3869
+type(
+  int IMap.t
+)
+ident(
+  int_ref ctb "wcee.ml" 135 3775 3783 "wcee.ml" 135 3775 3786
+)
+"wcee.ml" 137 3842 3870 "wcee.ml" 137 3842 3873
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct2 "wcee.ml" 134 3753 3769 "wcee.ml" 134 3753 3772
+)
+"wcee.ml" 137 3842 3859 "wcee.ml" 137 3842 3873
+call(
+  stack
+)
+type(
+  int IMap.t
+)
+"wcee.ml" 139 3911 3921 "wcee.ml" 139 3911 3931
+type(
+  int IMap.t -> bool
+)
+ident(
+  int_ref is_nothing "wcee.ml" 110 2935 2941 "wcee.ml" 110 2935 2951
+)
+"wcee.ml" 139 3911 3932 "wcee.ml" 139 3911 3938
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct1rem "wcee.ml" 136 3807 3815 "wcee.ml" 136 3807 3821
+)
+"wcee.ml" 139 3911 3921 "wcee.ml" 139 3911 3938
+call(
+  stack
+)
+type(
+  bool
+)
+"wcee.ml" 139 3911 3940 "wcee.ml" 139 3911 3950
+type(
+  int IMap.t -> bool
+)
+ident(
+  int_ref is_nothing "wcee.ml" 110 2935 2941 "wcee.ml" 110 2935 2951
+)
+"wcee.ml" 139 3911 3951 "wcee.ml" 139 3911 3957
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct2rem "wcee.ml" 137 3842 3850 "wcee.ml" 137 3842 3856
+)
+"wcee.ml" 139 3911 3940 "wcee.ml" 139 3911 3957
+call(
+  stack
+)
+type(
+  bool
+)
+"wcee.ml" 139 3911 3921 "wcee.ml" 139 3911 3957
+type(
+  bool * bool
+)
+"wcee.ml" 140 3989 3995 "wcee.ml" 140 3989 3999
+type(
+  bool
+)
+"wcee.ml" 140 3989 4001 "wcee.ml" 140 3989 4005
+type(
+  bool
+)
+"wcee.ml" 140 3989 3995 "wcee.ml" 140 3989 4005
+type(
+  bool * bool
+)
+"wcee.ml" 140 3989 4009 "wcee.ml" 140 3989 4011
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 141 4012 4018 "wcee.ml" 141 4012 4022
+type(
+  bool
+)
+"wcee.ml" 141 4012 4024 "wcee.ml" 141 4012 4029
+type(
+  bool
+)
+"wcee.ml" 141 4012 4018 "wcee.ml" 141 4012 4029
+type(
+  bool * bool
+)
+"wcee.ml" 141 4012 4033 "wcee.ml" 141 4012 4035
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 142 4036 4042 "wcee.ml" 142 4036 4047
+type(
+  bool
+)
+"wcee.ml" 142 4036 4049 "wcee.ml" 142 4036 4053
+type(
+  bool
+)
+"wcee.ml" 142 4036 4042 "wcee.ml" 142 4036 4053
+type(
+  bool * bool
+)
+"wcee.ml" 142 4036 4057 "wcee.ml" 142 4036 4059
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 143 4060 4066 "wcee.ml" 143 4060 4071
+type(
+  bool
+)
+"wcee.ml" 143 4060 4073 "wcee.ml" 143 4060 4078
+type(
+  bool
+)
+"wcee.ml" 143 4060 4066 "wcee.ml" 143 4060 4078
+type(
+  bool * bool
+)
+"wcee.ml" 144 4082 4094 "wcee.ml" 144 4082 4104
+type(
+  int IMap.t -> float
+)
+ident(
+  int_ref expen_eval "wcee.ml" 131 3629 3635 "wcee.ml" 131 3629 3645
+)
+"wcee.ml" 144 4082 4105 "wcee.ml" 144 4082 4111
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct1rem "wcee.ml" 136 3807 3815 "wcee.ml" 136 3807 3821
+)
+"wcee.ml" 144 4082 4094 "wcee.ml" 144 4082 4111
+call(
+  stack
+)
+type(
+  float
+)
+"wcee.ml" 144 4082 4112 "wcee.ml" 144 4082 4113
+type(
+  float -> float -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"wcee.ml" 144 4082 4114 "wcee.ml" 144 4082 4124
+type(
+  int IMap.t -> float
+)
+ident(
+  int_ref cheap_eval "wcee.ml" 130 3552 3558 "wcee.ml" 130 3552 3568
+)
+"wcee.ml" 144 4082 4125 "wcee.ml" 144 4082 4131
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct2rem "wcee.ml" 137 3842 3850 "wcee.ml" 137 3842 3856
+)
+"wcee.ml" 144 4082 4114 "wcee.ml" 144 4082 4131
+call(
+  stack
+)
+type(
+  float
+)
+"wcee.ml" 144 4082 4094 "wcee.ml" 144 4082 4131
+type(
+  bool
+)
+"wcee.ml" 144 4082 4133 "wcee.ml" 144 4082 4143
+type(
+  int IMap.t -> float
+)
+ident(
+  int_ref expen_eval "wcee.ml" 131 3629 3635 "wcee.ml" 131 3629 3645
+)
+"wcee.ml" 144 4082 4144 "wcee.ml" 144 4082 4150
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct2rem "wcee.ml" 137 3842 3850 "wcee.ml" 137 3842 3856
+)
+"wcee.ml" 144 4082 4133 "wcee.ml" 144 4082 4150
+call(
+  stack
+)
+type(
+  float
+)
+"wcee.ml" 144 4082 4151 "wcee.ml" 144 4082 4152
+type(
+  float -> float -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"wcee.ml" 144 4082 4153 "wcee.ml" 144 4082 4163
+type(
+  int IMap.t -> float
+)
+ident(
+  int_ref cheap_eval "wcee.ml" 130 3552 3558 "wcee.ml" 130 3552 3568
+)
+"wcee.ml" 144 4082 4164 "wcee.ml" 144 4082 4170
+type(
+  int IMap.t
+)
+ident(
+  int_ref ct1rem "wcee.ml" 136 3807 3815 "wcee.ml" 136 3807 3821
+)
+"wcee.ml" 144 4082 4153 "wcee.ml" 144 4082 4170
+call(
+  stack
+)
+type(
+  float
+)
+"wcee.ml" 144 4082 4133 "wcee.ml" 144 4082 4170
+type(
+  bool
+)
+"wcee.ml" 144 4082 4094 "wcee.ml" 144 4082 4170
+type(
+  bool * bool
+)
+"wcee.ml" 145 4212 4220 "wcee.ml" 145 4212 4224
+type(
+  bool
+)
+"wcee.ml" 145 4212 4226 "wcee.ml" 145 4212 4230
+type(
+  bool
+)
+"wcee.ml" 145 4212 4220 "wcee.ml" 145 4212 4230
+type(
+  bool * bool
+)
+"wcee.ml" 145 4212 4234 "wcee.ml" 145 4212 4236
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 146 4237 4245 "wcee.ml" 146 4237 4249
+type(
+  bool
+)
+"wcee.ml" 146 4237 4251 "wcee.ml" 146 4237 4256
+type(
+  bool
+)
+"wcee.ml" 146 4237 4245 "wcee.ml" 146 4237 4256
+type(
+  bool * bool
+)
+"wcee.ml" 146 4237 4260 "wcee.ml" 146 4237 4262
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 147 4263 4271 "wcee.ml" 147 4263 4276
+type(
+  bool
+)
+"wcee.ml" 147 4263 4278 "wcee.ml" 147 4263 4282
+type(
+  bool
+)
+"wcee.ml" 147 4263 4271 "wcee.ml" 147 4263 4282
+type(
+  bool * bool
+)
+"wcee.ml" 147 4263 4286 "wcee.ml" 147 4263 4288
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 148 4289 4297 "wcee.ml" 148 4289 4302
+type(
+  bool
+)
+"wcee.ml" 148 4289 4304 "wcee.ml" 148 4289 4309
+type(
+  bool
+)
+"wcee.ml" 148 4289 4297 "wcee.ml" 148 4289 4309
+type(
+  bool * bool
+)
+"wcee.ml" 148 4289 4313 "wcee.ml" 148 4289 4315
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 144 4082 4088 "wcee.ml" 148 4289 4315
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 139 3911 3915 "wcee.ml" 148 4289 4315
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 137 3842 3846 "wcee.ml" 148 4289 4315
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 136 3807 3811 "wcee.ml" 148 4289 4315
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 135 3775 3779 "wcee.ml" 148 4289 4315
+type(
+  Maxima.PosetOrder.t
+)
+"wcee.ml" 151 4378 4384 "wcee.ml" 151 4378 4387
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  def glb "wcee.ml" 154 4426 4428 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 151 4378 4390 "wcee.ml" 151 4378 4396
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  int_ref common "wcee.ml" 116 3137 3143 "wcee.ml" 116 3137 3149
+)
+"wcee.ml" 154 4426 4432 "wcee.ml" 154 4426 4435
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  def lub "wcee.ml" 157 4481 4483 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 154 4426 4438 "wcee.ml" 154 4426 4450
+type(
+  (int -> int -> int) -> int IMap.t -> int IMap.t -> int IMap.t
+)
+ident(
+  ext_ref IMap.combine
+)
+"wcee.ml" 154 4426 4451 "wcee.ml" 154 4426 4454
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.max
+)
+"wcee.ml" 154 4426 4438 "wcee.ml" 154 4426 4454
+call(
+  stack
+)
+type(
+  int IMap.t -> int IMap.t -> int IMap.t
+)
+"wcee.ml" 157 4481 4487 "wcee.ml" 157 4481 4492
+type(
+  Format.formatter -> int IMap.t -> unit
+)
+ident(
+  def print "wcee.ml" 160 4566 4568 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 157 4481 4495 "wcee.ml" 157 4481 4505
+type(
+  ?first:(unit, Format.formatter, unit) format ->
+  ?sep:(unit, Format.formatter, unit) format ->
+  ?last:(unit, Format.formatter, unit) format ->
+  ?firstbind:(unit, Format.formatter, unit) format ->
+  ?sepbind:(unit, Format.formatter, unit) format ->
+  ?lastbind:(unit, Format.formatter, unit) format ->
+  ?others:(unit, Format.formatter, unit) format ->
+  (Format.formatter -> CostItem.t -> unit) ->
+  (Format.formatter -> int -> unit) -> Format.formatter -> int IMap.t -> unit
+)
+ident(
+  ext_ref IMap.print
+)
+"wcee.ml" 157 4481 4506 "wcee.ml" 157 4481 4520
+type(
+  Format.formatter -> CostItem.t -> unit
+)
+ident(
+  int_ref CostItem.print "wcee.ml" 67 1412 1418 "wcee.ml" 67 1412 1423
+)
+"wcee.ml" 157 4481 4521 "wcee.ml" 157 4481 4540
+type(
+  Format.formatter -> int -> unit
+)
+ident(
+  ext_ref Format.pp_print_int
+)
+"wcee.ml" 157 4481 4495 "wcee.ml" 157 4481 4540
+call(
+  stack
+)
+type(
+  Format.formatter -> int IMap.t -> unit
+)
+"wcee.ml" 160 4566 4572 "wcee.ml" 160 4566 4582
+type(
+  Format.formatter -> int IMap.t -> unit
+)
+ident(
+  def print_list "wcee.ml" 160 4566 4695 "wcee.ml" 161 4696 4699
+)
+"wcee.ml" 160 4566 4585 "wcee.ml" 160 4566 4600
+type(
+  ?first:(unit, Format.formatter, unit) format ->
+  ?sep:(unit, Format.formatter, unit) format ->
+  ?last:(unit, Format.formatter, unit) format ->
+  ?firstbind:(unit, Format.formatter, unit) format ->
+  ?sepbind:(unit, Format.formatter, unit) format ->
+  ?lastbind:(unit, Format.formatter, unit) format ->
+  (Format.formatter -> IMap.Mappe.key -> unit) ->
+  IMap.Mappe.key list ->
+  (Format.formatter -> int -> unit) -> Format.formatter -> int IMap.t -> unit
+)
+ident(
+  ext_ref IMap.print_list
+)
+"wcee.ml" 160 4566 4608 "wcee.ml" 160 4566 4610
+type(
+  (unit, Format.formatter, unit) format
+)
+"wcee.ml" 160 4566 4622 "wcee.ml" 160 4566 4627
+type(
+  (unit, Format.formatter, unit) format
+)
+"wcee.ml" 160 4566 4634 "wcee.ml" 160 4566 4636
+type(
+  (unit, Format.formatter, unit) format
+)
+"wcee.ml" 160 4566 4642 "wcee.ml" 160 4566 4647
+type(
+  (unit, Format.formatter, unit) format
+)
+"wcee.ml" 160 4566 4648 "wcee.ml" 160 4566 4662
+type(
+  Format.formatter -> IMap.Mappe.key -> unit
+)
+ident(
+  int_ref CostItem.print "wcee.ml" 67 1412 1418 "wcee.ml" 67 1412 1423
+)
+"wcee.ml" 160 4566 4663 "wcee.ml" 160 4566 4675
+type(
+  IMap.Mappe.key list
+)
+ident(
+  int_ref CostItem.all "wcee.ml" 89 2325 2331 "wcee.ml" 89 2325 2334
+)
+"wcee.ml" 160 4566 4676 "wcee.ml" 160 4566 4695
+type(
+  Format.formatter -> int -> unit
+)
+ident(
+  ext_ref Format.pp_print_int
+)
+"wcee.ml" 160 4566 4585 "wcee.ml" 160 4566 4695
+call(
+  stack
+)
+type(
+  Format.formatter -> int IMap.t -> unit
+)
+"wcee.ml" 165 4765 4785 "wcee.ml" 165 4765 4807
+call(
+  stack
+)
+"wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def nothing "wcee.ml" 169 4879 4881 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 168 4831 4847 "wcee.ml" 168 4831 4860
+type(
+  int ItemCount.IMap.t -> int ItemCount.IMap.t list
+)
+ident(
+  ext_ref MaxCount.just
+)
+"wcee.ml" 168 4831 4861 "wcee.ml" 168 4831 4878
+type(
+  int ItemCount.IMap.t
+)
+ident(
+  int_ref ItemCount.nothing "wcee.ml" 109 2907 2913 "wcee.ml" 109 2907 2920
+)
+"wcee.ml" 168 4831 4847 "wcee.ml" 168 4831 4878
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+type(
+  ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t list
+)
+ident(
+  def one_item "wcee.ml" 170 4937 4939 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 169 4879 4894 "wcee.ml" 169 4879 4896
+type(
+  ItemCount.IMap.Mappe.key
+)
+ident(
+  def it "wcee.ml" 169 4879 4899 "wcee.ml" 169 4879 4936
+)
+"wcee.ml" 169 4879 4899 "wcee.ml" 169 4879 4912
+type(
+  int ItemCount.IMap.t -> int ItemCount.IMap.t list
+)
+ident(
+  ext_ref MaxCount.just
+)
+"wcee.ml" 169 4879 4914 "wcee.ml" 169 4879 4932
+type(
+  ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t
+)
+ident(
+  int_ref ItemCount.one_item "wcee.ml" 113 3052 3058 "wcee.ml" 113 3052 3066
+)
+"wcee.ml" 169 4879 4933 "wcee.ml" 169 4879 4935
+type(
+  ItemCount.IMap.Mappe.key
+)
+ident(
+  int_ref it "wcee.ml" 169 4879 4894 "wcee.ml" 169 4879 4896
+)
+"wcee.ml" 169 4879 4913 "wcee.ml" 169 4879 4936
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t
+)
+"wcee.ml" 169 4879 4899 "wcee.ml" 169 4879 4936
+call(
+  tail
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 170 4937 4943 "wcee.ml" 170 4937 4948
+type(
+  int * ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t list
+)
+ident(
+  def items "wcee.ml" 171 4995 4997 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 170 4937 4949 "wcee.ml" 170 4937 4954
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+ident(
+  def items "wcee.ml" 170 4937 4957 "wcee.ml" 170 4937 4994
+)
+"wcee.ml" 170 4937 4957 "wcee.ml" 170 4937 4970
+type(
+  int ItemCount.IMap.t -> int ItemCount.IMap.t list
+)
+ident(
+  ext_ref MaxCount.just
+)
+"wcee.ml" 170 4937 4972 "wcee.ml" 170 4937 4987
+type(
+  int * ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t
+)
+ident(
+  int_ref ItemCount.items "wcee.ml" 112 3008 3014 "wcee.ml" 112 3008 3019
+)
+"wcee.ml" 170 4937 4988 "wcee.ml" 170 4937 4993
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+ident(
+  int_ref items "wcee.ml" 170 4937 4949 "wcee.ml" 170 4937 4954
+)
+"wcee.ml" 170 4937 4971 "wcee.ml" 170 4937 4994
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t
+)
+"wcee.ml" 170 4937 4957 "wcee.ml" 170 4937 4994
+call(
+  tail
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 171 4995 5001 "wcee.ml" 171 4995 5005
+type(
+  (int * ItemCount.IMap.Mappe.key) list -> int ItemCount.IMap.t list
+)
+ident(
+  def list "wcee.ml" 172 5043 5045 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 171 4995 5006 "wcee.ml" 171 4995 5007
+type(
+  (int * ItemCount.IMap.Mappe.key) list
+)
+ident(
+  def l "wcee.ml" 171 4995 5010 "wcee.ml" 171 4995 5042
+)
+"wcee.ml" 171 4995 5010 "wcee.ml" 171 4995 5023
+type(
+  int ItemCount.IMap.t -> int ItemCount.IMap.t list
+)
+ident(
+  ext_ref MaxCount.just
+)
+"wcee.ml" 171 4995 5025 "wcee.ml" 171 4995 5039
+type(
+  (int * ItemCount.IMap.Mappe.key) list -> int ItemCount.IMap.t
+)
+ident(
+  int_ref ItemCount.list "wcee.ml" 111 2974 2980 "wcee.ml" 111 2974 2984
+)
+"wcee.ml" 171 4995 5040 "wcee.ml" 171 4995 5041
+type(
+  (int * ItemCount.IMap.Mappe.key) list
+)
+ident(
+  int_ref l "wcee.ml" 171 4995 5006 "wcee.ml" 171 4995 5007
+)
+"wcee.ml" 171 4995 5024 "wcee.ml" 171 4995 5042
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t
+)
+"wcee.ml" 171 4995 5010 "wcee.ml" 171 4995 5042
+call(
+  tail
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+type(
+  int ItemCount.IMap.t list -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  def add "wcee.ml" 175 5147 5149 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 172 5043 5053 "wcee.ml" 172 5043 5056
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def mc1 "wcee.ml" 172 5043 5057 "wcee.ml" 174 5140 5146
+)
+"wcee.ml" 172 5043 5057 "wcee.ml" 172 5043 5060
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def mc2 "wcee.ml" 173 5063 5067 "wcee.ml" 174 5140 5146
+)
+"wcee.ml" 173 5063 5071 "wcee.ml" 173 5063 5073
+type(
+  ItemCount.t list
+)
+ident(
+  def mc "wcee.ml" 174 5140 5144 "wcee.ml" 174 5140 5146
+)
+"wcee.ml" 173 5063 5076 "wcee.ml" 173 5063 5092
+type(
+  ?iso1:bool ->
+  ?iso2:bool ->
+  (int ItemCount.IMap.t -> int ItemCount.IMap.t -> ItemCount.t) ->
+  int ItemCount.IMap.t list -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  ext_ref MaxCount.combine
+)
+"wcee.ml" 173 5063 5099 "wcee.ml" 173 5063 5103
+type(
+  bool
+)
+"wcee.ml" 173 5063 5110 "wcee.ml" 173 5063 5114
+type(
+  bool
+)
+"wcee.ml" 173 5063 5115 "wcee.ml" 173 5063 5128
+type(
+  int ItemCount.IMap.t -> int ItemCount.IMap.t -> ItemCount.t
+)
+ident(
+  int_ref ItemCount.add "wcee.ml" 101 2642 2648 "wcee.ml" 101 2642 2651
+)
+"wcee.ml" 173 5063 5129 "wcee.ml" 173 5063 5132
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref mc1 "wcee.ml" 172 5043 5053 "wcee.ml" 172 5043 5056
+)
+"wcee.ml" 173 5063 5133 "wcee.ml" 173 5063 5136
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref mc2 "wcee.ml" 172 5043 5057 "wcee.ml" 172 5043 5060
+)
+"wcee.ml" 173 5063 5076 "wcee.ml" 173 5063 5136
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 174 5140 5144 "wcee.ml" 174 5140 5146
+type(
+  ItemCount.t list
+)
+ident(
+  int_ref mc "wcee.ml" 173 5063 5071 "wcee.ml" 173 5063 5073
+)
+"wcee.ml" 173 5063 5067 "wcee.ml" 174 5140 5146
+type(
+  ItemCount.t list
+)
+"wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+type(
+  int ItemCount.IMap.t list list -> int ItemCount.IMap.t list
+)
+ident(
+  def add_all "wcee.ml" 176 5194 5196 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 175 5147 5161 "wcee.ml" 175 5147 5162
+type(
+  int ItemCount.IMap.t list list
+)
+ident(
+  def l "wcee.ml" 175 5147 5165 "wcee.ml" 175 5147 5193
+)
+"wcee.ml" 175 5147 5165 "wcee.ml" 175 5147 5179
+type(
+  (int ItemCount.IMap.t list ->
+   int ItemCount.IMap.t list -> int ItemCount.IMap.t list) ->
+  int ItemCount.IMap.t list ->
+  int ItemCount.IMap.t list list -> int ItemCount.IMap.t list
+)
+ident(
+  ext_ref List.fold_left
+)
+"wcee.ml" 175 5147 5180 "wcee.ml" 175 5147 5183
+type(
+  int ItemCount.IMap.t list ->
+  int ItemCount.IMap.t list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 175 5147 5184 "wcee.ml" 175 5147 5191
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 175 5147 5192 "wcee.ml" 175 5147 5193
+type(
+  int ItemCount.IMap.t list list
+)
+ident(
+  int_ref l "wcee.ml" 175 5147 5161 "wcee.ml" 175 5147 5162
+)
+"wcee.ml" 175 5147 5165 "wcee.ml" 175 5147 5193
+call(
+  tail
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 176 5194 5200 "wcee.ml" 176 5194 5203
+type(
+  ItemCount.t list -> ItemCount.t list -> ItemCount.t list
+)
+ident(
+  def max "wcee.ml" 177 5219 5221 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 176 5194 5206 "wcee.ml" 176 5194 5218
+type(
+  ItemCount.t list -> ItemCount.t list -> ItemCount.t list
+)
+ident(
+  ext_ref MaxCount.max
+)
+"wcee.ml" 177 5219 5225 "wcee.ml" 177 5219 5232
+type(
+  ItemCount.t list list -> ItemCount.t list
+)
+ident(
+  def max_all "wcee.ml" 180 5310 5312 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 178 5244 5250 "wcee.ml" 178 5244 5252
+type(
+  ItemCount.t list list
+)
+"wcee.ml" 178 5244 5256 "wcee.ml" 178 5244 5264
+type(
+  string -> ItemCount.t list
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"wcee.ml" 178 5244 5265 "wcee.ml" 178 5244 5272
+type(
+  string
+)
+"wcee.ml" 178 5244 5256 "wcee.ml" 178 5244 5272
+call(
+  tail
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 179 5273 5279 "wcee.ml" 179 5273 5280
+type(
+  ItemCount.t list
+)
+ident(
+  def x "wcee.ml" 179 5273 5287 "wcee.ml" 179 5273 5309
+)
+"wcee.ml" 179 5273 5282 "wcee.ml" 179 5273 5283
+type(
+  ItemCount.t list list
+)
+ident(
+  def r "wcee.ml" 179 5273 5287 "wcee.ml" 179 5273 5309
+)
+"wcee.ml" 179 5273 5279 "wcee.ml" 179 5273 5283
+type(
+  ItemCount.t list list
+)
+"wcee.ml" 179 5273 5287 "wcee.ml" 179 5273 5301
+type(
+  (ItemCount.t list -> ItemCount.t list -> ItemCount.t list) ->
+  ItemCount.t list -> ItemCount.t list list -> ItemCount.t list
+)
+ident(
+  ext_ref List.fold_left
+)
+"wcee.ml" 179 5273 5302 "wcee.ml" 179 5273 5305
+type(
+  ItemCount.t list -> ItemCount.t list -> ItemCount.t list
+)
+ident(
+  int_ref max "wcee.ml" 176 5194 5200 "wcee.ml" 176 5194 5203
+)
+"wcee.ml" 179 5273 5306 "wcee.ml" 179 5273 5307
+type(
+  ItemCount.t list
+)
+ident(
+  int_ref x "wcee.ml" 179 5273 5279 "wcee.ml" 179 5273 5280
+)
+"wcee.ml" 179 5273 5308 "wcee.ml" 179 5273 5309
+type(
+  ItemCount.t list list
+)
+ident(
+  int_ref r "wcee.ml" 179 5273 5282 "wcee.ml" 179 5273 5283
+)
+"wcee.ml" 179 5273 5287 "wcee.ml" 179 5273 5309
+call(
+  tail
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 177 5219 5235 "wcee.ml" 179 5273 5309
+type(
+  ItemCount.t list list -> ItemCount.t list
+)
+"wcee.ml" 180 5310 5316 "wcee.ml" 180 5310 5322
+type(
+  int ItemCount.IMap.t list -> ItemCount.t * ItemCount.t list
+)
+ident(
+  def decomp "wcee.ml" 185 5450 5452 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 180 5310 5323 "wcee.ml" 180 5310 5325
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def mc "wcee.ml" 181 5328 5332 "wcee.ml" 183 5433 5448
+)
+"wcee.ml" 181 5328 5336 "wcee.ml" 181 5328 5342
+type(
+  ItemCount.t
+)
+ident(
+  def common "wcee.ml" 182 5364 5368 "wcee.ml" 183 5433 5448
+)
+"wcee.ml" 181 5328 5345 "wcee.ml" 181 5328 5357
+type(
+  int ItemCount.IMap.t list -> ItemCount.t
+)
+ident(
+  ext_ref MaxCount.glb
+)
+"wcee.ml" 181 5328 5358 "wcee.ml" 181 5328 5360
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref mc "wcee.ml" 180 5310 5323 "wcee.ml" 180 5310 5325
+)
+"wcee.ml" 181 5328 5345 "wcee.ml" 181 5328 5360
+call(
+  stack
+)
+type(
+  ItemCount.t
+)
+"wcee.ml" 182 5364 5372 "wcee.ml" 182 5364 5375
+type(
+  ItemCount.t list
+)
+ident(
+  def rem "wcee.ml" 183 5433 5437 "wcee.ml" 183 5433 5448
+)
+"wcee.ml" 182 5364 5378 "wcee.ml" 182 5364 5390
+type(
+  ?iso:bool ->
+  (int ItemCount.IMap.t -> ItemCount.t) ->
+  int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  ext_ref MaxCount.map
+)
+"wcee.ml" 182 5364 5396 "wcee.ml" 182 5364 5400
+type(
+  bool
+)
+"wcee.ml" 182 5364 5402 "wcee.ml" 182 5364 5418
+type(
+  int ItemCount.IMap.t -> int ItemCount.IMap.t -> ItemCount.t
+)
+ident(
+  int_ref ItemCount.remove "wcee.ml" 119 3220 3226 "wcee.ml" 119 3220 3232
+)
+"wcee.ml" 182 5364 5419 "wcee.ml" 182 5364 5425
+type(
+  ItemCount.t
+)
+ident(
+  int_ref common "wcee.ml" 181 5328 5336 "wcee.ml" 181 5328 5342
+)
+"wcee.ml" 182 5364 5401 "wcee.ml" 182 5364 5426
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t -> ItemCount.t
+)
+"wcee.ml" 182 5364 5427 "wcee.ml" 182 5364 5429
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref mc "wcee.ml" 180 5310 5323 "wcee.ml" 180 5310 5325
+)
+"wcee.ml" 182 5364 5378 "wcee.ml" 182 5364 5429
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 183 5433 5437 "wcee.ml" 183 5433 5443
+type(
+  ItemCount.t
+)
+ident(
+  int_ref common "wcee.ml" 181 5328 5336 "wcee.ml" 181 5328 5342
+)
+"wcee.ml" 183 5433 5445 "wcee.ml" 183 5433 5448
+type(
+  ItemCount.t list
+)
+ident(
+  int_ref rem "wcee.ml" 182 5364 5372 "wcee.ml" 182 5364 5375
+)
+"wcee.ml" 183 5433 5437 "wcee.ml" 183 5433 5448
+type(
+  ItemCount.t * ItemCount.t list
+)
+"wcee.ml" 182 5364 5368 "wcee.ml" 183 5433 5448
+type(
+  ItemCount.t * ItemCount.t list
+)
+"wcee.ml" 181 5328 5332 "wcee.ml" 183 5433 5448
+type(
+  ItemCount.t * ItemCount.t list
+)
+"wcee.ml" 185 5450 5456 "wcee.ml" 185 5450 5466
+type(
+  ItemCount.t list -> ItemCount.t
+)
+ident(
+  def worst_case "wcee.ml" 187 5489 5491 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 185 5450 5467 "wcee.ml" 185 5450 5469
+type(
+  ItemCount.t list
+)
+ident(
+  def mc "wcee.ml" 185 5450 5472 "wcee.ml" 185 5450 5487
+)
+"wcee.ml" 185 5450 5472 "wcee.ml" 185 5450 5484
+type(
+  ItemCount.t list -> ItemCount.t
+)
+ident(
+  ext_ref MaxCount.lub
+)
+"wcee.ml" 185 5450 5485 "wcee.ml" 185 5450 5487
+type(
+  ItemCount.t list
+)
+ident(
+  int_ref mc "wcee.ml" 185 5450 5467 "wcee.ml" 185 5450 5469
+)
+"wcee.ml" 185 5450 5472 "wcee.ml" 185 5450 5487
+call(
+  tail
+)
+type(
+  ItemCount.t
+)
+"wcee.ml" 187 5489 5495 "wcee.ml" 187 5489 5505
+type(
+  int -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  def multiplyBy "wcee.ml" 189 5549 5551 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 187 5489 5506 "wcee.ml" 187 5489 5507
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 187 5489 5510 "wcee.ml" 187 5489 5547
+)
+"wcee.ml" 187 5489 5510 "wcee.ml" 187 5489 5522
+type(
+  ?iso:bool ->
+  (int ItemCount.IMap.t -> ItemCount.t) ->
+  int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  ext_ref MaxCount.map
+)
+"wcee.ml" 187 5489 5524 "wcee.ml" 187 5489 5544
+type(
+  int -> int ItemCount.IMap.t -> ItemCount.t
+)
+ident(
+  int_ref ItemCount.multiplyBy "wcee.ml" 123 3334 3340 "wcee.ml" 123 3334 3350
+)
+"wcee.ml" 187 5489 5545 "wcee.ml" 187 5489 5546
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 187 5489 5506 "wcee.ml" 187 5489 5507
+)
+"wcee.ml" 187 5489 5523 "wcee.ml" 187 5489 5547
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t -> ItemCount.t
+)
+"wcee.ml" 187 5489 5510 "wcee.ml" 187 5489 5547
+call(
+  tail
+)
+type(
+  int ItemCount.IMap.t list -> ItemCount.t list
+)
+"wcee.ml" 189 5549 5555 "wcee.ml" 189 5549 5562
+type(
+  header:int ItemCount.IMap.t list ->
+  count:int -> body:int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  def of_loop "wcee.ml" 196 5786 5788 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 189 5549 5571 "wcee.ml" 189 5549 5572
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def h "wcee.ml" 189 5549 5573 "wcee.ml" 194 5765 5784
+)
+"wcee.ml" 189 5549 5580 "wcee.ml" 189 5549 5581
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 189 5549 5582 "wcee.ml" 194 5765 5784
+)
+"wcee.ml" 189 5549 5588 "wcee.ml" 189 5549 5589
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def b "wcee.ml" 190 5592 5596 "wcee.ml" 194 5765 5784
+)
+"wcee.ml" 190 5592 5600 "wcee.ml" 190 5592 5601
+type(
+  ItemCount.t list
+)
+ident(
+  def h "wcee.ml" 191 5640 5644 "wcee.ml" 194 5765 5784
+)
+"wcee.ml" 190 5592 5604 "wcee.ml" 190 5592 5607
+type(
+  int ItemCount.IMap.t list -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  int_ref add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 190 5592 5608 "wcee.ml" 190 5592 5609
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref h "wcee.ml" 189 5549 5571 "wcee.ml" 189 5549 5572
+)
+"wcee.ml" 190 5592 5611 "wcee.ml" 190 5592 5619
+type(
+  ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 190 5592 5620 "wcee.ml" 190 5592 5635
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 190 5592 5610 "wcee.ml" 190 5592 5636
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 190 5592 5604 "wcee.ml" 190 5592 5636
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 191 5640 5648 "wcee.ml" 191 5640 5649
+type(
+  ItemCount.t list
+)
+ident(
+  def b "wcee.ml" 192 5690 5694 "wcee.ml" 194 5765 5784
+)
+"wcee.ml" 191 5640 5652 "wcee.ml" 191 5640 5655
+type(
+  int ItemCount.IMap.t list -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  int_ref add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 191 5640 5656 "wcee.ml" 191 5640 5657
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref b "wcee.ml" 189 5549 5588 "wcee.ml" 189 5549 5589
+)
+"wcee.ml" 191 5640 5659 "wcee.ml" 191 5640 5667
+type(
+  ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 191 5640 5668 "wcee.ml" 191 5640 5685
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 191 5640 5658 "wcee.ml" 191 5640 5686
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 191 5640 5652 "wcee.ml" 191 5640 5686
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 192 5690 5698 "wcee.ml" 192 5690 5706
+type(
+  ItemCount.t list
+)
+ident(
+  def one_loop "wcee.ml" 193 5720 5724 "wcee.ml" 194 5765 5784
+)
+"wcee.ml" 192 5690 5709 "wcee.ml" 192 5690 5712
+type(
+  int ItemCount.IMap.t list -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  int_ref add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 192 5690 5713 "wcee.ml" 192 5690 5714
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref b "wcee.ml" 191 5640 5648 "wcee.ml" 191 5640 5649
+)
+"wcee.ml" 192 5690 5715 "wcee.ml" 192 5690 5716
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref h "wcee.ml" 190 5592 5600 "wcee.ml" 190 5592 5601
+)
+"wcee.ml" 192 5690 5709 "wcee.ml" 192 5690 5716
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 193 5720 5728 "wcee.ml" 193 5720 5737
+type(
+  ItemCount.t list
+)
+ident(
+  def all_loops "wcee.ml" 194 5765 5769 "wcee.ml" 194 5765 5784
+)
+"wcee.ml" 193 5720 5740 "wcee.ml" 193 5720 5750
+type(
+  int -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  int_ref multiplyBy "wcee.ml" 187 5489 5495 "wcee.ml" 187 5489 5505
+)
+"wcee.ml" 193 5720 5751 "wcee.ml" 193 5720 5752
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 189 5549 5580 "wcee.ml" 189 5549 5581
+)
+"wcee.ml" 193 5720 5753 "wcee.ml" 193 5720 5761
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref one_loop "wcee.ml" 192 5690 5698 "wcee.ml" 192 5690 5706
+)
+"wcee.ml" 193 5720 5740 "wcee.ml" 193 5720 5761
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 194 5765 5769 "wcee.ml" 194 5765 5772
+type(
+  int ItemCount.IMap.t list -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  int_ref add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 194 5765 5773 "wcee.ml" 194 5765 5774
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref h "wcee.ml" 190 5592 5600 "wcee.ml" 190 5592 5601
+)
+"wcee.ml" 194 5765 5775 "wcee.ml" 194 5765 5784
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref all_loops "wcee.ml" 193 5720 5728 "wcee.ml" 193 5720 5737
+)
+"wcee.ml" 194 5765 5769 "wcee.ml" 194 5765 5784
+call(
+  tail
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 193 5720 5724 "wcee.ml" 194 5765 5784
+type(
+  ItemCount.t list
+)
+"wcee.ml" 192 5690 5694 "wcee.ml" 194 5765 5784
+type(
+  ItemCount.t list
+)
+"wcee.ml" 191 5640 5644 "wcee.ml" 194 5765 5784
+type(
+  ItemCount.t list
+)
+"wcee.ml" 190 5592 5596 "wcee.ml" 194 5765 5784
+type(
+  ItemCount.t list
+)
+"wcee.ml" 196 5786 5792 "wcee.ml" 196 5786 5797
+type(
+  'a -> int ItemCount.IMap.t list -> unit
+)
+ident(
+  def print "wcee.ml" 202 6011 6013 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 196 5786 5798 "wcee.ml" 196 5786 5801
+type(
+  'a
+)
+ident(
+  def fmt "wcee.ml" 196 5786 5802 "wcee.ml" 200 5935 6009
+)
+"wcee.ml" 196 5786 5802 "wcee.ml" 196 5786 5804
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def mc "wcee.ml" 197 5807 5811 "wcee.ml" 200 5935 6009
+)
+"wcee.ml" 197 5807 5815 "wcee.ml" 197 5807 5821
+type(
+  ItemCount.t
+)
+ident(
+  def common "wcee.ml" 198 5849 5853 "wcee.ml" 200 5935 6009
+)
+"wcee.ml" 197 5807 5823 "wcee.ml" 197 5807 5833
+type(
+  ItemCount.t list
+)
+ident(
+  def remainders "wcee.ml" 198 5849 5853 "wcee.ml" 200 5935 6009
+)
+"wcee.ml" 197 5807 5815 "wcee.ml" 197 5807 5833
+type(
+  ItemCount.t * ItemCount.t list
+)
+"wcee.ml" 197 5807 5836 "wcee.ml" 197 5807 5842
+type(
+  int ItemCount.IMap.t list -> ItemCount.t * ItemCount.t list
+)
+ident(
+  int_ref decomp "wcee.ml" 180 5310 5316 "wcee.ml" 180 5310 5322
+)
+"wcee.ml" 197 5807 5843 "wcee.ml" 197 5807 5845
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref mc "wcee.ml" 196 5786 5802 "wcee.ml" 196 5786 5804
+)
+"wcee.ml" 197 5807 5836 "wcee.ml" 197 5807 5845
+call(
+  stack
+)
+type(
+  ItemCount.t * ItemCount.t list
+)
+"wcee.ml" 198 5849 5853 "wcee.ml" 198 5849 5866
+type(
+  ((Format.formatter -> int ItemCount.IMap.t -> unit) ->
+   int ItemCount.IMap.t -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> int ItemCount.IMap.t -> unit) ->
+  int ItemCount.IMap.t -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 198 5849 5867 "wcee.ml" 198 5849 5881
+type(
+  ((Format.formatter -> int ItemCount.IMap.t -> unit) ->
+   int ItemCount.IMap.t -> unit, Format.formatter, unit)
+  format
+)
+"wcee.ml" 198 5849 5882 "wcee.ml" 198 5849 5897
+type(
+  Format.formatter -> int ItemCount.IMap.t -> unit
+)
+ident(
+  int_ref ItemCount.print "wcee.ml" 157 4481 4487 "wcee.ml" 157 4481 4492
+)
+"wcee.ml" 198 5849 5898 "wcee.ml" 198 5849 5904
+type(
+  ItemCount.t
+)
+ident(
+  int_ref common "wcee.ml" 197 5807 5815 "wcee.ml" 197 5807 5821
+)
+"wcee.ml" 198 5849 5853 "wcee.ml" 198 5849 5904
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 199 5906 5910 "wcee.ml" 199 5906 5920
+type(
+  (int -> int ItemCount.IMap.t -> unit) -> int ItemCount.IMap.t list -> unit
+)
+ident(
+  ext_ref List.iteri
+)
+"wcee.ml" 199 5906 5926 "wcee.ml" 199 5906 5927
+type(
+  int
+)
+ident(
+  def i "wcee.ml" 199 5906 5928 "wcee.ml" 200 5935 5997
+)
+"wcee.ml" 199 5906 5928 "wcee.ml" 199 5906 5931
+type(
+  int ItemCount.IMap.t
+)
+ident(
+  def rem "wcee.ml" 200 5935 5941 "wcee.ml" 200 5935 5997
+)
+"wcee.ml" 200 5935 5941 "wcee.ml" 200 5935 5954
+type(
+  (int ->
+   (Format.formatter -> int ItemCount.IMap.t -> unit) ->
+   int ItemCount.IMap.t -> unit, Format.formatter, unit)
+  format ->
+  int ->
+  (Format.formatter -> int ItemCount.IMap.t -> unit) ->
+  int ItemCount.IMap.t -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 200 5935 5955 "wcee.ml" 200 5935 5971
+type(
+  (int ->
+   (Format.formatter -> int ItemCount.IMap.t -> unit) ->
+   int ItemCount.IMap.t -> unit, Format.formatter, unit)
+  format
+)
+"wcee.ml" 200 5935 5973 "wcee.ml" 200 5935 5974
+type(
+  int
+)
+ident(
+  int_ref i "wcee.ml" 199 5906 5926 "wcee.ml" 199 5906 5927
+)
+"wcee.ml" 200 5935 5974 "wcee.ml" 200 5935 5975
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"wcee.ml" 200 5935 5975 "wcee.ml" 200 5935 5976
+type(
+  int
+)
+"wcee.ml" 200 5935 5972 "wcee.ml" 200 5935 5977
+type(
+  int
+)
+"wcee.ml" 200 5935 5978 "wcee.ml" 200 5935 5993
+type(
+  Format.formatter -> int ItemCount.IMap.t -> unit
+)
+ident(
+  int_ref ItemCount.print "wcee.ml" 157 4481 4487 "wcee.ml" 157 4481 4492
+)
+"wcee.ml" 200 5935 5994 "wcee.ml" 200 5935 5997
+type(
+  int ItemCount.IMap.t
+)
+ident(
+  int_ref rem "wcee.ml" 199 5906 5928 "wcee.ml" 199 5906 5931
+)
+"wcee.ml" 200 5935 5941 "wcee.ml" 200 5935 5997
+call(
+  tail
+)
+type(
+  unit
+)
+"wcee.ml" 199 5906 5921 "wcee.ml" 200 5935 5998
+type(
+  int -> int ItemCount.IMap.t -> unit
+)
+"wcee.ml" 200 5935 5999 "wcee.ml" 200 5935 6009
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref remainders "wcee.ml" 197 5807 5823 "wcee.ml" 197 5807 5833
+)
+"wcee.ml" 199 5906 5910 "wcee.ml" 200 5935 6009
+call(
+  tail
+)
+type(
+  unit
+)
+"wcee.ml" 198 5849 5853 "wcee.ml" 200 5935 6009
+type(
+  unit
+)
+"wcee.ml" 197 5807 5811 "wcee.ml" 200 5935 6009
+type(
+  unit
+)
+"wcee.ml" 202 6011 6017 "wcee.ml" 202 6011 6021
+type(
+  'b list -> int
+)
+ident(
+  def size "wcee.ml" 202 6011 6041 "wcee.ml" 203 6042 6045
+)
+"wcee.ml" 202 6011 6024 "wcee.ml" 202 6011 6041
+type(
+  'b list -> int
+)
+ident(
+  ext_ref MaxCount.cardinal
+)
+"wcee.ml" 211 6266 6270 "wcee.ml" 211 6266 6278
+type(
+  Balance.ff_input -> Cabs.definition list -> string -> Footprint.t
+)
+ident(
+  def analysis "wcee.ml" 380 13305 13311 "wcee.ml" 1 0 -1
+)
+"wcee.ml" 212 6279 6284 "wcee.ml" 212 6279 6286
+type(
+  Balance.ff_input
+)
+ident(
+  def ff "wcee.ml" 213 6306 6310 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 213 6306 6311 "wcee.ml" 213 6306 6315
+type(
+  Cabs.definition list
+)
+ident(
+  def defs "wcee.ml" 214 6339 6343 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 214 6339 6344 "wcee.ml" 214 6339 6349
+type(
+  string
+)
+ident(
+  def entry "wcee.ml" 215 6359 6363 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 218 6387 6393 "wcee.ml" 218 6387 6401
+type(
+  InputFacts.t
+)
+ident(
+  def input_ff "wcee.ml" 230 6789 6791 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 219 6404 6412 "wcee.ml" 219 6404 6420
+type(
+  string
+)
+ident(
+  def filename "wcee.ml" 220 6437 6441 "wcee.ml" 228 6777 6784
+)
+"wcee.ml" 219 6404 6423 "wcee.ml" 219 6404 6433
+type(
+  string
+)
+"wcee.ml" 220 6437 6444 "wcee.ml" 220 6437 6459
+type(
+  string -> bool
+)
+ident(
+  ext_ref Sys.file_exists
+)
+"wcee.ml" 220 6437 6460 "wcee.ml" 220 6437 6468
+type(
+  string
+)
+ident(
+  int_ref filename "wcee.ml" 219 6404 6412 "wcee.ml" 219 6404 6420
+)
+"wcee.ml" 220 6437 6444 "wcee.ml" 220 6437 6468
+type(
+  bool
+)
+"wcee.ml" 222 6484 6490 "wcee.ml" 222 6484 6503
+type(
+  (string -> unit, Format.formatter, unit) format -> string -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 222 6484 6504 "wcee.ml" 222 6484 6575
+type(
+  (string -> unit, Format.formatter, unit) format
+)
+"wcee.ml" 222 6484 6576 "wcee.ml" 222 6484 6584
+type(
+  string
+)
+ident(
+  int_ref filename "wcee.ml" 219 6404 6412 "wcee.ml" 219 6404 6420
+)
+"wcee.ml" 222 6484 6490 "wcee.ml" 222 6484 6584
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 223 6586 6592 "wcee.ml" 223 6586 6609
+type(
+  string -> InputFacts.t
+)
+ident(
+  ext_ref InputFacts.of_ffx
+)
+"wcee.ml" 223 6586 6610 "wcee.ml" 223 6586 6618
+type(
+  string
+)
+ident(
+  int_ref filename "wcee.ml" 219 6404 6412 "wcee.ml" 219 6404 6420
+)
+"wcee.ml" 223 6586 6592 "wcee.ml" 223 6586 6618
+call(
+  stack
+)
+type(
+  InputFacts.t
+)
+"wcee.ml" 221 6469 6478 "wcee.ml" 224 6619 6626
+type(
+  InputFacts.t
+)
+"wcee.ml" 226 6642 6648 "wcee.ml" 226 6642 6661
+type(
+  (string -> unit, Format.formatter, unit) format -> string -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 226 6642 6662 "wcee.ml" 226 6642 6744
+type(
+  (string -> unit, Format.formatter, unit) format
+)
+"wcee.ml" 226 6642 6745 "wcee.ml" 226 6642 6753
+type(
+  string
+)
+ident(
+  int_ref filename "wcee.ml" 219 6404 6412 "wcee.ml" 219 6404 6420
+)
+"wcee.ml" 226 6642 6648 "wcee.ml" 226 6642 6753
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 227 6755 6761 "wcee.ml" 227 6755 6776
+type(
+  InputFacts.t
+)
+ident(
+  ext_ref InputFacts.none
+)
+"wcee.ml" 225 6627 6636 "wcee.ml" 228 6777 6784
+type(
+  InputFacts.t
+)
+"wcee.ml" 220 6437 6441 "wcee.ml" 228 6777 6784
+type(
+  InputFacts.t
+)
+"wcee.ml" 219 6404 6408 "wcee.ml" 228 6777 6784
+type(
+  InputFacts.t
+)
+"wcee.ml" 230 6789 6795 "wcee.ml" 230 6789 6810
+type(
+  InputFacts.LocMap.key option * Cabs.statement -> int
+)
+ident(
+  def find_loop_bound "wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 230 6789 6812 "wcee.ml" 230 6789 6815
+type(
+  InputFacts.LocMap.key option
+)
+ident(
+  def loc "wcee.ml" 231 6825 6829 "wcee.ml" 244 7333 7339
+)
+"wcee.ml" 230 6789 6817 "wcee.ml" 230 6789 6821
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "wcee.ml" 231 6825 6829 "wcee.ml" 244 7333 7339
+)
+"wcee.ml" 230 6789 6811 "wcee.ml" 230 6789 6822
+type(
+  InputFacts.LocMap.key option * Cabs.statement
+)
+"wcee.ml" 231 6825 6835 "wcee.ml" 231 6825 6837
+type(
+  Balance.ff_input
+)
+ident(
+  int_ref ff "wcee.ml" 212 6279 6284 "wcee.ml" 212 6279 6286
+)
+"wcee.ml" 231 6825 6835 "wcee.ml" 231 6825 6856
+type(
+  Cabs.statement -> int option
+)
+"wcee.ml" 231 6825 6857 "wcee.ml" 231 6825 6861
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "wcee.ml" 230 6789 6817 "wcee.ml" 230 6789 6821
+)
+"wcee.ml" 231 6825 6835 "wcee.ml" 231 6825 6861
+call(
+  stack
+)
+type(
+  int option
+)
+"wcee.ml" 232 6867 6878 "wcee.ml" 232 6867 6879
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 232 6867 6883 "wcee.ml" 232 6867 6884
+)
+"wcee.ml" 232 6867 6873 "wcee.ml" 232 6867 6879
+type(
+  int option
+)
+"wcee.ml" 232 6867 6883 "wcee.ml" 232 6867 6884
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 232 6867 6878 "wcee.ml" 232 6867 6879
+)
+"wcee.ml" 233 6885 6891 "wcee.ml" 233 6885 6895
+type(
+  int option
+)
+"wcee.ml" 233 6885 6905 "wcee.ml" 233 6885 6908
+type(
+  InputFacts.LocMap.key option
+)
+ident(
+  int_ref loc "wcee.ml" 230 6789 6812 "wcee.ml" 230 6789 6815
+)
+"wcee.ml" 234 6914 6922 "wcee.ml" 234 6914 6926
+type(
+  InputFacts.LocMap.key option
+)
+"wcee.ml" 234 6914 6930 "wcee.ml" 234 6914 6938
+type(
+  string -> int
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"wcee.ml" 234 6914 6939 "wcee.ml" 234 6914 6967
+type(
+  string
+)
+"wcee.ml" 234 6914 6930 "wcee.ml" 234 6914 6967
+call(
+  tail
+)
+type(
+  int
+)
+"wcee.ml" 235 6968 6981 "wcee.ml" 235 6968 6984
+type(
+  InputFacts.LocMap.key
+)
+ident(
+  def loc "wcee.ml" 235 6968 6988 "wcee.ml" 244 7333 7339
+)
+"wcee.ml" 235 6968 6976 "wcee.ml" 235 6968 6984
+type(
+  InputFacts.LocMap.key option
+)
+"wcee.ml" 235 6968 6994 "wcee.ml" 235 6968 7016
+type(
+  InputFacts.t -> InputFacts.LocMap.key -> int option
+)
+ident(
+  ext_ref InputFacts.upper_bound
+)
+"wcee.ml" 235 6968 7017 "wcee.ml" 235 6968 7025
+type(
+  InputFacts.t
+)
+ident(
+  int_ref input_ff "wcee.ml" 218 6387 6393 "wcee.ml" 218 6387 6401
+)
+"wcee.ml" 235 6968 7026 "wcee.ml" 235 6968 7029
+type(
+  InputFacts.LocMap.key
+)
+ident(
+  int_ref loc "wcee.ml" 235 6968 6981 "wcee.ml" 235 6968 6984
+)
+"wcee.ml" 235 6968 6994 "wcee.ml" 235 6968 7029
+call(
+  stack
+)
+type(
+  int option
+)
+"wcee.ml" 236 7035 7038 "wcee.ml" 236 7035 7042
+type(
+  int option
+)
+"wcee.ml" 237 7052 7059 "wcee.ml" 237 7052 7065
+type(
+  int
+)
+ident(
+  def defmax "wcee.ml" 238 7073 7076 "wcee.ml" 239 7177 7186
+)
+"wcee.ml" 237 7052 7068 "wcee.ml" 237 7052 7069
+type(
+  int
+)
+"wcee.ml" 238 7073 7076 "wcee.ml" 238 7073 7089
+type(
+  ((Format.formatter -> InputFacts.LocMap.key -> unit) ->
+   InputFacts.LocMap.key -> int -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> InputFacts.LocMap.key -> unit) ->
+  InputFacts.LocMap.key -> int -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 238 7073 7090 "wcee.ml" 238 7073 7143
+type(
+  ((Format.formatter -> InputFacts.LocMap.key -> unit) ->
+   InputFacts.LocMap.key -> int -> unit, Format.formatter, unit)
+  format
+)
+"wcee.ml" 238 7073 7144 "wcee.ml" 238 7073 7164
+type(
+  Format.formatter -> InputFacts.LocMap.key -> unit
+)
+ident(
+  ext_ref InputFacts.Loc.print
+)
+"wcee.ml" 238 7073 7165 "wcee.ml" 238 7073 7168
+type(
+  InputFacts.LocMap.key
+)
+ident(
+  int_ref loc "wcee.ml" 235 6968 6981 "wcee.ml" 235 6968 6984
+)
+"wcee.ml" 238 7073 7169 "wcee.ml" 238 7073 7175
+type(
+  int
+)
+ident(
+  int_ref defmax "wcee.ml" 237 7052 7059 "wcee.ml" 237 7052 7065
+)
+"wcee.ml" 238 7073 7076 "wcee.ml" 238 7073 7175
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 239 7177 7180 "wcee.ml" 239 7177 7186
+type(
+  int
+)
+ident(
+  int_ref defmax "wcee.ml" 237 7052 7059 "wcee.ml" 237 7052 7065
+)
+"wcee.ml" 238 7073 7076 "wcee.ml" 239 7177 7186
+type(
+  int
+)
+"wcee.ml" 236 7035 7046 "wcee.ml" 240 7187 7191
+type(
+  int
+)
+"wcee.ml" 241 7192 7200 "wcee.ml" 241 7192 7201
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 241 7192 7205 "wcee.ml" 244 7333 7339
+)
+"wcee.ml" 241 7192 7195 "wcee.ml" 241 7192 7201
+type(
+  int option
+)
+"wcee.ml" 242 7211 7214 "wcee.ml" 242 7211 7227
+type(
+  ((Format.formatter -> InputFacts.LocMap.key -> unit) ->
+   InputFacts.LocMap.key -> int -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> InputFacts.LocMap.key -> unit) ->
+  InputFacts.LocMap.key -> int -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 242 7211 7228 "wcee.ml" 242 7211 7299
+type(
+  ((Format.formatter -> InputFacts.LocMap.key -> unit) ->
+   InputFacts.LocMap.key -> int -> unit, Format.formatter, unit)
+  format
+)
+"wcee.ml" 242 7211 7300 "wcee.ml" 242 7211 7320
+type(
+  Format.formatter -> InputFacts.LocMap.key -> unit
+)
+ident(
+  ext_ref InputFacts.Loc.print
+)
+"wcee.ml" 242 7211 7321 "wcee.ml" 242 7211 7324
+type(
+  InputFacts.LocMap.key
+)
+ident(
+  int_ref loc "wcee.ml" 235 6968 6981 "wcee.ml" 235 6968 6984
+)
+"wcee.ml" 242 7211 7325 "wcee.ml" 242 7211 7326
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 241 7192 7200 "wcee.ml" 241 7192 7201
+)
+"wcee.ml" 242 7211 7214 "wcee.ml" 242 7211 7326
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 243 7328 7331 "wcee.ml" 243 7328 7332
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 241 7192 7200 "wcee.ml" 241 7192 7201
+)
+"wcee.ml" 241 7192 7205 "wcee.ml" 244 7333 7339
+type(
+  int
+)
+"wcee.ml" 235 6968 6988 "wcee.ml" 244 7333 7339
+type(
+  int
+)
+"wcee.ml" 233 6885 6899 "wcee.ml" 244 7333 7339
+type(
+  int
+)
+"wcee.ml" 231 6825 6829 "wcee.ml" 244 7333 7339
+type(
+  int
+)
+"wcee.ml" 247 7348 7358 "wcee.ml" 247 7348 7366
+type(
+  string -> Footprint.t
+)
+ident(
+  def fun_eval "wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 247 7348 7368 "wcee.ml" 247 7348 7373
+type(
+  string
+)
+ident(
+  def fname "wcee.ml" 247 7348 7383 "wcee.ml" 255 7903 7910
+)
+"wcee.ml" 248 7399 7403 "wcee.ml" 248 7399 7416
+type(
+  (string -> unit, Format.formatter, unit) format -> string -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 248 7399 7417 "wcee.ml" 248 7399 7464
+type(
+  (string -> unit, Format.formatter, unit) format
+)
+"wcee.ml" 248 7399 7465 "wcee.ml" 248 7399 7470
+type(
+  string
+)
+ident(
+  int_ref fname "wcee.ml" 247 7348 7368 "wcee.ml" 247 7348 7373
+)
+"wcee.ml" 248 7399 7403 "wcee.ml" 248 7399 7470
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 249 7472 7480 "wcee.ml" 249 7472 7488
+type(
+  Footprint.t
+)
+ident(
+  def bodyCost "wcee.ml" 252 7634 7638 "wcee.ml" 255 7903 7910
+)
+"wcee.ml" 249 7472 7497 "wcee.ml" 249 7472 7517
+type(
+  Cabs.definition list -> string -> Cabs.statement option
+)
+ident(
+  ext_ref Balance.function_def
+)
+"wcee.ml" 249 7472 7518 "wcee.ml" 249 7472 7522
+type(
+  Cabs.definition list
+)
+ident(
+  int_ref defs "wcee.ml" 213 6306 6311 "wcee.ml" 213 6306 6315
+)
+"wcee.ml" 249 7472 7523 "wcee.ml" 249 7472 7528
+type(
+  string
+)
+ident(
+  int_ref fname "wcee.ml" 247 7348 7368 "wcee.ml" 247 7348 7373
+)
+"wcee.ml" 249 7472 7497 "wcee.ml" 249 7472 7528
+call(
+  stack
+)
+type(
+  Cabs.statement option
+)
+"wcee.ml" 250 7534 7542 "wcee.ml" 250 7534 7546
+type(
+  Cabs.statement option
+)
+"wcee.ml" 250 7534 7550 "wcee.ml" 250 7534 7568
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 250 7534 7569 "wcee.ml" 250 7534 7589
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 250 7534 7550 "wcee.ml" 250 7534 7589
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 251 7590 7603 "wcee.ml" 251 7590 7607
+type(
+  Cabs.statement
+)
+ident(
+  def body "wcee.ml" 251 7590 7611 "wcee.ml" 251 7590 7630
+)
+"wcee.ml" 251 7590 7598 "wcee.ml" 251 7590 7607
+type(
+  Cabs.statement option
+)
+"wcee.ml" 251 7590 7611 "wcee.ml" 251 7590 7620
+type(
+  InputFacts.Loc.t option -> Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref stmt_eval "wcee.ml" 319 10778 10784 "wcee.ml" 319 10778 10793
+)
+"wcee.ml" 251 7590 7621 "wcee.ml" 251 7590 7625
+type(
+  InputFacts.Loc.t option
+)
+"wcee.ml" 251 7590 7626 "wcee.ml" 251 7590 7630
+type(
+  Cabs.statement
+)
+ident(
+  int_ref body "wcee.ml" 251 7590 7603 "wcee.ml" 251 7590 7607
+)
+"wcee.ml" 251 7590 7611 "wcee.ml" 251 7590 7630
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 249 7472 7491 "wcee.ml" 251 7590 7630
+type(
+  Footprint.t
+)
+"wcee.ml" 252 7634 7642 "wcee.ml" 252 7634 7650
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def callCost "wcee.ml" 253 7712 7716 "wcee.ml" 255 7903 7910
+)
+"wcee.ml" 252 7634 7653 "wcee.ml" 252 7634 7667
+type(
+  (int * ItemCount.IMap.Mappe.key) list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.list "wcee.ml" 171 4995 5001 "wcee.ml" 171 4995 5005
+)
+"wcee.ml" 252 7634 7670 "wcee.ml" 252 7634 7671
+type(
+  int
+)
+"wcee.ml" 252 7634 7672 "wcee.ml" 252 7634 7685
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 252 7634 7669 "wcee.ml" 252 7634 7686
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 252 7634 7689 "wcee.ml" 252 7634 7690
+type(
+  int
+)
+"wcee.ml" 252 7634 7691 "wcee.ml" 252 7634 7706
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 252 7634 7688 "wcee.ml" 252 7634 7707
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 252 7634 7668 "wcee.ml" 252 7634 7708
+type(
+  (int * ItemCount.IMap.Mappe.key) list
+)
+"wcee.ml" 252 7634 7653 "wcee.ml" 252 7634 7708
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 253 7712 7720 "wcee.ml" 253 7712 7723
+type(
+  ItemCount.t list
+)
+ident(
+  def res "wcee.ml" 254 7761 7765 "wcee.ml" 255 7903 7910
+)
+"wcee.ml" 253 7712 7726 "wcee.ml" 253 7712 7739
+type(
+  Footprint.t -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 253 7712 7740 "wcee.ml" 253 7712 7748
+type(
+  Footprint.t
+)
+ident(
+  int_ref bodyCost "wcee.ml" 249 7472 7480 "wcee.ml" 249 7472 7488
+)
+"wcee.ml" 253 7712 7749 "wcee.ml" 253 7712 7757
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref callCost "wcee.ml" 252 7634 7642 "wcee.ml" 252 7634 7650
+)
+"wcee.ml" 253 7712 7726 "wcee.ml" 253 7712 7757
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 254 7761 7765 "wcee.ml" 254 7761 7778
+type(
+  ((Format.formatter -> int ItemCount.IMap.t list -> unit) ->
+   int ItemCount.IMap.t list -> string -> int -> unit, Format.formatter,
+   unit)
+  format ->
+  (Format.formatter -> int ItemCount.IMap.t list -> unit) ->
+  int ItemCount.IMap.t list -> string -> int -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 254 7761 7779 "wcee.ml" 254 7761 7854
+type(
+  ((Format.formatter -> int ItemCount.IMap.t list -> unit) ->
+   int ItemCount.IMap.t list -> string -> int -> unit, Format.formatter,
+   unit)
+  format
+)
+"wcee.ml" 254 7761 7855 "wcee.ml" 254 7761 7870
+type(
+  Format.formatter -> int ItemCount.IMap.t list -> unit
+)
+ident(
+  int_ref Footprint.print "wcee.ml" 196 5786 5792 "wcee.ml" 196 5786 5797
+)
+"wcee.ml" 254 7761 7871 "wcee.ml" 254 7761 7874
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref res "wcee.ml" 253 7712 7720 "wcee.ml" 253 7712 7723
+)
+"wcee.ml" 254 7761 7875 "wcee.ml" 254 7761 7880
+type(
+  string
+)
+ident(
+  int_ref fname "wcee.ml" 247 7348 7368 "wcee.ml" 247 7348 7373
+)
+"wcee.ml" 254 7761 7882 "wcee.ml" 254 7761 7896
+type(
+  ItemCount.t list -> int
+)
+ident(
+  int_ref Footprint.size "wcee.ml" 202 6011 6017 "wcee.ml" 202 6011 6021
+)
+"wcee.ml" 254 7761 7897 "wcee.ml" 254 7761 7900
+type(
+  ItemCount.t list
+)
+ident(
+  int_ref res "wcee.ml" 253 7712 7720 "wcee.ml" 253 7712 7723
+)
+"wcee.ml" 254 7761 7881 "wcee.ml" 254 7761 7901
+call(
+  stack
+)
+type(
+  int
+)
+"wcee.ml" 254 7761 7765 "wcee.ml" 254 7761 7901
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 255 7903 7907 "wcee.ml" 255 7903 7910
+type(
+  Footprint.t
+)
+ident(
+  int_ref res "wcee.ml" 253 7712 7720 "wcee.ml" 253 7712 7723
+)
+"wcee.ml" 254 7761 7765 "wcee.ml" 255 7903 7910
+type(
+  Footprint.t
+)
+"wcee.ml" 253 7712 7716 "wcee.ml" 255 7903 7910
+type(
+  Footprint.t
+)
+"wcee.ml" 252 7634 7638 "wcee.ml" 255 7903 7910
+type(
+  Footprint.t
+)
+"wcee.ml" 249 7472 7476 "wcee.ml" 255 7903 7910
+type(
+  Footprint.t
+)
+"wcee.ml" 248 7399 7403 "wcee.ml" 255 7903 7910
+type(
+  Footprint.t
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 257 7918 7924 "wcee.ml" 257 7918 7930
+type(
+  int ItemCount.IMap.t list -> Cabs.expression -> Footprint.t
+)
+ident(
+  def access "wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 257 7918 7931 "wcee.ml" 257 7918 7937
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def mempen "wcee.ml" 257 7918 7938 "wcee.ml" 261 8017 8056
+)
+"wcee.ml" 257 7918 7938 "wcee.ml" 257 7918 7939
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 258 7942 7946 "wcee.ml" 261 8017 8056
+)
+"wcee.ml" 258 7942 7951 "wcee.ml" 258 7942 7956
+type(
+  Footprint.t
+)
+ident(
+  def ecost "wcee.ml" 259 7979 7983 "wcee.ml" 261 8017 8056
+)
+"wcee.ml" 258 7942 7957 "wcee.ml" 258 7942 7960
+type(
+  dataloc
+)
+ident(
+  def loc "wcee.ml" 259 7979 7983 "wcee.ml" 261 8017 8056
+)
+"wcee.ml" 258 7942 7950 "wcee.ml" 258 7942 7961
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 258 7942 7964 "wcee.ml" 258 7942 7973
+type(
+  Cabs.expression -> Footprint.t * dataloc
+)
+ident(
+  int_ref expr_eval "wcee.ml" 266 8266 8272 "wcee.ml" 266 8266 8281
+)
+"wcee.ml" 258 7942 7974 "wcee.ml" 258 7942 7975
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 257 7918 7938 "wcee.ml" 257 7918 7939
+)
+"wcee.ml" 258 7942 7964 "wcee.ml" 258 7942 7975
+call(
+  stack
+)
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 259 7979 7989 "wcee.ml" 259 7979 7992
+type(
+  dataloc
+)
+ident(
+  int_ref loc "wcee.ml" 258 7942 7957 "wcee.ml" 258 7942 7960
+)
+"wcee.ml" 260 7998 8004 "wcee.ml" 260 7998 8007
+type(
+  dataloc
+)
+"wcee.ml" 260 7998 8011 "wcee.ml" 260 7998 8016
+type(
+  Footprint.t
+)
+ident(
+  int_ref ecost "wcee.ml" 258 7942 7951 "wcee.ml" 258 7942 7956
+)
+"wcee.ml" 261 8017 8023 "wcee.ml" 261 8017 8026
+type(
+  dataloc
+)
+"wcee.ml" 261 8017 8030 "wcee.ml" 261 8017 8043
+type(
+  int ItemCount.IMap.t list -> Footprint.t -> Footprint.t
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 261 8017 8044 "wcee.ml" 261 8017 8050
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref mempen "wcee.ml" 257 7918 7931 "wcee.ml" 257 7918 7937
+)
+"wcee.ml" 261 8017 8051 "wcee.ml" 261 8017 8056
+type(
+  Footprint.t
+)
+ident(
+  int_ref ecost "wcee.ml" 258 7942 7951 "wcee.ml" 258 7942 7956
+)
+"wcee.ml" 261 8017 8030 "wcee.ml" 261 8017 8056
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 259 7979 7983 "wcee.ml" 261 8017 8056
+type(
+  Footprint.t
+)
+"wcee.ml" 258 7942 7946 "wcee.ml" 261 8017 8056
+type(
+  Footprint.t
+)
+"wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  def read "wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 262 8057 8068 "wcee.ml" 262 8057 8069
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 262 8057 8072 "wcee.ml" 262 8057 8115
+)
+"wcee.ml" 262 8057 8072 "wcee.ml" 262 8057 8078
+type(
+  int ItemCount.IMap.t list -> Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref access "wcee.ml" 257 7918 7924 "wcee.ml" 257 7918 7930
+)
+"wcee.ml" 262 8057 8080 "wcee.ml" 262 8057 8098
+type(
+  ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 262 8057 8099 "wcee.ml" 262 8057 8112
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 262 8057 8079 "wcee.ml" 262 8057 8113
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 262 8057 8114 "wcee.ml" 262 8057 8115
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 262 8057 8068 "wcee.ml" 262 8057 8069
+)
+"wcee.ml" 262 8057 8072 "wcee.ml" 262 8057 8115
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 263 8116 8122 "wcee.ml" 263 8116 8127
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  def write "wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 263 8116 8128 "wcee.ml" 263 8116 8129
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 263 8116 8132 "wcee.ml" 263 8116 8176
+)
+"wcee.ml" 263 8116 8132 "wcee.ml" 263 8116 8138
+type(
+  int ItemCount.IMap.t list -> Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref access "wcee.ml" 257 7918 7924 "wcee.ml" 257 7918 7930
+)
+"wcee.ml" 263 8116 8140 "wcee.ml" 263 8116 8158
+type(
+  ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 263 8116 8159 "wcee.ml" 263 8116 8173
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 263 8116 8139 "wcee.ml" 263 8116 8174
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 263 8116 8175 "wcee.ml" 263 8116 8176
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 263 8116 8128 "wcee.ml" 263 8116 8129
+)
+"wcee.ml" 263 8116 8132 "wcee.ml" 263 8116 8176
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 264 8177 8183 "wcee.ml" 264 8177 8193
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  def read_write "wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 264 8177 8194 "wcee.ml" 264 8177 8195
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 264 8177 8198 "wcee.ml" 264 8177 8264
+)
+"wcee.ml" 264 8177 8198 "wcee.ml" 264 8177 8204
+type(
+  int ItemCount.IMap.t list -> Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref access "wcee.ml" 257 7918 7924 "wcee.ml" 257 7918 7930
+)
+"wcee.ml" 264 8177 8206 "wcee.ml" 264 8177 8220
+type(
+  (int * ItemCount.IMap.Mappe.key) list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.list "wcee.ml" 171 4995 5001 "wcee.ml" 171 4995 5005
+)
+"wcee.ml" 264 8177 8223 "wcee.ml" 264 8177 8224
+type(
+  int
+)
+"wcee.ml" 264 8177 8225 "wcee.ml" 264 8177 8238
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 264 8177 8222 "wcee.ml" 264 8177 8239
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 264 8177 8242 "wcee.ml" 264 8177 8243
+type(
+  int
+)
+"wcee.ml" 264 8177 8245 "wcee.ml" 264 8177 8259
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 264 8177 8241 "wcee.ml" 264 8177 8260
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 264 8177 8221 "wcee.ml" 264 8177 8261
+type(
+  (int * ItemCount.IMap.Mappe.key) list
+)
+"wcee.ml" 264 8177 8205 "wcee.ml" 264 8177 8262
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 264 8177 8263 "wcee.ml" 264 8177 8264
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 264 8177 8194 "wcee.ml" 264 8177 8195
+)
+"wcee.ml" 264 8177 8198 "wcee.ml" 264 8177 8264
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 266 8266 8272 "wcee.ml" 266 8266 8281
+type(
+  Cabs.expression -> Footprint.t * dataloc
+)
+ident(
+  def expr_eval "wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 266 8266 8283 "wcee.ml" 266 8266 8287
+type(
+  Cabs.expression
+)
+ident(
+  def expr "wcee.ml" 266 8266 8306 "wcee.ml" 317 10718 10776
+)
+"wcee.ml" 269 8379 8389 "wcee.ml" 269 8379 8393
+type(
+  Cabs.expression
+)
+ident(
+  int_ref expr "wcee.ml" 266 8266 8283 "wcee.ml" 266 8266 8287
+)
+"wcee.ml" 270 8399 8405 "wcee.ml" 270 8399 8412
+type(
+  Cabs.expression
+)
+"wcee.ml" 270 8399 8416 "wcee.ml" 270 8399 8423
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 270 8399 8425 "wcee.ml" 270 8399 8428
+type(
+  dataloc
+)
+"wcee.ml" 270 8399 8416 "wcee.ml" 270 8399 8428
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 271 8429 8442 "wcee.ml" 271 8429 8444
+type(
+  Cabs.unary_operator
+)
+ident(
+  def op "wcee.ml" 272 8451 8457 "wcee.ml" 277 8709 8718
+)
+"wcee.ml" 271 8429 8445 "wcee.ml" 271 8429 8446
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 272 8451 8457 "wcee.ml" 277 8709 8718
+)
+"wcee.ml" 271 8429 8435 "wcee.ml" 271 8429 8447
+type(
+  Cabs.expression
+)
+"wcee.ml" 272 8451 8469 "wcee.ml" 272 8451 8471
+type(
+  Cabs.unary_operator
+)
+ident(
+  int_ref op "wcee.ml" 271 8429 8442 "wcee.ml" 271 8429 8444
+)
+"wcee.ml" 273 8477 8480 "wcee.ml" 273 8477 8485
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 273 8477 8488 "wcee.ml" 273 8477 8492
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 273 8477 8480 "wcee.ml" 273 8477 8492
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 273 8477 8495 "wcee.ml" 273 8477 8498
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 273 8477 8480 "wcee.ml" 273 8477 8498
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 273 8477 8501 "wcee.ml" 273 8477 8505
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 273 8477 8480 "wcee.ml" 273 8477 8505
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 273 8477 8509 "wcee.ml" 273 8477 8516
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 273 8477 8518 "wcee.ml" 273 8477 8522
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 273 8477 8523 "wcee.ml" 273 8477 8524
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 271 8429 8445 "wcee.ml" 271 8429 8446
+)
+"wcee.ml" 273 8477 8518 "wcee.ml" 273 8477 8524
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 273 8477 8526 "wcee.ml" 273 8477 8534
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 273 8477 8535 "wcee.ml" 273 8477 8552
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 273 8477 8526 "wcee.ml" 273 8477 8552
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 273 8477 8517 "wcee.ml" 273 8477 8553
+type(
+  Footprint.t list
+)
+"wcee.ml" 273 8477 8509 "wcee.ml" 273 8477 8553
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 273 8477 8555 "wcee.ml" 273 8477 8558
+type(
+  dataloc
+)
+"wcee.ml" 273 8477 8509 "wcee.ml" 273 8477 8558
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 274 8559 8562 "wcee.ml" 274 8559 8567
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 274 8559 8571 "wcee.ml" 274 8559 8575
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 274 8559 8576 "wcee.ml" 274 8559 8577
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 271 8429 8445 "wcee.ml" 271 8429 8446
+)
+"wcee.ml" 274 8559 8571 "wcee.ml" 274 8559 8577
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 274 8559 8579 "wcee.ml" 274 8559 8582
+type(
+  dataloc
+)
+"wcee.ml" 274 8559 8571 "wcee.ml" 274 8559 8582
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 275 8583 8586 "wcee.ml" 275 8583 8592
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 275 8583 8596 "wcee.ml" 275 8583 8603
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 275 8583 8605 "wcee.ml" 275 8583 8608
+type(
+  dataloc
+)
+"wcee.ml" 275 8583 8596 "wcee.ml" 275 8583 8608
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 276 8609 8612 "wcee.ml" 276 8609 8619
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 276 8609 8622 "wcee.ml" 276 8609 8629
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 276 8609 8612 "wcee.ml" 276 8609 8629
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 276 8609 8632 "wcee.ml" 276 8609 8639
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 276 8609 8612 "wcee.ml" 276 8609 8639
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 276 8609 8642 "wcee.ml" 276 8609 8649
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 276 8609 8612 "wcee.ml" 276 8609 8649
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 276 8609 8653 "wcee.ml" 276 8609 8660
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 276 8609 8662 "wcee.ml" 276 8609 8672
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read_write "wcee.ml" 264 8177 8183 "wcee.ml" 264 8177 8193
+)
+"wcee.ml" 276 8609 8673 "wcee.ml" 276 8609 8674
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 271 8429 8445 "wcee.ml" 271 8429 8446
+)
+"wcee.ml" 276 8609 8662 "wcee.ml" 276 8609 8674
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 276 8609 8676 "wcee.ml" 276 8609 8684
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 276 8609 8685 "wcee.ml" 276 8609 8702
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 276 8609 8676 "wcee.ml" 276 8609 8702
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 276 8609 8661 "wcee.ml" 276 8609 8703
+type(
+  Footprint.t list
+)
+"wcee.ml" 276 8609 8653 "wcee.ml" 276 8609 8703
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 276 8609 8705 "wcee.ml" 276 8609 8708
+type(
+  dataloc
+)
+"wcee.ml" 276 8609 8653 "wcee.ml" 276 8609 8708
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 272 8451 8457 "wcee.ml" 277 8709 8718
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 278 8719 8733 "wcee.ml" 278 8719 8735
+type(
+  Cabs.binary_operator
+)
+ident(
+  def op "wcee.ml" 278 8719 8746 "wcee.ml" 293 9496 9503
+)
+"wcee.ml" 278 8719 8736 "wcee.ml" 278 8719 8738
+type(
+  Cabs.expression
+)
+ident(
+  def e1 "wcee.ml" 278 8719 8746 "wcee.ml" 293 9496 9503
+)
+"wcee.ml" 278 8719 8739 "wcee.ml" 278 8719 8741
+type(
+  Cabs.expression
+)
+ident(
+  def e2 "wcee.ml" 278 8719 8746 "wcee.ml" 293 9496 9503
+)
+"wcee.ml" 278 8719 8725 "wcee.ml" 278 8719 8742
+type(
+  Cabs.expression
+)
+"wcee.ml" 279 8752 8764 "wcee.ml" 279 8752 8766
+type(
+  Cabs.binary_operator
+)
+ident(
+  int_ref op "wcee.ml" 278 8719 8733 "wcee.ml" 278 8719 8735
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 280 8772 8783
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8786 "wcee.ml" 280 8772 8789
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 280 8772 8789
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 281 8790 8798 "wcee.ml" 281 8790 8801
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 281 8790 8801
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 281 8790 8804 "wcee.ml" 281 8790 8806
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 281 8790 8806
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 282 8807 8815 "wcee.ml" 282 8807 8819
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 282 8807 8819
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 282 8807 8822 "wcee.ml" 282 8807 8825
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 282 8807 8825
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 282 8807 8828 "wcee.ml" 282 8807 8831
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 282 8807 8831
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 282 8807 8834 "wcee.ml" 282 8807 8837
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 282 8807 8837
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 282 8807 8840 "wcee.ml" 282 8807 8843
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 282 8807 8843
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 283 8844 8852 "wcee.ml" 283 8844 8854
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 283 8844 8854
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 283 8844 8857 "wcee.ml" 283 8844 8859
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 283 8844 8859
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 283 8844 8862 "wcee.ml" 283 8844 8864
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 283 8844 8864
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 283 8844 8867 "wcee.ml" 283 8844 8869
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 283 8844 8869
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 283 8844 8872 "wcee.ml" 283 8844 8874
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 283 8844 8874
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 283 8844 8877 "wcee.ml" 283 8844 8879
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 280 8772 8780 "wcee.ml" 283 8844 8879
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 284 8880 8884 "wcee.ml" 284 8880 8891
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 284 8880 8893 "wcee.ml" 284 8880 8897
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 284 8880 8898 "wcee.ml" 284 8880 8900
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "wcee.ml" 278 8719 8736 "wcee.ml" 278 8719 8738
+)
+"wcee.ml" 284 8880 8893 "wcee.ml" 284 8880 8900
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 284 8880 8902 "wcee.ml" 284 8880 8906
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 284 8880 8907 "wcee.ml" 284 8880 8909
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "wcee.ml" 278 8719 8739 "wcee.ml" 278 8719 8741
+)
+"wcee.ml" 284 8880 8902 "wcee.ml" 284 8880 8909
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 284 8880 8911 "wcee.ml" 284 8880 8919
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 284 8880 8920 "wcee.ml" 284 8880 8937
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 284 8880 8911 "wcee.ml" 284 8880 8937
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 284 8880 8892 "wcee.ml" 284 8880 8938
+type(
+  Footprint.t list
+)
+"wcee.ml" 284 8880 8884 "wcee.ml" 284 8880 8938
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 284 8880 8940 "wcee.ml" 284 8880 8943
+type(
+  dataloc
+)
+"wcee.ml" 284 8880 8884 "wcee.ml" 284 8880 8943
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 285 8944 8952 "wcee.ml" 285 8944 8955
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 285 8944 8959 "wcee.ml" 285 8944 8966
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 285 8944 8968 "wcee.ml" 285 8944 8972
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 285 8944 8973 "wcee.ml" 285 8944 8975
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "wcee.ml" 278 8719 8736 "wcee.ml" 278 8719 8738
+)
+"wcee.ml" 285 8944 8968 "wcee.ml" 285 8944 8975
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 285 8944 8977 "wcee.ml" 285 8944 8981
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 285 8944 8982 "wcee.ml" 285 8944 8984
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "wcee.ml" 278 8719 8739 "wcee.ml" 278 8719 8741
+)
+"wcee.ml" 285 8944 8977 "wcee.ml" 285 8944 8984
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 285 8944 8986 "wcee.ml" 285 8944 8994
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 285 8944 8995 "wcee.ml" 285 8944 9008
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 285 8944 8986 "wcee.ml" 285 8944 9008
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 285 8944 8967 "wcee.ml" 285 8944 9009
+type(
+  Footprint.t list
+)
+"wcee.ml" 285 8944 8959 "wcee.ml" 285 8944 9009
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 285 8944 9011 "wcee.ml" 285 8944 9014
+type(
+  dataloc
+)
+"wcee.ml" 285 8944 8959 "wcee.ml" 285 8944 9014
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 286 9015 9023 "wcee.ml" 286 9015 9026
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 286 9015 9029 "wcee.ml" 286 9015 9032
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 286 9015 9023 "wcee.ml" 286 9015 9032
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 286 9015 9036 "wcee.ml" 286 9015 9043
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 286 9015 9045 "wcee.ml" 286 9015 9049
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 286 9015 9050 "wcee.ml" 286 9015 9052
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "wcee.ml" 278 8719 8736 "wcee.ml" 278 8719 8738
+)
+"wcee.ml" 286 9015 9045 "wcee.ml" 286 9015 9052
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 286 9015 9054 "wcee.ml" 286 9015 9058
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 286 9015 9059 "wcee.ml" 286 9015 9061
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "wcee.ml" 278 8719 8739 "wcee.ml" 278 8719 8741
+)
+"wcee.ml" 286 9015 9054 "wcee.ml" 286 9015 9061
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 286 9015 9063 "wcee.ml" 286 9015 9071
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 286 9015 9072 "wcee.ml" 286 9015 9084
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 286 9015 9063 "wcee.ml" 286 9015 9084
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 286 9015 9044 "wcee.ml" 286 9015 9085
+type(
+  Footprint.t list
+)
+"wcee.ml" 286 9015 9036 "wcee.ml" 286 9015 9085
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 286 9015 9087 "wcee.ml" 286 9015 9090
+type(
+  dataloc
+)
+"wcee.ml" 286 9015 9036 "wcee.ml" 286 9015 9090
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 287 9091 9099 "wcee.ml" 287 9091 9105
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 287 9091 9109 "wcee.ml" 287 9091 9116
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 287 9091 9118 "wcee.ml" 287 9091 9123
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref write "wcee.ml" 263 8116 8122 "wcee.ml" 263 8116 8127
+)
+"wcee.ml" 287 9091 9124 "wcee.ml" 287 9091 9126
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "wcee.ml" 278 8719 8736 "wcee.ml" 278 8719 8738
+)
+"wcee.ml" 287 9091 9118 "wcee.ml" 287 9091 9126
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 287 9091 9128 "wcee.ml" 287 9091 9132
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 287 9091 9133 "wcee.ml" 287 9091 9135
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "wcee.ml" 278 8719 8739 "wcee.ml" 278 8719 8741
+)
+"wcee.ml" 287 9091 9128 "wcee.ml" 287 9091 9135
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 287 9091 9117 "wcee.ml" 287 9091 9136
+type(
+  Footprint.t list
+)
+"wcee.ml" 287 9091 9109 "wcee.ml" 287 9091 9136
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 287 9091 9138 "wcee.ml" 287 9091 9141
+type(
+  dataloc
+)
+"wcee.ml" 287 9091 9109 "wcee.ml" 287 9091 9141
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 288 9142 9150 "wcee.ml" 288 9142 9160
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 288 9142 9163 "wcee.ml" 288 9142 9173
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 288 9142 9150 "wcee.ml" 288 9142 9173
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 289 9174 9182 "wcee.ml" 289 9174 9193
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 288 9142 9150 "wcee.ml" 289 9174 9193
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 289 9174 9196 "wcee.ml" 289 9174 9206
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 288 9142 9150 "wcee.ml" 289 9174 9206
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 289 9174 9209 "wcee.ml" 289 9174 9219
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 288 9142 9150 "wcee.ml" 289 9174 9219
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 289 9174 9222 "wcee.ml" 289 9174 9232
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 288 9142 9150 "wcee.ml" 289 9174 9232
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 289 9174 9235 "wcee.ml" 289 9174 9245
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 288 9142 9150 "wcee.ml" 289 9174 9245
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 290 9246 9250 "wcee.ml" 290 9246 9257
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 290 9246 9259 "wcee.ml" 290 9246 9269
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read_write "wcee.ml" 264 8177 8183 "wcee.ml" 264 8177 8193
+)
+"wcee.ml" 290 9246 9270 "wcee.ml" 290 9246 9272
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "wcee.ml" 278 8719 8736 "wcee.ml" 278 8719 8738
+)
+"wcee.ml" 290 9246 9259 "wcee.ml" 290 9246 9272
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 290 9246 9274 "wcee.ml" 290 9246 9278
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 290 9246 9279 "wcee.ml" 290 9246 9281
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "wcee.ml" 278 8719 8739 "wcee.ml" 278 8719 8741
+)
+"wcee.ml" 290 9246 9274 "wcee.ml" 290 9246 9281
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 290 9246 9283 "wcee.ml" 290 9246 9291
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 290 9246 9292 "wcee.ml" 290 9246 9309
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 290 9246 9283 "wcee.ml" 290 9246 9309
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 290 9246 9258 "wcee.ml" 290 9246 9310
+type(
+  Footprint.t list
+)
+"wcee.ml" 290 9246 9250 "wcee.ml" 290 9246 9310
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 290 9246 9312 "wcee.ml" 290 9246 9315
+type(
+  dataloc
+)
+"wcee.ml" 290 9246 9250 "wcee.ml" 290 9246 9315
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 291 9316 9324 "wcee.ml" 291 9316 9334
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 291 9316 9338 "wcee.ml" 291 9316 9345
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 291 9316 9347 "wcee.ml" 291 9316 9357
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read_write "wcee.ml" 264 8177 8183 "wcee.ml" 264 8177 8193
+)
+"wcee.ml" 291 9316 9358 "wcee.ml" 291 9316 9360
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "wcee.ml" 278 8719 8736 "wcee.ml" 278 8719 8738
+)
+"wcee.ml" 291 9316 9347 "wcee.ml" 291 9316 9360
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 291 9316 9362 "wcee.ml" 291 9316 9366
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 291 9316 9367 "wcee.ml" 291 9316 9369
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "wcee.ml" 278 8719 8739 "wcee.ml" 278 8719 8741
+)
+"wcee.ml" 291 9316 9362 "wcee.ml" 291 9316 9369
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 291 9316 9371 "wcee.ml" 291 9316 9379
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 291 9316 9380 "wcee.ml" 291 9316 9393
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 291 9316 9371 "wcee.ml" 291 9316 9393
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 291 9316 9346 "wcee.ml" 291 9316 9394
+type(
+  Footprint.t list
+)
+"wcee.ml" 291 9316 9338 "wcee.ml" 291 9316 9394
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 291 9316 9396 "wcee.ml" 291 9316 9399
+type(
+  dataloc
+)
+"wcee.ml" 291 9316 9338 "wcee.ml" 291 9316 9399
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 292 9400 9408 "wcee.ml" 292 9400 9418
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 292 9400 9421 "wcee.ml" 292 9400 9431
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 292 9400 9408 "wcee.ml" 292 9400 9431
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 292 9400 9435 "wcee.ml" 292 9400 9442
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 292 9400 9444 "wcee.ml" 292 9400 9454
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read_write "wcee.ml" 264 8177 8183 "wcee.ml" 264 8177 8193
+)
+"wcee.ml" 292 9400 9455 "wcee.ml" 292 9400 9457
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "wcee.ml" 278 8719 8736 "wcee.ml" 278 8719 8738
+)
+"wcee.ml" 292 9400 9444 "wcee.ml" 292 9400 9457
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 292 9400 9459 "wcee.ml" 292 9400 9463
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 292 9400 9464 "wcee.ml" 292 9400 9466
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "wcee.ml" 278 8719 8739 "wcee.ml" 278 8719 8741
+)
+"wcee.ml" 292 9400 9459 "wcee.ml" 292 9400 9466
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 292 9400 9468 "wcee.ml" 292 9400 9476
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 292 9400 9477 "wcee.ml" 292 9400 9489
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 292 9400 9468 "wcee.ml" 292 9400 9489
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 292 9400 9443 "wcee.ml" 292 9400 9490
+type(
+  Footprint.t list
+)
+"wcee.ml" 292 9400 9435 "wcee.ml" 292 9400 9490
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 292 9400 9492 "wcee.ml" 292 9400 9495
+type(
+  dataloc
+)
+"wcee.ml" 292 9400 9435 "wcee.ml" 292 9400 9495
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 278 8719 8746 "wcee.ml" 293 9496 9503
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 294 9504 9520 "wcee.ml" 294 9504 9524
+type(
+  Cabs.expression
+)
+ident(
+  def e_if "wcee.ml" 295 9543 9549 "wcee.ml" 297 9704 9753
+)
+"wcee.ml" 294 9504 9525 "wcee.ml" 294 9504 9531
+type(
+  Cabs.expression
+)
+ident(
+  def e_then "wcee.ml" 295 9543 9549 "wcee.ml" 297 9704 9753
+)
+"wcee.ml" 294 9504 9532 "wcee.ml" 294 9504 9538
+type(
+  Cabs.expression
+)
+ident(
+  def e_else "wcee.ml" 295 9543 9549 "wcee.ml" 297 9704 9753
+)
+"wcee.ml" 294 9504 9510 "wcee.ml" 294 9504 9539
+type(
+  Cabs.expression
+)
+"wcee.ml" 295 9543 9553 "wcee.ml" 295 9543 9559
+type(
+  ItemCount.t list
+)
+ident(
+  def c_then "wcee.ml" 296 9635 9641 "wcee.ml" 297 9704 9753
+)
+"wcee.ml" 295 9543 9562 "wcee.ml" 295 9543 9565
+type(
+  Footprint.t -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 295 9543 9567 "wcee.ml" 295 9543 9571
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 295 9543 9572 "wcee.ml" 295 9543 9578
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_then "wcee.ml" 294 9504 9525 "wcee.ml" 294 9504 9531
+)
+"wcee.ml" 295 9543 9566 "wcee.ml" 295 9543 9579
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 295 9543 9581 "wcee.ml" 295 9543 9585
+type(
+  (int * ItemCount.IMap.Mappe.key) list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.list "wcee.ml" 171 4995 5001 "wcee.ml" 171 4995 5005
+)
+"wcee.ml" 295 9543 9588 "wcee.ml" 295 9543 9589
+type(
+  int
+)
+"wcee.ml" 295 9543 9590 "wcee.ml" 295 9543 9605
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 295 9543 9587 "wcee.ml" 295 9543 9606
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 295 9543 9609 "wcee.ml" 295 9543 9610
+type(
+  int
+)
+"wcee.ml" 295 9543 9611 "wcee.ml" 295 9543 9628
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 295 9543 9608 "wcee.ml" 295 9543 9629
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 295 9543 9586 "wcee.ml" 295 9543 9630
+type(
+  (int * ItemCount.IMap.Mappe.key) list
+)
+"wcee.ml" 295 9543 9580 "wcee.ml" 295 9543 9631
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 295 9543 9562 "wcee.ml" 295 9543 9631
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 296 9635 9645 "wcee.ml" 296 9635 9651
+type(
+  ItemCount.t list
+)
+ident(
+  def c_else "wcee.ml" 297 9704 9710 "wcee.ml" 297 9704 9753
+)
+"wcee.ml" 296 9635 9654 "wcee.ml" 296 9635 9657
+type(
+  Footprint.t -> int ItemCount.IMap.t list -> ItemCount.t list
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 296 9635 9659 "wcee.ml" 296 9635 9663
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 296 9635 9664 "wcee.ml" 296 9635 9670
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_else "wcee.ml" 294 9504 9532 "wcee.ml" 294 9504 9538
+)
+"wcee.ml" 296 9635 9658 "wcee.ml" 296 9635 9671
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 296 9635 9673 "wcee.ml" 296 9635 9677
+type(
+  (int * ItemCount.IMap.Mappe.key) list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.list "wcee.ml" 171 4995 5001 "wcee.ml" 171 4995 5005
+)
+"wcee.ml" 296 9635 9680 "wcee.ml" 296 9635 9681
+type(
+  int
+)
+"wcee.ml" 296 9635 9682 "wcee.ml" 296 9635 9697
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 296 9635 9679 "wcee.ml" 296 9635 9698
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 296 9635 9678 "wcee.ml" 296 9635 9699
+type(
+  (int * ItemCount.IMap.Mappe.key) list
+)
+"wcee.ml" 296 9635 9672 "wcee.ml" 296 9635 9700
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 296 9635 9654 "wcee.ml" 296 9635 9700
+call(
+  stack
+)
+type(
+  ItemCount.t list
+)
+"wcee.ml" 297 9704 9710 "wcee.ml" 297 9704 9717
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 297 9704 9719 "wcee.ml" 297 9704 9723
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 297 9704 9724 "wcee.ml" 297 9704 9728
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_if "wcee.ml" 294 9504 9520 "wcee.ml" 294 9504 9524
+)
+"wcee.ml" 297 9704 9719 "wcee.ml" 297 9704 9728
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 297 9704 9730 "wcee.ml" 297 9704 9733
+type(
+  ItemCount.t list -> ItemCount.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.max "wcee.ml" 176 5194 5200 "wcee.ml" 176 5194 5203
+)
+"wcee.ml" 297 9704 9734 "wcee.ml" 297 9704 9740
+type(
+  ItemCount.t list
+)
+ident(
+  int_ref c_then "wcee.ml" 295 9543 9553 "wcee.ml" 295 9543 9559
+)
+"wcee.ml" 297 9704 9741 "wcee.ml" 297 9704 9747
+type(
+  ItemCount.t list
+)
+ident(
+  int_ref c_else "wcee.ml" 296 9635 9645 "wcee.ml" 296 9635 9651
+)
+"wcee.ml" 297 9704 9730 "wcee.ml" 297 9704 9747
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 297 9704 9718 "wcee.ml" 297 9704 9748
+type(
+  Footprint.t list
+)
+"wcee.ml" 297 9704 9710 "wcee.ml" 297 9704 9748
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 297 9704 9750 "wcee.ml" 297 9704 9753
+type(
+  dataloc
+)
+"wcee.ml" 297 9704 9710 "wcee.ml" 297 9704 9753
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 296 9635 9641 "wcee.ml" 297 9704 9753
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 295 9543 9549 "wcee.ml" 297 9704 9753
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 298 9754 9766 "wcee.ml" 298 9754 9767
+type(
+  Cabs.base_type
+)
+"wcee.ml" 298 9754 9768 "wcee.ml" 298 9754 9769
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 298 9754 9774 "wcee.ml" 298 9754 9785
+)
+"wcee.ml" 298 9754 9760 "wcee.ml" 298 9754 9770
+type(
+  Cabs.expression
+)
+"wcee.ml" 298 9754 9774 "wcee.ml" 298 9754 9778
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 298 9754 9779 "wcee.ml" 298 9754 9780
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 298 9754 9768 "wcee.ml" 298 9754 9769
+)
+"wcee.ml" 298 9754 9774 "wcee.ml" 298 9754 9780
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 298 9754 9782 "wcee.ml" 298 9754 9785
+type(
+  dataloc
+)
+"wcee.ml" 298 9754 9774 "wcee.ml" 298 9754 9785
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 299 9786 9807 "wcee.ml" 299 9786 9812
+type(
+  string
+)
+ident(
+  def fname "wcee.ml" 300 9820 9826 "wcee.ml" 304 10111 10156
+)
+"wcee.ml" 299 9786 9798 "wcee.ml" 299 9786 9812
+type(
+  Cabs.expression
+)
+"wcee.ml" 299 9786 9813 "wcee.ml" 299 9786 9815
+type(
+  Cabs.expression list
+)
+ident(
+  def el "wcee.ml" 300 9820 9826 "wcee.ml" 304 10111 10156
+)
+"wcee.ml" 299 9786 9792 "wcee.ml" 299 9786 9816
+type(
+  Cabs.expression
+)
+"wcee.ml" 300 9820 9830 "wcee.ml" 300 9820 9834
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def args "wcee.ml" 301 9877 9883 "wcee.ml" 304 10111 10156
+)
+"wcee.ml" 300 9820 9837 "wcee.ml" 300 9820 9854
+type(
+  Footprint.t list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 300 9820 9856 "wcee.ml" 300 9820 9864
+type(
+  (Cabs.expression -> Footprint.t) ->
+  Cabs.expression list -> Footprint.t list
+)
+ident(
+  ext_ref List.map
+)
+"wcee.ml" 300 9820 9865 "wcee.ml" 300 9820 9869
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 300 9820 9870 "wcee.ml" 300 9820 9872
+type(
+  Cabs.expression list
+)
+ident(
+  int_ref el "wcee.ml" 299 9786 9813 "wcee.ml" 299 9786 9815
+)
+"wcee.ml" 300 9820 9855 "wcee.ml" 300 9820 9873
+call(
+  stack
+)
+type(
+  Footprint.t list
+)
+"wcee.ml" 300 9820 9837 "wcee.ml" 300 9820 9873
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 301 9877 9887 "wcee.ml" 301 9877 9894
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  def calling "wcee.ml" 302 9964 9970 "wcee.ml" 304 10111 10156
+)
+"wcee.ml" 301 9877 9897 "wcee.ml" 301 9877 9902
+type(
+  int * ItemCount.IMap.Mappe.key -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.items "wcee.ml" 170 4937 4943 "wcee.ml" 170 4937 4948
+)
+"wcee.ml" 301 9877 9904 "wcee.ml" 301 9877 9918
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.max
+)
+"wcee.ml" 301 9877 9919 "wcee.ml" 301 9877 9920
+type(
+  int
+)
+"wcee.ml" 301 9877 9923 "wcee.ml" 301 9877 9934
+type(
+  Cabs.expression list -> int
+)
+ident(
+  ext_ref List.length
+)
+"wcee.ml" 301 9877 9935 "wcee.ml" 301 9877 9937
+type(
+  Cabs.expression list
+)
+ident(
+  int_ref el "wcee.ml" 299 9786 9813 "wcee.ml" 299 9786 9815
+)
+"wcee.ml" 301 9877 9922 "wcee.ml" 301 9877 9938
+call(
+  stack
+)
+type(
+  int
+)
+"wcee.ml" 301 9877 9939 "wcee.ml" 301 9877 9940
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"wcee.ml" 301 9877 9941 "wcee.ml" 301 9877 9942
+type(
+  int
+)
+"wcee.ml" 301 9877 9921 "wcee.ml" 301 9877 9943
+type(
+  int
+)
+"wcee.ml" 301 9877 9904 "wcee.ml" 301 9877 9943
+call(
+  stack
+)
+type(
+  int
+)
+"wcee.ml" 301 9877 9945 "wcee.ml" 301 9877 9959
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 301 9877 9903 "wcee.ml" 301 9877 9960
+type(
+  int * ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 301 9877 9897 "wcee.ml" 301 9877 9960
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 302 9964 9974 "wcee.ml" 302 9964 9983
+type(
+  Footprint.t
+)
+ident(
+  def execution "wcee.ml" 303 10004 10010 "wcee.ml" 304 10111 10156
+)
+"wcee.ml" 302 9964 9986 "wcee.ml" 302 9964 9994
+type(
+  string -> Footprint.t
+)
+ident(
+  int_ref fun_eval "wcee.ml" 247 7348 7358 "wcee.ml" 247 7348 7366
+)
+"wcee.ml" 302 9964 9995 "wcee.ml" 302 9964 10000
+type(
+  string
+)
+ident(
+  int_ref fname "wcee.ml" 299 9786 9807 "wcee.ml" 299 9786 9812
+)
+"wcee.ml" 302 9964 9986 "wcee.ml" 302 9964 10000
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 303 10004 10013 "wcee.ml" 303 10004 10018
+type(
+  bool
+)
+"wcee.ml" 303 10004 10024 "wcee.ml" 303 10004 10037
+type(
+  (string -> (Format.formatter -> Footprint.t -> unit) -> Footprint.t -> unit,
+   Format.formatter, unit)
+  format ->
+  string -> (Format.formatter -> Footprint.t -> unit) -> Footprint.t -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 303 10004 10038 "wcee.ml" 303 10004 10077
+type(
+  (string -> (Format.formatter -> Footprint.t -> unit) -> Footprint.t -> unit,
+   Format.formatter, unit)
+  format
+)
+"wcee.ml" 303 10004 10078 "wcee.ml" 303 10004 10083
+type(
+  string
+)
+ident(
+  int_ref fname "wcee.ml" 299 9786 9807 "wcee.ml" 299 9786 9812
+)
+"wcee.ml" 303 10004 10084 "wcee.ml" 303 10004 10099
+type(
+  Format.formatter -> Footprint.t -> unit
+)
+ident(
+  int_ref Footprint.print "wcee.ml" 196 5786 5792 "wcee.ml" 196 5786 5797
+)
+"wcee.ml" 303 10004 10100 "wcee.ml" 303 10004 10109
+type(
+  Footprint.t
+)
+ident(
+  int_ref execution "wcee.ml" 302 9964 9974 "wcee.ml" 302 9964 9983
+)
+"wcee.ml" 303 10004 10024 "wcee.ml" 303 10004 10109
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 303 10004 10010 "wcee.ml" 303 10004 10109
+type(
+  unit
+)
+"wcee.ml" 304 10111 10117 "wcee.ml" 304 10111 10124
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 304 10111 10126 "wcee.ml" 304 10111 10130
+type(
+  Footprint.t
+)
+ident(
+  int_ref args "wcee.ml" 300 9820 9830 "wcee.ml" 300 9820 9834
+)
+"wcee.ml" 304 10111 10132 "wcee.ml" 304 10111 10139
+type(
+  Footprint.t
+)
+ident(
+  int_ref calling "wcee.ml" 301 9877 9887 "wcee.ml" 301 9877 9894
+)
+"wcee.ml" 304 10111 10141 "wcee.ml" 304 10111 10150
+type(
+  Footprint.t
+)
+ident(
+  int_ref execution "wcee.ml" 302 9964 9974 "wcee.ml" 302 9964 9983
+)
+"wcee.ml" 304 10111 10125 "wcee.ml" 304 10111 10151
+type(
+  Footprint.t list
+)
+"wcee.ml" 304 10111 10117 "wcee.ml" 304 10111 10151
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 304 10111 10153 "wcee.ml" 304 10111 10156
+type(
+  dataloc
+)
+"wcee.ml" 304 10111 10117 "wcee.ml" 304 10111 10156
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 303 10004 10010 "wcee.ml" 304 10111 10156
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 302 9964 9970 "wcee.ml" 304 10111 10156
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 301 9877 9883 "wcee.ml" 304 10111 10156
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 300 9820 9826 "wcee.ml" 304 10111 10156
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 305 10157 10168 "wcee.ml" 305 10157 10169
+type(
+  Cabs.expression list
+)
+type(
+  Cabs.expression
+)
+"wcee.ml" 305 10157 10163 "wcee.ml" 305 10157 10169
+type(
+  Cabs.expression
+)
+"wcee.ml" 305 10157 10173 "wcee.ml" 305 10157 10181
+type(
+  string -> Footprint.t * dataloc
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"wcee.ml" 305 10157 10182 "wcee.ml" 305 10157 10207
+type(
+  string
+)
+"wcee.ml" 305 10157 10173 "wcee.ml" 305 10157 10207
+call(
+  tail
+)
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 306 10208 10223 "wcee.ml" 306 10208 10224
+type(
+  string
+)
+"wcee.ml" 306 10208 10214 "wcee.ml" 306 10208 10224
+type(
+  Cabs.expression
+)
+"wcee.ml" 306 10208 10228 "wcee.ml" 306 10208 10236
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 306 10208 10237 "wcee.ml" 306 10208 10253
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 306 10208 10228 "wcee.ml" 306 10208 10253
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 306 10208 10255 "wcee.ml" 306 10208 10258
+type(
+  dataloc
+)
+"wcee.ml" 306 10208 10228 "wcee.ml" 306 10208 10258
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 307 10287 10313 "wcee.ml" 307 10287 10316
+type(
+  string
+)
+"wcee.ml" 307 10287 10302 "wcee.ml" 307 10287 10317
+type(
+  Cabs.constant
+)
+"wcee.ml" 307 10287 10293 "wcee.ml" 307 10287 10317
+type(
+  Cabs.expression
+)
+"wcee.ml" 308 10318 10344 "wcee.ml" 308 10318 10347
+type(
+  string
+)
+"wcee.ml" 308 10318 10333 "wcee.ml" 308 10318 10348
+type(
+  Cabs.constant
+)
+"wcee.ml" 308 10318 10324 "wcee.ml" 308 10318 10348
+type(
+  Cabs.expression
+)
+"wcee.ml" 307 10287 10293 "wcee.ml" 308 10318 10348
+type(
+  Cabs.expression
+)
+"wcee.ml" 308 10318 10352 "wcee.ml" 308 10318 10359
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 308 10318 10361 "wcee.ml" 308 10318 10364
+type(
+  dataloc
+)
+"wcee.ml" 308 10318 10352 "wcee.ml" 308 10318 10364
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 309 10365 10380 "wcee.ml" 309 10365 10381
+type(
+  Cabs.constant
+)
+"wcee.ml" 309 10365 10371 "wcee.ml" 309 10365 10381
+type(
+  Cabs.expression
+)
+"wcee.ml" 309 10365 10385 "wcee.ml" 309 10365 10393
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 309 10365 10394 "wcee.ml" 309 10365 10410
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 309 10365 10385 "wcee.ml" 309 10365 10410
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 309 10365 10412 "wcee.ml" 309 10365 10415
+type(
+  dataloc
+)
+"wcee.ml" 309 10365 10385 "wcee.ml" 309 10365 10415
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 310 10416 10434 "wcee.ml" 310 10416 10435
+type(
+  Cabs.expression
+)
+"wcee.ml" 310 10416 10422 "wcee.ml" 310 10416 10435
+type(
+  Cabs.expression
+)
+"wcee.ml" 311 10436 10454 "wcee.ml" 311 10436 10455
+type(
+  Cabs.base_type
+)
+"wcee.ml" 311 10436 10442 "wcee.ml" 311 10436 10455
+type(
+  Cabs.expression
+)
+"wcee.ml" 310 10416 10422 "wcee.ml" 311 10436 10455
+type(
+  Cabs.expression
+)
+"wcee.ml" 311 10436 10459 "wcee.ml" 311 10436 10466
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 311 10436 10468 "wcee.ml" 311 10436 10471
+type(
+  dataloc
+)
+"wcee.ml" 311 10436 10459 "wcee.ml" 311 10436 10471
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 312 10472 10485 "wcee.ml" 312 10472 10486
+type(
+  Cabs.expression
+)
+ident(
+  def t "wcee.ml" 312 10472 10493 "wcee.ml" 312 10472 10537
+)
+"wcee.ml" 312 10472 10487 "wcee.ml" 312 10472 10488
+type(
+  Cabs.expression
+)
+ident(
+  def i "wcee.ml" 312 10472 10493 "wcee.ml" 312 10472 10537
+)
+"wcee.ml" 312 10472 10478 "wcee.ml" 312 10472 10489
+type(
+  Cabs.expression
+)
+"wcee.ml" 312 10472 10493 "wcee.ml" 312 10472 10502
+type(
+  Cabs.expression -> Footprint.t * dataloc
+)
+ident(
+  int_ref expr_eval "wcee.ml" 266 8266 8272 "wcee.ml" 266 8266 8281
+)
+"wcee.ml" 312 10472 10511 "wcee.ml" 312 10472 10516
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 312 10472 10526 "wcee.ml" 312 10472 10529
+type(
+  Cabs.binary_operator
+)
+"wcee.ml" 312 10472 10530 "wcee.ml" 312 10472 10531
+type(
+  Cabs.expression
+)
+ident(
+  int_ref t "wcee.ml" 312 10472 10485 "wcee.ml" 312 10472 10486
+)
+"wcee.ml" 312 10472 10532 "wcee.ml" 312 10472 10533
+type(
+  Cabs.expression
+)
+ident(
+  int_ref i "wcee.ml" 312 10472 10487 "wcee.ml" 312 10472 10488
+)
+"wcee.ml" 312 10472 10517 "wcee.ml" 312 10472 10535
+type(
+  Cabs.expression
+)
+"wcee.ml" 312 10472 10503 "wcee.ml" 312 10472 10537
+type(
+  Cabs.expression
+)
+"wcee.ml" 312 10472 10493 "wcee.ml" 312 10472 10537
+call(
+  tail
+)
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 313 10538 10554 "wcee.ml" 313 10538 10555
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 313 10538 10562 "wcee.ml" 313 10538 10573
+)
+"wcee.ml" 313 10538 10556 "wcee.ml" 313 10538 10557
+type(
+  string
+)
+"wcee.ml" 313 10538 10544 "wcee.ml" 313 10538 10558
+type(
+  Cabs.expression
+)
+"wcee.ml" 313 10538 10562 "wcee.ml" 313 10538 10571
+type(
+  Cabs.expression -> Footprint.t * dataloc
+)
+ident(
+  int_ref expr_eval "wcee.ml" 266 8266 8272 "wcee.ml" 266 8266 8281
+)
+"wcee.ml" 313 10538 10572 "wcee.ml" 313 10538 10573
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 313 10538 10554 "wcee.ml" 313 10538 10555
+)
+"wcee.ml" 313 10538 10562 "wcee.ml" 313 10538 10573
+call(
+  tail
+)
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 314 10574 10593 "wcee.ml" 314 10574 10594
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 314 10574 10601 "wcee.ml" 314 10574 10628
+)
+"wcee.ml" 314 10574 10595 "wcee.ml" 314 10574 10596
+type(
+  string
+)
+"wcee.ml" 314 10574 10580 "wcee.ml" 314 10574 10597
+type(
+  Cabs.expression
+)
+"wcee.ml" 314 10574 10601 "wcee.ml" 314 10574 10610
+type(
+  Cabs.expression -> Footprint.t * dataloc
+)
+ident(
+  int_ref expr_eval "wcee.ml" 266 8266 8272 "wcee.ml" 266 8266 8281
+)
+"wcee.ml" 314 10574 10619 "wcee.ml" 314 10574 10624
+type(
+  Cabs.unary_operator
+)
+"wcee.ml" 314 10574 10625 "wcee.ml" 314 10574 10626
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 314 10574 10593 "wcee.ml" 314 10574 10594
+)
+"wcee.ml" 314 10574 10611 "wcee.ml" 314 10574 10628
+type(
+  Cabs.expression
+)
+"wcee.ml" 314 10574 10601 "wcee.ml" 314 10574 10628
+call(
+  tail
+)
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 315 10629 10646 "wcee.ml" 315 10629 10647
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 315 10629 10656 "wcee.ml" 315 10629 10667
+)
+"wcee.ml" 315 10629 10648 "wcee.ml" 315 10629 10649
+type(
+  string
+)
+"wcee.ml" 315 10629 10650 "wcee.ml" 315 10629 10651
+type(
+  int
+)
+"wcee.ml" 315 10629 10635 "wcee.ml" 315 10629 10652
+type(
+  Cabs.expression
+)
+"wcee.ml" 315 10629 10656 "wcee.ml" 315 10629 10665
+type(
+  Cabs.expression -> Footprint.t * dataloc
+)
+ident(
+  int_ref expr_eval "wcee.ml" 266 8266 8272 "wcee.ml" 266 8266 8281
+)
+"wcee.ml" 315 10629 10666 "wcee.ml" 315 10629 10667
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 315 10629 10646 "wcee.ml" 315 10629 10647
+)
+"wcee.ml" 315 10629 10656 "wcee.ml" 315 10629 10667
+call(
+  tail
+)
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 316 10668 10680 "wcee.ml" 316 10668 10682
+type(
+  Cabs.expression list
+)
+ident(
+  def le "wcee.ml" 316 10668 10686 "wcee.ml" 316 10668 10717
+)
+"wcee.ml" 316 10668 10674 "wcee.ml" 316 10668 10682
+type(
+  Cabs.expression
+)
+"wcee.ml" 316 10668 10686 "wcee.ml" 316 10668 10693
+type(
+  Footprint.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 316 10668 10695 "wcee.ml" 316 10668 10703
+type(
+  (Cabs.expression -> Footprint.t) ->
+  Cabs.expression list -> Footprint.t list
+)
+ident(
+  ext_ref List.map
+)
+"wcee.ml" 316 10668 10704 "wcee.ml" 316 10668 10708
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 316 10668 10709 "wcee.ml" 316 10668 10711
+type(
+  Cabs.expression list
+)
+ident(
+  int_ref le "wcee.ml" 316 10668 10680 "wcee.ml" 316 10668 10682
+)
+"wcee.ml" 316 10668 10694 "wcee.ml" 316 10668 10712
+call(
+  stack
+)
+type(
+  Footprint.t list
+)
+"wcee.ml" 316 10668 10686 "wcee.ml" 316 10668 10712
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 316 10668 10714 "wcee.ml" 316 10668 10717
+type(
+  dataloc
+)
+"wcee.ml" 316 10668 10686 "wcee.ml" 316 10668 10717
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 317 10718 10733 "wcee.ml" 317 10718 10734
+type(
+  Cabs.body
+)
+"wcee.ml" 317 10718 10724 "wcee.ml" 317 10718 10734
+type(
+  Cabs.expression
+)
+"wcee.ml" 317 10718 10738 "wcee.ml" 317 10718 10746
+type(
+  string -> Footprint.t * dataloc
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"wcee.ml" 317 10718 10747 "wcee.ml" 317 10718 10776
+type(
+  string
+)
+"wcee.ml" 317 10718 10738 "wcee.ml" 317 10718 10776
+call(
+  tail
+)
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 269 8379 8383 "wcee.ml" 317 10718 10776
+type(
+  Footprint.t * dataloc
+)
+type(
+  Footprint.t * dataloc
+)
+"wcee.ml" 319 10778 10784 "wcee.ml" 319 10778 10793
+type(
+  InputFacts.Loc.t option -> Cabs.statement -> Footprint.t
+)
+ident(
+  def stmt_eval "wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 319 10778 10795 "wcee.ml" 319 10778 10798
+type(
+  InputFacts.Loc.t option
+)
+ident(
+  def loc "wcee.ml" 319 10778 10825 "wcee.ml" 369 12727 12762
+)
+"wcee.ml" 319 10778 10826 "wcee.ml" 319 10778 10830
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "wcee.ml" 319 10778 10848 "wcee.ml" 369 12727 12762
+)
+"wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  def eval "wcee.ml" 321 10896 10900 "wcee.ml" 369 12727 12762
+)
+"wcee.ml" 320 10864 10879 "wcee.ml" 320 10864 10888
+type(
+  InputFacts.Loc.t option -> Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref stmt_eval "wcee.ml" 319 10778 10784 "wcee.ml" 319 10778 10793
+)
+"wcee.ml" 320 10864 10889 "wcee.ml" 320 10864 10892
+type(
+  InputFacts.Loc.t option
+)
+ident(
+  int_ref loc "wcee.ml" 319 10778 10795 "wcee.ml" 319 10778 10798
+)
+"wcee.ml" 320 10864 10879 "wcee.ml" 320 10864 10892
+call(
+  stack
+)
+type(
+  Cabs.statement -> Footprint.t
+)
+"wcee.ml" 323 10943 10953 "wcee.ml" 323 10943 10957
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "wcee.ml" 319 10778 10826 "wcee.ml" 319 10778 10830
+)
+"wcee.ml" 324 10963 10980 "wcee.ml" 324 10963 10983
+type(
+  Cabs.statement
+)
+ident(
+  def sub "wcee.ml" 325 10998 11004 "wcee.ml" 326 11047 11077
+)
+"wcee.ml" 324 10963 10984 "wcee.ml" 324 10963 10988
+type(
+  string
+)
+ident(
+  def file "wcee.ml" 325 10998 11004 "wcee.ml" 326 11047 11077
+)
+"wcee.ml" 324 10963 10989 "wcee.ml" 324 10963 10993
+type(
+  int
+)
+ident(
+  def line "wcee.ml" 325 10998 11004 "wcee.ml" 326 11047 11077
+)
+"wcee.ml" 324 10963 10969 "wcee.ml" 324 10963 10994
+type(
+  Cabs.statement
+)
+"wcee.ml" 325 10998 11008 "wcee.ml" 325 10998 11011
+type(
+  InputFacts.Loc.t
+)
+ident(
+  def loc "wcee.ml" 326 11047 11053 "wcee.ml" 326 11047 11077
+)
+"wcee.ml" 325 10998 11014 "wcee.ml" 325 10998 11033
+type(
+  string -> int -> InputFacts.Loc.t
+)
+ident(
+  ext_ref InputFacts.Loc.make
+)
+"wcee.ml" 325 10998 11034 "wcee.ml" 325 10998 11038
+type(
+  string
+)
+ident(
+  int_ref file "wcee.ml" 324 10963 10984 "wcee.ml" 324 10963 10988
+)
+"wcee.ml" 325 10998 11039 "wcee.ml" 325 10998 11043
+type(
+  int
+)
+ident(
+  int_ref line "wcee.ml" 324 10963 10989 "wcee.ml" 324 10963 10993
+)
+"wcee.ml" 325 10998 11014 "wcee.ml" 325 10998 11043
+call(
+  stack
+)
+type(
+  InputFacts.Loc.t
+)
+"wcee.ml" 326 11047 11053 "wcee.ml" 326 11047 11062
+type(
+  InputFacts.Loc.t option -> Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref stmt_eval "wcee.ml" 319 10778 10784 "wcee.ml" 319 10778 10793
+)
+"wcee.ml" 326 11047 11069 "wcee.ml" 326 11047 11072
+type(
+  InputFacts.Loc.t
+)
+ident(
+  int_ref loc "wcee.ml" 325 10998 11008 "wcee.ml" 325 10998 11011
+)
+"wcee.ml" 326 11047 11063 "wcee.ml" 326 11047 11073
+type(
+  InputFacts.Loc.t option
+)
+"wcee.ml" 326 11047 11074 "wcee.ml" 326 11047 11077
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "wcee.ml" 324 10963 10980 "wcee.ml" 324 10963 10983
+)
+"wcee.ml" 326 11047 11053 "wcee.ml" 326 11047 11077
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 325 10998 11004 "wcee.ml" 326 11047 11077
+type(
+  Footprint.t
+)
+"wcee.ml" 327 11078 11096 "wcee.ml" 327 11078 11097
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 328 11098 11116 "wcee.ml" 328 11098 11122
+)
+"wcee.ml" 327 11078 11084 "wcee.ml" 327 11078 11097
+type(
+  Cabs.statement
+)
+"wcee.ml" 328 11098 11111 "wcee.ml" 328 11098 11112
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 328 11098 11116 "wcee.ml" 328 11098 11122
+)
+"wcee.ml" 328 11098 11104 "wcee.ml" 328 11098 11112
+type(
+  Cabs.statement
+)
+"wcee.ml" 327 11078 11084 "wcee.ml" 328 11098 11112
+type(
+  Cabs.statement
+)
+"wcee.ml" 328 11098 11116 "wcee.ml" 328 11098 11120
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 328 11098 11121 "wcee.ml" 328 11098 11122
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 327 11078 11096 "wcee.ml" 327 11078 11097
+)
+"wcee.ml" 328 11098 11116 "wcee.ml" 328 11098 11122
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 329 11123 11129 "wcee.ml" 329 11123 11132
+type(
+  Cabs.statement
+)
+"wcee.ml" 329 11123 11136 "wcee.ml" 329 11123 11143
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 330 11144 11157 "wcee.ml" 330 11144 11158
+type(
+  Cabs.definition list
+)
+"wcee.ml" 330 11144 11159 "wcee.ml" 330 11144 11162
+type(
+  Cabs.statement
+)
+ident(
+  def sub "wcee.ml" 330 11144 11167 "wcee.ml" 330 11144 11175
+)
+"wcee.ml" 330 11144 11156 "wcee.ml" 330 11144 11163
+type(
+  Cabs.body
+)
+"wcee.ml" 330 11144 11150 "wcee.ml" 330 11144 11163
+type(
+  Cabs.statement
+)
+"wcee.ml" 330 11144 11167 "wcee.ml" 330 11144 11171
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 330 11144 11172 "wcee.ml" 330 11144 11175
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "wcee.ml" 330 11144 11159 "wcee.ml" 330 11144 11162
+)
+"wcee.ml" 330 11144 11167 "wcee.ml" 330 11144 11175
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 331 11259 11275 "wcee.ml" 331 11259 11279
+type(
+  Cabs.statement
+)
+ident(
+  def sub1 "wcee.ml" 331 11259 11289 "wcee.ml" 331 11259 11316
+)
+"wcee.ml" 331 11259 11280 "wcee.ml" 331 11259 11284
+type(
+  Cabs.statement
+)
+ident(
+  def sub2 "wcee.ml" 331 11259 11289 "wcee.ml" 331 11259 11316
+)
+"wcee.ml" 331 11259 11265 "wcee.ml" 331 11259 11285
+type(
+  Cabs.statement
+)
+"wcee.ml" 331 11259 11289 "wcee.ml" 331 11259 11292
+type(
+  Footprint.t -> Footprint.t -> Footprint.t
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 331 11259 11294 "wcee.ml" 331 11259 11298
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 331 11259 11299 "wcee.ml" 331 11259 11303
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub1 "wcee.ml" 331 11259 11275 "wcee.ml" 331 11259 11279
+)
+"wcee.ml" 331 11259 11293 "wcee.ml" 331 11259 11304
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 331 11259 11306 "wcee.ml" 331 11259 11310
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 331 11259 11311 "wcee.ml" 331 11259 11315
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub2 "wcee.ml" 331 11259 11280 "wcee.ml" 331 11259 11284
+)
+"wcee.ml" 331 11259 11305 "wcee.ml" 331 11259 11316
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 331 11259 11289 "wcee.ml" 331 11259 11316
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 332 11317 11327 "wcee.ml" 332 11317 11328
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 333 11347 11353 "wcee.ml" 341 11640 11682
+)
+"wcee.ml" 332 11317 11329 "wcee.ml" 332 11317 11335
+type(
+  Cabs.statement
+)
+ident(
+  def s_then "wcee.ml" 333 11347 11353 "wcee.ml" 341 11640 11682
+)
+"wcee.ml" 332 11317 11336 "wcee.ml" 332 11317 11342
+type(
+  Cabs.statement
+)
+ident(
+  def s_else "wcee.ml" 333 11347 11353 "wcee.ml" 341 11640 11682
+)
+"wcee.ml" 332 11317 11323 "wcee.ml" 332 11317 11343
+type(
+  Cabs.statement
+)
+"wcee.ml" 333 11347 11357 "wcee.ml" 333 11347 11368
+type(
+  Cabs.statement * Footprint.t list -> bool -> int ItemCount.IMap.t list
+)
+ident(
+  def branch_cost "wcee.ml" 337 11471 11477 "wcee.ml" 341 11640 11682
+)
+"wcee.ml" 333 11347 11370 "wcee.ml" 333 11347 11378
+type(
+  Cabs.statement
+)
+ident(
+  def s_branch "wcee.ml" 333 11347 11387 "wcee.ml" 336 11429 11467
+)
+"wcee.ml" 333 11347 11380 "wcee.ml" 333 11347 11385
+type(
+  Footprint.t list
+)
+ident(
+  def extra "wcee.ml" 333 11347 11387 "wcee.ml" 336 11429 11467
+)
+"wcee.ml" 333 11347 11369 "wcee.ml" 333 11347 11386
+type(
+  Cabs.statement * Footprint.t list
+)
+"wcee.ml" 333 11347 11387 "wcee.ml" 333 11347 11395
+type(
+  bool
+)
+ident(
+  def feasible "wcee.ml" 334 11398 11399 "wcee.ml" 336 11429 11467
+)
+"wcee.ml" 334 11398 11402 "wcee.ml" 334 11398 11405
+type(
+  bool -> bool
+)
+ident(
+  ext_ref Pervasives.not
+)
+"wcee.ml" 334 11398 11406 "wcee.ml" 334 11398 11414
+type(
+  bool
+)
+ident(
+  int_ref feasible "wcee.ml" 333 11347 11387 "wcee.ml" 333 11347 11395
+)
+"wcee.ml" 334 11398 11402 "wcee.ml" 334 11398 11414
+type(
+  bool
+)
+"wcee.ml" 335 11415 11421 "wcee.ml" 335 11415 11428
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 336 11429 11435 "wcee.ml" 336 11429 11442
+type(
+  Footprint.t list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 336 11429 11445 "wcee.ml" 336 11429 11449
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 336 11429 11450 "wcee.ml" 336 11429 11458
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_branch "wcee.ml" 333 11347 11370 "wcee.ml" 333 11347 11378
+)
+"wcee.ml" 336 11429 11444 "wcee.ml" 336 11429 11459
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 336 11429 11461 "wcee.ml" 336 11429 11466
+type(
+  Footprint.t list
+)
+ident(
+  int_ref extra "wcee.ml" 333 11347 11380 "wcee.ml" 333 11347 11385
+)
+"wcee.ml" 336 11429 11443 "wcee.ml" 336 11429 11467
+type(
+  Footprint.t list
+)
+"wcee.ml" 336 11429 11435 "wcee.ml" 336 11429 11467
+call(
+  tail
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 334 11398 11399 "wcee.ml" 336 11429 11467
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 337 11471 11477 "wcee.ml" 337 11471 11480
+type(
+  Footprint.t -> int ItemCount.IMap.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 337 11471 11482 "wcee.ml" 337 11471 11486
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 337 11471 11487 "wcee.ml" 337 11471 11488
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 332 11317 11327 "wcee.ml" 332 11317 11328
+)
+"wcee.ml" 337 11471 11481 "wcee.ml" 337 11471 11489
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 337 11471 11491 "wcee.ml" 337 11471 11498
+type(
+  int ItemCount.IMap.t list list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.max_all "wcee.ml" 177 5219 5225 "wcee.ml" 177 5219 5232
+)
+"wcee.ml" 338 11499 11508 "wcee.ml" 338 11499 11517
+type(
+  (Cabs.statement * Footprint.t list -> bool -> int ItemCount.IMap.t list) ->
+  (Cabs.statement * Footprint.t list) list ->
+  bool list -> int ItemCount.IMap.t list list
+)
+ident(
+  ext_ref List.map2
+)
+"wcee.ml" 338 11499 11518 "wcee.ml" 338 11499 11529
+type(
+  Cabs.statement * Footprint.t list -> bool -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref branch_cost "wcee.ml" 333 11347 11357 "wcee.ml" 333 11347 11368
+)
+"wcee.ml" 339 11530 11535 "wcee.ml" 339 11530 11541
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_then "wcee.ml" 332 11317 11329 "wcee.ml" 332 11317 11335
+)
+"wcee.ml" 339 11530 11544 "wcee.ml" 339 11530 11552
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 339 11530 11553 "wcee.ml" 339 11530 11568
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 339 11530 11544 "wcee.ml" 339 11530 11568
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 339 11530 11570 "wcee.ml" 339 11530 11578
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 339 11530 11579 "wcee.ml" 339 11530 11596
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 339 11530 11570 "wcee.ml" 339 11530 11596
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 339 11530 11543 "wcee.ml" 339 11530 11597
+type(
+  Footprint.t list
+)
+"wcee.ml" 339 11530 11535 "wcee.ml" 339 11530 11597
+type(
+  Cabs.statement * Footprint.t list
+)
+"wcee.ml" 340 11599 11604 "wcee.ml" 340 11599 11610
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_else "wcee.ml" 332 11317 11336 "wcee.ml" 332 11317 11342
+)
+"wcee.ml" 340 11599 11613 "wcee.ml" 340 11599 11621
+type(
+  ItemCount.IMap.Mappe.key -> Footprint.t
+)
+ident(
+  int_ref Footprint.one_item "wcee.ml" 169 4879 4885 "wcee.ml" 169 4879 4893
+)
+"wcee.ml" 340 11599 11622 "wcee.ml" 340 11599 11637
+type(
+  ItemCount.IMap.Mappe.key
+)
+"wcee.ml" 340 11599 11613 "wcee.ml" 340 11599 11637
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 340 11599 11612 "wcee.ml" 340 11599 11638
+type(
+  Footprint.t list
+)
+"wcee.ml" 340 11599 11604 "wcee.ml" 340 11599 11638
+type(
+  Cabs.statement * Footprint.t list
+)
+"wcee.ml" 339 11530 11534 "wcee.ml" 340 11599 11639
+type(
+  (Cabs.statement * Footprint.t list) list
+)
+"wcee.ml" 341 11640 11645 "wcee.ml" 341 11640 11647
+type(
+  Balance.ff_input
+)
+ident(
+  int_ref ff "wcee.ml" 212 6279 6284 "wcee.ml" 212 6279 6286
+)
+"wcee.ml" 341 11640 11645 "wcee.ml" 341 11640 11674
+type(
+  Cabs.statement -> bool list
+)
+"wcee.ml" 341 11640 11675 "wcee.ml" 341 11640 11679
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "wcee.ml" 319 10778 10826 "wcee.ml" 319 10778 10830
+)
+"wcee.ml" 341 11640 11644 "wcee.ml" 341 11640 11680
+call(
+  stack
+)
+type(
+  bool list
+)
+"wcee.ml" 338 11499 11507 "wcee.ml" 341 11640 11681
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list list
+)
+"wcee.ml" 337 11471 11490 "wcee.ml" 341 11640 11682
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 337 11471 11477 "wcee.ml" 341 11640 11682
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 333 11347 11353 "wcee.ml" 341 11640 11682
+type(
+  Footprint.t
+)
+"wcee.ml" 342 11683 11697 "wcee.ml" 342 11683 11698
+type(
+  Cabs.expression
+)
+ident(
+  def e "wcee.ml" 343 11707 11713 "wcee.ml" 343 11707 11736
+)
+"wcee.ml" 342 11683 11699 "wcee.ml" 342 11683 11702
+type(
+  Cabs.statement
+)
+ident(
+  def sub "wcee.ml" 343 11707 11713 "wcee.ml" 343 11707 11736
+)
+"wcee.ml" 342 11683 11689 "wcee.ml" 342 11683 11703
+type(
+  Cabs.statement
+)
+"wcee.ml" 343 11707 11713 "wcee.ml" 343 11707 11716
+type(
+  Footprint.t -> Footprint.t -> Footprint.t
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 343 11707 11718 "wcee.ml" 343 11707 11722
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 343 11707 11723 "wcee.ml" 343 11707 11724
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "wcee.ml" 342 11683 11697 "wcee.ml" 342 11683 11698
+)
+"wcee.ml" 343 11707 11717 "wcee.ml" 343 11707 11725
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 343 11707 11727 "wcee.ml" 343 11707 11731
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 343 11707 11732 "wcee.ml" 343 11707 11735
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "wcee.ml" 342 11683 11699 "wcee.ml" 342 11683 11702
+)
+"wcee.ml" 343 11707 11726 "wcee.ml" 343 11707 11736
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 343 11707 11713 "wcee.ml" 343 11707 11736
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 344 11771 11783 "wcee.ml" 344 11771 11784
+type(
+  Cabs.expression
+)
+"wcee.ml" 344 11771 11785 "wcee.ml" 344 11771 11788
+type(
+  Cabs.statement
+)
+ident(
+  def sub "wcee.ml" 344 11771 11793 "wcee.ml" 344 11771 11801
+)
+"wcee.ml" 344 11771 11777 "wcee.ml" 344 11771 11789
+type(
+  Cabs.statement
+)
+"wcee.ml" 344 11771 11793 "wcee.ml" 344 11771 11797
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 344 11771 11798 "wcee.ml" 344 11771 11801
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "wcee.ml" 344 11771 11785 "wcee.ml" 344 11771 11788
+)
+"wcee.ml" 344 11771 11793 "wcee.ml" 344 11771 11801
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 345 11802 11816 "wcee.ml" 345 11802 11819
+type(
+  Cabs.statement
+)
+ident(
+  def sub "wcee.ml" 345 11802 11823 "wcee.ml" 345 11802 11831
+)
+"wcee.ml" 345 11802 11808 "wcee.ml" 345 11802 11819
+type(
+  Cabs.statement
+)
+"wcee.ml" 345 11802 11823 "wcee.ml" 345 11802 11827
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 345 11802 11828 "wcee.ml" 345 11802 11831
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "wcee.ml" 345 11802 11816 "wcee.ml" 345 11802 11819
+)
+"wcee.ml" 345 11802 11823 "wcee.ml" 345 11802 11831
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 346 11832 11843 "wcee.ml" 346 11832 11849
+type(
+  Cabs.expression
+)
+ident(
+  def e_init "wcee.ml" 347 11874 11880 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 346 11832 11850 "wcee.ml" 346 11832 11856
+type(
+  Cabs.expression
+)
+ident(
+  def e_test "wcee.ml" 347 11874 11880 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 346 11832 11857 "wcee.ml" 346 11832 11862
+type(
+  Cabs.expression
+)
+ident(
+  def e_end "wcee.ml" 347 11874 11880 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 346 11832 11863 "wcee.ml" 346 11832 11869
+type(
+  Cabs.statement
+)
+ident(
+  def s_body "wcee.ml" 347 11874 11880 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 346 11832 11838 "wcee.ml" 346 11832 11870
+type(
+  Cabs.statement
+)
+"wcee.ml" 347 11874 11884 "wcee.ml" 347 11874 11886
+type(
+  Footprint.t
+)
+ident(
+  def wi "wcee.ml" 348 11904 11910 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 347 11874 11889 "wcee.ml" 347 11874 11893
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 347 11874 11894 "wcee.ml" 347 11874 11900
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_init "wcee.ml" 346 11832 11843 "wcee.ml" 346 11832 11849
+)
+"wcee.ml" 347 11874 11889 "wcee.ml" 347 11874 11900
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 348 11904 11914 "wcee.ml" 348 11904 11916
+type(
+  Footprint.t
+)
+ident(
+  def wt "wcee.ml" 349 11934 11940 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 348 11904 11919 "wcee.ml" 348 11904 11923
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 348 11904 11924 "wcee.ml" 348 11904 11930
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_test "wcee.ml" 346 11832 11850 "wcee.ml" 346 11832 11856
+)
+"wcee.ml" 348 11904 11919 "wcee.ml" 348 11904 11930
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 349 11934 11944 "wcee.ml" 349 11934 11946
+type(
+  Footprint.t
+)
+ident(
+  def we "wcee.ml" 350 11963 11969 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 349 11934 11949 "wcee.ml" 349 11934 11953
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 349 11934 11954 "wcee.ml" 349 11934 11959
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_end "wcee.ml" 346 11832 11857 "wcee.ml" 346 11832 11862
+)
+"wcee.ml" 349 11934 11949 "wcee.ml" 349 11934 11959
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 350 11963 11973 "wcee.ml" 350 11963 11975
+type(
+  Footprint.t
+)
+ident(
+  def wb "wcee.ml" 351 11993 11999 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 350 11963 11978 "wcee.ml" 350 11963 11982
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 350 11963 11983 "wcee.ml" 350 11963 11989
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_body "wcee.ml" 346 11832 11863 "wcee.ml" 346 11832 11869
+)
+"wcee.ml" 350 11963 11978 "wcee.ml" 350 11963 11989
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 351 11993 12003 "wcee.ml" 351 11993 12004
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 352 12038 12044 "wcee.ml" 352 12038 12105
+)
+"wcee.ml" 351 11993 12007 "wcee.ml" 351 11993 12022
+type(
+  InputFacts.LocMap.key option * Cabs.statement -> int
+)
+ident(
+  int_ref find_loop_bound "wcee.ml" 230 6789 6795 "wcee.ml" 230 6789 6810
+)
+"wcee.ml" 351 11993 12024 "wcee.ml" 351 11993 12027
+type(
+  InputFacts.LocMap.key option
+)
+ident(
+  int_ref loc "wcee.ml" 319 10778 10795 "wcee.ml" 319 10778 10798
+)
+"wcee.ml" 351 11993 12029 "wcee.ml" 351 11993 12033
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "wcee.ml" 319 10778 10826 "wcee.ml" 319 10778 10830
+)
+"wcee.ml" 351 11993 12023 "wcee.ml" 351 11993 12034
+type(
+  InputFacts.LocMap.key option * Cabs.statement
+)
+"wcee.ml" 351 11993 12007 "wcee.ml" 351 11993 12034
+call(
+  stack
+)
+type(
+  int
+)
+"wcee.ml" 352 12038 12044 "wcee.ml" 352 12038 12047
+type(
+  Footprint.t -> int ItemCount.IMap.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 352 12038 12048 "wcee.ml" 352 12038 12050
+type(
+  Footprint.t
+)
+ident(
+  int_ref wi "wcee.ml" 347 11874 11884 "wcee.ml" 347 11874 11886
+)
+"wcee.ml" 352 12038 12052 "wcee.ml" 352 12038 12059
+type(
+  header:Footprint.t ->
+  count:int -> body:int ItemCount.IMap.t list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.of_loop "wcee.ml" 189 5549 5555 "wcee.ml" 189 5549 5562
+)
+"wcee.ml" 352 12038 12068 "wcee.ml" 352 12038 12070
+type(
+  Footprint.t
+)
+ident(
+  int_ref wt "wcee.ml" 348 11904 11914 "wcee.ml" 348 11904 11916
+)
+"wcee.ml" 352 12038 12078 "wcee.ml" 352 12038 12079
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 351 11993 12003 "wcee.ml" 351 11993 12004
+)
+"wcee.ml" 352 12038 12087 "wcee.ml" 352 12038 12094
+type(
+  Footprint.t list -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.add_all "wcee.ml" 175 5147 5153 "wcee.ml" 175 5147 5160
+)
+"wcee.ml" 352 12038 12096 "wcee.ml" 352 12038 12098
+type(
+  Footprint.t
+)
+ident(
+  int_ref wb "wcee.ml" 350 11963 11973 "wcee.ml" 350 11963 11975
+)
+"wcee.ml" 352 12038 12100 "wcee.ml" 352 12038 12102
+type(
+  Footprint.t
+)
+ident(
+  int_ref we "wcee.ml" 349 11934 11944 "wcee.ml" 349 11934 11946
+)
+"wcee.ml" 352 12038 12095 "wcee.ml" 352 12038 12103
+type(
+  Footprint.t list
+)
+"wcee.ml" 352 12038 12086 "wcee.ml" 352 12038 12104
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 352 12038 12051 "wcee.ml" 352 12038 12105
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 352 12038 12044 "wcee.ml" 352 12038 12105
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 351 11993 11999 "wcee.ml" 352 12038 12105
+type(
+  Footprint.t
+)
+"wcee.ml" 350 11963 11969 "wcee.ml" 352 12038 12105
+type(
+  Footprint.t
+)
+"wcee.ml" 349 11934 11940 "wcee.ml" 352 12038 12105
+type(
+  Footprint.t
+)
+"wcee.ml" 348 11904 11910 "wcee.ml" 352 12038 12105
+type(
+  Footprint.t
+)
+"wcee.ml" 347 11874 11880 "wcee.ml" 352 12038 12105
+type(
+  Footprint.t
+)
+"wcee.ml" 353 12106 12119 "wcee.ml" 353 12106 12125
+type(
+  Cabs.expression
+)
+ident(
+  def e_test "wcee.ml" 354 12137 12143 "wcee.ml" 357 12242 12284
+)
+"wcee.ml" 353 12106 12126 "wcee.ml" 353 12106 12132
+type(
+  Cabs.statement
+)
+ident(
+  def s_body "wcee.ml" 354 12137 12143 "wcee.ml" 357 12242 12284
+)
+"wcee.ml" 353 12106 12112 "wcee.ml" 353 12106 12133
+type(
+  Cabs.statement
+)
+"wcee.ml" 354 12137 12147 "wcee.ml" 354 12137 12149
+type(
+  Footprint.t
+)
+ident(
+  def wt "wcee.ml" 355 12167 12173 "wcee.ml" 357 12242 12284
+)
+"wcee.ml" 354 12137 12152 "wcee.ml" 354 12137 12156
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 354 12137 12157 "wcee.ml" 354 12137 12163
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_test "wcee.ml" 353 12106 12119 "wcee.ml" 353 12106 12125
+)
+"wcee.ml" 354 12137 12152 "wcee.ml" 354 12137 12163
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 355 12167 12177 "wcee.ml" 355 12167 12179
+type(
+  Footprint.t
+)
+ident(
+  def wb "wcee.ml" 356 12197 12203 "wcee.ml" 357 12242 12284
+)
+"wcee.ml" 355 12167 12182 "wcee.ml" 355 12167 12186
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 355 12167 12187 "wcee.ml" 355 12167 12193
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_body "wcee.ml" 353 12106 12126 "wcee.ml" 353 12106 12132
+)
+"wcee.ml" 355 12167 12182 "wcee.ml" 355 12167 12193
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 356 12197 12207 "wcee.ml" 356 12197 12208
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 357 12242 12248 "wcee.ml" 357 12242 12284
+)
+"wcee.ml" 356 12197 12211 "wcee.ml" 356 12197 12226
+type(
+  InputFacts.LocMap.key option * Cabs.statement -> int
+)
+ident(
+  int_ref find_loop_bound "wcee.ml" 230 6789 6795 "wcee.ml" 230 6789 6810
+)
+"wcee.ml" 356 12197 12228 "wcee.ml" 356 12197 12231
+type(
+  InputFacts.LocMap.key option
+)
+ident(
+  int_ref loc "wcee.ml" 319 10778 10795 "wcee.ml" 319 10778 10798
+)
+"wcee.ml" 356 12197 12233 "wcee.ml" 356 12197 12237
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "wcee.ml" 319 10778 10826 "wcee.ml" 319 10778 10830
+)
+"wcee.ml" 356 12197 12227 "wcee.ml" 356 12197 12238
+type(
+  InputFacts.LocMap.key option * Cabs.statement
+)
+"wcee.ml" 356 12197 12211 "wcee.ml" 356 12197 12238
+call(
+  stack
+)
+type(
+  int
+)
+"wcee.ml" 357 12242 12248 "wcee.ml" 357 12242 12255
+type(
+  header:Footprint.t -> count:int -> body:Footprint.t -> Footprint.t
+)
+ident(
+  int_ref Footprint.of_loop "wcee.ml" 189 5549 5555 "wcee.ml" 189 5549 5562
+)
+"wcee.ml" 357 12242 12264 "wcee.ml" 357 12242 12266
+type(
+  Footprint.t
+)
+ident(
+  int_ref wt "wcee.ml" 354 12137 12147 "wcee.ml" 354 12137 12149
+)
+"wcee.ml" 357 12242 12274 "wcee.ml" 357 12242 12275
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 356 12197 12207 "wcee.ml" 356 12197 12208
+)
+"wcee.ml" 357 12242 12282 "wcee.ml" 357 12242 12284
+type(
+  Footprint.t
+)
+ident(
+  int_ref wb "wcee.ml" 355 12167 12177 "wcee.ml" 355 12167 12179
+)
+"wcee.ml" 357 12242 12248 "wcee.ml" 357 12242 12284
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 356 12197 12203 "wcee.ml" 357 12242 12284
+type(
+  Footprint.t
+)
+"wcee.ml" 355 12167 12173 "wcee.ml" 357 12242 12284
+type(
+  Footprint.t
+)
+"wcee.ml" 354 12137 12143 "wcee.ml" 357 12242 12284
+type(
+  Footprint.t
+)
+"wcee.ml" 358 12285 12300 "wcee.ml" 358 12285 12306
+type(
+  Cabs.expression
+)
+ident(
+  def e_test "wcee.ml" 359 12318 12324 "wcee.ml" 362 12424 12486
+)
+"wcee.ml" 358 12285 12307 "wcee.ml" 358 12285 12313
+type(
+  Cabs.statement
+)
+ident(
+  def s_body "wcee.ml" 359 12318 12324 "wcee.ml" 362 12424 12486
+)
+"wcee.ml" 358 12285 12291 "wcee.ml" 358 12285 12314
+type(
+  Cabs.statement
+)
+"wcee.ml" 359 12318 12328 "wcee.ml" 359 12318 12330
+type(
+  Footprint.t
+)
+ident(
+  def wt "wcee.ml" 360 12348 12354 "wcee.ml" 362 12424 12486
+)
+"wcee.ml" 359 12318 12333 "wcee.ml" 359 12318 12337
+type(
+  Cabs.expression -> Footprint.t
+)
+ident(
+  int_ref read "wcee.ml" 262 8057 8063 "wcee.ml" 262 8057 8067
+)
+"wcee.ml" 359 12318 12338 "wcee.ml" 359 12318 12344
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_test "wcee.ml" 358 12285 12300 "wcee.ml" 358 12285 12306
+)
+"wcee.ml" 359 12318 12333 "wcee.ml" 359 12318 12344
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 360 12348 12358 "wcee.ml" 360 12348 12360
+type(
+  Footprint.t
+)
+ident(
+  def wb "wcee.ml" 361 12378 12384 "wcee.ml" 362 12424 12486
+)
+"wcee.ml" 360 12348 12363 "wcee.ml" 360 12348 12367
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 360 12348 12368 "wcee.ml" 360 12348 12374
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_body "wcee.ml" 358 12285 12307 "wcee.ml" 358 12285 12313
+)
+"wcee.ml" 360 12348 12363 "wcee.ml" 360 12348 12374
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 361 12378 12388 "wcee.ml" 361 12378 12389
+type(
+  int
+)
+ident(
+  def n "wcee.ml" 362 12424 12430 "wcee.ml" 362 12424 12486
+)
+"wcee.ml" 361 12378 12393 "wcee.ml" 361 12378 12408
+type(
+  InputFacts.LocMap.key option * Cabs.statement -> int
+)
+ident(
+  int_ref find_loop_bound "wcee.ml" 230 6789 6795 "wcee.ml" 230 6789 6810
+)
+"wcee.ml" 361 12378 12410 "wcee.ml" 361 12378 12413
+type(
+  InputFacts.LocMap.key option
+)
+ident(
+  int_ref loc "wcee.ml" 319 10778 10795 "wcee.ml" 319 10778 10798
+)
+"wcee.ml" 361 12378 12415 "wcee.ml" 361 12378 12419
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "wcee.ml" 319 10778 10826 "wcee.ml" 319 10778 10830
+)
+"wcee.ml" 361 12378 12409 "wcee.ml" 361 12378 12420
+type(
+  InputFacts.LocMap.key option * Cabs.statement
+)
+"wcee.ml" 361 12378 12393 "wcee.ml" 361 12378 12420
+call(
+  stack
+)
+type(
+  int
+)
+"wcee.ml" 362 12424 12430 "wcee.ml" 362 12424 12437
+type(
+  header:int ItemCount.IMap.t list ->
+  count:int -> body:int ItemCount.IMap.t list -> Footprint.t
+)
+ident(
+  int_ref Footprint.of_loop "wcee.ml" 189 5549 5555 "wcee.ml" 189 5549 5562
+)
+"wcee.ml" 362 12424 12446 "wcee.ml" 362 12424 12453
+type(
+  int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 362 12424 12462 "wcee.ml" 362 12424 12463
+type(
+  int
+)
+ident(
+  int_ref n "wcee.ml" 361 12378 12388 "wcee.ml" 361 12378 12389
+)
+"wcee.ml" 362 12424 12464 "wcee.ml" 362 12424 12465
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"wcee.ml" 362 12424 12466 "wcee.ml" 362 12424 12467
+type(
+  int
+)
+"wcee.ml" 362 12424 12461 "wcee.ml" 362 12424 12468
+type(
+  int
+)
+"wcee.ml" 362 12424 12476 "wcee.ml" 362 12424 12479
+type(
+  Footprint.t -> Footprint.t -> int ItemCount.IMap.t list
+)
+ident(
+  int_ref Footprint.add "wcee.ml" 172 5043 5049 "wcee.ml" 172 5043 5052
+)
+"wcee.ml" 362 12424 12480 "wcee.ml" 362 12424 12482
+type(
+  Footprint.t
+)
+ident(
+  int_ref wb "wcee.ml" 360 12348 12358 "wcee.ml" 360 12348 12360
+)
+"wcee.ml" 362 12424 12483 "wcee.ml" 362 12424 12485
+type(
+  Footprint.t
+)
+ident(
+  int_ref wt "wcee.ml" 359 12318 12328 "wcee.ml" 359 12318 12330
+)
+"wcee.ml" 362 12424 12475 "wcee.ml" 362 12424 12486
+call(
+  stack
+)
+type(
+  int ItemCount.IMap.t list
+)
+"wcee.ml" 362 12424 12430 "wcee.ml" 362 12424 12486
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 361 12378 12384 "wcee.ml" 362 12424 12486
+type(
+  Footprint.t
+)
+"wcee.ml" 360 12348 12354 "wcee.ml" 362 12424 12486
+type(
+  Footprint.t
+)
+"wcee.ml" 359 12318 12324 "wcee.ml" 362 12424 12486
+type(
+  Footprint.t
+)
+"wcee.ml" 363 12487 12493 "wcee.ml" 363 12487 12498
+type(
+  Cabs.statement
+)
+"wcee.ml" 363 12487 12502 "wcee.ml" 363 12487 12509
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 364 12524 12530 "wcee.ml" 364 12524 12538
+type(
+  Cabs.statement
+)
+"wcee.ml" 364 12524 12542 "wcee.ml" 364 12524 12549
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 365 12564 12575 "wcee.ml" 365 12564 12576
+type(
+  string
+)
+"wcee.ml" 365 12564 12570 "wcee.ml" 365 12564 12576
+type(
+  Cabs.statement
+)
+"wcee.ml" 365 12564 12580 "wcee.ml" 365 12564 12588
+type(
+  string -> Footprint.t
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"wcee.ml" 365 12564 12589 "wcee.ml" 365 12564 12616
+type(
+  string
+)
+"wcee.ml" 365 12564 12580 "wcee.ml" 365 12564 12616
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 366 12617 12630 "wcee.ml" 366 12617 12631
+type(
+  string
+)
+"wcee.ml" 366 12617 12632 "wcee.ml" 366 12617 12635
+type(
+  Cabs.statement
+)
+ident(
+  def sub "wcee.ml" 366 12617 12640 "wcee.ml" 366 12617 12648
+)
+"wcee.ml" 366 12617 12623 "wcee.ml" 366 12617 12636
+type(
+  Cabs.statement
+)
+"wcee.ml" 366 12617 12640 "wcee.ml" 366 12617 12644
+type(
+  Cabs.statement -> Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 320 10864 10872 "wcee.ml" 320 10864 10876
+)
+"wcee.ml" 366 12617 12645 "wcee.ml" 366 12617 12648
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "wcee.ml" 366 12617 12632 "wcee.ml" 366 12617 12635
+)
+"wcee.ml" 366 12617 12640 "wcee.ml" 366 12617 12648
+call(
+  tail
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 367 12649 12659 "wcee.ml" 367 12649 12660
+type(
+  string
+)
+"wcee.ml" 367 12649 12655 "wcee.ml" 367 12649 12660
+type(
+  Cabs.statement
+)
+"wcee.ml" 367 12649 12664 "wcee.ml" 367 12649 12671
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 368 12686 12700 "wcee.ml" 368 12686 12701
+type(
+  string list
+)
+type(
+  Cabs.gnu_asm_arg list
+)
+type(
+  Cabs.gnu_asm_arg list
+)
+type(
+  string
+)
+"wcee.ml" 368 12686 12692 "wcee.ml" 368 12686 12701
+type(
+  Cabs.statement
+)
+"wcee.ml" 368 12686 12705 "wcee.ml" 368 12686 12712
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 369 12727 12750 "wcee.ml" 369 12727 12751
+type(
+  string list
+)
+type(
+  Cabs.gnu_asm_arg list
+)
+type(
+  Cabs.gnu_asm_arg list
+)
+type(
+  string
+)
+"wcee.ml" 369 12727 12733 "wcee.ml" 369 12727 12751
+type(
+  Cabs.statement
+)
+"wcee.ml" 369 12727 12755 "wcee.ml" 369 12727 12762
+type(
+  Footprint.t
+)
+ident(
+  int_ref Footprint.nothing "wcee.ml" 168 4831 4837 "wcee.ml" 168 4831 4844
+)
+"wcee.ml" 323 10943 10947 "wcee.ml" 369 12727 12762
+type(
+  Footprint.t
+)
+"wcee.ml" 320 10864 10868 "wcee.ml" 369 12727 12762
+type(
+  Footprint.t
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 373 12816 12818 "wcee.ml" 373 12816 12831
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 373 12816 12832 "wcee.ml" 373 12816 12892
+type(
+  (unit, Format.formatter, unit) format
+)
+"wcee.ml" 373 12816 12818 "wcee.ml" 373 12816 12892
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 374 12894 12900 "wcee.ml" 374 12894 12904
+type(
+  Footprint.t
+)
+ident(
+  def eval "wcee.ml" 375 12925 12927 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 374 12894 12907 "wcee.ml" 374 12894 12915
+type(
+  string -> Footprint.t
+)
+ident(
+  int_ref fun_eval "wcee.ml" 247 7348 7358 "wcee.ml" 247 7348 7366
+)
+"wcee.ml" 374 12894 12916 "wcee.ml" 374 12894 12921
+type(
+  string
+)
+ident(
+  int_ref entry "wcee.ml" 214 6339 6344 "wcee.ml" 214 6339 6349
+)
+"wcee.ml" 374 12894 12907 "wcee.ml" 374 12894 12921
+call(
+  stack
+)
+type(
+  Footprint.t
+)
+"wcee.ml" 375 12925 12927 "wcee.ml" 375 12925 12940
+type(
+  ((Format.formatter -> Footprint.t -> unit) -> Footprint.t -> unit,
+   Format.formatter, unit)
+  format -> (Format.formatter -> Footprint.t -> unit) -> Footprint.t -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 375 12925 12941 "wcee.ml" 375 12925 12983
+type(
+  ((Format.formatter -> Footprint.t -> unit) -> Footprint.t -> unit,
+   Format.formatter, unit)
+  format
+)
+"wcee.ml" 375 12925 12984 "wcee.ml" 375 12925 12999
+type(
+  Format.formatter -> Footprint.t -> unit
+)
+ident(
+  int_ref Footprint.print "wcee.ml" 196 5786 5792 "wcee.ml" 196 5786 5797
+)
+"wcee.ml" 375 12925 13000 "wcee.ml" 375 12925 13004
+type(
+  Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 374 12894 12900 "wcee.ml" 374 12894 12904
+)
+"wcee.ml" 375 12925 12927 "wcee.ml" 375 12925 13004
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 376 13006 13012 "wcee.ml" 376 13006 13014
+type(
+  ItemCount.t
+)
+ident(
+  def wc "wcee.ml" 377 13046 13048 "wcee.ml" 380 13305 13311
+)
+"wcee.ml" 376 13006 13017 "wcee.ml" 376 13006 13037
+type(
+  Footprint.t -> ItemCount.t
+)
+ident(
+  int_ref Footprint.worst_case "wcee.ml" 185 5450 5456 "wcee.ml" 185 5450 5466
+)
+"wcee.ml" 376 13006 13038 "wcee.ml" 376 13006 13042
+type(
+  Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 374 12894 12900 "wcee.ml" 374 12894 12904
+)
+"wcee.ml" 376 13006 13017 "wcee.ml" 376 13006 13042
+call(
+  stack
+)
+type(
+  ItemCount.t
+)
+"wcee.ml" 377 13046 13048 "wcee.ml" 377 13046 13061
+type(
+  ((Format.formatter -> int ItemCount.IMap.t -> unit) ->
+   int ItemCount.IMap.t -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> int ItemCount.IMap.t -> unit) ->
+  int ItemCount.IMap.t -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 377 13046 13062 "wcee.ml" 377 13046 13090
+type(
+  ((Format.formatter -> int ItemCount.IMap.t -> unit) ->
+   int ItemCount.IMap.t -> unit, Format.formatter, unit)
+  format
+)
+"wcee.ml" 377 13046 13091 "wcee.ml" 377 13046 13111
+type(
+  Format.formatter -> int ItemCount.IMap.t -> unit
+)
+ident(
+  int_ref ItemCount.print_list "wcee.ml" 160 4566 4572 "wcee.ml" 160 4566 4582
+)
+"wcee.ml" 377 13046 13112 "wcee.ml" 377 13046 13114
+type(
+  ItemCount.t
+)
+ident(
+  int_ref wc "wcee.ml" 376 13006 13012 "wcee.ml" 376 13006 13014
+)
+"wcee.ml" 377 13046 13048 "wcee.ml" 377 13046 13114
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 378 13116 13118 "wcee.ml" 378 13116 13131
+type(
+  (int -> unit, Format.formatter, unit) format -> int -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 378 13116 13132 "wcee.ml" 378 13116 13167
+type(
+  (int -> unit, Format.formatter, unit) format
+)
+"wcee.ml" 378 13116 13169 "wcee.ml" 378 13116 13181
+type(
+  float -> int
+)
+ident(
+  ext_ref Pervasives.int_of_float
+)
+"wcee.ml" 378 13116 13183 "wcee.ml" 378 13116 13203
+type(
+  int ItemCount.IMap.t -> float
+)
+ident(
+  int_ref ItemCount.cheap_eval "wcee.ml" 130 3552 3558 "wcee.ml" 130 3552 3568
+)
+"wcee.ml" 378 13116 13204 "wcee.ml" 378 13116 13206
+type(
+  ItemCount.t
+)
+ident(
+  int_ref wc "wcee.ml" 376 13006 13012 "wcee.ml" 376 13006 13014
+)
+"wcee.ml" 378 13116 13182 "wcee.ml" 378 13116 13207
+call(
+  stack
+)
+type(
+  float
+)
+"wcee.ml" 378 13116 13168 "wcee.ml" 378 13116 13208
+type(
+  int
+)
+"wcee.ml" 378 13116 13118 "wcee.ml" 378 13116 13208
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 379 13210 13212 "wcee.ml" 379 13210 13225
+type(
+  (int -> unit, Format.formatter, unit) format -> int -> unit
+)
+ident(
+  ext_ref Format.printf
+)
+"wcee.ml" 379 13210 13226 "wcee.ml" 379 13210 13262
+type(
+  (int -> unit, Format.formatter, unit) format
+)
+"wcee.ml" 379 13210 13264 "wcee.ml" 379 13210 13276
+type(
+  float -> int
+)
+ident(
+  ext_ref Pervasives.int_of_float
+)
+"wcee.ml" 379 13210 13278 "wcee.ml" 379 13210 13298
+type(
+  int ItemCount.IMap.t -> float
+)
+ident(
+  int_ref ItemCount.expen_eval "wcee.ml" 131 3629 3635 "wcee.ml" 131 3629 3645
+)
+"wcee.ml" 379 13210 13299 "wcee.ml" 379 13210 13301
+type(
+  ItemCount.t
+)
+ident(
+  int_ref wc "wcee.ml" 376 13006 13012 "wcee.ml" 376 13006 13014
+)
+"wcee.ml" 379 13210 13277 "wcee.ml" 379 13210 13302
+call(
+  stack
+)
+type(
+  float
+)
+"wcee.ml" 379 13210 13263 "wcee.ml" 379 13210 13303
+type(
+  int
+)
+"wcee.ml" 379 13210 13212 "wcee.ml" 379 13210 13303
+call(
+  stack
+)
+type(
+  unit
+)
+"wcee.ml" 380 13305 13307 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+ident(
+  int_ref eval "wcee.ml" 374 12894 12900 "wcee.ml" 374 12894 12904
+)
+"wcee.ml" 379 13210 13212 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 378 13116 13118 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 377 13046 13048 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 376 13006 13008 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 375 12925 12927 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 374 12894 12896 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 373 12816 12818 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 247 7348 7350 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 230 6789 6791 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+"wcee.ml" 218 6387 6389 "wcee.ml" 380 13305 13311
+type(
+  Footprint.t
+)
+type(
+  Footprint.t
+)

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="6" source="calipso/klem4.c" exact="true" maxcount="2" totalcount="2" maxexpr="partieEntiereInf((2-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((2-EPSILONINT-0)/1+1)">
+            <loop loopId="2" line="7" source="calipso/klem4.c" exact="false" maxcount="1" totalcount="1" maxexpr="MAX(bIt-1,partieEntiereInf((2-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((2-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-EPSILONINT-0)/1+1))">
+            </loop>
+        </loop>
+        <call name="printf" numcall="1" line="11" source="calipso/klem4.c" executed="true" extern="true">
+            <function name="printf">
+            </function>
+        </call>
+        <loop loopId="3" line="13" source="calipso/klem4.c" exact="false" maxcount="100" totalcount="100" maxexpr="partieEntiereInf((100-(0+(1*(1+SET(-1,0))+0)*(1+1))-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((100-(0+(1*(1+SET(-1,0))+0)*(1+1))-EPSILONINT-0)/1+1)">
+            <call name="printf" numcall="2" line="14" source="calipso/klem4.c" executed="true" extern="true">
+                <function name="printf">
+                </function>
+            </call>
+        </loop>
+    </function>
+</flowfacts>
+

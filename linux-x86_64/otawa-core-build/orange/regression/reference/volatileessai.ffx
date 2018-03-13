@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="icrc" numcall="2" line="120" source="originaux/crc.c" executed="true" extern="false">
+            <function name="icrc">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="80" source="originaux/crc.c" isexecuted="true" expcond="!0" expcondinit="!init"> </condition>
+                    <case cond="1" executed="true" line="81" source="originaux/crc.c">
+                        <loop loopId="2" line="82" source="originaux/crc.c" exact="false" maxcount="256" totalcount="256" maxexpr="partieEntiereInf((255-0)/1+1)" totalexpr="partieEntiereInf((255-0)/1+1)">
+                            <call name="icrc1" numcall="1" line="83" source="originaux/crc.c" executed="true" extern="false">
+                                <function name="icrc1">
+                                    <loop loopId="1" line="62" source="originaux/crc.c" exact="false" maxcount="8" totalcount="2048" maxexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((255-0)/1+1)*partieEntiereInf((8-EPSILONINT-0)/1+1)">
+                                        <conditional id="IF-1"> <condition varcond="IF-1" line="63" source="originaux/crc.c" isexecuted="true" expcond="" expcondinit="ans&amp;0x8000"> </condition>
+                                            <case cond="1" executed="true" line="64" source="originaux/crc.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="66" source="originaux/crc.c">
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </function>
+                            </call>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-3"> <condition varcond="IF-3" line="87" source="originaux/crc.c" isexecuted="true" expcond="0&gt;=0" expcondinit="jinit&gt;=0"> </condition>
+                    <case cond="1" executed="true" line="87" source="originaux/crc.c">
+                    </case>
+                    <case cond="0" executed="false" line="88" source="originaux/crc.c">
+                        <conditional id="IF-4"> <condition varcond="IF-4" line="88" source="originaux/crc.c" isexecuted="false" expcond="1&lt;0" expcondinit="jrev&lt;0"> </condition>
+                            <case cond="1" executed="false" line="90" source="originaux/crc.c">
+                            </case>
+                            <case cond="0" executed="false" >
+                            </case>
+                        </conditional>
+                    </case>
+                </conditional>
+                <loop loopId="3" line="93" source="originaux/crc.c" exact="true" maxcount="40" totalcount="40" maxexpr="partieEntiereInf((40-1)/1+1)" totalexpr="partieEntiereInf((40-1)/1+1)">
+                    <conditional id="IF-5"> <condition varcond="IF-5" line="94" source="originaux/crc.c" isexecuted="true" expcond="" expcondinit="jrev&lt;0"> </condition>
+                        <case cond="1" executed="true" line="95" source="originaux/crc.c">
+                        </case>
+                        <case cond="0" executed="true" line="98" source="originaux/crc.c">
+                        </case>
+                    </conditional>
+                </loop>
+                <conditional id="IF-6"> <condition varcond="IF-6" line="102" source="originaux/crc.c" isexecuted="true" expcond="" expcondinit="jrev&gt;=0"> </condition>
+                    <case cond="1" executed="true" line="103" source="originaux/crc.c">
+                    </case>
+                    <case cond="0" executed="true" line="107" source="originaux/crc.c">
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <call name="icrc" numcall="3" line="123" source="originaux/crc.c" executed="true" extern="false">
+            <function name="icrc">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="80" source="originaux/crc.c" isexecuted="true" expcond="!1" expcondinit="!init"> </condition>
+                    <case cond="1" executed="false" line="81" source="originaux/crc.c">
+                        <loop loopId="2" line="82" source="originaux/crc.c" exact="false" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+                            <call name="icrc1" numcall="1" line="83" source="originaux/crc.c" executed="false" extern="false">
+                                <function name="icrc1">
+                                    <loop loopId="1" line="62" source="originaux/crc.c" exact="false" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+                                        <conditional id="IF-1"> <condition varcond="IF-1" line="63" source="originaux/crc.c" isexecuted="true" expcond="" expcondinit="ans&amp;0x8000"> </condition>
+                                            <case cond="1" executed="true" line="64" source="originaux/crc.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="66" source="originaux/crc.c">
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </function>
+                            </call>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-3"> <condition varcond="IF-3" line="87" source="originaux/crc.c" isexecuted="true" expcond="0&gt;=0" expcondinit="jinit&gt;=0"> </condition>
+                    <case cond="1" executed="true" line="87" source="originaux/crc.c">
+                    </case>
+                    <case cond="0" executed="false" line="88" source="originaux/crc.c">
+                        <conditional id="IF-4"> <condition varcond="IF-4" line="88" source="originaux/crc.c" isexecuted="false" expcond="1&lt;0" expcondinit="jrev&lt;0"> </condition>
+                            <case cond="1" executed="false" line="90" source="originaux/crc.c">
+                            </case>
+                            <case cond="0" executed="false" >
+                            </case>
+                        </conditional>
+                    </case>
+                </conditional>
+                <loop loopId="3" line="93" source="originaux/crc.c" exact="true" maxcount="42" totalcount="42" maxexpr="partieEntiereInf((40+2-1)/1+1)" totalexpr="partieEntiereInf((40+2-1)/1+1)">
+                    <conditional id="IF-5"> <condition varcond="IF-5" line="94" source="originaux/crc.c" isexecuted="true" expcond="" expcondinit="jrev&lt;0"> </condition>
+                        <case cond="1" executed="true" line="95" source="originaux/crc.c">
+                        </case>
+                        <case cond="0" executed="true" line="98" source="originaux/crc.c">
+                        </case>
+                    </conditional>
+                </loop>
+                <conditional id="IF-6"> <condition varcond="IF-6" line="102" source="originaux/crc.c" isexecuted="true" expcond="" expcondinit="jrev&gt;=0"> </condition>
+                    <case cond="1" executed="true" line="103" source="originaux/crc.c">
+                    </case>
+                    <case cond="0" executed="true" line="107" source="originaux/crc.c">
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <call name="icrc" numcall="4" line="125" source="originaux/crc.c" executed="true" extern="false">
+            <function name="icrc">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="80" source="originaux/crc.c" isexecuted="true" expcond="!1" expcondinit="!init"> </condition>
+                    <case cond="1" executed="false" line="81" source="originaux/crc.c">
+                        <loop loopId="2" line="82" source="originaux/crc.c" exact="false" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+                            <call name="icrc1" numcall="1" line="83" source="originaux/crc.c" executed="false" extern="false">
+                                <function name="icrc1">
+                                    <loop loopId="1" line="62" source="originaux/crc.c" exact="false" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+                                        <conditional id="IF-1"> <condition varcond="IF-1" line="63" source="originaux/crc.c" isexecuted="true" expcond="" expcondinit="ans&amp;0x8000"> </condition>
+                                            <case cond="1" executed="true" line="64" source="originaux/crc.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="66" source="originaux/crc.c">
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </function>
+                            </call>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-3"> <condition varcond="IF-3" line="87" source="originaux/crc.c" isexecuted="true" expcond="0&gt;=0" expcondinit="jinit&gt;=0"> </condition>
+                    <case cond="1" executed="true" line="87" source="originaux/crc.c">
+                    </case>
+                    <case cond="0" executed="false" line="88" source="originaux/crc.c">
+                        <conditional id="IF-4"> <condition varcond="IF-4" line="88" source="originaux/crc.c" isexecuted="false" expcond="1&lt;0" expcondinit="jrev&lt;0"> </condition>
+                            <case cond="1" executed="false" line="90" source="originaux/crc.c">
+                            </case>
+                            <case cond="0" executed="false" >
+                            </case>
+                        </conditional>
+                    </case>
+                </conditional>
+                <loop loopId="3" line="93" source="originaux/crc.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((len-j)/1+1)">
+                    <conditional id="IF-5"> <condition varcond="IF-5" line="94" source="originaux/crc.c" isexecuted="true" expcond="" expcondinit="jrev&lt;0"> </condition>
+                        <case cond="1" executed="true" line="95" source="originaux/crc.c">
+                        </case>
+                        <case cond="0" executed="true" line="98" source="originaux/crc.c">
+                        </case>
+                    </conditional>
+                </loop>
+                <conditional id="IF-6"> <condition varcond="IF-6" line="102" source="originaux/crc.c" isexecuted="true" expcond="SET(1,)&gt;=0" expcondinit="jrev&gt;=0"> </condition>
+                    <case cond="1" executed="true" line="103" source="originaux/crc.c">
+                    </case>
+                    <case cond="0" executed="true" line="107" source="originaux/crc.c">
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

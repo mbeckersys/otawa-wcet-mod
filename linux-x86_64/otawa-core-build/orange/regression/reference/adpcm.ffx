@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="reset" numcall="35" line="829" source="originaux/adpcm.c" executed="true" extern="false">
+            <function name="reset">
+                <loop loopId="8" line="620" source="originaux/adpcm.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                </loop>
+                <loop loopId="9" line="627" source="originaux/adpcm.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                </loop>
+                <loop loopId="10" line="634" source="originaux/adpcm.c" exact="true" maxcount="23" totalcount="23" maxexpr="partieEntiereInf((23-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((23-EPSILONINT-0)/1+1)">
+                </loop>
+                <loop loopId="11" line="636" source="originaux/adpcm.c" exact="true" maxcount="11" totalcount="11" maxexpr="partieEntiereInf((11-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((11-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <loop loopId="16" line="840" source="originaux/adpcm.c" exact="true" maxcount="2" totalcount="2" maxexpr="partieEntiereInf((2-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((2-EPSILONINT-0)/1+1)">
+            <call name="my_cos" numcall="36" line="841" source="originaux/adpcm.c" executed="true" extern="false">
+                <function name="my_cos">
+                    <call name="my_sin" numcall="3" line="319" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="my_sin">
+                            <loop loopId="1" line="292" source="originaux/adpcm.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-16,partieEntiereInf((2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3141+EPSILONINT-(3141/2-2000*3141*(0+1*(bIt-16-1+1))))/-6282+1))" totalexpr="SYGMA(bIt-16,partieEntiereInf((2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3141+EPSILONINT-(3141/2-2000*3141*(0+1*(bIt-16-1+1))))/-6282+1))">
+                            </loop>
+                            <loop loopId="2" line="295" source="originaux/adpcm.c" exact="false" maxcount="999" totalcount="999" maxexpr="MAX(bIt-16,partieEntiereInf((2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3141)-EPSILONINT-(3141/2-2000*3141*(0+1*(bIt-16-1+1))+-6282*(-1+1)))/6282+1))" totalexpr="SYGMA(bIt-16,partieEntiereInf((2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3141)-EPSILONINT-(3141/2-2000*3141*(0+1*(bIt-16-1+1))+-6282*(-1+1)))/6282+1))">
+                            </loop>
+                            <call name="my_fabs" numcall="1" line="305" source="originaux/adpcm.c" executed="true" extern="false">
+                                <function name="my_fabs">
+                                    <conditional id="IF-2"> <condition varcond="IF-2" line="279" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="n_0&gt;=0"> </condition>
+                                        <case cond="1" executed="true" line="279" source="originaux/adpcm.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="280" source="originaux/adpcm.c">
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <loop loopId="3" line="305" source="originaux/adpcm.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                <call name="my_fabs" numcall="2" line="305" source="originaux/adpcm.c" executed="true" extern="false">
+                                    <function name="my_fabs">
+                                        <conditional id="IF-2"> <condition varcond="IF-2" line="279" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="n_0&gt;=0"> </condition>
+                                            <case cond="1" executed="true" line="279" source="originaux/adpcm.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="280" source="originaux/adpcm.c">
+                                            </case>
+                                        </conditional>
+                                    </function>
+                                </call>
+                            </loop>
+                        </function>
+                    </call>
+                </function>
+            </call>
+        </loop>
+        <loop loopId="17" line="854" source="originaux/adpcm.c" exact="true" maxcount="2" totalcount="2" maxexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)">
+            <call name="encode" numcall="37" line="855" source="originaux/adpcm.c" executed="true" extern="false">
+                <function name="encode">
+                    <loop loopId="4" line="338" source="originaux/adpcm.c" exact="true" maxcount="10" totalcount="20" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((10-EPSILONINT-0)/1+1)">
+                    </loop>
+                    <loop loopId="5" line="349" source="originaux/adpcm.c" exact="true" maxcount="22" totalcount="44" maxexpr="partieEntiereInf((22-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((22-EPSILONINT-0)/1+1)">
+                    </loop>
+                    <call name="filtez" numcall="4" line="362" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="filtez">
+                            <loop loopId="12" line="652" source="originaux/adpcm.c" exact="true" maxcount="5" totalcount="10" maxexpr="partieEntiereInf((6-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-1)/1+1)">
+                            </loop>
+                        </function>
+                    </call>
+                    <call name="filtep" numcall="5" line="365" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="filtep">
+                        </function>
+                    </call>
+                    <call name="quantl" numcall="6" line="372" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="quantl">
+                            <call name="my_abs" numcall="34" line="678" source="originaux/adpcm.c" executed="true" extern="false">
+                                <function name="my_abs">
+                                    <conditional id="IF-1"> <condition varcond="IF-1" line="269" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                        <case cond="1" executed="true" line="269" source="originaux/adpcm.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="270" source="originaux/adpcm.c">
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <loop loopId="13" line="681" source="originaux/adpcm.c" exact="false" maxcount="30" totalcount="60" maxexpr="partieEntiereInf((30-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((30-EPSILONINT-0)/1+1)">
+                                <conditional id="IF-5"> <condition varcond="IF-5" line="683" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="wd&lt;=decis_0"> </condition>
+                                    <case cond="1" executed="true" line="683" source="originaux/adpcm.c">
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                            </loop>
+                            <conditional id="IF-6"> <condition varcond="IF-6" line="686" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="el_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="686" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="687" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="logscl" numcall="7" line="379" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="logscl">
+                            <conditional id="IF-7"> <condition varcond="IF-7" line="709" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="nbl_0&lt;0"> </condition>
+                                <case cond="1" executed="true" line="709" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-8"> <condition varcond="IF-8" line="710" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="nbl_0&gt;18432"> </condition>
+                                <case cond="1" executed="true" line="710" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="scalel" numcall="8" line="383" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="scalel">
+                        </function>
+                    </call>
+                    <call name="upzero" numcall="9" line="392" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="upzero">
+                            <conditional id="IF-9"> <condition varcond="IF-9" line="732" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="dlt_1==0"> </condition>
+                                <case cond="1" executed="true" line="733" source="originaux/adpcm.c">
+                                    <loop loopId="14" line="733" source="originaux/adpcm.c" exact="false" maxcount="6" totalcount="12" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                                    </loop>
+                                </case>
+                                <case cond="0" executed="true" line="738" source="originaux/adpcm.c">
+                                    <loop loopId="15" line="738" source="originaux/adpcm.c" exact="false" maxcount="6" totalcount="12" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                                        <conditional id="IF-10"> <condition varcond="IF-10" line="739" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)dlt_1*dlti[i]&gt;=0"> </condition>
+                                            <case cond="1" executed="true" line="739" source="originaux/adpcm.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="739" source="originaux/adpcm.c">
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="uppol2" numcall="10" line="396" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="uppol2">
+                            <conditional id="IF-11"> <condition varcond="IF-11" line="761" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_0*plt1_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="761" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-12"> <condition varcond="IF-12" line="763" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_0*plt2_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="764" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="767" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                            <conditional id="IF-13"> <condition varcond="IF-13" line="772" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl2&gt;12288"> </condition>
+                                <case cond="1" executed="true" line="772" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-14"> <condition varcond="IF-14" line="773" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl2&lt;-12288"> </condition>
+                                <case cond="1" executed="true" line="773" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="uppol1" numcall="11" line="400" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="uppol1">
+                            <conditional id="IF-15"> <condition varcond="IF-15" line="785" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_1*plt1_1&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="786" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="789" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                            <conditional id="IF-16"> <condition varcond="IF-16" line="793" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl1&gt;wd3_1"> </condition>
+                                <case cond="1" executed="true" line="793" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-17"> <condition varcond="IF-17" line="794" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl1&lt;-wd3_1"> </condition>
+                                <case cond="1" executed="true" line="794" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="filtez" numcall="12" line="413" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="filtez">
+                            <loop loopId="12" line="652" source="originaux/adpcm.c" exact="true" maxcount="5" totalcount="10" maxexpr="partieEntiereInf((6-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-1)/1+1)">
+                            </loop>
+                        </function>
+                    </call>
+                    <call name="filtep" numcall="13" line="415" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="filtep">
+                        </function>
+                    </call>
+                    <conditional id="IF-3"> <condition varcond="IF-3" line="424" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="eh&gt;=0"> </condition>
+                        <case cond="1" executed="true" line="425" source="originaux/adpcm.c">
+                        </case>
+                        <case cond="0" executed="true" line="428" source="originaux/adpcm.c">
+                        </case>
+                    </conditional>
+                    <call name="my_abs" numcall="14" line="431" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="my_abs">
+                            <conditional id="IF-1"> <condition varcond="IF-1" line="269" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="269" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="270" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <conditional id="IF-4"> <condition varcond="IF-4" line="431" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="call-my_abs14&gt;decis"> </condition>
+                        <case cond="1" executed="true" line="431" source="originaux/adpcm.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                    <call name="logsch" numcall="15" line="437" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="logsch">
+                            <conditional id="IF-18"> <condition varcond="IF-18" line="816" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="nbh_0&lt;0"> </condition>
+                                <case cond="1" executed="true" line="816" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-19"> <condition varcond="IF-19" line="817" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="nbh_0&gt;22528"> </condition>
+                                <case cond="1" executed="true" line="817" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="scalel" numcall="16" line="440" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="scalel">
+                        </function>
+                    </call>
+                    <call name="upzero" numcall="17" line="448" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="upzero">
+                            <conditional id="IF-9"> <condition varcond="IF-9" line="732" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="dlt_1==0"> </condition>
+                                <case cond="1" executed="true" line="733" source="originaux/adpcm.c">
+                                    <loop loopId="14" line="733" source="originaux/adpcm.c" exact="false" maxcount="6" totalcount="12" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                                    </loop>
+                                </case>
+                                <case cond="0" executed="true" line="738" source="originaux/adpcm.c">
+                                    <loop loopId="15" line="738" source="originaux/adpcm.c" exact="false" maxcount="6" totalcount="12" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                                        <conditional id="IF-10"> <condition varcond="IF-10" line="739" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)dlt_1*dlti[i]&gt;=0"> </condition>
+                                            <case cond="1" executed="true" line="739" source="originaux/adpcm.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="739" source="originaux/adpcm.c">
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="uppol2" numcall="18" line="452" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="uppol2">
+                            <conditional id="IF-11"> <condition varcond="IF-11" line="761" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_0*plt1_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="761" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-12"> <condition varcond="IF-12" line="763" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_0*plt2_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="764" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="767" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                            <conditional id="IF-13"> <condition varcond="IF-13" line="772" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl2&gt;12288"> </condition>
+                                <case cond="1" executed="true" line="772" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-14"> <condition varcond="IF-14" line="773" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl2&lt;-12288"> </condition>
+                                <case cond="1" executed="true" line="773" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="uppol1" numcall="19" line="455" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="uppol1">
+                            <conditional id="IF-15"> <condition varcond="IF-15" line="785" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_1*plt1_1&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="786" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="789" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                            <conditional id="IF-16"> <condition varcond="IF-16" line="793" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl1&gt;wd3_1"> </condition>
+                                <case cond="1" executed="true" line="793" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-17"> <condition varcond="IF-17" line="794" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl1&lt;-wd3_1"> </condition>
+                                <case cond="1" executed="true" line="794" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                </function>
+            </call>
+        </loop>
+        <loop loopId="18" line="857" source="originaux/adpcm.c" exact="true" maxcount="2" totalcount="2" maxexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)">
+            <call name="decode" numcall="38" line="858" source="originaux/adpcm.c" executed="true" extern="false">
+                <function name="decode">
+                    <call name="filtez" numcall="20" line="485" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="filtez">
+                            <loop loopId="12" line="652" source="originaux/adpcm.c" exact="true" maxcount="5" totalcount="10" maxexpr="partieEntiereInf((6-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-1)/1+1)">
+                            </loop>
+                        </function>
+                    </call>
+                    <call name="filtep" numcall="21" line="488" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="filtep">
+                        </function>
+                    </call>
+                    <call name="logscl" numcall="22" line="501" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="logscl">
+                            <conditional id="IF-7"> <condition varcond="IF-7" line="709" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="nbl_0&lt;0"> </condition>
+                                <case cond="1" executed="true" line="709" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-8"> <condition varcond="IF-8" line="710" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="nbl_0&gt;18432"> </condition>
+                                <case cond="1" executed="true" line="710" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="scalel" numcall="23" line="504" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="scalel">
+                        </function>
+                    </call>
+                    <call name="upzero" numcall="24" line="511" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="upzero">
+                            <conditional id="IF-9"> <condition varcond="IF-9" line="732" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="dlt_1==0"> </condition>
+                                <case cond="1" executed="true" line="733" source="originaux/adpcm.c">
+                                    <loop loopId="14" line="733" source="originaux/adpcm.c" exact="false" maxcount="6" totalcount="12" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                                    </loop>
+                                </case>
+                                <case cond="0" executed="true" line="738" source="originaux/adpcm.c">
+                                    <loop loopId="15" line="738" source="originaux/adpcm.c" exact="false" maxcount="6" totalcount="12" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                                        <conditional id="IF-10"> <condition varcond="IF-10" line="739" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)dlt_1*dlti[i]&gt;=0"> </condition>
+                                            <case cond="1" executed="true" line="739" source="originaux/adpcm.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="739" source="originaux/adpcm.c">
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="uppol2" numcall="25" line="514" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="uppol2">
+                            <conditional id="IF-11"> <condition varcond="IF-11" line="761" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_0*plt1_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="761" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-12"> <condition varcond="IF-12" line="763" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_0*plt2_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="764" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="767" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                            <conditional id="IF-13"> <condition varcond="IF-13" line="772" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl2&gt;12288"> </condition>
+                                <case cond="1" executed="true" line="772" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-14"> <condition varcond="IF-14" line="773" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl2&lt;-12288"> </condition>
+                                <case cond="1" executed="true" line="773" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="uppol1" numcall="26" line="517" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="uppol1">
+                            <conditional id="IF-15"> <condition varcond="IF-15" line="785" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_1*plt1_1&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="786" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="789" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                            <conditional id="IF-16"> <condition varcond="IF-16" line="793" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl1&gt;wd3_1"> </condition>
+                                <case cond="1" executed="true" line="793" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-17"> <condition varcond="IF-17" line="794" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl1&lt;-wd3_1"> </condition>
+                                <case cond="1" executed="true" line="794" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="filtez" numcall="27" line="531" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="filtez">
+                            <loop loopId="12" line="652" source="originaux/adpcm.c" exact="true" maxcount="5" totalcount="10" maxexpr="partieEntiereInf((6-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-1)/1+1)">
+                            </loop>
+                        </function>
+                    </call>
+                    <call name="filtep" numcall="28" line="534" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="filtep">
+                        </function>
+                    </call>
+                    <call name="logsch" numcall="29" line="543" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="logsch">
+                            <conditional id="IF-18"> <condition varcond="IF-18" line="816" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="nbh_0&lt;0"> </condition>
+                                <case cond="1" executed="true" line="816" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-19"> <condition varcond="IF-19" line="817" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="nbh_0&gt;22528"> </condition>
+                                <case cond="1" executed="true" line="817" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="scalel" numcall="30" line="546" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="scalel">
+                        </function>
+                    </call>
+                    <call name="upzero" numcall="31" line="552" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="upzero">
+                            <conditional id="IF-9"> <condition varcond="IF-9" line="732" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="dlt_1==0"> </condition>
+                                <case cond="1" executed="true" line="733" source="originaux/adpcm.c">
+                                    <loop loopId="14" line="733" source="originaux/adpcm.c" exact="false" maxcount="6" totalcount="12" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                                    </loop>
+                                </case>
+                                <case cond="0" executed="true" line="738" source="originaux/adpcm.c">
+                                    <loop loopId="15" line="738" source="originaux/adpcm.c" exact="false" maxcount="6" totalcount="12" maxexpr="partieEntiereInf((6-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((6-EPSILONINT-0)/1+1)">
+                                        <conditional id="IF-10"> <condition varcond="IF-10" line="739" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)dlt_1*dlti[i]&gt;=0"> </condition>
+                                            <case cond="1" executed="true" line="739" source="originaux/adpcm.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="739" source="originaux/adpcm.c">
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="uppol2" numcall="32" line="555" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="uppol2">
+                            <conditional id="IF-11"> <condition varcond="IF-11" line="761" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_0*plt1_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="761" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-12"> <condition varcond="IF-12" line="763" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_0*plt2_0&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="764" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="767" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                            <conditional id="IF-13"> <condition varcond="IF-13" line="772" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl2&gt;12288"> </condition>
+                                <case cond="1" executed="true" line="772" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-14"> <condition varcond="IF-14" line="773" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl2&lt;-12288"> </condition>
+                                <case cond="1" executed="true" line="773" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="uppol1" numcall="33" line="558" source="originaux/adpcm.c" executed="true" extern="false">
+                        <function name="uppol1">
+                            <conditional id="IF-15"> <condition varcond="IF-15" line="785" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="(CAST)plt_1*plt1_1&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="786" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" line="789" source="originaux/adpcm.c">
+                                </case>
+                            </conditional>
+                            <conditional id="IF-16"> <condition varcond="IF-16" line="793" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl1&gt;wd3_1"> </condition>
+                                <case cond="1" executed="true" line="793" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-17"> <condition varcond="IF-17" line="794" source="originaux/adpcm.c" isexecuted="true" expcond="" expcondinit="apl1&lt;-wd3_1"> </condition>
+                                <case cond="1" executed="true" line="794" source="originaux/adpcm.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <loop loopId="6" line="582" source="originaux/adpcm.c" exact="true" maxcount="10" totalcount="20" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((10-EPSILONINT-0)/1+1)">
+                    </loop>
+                    <loop loopId="7" line="597" source="originaux/adpcm.c" exact="true" maxcount="10" totalcount="20" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4-EPSILONINT-0)/2+1)*partieEntiereInf((10-EPSILONINT-0)/1+1)">
+                    </loop>
+                </function>
+            </call>
+        </loop>
+    </function>
+</flowfacts>
+

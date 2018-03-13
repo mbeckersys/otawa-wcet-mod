@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="InitSeed" numcall="8" line="131" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="InitSeed">
+            </function>
+        </call>
+        <call name="ttime" numcall="9" line="134" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="ttime">
+            </function>
+        </call>
+        <call name="Initialize" numcall="10" line="136" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="Initialize">
+                <loop loopId="4" line="94" source="originaux/stsanscalipso.c" exact="true" maxcount="1000" totalcount="1000" maxexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)">
+                    <call name="RandomInteger" numcall="7" line="95" source="originaux/stsanscalipso.c" executed="true" extern="false">
+                        <function name="RandomInteger">
+                        </function>
+                    </call>
+                </loop>
+            </function>
+        </call>
+        <call name="Calc_Sum_Mean" numcall="11" line="137" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="Calc_Sum_Mean">
+                <loop loopId="1" line="39" source="originaux/stsanscalipso.c" exact="true" maxcount="1000" totalcount="1000" maxexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="Calc_Var_Stddev" numcall="12" line="138" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="Calc_Var_Stddev">
+                <loop loopId="2" line="59" source="originaux/stsanscalipso.c" exact="true" maxcount="1000" totalcount="1000" maxexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)">
+                    <call name="Square" numcall="1" line="60" source="originaux/stsanscalipso.c" executed="true" extern="false">
+                        <function name="Square">
+                        </function>
+                    </call>
+                </loop>
+                <call name="sqrt" numcall="2" line="62" source="originaux/stsanscalipso.c" executed="true" extern="true">
+                    <function name="sqrt">
+                    </function>
+                </call>
+            </function>
+        </call>
+        <call name="Initialize" numcall="13" line="140" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="Initialize">
+                <loop loopId="4" line="94" source="originaux/stsanscalipso.c" exact="true" maxcount="1000" totalcount="1000" maxexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)">
+                    <call name="RandomInteger" numcall="7" line="95" source="originaux/stsanscalipso.c" executed="true" extern="false">
+                        <function name="RandomInteger">
+                        </function>
+                    </call>
+                </loop>
+            </function>
+        </call>
+        <call name="Calc_Sum_Mean" numcall="14" line="141" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="Calc_Sum_Mean">
+                <loop loopId="1" line="39" source="originaux/stsanscalipso.c" exact="true" maxcount="1000" totalcount="1000" maxexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="Calc_Var_Stddev" numcall="15" line="142" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="Calc_Var_Stddev">
+                <loop loopId="2" line="59" source="originaux/stsanscalipso.c" exact="true" maxcount="1000" totalcount="1000" maxexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)">
+                    <call name="Square" numcall="1" line="60" source="originaux/stsanscalipso.c" executed="true" extern="false">
+                        <function name="Square">
+                        </function>
+                    </call>
+                </loop>
+                <call name="sqrt" numcall="2" line="62" source="originaux/stsanscalipso.c" executed="true" extern="true">
+                    <function name="sqrt">
+                    </function>
+                </call>
+            </function>
+        </call>
+        <call name="Calc_LinCorrCoef" numcall="16" line="147" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="Calc_LinCorrCoef">
+                <loop loopId="3" line="74" source="originaux/stsanscalipso.c" exact="true" maxcount="1000" totalcount="1000" maxexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((1000-EPSILONINT-0)/1+1)">
+                    <call name="Square" numcall="3" line="76" source="originaux/stsanscalipso.c" executed="true" extern="false">
+                        <function name="Square">
+                        </function>
+                    </call>
+                    <call name="Square" numcall="4" line="77" source="originaux/stsanscalipso.c" executed="true" extern="false">
+                        <function name="Square">
+                        </function>
+                    </call>
+                </loop>
+                <call name="sqrt" numcall="5" line="81" source="originaux/stsanscalipso.c" executed="true" extern="true">
+                    <function name="sqrt">
+                    </function>
+                </call>
+                <call name="sqrt" numcall="6" line="81" source="originaux/stsanscalipso.c" executed="true" extern="true">
+                    <function name="sqrt">
+                    </function>
+                </call>
+            </function>
+        </call>
+        <call name="ttime" numcall="17" line="149" source="originaux/stsanscalipso.c" executed="true" extern="false">
+            <function name="ttime">
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

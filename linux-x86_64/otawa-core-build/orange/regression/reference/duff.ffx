@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="initialize" numcall="1" line="77" source="originaux/duff.c" executed="true" extern="false">
+            <function name="initialize">
+                <loop loopId="2" line="53" source="originaux/duff.c" exact="true" maxcount="100" totalcount="100" maxexpr="partieEntiereInf((100-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((100-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="duffcopy" numcall="2" line="79" source="originaux/duff.c" executed="true" extern="false">
+            <function name="duffcopy">
+                <loop loopId="1" line="14" source="originaux/duff.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0+EPSILONINT-(43+7)/8)/-1+1)" totalexpr="partieEntiereInf((0+EPSILONINT-(43+7)/8)/-1+1)">
+                    <conditional id="IF-1"> <condition varcond="IF-1" line="17" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0"> </condition>
+                        <case cond="1" executed="true" line="18" source="originaux/duff.c">
+                        </case>
+                        <case cond="0" executed="true" line="21" source="originaux/duff.c">
+                            <conditional id="IF-2"> <condition varcond="IF-2" line="21" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="__tag_0__==7"> </condition>
+                                <case cond="1" executed="true" line="22" source="originaux/duff.c">
+                                </case>
+                                <case cond="0" executed="true" line="25" source="originaux/duff.c">
+                                    <conditional id="IF-3"> <condition varcond="IF-3" line="25" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="__tag_0__==6"> </condition>
+                                        <case cond="1" executed="true" line="26" source="originaux/duff.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="29" source="originaux/duff.c">
+                                            <conditional id="IF-4"> <condition varcond="IF-4" line="29" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="__tag_0__==5"> </condition>
+                                                <case cond="1" executed="true" line="30" source="originaux/duff.c">
+                                                </case>
+                                                <case cond="0" executed="true" line="33" source="originaux/duff.c">
+                                                    <conditional id="IF-5"> <condition varcond="IF-5" line="33" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="__tag_0__==4"> </condition>
+                                                        <case cond="1" executed="true" line="34" source="originaux/duff.c">
+                                                        </case>
+                                                        <case cond="0" executed="true" line="37" source="originaux/duff.c">
+                                                            <conditional id="IF-6"> <condition varcond="IF-6" line="37" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="__tag_0__==3"> </condition>
+                                                                <case cond="1" executed="true" line="38" source="originaux/duff.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" line="41" source="originaux/duff.c">
+                                                                    <conditional id="IF-7"> <condition varcond="IF-7" line="41" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="__tag_0__==2"> </condition>
+                                                                        <case cond="1" executed="true" line="42" source="originaux/duff.c">
+                                                                        </case>
+                                                                        <case cond="0" executed="true" line="44" source="originaux/duff.c">
+                                                                        </case>
+                                                                    </conditional>
+                                                                </case>
+                                                            </conditional>
+                                                        </case>
+                                                    </conditional>
+                                                </case>
+                                            </conditional>
+                                        </case>
+                                    </conditional>
+                                </case>
+                            </conditional>
+                        </case>
+                    </conditional>
+                    <conditional id="IF-8"> <condition varcond="IF-8" line="53" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="__tmp_0__||(__tmp_1__||(__tmp_2__||(__tmp_3__||(__tmp_4__||(__tmp_5__||(__tmp_6__||(__tmp_7__||0)))))))"> </condition>
+                        <case cond="1" executed="true" line="17" source="originaux/duff.c">
+                            <conditional id="IF-9"> <condition varcond="IF-9" line="17" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="!__tmp_7__"> </condition>
+                                <case cond="1" executed="true" line="19" source="originaux/duff.c">
+                                    <conditional id="IF-10"> <condition varcond="IF-10" line="19" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="!__tmp_6__"> </condition>
+                                        <case cond="1" executed="true" line="21" source="originaux/duff.c">
+                                            <conditional id="IF-11"> <condition varcond="IF-11" line="21" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="!__tmp_5__"> </condition>
+                                                <case cond="1" executed="true" line="23" source="originaux/duff.c">
+                                                    <conditional id="IF-12"> <condition varcond="IF-12" line="23" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="!__tmp_4__"> </condition>
+                                                        <case cond="1" executed="true" line="25" source="originaux/duff.c">
+                                                            <conditional id="IF-13"> <condition varcond="IF-13" line="25" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="!__tmp_3__"> </condition>
+                                                                <case cond="1" executed="true" line="27" source="originaux/duff.c">
+                                                                    <conditional id="IF-14"> <condition varcond="IF-14" line="27" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="!__tmp_2__"> </condition>
+                                                                        <case cond="1" executed="true" line="29" source="originaux/duff.c">
+                                                                            <conditional id="IF-15"> <condition varcond="IF-15" line="29" source="originaux/duff.c" isexecuted="true" expcond="" expcondinit="!__tmp_1__"> </condition>
+                                                                                <case cond="1" executed="true" line="18" source="originaux/duff.c">
+                                                                                </case>
+                                                                                <case cond="0" executed="true" >
+                                                                                </case>
+                                                                            </conditional>
+                                                                        </case>
+                                                                        <case cond="0" executed="true" >
+                                                                        </case>
+                                                                    </conditional>
+                                                                </case>
+                                                                <case cond="0" executed="true" >
+                                                                </case>
+                                                            </conditional>
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                </case>
+                                                <case cond="0" executed="true" >
+                                                </case>
+                                            </conditional>
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

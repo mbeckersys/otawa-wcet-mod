@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="get_value" numcall="1" line="15" source="originaux/foo.c" executed="true" extern="true">
+            <function name="get_value">
+            </function>
+        </call>
+        <loop loopId="2" line="15" source="originaux/foo.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="partieEntiereInf((10-get_value())/(2+0)+1)" totalexpr="partieEntiereInf((10-get_value())/(2+0)+1)" expinit="partieEntiereInf((n-i_0)/(c+0)+1)">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="20" source="originaux/foo.c" isexecuted="true" expcond="" expcondinit="p"> </condition>
+                <case cond="1" executed="true" line="20" source="originaux/foo.c">
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+        <call name="foo" numcall="2" line="23" source="originaux/foo.c" executed="true" extern="false">
+            <function name="foo">
+                <loop loopId="1" line="4" source="originaux/foo.c" exact="true" maxcount="100" totalcount="100" maxexpr="partieEntiereInf((100-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((100-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

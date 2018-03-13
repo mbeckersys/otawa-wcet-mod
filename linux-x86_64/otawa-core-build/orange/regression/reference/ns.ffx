@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="foo" numcall="1" line="1054" source="originaux/ns.c" executed="true" extern="false">
+            <function name="foo">
+                <loop loopId="1" line="1004" source="originaux/ns.c" exact="false" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)">
+                    <loop loopId="2" line="1006" source="originaux/ns.c" exact="false" maxcount="5" totalcount="25" maxexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)*partieEntiereInf((5-EPSILONINT-0)/1+1)">
+                        <loop loopId="3" line="1008" source="originaux/ns.c" exact="false" maxcount="5" totalcount="125" maxexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)*partieEntiereInf((5-EPSILONINT-0)/1+1)*5">
+                            <loop loopId="4" line="1010" source="originaux/ns.c" exact="false" maxcount="5" totalcount="625" maxexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)*partieEntiereInf((5-EPSILONINT-0)/1+1)*5*5">
+                                <conditional id="IF-1"> <condition varcond="IF-1" line="1020" source="originaux/ns.c" isexecuted="true" expcond="" expcondinit="(((keys[i])[j])[k])[l]==x"> </condition>
+                                    <case cond="1" executed="true" line="1033" source="originaux/ns.c">
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                            </loop>
+                        </loop>
+                    </loop>
+                </loop>
+                <conditional id="IF-2"> <condition varcond="IF-2" line="1036" source="originaux/ns.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="1037" source="originaux/ns.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

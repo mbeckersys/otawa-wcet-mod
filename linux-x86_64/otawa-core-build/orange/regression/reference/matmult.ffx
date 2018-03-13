@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="InitSeed" numcall="4" line="106" source="originaux/matmult.c" executed="true" extern="false">
+            <function name="InitSeed">
+            </function>
+        </call>
+        <call name="Test" numcall="5" line="155" source="originaux/matmult.c" executed="true" extern="false">
+            <function name="Test">
+                <call name="Initialize" numcall="1" line="77" source="originaux/matmult.c" executed="true" extern="false">
+                    <function name="Initialize">
+                        <loop loopId="1" line="104" source="originaux/matmult.c" exact="true" maxcount="20" totalcount="20" maxexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)">
+                            <loop loopId="2" line="105" source="originaux/matmult.c" exact="true" maxcount="20" totalcount="400" maxexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)*partieEntiereInf((20-EPSILONINT-0)/1+1)">
+                            </loop>
+                        </loop>
+                    </function>
+                </call>
+                <call name="Initialize" numcall="2" line="78" source="originaux/matmult.c" executed="true" extern="false">
+                    <function name="Initialize">
+                        <loop loopId="1" line="104" source="originaux/matmult.c" exact="true" maxcount="20" totalcount="20" maxexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)">
+                            <loop loopId="2" line="105" source="originaux/matmult.c" exact="true" maxcount="20" totalcount="400" maxexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)*partieEntiereInf((20-EPSILONINT-0)/1+1)">
+                            </loop>
+                        </loop>
+                    </function>
+                </call>
+                <call name="Multiply" numcall="3" line="85" source="originaux/matmult.c" executed="true" extern="false">
+                    <function name="Multiply">
+                        <loop loopId="3" line="143" source="originaux/matmult.c" exact="true" maxcount="20" totalcount="20" maxexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)">
+                            <loop loopId="4" line="144" source="originaux/matmult.c" exact="true" maxcount="20" totalcount="400" maxexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)*partieEntiereInf((20-EPSILONINT-0)/1+1)">
+                                <loop loopId="5" line="147" source="originaux/matmult.c" exact="true" maxcount="20" totalcount="8000" maxexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-0)/1+1)*partieEntiereInf((20-EPSILONINT-0)/1+1)*20">
+                                </loop>
+                            </loop>
+                        </loop>
+                    </function>
+                </call>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

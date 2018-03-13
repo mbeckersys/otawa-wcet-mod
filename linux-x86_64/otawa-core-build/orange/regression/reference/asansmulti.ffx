@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="6" source="calipso/asansmulti.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((0-(0-10))/3+1)" totalexpr="partieEntiereInf((0-(0-10))/3+1)">
+        </loop>
+        <loop loopId="2" line="8" source="calipso/asansmulti.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+        </loop>
+        <loop loopId="3" line="10" source="calipso/asansmulti.c" exact="true" maxcount="2" totalcount="2" maxexpr="partieEntiereInf((log(10/1)-log(partieEntiereSup(1)))/log(1/0.25)+1)" totalexpr="partieEntiereInf((log(10/1)-log(partieEntiereSup(1)))/log(1/0.25)+1)">
+        </loop>
+        <loop loopId="4" line="12" source="calipso/asansmulti.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="14" source="calipso/asansmulti.c" isexecuted="true" expcond="" expcondinit="L7"> </condition>
+                <case cond="1" executed="true" line="14" source="calipso/asansmulti.c">
+                </case>
+                <case cond="0" executed="true" line="14" source="calipso/asansmulti.c">
+                </case>
+            </conditional>
+        </loop>
+        <loop loopId="5" line="16" source="calipso/asansmulti.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+            <conditional id="IF-2"> <condition varcond="IF-2" line="18" source="calipso/asansmulti.c" isexecuted="true" expcond="" expcondinit="L7"> </condition>
+                <case cond="1" executed="true" line="18" source="calipso/asansmulti.c">
+                </case>
+                <case cond="0" executed="true" line="18" source="calipso/asansmulti.c">
+                </case>
+            </conditional>
+        </loop>
+    </function>
+</flowfacts>
+

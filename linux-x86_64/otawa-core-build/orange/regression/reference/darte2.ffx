@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="f" numcall="3" line="21" source="calipso/darte2.c" executed="true" extern="false">
+            <function name="f">
+                <loop loopId="1" line="9" source="calipso/darte2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((2-10)/(-1+-1)+1)" totalexpr="partieEntiereInf((2-10)/(-1+-1)+1)">
+                    <call name="indet" numcall="1" line="13" source="calipso/darte2.c" executed="true" extern="true">
+                        <function name="indet">
+                        </function>
+                    </call>
+                    <loop loopId="2" line="13" source="calipso/darte2.c" exact="false" maxcount="15" totalcount="65" maxexpr="MAX(bIt-1,partieEntiereInf((2-10)/(-1+-1)+1)-1,partieEntiereInf((10+-2*(bIt-1-1+1)-1-(10+(10-1+0+(0-(10-1-1)))*(bIt-1-1+1)+(10+-2*(bIt-1-1+1)-1)))/-1+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((2-10)/(-1+-1)+1)-1,partieEntiereInf((10+-2*(bIt-1-1+1)-1-(10+(10-1+0+(0-(10-1-1)))*(bIt-1-1+1)+(10+-2*(bIt-1-1+1)-1)))/-1+1))">
+                        <call name="indet" numcall="2" line="13" source="calipso/darte2.c" executed="true" extern="true">
+                            <function name="indet">
+                            </function>
+                        </call>
+                    </loop>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

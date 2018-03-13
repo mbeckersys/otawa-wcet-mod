@@ -1,0 +1,5 @@
+// Low-level flow facts
+multibranch "main" + 0x126 to "main" + 0x128;	// (00008126) switch-like branch in "main"
+multibranch "main" + 0x128 to "main" + 0x12a;	// (00008128) switch-like branch in "main"
+multibranch "main" + 0x12c to "main" + 0x12e;	// (0000812c) switch-like branch in "main"
+multibranch "main" + 0x226 to "main" + 0x22a;	// (00008226) switch-like branch in "main"

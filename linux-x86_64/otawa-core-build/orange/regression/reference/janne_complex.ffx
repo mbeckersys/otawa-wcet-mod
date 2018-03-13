@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="complex" numcall="1" line="58" source="originaux/janne_complex.c" executed="true" extern="false">
+            <function name="complex">
+                <loop loopId="1" line="31" source="originaux/janne_complex.c" exact="false" maxcount="15" totalcount="15" maxexpr="partieEntiereInf((30-EPSILONINT-1)/2+1)" totalexpr="partieEntiereInf((30-EPSILONINT-1)/2+1)">
+                    <loop loopId="2" line="33" source="originaux/janne_complex.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                        <conditional id="IF-1"> <condition varcond="IF-1" line="35" source="originaux/janne_complex.c" isexecuted="true" expcond="" expcondinit="b&gt;5"> </condition>
+                            <case cond="1" executed="true" line="36" source="originaux/janne_complex.c">
+                            </case>
+                            <case cond="0" executed="true" line="38" source="originaux/janne_complex.c">
+                            </case>
+                        </conditional>
+                        <conditional id="IF-2"> <condition varcond="IF-2" line="39" source="originaux/janne_complex.c" isexecuted="true" expcond="" expcondinit="b&gt;=10&amp;&amp;b&lt;=12"> </condition>
+                            <case cond="1" executed="true" line="40" source="originaux/janne_complex.c">
+                            </case>
+                            <case cond="0" executed="true" line="42" source="originaux/janne_complex.c">
+                            </case>
+                        </conditional>
+                    </loop>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

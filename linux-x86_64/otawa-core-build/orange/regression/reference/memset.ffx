@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="memset" numcall="1" line="22" source="originaux/memset.c" executed="true" extern="false">
+            <function name="memset">
+                <conditional id="IF-1"> <condition varcond="IF-1" line="5" source="originaux/memset.c" isexecuted="true" expcond="511==0" expcondinit="size==0"> </condition>
+                    <case cond="1" executed="false" line="6" source="originaux/memset.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-2"> <condition varcond="IF-2" line="7" source="originaux/memset.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="11" source="originaux/memset.c">
+                        <loop loopId="1" line="11" source="originaux/memset.c" exact="false" maxcount="508" totalcount="508" maxexpr="partieEntiereInf((buf_0+511-4-buf_0)/1+1)" totalexpr="partieEntiereInf((buf_0+511-4-buf_0)/1+1)">
+                        </loop>
+                        <conditional id="IF-3"> <condition varcond="IF-3" line="13" source="originaux/memset.c" isexecuted="true" expcond="buf+2&lt;=buf_0+511" expcondinit="buf+2&lt;=top"> </condition>
+                            <case cond="1" executed="true" line="14" source="originaux/memset.c">
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-4"> <condition varcond="IF-4" line="15" source="originaux/memset.c" isexecuted="true" expcond="!ABSTRACTINTER(0,SET(0,0))" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="17" source="originaux/memset.c">
+                        <conditional id="IF-5"> <condition varcond="IF-5" line="17" source="originaux/memset.c" isexecuted="true" expcond="buf+1&lt;=buf_0+511" expcondinit="buf+1&lt;=top"> </condition>
+                            <case cond="1" executed="true" line="16" source="originaux/memset.c">
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

@@ -1,0 +1,162 @@
+// Macro from ARM Manual
+
+macro ArchVersion() = 7
+macro JazelleAcceptsExecution()  = 0
+
+// branches
+macro BranchTo(addr) = NPC = (addr)
+
+macro BranchWritePC_thumb(addr) = BranchTo(addr<31..1> :: 0b0)
+
+macro BranchWritePC(address) = \
+	if CurrentInstrSet() == InstrSet_ARM then \
+		BranchTo((address)<31..2> :: 0b00); \
+	else \
+		if CurrentInstrSet() == InstrSet_Jazelle then \
+			if JazelleAcceptsExecution() then \
+				BranchTo((address)<31..0>); \
+			else \
+				newaddress = address; \
+				BranchTo(newaddress); \
+			endif; \
+		else \
+			BranchTo((address)<31..1>::0b0); \
+		endif; \
+	endif
+
+macro BXWritePC(address) = \
+	if CurrentInstrSet() == InstrSet_ThumbEE then \
+		if (address)<0..0> == 1 then \
+			BranchTo((address)<31..1>::0b0); \
+		endif; \
+	else \
+		if (address)<0..0> == 1 then \
+			SelectInstrSet(InstrSet_Thumb); \
+			BranchTo((address)<31..1> :: 0b0); \
+		else \
+			if (address)<1..1> == 0 then \
+				SelectInstrSet(InstrSet_ARM); \
+				BranchTo((address)); \
+			endif; \
+		endif; \
+	endif
+
+
+macro ALUWritePC(address) = \
+	if ArchVersion() >= 7 && CurrentInstrSet() == InstrSet_ARM then \
+		BXWritePC(address); \
+	else \
+		BranchWritePC(address); \
+	endif
+
+
+macro LoadWritePC(address) = \
+	if ArchVersion() >= 5 then \
+		BXWritePC(address); \
+	else \
+		BranchWritePC(address); \
+	endif
+
+
+// This function returns the PC value. On architecture versions before ARMv7, it
+// is permitted to instead return PC+4, provided it does so consistently. It is
+// used only to describe ARM instructions, so it returns the address of the current 
+// instruction plus 8 (normally) or 12 (when the alternative is permitted).
+macro PCStoreValue() = PC
+
+// value computation
+macro Align(x, n)		=	((x) & ~(n - 1))
+macro ZeroExtend(v, n) 	=	coerce(card(n), v)
+macro UInt(v)			=	coerce(card(32), v)
+macro SInt(v)			=	coerce(int(32), v)
+macro IsZeroBit(v)		=	(v) == 0
+macro IsOnesBit(v)		=	(~(v)) == 0
+
+// Too Bad: remove it!
+//slight different definition from ARM manual: n is the number of missing bits.
+//macro SignExtend(v, n)	=	((coerce(int(32), v) << n) >> n)
+
+// good version
+macro SignExtend(v, s) = coerce(int(s), v)
+
+
+
+// helper functions
+//macro ConditionPassed = cond
+
+// shifts
+let SRType_LSL = 0b000
+let SRType_LSR = 0b001
+let SRType_ASR = 0b010
+let SRType_ROR = 0b011
+let SRType_RRX = 0b100
+
+macro LSL_(x, shift) = coerce(card(32), x) << shift
+macro LSR_(x, shift) = coerce(card(32), x) >> shift
+macro ASR_(x, shift) = coerce(int(32), x) >> shift
+macro ROR_(x, shift) = coerce(card(32), x) >>> shift
+macro RRX_(x, carry_in) = ((carry_in) :: ((coerce(card(32), (x))<31..1>))) 
+
+macro LSL_C(x, shift, result, carry_out) = \
+	result = LSL_(x, shift); carry_out = (x)<32-shift .. 32-shift>
+macro LSR_C(x, shift, result, carry_out) = \
+	result = LSR_(x, shift); carry_out = (x)<shift-1 .. shift-1>
+macro ASR_C(x, shift, result, carry_out) = \
+	result = ASR_(x, shift); carry_out = (x)<shift-1 .. shift-1>
+macro ROR_C(x, shift, result, carry_out) = \
+	result = ROR_(x, shift); carry_out = result<31..31>
+macro RRX_C(x, carry_in, result, carry_out) = \
+	result = RRX_(x, carry_in); carry_out = (x)<0..0>
+
+macro Shift_C(value, t, amount, carry_in, result, carry_out) = \
+	if amount == 0 then result = value; \	
+	else \
+		switch ( t ) { \
+		case SRType_LSL:	LSL_C(value, amount, result, carry_out); \
+		case SRType_LSR:	LSR_C(value, amount, result, carry_out); \
+		case SRType_ASR:	ASR_C(value, amount, result, carry_out); \
+		case SRType_ROR:	ROR_C(value, amount, result, carry_out); \
+		case SRType_RRX:	RRX_C(value, carry_in, result, carry_out); \
+		}; \
+	endif
+	
+macro Shift(value, t, amount, carry_in) = \
+	if amount == 0 then value else \
+		switch ( t ) { \
+		case SRType_LSL:	LSL_(value, amount, result) \
+		case SRType_LSR:	LSR_(value, amount, result) \
+		case SRType_ASR:	ASR_(value, amount, result) \
+		case SRType_ROR:	ROR_(value, amount, result) \
+		case SRType_RRX:	RRX_(value, carry_in, result) \
+		} \
+	endif
+
+
+// ALU operations
+macro AddWithCarry(result, carry, overflow, v1, v2, carry_in) = \
+	result = (v1) + (v2) + (carry_in); \
+	carry = CarryFromAdd((v1), (v2), (result)); \
+	overflow = OverflowFromAdd((v1), (v2), (result))
+
+
+// thumb immediate expansion
+macro ThumbExpandImm(imm12) = \
+	if (imm12)<11..10> == 0b00 then \
+		switch((imm12)<9..8>) { \
+		case 0b00: ZeroExtend((imm12)<7..0>, 32) \
+		case 0b01: 0b00000000 :: (imm12)<7..0> :: 0b00000000 :: (imm12)<7..0> \
+		case 0b10: (imm12)<7..0> :: 0b00000000 :: (imm12)<7..0> :: 0b00000000 \
+		case 0b11: (imm12)<7..0> :: (imm12)<7..0> :: (imm12)<7..0> :: (imm12)<7..0> \
+		} \
+	else \
+		ROR_(ZeroExtend(0b1 :: (imm12)<6..0>, 32), (imm12)<11..7>) \
+	endif
+
+// thumb immediate expansion with carry
+macro ThumbExpandImm_C(imm12, result, carry_out) = \
+	if imm12<11..10> == 0b00 then \
+		result = ThumbExpandImm(imm12); \
+	else \
+		unrotated_value = ZeroExtend(1<0..0> :: imm12<6..0>, 32); \
+		ROR_C(unrotated_value, UInt(imm12<11..7>), imm32, carry_out); \
+	endif

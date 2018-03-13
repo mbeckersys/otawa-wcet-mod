@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="qurt" numcall="2" line="111" source="originaux/qurt.c" executed="true" extern="false">
+            <function name="qurt">
+                <conditional id="IF-5"> <condition varcond="IF-5" line="132" source="originaux/qurt.c" isexecuted="true" expcond="1.0==0.0" expcondinit="a[0]==0.0"> </condition>
+                    <case cond="1" executed="false" line="132" source="originaux/qurt.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-6"> <condition varcond="IF-6" line="135" source="originaux/qurt.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="133" source="originaux/qurt.c">
+                        <call name="fabs" numcall="5" line="135" source="originaux/qurt.c" executed="true" extern="false">
+                            <function name="fabs">
+                                <conditional id="IF-1"> <condition varcond="IF-1" line="65" source="originaux/qurt.c" isexecuted="true" expcond="-3*-3-4*1.0*2.0&gt;=0" expcondinit="n&gt;=0"> </condition>
+                                    <case cond="1" executed="true" line="65" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="false" line="66" source="originaux/qurt.c">
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                        <call name="sqrt" numcall="6" line="135" source="originaux/qurt.c" executed="true" extern="false">
+                            <function name="sqrt">
+                                <conditional id="IF-2"> <condition varcond="IF-2" line="83" source="originaux/qurt.c" isexecuted="true" expcond="ABSTRACTINTER(-3*-3-4*1.0*2.0,SET(0,4611686018427387903))==0" expcondinit="val==0"> </condition>
+                                    <case cond="1" executed="true" line="83" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="true" line="85" source="originaux/qurt.c">
+                                        <loop loopId="1" line="85" source="originaux/qurt.c" exact="false" maxcount="19" totalcount="19" maxexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)">
+                                            <conditional id="IF-3"> <condition varcond="IF-3" line="87" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="!flag_0"> </condition>
+                                                <case cond="1" executed="true" line="88" source="originaux/qurt.c">
+                                                    <call name="fabs" numcall="1" line="91" source="originaux/qurt.c" executed="true" extern="false">
+                                                        <function name="fabs">
+                                                            <conditional id="IF-1"> <condition varcond="IF-1" line="65" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                <case cond="1" executed="true" line="65" source="originaux/qurt.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" line="66" source="originaux/qurt.c">
+                                                                </case>
+                                                            </conditional>
+                                                        </function>
+                                                    </call>
+                                                    <conditional id="IF-4"> <condition varcond="IF-4" line="91" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="call-fabs1&lt;=min_tol"> </condition>
+                                                        <case cond="1" executed="true" line="91" source="originaux/qurt.c">
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                </case>
+                                                <case cond="0" executed="true" line="94" source="originaux/qurt.c">
+                                                </case>
+                                            </conditional>
+                                        </loop>
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-7"> <condition varcond="IF-7" line="136" source="originaux/qurt.c" isexecuted="true" expcond="!ABSTRACTINTER(0,SET(0,0))" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="138" source="originaux/qurt.c">
+                        <conditional id="IF-8"> <condition varcond="IF-8" line="138" source="originaux/qurt.c" isexecuted="true" expcond="-3*-3-4*1.0*2.0&gt;0.0" expcondinit="d&gt;0.0"> </condition>
+                            <case cond="1" executed="true" line="138" source="originaux/qurt.c">
+                            </case>
+                            <case cond="0" executed="false" line="145" source="originaux/qurt.c">
+                                <conditional id="IF-9"> <condition varcond="IF-9" line="145" source="originaux/qurt.c" isexecuted="false" expcond="-3*-3-4*1.0*2.0==0.0" expcondinit="d==0.0"> </condition>
+                                    <case cond="1" executed="false" line="147" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="false" line="156" source="originaux/qurt.c">
+                                    </case>
+                                </conditional>
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <call name="qurt" numcall="3" line="118" source="originaux/qurt.c" executed="true" extern="false">
+            <function name="qurt">
+                <conditional id="IF-5"> <condition varcond="IF-5" line="132" source="originaux/qurt.c" isexecuted="true" expcond="1.0==0.0" expcondinit="a[0]==0.0"> </condition>
+                    <case cond="1" executed="false" line="132" source="originaux/qurt.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-6"> <condition varcond="IF-6" line="135" source="originaux/qurt.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="133" source="originaux/qurt.c">
+                        <call name="fabs" numcall="5" line="135" source="originaux/qurt.c" executed="true" extern="false">
+                            <function name="fabs">
+                                <conditional id="IF-1"> <condition varcond="IF-1" line="65" source="originaux/qurt.c" isexecuted="true" expcond="-2*-2-4*1.0*1.0&gt;=0" expcondinit="n&gt;=0"> </condition>
+                                    <case cond="1" executed="true" line="65" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="false" line="66" source="originaux/qurt.c">
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                        <call name="sqrt" numcall="6" line="135" source="originaux/qurt.c" executed="true" extern="false">
+                            <function name="sqrt">
+                                <conditional id="IF-2"> <condition varcond="IF-2" line="83" source="originaux/qurt.c" isexecuted="true" expcond="ABSTRACTINTER(-2*-2-4*1.0*1.0,SET(0,4611686018427387903))==0" expcondinit="val==0"> </condition>
+                                    <case cond="1" executed="true" line="83" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="true" line="85" source="originaux/qurt.c">
+                                        <loop loopId="1" line="85" source="originaux/qurt.c" exact="false" maxcount="19" totalcount="19" maxexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)">
+                                            <conditional id="IF-3"> <condition varcond="IF-3" line="87" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="!flag_0"> </condition>
+                                                <case cond="1" executed="true" line="88" source="originaux/qurt.c">
+                                                    <call name="fabs" numcall="1" line="91" source="originaux/qurt.c" executed="true" extern="false">
+                                                        <function name="fabs">
+                                                            <conditional id="IF-1"> <condition varcond="IF-1" line="65" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                <case cond="1" executed="true" line="65" source="originaux/qurt.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" line="66" source="originaux/qurt.c">
+                                                                </case>
+                                                            </conditional>
+                                                        </function>
+                                                    </call>
+                                                    <conditional id="IF-4"> <condition varcond="IF-4" line="91" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="call-fabs1&lt;=min_tol"> </condition>
+                                                        <case cond="1" executed="true" line="91" source="originaux/qurt.c">
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                </case>
+                                                <case cond="0" executed="true" line="94" source="originaux/qurt.c">
+                                                </case>
+                                            </conditional>
+                                        </loop>
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-7"> <condition varcond="IF-7" line="136" source="originaux/qurt.c" isexecuted="true" expcond="!ABSTRACTINTER(0,SET(0,0))" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="138" source="originaux/qurt.c">
+                        <conditional id="IF-8"> <condition varcond="IF-8" line="138" source="originaux/qurt.c" isexecuted="true" expcond="-2*-2-4*1.0*1.0&gt;0.0" expcondinit="d&gt;0.0"> </condition>
+                            <case cond="1" executed="false" line="138" source="originaux/qurt.c">
+                            </case>
+                            <case cond="0" executed="true" line="145" source="originaux/qurt.c">
+                                <conditional id="IF-9"> <condition varcond="IF-9" line="145" source="originaux/qurt.c" isexecuted="true" expcond="-2*-2-4*1.0*1.0==0.0" expcondinit="d==0.0"> </condition>
+                                    <case cond="1" executed="true" line="147" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="false" line="156" source="originaux/qurt.c">
+                                    </case>
+                                </conditional>
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <call name="qurt" numcall="4" line="125" source="originaux/qurt.c" executed="true" extern="false">
+            <function name="qurt">
+                <conditional id="IF-5"> <condition varcond="IF-5" line="132" source="originaux/qurt.c" isexecuted="true" expcond="1.0==0.0" expcondinit="a[0]==0.0"> </condition>
+                    <case cond="1" executed="false" line="132" source="originaux/qurt.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-6"> <condition varcond="IF-6" line="135" source="originaux/qurt.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="133" source="originaux/qurt.c">
+                        <call name="fabs" numcall="5" line="135" source="originaux/qurt.c" executed="true" extern="false">
+                            <function name="fabs">
+                                <conditional id="IF-1"> <condition varcond="IF-1" line="65" source="originaux/qurt.c" isexecuted="true" expcond="-4*-4-4*1.0*8.0&gt;=0" expcondinit="n&gt;=0"> </condition>
+                                    <case cond="1" executed="false" line="65" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="true" line="66" source="originaux/qurt.c">
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                        <call name="sqrt" numcall="6" line="135" source="originaux/qurt.c" executed="true" extern="false">
+                            <function name="sqrt">
+                                <conditional id="IF-2"> <condition varcond="IF-2" line="83" source="originaux/qurt.c" isexecuted="true" expcond="-ABSTRACTINTER(-4*-4-4*1.0*8.0,SET(-4611686018427387904,-1))==0" expcondinit="val==0"> </condition>
+                                    <case cond="1" executed="false" line="83" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="true" line="85" source="originaux/qurt.c">
+                                        <loop loopId="1" line="85" source="originaux/qurt.c" exact="false" maxcount="19" totalcount="19" maxexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)">
+                                            <conditional id="IF-3"> <condition varcond="IF-3" line="87" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="!flag_0"> </condition>
+                                                <case cond="1" executed="true" line="88" source="originaux/qurt.c">
+                                                    <call name="fabs" numcall="1" line="91" source="originaux/qurt.c" executed="true" extern="false">
+                                                        <function name="fabs">
+                                                            <conditional id="IF-1"> <condition varcond="IF-1" line="65" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                <case cond="1" executed="true" line="65" source="originaux/qurt.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" line="66" source="originaux/qurt.c">
+                                                                </case>
+                                                            </conditional>
+                                                        </function>
+                                                    </call>
+                                                    <conditional id="IF-4"> <condition varcond="IF-4" line="91" source="originaux/qurt.c" isexecuted="true" expcond="" expcondinit="call-fabs1&lt;=min_tol"> </condition>
+                                                        <case cond="1" executed="true" line="91" source="originaux/qurt.c">
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                </case>
+                                                <case cond="0" executed="true" line="94" source="originaux/qurt.c">
+                                                </case>
+                                            </conditional>
+                                        </loop>
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-7"> <condition varcond="IF-7" line="136" source="originaux/qurt.c" isexecuted="true" expcond="!ABSTRACTINTER(0,SET(0,0))" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="138" source="originaux/qurt.c">
+                        <conditional id="IF-8"> <condition varcond="IF-8" line="138" source="originaux/qurt.c" isexecuted="true" expcond="-4*-4-4*1.0*8.0&gt;0.0" expcondinit="d&gt;0.0"> </condition>
+                            <case cond="1" executed="false" line="138" source="originaux/qurt.c">
+                            </case>
+                            <case cond="0" executed="true" line="145" source="originaux/qurt.c">
+                                <conditional id="IF-9"> <condition varcond="IF-9" line="145" source="originaux/qurt.c" isexecuted="true" expcond="-4*-4-4*1.0*8.0==0.0" expcondinit="d==0.0"> </condition>
+                                    <case cond="1" executed="false" line="147" source="originaux/qurt.c">
+                                    </case>
+                                    <case cond="0" executed="true" line="156" source="originaux/qurt.c">
+                                    </case>
+                                </conditional>
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

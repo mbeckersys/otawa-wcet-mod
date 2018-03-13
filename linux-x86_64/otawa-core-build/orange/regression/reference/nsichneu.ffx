@@ -1,0 +1,1536 @@
+DEBUG: cpp  "pretraites/nsichneu.c"
+DEBUG: cpp  "pretraites/nsichneu.c"
+printFile liste fonction NON vide 1
+orange step1
+orange step1 analyse_defs terminé
+liste fonction non vide
+
+EVALUATION BEGIN
+
+EVALUATION END
+
+<loopsfacts>
+	 <loopId="1" maxcountAnyCalls=" 2" >
+</loopsfacts>
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="61" source="originaux/nsichneu.c" exact="true" maxcount="2" totalcount="2" maxexpr="partieEntiereInf((0+EPSILONINT-2)/-1+1)" totalexpr="partieEntiereInf((0+EPSILONINT-2)/-1+1)">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="66" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P1_is_marked&gt;=3&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;P1_marking_member_0[1]==P1_marking_member_0[2]"> </condition>
+                <case cond="1" executed="true" line="74" source="originaux/nsichneu.c">
+                    <conditional id="IF-2"> <condition varcond="IF-2" line="78" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="x_4&lt;y_4"> </condition>
+                        <case cond="1" executed="true" line="81" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-3"> <condition varcond="IF-3" line="97" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P1_is_marked&gt;=3&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;P1_marking_member_0[2]==P1_marking_member_0[1]"> </condition>
+                <case cond="1" executed="true" line="105" source="originaux/nsichneu.c">
+                    <conditional id="IF-4"> <condition varcond="IF-4" line="109" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="x_3&lt;y_3"> </condition>
+                        <case cond="1" executed="true" line="113" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-5"> <condition varcond="IF-5" line="129" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P1_is_marked&gt;=3&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;P1_marking_member_0[0]==P1_marking_member_0[2]"> </condition>
+                <case cond="1" executed="true" line="137" source="originaux/nsichneu.c">
+                    <conditional id="IF-6"> <condition varcond="IF-6" line="141" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="x_2&lt;y_2"> </condition>
+                        <case cond="1" executed="true" line="145" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-7"> <condition varcond="IF-7" line="161" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P1_is_marked&gt;=3&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;P1_marking_member_0[2]==P1_marking_member_0[0]"> </condition>
+                <case cond="1" executed="true" line="169" source="originaux/nsichneu.c">
+                    <conditional id="IF-8"> <condition varcond="IF-8" line="173" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="x_1&lt;y_1"> </condition>
+                        <case cond="1" executed="true" line="177" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-9"> <condition varcond="IF-9" line="193" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P1_is_marked&gt;=3&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;P1_marking_member_0[0]==P1_marking_member_0[1]"> </condition>
+                <case cond="1" executed="true" line="200" source="originaux/nsichneu.c">
+                    <conditional id="IF-10"> <condition varcond="IF-10" line="204" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="x_0&lt;y_0"> </condition>
+                        <case cond="1" executed="true" line="207" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-11"> <condition varcond="IF-11" line="223" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P1_is_marked&gt;=3&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;P1_marking_member_0[1]==P1_marking_member_0[0]"> </condition>
+                <case cond="1" executed="true" line="230" source="originaux/nsichneu.c">
+                    <conditional id="IF-12"> <condition varcond="IF-12" line="234" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="x&lt;y"> </condition>
+                        <case cond="1" executed="true" line="237" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-13"> <condition varcond="IF-13" line="254" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="261" source="originaux/nsichneu.c">
+                    <conditional id="IF-14"> <condition varcond="IF-14" line="265" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_118&gt;a_118"> </condition>
+                        <case cond="1" executed="true" line="268" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-15"> <condition varcond="IF-15" line="285" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="292" source="originaux/nsichneu.c">
+                    <conditional id="IF-16"> <condition varcond="IF-16" line="296" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_117&gt;a_117"> </condition>
+                        <case cond="1" executed="true" line="299" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-17"> <condition varcond="IF-17" line="316" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="323" source="originaux/nsichneu.c">
+                    <conditional id="IF-18"> <condition varcond="IF-18" line="327" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_116&gt;a_116"> </condition>
+                        <case cond="1" executed="true" line="330" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-19"> <condition varcond="IF-19" line="347" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="354" source="originaux/nsichneu.c">
+                    <conditional id="IF-20"> <condition varcond="IF-20" line="358" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_115&gt;a_115"> </condition>
+                        <case cond="1" executed="true" line="361" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-21"> <condition varcond="IF-21" line="378" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="385" source="originaux/nsichneu.c">
+                    <conditional id="IF-22"> <condition varcond="IF-22" line="389" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_114&gt;a_114"> </condition>
+                        <case cond="1" executed="true" line="392" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-23"> <condition varcond="IF-23" line="409" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="416" source="originaux/nsichneu.c">
+                    <conditional id="IF-24"> <condition varcond="IF-24" line="420" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_113&gt;a_113"> </condition>
+                        <case cond="1" executed="true" line="423" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-25"> <condition varcond="IF-25" line="440" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="447" source="originaux/nsichneu.c">
+                    <conditional id="IF-26"> <condition varcond="IF-26" line="451" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_112&gt;a_112"> </condition>
+                        <case cond="1" executed="true" line="454" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-27"> <condition varcond="IF-27" line="471" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="478" source="originaux/nsichneu.c">
+                    <conditional id="IF-28"> <condition varcond="IF-28" line="482" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_111&gt;a_111"> </condition>
+                        <case cond="1" executed="true" line="485" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-29"> <condition varcond="IF-29" line="502" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="509" source="originaux/nsichneu.c">
+                    <conditional id="IF-30"> <condition varcond="IF-30" line="513" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_110&gt;a_110"> </condition>
+                        <case cond="1" executed="true" line="516" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-31"> <condition varcond="IF-31" line="533" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="540" source="originaux/nsichneu.c">
+                    <conditional id="IF-32"> <condition varcond="IF-32" line="544" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_109&gt;a_109"> </condition>
+                        <case cond="1" executed="true" line="546" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-33"> <condition varcond="IF-33" line="563" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="570" source="originaux/nsichneu.c">
+                    <conditional id="IF-34"> <condition varcond="IF-34" line="574" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_108&gt;a_108"> </condition>
+                        <case cond="1" executed="true" line="576" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-35"> <condition varcond="IF-35" line="594" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="601" source="originaux/nsichneu.c">
+                    <conditional id="IF-36"> <condition varcond="IF-36" line="605" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_107&gt;a_107"> </condition>
+                        <case cond="1" executed="true" line="608" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-37"> <condition varcond="IF-37" line="626" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="633" source="originaux/nsichneu.c">
+                    <conditional id="IF-38"> <condition varcond="IF-38" line="637" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_106&gt;a_106"> </condition>
+                        <case cond="1" executed="true" line="639" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-39"> <condition varcond="IF-39" line="656" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="663" source="originaux/nsichneu.c">
+                    <conditional id="IF-40"> <condition varcond="IF-40" line="667" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_105&gt;a_105"> </condition>
+                        <case cond="1" executed="true" line="669" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-41"> <condition varcond="IF-41" line="686" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="693" source="originaux/nsichneu.c">
+                    <conditional id="IF-42"> <condition varcond="IF-42" line="697" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_104&gt;a_104"> </condition>
+                        <case cond="1" executed="true" line="699" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-43"> <condition varcond="IF-43" line="716" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="723" source="originaux/nsichneu.c">
+                    <conditional id="IF-44"> <condition varcond="IF-44" line="727" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_103&gt;a_103"> </condition>
+                        <case cond="1" executed="true" line="729" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-45"> <condition varcond="IF-45" line="746" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="753" source="originaux/nsichneu.c">
+                    <conditional id="IF-46"> <condition varcond="IF-46" line="757" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_102&gt;a_102"> </condition>
+                        <case cond="1" executed="true" line="759" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-47"> <condition varcond="IF-47" line="776" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="783" source="originaux/nsichneu.c">
+                    <conditional id="IF-48"> <condition varcond="IF-48" line="787" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_101&gt;a_101"> </condition>
+                        <case cond="1" executed="true" line="789" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-49"> <condition varcond="IF-49" line="806" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="813" source="originaux/nsichneu.c">
+                    <conditional id="IF-50"> <condition varcond="IF-50" line="817" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_100&gt;a_100"> </condition>
+                        <case cond="1" executed="true" line="820" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-51"> <condition varcond="IF-51" line="838" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="846" source="originaux/nsichneu.c">
+                    <conditional id="IF-52"> <condition varcond="IF-52" line="850" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_99&gt;a_99"> </condition>
+                        <case cond="1" executed="true" line="853" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-53"> <condition varcond="IF-53" line="871" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="879" source="originaux/nsichneu.c">
+                    <conditional id="IF-54"> <condition varcond="IF-54" line="883" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_98&gt;a_98"> </condition>
+                        <case cond="1" executed="true" line="886" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-55"> <condition varcond="IF-55" line="904" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="912" source="originaux/nsichneu.c">
+                    <conditional id="IF-56"> <condition varcond="IF-56" line="916" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_97&gt;a_97"> </condition>
+                        <case cond="1" executed="true" line="919" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-57"> <condition varcond="IF-57" line="937" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="945" source="originaux/nsichneu.c">
+                    <conditional id="IF-58"> <condition varcond="IF-58" line="949" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_96&gt;a_96"> </condition>
+                        <case cond="1" executed="true" line="952" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-59"> <condition varcond="IF-59" line="970" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=4&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="978" source="originaux/nsichneu.c">
+                    <conditional id="IF-60"> <condition varcond="IF-60" line="982" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_95&gt;a_95"> </condition>
+                        <case cond="1" executed="true" line="985" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-61"> <condition varcond="IF-61" line="1003" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1011" source="originaux/nsichneu.c">
+                    <conditional id="IF-62"> <condition varcond="IF-62" line="1015" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_94&gt;a_94"> </condition>
+                        <case cond="1" executed="true" line="1018" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-63"> <condition varcond="IF-63" line="1037" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1045" source="originaux/nsichneu.c">
+                    <conditional id="IF-64"> <condition varcond="IF-64" line="1049" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_93&gt;a_93"> </condition>
+                        <case cond="1" executed="true" line="1052" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-65"> <condition varcond="IF-65" line="1071" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="1079" source="originaux/nsichneu.c">
+                    <conditional id="IF-66"> <condition varcond="IF-66" line="1083" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_92&gt;a_92"> </condition>
+                        <case cond="1" executed="true" line="1086" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-67"> <condition varcond="IF-67" line="1105" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="1113" source="originaux/nsichneu.c">
+                    <conditional id="IF-68"> <condition varcond="IF-68" line="1117" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_91&gt;a_91"> </condition>
+                        <case cond="1" executed="true" line="1120" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-69"> <condition varcond="IF-69" line="1139" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1147" source="originaux/nsichneu.c">
+                    <conditional id="IF-70"> <condition varcond="IF-70" line="1151" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_90&gt;a_90"> </condition>
+                        <case cond="1" executed="true" line="1154" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-71"> <condition varcond="IF-71" line="1173" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1181" source="originaux/nsichneu.c">
+                    <conditional id="IF-72"> <condition varcond="IF-72" line="1185" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_89&gt;a_89"> </condition>
+                        <case cond="1" executed="true" line="1188" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-73"> <condition varcond="IF-73" line="1207" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="1215" source="originaux/nsichneu.c">
+                    <conditional id="IF-74"> <condition varcond="IF-74" line="1219" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_88&gt;a_88"> </condition>
+                        <case cond="1" executed="true" line="1222" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-75"> <condition varcond="IF-75" line="1241" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="1249" source="originaux/nsichneu.c">
+                    <conditional id="IF-76"> <condition varcond="IF-76" line="1253" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_87&gt;a_87"> </condition>
+                        <case cond="1" executed="true" line="1256" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-77"> <condition varcond="IF-77" line="1275" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1283" source="originaux/nsichneu.c">
+                    <conditional id="IF-78"> <condition varcond="IF-78" line="1287" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_86&gt;a_86"> </condition>
+                        <case cond="1" executed="true" line="1290" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-79"> <condition varcond="IF-79" line="1309" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1317" source="originaux/nsichneu.c">
+                    <conditional id="IF-80"> <condition varcond="IF-80" line="1321" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_85&gt;a_85"> </condition>
+                        <case cond="1" executed="true" line="1324" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-81"> <condition varcond="IF-81" line="1343" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="1351" source="originaux/nsichneu.c">
+                    <conditional id="IF-82"> <condition varcond="IF-82" line="1355" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_84&gt;a_84"> </condition>
+                        <case cond="1" executed="true" line="1358" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-83"> <condition varcond="IF-83" line="1377" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="1385" source="originaux/nsichneu.c">
+                    <conditional id="IF-84"> <condition varcond="IF-84" line="1389" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_83&gt;a_83"> </condition>
+                        <case cond="1" executed="true" line="1392" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-85"> <condition varcond="IF-85" line="1411" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="1419" source="originaux/nsichneu.c">
+                    <conditional id="IF-86"> <condition varcond="IF-86" line="1423" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_82&gt;a_82"> </condition>
+                        <case cond="1" executed="true" line="1426" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-87"> <condition varcond="IF-87" line="1445" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="1453" source="originaux/nsichneu.c">
+                    <conditional id="IF-88"> <condition varcond="IF-88" line="1457" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_81&gt;a_81"> </condition>
+                        <case cond="1" executed="true" line="1460" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-89"> <condition varcond="IF-89" line="1479" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="1487" source="originaux/nsichneu.c">
+                    <conditional id="IF-90"> <condition varcond="IF-90" line="1491" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_80&gt;a_80"> </condition>
+                        <case cond="1" executed="true" line="1494" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-91"> <condition varcond="IF-91" line="1513" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="1521" source="originaux/nsichneu.c">
+                    <conditional id="IF-92"> <condition varcond="IF-92" line="1525" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_79&gt;a_79"> </condition>
+                        <case cond="1" executed="true" line="1528" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-93"> <condition varcond="IF-93" line="1547" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="1555" source="originaux/nsichneu.c">
+                    <conditional id="IF-94"> <condition varcond="IF-94" line="1559" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_78&gt;a_78"> </condition>
+                        <case cond="1" executed="true" line="1562" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-95"> <condition varcond="IF-95" line="1581" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="1589" source="originaux/nsichneu.c">
+                    <conditional id="IF-96"> <condition varcond="IF-96" line="1593" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_77&gt;a_77"> </condition>
+                        <case cond="1" executed="true" line="1596" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-97"> <condition varcond="IF-97" line="1615" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1623" source="originaux/nsichneu.c">
+                    <conditional id="IF-98"> <condition varcond="IF-98" line="1627" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_76&gt;a_76"> </condition>
+                        <case cond="1" executed="true" line="1630" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-99"> <condition varcond="IF-99" line="1649" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1657" source="originaux/nsichneu.c">
+                    <conditional id="IF-100"> <condition varcond="IF-100" line="1661" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_75&gt;a_75"> </condition>
+                        <case cond="1" executed="true" line="1664" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-101"> <condition varcond="IF-101" line="1683" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="1691" source="originaux/nsichneu.c">
+                    <conditional id="IF-102"> <condition varcond="IF-102" line="1695" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_74&gt;a_74"> </condition>
+                        <case cond="1" executed="true" line="1698" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-103"> <condition varcond="IF-103" line="1717" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="1725" source="originaux/nsichneu.c">
+                    <conditional id="IF-104"> <condition varcond="IF-104" line="1729" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_73&gt;a_73"> </condition>
+                        <case cond="1" executed="true" line="1732" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-105"> <condition varcond="IF-105" line="1751" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1759" source="originaux/nsichneu.c">
+                    <conditional id="IF-106"> <condition varcond="IF-106" line="1763" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_72&gt;a_72"> </condition>
+                        <case cond="1" executed="true" line="1766" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-107"> <condition varcond="IF-107" line="1785" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1793" source="originaux/nsichneu.c">
+                    <conditional id="IF-108"> <condition varcond="IF-108" line="1797" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_71&gt;a_71"> </condition>
+                        <case cond="1" executed="true" line="1800" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-109"> <condition varcond="IF-109" line="1818" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="1826" source="originaux/nsichneu.c">
+                    <conditional id="IF-110"> <condition varcond="IF-110" line="1830" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_70&gt;a_70"> </condition>
+                        <case cond="1" executed="true" line="1833" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-111"> <condition varcond="IF-111" line="1852" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="1860" source="originaux/nsichneu.c">
+                    <conditional id="IF-112"> <condition varcond="IF-112" line="1864" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_69&gt;a_69"> </condition>
+                        <case cond="1" executed="true" line="1867" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-113"> <condition varcond="IF-113" line="1885" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1893" source="originaux/nsichneu.c">
+                    <conditional id="IF-114"> <condition varcond="IF-114" line="1897" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_68&gt;a_68"> </condition>
+                        <case cond="1" executed="true" line="1900" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-115"> <condition varcond="IF-115" line="1919" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="1927" source="originaux/nsichneu.c">
+                    <conditional id="IF-116"> <condition varcond="IF-116" line="1931" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_67&gt;a_67"> </condition>
+                        <case cond="1" executed="true" line="1934" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-117"> <condition varcond="IF-117" line="1952" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="1960" source="originaux/nsichneu.c">
+                    <conditional id="IF-118"> <condition varcond="IF-118" line="1964" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_66&gt;a_66"> </condition>
+                        <case cond="1" executed="true" line="1967" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-119"> <condition varcond="IF-119" line="1986" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="1994" source="originaux/nsichneu.c">
+                    <conditional id="IF-120"> <condition varcond="IF-120" line="1998" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_65&gt;a_65"> </condition>
+                        <case cond="1" executed="true" line="2001" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-121"> <condition varcond="IF-121" line="2019" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="2027" source="originaux/nsichneu.c">
+                    <conditional id="IF-122"> <condition varcond="IF-122" line="2031" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_64&gt;a_64"> </condition>
+                        <case cond="1" executed="true" line="2034" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-123"> <condition varcond="IF-123" line="2053" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="2061" source="originaux/nsichneu.c">
+                    <conditional id="IF-124"> <condition varcond="IF-124" line="2065" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_63&gt;a_63"> </condition>
+                        <case cond="1" executed="true" line="2068" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-125"> <condition varcond="IF-125" line="2087" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="2095" source="originaux/nsichneu.c">
+                    <conditional id="IF-126"> <condition varcond="IF-126" line="2099" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_62&gt;a_62"> </condition>
+                        <case cond="1" executed="true" line="2102" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-127"> <condition varcond="IF-127" line="2121" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="2129" source="originaux/nsichneu.c">
+                    <conditional id="IF-128"> <condition varcond="IF-128" line="2133" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_61&gt;a_61"> </condition>
+                        <case cond="1" executed="true" line="2136" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-129"> <condition varcond="IF-129" line="2154" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="2162" source="originaux/nsichneu.c">
+                    <conditional id="IF-130"> <condition varcond="IF-130" line="2166" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_60&gt;a_60"> </condition>
+                        <case cond="1" executed="true" line="2169" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-131"> <condition varcond="IF-131" line="2188" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="2196" source="originaux/nsichneu.c">
+                    <conditional id="IF-132"> <condition varcond="IF-132" line="2200" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_59&gt;a_59"> </condition>
+                        <case cond="1" executed="true" line="2203" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-133"> <condition varcond="IF-133" line="2221" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2229" source="originaux/nsichneu.c">
+                    <conditional id="IF-134"> <condition varcond="IF-134" line="2233" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_58&gt;a_58"> </condition>
+                        <case cond="1" executed="true" line="2236" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-135"> <condition varcond="IF-135" line="2255" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2263" source="originaux/nsichneu.c">
+                    <conditional id="IF-136"> <condition varcond="IF-136" line="2267" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_57&gt;a_57"> </condition>
+                        <case cond="1" executed="true" line="2270" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-137"> <condition varcond="IF-137" line="2289" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="2297" source="originaux/nsichneu.c">
+                    <conditional id="IF-138"> <condition varcond="IF-138" line="2301" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_56&gt;a_56"> </condition>
+                        <case cond="1" executed="true" line="2304" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-139"> <condition varcond="IF-139" line="2323" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="2331" source="originaux/nsichneu.c">
+                    <conditional id="IF-140"> <condition varcond="IF-140" line="2335" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_55&gt;a_55"> </condition>
+                        <case cond="1" executed="true" line="2338" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-141"> <condition varcond="IF-141" line="2357" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2365" source="originaux/nsichneu.c">
+                    <conditional id="IF-142"> <condition varcond="IF-142" line="2369" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_54&gt;a_54"> </condition>
+                        <case cond="1" executed="true" line="2372" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-143"> <condition varcond="IF-143" line="2391" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2399" source="originaux/nsichneu.c">
+                    <conditional id="IF-144"> <condition varcond="IF-144" line="2403" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_53&gt;a_53"> </condition>
+                        <case cond="1" executed="true" line="2406" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-145"> <condition varcond="IF-145" line="2424" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="2432" source="originaux/nsichneu.c">
+                    <conditional id="IF-146"> <condition varcond="IF-146" line="2436" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_52&gt;a_52"> </condition>
+                        <case cond="1" executed="true" line="2439" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-147"> <condition varcond="IF-147" line="2458" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="2466" source="originaux/nsichneu.c">
+                    <conditional id="IF-148"> <condition varcond="IF-148" line="2470" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_51&gt;a_51"> </condition>
+                        <case cond="1" executed="true" line="2473" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-149"> <condition varcond="IF-149" line="2491" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2499" source="originaux/nsichneu.c">
+                    <conditional id="IF-150"> <condition varcond="IF-150" line="2503" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_50&gt;a_50"> </condition>
+                        <case cond="1" executed="true" line="2506" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-151"> <condition varcond="IF-151" line="2525" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2533" source="originaux/nsichneu.c">
+                    <conditional id="IF-152"> <condition varcond="IF-152" line="2537" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_49&gt;a_49"> </condition>
+                        <case cond="1" executed="true" line="2540" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-153"> <condition varcond="IF-153" line="2558" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="2566" source="originaux/nsichneu.c">
+                    <conditional id="IF-154"> <condition varcond="IF-154" line="2570" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_48&gt;a_48"> </condition>
+                        <case cond="1" executed="true" line="2573" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-155"> <condition varcond="IF-155" line="2592" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="2600" source="originaux/nsichneu.c">
+                    <conditional id="IF-156"> <condition varcond="IF-156" line="2604" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_47&gt;a_47"> </condition>
+                        <case cond="1" executed="true" line="2607" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-157"> <condition varcond="IF-157" line="2625" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="2633" source="originaux/nsichneu.c">
+                    <conditional id="IF-158"> <condition varcond="IF-158" line="2637" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_46&gt;a_46"> </condition>
+                        <case cond="1" executed="true" line="2640" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-159"> <condition varcond="IF-159" line="2659" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="2667" source="originaux/nsichneu.c">
+                    <conditional id="IF-160"> <condition varcond="IF-160" line="2671" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_45&gt;a_45"> </condition>
+                        <case cond="1" executed="true" line="2674" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-161"> <condition varcond="IF-161" line="2693" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="2701" source="originaux/nsichneu.c">
+                    <conditional id="IF-162"> <condition varcond="IF-162" line="2705" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_44&gt;a_44"> </condition>
+                        <case cond="1" executed="true" line="2708" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-163"> <condition varcond="IF-163" line="2727" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="2735" source="originaux/nsichneu.c">
+                    <conditional id="IF-164"> <condition varcond="IF-164" line="2739" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_43&gt;a_43"> </condition>
+                        <case cond="1" executed="true" line="2742" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-165"> <condition varcond="IF-165" line="2760" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="2768" source="originaux/nsichneu.c">
+                    <conditional id="IF-166"> <condition varcond="IF-166" line="2772" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_42&gt;a_42"> </condition>
+                        <case cond="1" executed="true" line="2775" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-167"> <condition varcond="IF-167" line="2794" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="2802" source="originaux/nsichneu.c">
+                    <conditional id="IF-168"> <condition varcond="IF-168" line="2806" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_41&gt;a_41"> </condition>
+                        <case cond="1" executed="true" line="2809" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-169"> <condition varcond="IF-169" line="2827" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2835" source="originaux/nsichneu.c">
+                    <conditional id="IF-170"> <condition varcond="IF-170" line="2839" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_40&gt;a_40"> </condition>
+                        <case cond="1" executed="true" line="2842" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-171"> <condition varcond="IF-171" line="2861" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2869" source="originaux/nsichneu.c">
+                    <conditional id="IF-172"> <condition varcond="IF-172" line="2873" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_39&gt;a_39"> </condition>
+                        <case cond="1" executed="true" line="2876" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-173"> <condition varcond="IF-173" line="2895" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="2903" source="originaux/nsichneu.c">
+                    <conditional id="IF-174"> <condition varcond="IF-174" line="2907" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_38&gt;a_38"> </condition>
+                        <case cond="1" executed="true" line="2910" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-175"> <condition varcond="IF-175" line="2929" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="2937" source="originaux/nsichneu.c">
+                    <conditional id="IF-176"> <condition varcond="IF-176" line="2941" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_37&gt;a_37"> </condition>
+                        <case cond="1" executed="true" line="2944" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-177"> <condition varcond="IF-177" line="2963" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="2971" source="originaux/nsichneu.c">
+                    <conditional id="IF-178"> <condition varcond="IF-178" line="2975" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_36&gt;a_36"> </condition>
+                        <case cond="1" executed="true" line="2978" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-179"> <condition varcond="IF-179" line="2997" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="3005" source="originaux/nsichneu.c">
+                    <conditional id="IF-180"> <condition varcond="IF-180" line="3009" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_35&gt;a_35"> </condition>
+                        <case cond="1" executed="true" line="3012" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-181"> <condition varcond="IF-181" line="3030" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="3038" source="originaux/nsichneu.c">
+                    <conditional id="IF-182"> <condition varcond="IF-182" line="3042" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_34&gt;a_34"> </condition>
+                        <case cond="1" executed="true" line="3045" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-183"> <condition varcond="IF-183" line="3064" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="3072" source="originaux/nsichneu.c">
+                    <conditional id="IF-184"> <condition varcond="IF-184" line="3076" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_33&gt;a_33"> </condition>
+                        <case cond="1" executed="true" line="3079" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-185"> <condition varcond="IF-185" line="3097" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="3105" source="originaux/nsichneu.c">
+                    <conditional id="IF-186"> <condition varcond="IF-186" line="3109" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_32&gt;a_32"> </condition>
+                        <case cond="1" executed="true" line="3112" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-187"> <condition varcond="IF-187" line="3131" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[4])"> </condition>
+                <case cond="1" executed="true" line="3139" source="originaux/nsichneu.c">
+                    <conditional id="IF-188"> <condition varcond="IF-188" line="3143" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_31&gt;a_31"> </condition>
+                        <case cond="1" executed="true" line="3146" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-189"> <condition varcond="IF-189" line="3164" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="3172" source="originaux/nsichneu.c">
+                    <conditional id="IF-190"> <condition varcond="IF-190" line="3176" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_30&gt;a_30"> </condition>
+                        <case cond="1" executed="true" line="3179" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-191"> <condition varcond="IF-191" line="3198" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[4]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="3206" source="originaux/nsichneu.c">
+                    <conditional id="IF-192"> <condition varcond="IF-192" line="3210" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_29&gt;a_29"> </condition>
+                        <case cond="1" executed="true" line="3213" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-193"> <condition varcond="IF-193" line="3231" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="3239" source="originaux/nsichneu.c">
+                    <conditional id="IF-194"> <condition varcond="IF-194" line="3243" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_28&gt;a_28"> </condition>
+                        <case cond="1" executed="true" line="3246" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-195"> <condition varcond="IF-195" line="3265" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="3273" source="originaux/nsichneu.c">
+                    <conditional id="IF-196"> <condition varcond="IF-196" line="3277" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_27&gt;a_27"> </condition>
+                        <case cond="1" executed="true" line="3280" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-197"> <condition varcond="IF-197" line="3299" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="3307" source="originaux/nsichneu.c">
+                    <conditional id="IF-198"> <condition varcond="IF-198" line="3311" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_26&gt;a_26"> </condition>
+                        <case cond="1" executed="true" line="3314" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-199"> <condition varcond="IF-199" line="3333" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="3341" source="originaux/nsichneu.c">
+                    <conditional id="IF-200"> <condition varcond="IF-200" line="3345" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_25&gt;a_25"> </condition>
+                        <case cond="1" executed="true" line="3348" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-201"> <condition varcond="IF-201" line="3366" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="3374" source="originaux/nsichneu.c">
+                    <conditional id="IF-202"> <condition varcond="IF-202" line="3378" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_24&gt;a_24"> </condition>
+                        <case cond="1" executed="true" line="3381" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-203"> <condition varcond="IF-203" line="3400" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[4]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[4]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="3408" source="originaux/nsichneu.c">
+                    <conditional id="IF-204"> <condition varcond="IF-204" line="3412" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_23&gt;a_23"> </condition>
+                        <case cond="1" executed="true" line="3415" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-205"> <condition varcond="IF-205" line="3433" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="3441" source="originaux/nsichneu.c">
+                    <conditional id="IF-206"> <condition varcond="IF-206" line="3445" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_22&gt;a_22"> </condition>
+                        <case cond="1" executed="true" line="3448" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-207"> <condition varcond="IF-207" line="3467" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="3475" source="originaux/nsichneu.c">
+                    <conditional id="IF-208"> <condition varcond="IF-208" line="3479" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_21&gt;a_21"> </condition>
+                        <case cond="1" executed="true" line="3482" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-209"> <condition varcond="IF-209" line="3501" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="3509" source="originaux/nsichneu.c">
+                    <conditional id="IF-210"> <condition varcond="IF-210" line="3513" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_20&gt;a_20"> </condition>
+                        <case cond="1" executed="true" line="3516" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-211"> <condition varcond="IF-211" line="3535" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="3543" source="originaux/nsichneu.c">
+                    <conditional id="IF-212"> <condition varcond="IF-212" line="3547" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_19&gt;a_19"> </condition>
+                        <case cond="1" executed="true" line="3550" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-213"> <condition varcond="IF-213" line="3569" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="3577" source="originaux/nsichneu.c">
+                    <conditional id="IF-214"> <condition varcond="IF-214" line="3581" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_18&gt;a_18"> </condition>
+                        <case cond="1" executed="true" line="3584" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-215"> <condition varcond="IF-215" line="3603" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[0]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[0]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="3611" source="originaux/nsichneu.c">
+                    <conditional id="IF-216"> <condition varcond="IF-216" line="3615" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_17&gt;a_17"> </condition>
+                        <case cond="1" executed="true" line="3618" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-217"> <condition varcond="IF-217" line="3637" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="3645" source="originaux/nsichneu.c">
+                    <conditional id="IF-218"> <condition varcond="IF-218" line="3649" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_16&gt;a_16"> </condition>
+                        <case cond="1" executed="true" line="3652" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-219"> <condition varcond="IF-219" line="3671" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="3679" source="originaux/nsichneu.c">
+                    <conditional id="IF-220"> <condition varcond="IF-220" line="3683" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_15&gt;a_15"> </condition>
+                        <case cond="1" executed="true" line="3686" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-221"> <condition varcond="IF-221" line="3705" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="3713" source="originaux/nsichneu.c">
+                    <conditional id="IF-222"> <condition varcond="IF-222" line="3717" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_14&gt;a_14"> </condition>
+                        <case cond="1" executed="true" line="3720" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-223"> <condition varcond="IF-223" line="3739" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="3747" source="originaux/nsichneu.c">
+                    <conditional id="IF-224"> <condition varcond="IF-224" line="3751" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_13&gt;a_13"> </condition>
+                        <case cond="1" executed="true" line="3754" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-225"> <condition varcond="IF-225" line="3772" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="3780" source="originaux/nsichneu.c">
+                    <conditional id="IF-226"> <condition varcond="IF-226" line="3784" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_12&gt;a_12"> </condition>
+                        <case cond="1" executed="true" line="3787" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-227"> <condition varcond="IF-227" line="3806" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[1]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[1]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="3814" source="originaux/nsichneu.c">
+                    <conditional id="IF-228"> <condition varcond="IF-228" line="3818" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_11&gt;a_11"> </condition>
+                        <case cond="1" executed="true" line="3821" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-229"> <condition varcond="IF-229" line="3839" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="3847" source="originaux/nsichneu.c">
+                    <conditional id="IF-230"> <condition varcond="IF-230" line="3851" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_10&gt;a_10"> </condition>
+                        <case cond="1" executed="true" line="3854" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-231"> <condition varcond="IF-231" line="3873" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="3881" source="originaux/nsichneu.c">
+                    <conditional id="IF-232"> <condition varcond="IF-232" line="3885" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_9&gt;a_9"> </condition>
+                        <case cond="1" executed="true" line="3888" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-233"> <condition varcond="IF-233" line="3907" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="3915" source="originaux/nsichneu.c">
+                    <conditional id="IF-234"> <condition varcond="IF-234" line="3919" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_8&gt;a_8"> </condition>
+                        <case cond="1" executed="true" line="3922" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-235"> <condition varcond="IF-235" line="3941" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[3])"> </condition>
+                <case cond="1" executed="true" line="3949" source="originaux/nsichneu.c">
+                    <conditional id="IF-236"> <condition varcond="IF-236" line="3953" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_7&gt;a_7"> </condition>
+                        <case cond="1" executed="true" line="3956" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-237"> <condition varcond="IF-237" line="3974" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="3982" source="originaux/nsichneu.c">
+                    <conditional id="IF-238"> <condition varcond="IF-238" line="3986" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_6&gt;a_6"> </condition>
+                        <case cond="1" executed="true" line="3989" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-239"> <condition varcond="IF-239" line="4008" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[2]==P2_marking_member_0[3]&amp;&amp;P2_marking_member_0[2]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="4016" source="originaux/nsichneu.c">
+                    <conditional id="IF-240"> <condition varcond="IF-240" line="4020" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_5&gt;a_5"> </condition>
+                        <case cond="1" executed="true" line="4023" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-241"> <condition varcond="IF-241" line="4041" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="4049" source="originaux/nsichneu.c">
+                    <conditional id="IF-242"> <condition varcond="IF-242" line="4053" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_4&gt;a_4"> </condition>
+                        <case cond="1" executed="true" line="4056" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-243"> <condition varcond="IF-243" line="4075" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[0]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="4083" source="originaux/nsichneu.c">
+                    <conditional id="IF-244"> <condition varcond="IF-244" line="4087" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_3&gt;a_3"> </condition>
+                        <case cond="1" executed="true" line="4090" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-245"> <condition varcond="IF-245" line="4109" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="4117" source="originaux/nsichneu.c">
+                    <conditional id="IF-246"> <condition varcond="IF-246" line="4121" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_2&gt;a_2"> </condition>
+                        <case cond="1" executed="true" line="4124" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-247"> <condition varcond="IF-247" line="4143" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[1]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[2])"> </condition>
+                <case cond="1" executed="true" line="4151" source="originaux/nsichneu.c">
+                    <conditional id="IF-248"> <condition varcond="IF-248" line="4155" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_1&gt;a_1"> </condition>
+                        <case cond="1" executed="true" line="4158" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-249"> <condition varcond="IF-249" line="4176" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[0])"> </condition>
+                <case cond="1" executed="true" line="4184" source="originaux/nsichneu.c">
+                    <conditional id="IF-250"> <condition varcond="IF-250" line="4188" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b_0&gt;a_0"> </condition>
+                        <case cond="1" executed="true" line="4191" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+            <conditional id="IF-251"> <condition varcond="IF-251" line="4210" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="P2_is_marked&gt;=5&amp;&amp;P3_is_marked+3&lt;=6&amp;&amp;(P2_marking_member_0[3]==P2_marking_member_0[2]&amp;&amp;P2_marking_member_0[3]==P2_marking_member_0[1])"> </condition>
+                <case cond="1" executed="true" line="4218" source="originaux/nsichneu.c">
+                    <conditional id="IF-252"> <condition varcond="IF-252" line="4222" source="originaux/nsichneu.c" isexecuted="true" expcond="" expcondinit="b&gt;a"> </condition>
+                        <case cond="1" executed="true" line="4225" source="originaux/nsichneu.c">
+                        </case>
+                        <case cond="0" executed="true" >
+                        </case>
+                    </conditional>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+    </function>
+</flowfacts>
+

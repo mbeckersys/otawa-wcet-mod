@@ -1,0 +1,45 @@
+#### Script utilisé par le passé par Marianne ####
+
+time  ./../orange/main/main  -pp -l  pretraites/stsanscalipso.c main main > analyses/stsanscalipso.c.pret
+# script avac calipso
+#./../frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb -sw  -l  originaux/st.c>pretraites/st.c
+#for i in `ls originaux`
+#do
+#	echo $i
+	
+    #more pretraites/$i
+	
+	#time  ./../orange/main/main  -pp  -l originaux/indirect.c main main > analyses/indirect.analyse
+
+#done
+#./../Frontc-3.2-3/frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb   -l  originaux/clement3.c>pretraites/clement3.c
+#./../Frontc-3.2-3/frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb   -l  originaux/clement4.c>pretraites/clement4.c
+#./../Frontc-3.2-3/frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb   -l  originaux/clement5.c>pretraites/clement5.c
+#./../Frontc-3.2-3/frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb   -l  originaux/des.c>pretraites/des.c
+#./../Frontc-3.2-3/frontc/calipso/calipso    -P   -rs -rr -rg   -rc -rb   -l  originaux/whet.c>pretraites/whet.c
+#./../Frontc-3.2-3/frontc/calipso/calipso    -P   -rs -rr -rg   -rc -rb   -l  originaux/rapita.c>pretraites/rapita.c
+#./../Frontc-3.2-3/frontc/calipso/calipso    -P   -rs -rr -rg   -rc -rb   -l  originaux/rapita2.c>pretraites/rapita2.c
+
+#./../Frontc-3.2-3/frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb   -l  pretraites/indirect2b.c>pretraites/indirect2b.c
+
+
+#./../Frontc-3.2-3/frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb   -l  originaux/booltest.c>pretraites/booltest.c
+for i in `ls pretraites`
+do
+	echo $i orange
+#./../Frontc-3.2-3/frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb   -l  originaux/$i>pretraites/$i
+#./../frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb -sw  -l  originaux/$i>pretraites/$i
+	time  ./../orange/main/orange  --no-control-reduction  --print_exp pretraites/$i main  > analyses/$i.ffx
+	
+
+
+	#./../frontc/interval/interval   -P    -l  originaux/$i>pretraites/$i.i
+	
+
+
+done
+#./../frontc/calipso/calipso   -P   -rs -rr -rg   -rc -rb   -l  originaux/des.c>pretraites/des.c
+time  ./../orange/main/orange --no-control-reduction  pretraites/des.c selftest  > analyses/desa.pret
+
+#time  ./orange/main/orange      ~/arm8benchs/arm8-hf/malardalen_armv5/lms/lms.c main  > ~/arm8benchs/arm8-hf/malardalen_armv5/lms/lms.ffx
+

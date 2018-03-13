@@ -1,0 +1,12 @@
+void test(int borne) {
+  int i;
+  
+  for (i = 0; i < borne; i++) {
+  }  
+}
+
+void main(){
+	int i;
+	test (i);
+}
+

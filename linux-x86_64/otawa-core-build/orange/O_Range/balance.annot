@@ -1,0 +1,8106 @@
+"balance.ml" 18 587 595 "balance.ml" 18 587 602
+type(
+  ('a -> 'b option) -> 'a list -> 'b option
+)
+ident(
+  def extract "balance.ml" 18 587 587 "balance.ml" 1 0 -1
+)
+"balance.ml" 18 587 603 "balance.ml" 18 587 604
+type(
+  'a -> 'b option
+)
+ident(
+  def f "balance.ml" 18 587 607 "balance.ml" 22 684 696
+)
+"balance.ml" 19 616 620 "balance.ml" 19 616 622
+type(
+  'a list
+)
+"balance.ml" 19 616 626 "balance.ml" 19 616 630
+type(
+  'b option
+)
+"balance.ml" 20 631 635 "balance.ml" 20 631 636
+type(
+  'a
+)
+ident(
+  def e "balance.ml" 20 631 643 "balance.ml" 22 684 696
+)
+"balance.ml" 20 631 638 "balance.ml" 20 631 639
+type(
+  'a list
+)
+ident(
+  def r "balance.ml" 20 631 643 "balance.ml" 22 684 696
+)
+"balance.ml" 20 631 635 "balance.ml" 20 631 639
+type(
+  'a list
+)
+"balance.ml" 20 631 649 "balance.ml" 20 631 650
+type(
+  'a -> 'b option
+)
+ident(
+  int_ref f "balance.ml" 18 587 603 "balance.ml" 18 587 604
+)
+"balance.ml" 20 631 651 "balance.ml" 20 631 652
+type(
+  'a
+)
+ident(
+  int_ref e "balance.ml" 20 631 635 "balance.ml" 20 631 636
+)
+"balance.ml" 20 631 649 "balance.ml" 20 631 652
+call(
+  stack
+)
+type(
+  'b option
+)
+"balance.ml" 21 658 664 "balance.ml" 21 658 668
+type(
+  'b option
+)
+"balance.ml" 21 658 672 "balance.ml" 21 658 679
+type(
+  ('a -> 'b option) -> 'a list -> 'b option
+)
+ident(
+  int_ref extract "balance.ml" 18 587 595 "balance.ml" 18 587 602
+)
+"balance.ml" 21 658 680 "balance.ml" 21 658 681
+type(
+  'a -> 'b option
+)
+ident(
+  int_ref f "balance.ml" 18 587 603 "balance.ml" 18 587 604
+)
+"balance.ml" 21 658 682 "balance.ml" 21 658 683
+type(
+  'a list
+)
+ident(
+  int_ref r "balance.ml" 20 631 638 "balance.ml" 20 631 639
+)
+"balance.ml" 21 658 672 "balance.ml" 21 658 683
+call(
+  tail
+)
+type(
+  'b option
+)
+"balance.ml" 22 684 690 "balance.ml" 22 684 691
+type(
+  'b option
+)
+ident(
+  def x "balance.ml" 22 684 695 "balance.ml" 22 684 696
+)
+"balance.ml" 22 684 695 "balance.ml" 22 684 696
+type(
+  'b option
+)
+ident(
+  int_ref x "balance.ml" 22 684 690 "balance.ml" 22 684 691
+)
+"balance.ml" 20 631 643 "balance.ml" 22 684 696
+type(
+  'b option
+)
+"balance.ml" 18 587 607 "balance.ml" 22 684 696
+type(
+  'a list -> 'b option
+)
+"balance.ml" 24 698 706 "balance.ml" 24 698 713
+type(
+  ('a -> 'b) -> 'a list -> 'b * 'b
+)
+ident(
+  def min_max "balance.ml" 24 698 698 "balance.ml" 1 0 -1
+)
+"balance.ml" 24 698 714 "balance.ml" 24 698 715
+type(
+  'a -> 'b
+)
+ident(
+  def f "balance.ml" 24 698 718 "balance.ml" 28 842 886
+)
+"balance.ml" 25 727 731 "balance.ml" 25 727 733
+type(
+  'a list
+)
+"balance.ml" 25 727 737 "balance.ml" 25 727 742
+type(
+  exn -> 'b * 'b
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"balance.ml" 25 727 761 "balance.ml" 25 727 773
+type(
+  string
+)
+"balance.ml" 25 727 743 "balance.ml" 25 727 774
+type(
+  exn
+)
+"balance.ml" 25 727 737 "balance.ml" 25 727 774
+type(
+  'b * 'b
+)
+"balance.ml" 26 775 780 "balance.ml" 26 775 781
+type(
+  'a
+)
+ident(
+  def x "balance.ml" 26 775 786 "balance.ml" 26 775 794
+)
+"balance.ml" 26 775 779 "balance.ml" 26 775 782
+type(
+  'a list
+)
+"balance.ml" 26 775 786 "balance.ml" 26 775 787
+type(
+  'a -> 'b
+)
+ident(
+  int_ref f "balance.ml" 24 698 714 "balance.ml" 24 698 715
+)
+"balance.ml" 26 775 788 "balance.ml" 26 775 789
+type(
+  'a
+)
+ident(
+  int_ref x "balance.ml" 26 775 780 "balance.ml" 26 775 781
+)
+"balance.ml" 26 775 786 "balance.ml" 26 775 789
+call(
+  stack
+)
+type(
+  'b
+)
+"balance.ml" 26 775 791 "balance.ml" 26 775 792
+type(
+  'a -> 'b
+)
+ident(
+  int_ref f "balance.ml" 24 698 714 "balance.ml" 24 698 715
+)
+"balance.ml" 26 775 793 "balance.ml" 26 775 794
+type(
+  'a
+)
+ident(
+  int_ref x "balance.ml" 26 775 780 "balance.ml" 26 775 781
+)
+"balance.ml" 26 775 791 "balance.ml" 26 775 794
+call(
+  stack
+)
+type(
+  'b
+)
+"balance.ml" 26 775 786 "balance.ml" 26 775 794
+type(
+  'b * 'b
+)
+"balance.ml" 27 796 800 "balance.ml" 27 796 801
+type(
+  'a
+)
+ident(
+  def x "balance.ml" 27 796 808 "balance.ml" 28 842 886
+)
+"balance.ml" 27 796 803 "balance.ml" 27 796 804
+type(
+  'a list
+)
+ident(
+  def r "balance.ml" 27 796 808 "balance.ml" 28 842 886
+)
+"balance.ml" 27 796 800 "balance.ml" 27 796 804
+type(
+  'a list
+)
+"balance.ml" 27 796 812 "balance.ml" 27 796 817
+type(
+  'b
+)
+ident(
+  def min_r "balance.ml" 28 842 854 "balance.ml" 28 842 886
+)
+"balance.ml" 27 796 819 "balance.ml" 27 796 824
+type(
+  'b
+)
+ident(
+  def max_r "balance.ml" 28 842 854 "balance.ml" 28 842 886
+)
+"balance.ml" 27 796 812 "balance.ml" 27 796 824
+type(
+  'b * 'b
+)
+"balance.ml" 27 796 827 "balance.ml" 27 796 834
+type(
+  ('a -> 'b) -> 'a list -> 'b * 'b
+)
+ident(
+  int_ref min_max "balance.ml" 24 698 706 "balance.ml" 24 698 713
+)
+"balance.ml" 27 796 835 "balance.ml" 27 796 836
+type(
+  'a -> 'b
+)
+ident(
+  int_ref f "balance.ml" 24 698 714 "balance.ml" 24 698 715
+)
+"balance.ml" 27 796 837 "balance.ml" 27 796 838
+type(
+  'a list
+)
+ident(
+  int_ref r "balance.ml" 27 796 803 "balance.ml" 27 796 804
+)
+"balance.ml" 27 796 827 "balance.ml" 27 796 838
+call(
+  stack
+)
+type(
+  'b * 'b
+)
+"balance.ml" 28 842 854 "balance.ml" 28 842 857
+type(
+  'b -> 'b -> 'b
+)
+ident(
+  ext_ref Pervasives.min
+)
+"balance.ml" 28 842 859 "balance.ml" 28 842 860
+type(
+  'a -> 'b
+)
+ident(
+  int_ref f "balance.ml" 24 698 714 "balance.ml" 24 698 715
+)
+"balance.ml" 28 842 861 "balance.ml" 28 842 862
+type(
+  'a
+)
+ident(
+  int_ref x "balance.ml" 27 796 800 "balance.ml" 27 796 801
+)
+"balance.ml" 28 842 858 "balance.ml" 28 842 863
+call(
+  stack
+)
+type(
+  'b
+)
+"balance.ml" 28 842 864 "balance.ml" 28 842 869
+type(
+  'b
+)
+ident(
+  int_ref min_r "balance.ml" 27 796 812 "balance.ml" 27 796 817
+)
+"balance.ml" 28 842 854 "balance.ml" 28 842 869
+call(
+  stack
+)
+type(
+  'b
+)
+"balance.ml" 28 842 871 "balance.ml" 28 842 874
+type(
+  'b -> 'b -> 'b
+)
+ident(
+  ext_ref Pervasives.max
+)
+"balance.ml" 28 842 876 "balance.ml" 28 842 877
+type(
+  'a -> 'b
+)
+ident(
+  int_ref f "balance.ml" 24 698 714 "balance.ml" 24 698 715
+)
+"balance.ml" 28 842 878 "balance.ml" 28 842 879
+type(
+  'a
+)
+ident(
+  int_ref x "balance.ml" 27 796 800 "balance.ml" 27 796 801
+)
+"balance.ml" 28 842 875 "balance.ml" 28 842 880
+call(
+  stack
+)
+type(
+  'b
+)
+"balance.ml" 28 842 881 "balance.ml" 28 842 886
+type(
+  'b
+)
+ident(
+  int_ref max_r "balance.ml" 27 796 819 "balance.ml" 27 796 824
+)
+"balance.ml" 28 842 871 "balance.ml" 28 842 886
+call(
+  stack
+)
+type(
+  'b
+)
+"balance.ml" 28 842 854 "balance.ml" 28 842 886
+type(
+  'b * 'b
+)
+"balance.ml" 27 796 808 "balance.ml" 28 842 886
+type(
+  'b * 'b
+)
+"balance.ml" 24 698 718 "balance.ml" 28 842 886
+type(
+  'a list -> 'b * 'b
+)
+"balance.ml" 30 888 896 "balance.ml" 30 888 901
+type(
+  ('a -> 'a -> 'a) -> 'a list -> 'a
+)
+ident(
+  def fold1 "balance.ml" 30 888 888 "balance.ml" 1 0 -1
+)
+"balance.ml" 30 888 902 "balance.ml" 30 888 903
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  def f "balance.ml" 30 888 906 "balance.ml" 33 976 1003
+)
+"balance.ml" 31 915 919 "balance.ml" 31 915 921
+type(
+  'a list
+)
+"balance.ml" 31 915 925 "balance.ml" 31 915 930
+type(
+  exn -> 'a
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"balance.ml" 31 915 949 "balance.ml" 31 915 961
+type(
+  string
+)
+"balance.ml" 31 915 931 "balance.ml" 31 915 962
+type(
+  exn
+)
+"balance.ml" 31 915 925 "balance.ml" 31 915 962
+type(
+  'a
+)
+"balance.ml" 32 963 968 "balance.ml" 32 963 969
+type(
+  'a
+)
+ident(
+  def x "balance.ml" 32 963 974 "balance.ml" 32 963 975
+)
+"balance.ml" 32 963 967 "balance.ml" 32 963 970
+type(
+  'a list
+)
+"balance.ml" 32 963 974 "balance.ml" 32 963 975
+type(
+  'a
+)
+ident(
+  int_ref x "balance.ml" 32 963 968 "balance.ml" 32 963 969
+)
+"balance.ml" 33 976 980 "balance.ml" 33 976 981
+type(
+  'a
+)
+ident(
+  def x "balance.ml" 33 976 988 "balance.ml" 33 976 1003
+)
+"balance.ml" 33 976 983 "balance.ml" 33 976 984
+type(
+  'a list
+)
+ident(
+  def r "balance.ml" 33 976 988 "balance.ml" 33 976 1003
+)
+"balance.ml" 33 976 980 "balance.ml" 33 976 984
+type(
+  'a list
+)
+"balance.ml" 33 976 988 "balance.ml" 33 976 989
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  int_ref f "balance.ml" 30 888 902 "balance.ml" 30 888 903
+)
+"balance.ml" 33 976 990 "balance.ml" 33 976 991
+type(
+  'a
+)
+ident(
+  int_ref x "balance.ml" 33 976 980 "balance.ml" 33 976 981
+)
+"balance.ml" 33 976 993 "balance.ml" 33 976 998
+type(
+  ('a -> 'a -> 'a) -> 'a list -> 'a
+)
+ident(
+  int_ref fold1 "balance.ml" 30 888 896 "balance.ml" 30 888 901
+)
+"balance.ml" 33 976 999 "balance.ml" 33 976 1000
+type(
+  'a -> 'a -> 'a
+)
+ident(
+  int_ref f "balance.ml" 30 888 902 "balance.ml" 30 888 903
+)
+"balance.ml" 33 976 1001 "balance.ml" 33 976 1002
+type(
+  'a list
+)
+ident(
+  int_ref r "balance.ml" 33 976 983 "balance.ml" 33 976 984
+)
+"balance.ml" 33 976 992 "balance.ml" 33 976 1003
+call(
+  stack
+)
+type(
+  'a
+)
+"balance.ml" 33 976 988 "balance.ml" 33 976 1003
+call(
+  tail
+)
+type(
+  'a
+)
+"balance.ml" 30 888 906 "balance.ml" 33 976 1003
+type(
+  'a list -> 'a
+)
+"balance.ml" 37 1034 1038 "balance.ml" 37 1034 1050
+type(
+  Cabs.definition list -> string -> Cabs.statement option
+)
+ident(
+  def function_def "balance.ml" 44 1294 1294 "balance.ml" 1 0 -1
+)
+"balance.ml" 37 1034 1052 "balance.ml" 37 1034 1056
+type(
+  Cabs.definition list
+)
+ident(
+  def defs "balance.ml" 37 1034 1080 "balance.ml" 42 1283 1292
+)
+"balance.ml" 37 1034 1081 "balance.ml" 37 1034 1086
+type(
+  string
+)
+ident(
+  def fname "balance.ml" 38 1098 1100 "balance.ml" 42 1283 1292
+)
+"balance.ml" 38 1098 1104 "balance.ml" 38 1098 1108
+type(
+  Cabs.statement option
+)
+ident(
+  def body "balance.ml" 42 1283 1288 "balance.ml" 42 1283 1292
+)
+"balance.ml" 38 1098 1111 "balance.ml" 38 1098 1118
+type(
+  (Cabs.definition -> Cabs.statement option) ->
+  Cabs.definition list -> Cabs.statement option
+)
+ident(
+  int_ref extract "balance.ml" 18 587 595 "balance.ml" 18 587 602
+)
+"balance.ml" 39 1129 1149 "balance.ml" 39 1129 1150
+type(
+  Cabs.base_type
+)
+"balance.ml" 39 1129 1151 "balance.ml" 39 1129 1152
+type(
+  Cabs.storage
+)
+"balance.ml" 39 1129 1154 "balance.ml" 39 1129 1158
+type(
+  string
+)
+ident(
+  def name "balance.ml" 40 1177 1230 "balance.ml" 40 1177 1260
+)
+"balance.ml" 39 1129 1159 "balance.ml" 39 1129 1160
+type(
+  Cabs.base_type
+)
+"balance.ml" 39 1129 1161 "balance.ml" 39 1129 1162
+type(
+  Cabs.gnu_attrs
+)
+"balance.ml" 39 1129 1163 "balance.ml" 39 1129 1164
+type(
+  Cabs.expression
+)
+"balance.ml" 39 1129 1153 "balance.ml" 39 1129 1165
+type(
+  Cabs.name
+)
+"balance.ml" 39 1129 1148 "balance.ml" 39 1129 1166
+type(
+  Cabs.single_name
+)
+"balance.ml" 39 1129 1168 "balance.ml" 39 1129 1169
+type(
+  Cabs.definition list
+)
+"balance.ml" 39 1129 1170 "balance.ml" 39 1129 1174
+type(
+  Cabs.statement
+)
+ident(
+  def body "balance.ml" 40 1177 1230 "balance.ml" 40 1177 1260
+)
+"balance.ml" 39 1129 1167 "balance.ml" 39 1129 1175
+type(
+  Cabs.body
+)
+"balance.ml" 39 1129 1135 "balance.ml" 39 1129 1176
+type(
+  Cabs.definition
+)
+"balance.ml" 40 1177 1200 "balance.ml" 40 1177 1201
+type(
+  Cabs.base_type
+)
+"balance.ml" 40 1177 1202 "balance.ml" 40 1177 1203
+type(
+  Cabs.storage
+)
+"balance.ml" 40 1177 1205 "balance.ml" 40 1177 1209
+type(
+  string
+)
+ident(
+  def name "balance.ml" 40 1177 1230 "balance.ml" 40 1177 1260
+)
+"balance.ml" 40 1177 1210 "balance.ml" 40 1177 1211
+type(
+  Cabs.base_type
+)
+"balance.ml" 40 1177 1212 "balance.ml" 40 1177 1213
+type(
+  Cabs.gnu_attrs
+)
+"balance.ml" 40 1177 1214 "balance.ml" 40 1177 1215
+type(
+  Cabs.expression
+)
+"balance.ml" 40 1177 1204 "balance.ml" 40 1177 1216
+type(
+  Cabs.name
+)
+"balance.ml" 40 1177 1199 "balance.ml" 40 1177 1217
+type(
+  Cabs.single_name
+)
+"balance.ml" 40 1177 1218 "balance.ml" 40 1177 1219
+type(
+  Cabs.name_group list
+)
+"balance.ml" 40 1177 1221 "balance.ml" 40 1177 1222
+type(
+  Cabs.definition list
+)
+"balance.ml" 40 1177 1223 "balance.ml" 40 1177 1227
+type(
+  Cabs.statement
+)
+ident(
+  def body "balance.ml" 40 1177 1230 "balance.ml" 40 1177 1260
+)
+"balance.ml" 40 1177 1220 "balance.ml" 40 1177 1228
+type(
+  Cabs.body
+)
+"balance.ml" 40 1177 1183 "balance.ml" 40 1177 1229
+type(
+  Cabs.definition
+)
+"balance.ml" 39 1129 1135 "balance.ml" 40 1177 1229
+type(
+  Cabs.definition
+)
+"balance.ml" 40 1177 1235 "balance.ml" 40 1177 1239
+type(
+  string
+)
+ident(
+  int_ref name "balance.ml" 39 1129 1154 "balance.ml" 39 1129 1158
+)
+"balance.ml" 40 1177 1240 "balance.ml" 40 1177 1241
+type(
+  string -> string -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"balance.ml" 40 1177 1242 "balance.ml" 40 1177 1247
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 37 1034 1081 "balance.ml" 37 1034 1086
+)
+"balance.ml" 40 1177 1235 "balance.ml" 40 1177 1247
+type(
+  bool
+)
+"balance.ml" 40 1177 1256 "balance.ml" 40 1177 1260
+type(
+  Cabs.statement
+)
+ident(
+  int_ref body "balance.ml" 39 1129 1170 "balance.ml" 39 1129 1174
+)
+"balance.ml" 40 1177 1251 "balance.ml" 40 1177 1260
+type(
+  Cabs.statement option
+)
+"balance.ml" 41 1261 1267 "balance.ml" 41 1261 1268
+type(
+  Cabs.definition
+)
+"balance.ml" 41 1261 1272 "balance.ml" 41 1261 1276
+type(
+  Cabs.statement option
+)
+"balance.ml" 38 1098 1119 "balance.ml" 41 1261 1277
+type(
+  Cabs.definition -> Cabs.statement option
+)
+"balance.ml" 41 1261 1278 "balance.ml" 41 1261 1282
+type(
+  Cabs.definition list
+)
+ident(
+  int_ref defs "balance.ml" 37 1034 1052 "balance.ml" 37 1034 1056
+)
+"balance.ml" 38 1098 1111 "balance.ml" 41 1261 1282
+call(
+  stack
+)
+type(
+  Cabs.statement option
+)
+"balance.ml" 42 1283 1288 "balance.ml" 42 1283 1292
+type(
+  Cabs.statement option
+)
+ident(
+  int_ref body "balance.ml" 38 1098 1104 "balance.ml" 38 1098 1108
+)
+"balance.ml" 38 1098 1100 "balance.ml" 42 1283 1292
+type(
+  Cabs.statement option
+)
+"balance.ml" 44 1294 1298 "balance.ml" 44 1294 1314
+type(
+  Cabs.definition list -> string -> Cabs.statement
+)
+ident(
+  def function_def_exn "balance.ml" 49 1410 1410 "balance.ml" 1 0 -1
+)
+"balance.ml" 44 1294 1315 "balance.ml" 44 1294 1319
+type(
+  Cabs.definition list
+)
+ident(
+  def defs "balance.ml" 44 1294 1320 "balance.ml" 47 1393 1408
+)
+"balance.ml" 44 1294 1320 "balance.ml" 44 1294 1325
+type(
+  string
+)
+ident(
+  def fname "balance.ml" 45 1328 1330 "balance.ml" 47 1393 1408
+)
+"balance.ml" 45 1328 1336 "balance.ml" 45 1328 1348
+type(
+  Cabs.definition list -> string -> Cabs.statement option
+)
+ident(
+  int_ref function_def "balance.ml" 37 1034 1038 "balance.ml" 37 1034 1050
+)
+"balance.ml" 45 1328 1349 "balance.ml" 45 1328 1353
+type(
+  Cabs.definition list
+)
+ident(
+  int_ref defs "balance.ml" 44 1294 1315 "balance.ml" 44 1294 1319
+)
+"balance.ml" 45 1328 1354 "balance.ml" 45 1328 1359
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 44 1294 1320 "balance.ml" 44 1294 1325
+)
+"balance.ml" 45 1328 1336 "balance.ml" 45 1328 1359
+call(
+  stack
+)
+type(
+  Cabs.statement option
+)
+"balance.ml" 46 1365 1369 "balance.ml" 46 1365 1373
+type(
+  Cabs.statement option
+)
+"balance.ml" 46 1365 1377 "balance.ml" 46 1365 1382
+type(
+  exn -> Cabs.statement
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"balance.ml" 46 1365 1383 "balance.ml" 46 1365 1392
+type(
+  exn
+)
+"balance.ml" 46 1365 1377 "balance.ml" 46 1365 1392
+type(
+  Cabs.statement
+)
+"balance.ml" 47 1393 1402 "balance.ml" 47 1393 1403
+type(
+  Cabs.statement
+)
+ident(
+  def x "balance.ml" 47 1393 1407 "balance.ml" 47 1393 1408
+)
+"balance.ml" 47 1393 1397 "balance.ml" 47 1393 1403
+type(
+  Cabs.statement option
+)
+"balance.ml" 47 1393 1407 "balance.ml" 47 1393 1408
+type(
+  Cabs.statement
+)
+ident(
+  int_ref x "balance.ml" 47 1393 1402 "balance.ml" 47 1393 1403
+)
+"balance.ml" 45 1328 1330 "balance.ml" 47 1393 1408
+type(
+  Cabs.statement
+)
+"balance.ml" 49 1410 1414 "balance.ml" 49 1410 1424
+type(
+  Format.formatter -> Cabs.expression -> unit
+)
+ident(
+  def print_expr "balance.ml" 58 1650 1650 "balance.ml" 1 0 -1
+)
+"balance.ml" 49 1410 1425 "balance.ml" 49 1410 1428
+type(
+  Format.formatter
+)
+ident(
+  def fmt "balance.ml" 49 1410 1429 "balance.ml" 56 1607 1648
+)
+"balance.ml" 49 1410 1430 "balance.ml" 49 1410 1434
+type(
+  Cabs.expression
+)
+ident(
+  def expr "balance.ml" 50 1455 1457 "balance.ml" 56 1607 1648
+)
+"balance.ml" 50 1455 1457 "balance.ml" 50 1455 1471
+type(
+  string ref
+)
+ident(
+  ext_ref Cprint.current
+)
+"balance.ml" 50 1455 1472 "balance.ml" 50 1455 1474
+type(
+  string ref -> string -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"balance.ml" 50 1455 1475 "balance.ml" 50 1455 1477
+type(
+  string
+)
+"balance.ml" 50 1455 1457 "balance.ml" 50 1455 1477
+type(
+  unit
+)
+"balance.ml" 51 1479 1481 "balance.ml" 51 1479 1499
+type(
+  int ref
+)
+ident(
+  ext_ref Cprint.current_len
+)
+"balance.ml" 51 1479 1500 "balance.ml" 51 1479 1502
+type(
+  int ref -> int -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"balance.ml" 51 1479 1503 "balance.ml" 51 1479 1504
+type(
+  int
+)
+"balance.ml" 51 1479 1481 "balance.ml" 51 1479 1504
+type(
+  unit
+)
+"balance.ml" 52 1506 1508 "balance.ml" 52 1506 1519
+type(
+  string ref
+)
+ident(
+  ext_ref Cprint.line
+)
+"balance.ml" 52 1506 1520 "balance.ml" 52 1506 1522
+type(
+  string ref -> string -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"balance.ml" 52 1506 1523 "balance.ml" 52 1506 1525
+type(
+  string
+)
+"balance.ml" 52 1506 1508 "balance.ml" 52 1506 1525
+type(
+  unit
+)
+"balance.ml" 53 1527 1529 "balance.ml" 53 1527 1544
+type(
+  int ref
+)
+ident(
+  ext_ref Cprint.line_len
+)
+"balance.ml" 53 1527 1545 "balance.ml" 53 1527 1547
+type(
+  int ref -> int -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"balance.ml" 53 1527 1548 "balance.ml" 53 1527 1549
+type(
+  int
+)
+"balance.ml" 53 1527 1529 "balance.ml" 53 1527 1549
+type(
+  unit
+)
+"balance.ml" 54 1551 1553 "balance.ml" 54 1551 1576
+type(
+  Cabs.expression -> int -> unit
+)
+ident(
+  ext_ref Cprint.print_expression
+)
+"balance.ml" 54 1551 1577 "balance.ml" 54 1551 1581
+type(
+  Cabs.expression
+)
+ident(
+  int_ref expr "balance.ml" 49 1410 1430 "balance.ml" 49 1410 1434
+)
+"balance.ml" 54 1551 1582 "balance.ml" 54 1551 1584
+type(
+  int -> int
+)
+ident(
+  ext_ref Pervasives.( ~- )
+)
+"balance.ml" 54 1551 1584 "balance.ml" 54 1551 1585
+type(
+  int
+)
+"balance.ml" 54 1551 1582 "balance.ml" 54 1551 1585
+type(
+  int
+)
+"balance.ml" 54 1551 1553 "balance.ml" 54 1551 1585
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 55 1587 1589 "balance.ml" 55 1587 1602
+type(
+  unit -> unit
+)
+ident(
+  ext_ref Cprint.commit
+)
+"balance.ml" 55 1587 1603 "balance.ml" 55 1587 1605
+type(
+  unit
+)
+"balance.ml" 55 1587 1589 "balance.ml" 55 1587 1605
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 56 1607 1609 "balance.ml" 56 1607 1631
+type(
+  Format.formatter -> string -> unit
+)
+ident(
+  ext_ref Format.pp_print_string
+)
+"balance.ml" 56 1607 1632 "balance.ml" 56 1607 1635
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "balance.ml" 49 1410 1425 "balance.ml" 49 1410 1428
+)
+"balance.ml" 56 1607 1636 "balance.ml" 56 1607 1637
+type(
+  string ref -> string
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"balance.ml" 56 1607 1637 "balance.ml" 56 1607 1648
+type(
+  string ref
+)
+ident(
+  ext_ref Cprint.line
+)
+"balance.ml" 56 1607 1636 "balance.ml" 56 1607 1648
+type(
+  string
+)
+"balance.ml" 56 1607 1609 "balance.ml" 56 1607 1648
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 55 1587 1589 "balance.ml" 56 1607 1648
+type(
+  unit
+)
+"balance.ml" 54 1551 1553 "balance.ml" 56 1607 1648
+type(
+  unit
+)
+"balance.ml" 53 1527 1529 "balance.ml" 56 1607 1648
+type(
+  unit
+)
+"balance.ml" 52 1506 1508 "balance.ml" 56 1607 1648
+type(
+  unit
+)
+"balance.ml" 51 1479 1481 "balance.ml" 56 1607 1648
+type(
+  unit
+)
+"balance.ml" 50 1455 1457 "balance.ml" 56 1607 1648
+type(
+  unit
+)
+"balance.ml" 58 1650 1654 "balance.ml" 58 1650 1669
+type(
+  out_channel -> Cabs.expression -> unit
+)
+ident(
+  def output_expr_ffx "balance.ml" 62 1804 1804 "balance.ml" 1 0 -1
+)
+"balance.ml" 58 1650 1670 "balance.ml" 58 1650 1672
+type(
+  out_channel
+)
+ident(
+  def oc "balance.ml" 58 1650 1673 "balance.ml" 60 1751 1802
+)
+"balance.ml" 58 1650 1674 "balance.ml" 58 1650 1678
+type(
+  Cabs.expression
+)
+ident(
+  def expr "balance.ml" 59 1699 1701 "balance.ml" 60 1751 1802
+)
+"balance.ml" 59 1699 1705 "balance.ml" 59 1699 1708
+type(
+  string
+)
+ident(
+  def str "balance.ml" 60 1751 1753 "balance.ml" 60 1751 1802
+)
+"balance.ml" 59 1699 1711 "balance.ml" 59 1699 1726
+type(
+  ((Format.formatter -> Cabs.expression -> unit) -> Cabs.expression -> string,
+   Format.formatter, unit, string)
+  format4 ->
+  (Format.formatter -> Cabs.expression -> unit) -> Cabs.expression -> string
+)
+ident(
+  ext_ref Format.asprintf
+)
+"balance.ml" 59 1699 1727 "balance.ml" 59 1699 1731
+type(
+  ((Format.formatter -> Cabs.expression -> unit) -> Cabs.expression -> string,
+   Format.formatter, unit, string)
+  format4
+)
+"balance.ml" 59 1699 1732 "balance.ml" 59 1699 1742
+type(
+  Format.formatter -> Cabs.expression -> unit
+)
+ident(
+  int_ref print_expr "balance.ml" 49 1410 1414 "balance.ml" 49 1410 1424
+)
+"balance.ml" 59 1699 1743 "balance.ml" 59 1699 1747
+type(
+  Cabs.expression
+)
+ident(
+  int_ref expr "balance.ml" 58 1650 1674 "balance.ml" 58 1650 1678
+)
+"balance.ml" 59 1699 1711 "balance.ml" 59 1699 1747
+call(
+  stack
+)
+type(
+  string
+)
+"balance.ml" 60 1751 1753 "balance.ml" 60 1751 1766
+type(
+  out_channel -> string -> unit
+)
+ident(
+  ext_ref Pervasives.output_string
+)
+"balance.ml" 60 1751 1767 "balance.ml" 60 1751 1769
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 58 1650 1670 "balance.ml" 58 1650 1672
+)
+"balance.ml" 60 1751 1771 "balance.ml" 60 1751 1797
+type(
+  string -> string
+)
+ident(
+  ext_ref Coutput.pcdata_from_string
+)
+"balance.ml" 60 1751 1798 "balance.ml" 60 1751 1801
+type(
+  string
+)
+ident(
+  int_ref str "balance.ml" 59 1699 1705 "balance.ml" 59 1699 1708
+)
+"balance.ml" 60 1751 1770 "balance.ml" 60 1751 1802
+call(
+  stack
+)
+type(
+  string
+)
+"balance.ml" 60 1751 1753 "balance.ml" 60 1751 1802
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 59 1699 1701 "balance.ml" 60 1751 1802
+type(
+  unit
+)
+"balance.ml" 62 1804 1808 "balance.ml" 62 1804 1822
+type(
+  Cabs.statement -> Cabs.expression
+)
+ident(
+  def condition_test "balance.ml" 68 1966 1966 "balance.ml" 1 0 -1
+)
+"balance.ml" 62 1804 1824 "balance.ml" 62 1804 1828
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "balance.ml" 63 1848 1850 "balance.ml" 66 1913 1964
+)
+"balance.ml" 63 1848 1856 "balance.ml" 63 1848 1860
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 62 1804 1824 "balance.ml" 62 1804 1828
+)
+"balance.ml" 64 1866 1879 "balance.ml" 64 1866 1880
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 65 1886 1911 "balance.ml" 65 1886 1912
+)
+"balance.ml" 64 1866 1881 "balance.ml" 64 1866 1882
+type(
+  Cabs.statement
+)
+"balance.ml" 64 1866 1883 "balance.ml" 64 1866 1884
+type(
+  Cabs.statement
+)
+"balance.ml" 64 1866 1870 "balance.ml" 64 1866 1885
+type(
+  Cabs.statement
+)
+"balance.ml" 65 1886 1903 "balance.ml" 65 1886 1904
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 65 1886 1911 "balance.ml" 65 1886 1912
+)
+"balance.ml" 65 1886 1905 "balance.ml" 65 1886 1906
+type(
+  Cabs.statement
+)
+"balance.ml" 65 1886 1890 "balance.ml" 65 1886 1907
+type(
+  Cabs.statement
+)
+"balance.ml" 64 1866 1870 "balance.ml" 65 1886 1907
+type(
+  Cabs.statement
+)
+"balance.ml" 65 1886 1911 "balance.ml" 65 1886 1912
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 64 1866 1879 "balance.ml" 64 1866 1880
+)
+"balance.ml" 66 1913 1917 "balance.ml" 66 1913 1918
+type(
+  Cabs.statement
+)
+"balance.ml" 66 1913 1922 "balance.ml" 66 1913 1927
+type(
+  exn -> Cabs.expression
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"balance.ml" 66 1913 1946 "balance.ml" 66 1913 1963
+type(
+  string
+)
+"balance.ml" 66 1913 1928 "balance.ml" 66 1913 1964
+type(
+  exn
+)
+"balance.ml" 66 1913 1922 "balance.ml" 66 1913 1964
+type(
+  Cabs.expression
+)
+"balance.ml" 63 1848 1850 "balance.ml" 66 1913 1964
+type(
+  Cabs.expression
+)
+"balance.ml" 68 1966 1970 "balance.ml" 68 1966 1985
+type(
+  Cabs.statement -> (string * int) option
+)
+ident(
+  def direct_location "balance.ml" 76 2163 2163 "balance.ml" 1 0 -1
+)
+"balance.ml" 68 1966 1987 "balance.ml" 68 1966 1991
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "balance.ml" 69 2011 2013 "balance.ml" 71 2070 2083
+)
+"balance.ml" 69 2011 2019 "balance.ml" 69 2011 2023
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 68 1966 1987 "balance.ml" 68 1966 1991
+)
+"balance.ml" 70 2029 2049 "balance.ml" 70 2029 2050
+type(
+  Cabs.statement
+)
+"balance.ml" 70 2029 2051 "balance.ml" 70 2029 2052
+type(
+  string
+)
+ident(
+  def f "balance.ml" 70 2029 2059 "balance.ml" 70 2029 2069
+)
+"balance.ml" 70 2029 2053 "balance.ml" 70 2029 2054
+type(
+  int
+)
+ident(
+  def l "balance.ml" 70 2029 2059 "balance.ml" 70 2029 2069
+)
+"balance.ml" 70 2029 2033 "balance.ml" 70 2029 2055
+type(
+  Cabs.statement
+)
+"balance.ml" 70 2029 2065 "balance.ml" 70 2029 2066
+type(
+  string
+)
+ident(
+  int_ref f "balance.ml" 70 2029 2051 "balance.ml" 70 2029 2052
+)
+"balance.ml" 70 2029 2067 "balance.ml" 70 2029 2068
+type(
+  int
+)
+ident(
+  int_ref l "balance.ml" 70 2029 2053 "balance.ml" 70 2029 2054
+)
+"balance.ml" 70 2029 2064 "balance.ml" 70 2029 2069
+type(
+  string * int
+)
+"balance.ml" 70 2029 2059 "balance.ml" 70 2029 2069
+type(
+  (string * int) option
+)
+"balance.ml" 71 2070 2074 "balance.ml" 71 2070 2075
+type(
+  Cabs.statement
+)
+"balance.ml" 71 2070 2079 "balance.ml" 71 2070 2083
+type(
+  (string * int) option
+)
+"balance.ml" 69 2011 2013 "balance.ml" 71 2070 2083
+type(
+  (string * int) option
+)
+"balance.ml" 110 3431 3437 "balance.ml" 110 3431 3449
+type(
+  Cabs.statement -> t
+)
+ident(
+  def of_stat_line "balance.ml" 114 3598 3600 "balance.ml" 119 3875 3878
+)
+"balance.ml" 111 3461 3483 "balance.ml" 111 3461 3484
+type(
+  Cabs.statement
+)
+"balance.ml" 111 3461 3485 "balance.ml" 111 3461 3486
+type(
+  string
+)
+ident(
+  def f "balance.ml" 111 3461 3493 "balance.ml" 111 3461 3515
+)
+"balance.ml" 111 3461 3487 "balance.ml" 111 3461 3488
+type(
+  int
+)
+ident(
+  def l "balance.ml" 111 3461 3493 "balance.ml" 111 3461 3515
+)
+"balance.ml" 111 3461 3467 "balance.ml" 111 3461 3489
+type(
+  Cabs.statement
+)
+"balance.ml" 111 3461 3502 "balance.ml" 111 3461 3503
+type(
+  string
+)
+ident(
+  int_ref f "balance.ml" 111 3461 3485 "balance.ml" 111 3461 3486
+)
+"balance.ml" 111 3461 3512 "balance.ml" 111 3461 3513
+type(
+  int
+)
+ident(
+  int_ref l "balance.ml" 111 3461 3487 "balance.ml" 111 3461 3488
+)
+"balance.ml" 111 3461 3493 "balance.ml" 111 3461 3515
+type(
+  t
+)
+"balance.ml" 112 3516 3522 "balance.ml" 112 3516 3523
+type(
+  Cabs.statement
+)
+"balance.ml" 112 3516 3527 "balance.ml" 112 3516 3532
+type(
+  exn -> t
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"balance.ml" 112 3516 3551 "balance.ml" 112 3516 3568
+type(
+  string
+)
+"balance.ml" 112 3516 3533 "balance.ml" 112 3516 3569
+type(
+  exn
+)
+"balance.ml" 112 3516 3527 "balance.ml" 112 3516 3569
+type(
+  t
+)
+"balance.ml" 110 3431 3452 "balance.ml" 112 3516 3569
+type(
+  Cabs.statement -> t
+)
+"balance.ml" 114 3598 3604 "balance.ml" 114 3598 3609
+type(
+  Format.formatter -> t -> unit
+)
+ident(
+  def print "balance.ml" 115 3665 3667 "balance.ml" 119 3875 3878
+)
+"balance.ml" 114 3598 3610 "balance.ml" 114 3598 3613
+type(
+  Format.formatter
+)
+ident(
+  def fmt "balance.ml" 114 3598 3614 "balance.ml" 114 3598 3664
+)
+"balance.ml" 114 3598 3614 "balance.ml" 114 3598 3617
+type(
+  t
+)
+ident(
+  def loc "balance.ml" 114 3598 3620 "balance.ml" 114 3598 3664
+)
+"balance.ml" 114 3598 3620 "balance.ml" 114 3598 3634
+type(
+  Format.formatter ->
+  (string -> int -> unit, Format.formatter, unit) format ->
+  string -> int -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"balance.ml" 114 3598 3635 "balance.ml" 114 3598 3638
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "balance.ml" 114 3598 3610 "balance.ml" 114 3598 3613
+)
+"balance.ml" 114 3598 3639 "balance.ml" 114 3598 3646
+type(
+  (string -> int -> unit, Format.formatter, unit) format
+)
+"balance.ml" 114 3598 3647 "balance.ml" 114 3598 3650
+type(
+  t
+)
+ident(
+  int_ref loc "balance.ml" 114 3598 3614 "balance.ml" 114 3598 3617
+)
+"balance.ml" 114 3598 3647 "balance.ml" 114 3598 3655
+type(
+  string
+)
+"balance.ml" 114 3598 3656 "balance.ml" 114 3598 3659
+type(
+  t
+)
+ident(
+  int_ref loc "balance.ml" 114 3598 3614 "balance.ml" 114 3598 3617
+)
+"balance.ml" 114 3598 3656 "balance.ml" 114 3598 3664
+type(
+  int
+)
+"balance.ml" 114 3598 3620 "balance.ml" 114 3598 3664
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 115 3665 3671 "balance.ml" 115 3665 3681
+type(
+  out_channel -> t -> unit
+)
+ident(
+  def output_ffx "balance.ml" 116 3756 3758 "balance.ml" 119 3875 3878
+)
+"balance.ml" 115 3665 3682 "balance.ml" 115 3665 3684
+type(
+  out_channel
+)
+ident(
+  def oc "balance.ml" 115 3665 3685 "balance.ml" 115 3665 3755
+)
+"balance.ml" 115 3665 3685 "balance.ml" 115 3665 3688
+type(
+  t
+)
+ident(
+  def loc "balance.ml" 115 3665 3691 "balance.ml" 115 3665 3755
+)
+"balance.ml" 115 3665 3691 "balance.ml" 115 3665 3705
+type(
+  out_channel ->
+  (string -> int -> unit, out_channel, unit) format -> string -> int -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"balance.ml" 115 3665 3706 "balance.ml" 115 3665 3708
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 115 3665 3682 "balance.ml" 115 3665 3684
+)
+"balance.ml" 115 3665 3709 "balance.ml" 115 3665 3737
+type(
+  (string -> int -> unit, out_channel, unit) format
+)
+"balance.ml" 115 3665 3738 "balance.ml" 115 3665 3741
+type(
+  t
+)
+ident(
+  int_ref loc "balance.ml" 115 3665 3685 "balance.ml" 115 3665 3688
+)
+"balance.ml" 115 3665 3738 "balance.ml" 115 3665 3746
+type(
+  string
+)
+"balance.ml" 115 3665 3747 "balance.ml" 115 3665 3750
+type(
+  t
+)
+ident(
+  int_ref loc "balance.ml" 115 3665 3685 "balance.ml" 115 3665 3688
+)
+"balance.ml" 115 3665 3747 "balance.ml" 115 3665 3755
+type(
+  int
+)
+"balance.ml" 115 3665 3691 "balance.ml" 115 3665 3755
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 116 3756 3762 "balance.ml" 116 3756 3774
+type(
+  Cabs.statement -> t option
+)
+ident(
+  def of_statement "balance.ml" 118 3827 3874 "balance.ml" 119 3875 3878
+)
+"balance.ml" 116 3756 3775 "balance.ml" 116 3756 3776
+type(
+  Cabs.statement
+)
+ident(
+  def s "balance.ml" 116 3756 3779 "balance.ml" 118 3827 3874
+)
+"balance.ml" 116 3756 3785 "balance.ml" 116 3756 3800
+type(
+  Cabs.statement -> (string * int) option
+)
+ident(
+  int_ref direct_location "balance.ml" 68 1966 1970 "balance.ml" 68 1966 1985
+)
+"balance.ml" 116 3756 3801 "balance.ml" 116 3756 3802
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s "balance.ml" 116 3756 3775 "balance.ml" 116 3756 3776
+)
+"balance.ml" 116 3756 3785 "balance.ml" 116 3756 3802
+call(
+  stack
+)
+type(
+  (string * int) option
+)
+"balance.ml" 117 3808 3814 "balance.ml" 117 3808 3818
+type(
+  (string * int) option
+)
+"balance.ml" 117 3808 3822 "balance.ml" 117 3808 3826
+type(
+  t option
+)
+"balance.ml" 118 3827 3839 "balance.ml" 118 3827 3840
+type(
+  string
+)
+ident(
+  def f "balance.ml" 118 3827 3847 "balance.ml" 118 3827 3874
+)
+"balance.ml" 118 3827 3841 "balance.ml" 118 3827 3842
+type(
+  int
+)
+ident(
+  def l "balance.ml" 118 3827 3847 "balance.ml" 118 3827 3874
+)
+"balance.ml" 118 3827 3838 "balance.ml" 118 3827 3843
+type(
+  string * int
+)
+"balance.ml" 118 3827 3833 "balance.ml" 118 3827 3843
+type(
+  (string * int) option
+)
+"balance.ml" 118 3827 3861 "balance.ml" 118 3827 3862
+type(
+  string
+)
+ident(
+  int_ref f "balance.ml" 118 3827 3839 "balance.ml" 118 3827 3840
+)
+"balance.ml" 118 3827 3871 "balance.ml" 118 3827 3872
+type(
+  int
+)
+ident(
+  int_ref l "balance.ml" 118 3827 3841 "balance.ml" 118 3827 3842
+)
+"balance.ml" 118 3827 3852 "balance.ml" 118 3827 3874
+type(
+  t
+)
+"balance.ml" 118 3827 3847 "balance.ml" 118 3827 3874
+type(
+  t option
+)
+"balance.ml" 116 3756 3779 "balance.ml" 118 3827 3874
+type(
+  t option
+)
+"balance.ml" 135 4431 4437 "balance.ml" 135 4431 4442
+type(
+  Format.formatter -> t -> unit
+)
+ident(
+  def print "balance.ml" 140 4635 4637 "balance.ml" 163 5605 5608
+)
+"balance.ml" 135 4431 4443 "balance.ml" 135 4431 4446
+type(
+  Format.formatter
+)
+ident(
+  def fmt "balance.ml" 135 4431 4447 "balance.ml" 139 4621 4634
+)
+"balance.ml" 135 4431 4448 "balance.ml" 135 4431 4451
+type(
+  t
+)
+ident(
+  def ctx "balance.ml" 135 4431 4458 "balance.ml" 139 4621 4634
+)
+"balance.ml" 135 4431 4458 "balance.ml" 135 4431 4472
+type(
+  Format.formatter ->
+  ((Format.formatter -> Loc.t option -> unit) ->
+   Loc.t option -> string -> unit, Format.formatter, unit)
+  format ->
+  (Format.formatter -> Loc.t option -> unit) ->
+  Loc.t option -> string -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"balance.ml" 135 4431 4473 "balance.ml" 135 4431 4476
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "balance.ml" 135 4431 4443 "balance.ml" 135 4431 4446
+)
+"balance.ml" 135 4431 4477 "balance.ml" 135 4431 4490
+type(
+  ((Format.formatter -> Loc.t option -> unit) ->
+   Loc.t option -> string -> unit, Format.formatter, unit)
+  format
+)
+"balance.ml" 136 4491 4500 "balance.ml" 136 4491 4503
+type(
+  Format.formatter
+)
+ident(
+  def fmt "balance.ml" 136 4491 4507 "balance.ml" 138 4576 4611
+)
+"balance.ml" 137 4516 4522 "balance.ml" 137 4516 4526
+type(
+  Loc.t option
+)
+"balance.ml" 137 4516 4530 "balance.ml" 137 4516 4552
+type(
+  Format.formatter -> string -> unit
+)
+ident(
+  ext_ref Format.pp_print_string
+)
+"balance.ml" 137 4516 4553 "balance.ml" 137 4516 4556
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "balance.ml" 136 4491 4500 "balance.ml" 136 4491 4503
+)
+"balance.ml" 137 4516 4557 "balance.ml" 137 4516 4575
+type(
+  string
+)
+"balance.ml" 137 4516 4530 "balance.ml" 137 4516 4575
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 138 4576 4587 "balance.ml" 138 4576 4590
+type(
+  Loc.t
+)
+ident(
+  def loc "balance.ml" 138 4576 4594 "balance.ml" 138 4576 4611
+)
+"balance.ml" 138 4576 4582 "balance.ml" 138 4576 4590
+type(
+  Loc.t option
+)
+"balance.ml" 138 4576 4594 "balance.ml" 138 4576 4603
+type(
+  Format.formatter -> Loc.t -> unit
+)
+ident(
+  int_ref Loc.print "balance.ml" 114 3598 3604 "balance.ml" 114 3598 3609
+)
+"balance.ml" 138 4576 4604 "balance.ml" 138 4576 4607
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "balance.ml" 136 4491 4500 "balance.ml" 136 4491 4503
+)
+"balance.ml" 138 4576 4608 "balance.ml" 138 4576 4611
+type(
+  Loc.t
+)
+ident(
+  int_ref loc "balance.ml" 138 4576 4587 "balance.ml" 138 4576 4590
+)
+"balance.ml" 138 4576 4594 "balance.ml" 138 4576 4611
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 136 4491 4507 "balance.ml" 138 4576 4611
+type(
+  Loc.t option -> unit
+)
+"balance.ml" 136 4491 4495 "balance.ml" 138 4576 4612
+type(
+  Format.formatter -> Loc.t option -> unit
+)
+"balance.ml" 138 4576 4613 "balance.ml" 138 4576 4616
+type(
+  t
+)
+ident(
+  int_ref ctx "balance.ml" 135 4431 4448 "balance.ml" 135 4431 4451
+)
+"balance.ml" 138 4576 4613 "balance.ml" 138 4576 4620
+type(
+  Loc.t option
+)
+"balance.ml" 139 4621 4625 "balance.ml" 139 4621 4628
+type(
+  t
+)
+ident(
+  int_ref ctx "balance.ml" 135 4431 4448 "balance.ml" 135 4431 4451
+)
+"balance.ml" 139 4621 4625 "balance.ml" 139 4621 4634
+type(
+  string
+)
+"balance.ml" 135 4431 4458 "balance.ml" 139 4621 4634
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 140 4635 4641 "balance.ml" 140 4635 4651
+type(
+  out_channel -> t -> unit
+)
+ident(
+  def output_ffx "balance.ml" 147 4788 4790 "balance.ml" 163 5605 5608
+)
+"balance.ml" 140 4635 4652 "balance.ml" 140 4635 4654
+type(
+  out_channel
+)
+ident(
+  def oc "balance.ml" 140 4635 4655 "balance.ml" 144 4747 4754
+)
+"balance.ml" 140 4635 4655 "balance.ml" 140 4635 4658
+type(
+  t
+)
+ident(
+  def ctx "balance.ml" 141 4661 4665 "balance.ml" 144 4747 4754
+)
+"balance.ml" 141 4661 4677 "balance.ml" 141 4661 4680
+type(
+  t
+)
+ident(
+  int_ref ctx "balance.ml" 140 4635 4655 "balance.ml" 140 4635 4658
+)
+"balance.ml" 141 4661 4677 "balance.ml" 141 4661 4684
+type(
+  Loc.t option
+)
+"balance.ml" 142 4690 4696 "balance.ml" 142 4690 4700
+type(
+  Loc.t option
+)
+"balance.ml" 142 4690 4704 "balance.ml" 142 4690 4706
+type(
+  unit
+)
+"balance.ml" 143 4707 4718 "balance.ml" 143 4707 4721
+type(
+  Loc.t
+)
+ident(
+  def loc "balance.ml" 143 4707 4725 "balance.ml" 143 4707 4746
+)
+"balance.ml" 143 4707 4713 "balance.ml" 143 4707 4721
+type(
+  Loc.t option
+)
+"balance.ml" 143 4707 4725 "balance.ml" 143 4707 4739
+type(
+  out_channel -> Loc.t -> unit
+)
+ident(
+  int_ref Loc.output_ffx "balance.ml" 115 3665 3671 "balance.ml" 115 3665 3681
+)
+"balance.ml" 143 4707 4740 "balance.ml" 143 4707 4742
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 140 4635 4652 "balance.ml" 140 4635 4654
+)
+"balance.ml" 143 4707 4743 "balance.ml" 143 4707 4746
+type(
+  Loc.t
+)
+ident(
+  int_ref loc "balance.ml" 143 4707 4718 "balance.ml" 143 4707 4721
+)
+"balance.ml" 143 4707 4725 "balance.ml" 143 4707 4746
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 141 4661 4665 "balance.ml" 144 4747 4754
+type(
+  unit
+)
+"balance.ml" 147 4788 4794 "balance.ml" 147 4788 4799
+type(
+  t
+)
+ident(
+  def empty "balance.ml" 149 4889 4891 "balance.ml" 163 5605 5608
+)
+"balance.ml" 147 4788 4810 "balance.ml" 147 4788 4814
+type(
+  Loc.t option
+)
+"balance.ml" 147 4788 4824 "balance.ml" 147 4788 4836
+type(
+  string
+)
+"balance.ml" 147 4788 4802 "balance.ml" 147 4788 4838
+type(
+  t
+)
+"balance.ml" 149 4889 4895 "balance.ml" 149 4889 4916
+type(
+  t -> string -> t
+)
+ident(
+  def through_function_call "balance.ml" 152 5083 5085 "balance.ml" 163 5605 5608
+)
+"balance.ml" 149 4889 4918 "balance.ml" 149 4889 4921
+type(
+  t
+)
+ident(
+  def ctx "balance.ml" 149 4889 4926 "balance.ml" 149 4889 4973
+)
+"balance.ml" 149 4889 4927 "balance.ml" 149 4889 4932
+type(
+  string
+)
+ident(
+  def fname "balance.ml" 149 4889 4944 "balance.ml" 149 4889 4973
+)
+"balance.ml" 149 4889 4952 "balance.ml" 149 4889 4956
+type(
+  Loc.t option
+)
+"balance.ml" 149 4889 4966 "balance.ml" 149 4889 4971
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 149 4889 4927 "balance.ml" 149 4889 4932
+)
+"balance.ml" 149 4889 4944 "balance.ml" 149 4889 4973
+type(
+  t
+)
+"balance.ml" 152 5083 5089 "balance.ml" 152 5083 5114
+type(
+  distance -> t -> Cabs.statement -> t
+)
+ident(
+  def through_located_statement "balance.ml" 160 5435 5437 "balance.ml" 163 5605 5608
+)
+"balance.ml" 152 5083 5116 "balance.ml" 152 5083 5120
+type(
+  distance
+)
+ident(
+  def dist "balance.ml" 152 5083 5132 "balance.ml" 158 5348 5388
+)
+"balance.ml" 152 5083 5133 "balance.ml" 152 5083 5136
+type(
+  t
+)
+ident(
+  def ctx "balance.ml" 152 5083 5141 "balance.ml" 158 5348 5388
+)
+"balance.ml" 152 5083 5142 "balance.ml" 152 5083 5146
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "balance.ml" 153 5166 5170 "balance.ml" 158 5348 5388
+)
+"balance.ml" 153 5166 5174 "balance.ml" 153 5166 5184
+type(
+  Loc.t option
+)
+ident(
+  def latest_loc "balance.ml" 156 5255 5259 "balance.ml" 158 5348 5388
+)
+"balance.ml" 153 5166 5193 "balance.ml" 153 5166 5197
+type(
+  distance
+)
+ident(
+  int_ref dist "balance.ml" 152 5083 5116 "balance.ml" 152 5083 5120
+)
+"balance.ml" 154 5203 5211 "balance.ml" 154 5203 5216
+type(
+  distance
+)
+"balance.ml" 154 5203 5220 "balance.ml" 154 5203 5223
+type(
+  t
+)
+ident(
+  int_ref ctx "balance.ml" 152 5083 5133 "balance.ml" 152 5083 5136
+)
+"balance.ml" 154 5203 5220 "balance.ml" 154 5203 5227
+type(
+  Loc.t option
+)
+"balance.ml" 155 5228 5236 "balance.ml" 155 5228 5243
+type(
+  distance
+)
+"balance.ml" 155 5228 5247 "balance.ml" 155 5228 5251
+type(
+  Loc.t option
+)
+"balance.ml" 153 5166 5187 "balance.ml" 155 5228 5251
+type(
+  Loc.t option
+)
+"balance.ml" 156 5255 5265 "balance.ml" 156 5255 5269
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 152 5083 5142 "balance.ml" 152 5083 5146
+)
+"balance.ml" 157 5275 5296 "balance.ml" 157 5275 5297
+type(
+  int
+)
+type(
+  string
+)
+type(
+  Cabs.statement
+)
+"balance.ml" 157 5275 5281 "balance.ml" 157 5275 5297
+type(
+  Cabs.statement
+)
+"balance.ml" 157 5275 5302 "balance.ml" 157 5275 5305
+type(
+  t
+)
+ident(
+  int_ref ctx "balance.ml" 152 5083 5133 "balance.ml" 152 5083 5136
+)
+"balance.ml" 157 5275 5323 "balance.ml" 157 5275 5339
+type(
+  Cabs.statement -> Loc.t
+)
+ident(
+  int_ref Loc.of_stat_line "balance.ml" 110 3431 3437 "balance.ml" 110 3431 3449
+)
+"balance.ml" 157 5275 5340 "balance.ml" 157 5275 5344
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 152 5083 5142 "balance.ml" 152 5083 5146
+)
+"balance.ml" 157 5275 5322 "balance.ml" 157 5275 5345
+call(
+  stack
+)
+type(
+  Loc.t
+)
+"balance.ml" 157 5275 5317 "balance.ml" 157 5275 5345
+type(
+  Loc.t option
+)
+"balance.ml" 157 5275 5301 "balance.ml" 157 5275 5347
+type(
+  t
+)
+"balance.ml" 158 5348 5354 "balance.ml" 158 5348 5355
+type(
+  Cabs.statement
+)
+"balance.ml" 158 5348 5361 "balance.ml" 158 5348 5364
+type(
+  t
+)
+ident(
+  int_ref ctx "balance.ml" 152 5083 5133 "balance.ml" 152 5083 5136
+)
+"balance.ml" 158 5348 5376 "balance.ml" 158 5348 5386
+type(
+  Loc.t option
+)
+ident(
+  int_ref latest_loc "balance.ml" 153 5166 5174 "balance.ml" 153 5166 5184
+)
+"balance.ml" 158 5348 5359 "balance.ml" 158 5348 5388
+type(
+  t
+)
+"balance.ml" 156 5255 5259 "balance.ml" 158 5348 5388
+type(
+  t
+)
+"balance.ml" 153 5166 5170 "balance.ml" 158 5348 5388
+type(
+  t
+)
+"balance.ml" 160 5435 5441 "balance.ml" 160 5435 5458
+type(
+  t -> Cabs.statement -> t
+)
+ident(
+  def through_statement "balance.ml" 162 5541 5543 "balance.ml" 163 5605 5608
+)
+"balance.ml" 160 5435 5461 "balance.ml" 160 5435 5486
+type(
+  distance -> t -> Cabs.statement -> t
+)
+ident(
+  int_ref through_located_statement "balance.ml" 152 5083 5089 "balance.ml" 152 5083 5114
+)
+"balance.ml" 160 5435 5487 "balance.ml" 160 5435 5494
+type(
+  distance
+)
+"balance.ml" 160 5435 5461 "balance.ml" 160 5435 5494
+call(
+  stack
+)
+type(
+  t -> Cabs.statement -> t
+)
+"balance.ml" 162 5541 5547 "balance.ml" 162 5541 5570
+type(
+  t -> Cabs.statement -> t
+)
+ident(
+  def through_close_statement "balance.ml" 162 5541 5604 "balance.ml" 163 5605 5608
+)
+"balance.ml" 162 5541 5573 "balance.ml" 162 5541 5598
+type(
+  distance -> t -> Cabs.statement -> t
+)
+ident(
+  int_ref through_located_statement "balance.ml" 152 5083 5089 "balance.ml" 152 5083 5114
+)
+"balance.ml" 162 5541 5599 "balance.ml" 162 5541 5604
+type(
+  distance
+)
+"balance.ml" 162 5541 5573 "balance.ml" 162 5541 5604
+call(
+  stack
+)
+type(
+  t -> Cabs.statement -> t
+)
+"balance.ml" 178 6246 6252 "balance.ml" 178 6246 6261
+type(
+  t -> Cabs.statement
+)
+ident(
+  def statement "balance.ml" 180 6309 6311 "balance.ml" 207 7430 7433
+)
+"balance.ml" 178 6246 6262 "balance.ml" 178 6246 6263
+type(
+  t
+)
+ident(
+  def n "balance.ml" 178 6246 6266 "balance.ml" 178 6246 6277
+)
+"balance.ml" 178 6246 6266 "balance.ml" 178 6246 6267
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 178 6246 6262 "balance.ml" 178 6246 6263
+)
+"balance.ml" 178 6246 6266 "balance.ml" 178 6246 6277
+type(
+  Cabs.statement
+)
+"balance.ml" 180 6309 6315 "balance.ml" 180 6309 6322
+type(
+  t -> Ctx.t
+)
+ident(
+  def context "balance.ml" 182 6407 6409 "balance.ml" 207 7430 7433
+)
+"balance.ml" 180 6309 6323 "balance.ml" 180 6309 6324
+type(
+  t
+)
+ident(
+  def n "balance.ml" 180 6309 6327 "balance.ml" 180 6309 6336
+)
+"balance.ml" 180 6309 6327 "balance.ml" 180 6309 6328
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 180 6309 6323 "balance.ml" 180 6309 6324
+)
+"balance.ml" 180 6309 6327 "balance.ml" 180 6309 6336
+type(
+  Ctx.t
+)
+"balance.ml" 182 6407 6413 "balance.ml" 182 6407 6428
+type(
+  t -> Ctx.t
+)
+ident(
+  def descent_context "balance.ml" 184 6553 6555 "balance.ml" 207 7430 7433
+)
+"balance.ml" 182 6407 6430 "balance.ml" 182 6407 6431
+type(
+  t
+)
+ident(
+  def n "balance.ml" 182 6407 6438 "balance.ml" 182 6407 6481
+)
+"balance.ml" 182 6407 6438 "balance.ml" 182 6407 6459
+type(
+  Ctx.t -> Cabs.statement -> Ctx.t
+)
+ident(
+  int_ref Ctx.through_statement "balance.ml" 160 5435 5441 "balance.ml" 160 5435 5458
+)
+"balance.ml" 182 6407 6460 "balance.ml" 182 6407 6461
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 182 6407 6430 "balance.ml" 182 6407 6431
+)
+"balance.ml" 182 6407 6460 "balance.ml" 182 6407 6469
+type(
+  Ctx.t
+)
+"balance.ml" 182 6407 6470 "balance.ml" 182 6407 6471
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 182 6407 6430 "balance.ml" 182 6407 6431
+)
+"balance.ml" 182 6407 6470 "balance.ml" 182 6407 6481
+type(
+  Cabs.statement
+)
+"balance.ml" 182 6407 6438 "balance.ml" 182 6407 6481
+call(
+  tail
+)
+type(
+  Ctx.t
+)
+"balance.ml" 184 6553 6559 "balance.ml" 184 6553 6566
+type(
+  t -> Cabs.statement -> t
+)
+ident(
+  def descent "balance.ml" 190 6794 6796 "balance.ml" 207 7430 7433
+)
+"balance.ml" 184 6553 6568 "balance.ml" 184 6553 6569
+type(
+  t
+)
+ident(
+  def n "balance.ml" 184 6553 6574 "balance.ml" 187 6657 6662
+)
+"balance.ml" 184 6553 6575 "balance.ml" 184 6553 6579
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "balance.ml" 185 6599 6603 "balance.ml" 187 6657 6662
+)
+"balance.ml" 185 6599 6617 "balance.ml" 185 6599 6621
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 184 6553 6575 "balance.ml" 184 6553 6579
+)
+"balance.ml" 186 6623 6639 "balance.ml" 186 6623 6654
+type(
+  t -> Ctx.t
+)
+ident(
+  int_ref descent_context "balance.ml" 182 6407 6413 "balance.ml" 182 6407 6428
+)
+"balance.ml" 186 6623 6655 "balance.ml" 186 6623 6656
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 184 6553 6568 "balance.ml" 184 6553 6569
+)
+"balance.ml" 186 6623 6639 "balance.ml" 186 6623 6656
+call(
+  stack
+)
+type(
+  Ctx.t
+)
+"balance.ml" 185 6599 6603 "balance.ml" 187 6657 6662
+type(
+  t
+)
+"balance.ml" 190 6794 6800 "balance.ml" 190 6794 6813
+type(
+  t -> Cabs.statement -> t
+)
+ident(
+  def close_descent "balance.ml" 195 7018 7020 "balance.ml" 207 7430 7433
+)
+"balance.ml" 190 6794 6815 "balance.ml" 190 6794 6816
+type(
+  t
+)
+ident(
+  def n "balance.ml" 190 6794 6821 "balance.ml" 193 6937 6942
+)
+"balance.ml" 190 6794 6822 "balance.ml" 190 6794 6826
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "balance.ml" 191 6846 6850 "balance.ml" 193 6937 6942
+)
+"balance.ml" 191 6846 6864 "balance.ml" 191 6846 6868
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 190 6794 6822 "balance.ml" 190 6794 6826
+)
+"balance.ml" 192 6870 6886 "balance.ml" 192 6870 6913
+type(
+  Ctx.t -> Cabs.statement -> Ctx.t
+)
+ident(
+  int_ref Ctx.through_close_statement "balance.ml" 162 5541 5547 "balance.ml" 162 5541 5570
+)
+"balance.ml" 192 6870 6914 "balance.ml" 192 6870 6915
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 190 6794 6815 "balance.ml" 190 6794 6816
+)
+"balance.ml" 192 6870 6914 "balance.ml" 192 6870 6923
+type(
+  Ctx.t
+)
+"balance.ml" 192 6870 6924 "balance.ml" 192 6870 6925
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 190 6794 6815 "balance.ml" 190 6794 6816
+)
+"balance.ml" 192 6870 6924 "balance.ml" 192 6870 6935
+type(
+  Cabs.statement
+)
+"balance.ml" 192 6870 6886 "balance.ml" 192 6870 6935
+call(
+  stack
+)
+type(
+  Ctx.t
+)
+"balance.ml" 191 6846 6850 "balance.ml" 193 6937 6942
+type(
+  t
+)
+"balance.ml" 195 7018 7024 "balance.ml" 195 7018 7037
+type(
+  Ctx.t -> string -> Cabs.statement -> t
+)
+ident(
+  def function_call "balance.ml" 199 7175 7177 "balance.ml" 207 7430 7433
+)
+"balance.ml" 195 7018 7039 "balance.ml" 195 7018 7042
+type(
+  Ctx.t
+)
+ident(
+  def ctx "balance.ml" 195 7018 7051 "balance.ml" 198 7169 7174
+)
+"balance.ml" 195 7018 7052 "balance.ml" 195 7018 7057
+type(
+  string
+)
+ident(
+  def fname "balance.ml" 195 7018 7067 "balance.ml" 198 7169 7174
+)
+"balance.ml" 195 7018 7068 "balance.ml" 195 7018 7072
+type(
+  Cabs.statement
+)
+ident(
+  def body "balance.ml" 196 7092 7096 "balance.ml" 198 7169 7174
+)
+"balance.ml" 196 7092 7110 "balance.ml" 196 7092 7114
+type(
+  Cabs.statement
+)
+ident(
+  int_ref body "balance.ml" 195 7018 7068 "balance.ml" 195 7018 7072
+)
+"balance.ml" 197 7116 7132 "balance.ml" 197 7116 7157
+type(
+  Ctx.t -> string -> Ctx.t
+)
+ident(
+  int_ref Ctx.through_function_call "balance.ml" 149 4889 4895 "balance.ml" 149 4889 4916
+)
+"balance.ml" 197 7116 7158 "balance.ml" 197 7116 7161
+type(
+  Ctx.t
+)
+ident(
+  int_ref ctx "balance.ml" 195 7018 7039 "balance.ml" 195 7018 7042
+)
+"balance.ml" 197 7116 7162 "balance.ml" 197 7116 7167
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 195 7018 7052 "balance.ml" 195 7018 7057
+)
+"balance.ml" 197 7116 7132 "balance.ml" 197 7116 7167
+call(
+  stack
+)
+type(
+  Ctx.t
+)
+"balance.ml" 196 7092 7096 "balance.ml" 198 7169 7174
+type(
+  t
+)
+"balance.ml" 199 7175 7181 "balance.ml" 199 7175 7193
+type(
+  int -> t -> Cabs.statement -> t
+)
+ident(
+  def loop_descent "balance.ml" 204 7327 7329 "balance.ml" 207 7430 7433
+)
+"balance.ml" 199 7175 7195 "balance.ml" 199 7175 7196
+type(
+  int
+)
+ident(
+  def n "balance.ml" 199 7175 7203 "balance.ml" 203 7321 7326
+)
+"balance.ml" 199 7175 7204 "balance.ml" 199 7175 7208
+type(
+  t
+)
+ident(
+  def node "balance.ml" 199 7175 7213 "balance.ml" 203 7321 7326
+)
+"balance.ml" 199 7175 7214 "balance.ml" 199 7175 7218
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "balance.ml" 200 7238 7242 "balance.ml" 203 7321 7326
+)
+"balance.ml" 200 7238 7246 "balance.ml" 200 7238 7249
+type(
+  Ctx.t
+)
+ident(
+  def ctx "balance.ml" 201 7276 7280 "balance.ml" 203 7321 7326
+)
+"balance.ml" 200 7238 7252 "balance.ml" 200 7238 7267
+type(
+  t -> Ctx.t
+)
+ident(
+  int_ref descent_context "balance.ml" 182 6407 6413 "balance.ml" 182 6407 6428
+)
+"balance.ml" 200 7238 7268 "balance.ml" 200 7238 7272
+type(
+  t
+)
+ident(
+  int_ref node "balance.ml" 199 7175 7204 "balance.ml" 199 7175 7208
+)
+"balance.ml" 200 7238 7252 "balance.ml" 200 7238 7272
+call(
+  stack
+)
+type(
+  Ctx.t
+)
+"balance.ml" 201 7276 7294 "balance.ml" 201 7276 7298
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 199 7175 7214 "balance.ml" 199 7175 7218
+)
+"balance.ml" 202 7300 7316 "balance.ml" 202 7300 7319
+type(
+  Ctx.t
+)
+ident(
+  int_ref ctx "balance.ml" 200 7238 7246 "balance.ml" 200 7238 7249
+)
+"balance.ml" 201 7276 7280 "balance.ml" 203 7321 7326
+type(
+  t
+)
+"balance.ml" 200 7238 7242 "balance.ml" 203 7321 7326
+type(
+  t
+)
+"balance.ml" 204 7327 7333 "balance.ml" 204 7327 7343
+type(
+  out_channel -> t -> unit * Cabs.expression
+)
+ident(
+  def output_ffx "balance.ml" 206 7395 7429 "balance.ml" 207 7430 7433
+)
+"balance.ml" 204 7327 7344 "balance.ml" 204 7327 7346
+type(
+  out_channel
+)
+ident(
+  def oc "balance.ml" 204 7327 7347 "balance.ml" 206 7395 7429
+)
+"balance.ml" 204 7327 7347 "balance.ml" 204 7327 7348
+type(
+  t
+)
+ident(
+  def n "balance.ml" 205 7351 7355 "balance.ml" 206 7395 7429
+)
+"balance.ml" 205 7351 7359 "balance.ml" 205 7351 7361
+type(
+  unit
+)
+ident(
+  def ct "balance.ml" 206 7395 7399 "balance.ml" 206 7395 7429
+)
+"balance.ml" 205 7351 7364 "balance.ml" 205 7351 7378
+type(
+  out_channel -> Ctx.t -> unit
+)
+ident(
+  int_ref Ctx.output_ffx "balance.ml" 140 4635 4641 "balance.ml" 140 4635 4651
+)
+"balance.ml" 205 7351 7379 "balance.ml" 205 7351 7381
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 204 7327 7344 "balance.ml" 204 7327 7346
+)
+"balance.ml" 205 7351 7382 "balance.ml" 205 7351 7383
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 204 7327 7347 "balance.ml" 204 7327 7348
+)
+"balance.ml" 205 7351 7382 "balance.ml" 205 7351 7391
+type(
+  Ctx.t
+)
+"balance.ml" 205 7351 7364 "balance.ml" 205 7351 7391
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 206 7395 7399 "balance.ml" 206 7395 7401
+type(
+  unit
+)
+ident(
+  int_ref ct "balance.ml" 205 7351 7359 "balance.ml" 205 7351 7361
+)
+"balance.ml" 206 7395 7403 "balance.ml" 206 7395 7417
+type(
+  Cabs.statement -> Cabs.expression
+)
+ident(
+  int_ref condition_test "balance.ml" 62 1804 1808 "balance.ml" 62 1804 1822
+)
+"balance.ml" 206 7395 7418 "balance.ml" 206 7395 7419
+type(
+  t
+)
+ident(
+  int_ref n "balance.ml" 204 7327 7347 "balance.ml" 204 7327 7348
+)
+"balance.ml" 206 7395 7418 "balance.ml" 206 7395 7429
+type(
+  Cabs.statement
+)
+"balance.ml" 206 7395 7403 "balance.ml" 206 7395 7429
+call(
+  stack
+)
+type(
+  Cabs.expression
+)
+"balance.ml" 206 7395 7399 "balance.ml" 206 7395 7429
+type(
+  unit * Cabs.expression
+)
+"balance.ml" 205 7351 7355 "balance.ml" 206 7395 7429
+type(
+  unit * Cabs.expression
+)
+"balance.ml" 224 8102 8108 "balance.ml" 224 8102 8115
+type(
+  'a -> 'a -> int
+)
+ident(
+  def compare "balance.ml" 225 8137 8139 "balance.ml" 248 9333 9336
+)
+"balance.ml" 224 8102 8118 "balance.ml" 224 8102 8136
+type(
+  'a -> 'a -> int
+)
+ident(
+  ext_ref Pervasives.compare
+)
+"balance.ml" 225 8137 8143 "balance.ml" 225 8137 8148
+type(
+  int * t -> int
+)
+ident(
+  def delta "balance.ml" 228 8241 8243 "balance.ml" 248 9333 9336
+)
+"balance.ml" 225 8137 8150 "balance.ml" 225 8137 8151
+type(
+  int
+)
+ident(
+  def n "balance.ml" 226 8158 8162 "balance.ml" 227 8220 8240
+)
+"balance.ml" 225 8137 8152 "balance.ml" 225 8137 8154
+type(
+  t
+)
+ident(
+  def ce "balance.ml" 226 8158 8162 "balance.ml" 227 8220 8240
+)
+"balance.ml" 225 8137 8149 "balance.ml" 225 8137 8155
+type(
+  int * t
+)
+"balance.ml" 226 8158 8166 "balance.ml" 226 8158 8169
+type(
+  weight
+)
+ident(
+  def low "balance.ml" 227 8220 8224 "balance.ml" 227 8220 8240
+)
+"balance.ml" 226 8158 8171 "balance.ml" 226 8158 8175
+type(
+  weight
+)
+ident(
+  def high "balance.ml" 227 8220 8224 "balance.ml" 227 8220 8240
+)
+"balance.ml" 226 8158 8166 "balance.ml" 226 8158 8175
+type(
+  weight * weight
+)
+"balance.ml" 226 8158 8178 "balance.ml" 226 8158 8185
+type(
+  (string * weight * Loc.t option -> weight) ->
+  (string * weight * Loc.t option) list -> weight * weight
+)
+ident(
+  int_ref min_max "balance.ml" 24 698 706 "balance.ml" 24 698 713
+)
+"balance.ml" 226 8158 8192 "balance.ml" 226 8158 8193
+type(
+  string
+)
+"balance.ml" 226 8158 8194 "balance.ml" 226 8158 8195
+type(
+  weight
+)
+ident(
+  def w "balance.ml" 226 8158 8202 "balance.ml" 226 8158 8203
+)
+"balance.ml" 226 8158 8196 "balance.ml" 226 8158 8197
+type(
+  Loc.t option
+)
+"balance.ml" 226 8158 8191 "balance.ml" 226 8158 8198
+type(
+  string * weight * Loc.t option
+)
+"balance.ml" 226 8158 8202 "balance.ml" 226 8158 8203
+type(
+  weight
+)
+ident(
+  int_ref w "balance.ml" 226 8158 8194 "balance.ml" 226 8158 8195
+)
+"balance.ml" 226 8158 8186 "balance.ml" 226 8158 8204
+type(
+  string * weight * Loc.t option -> weight
+)
+"balance.ml" 226 8158 8205 "balance.ml" 226 8158 8207
+type(
+  t
+)
+ident(
+  int_ref ce "balance.ml" 225 8137 8152 "balance.ml" 225 8137 8154
+)
+"balance.ml" 226 8158 8205 "balance.ml" 226 8158 8216
+type(
+  (string * weight * Loc.t option) list
+)
+"balance.ml" 226 8158 8178 "balance.ml" 226 8158 8216
+call(
+  stack
+)
+type(
+  weight * weight
+)
+"balance.ml" 227 8220 8224 "balance.ml" 227 8220 8225
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 225 8137 8150 "balance.ml" 225 8137 8151
+)
+"balance.ml" 227 8220 8226 "balance.ml" 227 8220 8227
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( * )
+)
+"balance.ml" 227 8220 8229 "balance.ml" 227 8220 8233
+type(
+  weight
+)
+ident(
+  int_ref high "balance.ml" 226 8158 8171 "balance.ml" 226 8158 8175
+)
+"balance.ml" 227 8220 8234 "balance.ml" 227 8220 8235
+type(
+  weight -> weight -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"balance.ml" 227 8220 8236 "balance.ml" 227 8220 8239
+type(
+  weight
+)
+ident(
+  int_ref low "balance.ml" 226 8158 8166 "balance.ml" 226 8158 8169
+)
+"balance.ml" 227 8220 8228 "balance.ml" 227 8220 8240
+type(
+  int
+)
+"balance.ml" 227 8220 8224 "balance.ml" 227 8220 8240
+type(
+  int
+)
+"balance.ml" 226 8158 8162 "balance.ml" 227 8220 8240
+type(
+  int
+)
+"balance.ml" 228 8241 8247 "balance.ml" 228 8241 8260
+type(
+  int * t -> int * t -> int
+)
+ident(
+  def delta_compare "balance.ml" 229 8289 8291 "balance.ml" 248 9333 9336
+)
+"balance.ml" 228 8241 8261 "balance.ml" 228 8241 8262
+type(
+  int * t
+)
+ident(
+  def a "balance.ml" 228 8241 8263 "balance.ml" 228 8241 8288
+)
+"balance.ml" 228 8241 8263 "balance.ml" 228 8241 8264
+type(
+  int * t
+)
+ident(
+  def b "balance.ml" 228 8241 8267 "balance.ml" 228 8241 8288
+)
+"balance.ml" 228 8241 8268 "balance.ml" 228 8241 8273
+type(
+  int * t -> int
+)
+ident(
+  int_ref delta "balance.ml" 225 8137 8143 "balance.ml" 225 8137 8148
+)
+"balance.ml" 228 8241 8274 "balance.ml" 228 8241 8275
+type(
+  int * t
+)
+ident(
+  int_ref b "balance.ml" 228 8241 8263 "balance.ml" 228 8241 8264
+)
+"balance.ml" 228 8241 8267 "balance.ml" 228 8241 8276
+call(
+  stack
+)
+type(
+  int
+)
+"balance.ml" 228 8241 8277 "balance.ml" 228 8241 8278
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"balance.ml" 228 8241 8280 "balance.ml" 228 8241 8285
+type(
+  int * t -> int
+)
+ident(
+  int_ref delta "balance.ml" 225 8137 8143 "balance.ml" 225 8137 8148
+)
+"balance.ml" 228 8241 8286 "balance.ml" 228 8241 8287
+type(
+  int * t
+)
+ident(
+  int_ref a "balance.ml" 228 8241 8261 "balance.ml" 228 8241 8262
+)
+"balance.ml" 228 8241 8279 "balance.ml" 228 8241 8288
+call(
+  stack
+)
+type(
+  int
+)
+"balance.ml" 228 8241 8267 "balance.ml" 228 8241 8288
+type(
+  int
+)
+"balance.ml" 229 8289 8295 "balance.ml" 229 8289 8299
+type(
+  CtxNode.t -> string -> (string * weight * Loc.t option) list -> t
+)
+ident(
+  def make "balance.ml" 230 8360 8362 "balance.ml" 248 9333 9336
+)
+"balance.ml" 229 8289 8300 "balance.ml" 229 8289 8304
+type(
+  CtxNode.t
+)
+ident(
+  def node "balance.ml" 229 8289 8305 "balance.ml" 229 8289 8359
+)
+"balance.ml" 229 8289 8305 "balance.ml" 229 8289 8307
+type(
+  string
+)
+ident(
+  def id "balance.ml" 229 8289 8308 "balance.ml" 229 8289 8359
+)
+"balance.ml" 229 8289 8308 "balance.ml" 229 8289 8311
+type(
+  (string * weight * Loc.t option) list
+)
+ident(
+  def brs "balance.ml" 229 8289 8314 "balance.ml" 229 8289 8359
+)
+"balance.ml" 229 8289 8328 "balance.ml" 229 8289 8332
+type(
+  CtxNode.t
+)
+ident(
+  int_ref node "balance.ml" 229 8289 8300 "balance.ml" 229 8289 8304
+)
+"balance.ml" 229 8289 8339 "balance.ml" 229 8289 8341
+type(
+  string
+)
+ident(
+  int_ref id "balance.ml" 229 8289 8305 "balance.ml" 229 8289 8307
+)
+"balance.ml" 229 8289 8354 "balance.ml" 229 8289 8357
+type(
+  (string * weight * Loc.t option) list
+)
+ident(
+  int_ref brs "balance.ml" 229 8289 8308 "balance.ml" 229 8289 8311
+)
+"balance.ml" 229 8289 8314 "balance.ml" 229 8289 8359
+type(
+  t
+)
+"balance.ml" 230 8360 8366 "balance.ml" 230 8360 8377
+type(
+  Format.formatter -> int * t -> unit
+)
+ident(
+  def delta_print "balance.ml" 235 8665 8667 "balance.ml" 248 9333 9336
+)
+"balance.ml" 230 8360 8378 "balance.ml" 230 8360 8381
+type(
+  Format.formatter
+)
+ident(
+  def fmt "balance.ml" 230 8360 8382 "balance.ml" 234 8598 8664
+)
+"balance.ml" 230 8360 8383 "balance.ml" 230 8360 8384
+type(
+  int
+)
+ident(
+  def n "balance.ml" 230 8360 8393 "balance.ml" 234 8598 8664
+)
+"balance.ml" 230 8360 8385 "balance.ml" 230 8360 8389
+type(
+  t
+)
+ident(
+  def cond "balance.ml" 230 8360 8393 "balance.ml" 234 8598 8664
+)
+"balance.ml" 230 8360 8382 "balance.ml" 230 8360 8390
+type(
+  int * t
+)
+"balance.ml" 230 8360 8393 "balance.ml" 230 8360 8407
+type(
+  Format.formatter ->
+  (int ->
+   (Format.formatter -> Ctx.t -> unit) ->
+   Ctx.t ->
+   (Format.formatter -> (string * weight * Loc.t option) list -> unit) ->
+   (string * weight * Loc.t option) list ->
+   (Format.formatter -> Cabs.expression -> unit) -> Cabs.expression -> unit,
+   Format.formatter, unit)
+  format ->
+  int ->
+  (Format.formatter -> Ctx.t -> unit) ->
+  Ctx.t ->
+  (Format.formatter -> (string * weight * Loc.t option) list -> unit) ->
+  (string * weight * Loc.t option) list ->
+  (Format.formatter -> Cabs.expression -> unit) -> Cabs.expression -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"balance.ml" 230 8360 8408 "balance.ml" 230 8360 8411
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "balance.ml" 230 8360 8378 "balance.ml" 230 8360 8381
+)
+"balance.ml" 230 8360 8412 "balance.ml" 230 8360 8436
+type(
+  (int ->
+   (Format.formatter -> Ctx.t -> unit) ->
+   Ctx.t ->
+   (Format.formatter -> (string * weight * Loc.t option) list -> unit) ->
+   (string * weight * Loc.t option) list ->
+   (Format.formatter -> Cabs.expression -> unit) -> Cabs.expression -> unit,
+   Format.formatter, unit)
+  format
+)
+"balance.ml" 231 8437 8442 "balance.ml" 231 8437 8447
+type(
+  int * t -> int
+)
+ident(
+  int_ref delta "balance.ml" 225 8137 8143 "balance.ml" 225 8137 8148
+)
+"balance.ml" 231 8437 8449 "balance.ml" 231 8437 8450
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 230 8360 8383 "balance.ml" 230 8360 8384
+)
+"balance.ml" 231 8437 8451 "balance.ml" 231 8437 8455
+type(
+  t
+)
+ident(
+  int_ref cond "balance.ml" 230 8360 8385 "balance.ml" 230 8360 8389
+)
+"balance.ml" 231 8437 8448 "balance.ml" 231 8437 8456
+type(
+  int * t
+)
+"balance.ml" 231 8437 8441 "balance.ml" 231 8437 8457
+call(
+  stack
+)
+type(
+  int
+)
+"balance.ml" 232 8458 8462 "balance.ml" 232 8458 8471
+type(
+  Format.formatter -> Ctx.t -> unit
+)
+ident(
+  int_ref Ctx.print "balance.ml" 135 4431 4437 "balance.ml" 135 4431 4442
+)
+"balance.ml" 232 8458 8473 "balance.ml" 232 8458 8488
+type(
+  CtxNode.t -> Ctx.t
+)
+ident(
+  int_ref CtxNode.context "balance.ml" 180 6309 6315 "balance.ml" 180 6309 6322
+)
+"balance.ml" 232 8458 8489 "balance.ml" 232 8458 8493
+type(
+  t
+)
+ident(
+  int_ref cond "balance.ml" 230 8360 8385 "balance.ml" 230 8360 8389
+)
+"balance.ml" 232 8458 8489 "balance.ml" 232 8458 8503
+type(
+  CtxNode.t
+)
+"balance.ml" 232 8458 8472 "balance.ml" 232 8458 8504
+call(
+  stack
+)
+type(
+  Ctx.t
+)
+"balance.ml" 233 8505 8514 "balance.ml" 233 8505 8517
+type(
+  Format.formatter
+)
+ident(
+  def fmt "balance.ml" 233 8505 8521 "balance.ml" 233 8505 8582
+)
+"balance.ml" 233 8505 8521 "balance.ml" 233 8505 8530
+type(
+  (string * weight * Loc.t option -> unit) ->
+  (string * weight * Loc.t option) list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"balance.ml" 233 8505 8537 "balance.ml" 233 8505 8539
+type(
+  string
+)
+ident(
+  def br "balance.ml" 233 8505 8548 "balance.ml" 233 8505 8581
+)
+"balance.ml" 233 8505 8540 "balance.ml" 233 8505 8541
+type(
+  weight
+)
+ident(
+  def w "balance.ml" 233 8505 8548 "balance.ml" 233 8505 8581
+)
+"balance.ml" 233 8505 8542 "balance.ml" 233 8505 8543
+type(
+  Loc.t option
+)
+"balance.ml" 233 8505 8536 "balance.ml" 233 8505 8544
+type(
+  string * weight * Loc.t option
+)
+"balance.ml" 233 8505 8548 "balance.ml" 233 8505 8562
+type(
+  Format.formatter ->
+  (string -> weight -> unit, Format.formatter, unit) format ->
+  string -> weight -> unit
+)
+ident(
+  ext_ref Format.fprintf
+)
+"balance.ml" 233 8505 8563 "balance.ml" 233 8505 8566
+type(
+  Format.formatter
+)
+ident(
+  int_ref fmt "balance.ml" 233 8505 8514 "balance.ml" 233 8505 8517
+)
+"balance.ml" 233 8505 8567 "balance.ml" 233 8505 8576
+type(
+  (string -> weight -> unit, Format.formatter, unit) format
+)
+"balance.ml" 233 8505 8577 "balance.ml" 233 8505 8579
+type(
+  string
+)
+ident(
+  int_ref br "balance.ml" 233 8505 8537 "balance.ml" 233 8505 8539
+)
+"balance.ml" 233 8505 8580 "balance.ml" 233 8505 8581
+type(
+  weight
+)
+ident(
+  int_ref w "balance.ml" 233 8505 8540 "balance.ml" 233 8505 8541
+)
+"balance.ml" 233 8505 8548 "balance.ml" 233 8505 8581
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 233 8505 8531 "balance.ml" 233 8505 8582
+type(
+  string * weight * Loc.t option -> unit
+)
+"balance.ml" 233 8505 8521 "balance.ml" 233 8505 8582
+call(
+  tail
+)
+type(
+  (string * weight * Loc.t option) list -> unit
+)
+"balance.ml" 233 8505 8509 "balance.ml" 233 8505 8583
+type(
+  Format.formatter -> (string * weight * Loc.t option) list -> unit
+)
+"balance.ml" 233 8505 8584 "balance.ml" 233 8505 8588
+type(
+  t
+)
+ident(
+  int_ref cond "balance.ml" 230 8360 8385 "balance.ml" 230 8360 8389
+)
+"balance.ml" 233 8505 8584 "balance.ml" 233 8505 8597
+type(
+  (string * weight * Loc.t option) list
+)
+"balance.ml" 234 8598 8602 "balance.ml" 234 8598 8612
+type(
+  Format.formatter -> Cabs.expression -> unit
+)
+ident(
+  int_ref print_expr "balance.ml" 49 1410 1414 "balance.ml" 49 1410 1424
+)
+"balance.ml" 234 8598 8614 "balance.ml" 234 8598 8628
+type(
+  Cabs.statement -> Cabs.expression
+)
+ident(
+  int_ref condition_test "balance.ml" 62 1804 1808 "balance.ml" 62 1804 1822
+)
+"balance.ml" 234 8598 8630 "balance.ml" 234 8598 8647
+type(
+  CtxNode.t -> Cabs.statement
+)
+ident(
+  int_ref CtxNode.statement "balance.ml" 178 6246 6252 "balance.ml" 178 6246 6261
+)
+"balance.ml" 234 8598 8648 "balance.ml" 234 8598 8652
+type(
+  t
+)
+ident(
+  int_ref cond "balance.ml" 230 8360 8385 "balance.ml" 230 8360 8389
+)
+"balance.ml" 234 8598 8648 "balance.ml" 234 8598 8662
+type(
+  CtxNode.t
+)
+"balance.ml" 234 8598 8629 "balance.ml" 234 8598 8663
+call(
+  stack
+)
+type(
+  Cabs.statement
+)
+"balance.ml" 234 8598 8613 "balance.ml" 234 8598 8664
+call(
+  stack
+)
+type(
+  Cabs.expression
+)
+"balance.ml" 230 8360 8393 "balance.ml" 234 8598 8664
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 235 8665 8671 "balance.ml" 235 8665 8687
+type(
+  out_channel -> string -> int * t -> unit
+)
+ident(
+  def output_delta_ffx "balance.ml" 247 9286 9332 "balance.ml" 248 9333 9336
+)
+"balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+type(
+  out_channel
+)
+ident(
+  def oc "balance.ml" 235 8665 8691 "balance.ml" 247 9286 9332
+)
+"balance.ml" 235 8665 8691 "balance.ml" 235 8665 8694
+type(
+  string
+)
+ident(
+  def pad "balance.ml" 235 8665 8695 "balance.ml" 247 9286 9332
+)
+"balance.ml" 235 8665 8696 "balance.ml" 235 8665 8697
+type(
+  int
+)
+ident(
+  def n "balance.ml" 236 8704 8708 "balance.ml" 247 9286 9332
+)
+"balance.ml" 235 8665 8698 "balance.ml" 235 8665 8700
+type(
+  t
+)
+ident(
+  def ce "balance.ml" 236 8704 8708 "balance.ml" 247 9286 9332
+)
+"balance.ml" 235 8665 8695 "balance.ml" 235 8665 8701
+type(
+  int * t
+)
+"balance.ml" 236 8704 8712 "balance.ml" 236 8704 8713
+type(
+  int
+)
+ident(
+  def d "balance.ml" 237 8732 8736 "balance.ml" 247 9286 9332
+)
+"balance.ml" 236 8704 8716 "balance.ml" 236 8704 8721
+type(
+  int * t -> int
+)
+ident(
+  int_ref delta "balance.ml" 225 8137 8143 "balance.ml" 225 8137 8148
+)
+"balance.ml" 236 8704 8723 "balance.ml" 236 8704 8724
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 235 8665 8696 "balance.ml" 235 8665 8697
+)
+"balance.ml" 236 8704 8725 "balance.ml" 236 8704 8727
+type(
+  t
+)
+ident(
+  int_ref ce "balance.ml" 235 8665 8698 "balance.ml" 235 8665 8700
+)
+"balance.ml" 236 8704 8722 "balance.ml" 236 8704 8728
+type(
+  int * t
+)
+"balance.ml" 236 8704 8716 "balance.ml" 236 8704 8728
+call(
+  stack
+)
+type(
+  int
+)
+"balance.ml" 237 8732 8736 "balance.ml" 237 8732 8750
+type(
+  out_channel ->
+  (string -> string -> unit, out_channel, unit) format ->
+  string -> string -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"balance.ml" 237 8732 8751 "balance.ml" 237 8732 8753
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+)
+"balance.ml" 237 8732 8754 "balance.ml" 237 8732 8780
+type(
+  (string -> string -> unit, out_channel, unit) format
+)
+"balance.ml" 237 8732 8781 "balance.ml" 237 8732 8784
+type(
+  string
+)
+ident(
+  int_ref pad "balance.ml" 235 8665 8691 "balance.ml" 235 8665 8694
+)
+"balance.ml" 237 8732 8785 "balance.ml" 237 8732 8787
+type(
+  t
+)
+ident(
+  int_ref ce "balance.ml" 235 8665 8698 "balance.ml" 235 8665 8700
+)
+"balance.ml" 237 8732 8785 "balance.ml" 237 8732 8790
+type(
+  string
+)
+"balance.ml" 237 8732 8736 "balance.ml" 237 8732 8790
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 238 8792 8800 "balance.ml" 238 8792 8802
+type(
+  unit
+)
+"balance.ml" 238 8792 8804 "balance.ml" 238 8792 8808
+type(
+  Cabs.expression
+)
+ident(
+  def expr "balance.ml" 239 8849 8853 "balance.ml" 247 9286 9332
+)
+"balance.ml" 238 8792 8800 "balance.ml" 238 8792 8808
+type(
+  unit * Cabs.expression
+)
+"balance.ml" 238 8792 8811 "balance.ml" 238 8792 8829
+type(
+  out_channel -> CtxNode.t -> unit * Cabs.expression
+)
+ident(
+  int_ref CtxNode.output_ffx "balance.ml" 204 7327 7333 "balance.ml" 204 7327 7343
+)
+"balance.ml" 238 8792 8830 "balance.ml" 238 8792 8832
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+)
+"balance.ml" 238 8792 8833 "balance.ml" 238 8792 8835
+type(
+  t
+)
+ident(
+  int_ref ce "balance.ml" 235 8665 8698 "balance.ml" 235 8665 8700
+)
+"balance.ml" 238 8792 8833 "balance.ml" 238 8792 8845
+type(
+  CtxNode.t
+)
+"balance.ml" 238 8792 8811 "balance.ml" 238 8792 8845
+call(
+  stack
+)
+type(
+  unit * Cabs.expression
+)
+"balance.ml" 239 8849 8853 "balance.ml" 239 8849 8867
+type(
+  out_channel -> (int -> unit, out_channel, unit) format -> int -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"balance.ml" 239 8849 8868 "balance.ml" 239 8849 8870
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+)
+"balance.ml" 239 8849 8871 "balance.ml" 239 8849 8889
+type(
+  (int -> unit, out_channel, unit) format
+)
+"balance.ml" 239 8849 8890 "balance.ml" 239 8849 8891
+type(
+  int
+)
+ident(
+  int_ref d "balance.ml" 236 8704 8712 "balance.ml" 236 8704 8713
+)
+"balance.ml" 239 8849 8853 "balance.ml" 239 8849 8891
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 240 8893 8897 "balance.ml" 240 8893 8911
+type(
+  out_channel ->
+  (string ->
+   (out_channel -> Cabs.expression -> unit) -> Cabs.expression -> int -> unit,
+   out_channel, unit)
+  format ->
+  string ->
+  (out_channel -> Cabs.expression -> unit) -> Cabs.expression -> int -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"balance.ml" 240 8893 8912 "balance.ml" 240 8893 8914
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+)
+"balance.ml" 240 8893 8915 "balance.ml" 240 8893 8966
+type(
+  (string ->
+   (out_channel -> Cabs.expression -> unit) -> Cabs.expression -> int -> unit,
+   out_channel, unit)
+  format
+)
+"balance.ml" 240 8893 8967 "balance.ml" 240 8893 8970
+type(
+  string
+)
+ident(
+  int_ref pad "balance.ml" 235 8665 8691 "balance.ml" 235 8665 8694
+)
+"balance.ml" 240 8893 8971 "balance.ml" 240 8893 8986
+type(
+  out_channel -> Cabs.expression -> unit
+)
+ident(
+  int_ref output_expr_ffx "balance.ml" 58 1650 1654 "balance.ml" 58 1650 1669
+)
+"balance.ml" 240 8893 8987 "balance.ml" 240 8893 8991
+type(
+  Cabs.expression
+)
+ident(
+  int_ref expr "balance.ml" 238 8792 8804 "balance.ml" 238 8792 8808
+)
+"balance.ml" 240 8893 8992 "balance.ml" 240 8893 8993
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 235 8665 8696 "balance.ml" 235 8665 8697
+)
+"balance.ml" 240 8893 8897 "balance.ml" 240 8893 8993
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 241 8995 8999 "balance.ml" 241 8995 9008
+type(
+  (string * weight * Loc.t option -> unit) ->
+  (string * weight * Loc.t option) list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"balance.ml" 241 8995 9015 "balance.ml" 241 8995 9017
+type(
+  string
+)
+ident(
+  def br "balance.ml" 242 9027 9033 "balance.ml" 246 9225 9271
+)
+"balance.ml" 241 8995 9018 "balance.ml" 241 8995 9019
+type(
+  weight
+)
+ident(
+  def w "balance.ml" 242 9027 9033 "balance.ml" 246 9225 9271
+)
+"balance.ml" 241 8995 9020 "balance.ml" 241 8995 9022
+type(
+  Loc.t option
+)
+ident(
+  def ol "balance.ml" 242 9027 9033 "balance.ml" 246 9225 9271
+)
+"balance.ml" 241 8995 9014 "balance.ml" 241 8995 9023
+type(
+  string * weight * Loc.t option
+)
+"balance.ml" 242 9027 9033 "balance.ml" 242 9027 9047
+type(
+  out_channel ->
+  (string -> char -> unit, out_channel, unit) format ->
+  string -> char -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"balance.ml" 242 9027 9048 "balance.ml" 242 9027 9050
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+)
+"balance.ml" 242 9027 9051 "balance.ml" 242 9027 9074
+type(
+  (string -> char -> unit, out_channel, unit) format
+)
+"balance.ml" 242 9027 9075 "balance.ml" 242 9027 9078
+type(
+  string
+)
+ident(
+  int_ref pad "balance.ml" 235 8665 8691 "balance.ml" 235 8665 8694
+)
+"balance.ml" 242 9027 9086 "balance.ml" 242 9027 9088
+type(
+  string
+)
+ident(
+  int_ref br "balance.ml" 241 8995 9015 "balance.ml" 241 8995 9017
+)
+"balance.ml" 242 9027 9094 "balance.ml" 242 9027 9100
+type(
+  string
+)
+"balance.ml" 242 9027 9104 "balance.ml" 242 9027 9107
+type(
+  char
+)
+"balance.ml" 242 9027 9110 "balance.ml" 242 9027 9116
+type(
+  string
+)
+"balance.ml" 242 9027 9120 "balance.ml" 242 9027 9123
+type(
+  char
+)
+"balance.ml" 242 9027 9126 "balance.ml" 242 9027 9127
+type(
+  string
+)
+"balance.ml" 242 9027 9131 "balance.ml" 242 9027 9134
+type(
+  char
+)
+"balance.ml" 242 9027 9079 "balance.ml" 242 9027 9135
+type(
+  char
+)
+"balance.ml" 242 9027 9033 "balance.ml" 242 9027 9135
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 243 9137 9155 "balance.ml" 243 9137 9157
+type(
+  Loc.t option
+)
+ident(
+  int_ref ol "balance.ml" 241 8995 9020 "balance.ml" 241 8995 9022
+)
+"balance.ml" 244 9163 9171 "balance.ml" 244 9163 9175
+type(
+  Loc.t option
+)
+"balance.ml" 244 9163 9179 "balance.ml" 244 9163 9181
+type(
+  unit
+)
+"balance.ml" 245 9182 9195 "balance.ml" 245 9182 9196
+type(
+  Loc.t
+)
+ident(
+  def l "balance.ml" 245 9182 9200 "balance.ml" 245 9182 9219
+)
+"balance.ml" 245 9182 9190 "balance.ml" 245 9182 9196
+type(
+  Loc.t option
+)
+"balance.ml" 245 9182 9200 "balance.ml" 245 9182 9214
+type(
+  out_channel -> Loc.t -> unit
+)
+ident(
+  int_ref Loc.output_ffx "balance.ml" 115 3665 3671 "balance.ml" 115 3665 3681
+)
+"balance.ml" 245 9182 9215 "balance.ml" 245 9182 9217
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+)
+"balance.ml" 245 9182 9218 "balance.ml" 245 9182 9219
+type(
+  Loc.t
+)
+ident(
+  int_ref l "balance.ml" 245 9182 9195 "balance.ml" 245 9182 9196
+)
+"balance.ml" 245 9182 9200 "balance.ml" 245 9182 9219
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 243 9137 9143 "balance.ml" 245 9182 9223
+type(
+  unit
+)
+"balance.ml" 246 9225 9231 "balance.ml" 246 9225 9245
+type(
+  out_channel -> (weight -> unit, out_channel, unit) format -> weight -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"balance.ml" 246 9225 9246 "balance.ml" 246 9225 9248
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+)
+"balance.ml" 246 9225 9249 "balance.ml" 246 9225 9269
+type(
+  (weight -> unit, out_channel, unit) format
+)
+"balance.ml" 246 9225 9270 "balance.ml" 246 9225 9271
+type(
+  weight
+)
+ident(
+  int_ref w "balance.ml" 241 8995 9018 "balance.ml" 241 8995 9019
+)
+"balance.ml" 246 9225 9231 "balance.ml" 246 9225 9271
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 243 9137 9143 "balance.ml" 246 9225 9271
+type(
+  unit
+)
+"balance.ml" 242 9027 9033 "balance.ml" 246 9225 9271
+type(
+  unit
+)
+"balance.ml" 241 8995 9009 "balance.ml" 246 9225 9272
+type(
+  string * weight * Loc.t option -> unit
+)
+"balance.ml" 246 9225 9273 "balance.ml" 246 9225 9275
+type(
+  t
+)
+ident(
+  int_ref ce "balance.ml" 235 8665 8698 "balance.ml" 235 8665 8700
+)
+"balance.ml" 246 9225 9273 "balance.ml" 246 9225 9284
+type(
+  (string * weight * Loc.t option) list
+)
+"balance.ml" 241 8995 8999 "balance.ml" 246 9225 9284
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 247 9286 9290 "balance.ml" 247 9286 9304
+type(
+  out_channel -> (string -> unit, out_channel, unit) format -> string -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"balance.ml" 247 9286 9305 "balance.ml" 247 9286 9307
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 235 8665 8688 "balance.ml" 235 8665 8690
+)
+"balance.ml" 247 9286 9308 "balance.ml" 247 9286 9328
+type(
+  (string -> unit, out_channel, unit) format
+)
+"balance.ml" 247 9286 9329 "balance.ml" 247 9286 9332
+type(
+  string
+)
+ident(
+  int_ref pad "balance.ml" 235 8665 8691 "balance.ml" 235 8665 8694
+)
+"balance.ml" 247 9286 9290 "balance.ml" 247 9286 9332
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 241 8995 8999 "balance.ml" 247 9286 9332
+type(
+  unit
+)
+"balance.ml" 240 8893 8897 "balance.ml" 247 9286 9332
+type(
+  unit
+)
+"balance.ml" 239 8849 8853 "balance.ml" 247 9286 9332
+type(
+  unit
+)
+"balance.ml" 238 8792 8796 "balance.ml" 247 9286 9332
+type(
+  unit
+)
+"balance.ml" 237 8732 8736 "balance.ml" 247 9286 9332
+type(
+  unit
+)
+"balance.ml" 236 8704 8708 "balance.ml" 247 9286 9332
+type(
+  unit
+)
+"balance.ml" 252 9384 9401 "balance.ml" 252 9384 9420
+call(
+  stack
+)
+"balance.ml" 254 9444 9450 "balance.ml" 254 9444 9455
+type(
+  int Count.t
+)
+ident(
+  def empty "balance.ml" 255 9471 9473 "balance.ml" 261 9803 9806
+)
+"balance.ml" 254 9444 9458 "balance.ml" 254 9444 9468
+type(
+  int -> int Count.t
+)
+ident(
+  ext_ref Count.make
+)
+"balance.ml" 254 9444 9469 "balance.ml" 254 9444 9470
+type(
+  int
+)
+"balance.ml" 254 9444 9458 "balance.ml" 254 9444 9470
+call(
+  stack
+)
+type(
+  int Count.t
+)
+"balance.ml" 255 9471 9477 "balance.ml" 255 9471 9480
+type(
+  int Count.t -> int Count.t -> int Count.t
+)
+ident(
+  def add "balance.ml" 256 9503 9505 "balance.ml" 261 9803 9806
+)
+"balance.ml" 255 9471 9483 "balance.ml" 255 9471 9496
+type(
+  (int -> int -> int) -> int Count.t -> int Count.t -> int Count.t
+)
+ident(
+  ext_ref Count.combine
+)
+"balance.ml" 255 9471 9497 "balance.ml" 255 9471 9502
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"balance.ml" 255 9471 9483 "balance.ml" 255 9471 9502
+call(
+  stack
+)
+type(
+  int Count.t -> int Count.t -> int Count.t
+)
+"balance.ml" 256 9503 9509 "balance.ml" 256 9503 9514
+type(
+  int -> int Count.t -> int Count.t
+)
+ident(
+  def scale "balance.ml" 257 9546 9548 "balance.ml" 261 9803 9806
+)
+"balance.ml" 256 9503 9515 "balance.ml" 256 9503 9516
+type(
+  int
+)
+ident(
+  def n "balance.ml" 256 9503 9519 "balance.ml" 256 9503 9545
+)
+"balance.ml" 256 9503 9519 "balance.ml" 256 9503 9528
+type(
+  (int -> int) -> int Count.t -> int Count.t
+)
+ident(
+  ext_ref Count.map
+)
+"balance.ml" 256 9503 9534 "balance.ml" 256 9503 9535
+type(
+  int
+)
+ident(
+  def x "balance.ml" 256 9503 9539 "balance.ml" 256 9503 9544
+)
+"balance.ml" 256 9503 9539 "balance.ml" 256 9503 9540
+type(
+  int
+)
+ident(
+  int_ref x "balance.ml" 256 9503 9534 "balance.ml" 256 9503 9535
+)
+"balance.ml" 256 9503 9541 "balance.ml" 256 9503 9542
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( * )
+)
+"balance.ml" 256 9503 9543 "balance.ml" 256 9503 9544
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 256 9503 9515 "balance.ml" 256 9503 9516
+)
+"balance.ml" 256 9503 9539 "balance.ml" 256 9503 9544
+type(
+  int
+)
+"balance.ml" 256 9503 9529 "balance.ml" 256 9503 9545
+type(
+  int -> int
+)
+"balance.ml" 256 9503 9519 "balance.ml" 256 9503 9545
+call(
+  tail
+)
+type(
+  int Count.t -> int Count.t
+)
+"balance.ml" 257 9546 9552 "balance.ml" 257 9546 9555
+type(
+  int Count.t -> int Count.t -> int Count.t
+)
+ident(
+  def max "balance.ml" 258 9639 9641 "balance.ml" 261 9803 9806
+)
+"balance.ml" 257 9546 9558 "balance.ml" 257 9546 9571
+type(
+  (int -> int -> int) -> int Count.t -> int Count.t -> int Count.t
+)
+ident(
+  ext_ref Count.combine
+)
+"balance.ml" 257 9546 9572 "balance.ml" 257 9546 9575
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.max
+)
+"balance.ml" 257 9546 9558 "balance.ml" 257 9546 9575
+call(
+  stack
+)
+type(
+  int Count.t -> int Count.t -> int Count.t
+)
+"balance.ml" 258 9639 9645 "balance.ml" 258 9639 9653
+type(
+  int Count.t -> Count.Mappe.key -> int Count.t
+)
+ident(
+  def add_cond "balance.ml" 259 9696 9698 "balance.ml" 261 9803 9806
+)
+"balance.ml" 258 9639 9654 "balance.ml" 258 9639 9655
+type(
+  int Count.t
+)
+ident(
+  def s "balance.ml" 258 9639 9656 "balance.ml" 258 9639 9695
+)
+"balance.ml" 258 9639 9656 "balance.ml" 258 9639 9658
+type(
+  Count.Mappe.key
+)
+ident(
+  def ce "balance.ml" 258 9639 9661 "balance.ml" 258 9639 9695
+)
+"balance.ml" 258 9639 9661 "balance.ml" 258 9639 9673
+type(
+  (int -> int) -> Count.Mappe.key -> int Count.t -> int Count.t
+)
+ident(
+  ext_ref Count.update
+)
+"balance.ml" 258 9639 9679 "balance.ml" 258 9639 9680
+type(
+  int
+)
+ident(
+  def x "balance.ml" 258 9639 9684 "balance.ml" 258 9639 9689
+)
+"balance.ml" 258 9639 9684 "balance.ml" 258 9639 9685
+type(
+  int
+)
+ident(
+  int_ref x "balance.ml" 258 9639 9679 "balance.ml" 258 9639 9680
+)
+"balance.ml" 258 9639 9686 "balance.ml" 258 9639 9687
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"balance.ml" 258 9639 9688 "balance.ml" 258 9639 9689
+type(
+  int
+)
+"balance.ml" 258 9639 9684 "balance.ml" 258 9639 9689
+type(
+  int
+)
+"balance.ml" 258 9639 9674 "balance.ml" 258 9639 9690
+type(
+  int -> int
+)
+"balance.ml" 258 9639 9691 "balance.ml" 258 9639 9693
+type(
+  Count.Mappe.key
+)
+ident(
+  int_ref ce "balance.ml" 258 9639 9656 "balance.ml" 258 9639 9658
+)
+"balance.ml" 258 9639 9694 "balance.ml" 258 9639 9695
+type(
+  int Count.t
+)
+ident(
+  int_ref s "balance.ml" 258 9639 9654 "balance.ml" 258 9639 9655
+)
+"balance.ml" 258 9639 9661 "balance.ml" 258 9639 9695
+call(
+  tail
+)
+type(
+  int Count.t
+)
+"balance.ml" 259 9696 9702 "balance.ml" 259 9696 9710
+type(
+  'a Count.t -> int
+)
+ident(
+  def cardinal "balance.ml" 260 9733 9735 "balance.ml" 261 9803 9806
+)
+"balance.ml" 259 9696 9713 "balance.ml" 259 9696 9732
+type(
+  'a Count.t -> int
+)
+ident(
+  ext_ref Count.special_count
+)
+"balance.ml" 260 9733 9739 "balance.ml" 260 9733 9746
+type(
+  'b Count.t -> ('b * Count.Mappe.key) list
+)
+ident(
+  def to_list "balance.ml" 260 9733 9802 "balance.ml" 261 9803 9806
+)
+"balance.ml" 260 9733 9747 "balance.ml" 260 9733 9748
+type(
+  'b Count.t
+)
+ident(
+  def s "balance.ml" 260 9733 9751 "balance.ml" 260 9733 9802
+)
+"balance.ml" 260 9733 9751 "balance.ml" 260 9733 9769
+type(
+  (Count.Mappe.key ->
+   'b -> ('b * Count.Mappe.key) list -> ('b * Count.Mappe.key) list) ->
+  'b Count.t -> ('b * Count.Mappe.key) list -> ('b * Count.Mappe.key) list
+)
+ident(
+  ext_ref Count.fold_special
+)
+"balance.ml" 260 9733 9775 "balance.ml" 260 9733 9776
+type(
+  Count.Mappe.key
+)
+ident(
+  def x "balance.ml" 260 9733 9777 "balance.ml" 260 9733 9796
+)
+"balance.ml" 260 9733 9777 "balance.ml" 260 9733 9778
+type(
+  'b
+)
+ident(
+  def n "balance.ml" 260 9733 9779 "balance.ml" 260 9733 9796
+)
+"balance.ml" 260 9733 9779 "balance.ml" 260 9733 9782
+type(
+  ('b * Count.Mappe.key) list
+)
+ident(
+  def acc "balance.ml" 260 9733 9786 "balance.ml" 260 9733 9796
+)
+"balance.ml" 260 9733 9787 "balance.ml" 260 9733 9788
+type(
+  'b
+)
+ident(
+  int_ref n "balance.ml" 260 9733 9777 "balance.ml" 260 9733 9778
+)
+"balance.ml" 260 9733 9789 "balance.ml" 260 9733 9790
+type(
+  Count.Mappe.key
+)
+ident(
+  int_ref x "balance.ml" 260 9733 9775 "balance.ml" 260 9733 9776
+)
+"balance.ml" 260 9733 9786 "balance.ml" 260 9733 9791
+type(
+  'b * Count.Mappe.key
+)
+"balance.ml" 260 9733 9793 "balance.ml" 260 9733 9796
+type(
+  ('b * Count.Mappe.key) list
+)
+ident(
+  int_ref acc "balance.ml" 260 9733 9779 "balance.ml" 260 9733 9782
+)
+"balance.ml" 260 9733 9786 "balance.ml" 260 9733 9796
+type(
+  ('b * Count.Mappe.key) list
+)
+"balance.ml" 260 9733 9770 "balance.ml" 260 9733 9797
+type(
+  Count.Mappe.key ->
+  'b -> ('b * Count.Mappe.key) list -> ('b * Count.Mappe.key) list
+)
+"balance.ml" 260 9733 9798 "balance.ml" 260 9733 9799
+type(
+  'b Count.t
+)
+ident(
+  int_ref s "balance.ml" 260 9733 9747 "balance.ml" 260 9733 9748
+)
+"balance.ml" 260 9733 9800 "balance.ml" 260 9733 9802
+type(
+  ('b * Count.Mappe.key) list
+)
+"balance.ml" 260 9733 9751 "balance.ml" 260 9733 9802
+call(
+  tail
+)
+type(
+  ('b * Count.Mappe.key) list
+)
+"balance.ml" 267 9982 9988 "balance.ml" 267 9982 9994
+type(
+  'a -> 'a * int CondSet.Count.t
+)
+ident(
+  def of_int "balance.ml" 268 10015 10017 "balance.ml" 287 10866 10869
+)
+"balance.ml" 267 9982 9995 "balance.ml" 267 9982 9996
+type(
+  'a
+)
+ident(
+  def n "balance.ml" 267 9982 9999 "balance.ml" 267 9982 10014
+)
+"balance.ml" 267 9982 9999 "balance.ml" 267 9982 10000
+type(
+  'a
+)
+ident(
+  int_ref n "balance.ml" 267 9982 9995 "balance.ml" 267 9982 9996
+)
+"balance.ml" 267 9982 10001 "balance.ml" 267 9982 10014
+type(
+  int CondSet.Count.t
+)
+ident(
+  int_ref CondSet.empty "balance.ml" 254 9444 9450 "balance.ml" 254 9444 9455
+)
+"balance.ml" 267 9982 9999 "balance.ml" 267 9982 10014
+type(
+  'a * int CondSet.Count.t
+)
+"balance.ml" 268 10015 10021 "balance.ml" 268 10015 10025
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  def zero "balance.ml" 269 10037 10039 "balance.ml" 287 10866 10869
+)
+"balance.ml" 268 10015 10028 "balance.ml" 268 10015 10034
+type(
+  int -> int * int CondSet.Count.t
+)
+ident(
+  int_ref of_int "balance.ml" 267 9982 9988 "balance.ml" 267 9982 9994
+)
+"balance.ml" 268 10015 10035 "balance.ml" 268 10015 10036
+type(
+  int
+)
+"balance.ml" 268 10015 10028 "balance.ml" 268 10015 10036
+call(
+  stack
+)
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 269 10037 10043 "balance.ml" 269 10037 10046
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  def one "balance.ml" 270 10058 10060 "balance.ml" 287 10866 10869
+)
+"balance.ml" 269 10037 10049 "balance.ml" 269 10037 10055
+type(
+  int -> int * int CondSet.Count.t
+)
+ident(
+  int_ref of_int "balance.ml" 267 9982 9988 "balance.ml" 267 9982 9994
+)
+"balance.ml" 269 10037 10056 "balance.ml" 269 10037 10057
+type(
+  int
+)
+"balance.ml" 269 10037 10049 "balance.ml" 269 10037 10057
+call(
+  stack
+)
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+type(
+  int * int CondSet.Count.t ->
+  int * int CondSet.Count.t -> int * int CondSet.Count.t
+)
+ident(
+  def add "balance.ml" 271 10106 10108 "balance.ml" 287 10866 10869
+)
+"balance.ml" 270 10058 10069 "balance.ml" 270 10058 10070
+type(
+  int
+)
+ident(
+  def a "balance.ml" 270 10058 10075 "balance.ml" 270 10058 10105
+)
+"balance.ml" 270 10058 10071 "balance.ml" 270 10058 10073
+type(
+  int CondSet.Count.t
+)
+ident(
+  def sa "balance.ml" 270 10058 10075 "balance.ml" 270 10058 10105
+)
+"balance.ml" 270 10058 10068 "balance.ml" 270 10058 10074
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 270 10058 10076 "balance.ml" 270 10058 10077
+type(
+  int
+)
+ident(
+  def b "balance.ml" 270 10058 10084 "balance.ml" 270 10058 10105
+)
+"balance.ml" 270 10058 10078 "balance.ml" 270 10058 10080
+type(
+  int CondSet.Count.t
+)
+ident(
+  def sb "balance.ml" 270 10058 10084 "balance.ml" 270 10058 10105
+)
+"balance.ml" 270 10058 10075 "balance.ml" 270 10058 10081
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 270 10058 10084 "balance.ml" 270 10058 10085
+type(
+  int
+)
+ident(
+  int_ref a "balance.ml" 270 10058 10069 "balance.ml" 270 10058 10070
+)
+"balance.ml" 270 10058 10085 "balance.ml" 270 10058 10086
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"balance.ml" 270 10058 10086 "balance.ml" 270 10058 10087
+type(
+  int
+)
+ident(
+  int_ref b "balance.ml" 270 10058 10076 "balance.ml" 270 10058 10077
+)
+"balance.ml" 270 10058 10084 "balance.ml" 270 10058 10087
+type(
+  int
+)
+"balance.ml" 270 10058 10088 "balance.ml" 270 10058 10099
+type(
+  int CondSet.Count.t -> int CondSet.Count.t -> int CondSet.Count.t
+)
+ident(
+  int_ref CondSet.add "balance.ml" 255 9471 9477 "balance.ml" 255 9471 9480
+)
+"balance.ml" 270 10058 10100 "balance.ml" 270 10058 10102
+type(
+  int CondSet.Count.t
+)
+ident(
+  int_ref sa "balance.ml" 270 10058 10071 "balance.ml" 270 10058 10073
+)
+"balance.ml" 270 10058 10103 "balance.ml" 270 10058 10105
+type(
+  int CondSet.Count.t
+)
+ident(
+  int_ref sb "balance.ml" 270 10058 10078 "balance.ml" 270 10058 10080
+)
+"balance.ml" 270 10058 10088 "balance.ml" 270 10058 10105
+call(
+  stack
+)
+type(
+  int CondSet.Count.t
+)
+"balance.ml" 270 10058 10084 "balance.ml" 270 10058 10105
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 271 10106 10112 "balance.ml" 271 10106 10117
+type(
+  int -> int * int CondSet.Count.t -> int * int CondSet.Count.t
+)
+ident(
+  def scale "balance.ml" 272 10150 10152 "balance.ml" 287 10866 10869
+)
+"balance.ml" 271 10106 10118 "balance.ml" 271 10106 10119
+type(
+  int
+)
+ident(
+  def n "balance.ml" 271 10106 10120 "balance.ml" 271 10106 10149
+)
+"balance.ml" 271 10106 10121 "balance.ml" 271 10106 10122
+type(
+  int
+)
+ident(
+  def a "balance.ml" 271 10106 10128 "balance.ml" 271 10106 10149
+)
+"balance.ml" 271 10106 10123 "balance.ml" 271 10106 10124
+type(
+  int CondSet.Count.t
+)
+ident(
+  def s "balance.ml" 271 10106 10128 "balance.ml" 271 10106 10149
+)
+"balance.ml" 271 10106 10120 "balance.ml" 271 10106 10125
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 271 10106 10128 "balance.ml" 271 10106 10129
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 271 10106 10118 "balance.ml" 271 10106 10119
+)
+"balance.ml" 271 10106 10129 "balance.ml" 271 10106 10130
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( * )
+)
+"balance.ml" 271 10106 10130 "balance.ml" 271 10106 10131
+type(
+  int
+)
+ident(
+  int_ref a "balance.ml" 271 10106 10121 "balance.ml" 271 10106 10122
+)
+"balance.ml" 271 10106 10128 "balance.ml" 271 10106 10131
+type(
+  int
+)
+"balance.ml" 271 10106 10132 "balance.ml" 271 10106 10145
+type(
+  int -> int CondSet.Count.t -> int CondSet.Count.t
+)
+ident(
+  int_ref CondSet.scale "balance.ml" 256 9503 9509 "balance.ml" 256 9503 9514
+)
+"balance.ml" 271 10106 10146 "balance.ml" 271 10106 10147
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 271 10106 10118 "balance.ml" 271 10106 10119
+)
+"balance.ml" 271 10106 10148 "balance.ml" 271 10106 10149
+type(
+  int CondSet.Count.t
+)
+ident(
+  int_ref s "balance.ml" 271 10106 10123 "balance.ml" 271 10106 10124
+)
+"balance.ml" 271 10106 10132 "balance.ml" 271 10106 10149
+call(
+  stack
+)
+type(
+  int CondSet.Count.t
+)
+"balance.ml" 271 10106 10128 "balance.ml" 271 10106 10149
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 272 10150 10156 "balance.ml" 272 10150 10159
+type(
+  'b * int CondSet.Count.t ->
+  'b * int CondSet.Count.t -> 'b * int CondSet.Count.t
+)
+ident(
+  def max "balance.ml" 275 10335 10337 "balance.ml" 287 10866 10869
+)
+"balance.ml" 272 10150 10161 "balance.ml" 272 10150 10162
+type(
+  'b
+)
+ident(
+  def a "balance.ml" 272 10150 10167 "balance.ml" 272 10150 10201
+)
+"balance.ml" 272 10150 10163 "balance.ml" 272 10150 10165
+type(
+  int CondSet.Count.t
+)
+ident(
+  def sa "balance.ml" 272 10150 10167 "balance.ml" 272 10150 10201
+)
+"balance.ml" 272 10150 10160 "balance.ml" 272 10150 10166
+type(
+  'b * int CondSet.Count.t
+)
+"balance.ml" 272 10150 10168 "balance.ml" 272 10150 10169
+type(
+  'b
+)
+ident(
+  def b "balance.ml" 272 10150 10176 "balance.ml" 272 10150 10201
+)
+"balance.ml" 272 10150 10170 "balance.ml" 272 10150 10172
+type(
+  int CondSet.Count.t
+)
+ident(
+  def sb "balance.ml" 272 10150 10176 "balance.ml" 272 10150 10201
+)
+"balance.ml" 272 10150 10167 "balance.ml" 272 10150 10173
+type(
+  'b * int CondSet.Count.t
+)
+"balance.ml" 272 10150 10176 "balance.ml" 272 10150 10179
+type(
+  'b -> 'b -> 'b
+)
+ident(
+  ext_ref Pervasives.max
+)
+"balance.ml" 272 10150 10180 "balance.ml" 272 10150 10181
+type(
+  'b
+)
+ident(
+  int_ref a "balance.ml" 272 10150 10161 "balance.ml" 272 10150 10162
+)
+"balance.ml" 272 10150 10182 "balance.ml" 272 10150 10183
+type(
+  'b
+)
+ident(
+  int_ref b "balance.ml" 272 10150 10168 "balance.ml" 272 10150 10169
+)
+"balance.ml" 272 10150 10176 "balance.ml" 272 10150 10183
+call(
+  stack
+)
+type(
+  'b
+)
+"balance.ml" 272 10150 10184 "balance.ml" 272 10150 10195
+type(
+  int CondSet.Count.t -> int CondSet.Count.t -> int CondSet.Count.t
+)
+ident(
+  int_ref CondSet.max "balance.ml" 257 9546 9552 "balance.ml" 257 9546 9555
+)
+"balance.ml" 272 10150 10196 "balance.ml" 272 10150 10198
+type(
+  int CondSet.Count.t
+)
+ident(
+  int_ref sa "balance.ml" 272 10150 10163 "balance.ml" 272 10150 10165
+)
+"balance.ml" 272 10150 10199 "balance.ml" 272 10150 10201
+type(
+  int CondSet.Count.t
+)
+ident(
+  int_ref sb "balance.ml" 272 10150 10170 "balance.ml" 272 10150 10172
+)
+"balance.ml" 272 10150 10184 "balance.ml" 272 10150 10201
+call(
+  stack
+)
+type(
+  int CondSet.Count.t
+)
+"balance.ml" 272 10150 10176 "balance.ml" 272 10150 10201
+type(
+  'b * int CondSet.Count.t
+)
+"balance.ml" 275 10335 10341 "balance.ml" 275 10335 10348
+type(
+  header:int * int CondSet.Count.t ->
+  count:int -> body:int * int CondSet.Count.t -> int * int CondSet.Count.t
+)
+ident(
+  def of_loop "balance.ml" 277 10465 10467 "balance.ml" 287 10866 10869
+)
+"balance.ml" 275 10335 10357 "balance.ml" 275 10335 10358
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  def h "balance.ml" 275 10335 10359 "balance.ml" 275 10335 10403
+)
+"balance.ml" 275 10335 10366 "balance.ml" 275 10335 10367
+type(
+  int
+)
+ident(
+  def n "balance.ml" 275 10335 10368 "balance.ml" 275 10335 10403
+)
+"balance.ml" 275 10335 10374 "balance.ml" 275 10335 10375
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  def b "balance.ml" 275 10335 10378 "balance.ml" 275 10335 10403
+)
+"balance.ml" 275 10335 10378 "balance.ml" 275 10335 10381
+type(
+  int * int CondSet.Count.t ->
+  int * int CondSet.Count.t -> int * int CondSet.Count.t
+)
+ident(
+  int_ref add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 275 10335 10382 "balance.ml" 275 10335 10383
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  int_ref h "balance.ml" 275 10335 10357 "balance.ml" 275 10335 10358
+)
+"balance.ml" 275 10335 10385 "balance.ml" 275 10335 10390
+type(
+  int -> int * int CondSet.Count.t -> int * int CondSet.Count.t
+)
+ident(
+  int_ref scale "balance.ml" 271 10106 10112 "balance.ml" 271 10106 10117
+)
+"balance.ml" 275 10335 10391 "balance.ml" 275 10335 10392
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 275 10335 10366 "balance.ml" 275 10335 10367
+)
+"balance.ml" 275 10335 10394 "balance.ml" 275 10335 10397
+type(
+  int * int CondSet.Count.t ->
+  int * int CondSet.Count.t -> int * int CondSet.Count.t
+)
+ident(
+  int_ref add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 275 10335 10398 "balance.ml" 275 10335 10399
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  int_ref h "balance.ml" 275 10335 10357 "balance.ml" 275 10335 10358
+)
+"balance.ml" 275 10335 10400 "balance.ml" 275 10335 10401
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  int_ref b "balance.ml" 275 10335 10374 "balance.ml" 275 10335 10375
+)
+"balance.ml" 275 10335 10393 "balance.ml" 275 10335 10402
+call(
+  stack
+)
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 275 10335 10384 "balance.ml" 275 10335 10403
+call(
+  stack
+)
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 275 10335 10378 "balance.ml" 275 10335 10403
+call(
+  tail
+)
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 277 10465 10471 "balance.ml" 277 10465 10486
+type(
+  CtxNode.t ->
+  string ->
+  ((string * Loc.t option) * (weight * int CondSet.Count.t)) list ->
+  weight * int CondSet.Count.t
+)
+ident(
+  def of_alternatives "balance.ml" 281 10668 10670 "balance.ml" 287 10866 10869
+)
+"balance.ml" 277 10465 10487 "balance.ml" 277 10465 10488
+type(
+  CtxNode.t
+)
+ident(
+  def n "balance.ml" 277 10465 10489 "balance.ml" 279 10546 10643
+)
+"balance.ml" 277 10465 10489 "balance.ml" 277 10465 10491
+type(
+  string
+)
+ident(
+  def id "balance.ml" 277 10465 10492 "balance.ml" 279 10546 10643
+)
+"balance.ml" 277 10465 10492 "balance.ml" 277 10465 10494
+type(
+  ((string * Loc.t option) * (weight * int CondSet.Count.t)) list
+)
+ident(
+  def br "balance.ml" 278 10497 10501 "balance.ml" 279 10546 10643
+)
+"balance.ml" 278 10497 10505 "balance.ml" 278 10497 10506
+type(
+  weight
+)
+ident(
+  def w "balance.ml" 279 10546 10550 "balance.ml" 279 10546 10643
+)
+"balance.ml" 278 10497 10507 "balance.ml" 278 10497 10508
+type(
+  int CondSet.Count.t
+)
+ident(
+  def s "balance.ml" 279 10546 10550 "balance.ml" 279 10546 10643
+)
+"balance.ml" 278 10497 10505 "balance.ml" 278 10497 10508
+type(
+  weight * int CondSet.Count.t
+)
+"balance.ml" 278 10497 10511 "balance.ml" 278 10497 10516
+type(
+  (weight * int CondSet.Count.t ->
+   weight * int CondSet.Count.t -> weight * int CondSet.Count.t) ->
+  (weight * int CondSet.Count.t) list -> weight * int CondSet.Count.t
+)
+ident(
+  int_ref fold1 "balance.ml" 30 888 896 "balance.ml" 30 888 901
+)
+"balance.ml" 278 10497 10517 "balance.ml" 278 10497 10520
+type(
+  weight * int CondSet.Count.t ->
+  weight * int CondSet.Count.t -> weight * int CondSet.Count.t
+)
+ident(
+  int_ref max "balance.ml" 272 10150 10156 "balance.ml" 272 10150 10159
+)
+"balance.ml" 278 10497 10522 "balance.ml" 278 10497 10525
+type(
+  (string * Loc.t option) list * (weight * int CondSet.Count.t) list ->
+  (weight * int CondSet.Count.t) list
+)
+ident(
+  ext_ref Pervasives.snd
+)
+"balance.ml" 278 10497 10527 "balance.ml" 278 10497 10537
+type(
+  ((string * Loc.t option) * (weight * int CondSet.Count.t)) list ->
+  (string * Loc.t option) list * (weight * int CondSet.Count.t) list
+)
+ident(
+  ext_ref List.split
+)
+"balance.ml" 278 10497 10538 "balance.ml" 278 10497 10540
+type(
+  ((string * Loc.t option) * (weight * int CondSet.Count.t)) list
+)
+ident(
+  int_ref br "balance.ml" 277 10465 10492 "balance.ml" 277 10465 10494
+)
+"balance.ml" 278 10497 10526 "balance.ml" 278 10497 10541
+call(
+  stack
+)
+type(
+  (string * Loc.t option) list * (weight * int CondSet.Count.t) list
+)
+"balance.ml" 278 10497 10521 "balance.ml" 278 10497 10542
+type(
+  (weight * int CondSet.Count.t) list
+)
+"balance.ml" 278 10497 10511 "balance.ml" 278 10497 10542
+call(
+  stack
+)
+type(
+  weight * int CondSet.Count.t
+)
+"balance.ml" 279 10546 10550 "balance.ml" 279 10546 10551
+type(
+  weight
+)
+ident(
+  int_ref w "balance.ml" 278 10497 10505 "balance.ml" 278 10497 10506
+)
+"balance.ml" 279 10546 10553 "balance.ml" 279 10546 10569
+type(
+  int CondSet.Count.t -> CondSet.Count.Mappe.key -> int CondSet.Count.t
+)
+ident(
+  int_ref CondSet.add_cond "balance.ml" 258 9639 9645 "balance.ml" 258 9639 9653
+)
+"balance.ml" 279 10546 10570 "balance.ml" 279 10546 10571
+type(
+  int CondSet.Count.t
+)
+ident(
+  int_ref s "balance.ml" 278 10497 10507 "balance.ml" 278 10497 10508
+)
+"balance.ml" 279 10546 10573 "balance.ml" 279 10546 10586
+type(
+  CtxNode.t ->
+  string -> (string * weight * Loc.t option) list -> CondSet.Count.Mappe.key
+)
+ident(
+  int_ref CondEval.make "balance.ml" 229 8289 8295 "balance.ml" 229 8289 8299
+)
+"balance.ml" 279 10546 10587 "balance.ml" 279 10546 10588
+type(
+  CtxNode.t
+)
+ident(
+  int_ref n "balance.ml" 277 10465 10487 "balance.ml" 277 10465 10488
+)
+"balance.ml" 279 10546 10589 "balance.ml" 279 10546 10591
+type(
+  string
+)
+ident(
+  int_ref id "balance.ml" 277 10465 10489 "balance.ml" 277 10465 10491
+)
+"balance.ml" 279 10546 10593 "balance.ml" 279 10546 10601
+type(
+  ((string * Loc.t option) * (weight * int CondSet.Count.t) ->
+   string * weight * Loc.t option) ->
+  ((string * Loc.t option) * (weight * int CondSet.Count.t)) list ->
+  (string * weight * Loc.t option) list
+)
+ident(
+  ext_ref List.map
+)
+"balance.ml" 279 10546 10609 "balance.ml" 279 10546 10613
+type(
+  string
+)
+ident(
+  def name "balance.ml" 279 10546 10628 "balance.ml" 279 10546 10637
+)
+"balance.ml" 279 10546 10614 "balance.ml" 279 10546 10616
+type(
+  Loc.t option
+)
+ident(
+  def ol "balance.ml" 279 10546 10628 "balance.ml" 279 10546 10637
+)
+"balance.ml" 279 10546 10608 "balance.ml" 279 10546 10617
+type(
+  string * Loc.t option
+)
+"balance.ml" 279 10546 10619 "balance.ml" 279 10546 10620
+type(
+  weight
+)
+ident(
+  def w "balance.ml" 279 10546 10628 "balance.ml" 279 10546 10637
+)
+"balance.ml" 279 10546 10621 "balance.ml" 279 10546 10622
+type(
+  int CondSet.Count.t
+)
+"balance.ml" 279 10546 10618 "balance.ml" 279 10546 10623
+type(
+  weight * int CondSet.Count.t
+)
+"balance.ml" 279 10546 10607 "balance.ml" 279 10546 10624
+type(
+  (string * Loc.t option) * (weight * int CondSet.Count.t)
+)
+"balance.ml" 279 10546 10628 "balance.ml" 279 10546 10632
+type(
+  string
+)
+ident(
+  int_ref name "balance.ml" 279 10546 10609 "balance.ml" 279 10546 10613
+)
+"balance.ml" 279 10546 10633 "balance.ml" 279 10546 10634
+type(
+  weight
+)
+ident(
+  int_ref w "balance.ml" 279 10546 10619 "balance.ml" 279 10546 10620
+)
+"balance.ml" 279 10546 10635 "balance.ml" 279 10546 10637
+type(
+  Loc.t option
+)
+ident(
+  int_ref ol "balance.ml" 279 10546 10614 "balance.ml" 279 10546 10616
+)
+"balance.ml" 279 10546 10628 "balance.ml" 279 10546 10637
+type(
+  string * weight * Loc.t option
+)
+"balance.ml" 279 10546 10602 "balance.ml" 279 10546 10638
+type(
+  (string * Loc.t option) * (weight * int CondSet.Count.t) ->
+  string * weight * Loc.t option
+)
+"balance.ml" 279 10546 10639 "balance.ml" 279 10546 10641
+type(
+  ((string * Loc.t option) * (weight * int CondSet.Count.t)) list
+)
+ident(
+  int_ref br "balance.ml" 277 10465 10492 "balance.ml" 277 10465 10494
+)
+"balance.ml" 279 10546 10592 "balance.ml" 279 10546 10642
+call(
+  stack
+)
+type(
+  (string * weight * Loc.t option) list
+)
+"balance.ml" 279 10546 10572 "balance.ml" 279 10546 10643
+call(
+  stack
+)
+type(
+  CondSet.Count.Mappe.key
+)
+"balance.ml" 279 10546 10553 "balance.ml" 279 10546 10643
+call(
+  stack
+)
+type(
+  int CondSet.Count.t
+)
+"balance.ml" 279 10546 10550 "balance.ml" 279 10546 10643
+type(
+  weight * int CondSet.Count.t
+)
+"balance.ml" 278 10497 10501 "balance.ml" 279 10546 10643
+type(
+  weight * int CondSet.Count.t
+)
+"balance.ml" 281 10668 10674 "balance.ml" 281 10668 10677
+type(
+  (int * int CondSet.Count.t) list -> int * int CondSet.Count.t
+)
+ident(
+  def sum "balance.ml" 282 10704 10706 "balance.ml" 287 10866 10869
+)
+"balance.ml" 281 10668 10680 "balance.ml" 281 10668 10694
+type(
+  (int * int CondSet.Count.t ->
+   int * int CondSet.Count.t -> int * int CondSet.Count.t) ->
+  int * int CondSet.Count.t ->
+  (int * int CondSet.Count.t) list -> int * int CondSet.Count.t
+)
+ident(
+  ext_ref List.fold_left
+)
+"balance.ml" 281 10668 10695 "balance.ml" 281 10668 10698
+type(
+  int * int CondSet.Count.t ->
+  int * int CondSet.Count.t -> int * int CondSet.Count.t
+)
+ident(
+  int_ref add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 281 10668 10699 "balance.ml" 281 10668 10703
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  int_ref zero "balance.ml" 268 10015 10021 "balance.ml" 268 10015 10025
+)
+"balance.ml" 281 10668 10680 "balance.ml" 281 10668 10703
+call(
+  stack
+)
+type(
+  (int * int CondSet.Count.t) list -> int * int CondSet.Count.t
+)
+"balance.ml" 282 10704 10710 "balance.ml" 282 10704 10716
+type(
+  'c * 'd -> 'c
+)
+ident(
+  def weight "balance.ml" 283 10723 10725 "balance.ml" 287 10866 10869
+)
+"balance.ml" 282 10704 10719 "balance.ml" 282 10704 10722
+type(
+  'c * 'd -> 'c
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"balance.ml" 283 10723 10729 "balance.ml" 283 10723 10739
+type(
+  'e * 'f CondSet.Count.t -> int
+)
+ident(
+  def cond_count "balance.ml" 284 10767 10769 "balance.ml" 287 10866 10869
+)
+"balance.ml" 283 10723 10741 "balance.ml" 283 10723 10742
+type(
+  'e
+)
+"balance.ml" 283 10723 10743 "balance.ml" 283 10723 10744
+type(
+  'f CondSet.Count.t
+)
+ident(
+  def s "balance.ml" 283 10723 10748 "balance.ml" 283 10723 10766
+)
+"balance.ml" 283 10723 10740 "balance.ml" 283 10723 10745
+type(
+  'e * 'f CondSet.Count.t
+)
+"balance.ml" 283 10723 10748 "balance.ml" 283 10723 10764
+type(
+  'f CondSet.Count.t -> int
+)
+ident(
+  int_ref CondSet.cardinal "balance.ml" 259 9696 9702 "balance.ml" 259 9696 9710
+)
+"balance.ml" 283 10723 10765 "balance.ml" 283 10723 10766
+type(
+  'f CondSet.Count.t
+)
+ident(
+  int_ref s "balance.ml" 283 10723 10743 "balance.ml" 283 10723 10744
+)
+"balance.ml" 283 10723 10748 "balance.ml" 283 10723 10766
+call(
+  tail
+)
+type(
+  int
+)
+"balance.ml" 284 10767 10773 "balance.ml" 284 10767 10785
+type(
+  'g * int CondSet.Count.t -> (int * CondSet.Count.Mappe.key) list
+)
+ident(
+  def sorted_conds "balance.ml" 286 10827 10865 "balance.ml" 287 10866 10869
+)
+"balance.ml" 284 10767 10787 "balance.ml" 284 10767 10788
+type(
+  'g
+)
+"balance.ml" 284 10767 10789 "balance.ml" 284 10767 10790
+type(
+  int CondSet.Count.t
+)
+ident(
+  def s "balance.ml" 285 10794 10798 "balance.ml" 286 10827 10865
+)
+"balance.ml" 284 10767 10786 "balance.ml" 284 10767 10791
+type(
+  'g * int CondSet.Count.t
+)
+"balance.ml" 285 10794 10802 "balance.ml" 285 10794 10803
+type(
+  (int * CondSet.Count.Mappe.key) list
+)
+ident(
+  def l "balance.ml" 286 10827 10831 "balance.ml" 286 10827 10865
+)
+"balance.ml" 285 10794 10806 "balance.ml" 285 10794 10821
+type(
+  int CondSet.Count.t -> (int * CondSet.Count.Mappe.key) list
+)
+ident(
+  int_ref CondSet.to_list "balance.ml" 260 9733 9739 "balance.ml" 260 9733 9746
+)
+"balance.ml" 285 10794 10822 "balance.ml" 285 10794 10823
+type(
+  int CondSet.Count.t
+)
+ident(
+  int_ref s "balance.ml" 284 10767 10789 "balance.ml" 284 10767 10790
+)
+"balance.ml" 285 10794 10806 "balance.ml" 285 10794 10823
+call(
+  stack
+)
+type(
+  (int * CondSet.Count.Mappe.key) list
+)
+"balance.ml" 286 10827 10831 "balance.ml" 286 10827 10840
+type(
+  (int * CondSet.Count.Mappe.key -> int * CondSet.Count.Mappe.key -> int) ->
+  (int * CondSet.Count.Mappe.key) list ->
+  (int * CondSet.Count.Mappe.key) list
+)
+ident(
+  ext_ref List.sort
+)
+"balance.ml" 286 10827 10841 "balance.ml" 286 10827 10863
+type(
+  int * CondSet.Count.Mappe.key -> int * CondSet.Count.Mappe.key -> int
+)
+ident(
+  int_ref CondEval.delta_compare "balance.ml" 228 8241 8247 "balance.ml" 228 8241 8260
+)
+"balance.ml" 286 10827 10864 "balance.ml" 286 10827 10865
+type(
+  (int * CondSet.Count.Mappe.key) list
+)
+ident(
+  int_ref l "balance.ml" 285 10794 10802 "balance.ml" 285 10794 10803
+)
+"balance.ml" 286 10827 10831 "balance.ml" 286 10827 10865
+call(
+  tail
+)
+type(
+  (int * CondSet.Count.Mappe.key) list
+)
+"balance.ml" 285 10794 10798 "balance.ml" 286 10827 10865
+type(
+  (int * CondSet.Count.Mappe.key) list
+)
+"balance.ml" 294 11134 11138 "balance.ml" 294 11134 11146
+type(
+  ff_input -> Cabs.definition list -> string -> string * CodeEval.t
+)
+ident(
+  def analysis "balance.ml" 412 15530 15530 "balance.ml" 1 0 -1
+)
+"balance.ml" 295 11147 11152 "balance.ml" 295 11147 11154
+type(
+  ff_input
+)
+ident(
+  def ff "balance.ml" 296 11166 11170 "balance.ml" 410 15516 15528
+)
+"balance.ml" 296 11166 11171 "balance.ml" 296 11166 11175
+type(
+  Cabs.definition list
+)
+ident(
+  def defs "balance.ml" 297 11199 11203 "balance.ml" 410 15516 15528
+)
+"balance.ml" 297 11199 11204 "balance.ml" 297 11199 11209
+type(
+  string
+)
+ident(
+  def entry "balance.ml" 298 11219 11223 "balance.ml" 410 15516 15528
+)
+"balance.ml" 307 11473 11479 "balance.ml" 307 11473 11484
+type(
+  (Ctx.t * string, CodeEval.t) Hashtbl.t
+)
+ident(
+  def finfo "balance.ml" 309 11540 11542 "balance.ml" 410 15516 15528
+)
+"balance.ml" 307 11473 11487 "balance.ml" 307 11473 11501
+type(
+  ?random:bool -> int -> (Ctx.t * string, CodeEval.t) Hashtbl.t
+)
+ident(
+  ext_ref Hashtbl.create
+)
+"balance.ml" 307 11473 11502 "balance.ml" 307 11473 11504
+type(
+  int
+)
+"balance.ml" 307 11473 11487 "balance.ml" 307 11473 11504
+call(
+  stack
+)
+type(
+  (Ctx.t * string, CodeEval.t) Hashtbl.t
+)
+"balance.ml" 309 11540 11550 "balance.ml" 309 11540 11558
+type(
+  Ctx.t -> string -> CodeEval.t
+)
+ident(
+  def fun_eval "balance.ml" 309 11540 11542 "balance.ml" 410 15516 15528
+)
+"balance.ml" 309 11540 11560 "balance.ml" 309 11540 11563
+type(
+  Ctx.t
+)
+ident(
+  def ctx "balance.ml" 309 11540 11572 "balance.ml" 318 11848 11888
+)
+"balance.ml" 309 11540 11573 "balance.ml" 309 11540 11578
+type(
+  string
+)
+ident(
+  def fname "balance.ml" 309 11540 11588 "balance.ml" 318 11848 11888
+)
+"balance.ml" 311 11609 11617 "balance.ml" 311 11609 11629
+type(
+  (Ctx.t * string, CodeEval.t) Hashtbl.t -> Ctx.t * string -> CodeEval.t
+)
+ident(
+  ext_ref Hashtbl.find
+)
+"balance.ml" 311 11609 11630 "balance.ml" 311 11609 11635
+type(
+  (Ctx.t * string, CodeEval.t) Hashtbl.t
+)
+ident(
+  int_ref finfo "balance.ml" 307 11473 11479 "balance.ml" 307 11473 11484
+)
+"balance.ml" 311 11609 11637 "balance.ml" 311 11609 11640
+type(
+  Ctx.t
+)
+ident(
+  int_ref ctx "balance.ml" 309 11540 11560 "balance.ml" 309 11540 11563
+)
+"balance.ml" 311 11609 11641 "balance.ml" 311 11609 11646
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 309 11540 11573 "balance.ml" 309 11540 11578
+)
+"balance.ml" 311 11609 11636 "balance.ml" 311 11609 11647
+type(
+  Ctx.t * string
+)
+"balance.ml" 311 11609 11617 "balance.ml" 311 11609 11647
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 312 11648 11657 "balance.ml" 312 11648 11666
+type(
+  exn
+)
+"balance.ml" 313 11675 11685 "balance.ml" 313 11675 11689
+type(
+  Cabs.statement
+)
+ident(
+  def body "balance.ml" 315 11726 11732 "balance.ml" 317 11837 11847
+)
+"balance.ml" 314 11694 11695 "balance.ml" 314 11694 11711
+type(
+  Cabs.definition list -> string -> Cabs.statement
+)
+ident(
+  int_ref function_def_exn "balance.ml" 44 1294 1298 "balance.ml" 44 1294 1314
+)
+"balance.ml" 314 11694 11712 "balance.ml" 314 11694 11716
+type(
+  Cabs.definition list
+)
+ident(
+  int_ref defs "balance.ml" 296 11166 11171 "balance.ml" 296 11166 11175
+)
+"balance.ml" 314 11694 11717 "balance.ml" 314 11694 11722
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 309 11540 11573 "balance.ml" 309 11540 11578
+)
+"balance.ml" 314 11694 11695 "balance.ml" 314 11694 11722
+call(
+  stack
+)
+type(
+  Cabs.statement
+)
+"balance.ml" 315 11726 11736 "balance.ml" 315 11726 11740
+type(
+  CodeEval.t
+)
+ident(
+  def eval "balance.ml" 316 11795 11801 "balance.ml" 317 11837 11847
+)
+"balance.ml" 315 11726 11743 "balance.ml" 315 11726 11752
+type(
+  CtxNode.t -> CodeEval.t
+)
+ident(
+  int_ref stmt_eval "balance.ml" 352 13200 13206 "balance.ml" 352 13200 13215
+)
+"balance.ml" 315 11726 11754 "balance.ml" 315 11726 11775
+type(
+  Ctx.t -> string -> Cabs.statement -> CtxNode.t
+)
+ident(
+  int_ref CtxNode.function_call "balance.ml" 195 7018 7024 "balance.ml" 195 7018 7037
+)
+"balance.ml" 315 11726 11776 "balance.ml" 315 11726 11779
+type(
+  Ctx.t
+)
+ident(
+  int_ref ctx "balance.ml" 309 11540 11560 "balance.ml" 309 11540 11563
+)
+"balance.ml" 315 11726 11780 "balance.ml" 315 11726 11785
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 309 11540 11573 "balance.ml" 309 11540 11578
+)
+"balance.ml" 315 11726 11786 "balance.ml" 315 11726 11790
+type(
+  Cabs.statement
+)
+ident(
+  int_ref body "balance.ml" 313 11675 11685 "balance.ml" 313 11675 11689
+)
+"balance.ml" 315 11726 11753 "balance.ml" 315 11726 11791
+call(
+  stack
+)
+type(
+  CtxNode.t
+)
+"balance.ml" 315 11726 11743 "balance.ml" 315 11726 11791
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 316 11795 11801 "balance.ml" 316 11795 11812
+type(
+  (Ctx.t * string, CodeEval.t) Hashtbl.t ->
+  Ctx.t * string -> CodeEval.t -> unit
+)
+ident(
+  ext_ref Hashtbl.add
+)
+"balance.ml" 316 11795 11813 "balance.ml" 316 11795 11818
+type(
+  (Ctx.t * string, CodeEval.t) Hashtbl.t
+)
+ident(
+  int_ref finfo "balance.ml" 307 11473 11479 "balance.ml" 307 11473 11484
+)
+"balance.ml" 316 11795 11820 "balance.ml" 316 11795 11823
+type(
+  Ctx.t
+)
+ident(
+  int_ref ctx "balance.ml" 309 11540 11560 "balance.ml" 309 11540 11563
+)
+"balance.ml" 316 11795 11824 "balance.ml" 316 11795 11829
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 309 11540 11573 "balance.ml" 309 11540 11578
+)
+"balance.ml" 316 11795 11819 "balance.ml" 316 11795 11830
+type(
+  Ctx.t * string
+)
+"balance.ml" 316 11795 11831 "balance.ml" 316 11795 11835
+type(
+  CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 315 11726 11736 "balance.ml" 315 11726 11740
+)
+"balance.ml" 316 11795 11801 "balance.ml" 316 11795 11835
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 317 11837 11843 "balance.ml" 317 11837 11847
+type(
+  CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 315 11726 11736 "balance.ml" 315 11726 11740
+)
+"balance.ml" 316 11795 11801 "balance.ml" 317 11837 11847
+type(
+  CodeEval.t
+)
+"balance.ml" 315 11726 11732 "balance.ml" 317 11837 11847
+type(
+  CodeEval.t
+)
+"balance.ml" 313 11675 11681 "balance.ml" 317 11837 11847
+type(
+  CodeEval.t
+)
+"balance.ml" 318 11848 11857 "balance.ml" 318 11848 11866
+type(
+  exn
+)
+"balance.ml" 318 11848 11870 "balance.ml" 318 11848 11885
+type(
+  weight -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.of_int "balance.ml" 267 9982 9988 "balance.ml" 267 9982 9994
+)
+"balance.ml" 318 11848 11886 "balance.ml" 318 11848 11888
+type(
+  weight
+)
+"balance.ml" 318 11848 11870 "balance.ml" 318 11848 11888
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 312 11648 11670 "balance.ml" 318 11848 11888
+type(
+  CodeEval.t
+)
+"balance.ml" 311 11609 11613 "balance.ml" 318 11848 11888
+type(
+  CodeEval.t
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 322 12019 12025 "balance.ml" 322 12019 12034
+type(
+  Ctx.t -> Cabs.expression -> CodeEval.t
+)
+ident(
+  def expr_eval "balance.ml" 309 11540 11542 "balance.ml" 410 15516 15528
+)
+"balance.ml" 322 12019 12036 "balance.ml" 322 12019 12039
+type(
+  Ctx.t
+)
+ident(
+  def ctx "balance.ml" 322 12019 12048 "balance.ml" 348 13017 13075
+)
+"balance.ml" 322 12019 12049 "balance.ml" 322 12019 12053
+type(
+  Cabs.expression
+)
+ident(
+  def expr "balance.ml" 322 12019 12072 "balance.ml" 348 13017 13075
+)
+"balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  def eval "balance.ml" 325 12163 12167 "balance.ml" 348 13017 13075
+)
+"balance.ml" 324 12093 12108 "balance.ml" 324 12093 12117
+type(
+  Ctx.t -> Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval "balance.ml" 322 12019 12025 "balance.ml" 322 12019 12034
+)
+"balance.ml" 324 12093 12118 "balance.ml" 324 12093 12121
+type(
+  Ctx.t
+)
+ident(
+  int_ref ctx "balance.ml" 322 12019 12036 "balance.ml" 322 12019 12039
+)
+"balance.ml" 324 12093 12108 "balance.ml" 324 12093 12121
+call(
+  stack
+)
+type(
+  Cabs.expression -> CodeEval.t
+)
+"balance.ml" 327 12209 12219 "balance.ml" 327 12209 12223
+type(
+  Cabs.expression
+)
+ident(
+  int_ref expr "balance.ml" 322 12019 12049 "balance.ml" 322 12019 12053
+)
+"balance.ml" 328 12229 12235 "balance.ml" 328 12229 12242
+type(
+  Cabs.expression
+)
+"balance.ml" 328 12229 12246 "balance.ml" 328 12229 12250
+type(
+  CodeEval.t
+)
+ident(
+  int_ref CodeEval.zero "balance.ml" 268 10015 10021 "balance.ml" 268 10015 10025
+)
+"balance.ml" 329 12251 12264 "balance.ml" 329 12251 12265
+type(
+  Cabs.unary_operator
+)
+"balance.ml" 329 12251 12266 "balance.ml" 329 12251 12267
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 329 12251 12272 "balance.ml" 329 12251 12288
+)
+"balance.ml" 329 12251 12257 "balance.ml" 329 12251 12268
+type(
+  Cabs.expression
+)
+"balance.ml" 329 12251 12272 "balance.ml" 329 12251 12275
+type(
+  int * int CondSet.Count.t -> CodeEval.t -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 329 12251 12276 "balance.ml" 329 12251 12279
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  int_ref CodeEval.one "balance.ml" 269 10037 10043 "balance.ml" 269 10037 10046
+)
+"balance.ml" 329 12251 12281 "balance.ml" 329 12251 12285
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 329 12251 12286 "balance.ml" 329 12251 12287
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 329 12251 12266 "balance.ml" 329 12251 12267
+)
+"balance.ml" 329 12251 12280 "balance.ml" 329 12251 12288
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 329 12251 12272 "balance.ml" 329 12251 12288
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 330 12289 12303 "balance.ml" 330 12289 12304
+type(
+  Cabs.binary_operator
+)
+"balance.ml" 330 12289 12305 "balance.ml" 330 12289 12307
+type(
+  Cabs.expression
+)
+ident(
+  def e1 "balance.ml" 330 12289 12315 "balance.ml" 330 12289 12342
+)
+"balance.ml" 330 12289 12308 "balance.ml" 330 12289 12310
+type(
+  Cabs.expression
+)
+ident(
+  def e2 "balance.ml" 330 12289 12315 "balance.ml" 330 12289 12342
+)
+"balance.ml" 330 12289 12295 "balance.ml" 330 12289 12311
+type(
+  Cabs.expression
+)
+"balance.ml" 330 12289 12315 "balance.ml" 330 12289 12318
+type(
+  CodeEval.t list -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.sum "balance.ml" 281 10668 10674 "balance.ml" 281 10668 10677
+)
+"balance.ml" 330 12289 12320 "balance.ml" 330 12289 12323
+type(
+  CodeEval.t
+)
+ident(
+  int_ref CodeEval.one "balance.ml" 269 10037 10043 "balance.ml" 269 10037 10046
+)
+"balance.ml" 330 12289 12325 "balance.ml" 330 12289 12329
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 330 12289 12330 "balance.ml" 330 12289 12332
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "balance.ml" 330 12289 12305 "balance.ml" 330 12289 12307
+)
+"balance.ml" 330 12289 12325 "balance.ml" 330 12289 12332
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 330 12289 12334 "balance.ml" 330 12289 12338
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 330 12289 12339 "balance.ml" 330 12289 12341
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "balance.ml" 330 12289 12308 "balance.ml" 330 12289 12310
+)
+"balance.ml" 330 12289 12334 "balance.ml" 330 12289 12341
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 330 12289 12319 "balance.ml" 330 12289 12342
+type(
+  CodeEval.t list
+)
+"balance.ml" 330 12289 12315 "balance.ml" 330 12289 12342
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 331 12343 12359 "balance.ml" 331 12343 12363
+type(
+  Cabs.expression
+)
+ident(
+  def e_if "balance.ml" 331 12343 12382 "balance.ml" 331 12343 12431
+)
+"balance.ml" 331 12343 12364 "balance.ml" 331 12343 12370
+type(
+  Cabs.expression
+)
+ident(
+  def e_then "balance.ml" 331 12343 12382 "balance.ml" 331 12343 12431
+)
+"balance.ml" 331 12343 12371 "balance.ml" 331 12343 12377
+type(
+  Cabs.expression
+)
+ident(
+  def e_else "balance.ml" 331 12343 12382 "balance.ml" 331 12343 12431
+)
+"balance.ml" 331 12343 12349 "balance.ml" 331 12343 12378
+type(
+  Cabs.expression
+)
+"balance.ml" 331 12343 12382 "balance.ml" 331 12343 12385
+type(
+  CodeEval.t -> weight * int CondSet.Count.t -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 331 12343 12387 "balance.ml" 331 12343 12391
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 331 12343 12392 "balance.ml" 331 12343 12396
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_if "balance.ml" 331 12343 12359 "balance.ml" 331 12343 12363
+)
+"balance.ml" 331 12343 12386 "balance.ml" 331 12343 12397
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 331 12343 12399 "balance.ml" 331 12343 12402
+type(
+  CodeEval.t -> CodeEval.t -> weight * int CondSet.Count.t
+)
+ident(
+  int_ref CodeEval.max "balance.ml" 272 10150 10156 "balance.ml" 272 10150 10159
+)
+"balance.ml" 331 12343 12404 "balance.ml" 331 12343 12408
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 331 12343 12409 "balance.ml" 331 12343 12415
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_then "balance.ml" 331 12343 12364 "balance.ml" 331 12343 12370
+)
+"balance.ml" 331 12343 12403 "balance.ml" 331 12343 12416
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 331 12343 12418 "balance.ml" 331 12343 12422
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 331 12343 12423 "balance.ml" 331 12343 12429
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_else "balance.ml" 331 12343 12371 "balance.ml" 331 12343 12377
+)
+"balance.ml" 331 12343 12417 "balance.ml" 331 12343 12430
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 331 12343 12398 "balance.ml" 331 12343 12431
+call(
+  stack
+)
+type(
+  weight * int CondSet.Count.t
+)
+"balance.ml" 331 12343 12382 "balance.ml" 331 12343 12431
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 332 12432 12453 "balance.ml" 332 12432 12458
+type(
+  string
+)
+ident(
+  def fname "balance.ml" 333 12466 12472 "balance.ml" 336 12609 12645
+)
+"balance.ml" 332 12432 12444 "balance.ml" 332 12432 12458
+type(
+  Cabs.expression
+)
+"balance.ml" 332 12432 12459 "balance.ml" 332 12432 12461
+type(
+  Cabs.expression list
+)
+ident(
+  def el "balance.ml" 333 12466 12472 "balance.ml" 336 12609 12645
+)
+"balance.ml" 332 12432 12438 "balance.ml" 332 12432 12462
+type(
+  Cabs.expression
+)
+"balance.ml" 333 12466 12476 "balance.ml" 333 12466 12480
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  def args "balance.ml" 334 12518 12524 "balance.ml" 336 12609 12645
+)
+"balance.ml" 333 12466 12483 "balance.ml" 333 12466 12495
+type(
+  CodeEval.t list -> int * int CondSet.Count.t
+)
+ident(
+  int_ref CodeEval.sum "balance.ml" 281 10668 10674 "balance.ml" 281 10668 10677
+)
+"balance.ml" 333 12466 12497 "balance.ml" 333 12466 12505
+type(
+  (Cabs.expression -> CodeEval.t) -> Cabs.expression list -> CodeEval.t list
+)
+ident(
+  ext_ref List.map
+)
+"balance.ml" 333 12466 12506 "balance.ml" 333 12466 12510
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 333 12466 12511 "balance.ml" 333 12466 12513
+type(
+  Cabs.expression list
+)
+ident(
+  int_ref el "balance.ml" 332 12432 12459 "balance.ml" 332 12432 12461
+)
+"balance.ml" 333 12466 12496 "balance.ml" 333 12466 12514
+call(
+  stack
+)
+type(
+  CodeEval.t list
+)
+"balance.ml" 333 12466 12483 "balance.ml" 333 12466 12514
+call(
+  stack
+)
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 334 12518 12528 "balance.ml" 334 12518 12535
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  def calling "balance.ml" 335 12565 12571 "balance.ml" 336 12609 12645
+)
+"balance.ml" 334 12518 12538 "balance.ml" 334 12518 12544
+type(
+  int -> int * int CondSet.Count.t
+)
+ident(
+  int_ref CodeEval.of_int "balance.ml" 267 9982 9988 "balance.ml" 267 9982 9994
+)
+"balance.ml" 334 12518 12546 "balance.ml" 334 12518 12557
+type(
+  Cabs.expression list -> int
+)
+ident(
+  ext_ref List.length
+)
+"balance.ml" 334 12518 12558 "balance.ml" 334 12518 12560
+type(
+  Cabs.expression list
+)
+ident(
+  int_ref el "balance.ml" 332 12432 12459 "balance.ml" 332 12432 12461
+)
+"balance.ml" 334 12518 12545 "balance.ml" 334 12518 12561
+call(
+  stack
+)
+type(
+  int
+)
+"balance.ml" 334 12518 12538 "balance.ml" 334 12518 12561
+call(
+  stack
+)
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 335 12565 12575 "balance.ml" 335 12565 12584
+type(
+  CodeEval.t
+)
+ident(
+  def execution "balance.ml" 336 12609 12615 "balance.ml" 336 12609 12645
+)
+"balance.ml" 335 12565 12587 "balance.ml" 335 12565 12595
+type(
+  Ctx.t -> string -> CodeEval.t
+)
+ident(
+  int_ref fun_eval "balance.ml" 309 11540 11550 "balance.ml" 309 11540 11558
+)
+"balance.ml" 335 12565 12596 "balance.ml" 335 12565 12599
+type(
+  Ctx.t
+)
+ident(
+  int_ref ctx "balance.ml" 322 12019 12036 "balance.ml" 322 12019 12039
+)
+"balance.ml" 335 12565 12600 "balance.ml" 335 12565 12605
+type(
+  string
+)
+ident(
+  int_ref fname "balance.ml" 332 12432 12453 "balance.ml" 332 12432 12458
+)
+"balance.ml" 335 12565 12587 "balance.ml" 335 12565 12605
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 336 12609 12615 "balance.ml" 336 12609 12618
+type(
+  CodeEval.t list -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.sum "balance.ml" 281 10668 10674 "balance.ml" 281 10668 10677
+)
+"balance.ml" 336 12609 12620 "balance.ml" 336 12609 12624
+type(
+  CodeEval.t
+)
+ident(
+  int_ref args "balance.ml" 333 12466 12476 "balance.ml" 333 12466 12480
+)
+"balance.ml" 336 12609 12626 "balance.ml" 336 12609 12633
+type(
+  CodeEval.t
+)
+ident(
+  int_ref calling "balance.ml" 334 12518 12528 "balance.ml" 334 12518 12535
+)
+"balance.ml" 336 12609 12635 "balance.ml" 336 12609 12644
+type(
+  CodeEval.t
+)
+ident(
+  int_ref execution "balance.ml" 335 12565 12575 "balance.ml" 335 12565 12584
+)
+"balance.ml" 336 12609 12619 "balance.ml" 336 12609 12645
+type(
+  CodeEval.t list
+)
+"balance.ml" 336 12609 12615 "balance.ml" 336 12609 12645
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 335 12565 12571 "balance.ml" 336 12609 12645
+type(
+  CodeEval.t
+)
+"balance.ml" 334 12518 12524 "balance.ml" 336 12609 12645
+type(
+  CodeEval.t
+)
+"balance.ml" 333 12466 12472 "balance.ml" 336 12609 12645
+type(
+  CodeEval.t
+)
+"balance.ml" 337 12646 12657 "balance.ml" 337 12646 12658
+type(
+  Cabs.expression list
+)
+type(
+  Cabs.expression
+)
+"balance.ml" 337 12646 12652 "balance.ml" 337 12646 12658
+type(
+  Cabs.expression
+)
+"balance.ml" 337 12646 12662 "balance.ml" 337 12646 12670
+type(
+  string -> CodeEval.t
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"balance.ml" 337 12646 12671 "balance.ml" 337 12646 12696
+type(
+  string
+)
+"balance.ml" 337 12646 12662 "balance.ml" 337 12646 12696
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 338 12697 12712 "balance.ml" 338 12697 12713
+type(
+  Cabs.constant
+)
+"balance.ml" 338 12697 12703 "balance.ml" 338 12697 12713
+type(
+  Cabs.expression
+)
+"balance.ml" 338 12697 12717 "balance.ml" 338 12697 12721
+type(
+  CodeEval.t
+)
+ident(
+  int_ref CodeEval.zero "balance.ml" 268 10015 10021 "balance.ml" 268 10015 10025
+)
+"balance.ml" 339 12722 12737 "balance.ml" 339 12722 12738
+type(
+  string
+)
+"balance.ml" 339 12722 12728 "balance.ml" 339 12722 12738
+type(
+  Cabs.expression
+)
+"balance.ml" 339 12722 12742 "balance.ml" 339 12722 12745
+type(
+  CodeEval.t
+)
+ident(
+  int_ref CodeEval.one "balance.ml" 269 10037 10043 "balance.ml" 269 10037 10046
+)
+"balance.ml" 340 12746 12764 "balance.ml" 340 12746 12765
+type(
+  Cabs.expression
+)
+"balance.ml" 340 12746 12752 "balance.ml" 340 12746 12765
+type(
+  Cabs.expression
+)
+"balance.ml" 341 12766 12784 "balance.ml" 341 12766 12785
+type(
+  Cabs.base_type
+)
+"balance.ml" 341 12766 12772 "balance.ml" 341 12766 12785
+type(
+  Cabs.expression
+)
+"balance.ml" 340 12746 12752 "balance.ml" 341 12766 12785
+type(
+  Cabs.expression
+)
+"balance.ml" 342 12786 12797 "balance.ml" 342 12786 12798
+type(
+  Cabs.expression
+)
+type(
+  Cabs.base_type
+)
+"balance.ml" 342 12786 12792 "balance.ml" 342 12786 12798
+type(
+  Cabs.expression
+)
+"balance.ml" 340 12746 12752 "balance.ml" 342 12786 12798
+type(
+  Cabs.expression
+)
+"balance.ml" 342 12786 12802 "balance.ml" 342 12786 12806
+type(
+  CodeEval.t
+)
+ident(
+  int_ref CodeEval.zero "balance.ml" 268 10015 10021 "balance.ml" 268 10015 10025
+)
+"balance.ml" 343 12807 12819 "balance.ml" 343 12807 12821
+type(
+  Cabs.expression list
+)
+ident(
+  def el "balance.ml" 343 12807 12825 "balance.ml" 343 12807 12856
+)
+"balance.ml" 343 12807 12813 "balance.ml" 343 12807 12821
+type(
+  Cabs.expression
+)
+"balance.ml" 343 12807 12825 "balance.ml" 343 12807 12837
+type(
+  CodeEval.t list -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.sum "balance.ml" 281 10668 10674 "balance.ml" 281 10668 10677
+)
+"balance.ml" 343 12807 12839 "balance.ml" 343 12807 12847
+type(
+  (Cabs.expression -> CodeEval.t) -> Cabs.expression list -> CodeEval.t list
+)
+ident(
+  ext_ref List.map
+)
+"balance.ml" 343 12807 12848 "balance.ml" 343 12807 12852
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 343 12807 12853 "balance.ml" 343 12807 12855
+type(
+  Cabs.expression list
+)
+ident(
+  int_ref el "balance.ml" 343 12807 12819 "balance.ml" 343 12807 12821
+)
+"balance.ml" 343 12807 12838 "balance.ml" 343 12807 12856
+call(
+  stack
+)
+type(
+  CodeEval.t list
+)
+"balance.ml" 343 12807 12825 "balance.ml" 343 12807 12856
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 344 12857 12870 "balance.ml" 344 12857 12872
+type(
+  Cabs.expression
+)
+ident(
+  def e1 "balance.ml" 344 12857 12880 "balance.ml" 344 12857 12907
+)
+"balance.ml" 344 12857 12873 "balance.ml" 344 12857 12875
+type(
+  Cabs.expression
+)
+ident(
+  def e2 "balance.ml" 344 12857 12880 "balance.ml" 344 12857 12907
+)
+"balance.ml" 344 12857 12863 "balance.ml" 344 12857 12876
+type(
+  Cabs.expression
+)
+"balance.ml" 344 12857 12880 "balance.ml" 344 12857 12883
+type(
+  CodeEval.t list -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.sum "balance.ml" 281 10668 10674 "balance.ml" 281 10668 10677
+)
+"balance.ml" 344 12857 12885 "balance.ml" 344 12857 12888
+type(
+  CodeEval.t
+)
+ident(
+  int_ref CodeEval.one "balance.ml" 269 10037 10043 "balance.ml" 269 10037 10046
+)
+"balance.ml" 344 12857 12890 "balance.ml" 344 12857 12894
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 344 12857 12895 "balance.ml" 344 12857 12897
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e1 "balance.ml" 344 12857 12870 "balance.ml" 344 12857 12872
+)
+"balance.ml" 344 12857 12890 "balance.ml" 344 12857 12897
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 344 12857 12899 "balance.ml" 344 12857 12903
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 344 12857 12904 "balance.ml" 344 12857 12906
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e2 "balance.ml" 344 12857 12873 "balance.ml" 344 12857 12875
+)
+"balance.ml" 344 12857 12899 "balance.ml" 344 12857 12906
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 344 12857 12884 "balance.ml" 344 12857 12907
+type(
+  CodeEval.t list
+)
+"balance.ml" 344 12857 12880 "balance.ml" 344 12857 12907
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 345 12908 12924 "balance.ml" 345 12908 12925
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 345 12908 12932 "balance.ml" 345 12908 12938
+)
+"balance.ml" 345 12908 12926 "balance.ml" 345 12908 12927
+type(
+  string
+)
+"balance.ml" 345 12908 12914 "balance.ml" 345 12908 12928
+type(
+  Cabs.expression
+)
+"balance.ml" 345 12908 12932 "balance.ml" 345 12908 12936
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 345 12908 12937 "balance.ml" 345 12908 12938
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 345 12908 12924 "balance.ml" 345 12908 12925
+)
+"balance.ml" 345 12908 12932 "balance.ml" 345 12908 12938
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 346 12939 12958 "balance.ml" 346 12939 12959
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 346 12939 12966 "balance.ml" 346 12939 12982
+)
+"balance.ml" 346 12939 12960 "balance.ml" 346 12939 12961
+type(
+  string
+)
+"balance.ml" 346 12939 12945 "balance.ml" 346 12939 12962
+type(
+  Cabs.expression
+)
+"balance.ml" 346 12939 12966 "balance.ml" 346 12939 12969
+type(
+  int * int CondSet.Count.t -> CodeEval.t -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 346 12939 12970 "balance.ml" 346 12939 12973
+type(
+  int * int CondSet.Count.t
+)
+ident(
+  int_ref CodeEval.one "balance.ml" 269 10037 10043 "balance.ml" 269 10037 10046
+)
+"balance.ml" 346 12939 12975 "balance.ml" 346 12939 12979
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 346 12939 12980 "balance.ml" 346 12939 12981
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 346 12939 12958 "balance.ml" 346 12939 12959
+)
+"balance.ml" 346 12939 12974 "balance.ml" 346 12939 12982
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 346 12939 12966 "balance.ml" 346 12939 12982
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 347 12983 13000 "balance.ml" 347 12983 13001
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 347 12983 13010 "balance.ml" 347 12983 13016
+)
+"balance.ml" 347 12983 13002 "balance.ml" 347 12983 13003
+type(
+  string
+)
+"balance.ml" 347 12983 13004 "balance.ml" 347 12983 13005
+type(
+  int
+)
+"balance.ml" 347 12983 12989 "balance.ml" 347 12983 13006
+type(
+  Cabs.expression
+)
+"balance.ml" 347 12983 13010 "balance.ml" 347 12983 13014
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 324 12093 12101 "balance.ml" 324 12093 12105
+)
+"balance.ml" 347 12983 13015 "balance.ml" 347 12983 13016
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 347 12983 13000 "balance.ml" 347 12983 13001
+)
+"balance.ml" 347 12983 13010 "balance.ml" 347 12983 13016
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 348 13017 13032 "balance.ml" 348 13017 13033
+type(
+  Cabs.body
+)
+"balance.ml" 348 13017 13023 "balance.ml" 348 13017 13033
+type(
+  Cabs.expression
+)
+"balance.ml" 348 13017 13037 "balance.ml" 348 13017 13045
+type(
+  string -> CodeEval.t
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"balance.ml" 348 13017 13046 "balance.ml" 348 13017 13075
+type(
+  string
+)
+"balance.ml" 348 13017 13037 "balance.ml" 348 13017 13075
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 327 12209 12213 "balance.ml" 348 13017 13075
+type(
+  CodeEval.t
+)
+"balance.ml" 324 12093 12097 "balance.ml" 348 13017 13075
+type(
+  CodeEval.t
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 352 13200 13206 "balance.ml" 352 13200 13215
+type(
+  CtxNode.t -> CodeEval.t
+)
+ident(
+  def stmt_eval "balance.ml" 309 11540 11542 "balance.ml" 410 15516 15528
+)
+"balance.ml" 352 13200 13217 "balance.ml" 352 13200 13221
+type(
+  CtxNode.t
+)
+ident(
+  def node "balance.ml" 352 13200 13234 "balance.ml" 404 15362 15388
+)
+"balance.ml" 354 13255 13263 "balance.ml" 354 13255 13267
+type(
+  Cabs.statement
+)
+ident(
+  def stmt "balance.ml" 355 13296 13300 "balance.ml" 404 15362 15388
+)
+"balance.ml" 354 13255 13270 "balance.ml" 354 13255 13287
+type(
+  CtxNode.t -> Cabs.statement
+)
+ident(
+  int_ref CtxNode.statement "balance.ml" 178 6246 6252 "balance.ml" 178 6246 6261
+)
+"balance.ml" 354 13255 13288 "balance.ml" 354 13255 13292
+type(
+  CtxNode.t
+)
+ident(
+  int_ref node "balance.ml" 352 13200 13217 "balance.ml" 352 13200 13221
+)
+"balance.ml" 354 13255 13270 "balance.ml" 354 13255 13292
+call(
+  stack
+)
+type(
+  Cabs.statement
+)
+"balance.ml" 355 13296 13304 "balance.ml" 355 13296 13318
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  def expr_eval_here "balance.ml" 356 13361 13365 "balance.ml" 404 15362 15388
+)
+"balance.ml" 355 13296 13319 "balance.ml" 355 13296 13320
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 355 13296 13323 "balance.ml" 355 13296 13357
+)
+"balance.ml" 355 13296 13323 "balance.ml" 355 13296 13332
+type(
+  Ctx.t -> Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval "balance.ml" 322 12019 12025 "balance.ml" 322 12019 12034
+)
+"balance.ml" 355 13296 13334 "balance.ml" 355 13296 13349
+type(
+  CtxNode.t -> Ctx.t
+)
+ident(
+  int_ref CtxNode.context "balance.ml" 180 6309 6315 "balance.ml" 180 6309 6322
+)
+"balance.ml" 355 13296 13350 "balance.ml" 355 13296 13354
+type(
+  CtxNode.t
+)
+ident(
+  int_ref node "balance.ml" 352 13200 13217 "balance.ml" 352 13200 13221
+)
+"balance.ml" 355 13296 13333 "balance.ml" 355 13296 13355
+call(
+  stack
+)
+type(
+  Ctx.t
+)
+"balance.ml" 355 13296 13356 "balance.ml" 355 13296 13357
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 355 13296 13319 "balance.ml" 355 13296 13320
+)
+"balance.ml" 355 13296 13323 "balance.ml" 355 13296 13357
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 356 13361 13369 "balance.ml" 356 13361 13384
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  def expr_eval_under "balance.ml" 357 13435 13439 "balance.ml" 404 15362 15388
+)
+"balance.ml" 356 13361 13385 "balance.ml" 356 13361 13386
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 356 13361 13389 "balance.ml" 356 13361 13431
+)
+"balance.ml" 356 13361 13389 "balance.ml" 356 13361 13398
+type(
+  Ctx.t -> Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval "balance.ml" 322 12019 12025 "balance.ml" 322 12019 12034
+)
+"balance.ml" 356 13361 13400 "balance.ml" 356 13361 13423
+type(
+  CtxNode.t -> Ctx.t
+)
+ident(
+  int_ref CtxNode.descent_context "balance.ml" 182 6407 6413 "balance.ml" 182 6407 6428
+)
+"balance.ml" 356 13361 13424 "balance.ml" 356 13361 13428
+type(
+  CtxNode.t
+)
+ident(
+  int_ref node "balance.ml" 352 13200 13217 "balance.ml" 352 13200 13221
+)
+"balance.ml" 356 13361 13399 "balance.ml" 356 13361 13429
+call(
+  stack
+)
+type(
+  Ctx.t
+)
+"balance.ml" 356 13361 13430 "balance.ml" 356 13361 13431
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 356 13361 13385 "balance.ml" 356 13361 13386
+)
+"balance.ml" 356 13361 13389 "balance.ml" 356 13361 13431
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 357 13435 13443 "balance.ml" 357 13435 13447
+type(
+  Cabs.statement -> CodeEval.t
+)
+ident(
+  def eval "balance.ml" 358 13490 13494 "balance.ml" 404 15362 15388
+)
+"balance.ml" 357 13435 13448 "balance.ml" 357 13435 13449
+type(
+  Cabs.statement
+)
+ident(
+  def s "balance.ml" 357 13435 13452 "balance.ml" 357 13435 13486
+)
+"balance.ml" 357 13435 13452 "balance.ml" 357 13435 13461
+type(
+  CtxNode.t -> CodeEval.t
+)
+ident(
+  int_ref stmt_eval "balance.ml" 352 13200 13206 "balance.ml" 352 13200 13215
+)
+"balance.ml" 357 13435 13463 "balance.ml" 357 13435 13478
+type(
+  CtxNode.t -> Cabs.statement -> CtxNode.t
+)
+ident(
+  int_ref CtxNode.descent "balance.ml" 184 6553 6559 "balance.ml" 184 6553 6566
+)
+"balance.ml" 357 13435 13479 "balance.ml" 357 13435 13483
+type(
+  CtxNode.t
+)
+ident(
+  int_ref node "balance.ml" 352 13200 13217 "balance.ml" 352 13200 13221
+)
+"balance.ml" 357 13435 13484 "balance.ml" 357 13435 13485
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s "balance.ml" 357 13435 13448 "balance.ml" 357 13435 13449
+)
+"balance.ml" 357 13435 13462 "balance.ml" 357 13435 13486
+call(
+  stack
+)
+type(
+  CtxNode.t
+)
+"balance.ml" 357 13435 13452 "balance.ml" 357 13435 13486
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 358 13490 13498 "balance.ml" 358 13490 13508
+type(
+  Cabs.statement -> CodeEval.t
+)
+ident(
+  def eval_close "balance.ml" 359 13557 13561 "balance.ml" 404 15362 15388
+)
+"balance.ml" 358 13490 13509 "balance.ml" 358 13490 13510
+type(
+  Cabs.statement
+)
+ident(
+  def s "balance.ml" 358 13490 13513 "balance.ml" 358 13490 13553
+)
+"balance.ml" 358 13490 13513 "balance.ml" 358 13490 13522
+type(
+  CtxNode.t -> CodeEval.t
+)
+ident(
+  int_ref stmt_eval "balance.ml" 352 13200 13206 "balance.ml" 352 13200 13215
+)
+"balance.ml" 358 13490 13524 "balance.ml" 358 13490 13545
+type(
+  CtxNode.t -> Cabs.statement -> CtxNode.t
+)
+ident(
+  int_ref CtxNode.close_descent "balance.ml" 190 6794 6800 "balance.ml" 190 6794 6813
+)
+"balance.ml" 358 13490 13546 "balance.ml" 358 13490 13550
+type(
+  CtxNode.t
+)
+ident(
+  int_ref node "balance.ml" 352 13200 13217 "balance.ml" 352 13200 13221
+)
+"balance.ml" 358 13490 13551 "balance.ml" 358 13490 13552
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s "balance.ml" 358 13490 13509 "balance.ml" 358 13490 13510
+)
+"balance.ml" 358 13490 13523 "balance.ml" 358 13490 13553
+call(
+  stack
+)
+type(
+  CtxNode.t
+)
+"balance.ml" 358 13490 13513 "balance.ml" 358 13490 13553
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 359 13557 13565 "balance.ml" 359 13557 13575
+type(
+  Cabs.statement -> int -> CodeEval.t
+)
+ident(
+  def eval_multi "balance.ml" 360 13627 13631 "balance.ml" 404 15362 15388
+)
+"balance.ml" 359 13557 13576 "balance.ml" 359 13557 13577
+type(
+  Cabs.statement
+)
+ident(
+  def s "balance.ml" 359 13557 13578 "balance.ml" 359 13557 13623
+)
+"balance.ml" 359 13557 13578 "balance.ml" 359 13557 13579
+type(
+  int
+)
+ident(
+  def n "balance.ml" 359 13557 13582 "balance.ml" 359 13557 13623
+)
+"balance.ml" 359 13557 13582 "balance.ml" 359 13557 13591
+type(
+  CtxNode.t -> CodeEval.t
+)
+ident(
+  int_ref stmt_eval "balance.ml" 352 13200 13206 "balance.ml" 352 13200 13215
+)
+"balance.ml" 359 13557 13593 "balance.ml" 359 13557 13613
+type(
+  int -> CtxNode.t -> Cabs.statement -> CtxNode.t
+)
+ident(
+  int_ref CtxNode.loop_descent "balance.ml" 199 7175 7181 "balance.ml" 199 7175 7193
+)
+"balance.ml" 359 13557 13614 "balance.ml" 359 13557 13615
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 359 13557 13578 "balance.ml" 359 13557 13579
+)
+"balance.ml" 359 13557 13616 "balance.ml" 359 13557 13620
+type(
+  CtxNode.t
+)
+ident(
+  int_ref node "balance.ml" 352 13200 13217 "balance.ml" 352 13200 13221
+)
+"balance.ml" 359 13557 13621 "balance.ml" 359 13557 13622
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s "balance.ml" 359 13557 13576 "balance.ml" 359 13557 13577
+)
+"balance.ml" 359 13557 13592 "balance.ml" 359 13557 13623
+call(
+  stack
+)
+type(
+  CtxNode.t
+)
+"balance.ml" 359 13557 13582 "balance.ml" 359 13557 13623
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 362 13673 13683 "balance.ml" 362 13673 13687
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 354 13255 13263 "balance.ml" 354 13255 13267
+)
+"balance.ml" 363 13693 13710 "balance.ml" 363 13693 13713
+type(
+  Cabs.statement
+)
+ident(
+  def sub "balance.ml" 363 13693 13722 "balance.ml" 363 13693 13730
+)
+"balance.ml" 363 13693 13714 "balance.ml" 363 13693 13715
+type(
+  string
+)
+"balance.ml" 363 13693 13716 "balance.ml" 363 13693 13717
+type(
+  int
+)
+"balance.ml" 363 13693 13699 "balance.ml" 363 13693 13718
+type(
+  Cabs.statement
+)
+"balance.ml" 363 13693 13722 "balance.ml" 363 13693 13726
+type(
+  Cabs.statement -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 357 13435 13443 "balance.ml" 357 13435 13447
+)
+"balance.ml" 363 13693 13727 "balance.ml" 363 13693 13730
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "balance.ml" 363 13693 13710 "balance.ml" 363 13693 13713
+)
+"balance.ml" 363 13693 13722 "balance.ml" 363 13693 13730
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 364 13731 13749 "balance.ml" 364 13731 13750
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 365 13751 13769 "balance.ml" 365 13751 13786
+)
+"balance.ml" 364 13731 13737 "balance.ml" 364 13731 13750
+type(
+  Cabs.statement
+)
+"balance.ml" 365 13751 13764 "balance.ml" 365 13751 13765
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 365 13751 13769 "balance.ml" 365 13751 13786
+)
+"balance.ml" 365 13751 13757 "balance.ml" 365 13751 13765
+type(
+  Cabs.statement
+)
+"balance.ml" 364 13731 13737 "balance.ml" 365 13751 13765
+type(
+  Cabs.statement
+)
+"balance.ml" 365 13751 13769 "balance.ml" 365 13751 13783
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval_here "balance.ml" 355 13296 13304 "balance.ml" 355 13296 13318
+)
+"balance.ml" 365 13751 13785 "balance.ml" 365 13751 13786
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 364 13731 13749 "balance.ml" 364 13731 13750
+)
+"balance.ml" 365 13751 13769 "balance.ml" 365 13751 13786
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 366 13787 13793 "balance.ml" 366 13787 13796
+type(
+  Cabs.statement
+)
+"balance.ml" 366 13787 13800 "balance.ml" 366 13787 13804
+type(
+  CodeEval.t
+)
+ident(
+  int_ref CodeEval.zero "balance.ml" 268 10015 10021 "balance.ml" 268 10015 10025
+)
+"balance.ml" 367 13805 13818 "balance.ml" 367 13805 13819
+type(
+  Cabs.definition list
+)
+"balance.ml" 367 13805 13820 "balance.ml" 367 13805 13823
+type(
+  Cabs.statement
+)
+ident(
+  def sub "balance.ml" 367 13805 13828 "balance.ml" 367 13805 13842
+)
+"balance.ml" 367 13805 13817 "balance.ml" 367 13805 13824
+type(
+  Cabs.body
+)
+"balance.ml" 367 13805 13811 "balance.ml" 367 13805 13824
+type(
+  Cabs.statement
+)
+"balance.ml" 367 13805 13828 "balance.ml" 367 13805 13838
+type(
+  Cabs.statement -> CodeEval.t
+)
+ident(
+  int_ref eval_close "balance.ml" 358 13490 13498 "balance.ml" 358 13490 13508
+)
+"balance.ml" 367 13805 13839 "balance.ml" 367 13805 13842
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "balance.ml" 367 13805 13820 "balance.ml" 367 13805 13823
+)
+"balance.ml" 367 13805 13828 "balance.ml" 367 13805 13842
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 368 13927 13943 "balance.ml" 368 13927 13947
+type(
+  Cabs.statement
+)
+ident(
+  def sub1 "balance.ml" 369 13957 13963 "balance.ml" 371 14025 14046
+)
+"balance.ml" 368 13927 13948 "balance.ml" 368 13927 13952
+type(
+  Cabs.statement
+)
+ident(
+  def sub2 "balance.ml" 369 13957 13963 "balance.ml" 371 14025 14046
+)
+"balance.ml" 368 13927 13933 "balance.ml" 368 13927 13953
+type(
+  Cabs.statement
+)
+"balance.ml" 369 13957 13967 "balance.ml" 369 13957 13972
+type(
+  CodeEval.t
+)
+ident(
+  def eval1 "balance.ml" 370 13994 14000 "balance.ml" 371 14025 14046
+)
+"balance.ml" 369 13957 13975 "balance.ml" 369 13957 13985
+type(
+  Cabs.statement -> CodeEval.t
+)
+ident(
+  int_ref eval_close "balance.ml" 358 13490 13498 "balance.ml" 358 13490 13508
+)
+"balance.ml" 369 13957 13986 "balance.ml" 369 13957 13990
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub1 "balance.ml" 368 13927 13943 "balance.ml" 368 13927 13947
+)
+"balance.ml" 369 13957 13975 "balance.ml" 369 13957 13990
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 370 13994 14004 "balance.ml" 370 13994 14009
+type(
+  CodeEval.t
+)
+ident(
+  def eval2 "balance.ml" 371 14025 14031 "balance.ml" 371 14025 14046
+)
+"balance.ml" 370 13994 14012 "balance.ml" 370 13994 14016
+type(
+  Cabs.statement -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 357 13435 13443 "balance.ml" 357 13435 13447
+)
+"balance.ml" 370 13994 14017 "balance.ml" 370 13994 14021
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub2 "balance.ml" 368 13927 13948 "balance.ml" 368 13927 13952
+)
+"balance.ml" 370 13994 14012 "balance.ml" 370 13994 14021
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 371 14025 14031 "balance.ml" 371 14025 14034
+type(
+  CodeEval.t -> CodeEval.t -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 371 14025 14035 "balance.ml" 371 14025 14040
+type(
+  CodeEval.t
+)
+ident(
+  int_ref eval1 "balance.ml" 369 13957 13967 "balance.ml" 369 13957 13972
+)
+"balance.ml" 371 14025 14041 "balance.ml" 371 14025 14046
+type(
+  CodeEval.t
+)
+ident(
+  int_ref eval2 "balance.ml" 370 13994 14004 "balance.ml" 370 13994 14009
+)
+"balance.ml" 371 14025 14031 "balance.ml" 371 14025 14046
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 370 13994 14000 "balance.ml" 371 14025 14046
+type(
+  CodeEval.t
+)
+"balance.ml" 369 13957 13963 "balance.ml" 371 14025 14046
+type(
+  CodeEval.t
+)
+"balance.ml" 372 14047 14057 "balance.ml" 372 14047 14058
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 373 14077 14083 "balance.ml" 383 14428 14501
+)
+"balance.ml" 372 14047 14059 "balance.ml" 372 14047 14065
+type(
+  Cabs.statement
+)
+ident(
+  def s_then "balance.ml" 373 14077 14083 "balance.ml" 383 14428 14501
+)
+"balance.ml" 372 14047 14066 "balance.ml" 372 14047 14072
+type(
+  Cabs.statement
+)
+ident(
+  def s_else "balance.ml" 373 14077 14083 "balance.ml" 383 14428 14501
+)
+"balance.ml" 372 14047 14053 "balance.ml" 372 14047 14073
+type(
+  Cabs.statement
+)
+"balance.ml" 373 14077 14087 "balance.ml" 373 14077 14089
+type(
+  CodeEval.t
+)
+ident(
+  def we "balance.ml" 375 14113 14119 "balance.ml" 383 14428 14501
+)
+"balance.ml" 373 14077 14092 "balance.ml" 373 14077 14106
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval_here "balance.ml" 355 13296 13304 "balance.ml" 355 13296 13318
+)
+"balance.ml" 373 14077 14107 "balance.ml" 373 14077 14108
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 372 14047 14057 "balance.ml" 372 14047 14058
+)
+"balance.ml" 373 14077 14092 "balance.ml" 373 14077 14108
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 375 14113 14123 "balance.ml" 375 14113 14131
+type(
+  ((string * Loc.t option) * CodeEval.t) list
+)
+ident(
+  def branches "balance.ml" 383 14428 14434 "balance.ml" 383 14428 14501
+)
+"balance.ml" 375 14113 14134 "balance.ml" 375 14113 14145
+type(
+  ((string * Loc.t option) * CodeEval.t) list list ->
+  ((string * Loc.t option) * CodeEval.t) list
+)
+ident(
+  ext_ref List.concat
+)
+"balance.ml" 376 14147 14160 "balance.ml" 376 14147 14169
+type(
+  (string * Cabs.statement ->
+   bool -> ((string * Loc.t option) * CodeEval.t) list) ->
+  (string * Cabs.statement) list ->
+  bool list -> ((string * Loc.t option) * CodeEval.t) list list
+)
+ident(
+  ext_ref List.map2
+)
+"balance.ml" 377 14171 14193 "balance.ml" 377 14171 14195
+type(
+  string
+)
+ident(
+  def br "balance.ml" 377 14171 14201 "balance.ml" 379 14257 14318
+)
+"balance.ml" 377 14171 14196 "balance.ml" 377 14171 14199
+type(
+  Cabs.statement
+)
+ident(
+  def sub "balance.ml" 377 14171 14201 "balance.ml" 379 14257 14318
+)
+"balance.ml" 377 14171 14192 "balance.ml" 377 14171 14200
+type(
+  string * Cabs.statement
+)
+"balance.ml" 377 14171 14201 "balance.ml" 377 14171 14209
+type(
+  bool
+)
+ident(
+  def feasible "balance.ml" 378 14213 14233 "balance.ml" 379 14257 14318
+)
+"balance.ml" 378 14213 14236 "balance.ml" 378 14213 14239
+type(
+  bool -> bool
+)
+ident(
+  ext_ref Pervasives.not
+)
+"balance.ml" 378 14213 14240 "balance.ml" 378 14213 14248
+type(
+  bool
+)
+ident(
+  int_ref feasible "balance.ml" 377 14171 14201 "balance.ml" 377 14171 14209
+)
+"balance.ml" 378 14213 14236 "balance.ml" 378 14213 14248
+type(
+  bool
+)
+"balance.ml" 378 14213 14254 "balance.ml" 378 14213 14256
+type(
+  ((string * Loc.t option) * CodeEval.t) list
+)
+"balance.ml" 379 14257 14284 "balance.ml" 379 14257 14286
+type(
+  string
+)
+ident(
+  int_ref br "balance.ml" 377 14171 14193 "balance.ml" 377 14171 14195
+)
+"balance.ml" 379 14257 14287 "balance.ml" 379 14257 14303
+type(
+  Cabs.statement -> Loc.t option
+)
+ident(
+  int_ref Loc.of_statement "balance.ml" 116 3756 3762 "balance.ml" 116 3756 3774
+)
+"balance.ml" 379 14257 14304 "balance.ml" 379 14257 14307
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "balance.ml" 377 14171 14196 "balance.ml" 377 14171 14199
+)
+"balance.ml" 379 14257 14287 "balance.ml" 379 14257 14307
+call(
+  stack
+)
+type(
+  Loc.t option
+)
+"balance.ml" 379 14257 14283 "balance.ml" 379 14257 14308
+type(
+  string * Loc.t option
+)
+"balance.ml" 379 14257 14309 "balance.ml" 379 14257 14313
+type(
+  Cabs.statement -> CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 357 13435 13443 "balance.ml" 357 13435 13447
+)
+"balance.ml" 379 14257 14314 "balance.ml" 379 14257 14317
+type(
+  Cabs.statement
+)
+ident(
+  int_ref sub "balance.ml" 377 14171 14196 "balance.ml" 377 14171 14199
+)
+"balance.ml" 379 14257 14309 "balance.ml" 379 14257 14317
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 379 14257 14283 "balance.ml" 379 14257 14317
+type(
+  (string * Loc.t option) * CodeEval.t
+)
+"balance.ml" 379 14257 14282 "balance.ml" 379 14257 14318
+type(
+  ((string * Loc.t option) * CodeEval.t) list
+)
+"balance.ml" 378 14213 14233 "balance.ml" 379 14257 14318
+type(
+  ((string * Loc.t option) * CodeEval.t) list
+)
+"balance.ml" 377 14171 14187 "balance.ml" 379 14257 14319
+type(
+  string * Cabs.statement ->
+  bool -> ((string * Loc.t option) * CodeEval.t) list
+)
+"balance.ml" 380 14320 14342 "balance.ml" 380 14320 14348
+type(
+  string
+)
+"balance.ml" 380 14320 14349 "balance.ml" 380 14320 14355
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_then "balance.ml" 372 14047 14059 "balance.ml" 372 14047 14065
+)
+"balance.ml" 380 14320 14341 "balance.ml" 380 14320 14356
+type(
+  string * Cabs.statement
+)
+"balance.ml" 380 14320 14359 "balance.ml" 380 14320 14365
+type(
+  string
+)
+"balance.ml" 380 14320 14366 "balance.ml" 380 14320 14372
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_else "balance.ml" 372 14047 14066 "balance.ml" 372 14047 14072
+)
+"balance.ml" 380 14320 14358 "balance.ml" 380 14320 14373
+type(
+  string * Cabs.statement
+)
+"balance.ml" 380 14320 14340 "balance.ml" 380 14320 14374
+type(
+  (string * Cabs.statement) list
+)
+"balance.ml" 380 14320 14376 "balance.ml" 380 14320 14378
+type(
+  ff_input
+)
+ident(
+  int_ref ff "balance.ml" 295 11147 11152 "balance.ml" 295 11147 11154
+)
+"balance.ml" 380 14320 14376 "balance.ml" 380 14320 14397
+type(
+  Cabs.statement -> bool list
+)
+"balance.ml" 380 14320 14398 "balance.ml" 380 14320 14402
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 354 13255 13263 "balance.ml" 354 13255 13267
+)
+"balance.ml" 380 14320 14375 "balance.ml" 380 14320 14403
+call(
+  stack
+)
+type(
+  bool list
+)
+"balance.ml" 376 14147 14159 "balance.ml" 381 14404 14417
+call(
+  stack
+)
+type(
+  ((string * Loc.t option) * CodeEval.t) list list
+)
+"balance.ml" 375 14113 14134 "balance.ml" 381 14404 14417
+call(
+  stack
+)
+type(
+  ((string * Loc.t option) * CodeEval.t) list
+)
+"balance.ml" 383 14428 14434 "balance.ml" 383 14428 14437
+type(
+  CodeEval.t -> weight * int CondSet.Count.t -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 383 14428 14438 "balance.ml" 383 14428 14440
+type(
+  CodeEval.t
+)
+ident(
+  int_ref we "balance.ml" 373 14077 14087 "balance.ml" 373 14077 14089
+)
+"balance.ml" 383 14428 14442 "balance.ml" 383 14428 14466
+type(
+  CtxNode.t ->
+  string ->
+  ((string * Loc.t option) * CodeEval.t) list -> weight * int CondSet.Count.t
+)
+ident(
+  int_ref CodeEval.of_alternatives "balance.ml" 277 10465 10471 "balance.ml" 277 10465 10486
+)
+"balance.ml" 383 14428 14467 "balance.ml" 383 14428 14471
+type(
+  CtxNode.t
+)
+ident(
+  int_ref node "balance.ml" 352 13200 13217 "balance.ml" 352 13200 13221
+)
+"balance.ml" 383 14428 14473 "balance.ml" 383 14428 14475
+type(
+  ff_input
+)
+ident(
+  int_ref ff "balance.ml" 295 11147 11152 "balance.ml" 295 11147 11154
+)
+"balance.ml" 383 14428 14473 "balance.ml" 383 14428 14485
+type(
+  Cabs.statement -> string
+)
+"balance.ml" 383 14428 14486 "balance.ml" 383 14428 14490
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 354 13255 13263 "balance.ml" 354 13255 13267
+)
+"balance.ml" 383 14428 14472 "balance.ml" 383 14428 14491
+call(
+  stack
+)
+type(
+  string
+)
+"balance.ml" 383 14428 14492 "balance.ml" 383 14428 14500
+type(
+  ((string * Loc.t option) * CodeEval.t) list
+)
+ident(
+  int_ref branches "balance.ml" 375 14113 14123 "balance.ml" 375 14113 14131
+)
+"balance.ml" 383 14428 14441 "balance.ml" 383 14428 14501
+call(
+  stack
+)
+type(
+  weight * int CondSet.Count.t
+)
+"balance.ml" 383 14428 14434 "balance.ml" 383 14428 14501
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 375 14113 14119 "balance.ml" 383 14428 14501
+type(
+  CodeEval.t
+)
+"balance.ml" 373 14077 14083 "balance.ml" 383 14428 14501
+type(
+  CodeEval.t
+)
+"balance.ml" 384 14502 14513 "balance.ml" 384 14502 14519
+type(
+  Cabs.expression
+)
+ident(
+  def e_init "balance.ml" 385 14544 14552 "balance.ml" 393 14883 14934
+)
+"balance.ml" 384 14502 14520 "balance.ml" 384 14502 14526
+type(
+  Cabs.expression
+)
+ident(
+  def e_test "balance.ml" 385 14544 14552 "balance.ml" 393 14883 14934
+)
+"balance.ml" 384 14502 14527 "balance.ml" 384 14502 14532
+type(
+  Cabs.expression
+)
+ident(
+  def e_end "balance.ml" 385 14544 14552 "balance.ml" 393 14883 14934
+)
+"balance.ml" 384 14502 14533 "balance.ml" 384 14502 14539
+type(
+  Cabs.statement
+)
+ident(
+  def s_body "balance.ml" 385 14544 14552 "balance.ml" 393 14883 14934
+)
+"balance.ml" 384 14502 14508 "balance.ml" 384 14502 14540
+type(
+  Cabs.statement
+)
+"balance.ml" 385 14544 14556 "balance.ml" 385 14544 14558
+type(
+  CodeEval.t
+)
+ident(
+  def wi "balance.ml" 386 14586 14594 "balance.ml" 393 14883 14934
+)
+"balance.ml" 385 14544 14561 "balance.ml" 385 14544 14575
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval_here "balance.ml" 355 13296 13304 "balance.ml" 355 13296 13318
+)
+"balance.ml" 385 14544 14576 "balance.ml" 385 14544 14582
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_init "balance.ml" 384 14502 14513 "balance.ml" 384 14502 14519
+)
+"balance.ml" 385 14544 14561 "balance.ml" 385 14544 14582
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 386 14586 14598 "balance.ml" 386 14586 14600
+type(
+  CodeEval.t
+)
+ident(
+  def wt "balance.ml" 387 14629 14637 "balance.ml" 393 14883 14934
+)
+"balance.ml" 386 14586 14603 "balance.ml" 386 14586 14618
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval_under "balance.ml" 356 13361 13369 "balance.ml" 356 13361 13384
+)
+"balance.ml" 386 14586 14619 "balance.ml" 386 14586 14625
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_test "balance.ml" 384 14502 14520 "balance.ml" 384 14502 14526
+)
+"balance.ml" 386 14586 14603 "balance.ml" 386 14586 14625
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 387 14629 14649 "balance.ml" 387 14629 14651
+type(
+  ff_input
+)
+ident(
+  int_ref ff "balance.ml" 295 11147 11152 "balance.ml" 295 11147 11154
+)
+"balance.ml" 387 14629 14649 "balance.ml" 387 14629 14662
+type(
+  Cabs.statement -> int option
+)
+"balance.ml" 387 14629 14663 "balance.ml" 387 14629 14667
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 354 13255 13263 "balance.ml" 354 13255 13267
+)
+"balance.ml" 387 14629 14649 "balance.ml" 387 14629 14667
+call(
+  stack
+)
+type(
+  int option
+)
+"balance.ml" 388 14673 14688 "balance.ml" 388 14673 14689
+type(
+  int
+)
+"balance.ml" 388 14673 14683 "balance.ml" 388 14673 14689
+type(
+  int option
+)
+"balance.ml" 388 14673 14693 "balance.ml" 388 14673 14696
+type(
+  CodeEval.t -> CodeEval.t -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 388 14673 14697 "balance.ml" 388 14673 14699
+type(
+  CodeEval.t
+)
+ident(
+  int_ref wi "balance.ml" 385 14544 14556 "balance.ml" 385 14544 14558
+)
+"balance.ml" 388 14673 14700 "balance.ml" 388 14673 14702
+type(
+  CodeEval.t
+)
+ident(
+  int_ref wt "balance.ml" 386 14586 14598 "balance.ml" 386 14586 14600
+)
+"balance.ml" 388 14673 14693 "balance.ml" 388 14673 14702
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 389 14703 14718 "balance.ml" 389 14703 14719
+type(
+  int
+)
+ident(
+  def n "balance.ml" 390 14723 14734 "balance.ml" 392 14814 14882
+)
+"balance.ml" 389 14703 14713 "balance.ml" 389 14703 14719
+type(
+  int option
+)
+"balance.ml" 390 14723 14738 "balance.ml" 390 14723 14743
+type(
+  CodeEval.t
+)
+ident(
+  def wbody "balance.ml" 391 14769 14780 "balance.ml" 392 14814 14882
+)
+"balance.ml" 390 14723 14746 "balance.ml" 390 14723 14756
+type(
+  Cabs.statement -> int -> CodeEval.t
+)
+ident(
+  int_ref eval_multi "balance.ml" 359 13557 13565 "balance.ml" 359 13557 13575
+)
+"balance.ml" 390 14723 14757 "balance.ml" 390 14723 14763
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_body "balance.ml" 384 14502 14533 "balance.ml" 384 14502 14539
+)
+"balance.ml" 390 14723 14764 "balance.ml" 390 14723 14765
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 389 14703 14718 "balance.ml" 389 14703 14719
+)
+"balance.ml" 390 14723 14746 "balance.ml" 390 14723 14765
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 391 14769 14784 "balance.ml" 391 14769 14786
+type(
+  CodeEval.t
+)
+ident(
+  def we "balance.ml" 392 14814 14825 "balance.ml" 392 14814 14882
+)
+"balance.ml" 391 14769 14789 "balance.ml" 391 14769 14804
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval_under "balance.ml" 356 13361 13369 "balance.ml" 356 13361 13384
+)
+"balance.ml" 391 14769 14805 "balance.ml" 391 14769 14810
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e_end "balance.ml" 384 14502 14527 "balance.ml" 384 14502 14532
+)
+"balance.ml" 391 14769 14789 "balance.ml" 391 14769 14810
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 392 14814 14825 "balance.ml" 392 14814 14828
+type(
+  CodeEval.t -> int * int CondSet.Count.t -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.add "balance.ml" 270 10058 10064 "balance.ml" 270 10058 10067
+)
+"balance.ml" 392 14814 14829 "balance.ml" 392 14814 14831
+type(
+  CodeEval.t
+)
+ident(
+  int_ref wi "balance.ml" 385 14544 14556 "balance.ml" 385 14544 14558
+)
+"balance.ml" 392 14814 14833 "balance.ml" 392 14814 14849
+type(
+  header:CodeEval.t ->
+  count:int -> body:CodeEval.t -> int * int CondSet.Count.t
+)
+ident(
+  int_ref CodeEval.of_loop "balance.ml" 275 10335 10341 "balance.ml" 275 10335 10348
+)
+"balance.ml" 392 14814 14858 "balance.ml" 392 14814 14860
+type(
+  CodeEval.t
+)
+ident(
+  int_ref we "balance.ml" 391 14769 14784 "balance.ml" 391 14769 14786
+)
+"balance.ml" 392 14814 14868 "balance.ml" 392 14814 14869
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 389 14703 14718 "balance.ml" 389 14703 14719
+)
+"balance.ml" 392 14814 14876 "balance.ml" 392 14814 14881
+type(
+  CodeEval.t
+)
+ident(
+  int_ref wbody "balance.ml" 390 14723 14738 "balance.ml" 390 14723 14743
+)
+"balance.ml" 392 14814 14832 "balance.ml" 392 14814 14882
+call(
+  stack
+)
+type(
+  int * int CondSet.Count.t
+)
+"balance.ml" 392 14814 14825 "balance.ml" 392 14814 14882
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 391 14769 14780 "balance.ml" 392 14814 14882
+type(
+  CodeEval.t
+)
+"balance.ml" 390 14723 14734 "balance.ml" 392 14814 14882
+type(
+  CodeEval.t
+)
+"balance.ml" 393 14883 14893 "balance.ml" 393 14883 14897
+type(
+  int option
+)
+"balance.ml" 393 14883 14901 "balance.ml" 393 14883 14909
+type(
+  string -> CodeEval.t
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"balance.ml" 393 14883 14910 "balance.ml" 393 14883 14930
+type(
+  string
+)
+"balance.ml" 393 14883 14901 "balance.ml" 393 14883 14930
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 387 14629 14637 "balance.ml" 393 14883 14934
+type(
+  CodeEval.t
+)
+"balance.ml" 386 14586 14594 "balance.ml" 393 14883 14934
+type(
+  CodeEval.t
+)
+"balance.ml" 385 14544 14552 "balance.ml" 393 14883 14934
+type(
+  CodeEval.t
+)
+"balance.ml" 394 14935 14948 "balance.ml" 394 14935 14949
+type(
+  Cabs.expression
+)
+ident(
+  def e "balance.ml" 395 14961 14969 "balance.ml" 401 15210 15265
+)
+"balance.ml" 394 14935 14950 "balance.ml" 394 14935 14956
+type(
+  Cabs.statement
+)
+ident(
+  def s_body "balance.ml" 395 14961 14969 "balance.ml" 401 15210 15265
+)
+"balance.ml" 394 14935 14941 "balance.ml" 394 14935 14957
+type(
+  Cabs.statement
+)
+"balance.ml" 395 14961 14973 "balance.ml" 395 14961 14975
+type(
+  CodeEval.t
+)
+ident(
+  def we "balance.ml" 396 14999 15007 "balance.ml" 401 15210 15265
+)
+"balance.ml" 395 14961 14978 "balance.ml" 395 14961 14993
+type(
+  Cabs.expression -> CodeEval.t
+)
+ident(
+  int_ref expr_eval_under "balance.ml" 356 13361 13369 "balance.ml" 356 13361 13384
+)
+"balance.ml" 395 14961 14994 "balance.ml" 395 14961 14995
+type(
+  Cabs.expression
+)
+ident(
+  int_ref e "balance.ml" 394 14935 14948 "balance.ml" 394 14935 14949
+)
+"balance.ml" 395 14961 14978 "balance.ml" 395 14961 14995
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 396 14999 15019 "balance.ml" 396 14999 15021
+type(
+  ff_input
+)
+ident(
+  int_ref ff "balance.ml" 295 11147 11152 "balance.ml" 295 11147 11154
+)
+"balance.ml" 396 14999 15019 "balance.ml" 396 14999 15032
+type(
+  Cabs.statement -> int option
+)
+"balance.ml" 396 14999 15033 "balance.ml" 396 14999 15037
+type(
+  Cabs.statement
+)
+ident(
+  int_ref stmt "balance.ml" 354 13255 13263 "balance.ml" 354 13255 13267
+)
+"balance.ml" 396 14999 15019 "balance.ml" 396 14999 15037
+call(
+  stack
+)
+type(
+  int option
+)
+"balance.ml" 397 15043 15060 "balance.ml" 397 15043 15061
+type(
+  int
+)
+"balance.ml" 397 15043 15055 "balance.ml" 397 15043 15061
+type(
+  int option
+)
+"balance.ml" 397 15043 15065 "balance.ml" 397 15043 15067
+type(
+  CodeEval.t
+)
+ident(
+  int_ref we "balance.ml" 395 14961 14973 "balance.ml" 395 14961 14975
+)
+"balance.ml" 398 15068 15085 "balance.ml" 398 15068 15086
+type(
+  int
+)
+ident(
+  def n "balance.ml" 399 15090 15104 "balance.ml" 400 15143 15209
+)
+"balance.ml" 398 15068 15080 "balance.ml" 398 15068 15086
+type(
+  int option
+)
+"balance.ml" 399 15090 15108 "balance.ml" 399 15090 15117
+type(
+  CodeEval.t
+)
+ident(
+  def eval_body "balance.ml" 400 15143 15157 "balance.ml" 400 15143 15209
+)
+"balance.ml" 399 15090 15120 "balance.ml" 399 15090 15130
+type(
+  Cabs.statement -> int -> CodeEval.t
+)
+ident(
+  int_ref eval_multi "balance.ml" 359 13557 13565 "balance.ml" 359 13557 13575
+)
+"balance.ml" 399 15090 15131 "balance.ml" 399 15090 15137
+type(
+  Cabs.statement
+)
+ident(
+  int_ref s_body "balance.ml" 394 14935 14950 "balance.ml" 394 14935 14956
+)
+"balance.ml" 399 15090 15138 "balance.ml" 399 15090 15139
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 398 15068 15085 "balance.ml" 398 15068 15086
+)
+"balance.ml" 399 15090 15120 "balance.ml" 399 15090 15139
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 400 15143 15157 "balance.ml" 400 15143 15173
+type(
+  header:CodeEval.t -> count:int -> body:CodeEval.t -> CodeEval.t
+)
+ident(
+  int_ref CodeEval.of_loop "balance.ml" 275 10335 10341 "balance.ml" 275 10335 10348
+)
+"balance.ml" 400 15143 15182 "balance.ml" 400 15143 15184
+type(
+  CodeEval.t
+)
+ident(
+  int_ref we "balance.ml" 395 14961 14973 "balance.ml" 395 14961 14975
+)
+"balance.ml" 400 15143 15192 "balance.ml" 400 15143 15193
+type(
+  int
+)
+ident(
+  int_ref n "balance.ml" 398 15068 15085 "balance.ml" 398 15068 15086
+)
+"balance.ml" 400 15143 15200 "balance.ml" 400 15143 15209
+type(
+  CodeEval.t
+)
+ident(
+  int_ref eval_body "balance.ml" 399 15090 15108 "balance.ml" 399 15090 15117
+)
+"balance.ml" 400 15143 15157 "balance.ml" 400 15143 15209
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 399 15090 15104 "balance.ml" 400 15143 15209
+type(
+  CodeEval.t
+)
+"balance.ml" 401 15210 15222 "balance.ml" 401 15210 15226
+type(
+  int option
+)
+"balance.ml" 401 15210 15230 "balance.ml" 401 15210 15238
+type(
+  string -> CodeEval.t
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"balance.ml" 401 15210 15239 "balance.ml" 401 15210 15261
+type(
+  string
+)
+"balance.ml" 401 15210 15230 "balance.ml" 401 15210 15261
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 396 14999 15007 "balance.ml" 401 15210 15265
+type(
+  CodeEval.t
+)
+"balance.ml" 395 14961 14969 "balance.ml" 401 15210 15265
+type(
+  CodeEval.t
+)
+"balance.ml" 402 15266 15272 "balance.ml" 402 15266 15277
+type(
+  Cabs.statement
+)
+"balance.ml" 403 15281 15357 "balance.ml" 403 15281 15361
+type(
+  CodeEval.t
+)
+ident(
+  int_ref CodeEval.zero "balance.ml" 268 10015 10021 "balance.ml" 268 10015 10025
+)
+"balance.ml" 404 15362 15368 "balance.ml" 404 15362 15369
+type(
+  Cabs.statement
+)
+"balance.ml" 404 15362 15373 "balance.ml" 404 15362 15381
+type(
+  string -> CodeEval.t
+)
+ident(
+  ext_ref Pervasives.failwith
+)
+"balance.ml" 404 15362 15382 "balance.ml" 404 15362 15388
+type(
+  string
+)
+"balance.ml" 404 15362 15373 "balance.ml" 404 15362 15388
+call(
+  tail
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 362 13673 13677 "balance.ml" 404 15362 15388
+type(
+  CodeEval.t
+)
+"balance.ml" 359 13557 13561 "balance.ml" 404 15362 15388
+type(
+  CodeEval.t
+)
+"balance.ml" 358 13490 13494 "balance.ml" 404 15362 15388
+type(
+  CodeEval.t
+)
+"balance.ml" 357 13435 13439 "balance.ml" 404 15362 15388
+type(
+  CodeEval.t
+)
+"balance.ml" 356 13361 13365 "balance.ml" 404 15362 15388
+type(
+  CodeEval.t
+)
+"balance.ml" 355 13296 13300 "balance.ml" 404 15362 15388
+type(
+  CodeEval.t
+)
+"balance.ml" 354 13255 13259 "balance.ml" 404 15362 15388
+type(
+  CodeEval.t
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 408 15428 15434 "balance.ml" 408 15428 15438
+type(
+  CodeEval.t
+)
+ident(
+  def eval "balance.ml" 410 15516 15518 "balance.ml" 410 15516 15528
+)
+"balance.ml" 408 15428 15441 "balance.ml" 408 15428 15449
+type(
+  Ctx.t -> string -> CodeEval.t
+)
+ident(
+  int_ref fun_eval "balance.ml" 309 11540 11550 "balance.ml" 309 11540 11558
+)
+"balance.ml" 408 15428 15450 "balance.ml" 408 15428 15459
+type(
+  Ctx.t
+)
+ident(
+  int_ref Ctx.empty "balance.ml" 147 4788 4794 "balance.ml" 147 4788 4799
+)
+"balance.ml" 408 15428 15460 "balance.ml" 408 15428 15465
+type(
+  string
+)
+ident(
+  int_ref entry "balance.ml" 297 11199 11204 "balance.ml" 297 11199 11209
+)
+"balance.ml" 408 15428 15441 "balance.ml" 408 15428 15465
+call(
+  stack
+)
+type(
+  CodeEval.t
+)
+"balance.ml" 410 15516 15518 "balance.ml" 410 15516 15523
+type(
+  string
+)
+ident(
+  int_ref entry "balance.ml" 297 11199 11204 "balance.ml" 297 11199 11209
+)
+"balance.ml" 410 15516 15524 "balance.ml" 410 15516 15528
+type(
+  CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 408 15428 15434 "balance.ml" 408 15428 15438
+)
+"balance.ml" 410 15516 15518 "balance.ml" 410 15516 15528
+type(
+  string * CodeEval.t
+)
+"balance.ml" 408 15428 15430 "balance.ml" 410 15516 15528
+type(
+  string * CodeEval.t
+)
+"balance.ml" 309 11540 11542 "balance.ml" 410 15516 15528
+type(
+  string * CodeEval.t
+)
+"balance.ml" 307 11473 11475 "balance.ml" 410 15516 15528
+type(
+  string * CodeEval.t
+)
+type(
+  string * CodeEval.t
+)
+"balance.ml" 413 15553 15559 "balance.ml" 413 15553 15565
+type(
+  out_channel -> string * CodeEval.t -> unit
+)
+ident(
+  def to_ffx "balance.ml" 425 16037 16064 "balance.ml" 427 16070 16073
+)
+"balance.ml" 414 15566 15573 "balance.ml" 414 15566 15575
+type(
+  out_channel
+)
+ident(
+  def oc "balance.ml" 415 15591 15597 "balance.ml" 425 16037 16064
+)
+"balance.ml" 415 15591 15599 "balance.ml" 415 15591 15610
+type(
+  string
+)
+ident(
+  def entry_point "balance.ml" 416 15641 15647 "balance.ml" 425 16037 16064
+)
+"balance.ml" 415 15591 15612 "balance.ml" 415 15591 15616
+type(
+  CodeEval.t
+)
+ident(
+  def eval "balance.ml" 416 15641 15647 "balance.ml" 425 16037 16064
+)
+"balance.ml" 415 15591 15598 "balance.ml" 415 15591 15617
+type(
+  string * CodeEval.t
+)
+"balance.ml" 418 15662 15670 "balance.ml" 418 15662 15675
+type(
+  (int * CondSet.Count.Mappe.key) list
+)
+ident(
+  def conds "balance.ml" 419 15708 15712 "balance.ml" 425 16037 16064
+)
+"balance.ml" 418 15662 15678 "balance.ml" 418 15662 15699
+type(
+  CodeEval.t -> (int * CondSet.Count.Mappe.key) list
+)
+ident(
+  int_ref CodeEval.sorted_conds "balance.ml" 284 10767 10773 "balance.ml" 284 10767 10785
+)
+"balance.ml" 418 15662 15700 "balance.ml" 418 15662 15704
+type(
+  CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 415 15591 15612 "balance.ml" 415 15591 15616
+)
+"balance.ml" 418 15662 15678 "balance.ml" 418 15662 15704
+call(
+  stack
+)
+type(
+  (int * CondSet.Count.Mappe.key) list
+)
+"balance.ml" 419 15708 15716 "balance.ml" 419 15708 15721
+type(
+  string -> unit
+)
+ident(
+  def print "balance.ml" 420 15744 15748 "balance.ml" 425 16037 16064
+)
+"balance.ml" 419 15708 15724 "balance.ml" 419 15708 15737
+type(
+  out_channel -> string -> unit
+)
+ident(
+  ext_ref Pervasives.output_string
+)
+"balance.ml" 419 15708 15738 "balance.ml" 419 15708 15740
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 414 15566 15573 "balance.ml" 414 15566 15575
+)
+"balance.ml" 419 15708 15724 "balance.ml" 419 15708 15740
+call(
+  stack
+)
+type(
+  string -> unit
+)
+"balance.ml" 420 15744 15748 "balance.ml" 420 15744 15753
+type(
+  string -> unit
+)
+ident(
+  int_ref print "balance.ml" 419 15708 15716 "balance.ml" 419 15708 15721
+)
+"balance.ml" 420 15744 15754 "balance.ml" 420 15744 15819
+type(
+  string
+)
+"balance.ml" 420 15744 15748 "balance.ml" 420 15744 15819
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 421 15821 15825 "balance.ml" 421 15821 15830
+type(
+  string -> unit
+)
+ident(
+  int_ref print "balance.ml" 419 15708 15716 "balance.ml" 419 15708 15721
+)
+"balance.ml" 421 15821 15831 "balance.ml" 421 15821 15846
+type(
+  string
+)
+"balance.ml" 421 15821 15825 "balance.ml" 421 15821 15846
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 422 15848 15852 "balance.ml" 422 15848 15866
+type(
+  out_channel ->
+  (string -> weight -> unit, out_channel, unit) format ->
+  string -> weight -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"balance.ml" 422 15848 15867 "balance.ml" 422 15848 15869
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 414 15566 15573 "balance.ml" 414 15566 15575
+)
+"balance.ml" 422 15848 15870 "balance.ml" 422 15848 15912
+type(
+  (string -> weight -> unit, out_channel, unit) format
+)
+"balance.ml" 422 15848 15913 "balance.ml" 422 15848 15924
+type(
+  string
+)
+ident(
+  int_ref entry_point "balance.ml" 415 15591 15599 "balance.ml" 415 15591 15610
+)
+"balance.ml" 422 15848 15926 "balance.ml" 422 15848 15941
+type(
+  CodeEval.t -> weight
+)
+ident(
+  int_ref CodeEval.weight "balance.ml" 282 10704 10710 "balance.ml" 282 10704 10716
+)
+"balance.ml" 422 15848 15942 "balance.ml" 422 15848 15946
+type(
+  CodeEval.t
+)
+ident(
+  int_ref eval "balance.ml" 415 15591 15612 "balance.ml" 415 15591 15616
+)
+"balance.ml" 422 15848 15925 "balance.ml" 422 15848 15947
+call(
+  stack
+)
+type(
+  weight
+)
+"balance.ml" 422 15848 15852 "balance.ml" 422 15848 15947
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 423 15949 15953 "balance.ml" 423 15949 15962
+type(
+  (int * CondSet.Count.Mappe.key -> unit) ->
+  (int * CondSet.Count.Mappe.key) list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"balance.ml" 423 15949 15964 "balance.ml" 423 15949 15989
+type(
+  out_channel -> string -> int * CondSet.Count.Mappe.key -> unit
+)
+ident(
+  int_ref CondEval.output_delta_ffx "balance.ml" 235 8665 8671 "balance.ml" 235 8665 8687
+)
+"balance.ml" 423 15949 15990 "balance.ml" 423 15949 15992
+type(
+  out_channel
+)
+ident(
+  int_ref oc "balance.ml" 414 15566 15573 "balance.ml" 414 15566 15575
+)
+"balance.ml" 423 15949 15993 "balance.ml" 423 15949 15999
+type(
+  string
+)
+"balance.ml" 423 15949 15963 "balance.ml" 423 15949 16000
+call(
+  stack
+)
+type(
+  int * CondSet.Count.Mappe.key -> unit
+)
+"balance.ml" 423 15949 16001 "balance.ml" 423 15949 16006
+type(
+  (int * CondSet.Count.Mappe.key) list
+)
+ident(
+  int_ref conds "balance.ml" 418 15662 15670 "balance.ml" 418 15662 15675
+)
+"balance.ml" 423 15949 15953 "balance.ml" 423 15949 16006
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 424 16008 16012 "balance.ml" 424 16008 16017
+type(
+  string -> unit
+)
+ident(
+  int_ref print "balance.ml" 419 15708 15716 "balance.ml" 419 15708 15721
+)
+"balance.ml" 424 16008 16018 "balance.ml" 424 16008 16035
+type(
+  string
+)
+"balance.ml" 424 16008 16012 "balance.ml" 424 16008 16035
+call(
+  stack
+)
+type(
+  unit
+)
+"balance.ml" 425 16037 16041 "balance.ml" 425 16037 16046
+type(
+  string -> unit
+)
+ident(
+  int_ref print "balance.ml" 419 15708 15716 "balance.ml" 419 15708 15721
+)
+"balance.ml" 425 16037 16047 "balance.ml" 425 16037 16063
+type(
+  string
+)
+"balance.ml" 425 16037 16041 "balance.ml" 425 16037 16064
+call(
+  tail
+)
+type(
+  unit
+)
+"balance.ml" 424 16008 16012 "balance.ml" 425 16037 16064
+type(
+  unit
+)
+"balance.ml" 423 15949 15953 "balance.ml" 425 16037 16064
+type(
+  unit
+)
+"balance.ml" 422 15848 15852 "balance.ml" 425 16037 16064
+type(
+  unit
+)
+"balance.ml" 421 15821 15825 "balance.ml" 425 16037 16064
+type(
+  unit
+)
+"balance.ml" 420 15744 15748 "balance.ml" 425 16037 16064
+type(
+  unit
+)
+"balance.ml" 419 15708 15712 "balance.ml" 425 16037 16064
+type(
+  unit
+)
+"balance.ml" 418 15662 15666 "balance.ml" 425 16037 16064
+type(
+  unit
+)
+type(
+  unit
+)

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="expint" numcall="1" line="11" source="originaux/expint.c" executed="true" extern="false">
+            <function name="expint">
+                <conditional id="IF-1"> <condition varcond="IF-1" line="48" source="originaux/expint.c" isexecuted="true" expcond="1&gt;1" expcondinit="x_0&gt;1"> </condition>
+                    <case cond="1" executed="false" line="52" source="originaux/expint.c">
+                        <loop loopId="1" line="62" source="originaux/expint.c" exact="false" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+                            <conditional id="IF-2"> <condition varcond="IF-2" line="78" source="originaux/expint.c" isexecuted="true" expcond="" expcondinit="del&lt;10000"> </condition>
+                                <case cond="1" executed="true" line="82" source="originaux/expint.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="true" line="96" source="originaux/expint.c">
+                        <loop loopId="2" line="100" source="originaux/expint.c" exact="false" maxcount="100" totalcount="100" maxexpr="partieEntiereInf((100-1)/1+1)" totalexpr="partieEntiereInf((100-1)/1+1)">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="106" source="originaux/expint.c" isexecuted="true" expcond="" expcondinit="i!=nm1"> </condition>
+                                <case cond="1" executed="true" line="108" source="originaux/expint.c">
+                                </case>
+                                <case cond="0" executed="true" line="114" source="originaux/expint.c">
+                                    <loop loopId="3" line="116" source="originaux/expint.c" exact="false" maxcount="49" totalcount="4900" maxexpr="partieEntiereInf((50-1-1)/1+1)" totalexpr="partieEntiereInf((100-1)/1+1)*partieEntiereInf((50-1-1)/1+1)">
+                                    </loop>
+                                    <call name="foo" numcall="2" line="120" source="originaux/expint.c" executed="true" extern="false">
+                                        <function name="foo">
+                                        </function>
+                                    </call>
+                                </case>
+                            </conditional>
+                        </loop>
+                    </case>
+                </conditional>
+                <conditional id="IF-4"> <condition varcond="IF-4" line="134" source="originaux/expint.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="135" source="originaux/expint.c">
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="des" numcall="12" line="227" source="originaux/ndes.c" executed="true" extern="false">
+            <function name="des">
+                <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/ndes.c" isexecuted="true" expcond="1" expcondinit="initflag"> </condition>
+                    <case cond="1" executed="true" line="63" source="originaux/ndes.c">
+                        <loop loopId="1" line="65" source="originaux/ndes.c" exact="false" maxcount="31" totalcount="31" maxexpr="partieEntiereInf((32-2)/1+1)" totalexpr="partieEntiereInf((32-2)/1+1)">
+                        </loop>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-2"> <condition varcond="IF-2" line="67" source="originaux/ndes.c" isexecuted="true" expcond="1" expcondinit="*newkey"> </condition>
+                    <case cond="1" executed="true" line="68" source="originaux/ndes.c">
+                        <loop loopId="2" line="70" source="originaux/ndes.c" exact="false" maxcount="28" totalcount="28" maxexpr="partieEntiereInf((1-28)/-1+1)" totalexpr="partieEntiereInf((1-28)/-1+1)">
+                            <call name="getbit" numcall="1" line="71" source="originaux/ndes.c" executed="true" extern="false">
+                                <function name="getbit">
+                                    <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                        <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <call name="getbit" numcall="2" line="72" source="originaux/ndes.c" executed="true" extern="false">
+                                <function name="getbit">
+                                    <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                        <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                        </loop>
+                        <loop loopId="3" line="75" source="originaux/ndes.c" exact="false" maxcount="16" totalcount="16" maxexpr="partieEntiereInf((16-1)/1+1)" totalexpr="partieEntiereInf((16-1)/1+1)">
+                            <call name="ks" numcall="3" line="75" source="originaux/ndes.c" executed="true" extern="false">
+                                <function name="ks">
+                                    <conditional id="IF-4"> <condition varcond="IF-4" line="108" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="n==1||n==2||n==9||n==16"> </condition>
+                                        <case cond="1" executed="true" line="109" source="originaux/ndes.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                            <loop loopId="7" line="113" source="originaux/ndes.c" exact="false" maxcount="2" totalcount="32" maxexpr="partieEntiereInf((2-1)/1+1)" totalexpr="partieEntiereInf((16-1)/1+1)*partieEntiereInf((2-1)/1+1)">
+                                            </loop>
+                                        </case>
+                                    </conditional>
+                                    <loop loopId="8" line="118" source="originaux/ndes.c" exact="false" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((1-16)/-1+1)" totalexpr="partieEntiereInf((16-1)/1+1)*partieEntiereInf((1-16)/-1+1)">
+                                        <call name="getbit" numcall="9" line="121" source="originaux/ndes.c" executed="true" extern="false">
+                                            <function name="getbit">
+                                                <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                                    <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                                    </case>
+                                                    <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                                    </case>
+                                                </conditional>
+                                            </function>
+                                        </call>
+                                        <call name="getbit" numcall="10" line="123" source="originaux/ndes.c" executed="true" extern="false">
+                                            <function name="getbit">
+                                                <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                                    <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                                    </case>
+                                                    <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                                    </case>
+                                                </conditional>
+                                            </function>
+                                        </call>
+                                        <call name="getbit" numcall="11" line="125" source="originaux/ndes.c" executed="true" extern="false">
+                                            <function name="getbit">
+                                                <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                                    <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                                    </case>
+                                                    <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                                    </case>
+                                                </conditional>
+                                            </function>
+                                        </call>
+                                    </loop>
+                                </function>
+                            </call>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <loop loopId="4" line="78" source="originaux/ndes.c" exact="true" maxcount="32" totalcount="32" maxexpr="partieEntiereInf((1-32)/-1+1)" totalexpr="partieEntiereInf((1-32)/-1+1)">
+                    <call name="getbit" numcall="4" line="79" source="originaux/ndes.c" executed="true" extern="false">
+                        <function name="getbit">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                </case>
+                                <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="getbit" numcall="5" line="80" source="originaux/ndes.c" executed="true" extern="false">
+                        <function name="getbit">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                </case>
+                                <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                </loop>
+                <loop loopId="5" line="82" source="originaux/ndes.c" exact="true" maxcount="16" totalcount="16" maxexpr="partieEntiereInf((16-1)/1+1)" totalexpr="partieEntiereInf((16-1)/1+1)">
+                    <call name="cyfun" numcall="6" line="84" source="originaux/ndes.c" executed="true" extern="false">
+                        <function name="cyfun">
+                            <loop loopId="9" line="178" source="originaux/ndes.c" exact="true" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((1-16)/-1+1)" totalexpr="partieEntiereInf((16-1)/1+1)*partieEntiereInf((1-16)/-1+1)">
+                            </loop>
+                            <loop loopId="10" line="188" source="originaux/ndes.c" exact="true" maxcount="4" totalcount="64" maxexpr="partieEntiereInf((4-1)/1+1)" totalexpr="partieEntiereInf((16-1)/1+1)*partieEntiereInf((4-1)/1+1)">
+                            </loop>
+                            <loop loopId="11" line="195" source="originaux/ndes.c" exact="true" maxcount="8" totalcount="128" maxexpr="partieEntiereInf((1-8)/-1+1)" totalexpr="partieEntiereInf((16-1)/1+1)*partieEntiereInf((1-8)/-1+1)">
+                            </loop>
+                            <loop loopId="12" line="205" source="originaux/ndes.c" exact="true" maxcount="32" totalcount="512" maxexpr="partieEntiereInf((1-32)/-1+1)" totalexpr="partieEntiereInf((16-1)/1+1)*partieEntiereInf((1-32)/-1+1)">
+                            </loop>
+                        </function>
+                    </call>
+                </loop>
+                <loop loopId="6" line="93" source="originaux/ndes.c" exact="true" maxcount="32" totalcount="32" maxexpr="partieEntiereInf((1-32)/-1+1)" totalexpr="partieEntiereInf((1-32)/-1+1)">
+                    <call name="getbit" numcall="7" line="94" source="originaux/ndes.c" executed="true" extern="false">
+                        <function name="getbit">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                </case>
+                                <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <call name="getbit" numcall="8" line="95" source="originaux/ndes.c" executed="true" extern="false">
+                        <function name="getbit">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="99" source="originaux/ndes.c" isexecuted="true" expcond="" expcondinit="bitno&lt;=nbits"> </condition>
+                                <case cond="1" executed="true" line="100" source="originaux/ndes.c">
+                                </case>
+                                <case cond="0" executed="true" line="102" source="originaux/ndes.c">
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

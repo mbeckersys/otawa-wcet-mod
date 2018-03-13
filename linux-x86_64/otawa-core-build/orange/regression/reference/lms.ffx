@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="sqrt" numcall="10" line="230" source="originaux/lms.c" executed="true" extern="false">
+            <function name="sqrt">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="102" source="originaux/lms.c" isexecuted="true" expcond="2.0==0" expcondinit="val==0"> </condition>
+                    <case cond="1" executed="false" line="102" source="originaux/lms.c">
+                    </case>
+                    <case cond="0" executed="true" line="104" source="originaux/lms.c">
+                        <loop loopId="1" line="104" source="originaux/lms.c" exact="false" maxcount="19" totalcount="19" maxexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="106" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="!flag"> </condition>
+                                <case cond="1" executed="true" line="107" source="originaux/lms.c">
+                                    <call name="fabs" numcall="1" line="110" source="originaux/lms.c" executed="true" extern="false">
+                                        <function name="fabs">
+                                            <conditional id="IF-1"> <condition varcond="IF-1" line="85" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                <case cond="1" executed="true" line="85" source="originaux/lms.c">
+                                                </case>
+                                                <case cond="0" executed="true" line="86" source="originaux/lms.c">
+                                                </case>
+                                            </conditional>
+                                        </function>
+                                    </call>
+                                    <conditional id="IF-4"> <condition varcond="IF-4" line="110" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="call-fabs1&lt;=min_tol"> </condition>
+                                        <case cond="1" executed="true" line="110" source="originaux/lms.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </case>
+                                <case cond="0" executed="true" line="113" source="originaux/lms.c">
+                                </case>
+                            </conditional>
+                        </loop>
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <call name="sqrt" numcall="11" line="231" source="originaux/lms.c" executed="true" extern="false">
+            <function name="sqrt">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="102" source="originaux/lms.c" isexecuted="true" expcond="12.0==0" expcondinit="val==0"> </condition>
+                    <case cond="1" executed="false" line="102" source="originaux/lms.c">
+                    </case>
+                    <case cond="0" executed="true" line="104" source="originaux/lms.c">
+                        <loop loopId="1" line="104" source="originaux/lms.c" exact="false" maxcount="19" totalcount="19" maxexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="106" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="!flag"> </condition>
+                                <case cond="1" executed="true" line="107" source="originaux/lms.c">
+                                    <call name="fabs" numcall="1" line="110" source="originaux/lms.c" executed="true" extern="false">
+                                        <function name="fabs">
+                                            <conditional id="IF-1"> <condition varcond="IF-1" line="85" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                <case cond="1" executed="true" line="85" source="originaux/lms.c">
+                                                </case>
+                                                <case cond="0" executed="true" line="86" source="originaux/lms.c">
+                                                </case>
+                                            </conditional>
+                                        </function>
+                                    </call>
+                                    <conditional id="IF-4"> <condition varcond="IF-4" line="110" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="call-fabs1&lt;=min_tol"> </condition>
+                                        <case cond="1" executed="true" line="110" source="originaux/lms.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </case>
+                                <case cond="0" executed="true" line="113" source="originaux/lms.c">
+                                </case>
+                            </conditional>
+                        </loop>
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <loop loopId="6" line="233" source="originaux/lms.c" exact="true" maxcount="201" totalcount="201" maxexpr="partieEntiereInf((201-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((201-EPSILONINT-0)/1+1)">
+            <call name="sin" numcall="12" line="235" source="originaux/lms.c" executed="true" extern="false">
+                <function name="sin">
+                    <loop loopId="2" line="130" source="originaux/lms.c" exact="false" maxcount="9" totalcount="1004" maxexpr="MAX(bIt-6,partieEntiereInf((201-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159265358979323846+EPSILON-2.0*3.14159265358979323846/20.0*(0+1*(bIt-6-1+1)))/-6.28319+1))" totalexpr="SYGMA(bIt-6,partieEntiereInf((201-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159265358979323846+EPSILON-2.0*3.14159265358979323846/20.0*(0+1*(bIt-6-1+1)))/-6.28319+1))">
+                    </loop>
+                    <loop loopId="3" line="137" source="originaux/lms.c" exact="false" maxcount="8" totalcount="814" maxexpr="MAX(bIt-6,partieEntiereInf((201-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159265358979323846)-EPSILON-(2.0*3.14159265358979323846/20.0*(0+1*(bIt-6-1+1))+-6.28319*(SET(-1,8)+1)))/6.28319+1))" totalexpr="SYGMA(bIt-6,partieEntiereInf((201-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159265358979323846)-EPSILON-(2.0*3.14159265358979323846/20.0*(0+1*(bIt-6-1+1))+-6.28319*(SET(-1,8)+1)))/6.28319+1))">
+                    </loop>
+                    <call name="fabs" numcall="2" line="150" source="originaux/lms.c" executed="true" extern="false">
+                        <function name="fabs">
+                            <conditional id="IF-1"> <condition varcond="IF-1" line="85" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                <case cond="1" executed="true" line="85" source="originaux/lms.c">
+                                </case>
+                                <case cond="0" executed="true" line="86" source="originaux/lms.c">
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                    <loop loopId="4" line="150" source="originaux/lms.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                        <call name="fabs" numcall="3" line="150" source="originaux/lms.c" executed="true" extern="false">
+                            <function name="fabs">
+                                <conditional id="IF-1"> <condition varcond="IF-1" line="85" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                    <case cond="1" executed="true" line="85" source="originaux/lms.c">
+                                    </case>
+                                    <case cond="0" executed="true" line="86" source="originaux/lms.c">
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                    </loop>
+                </function>
+            </call>
+            <call name="mergec_rename__0__gaussian" numcall="13" line="236" source="originaux/lms.c" executed="true" extern="false">
+                <function name="mergec_rename__0__gaussian">
+                    <conditional id="IF-5"> <condition varcond="IF-5" line="181" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="ready==0"> </condition>
+                        <case cond="1" executed="true" line="182" source="originaux/lms.c">
+                            <call name="rand" numcall="4" line="182" source="originaux/lms.c" executed="true" extern="false">
+                                <function name="rand">
+                                </function>
+                            </call>
+                            <call name="rand" numcall="5" line="183" source="originaux/lms.c" executed="true" extern="false">
+                                <function name="rand">
+                                </function>
+                            </call>
+                            <loop loopId="5" line="190" source="originaux/lms.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((1.0+EPSILON-r_0)/NODEF+1)">
+                                <call name="rand" numcall="6" line="191" source="originaux/lms.c" executed="true" extern="false">
+                                    <function name="rand">
+                                    </function>
+                                </call>
+                                <call name="rand" numcall="7" line="192" source="originaux/lms.c" executed="true" extern="false">
+                                    <function name="rand">
+                                    </function>
+                                </call>
+                            </loop>
+                            <call name="log" numcall="8" line="206" source="originaux/lms.c" executed="true" extern="false">
+                                <function name="log">
+                                </function>
+                            </call>
+                            <call name="sqrt" numcall="9" line="206" source="originaux/lms.c" executed="true" extern="false">
+                                <function name="sqrt">
+                                    <conditional id="IF-2"> <condition varcond="IF-2" line="102" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="val==0"> </condition>
+                                        <case cond="1" executed="true" line="102" source="originaux/lms.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="104" source="originaux/lms.c">
+                                            <loop loopId="1" line="104" source="originaux/lms.c" exact="false" maxcount="19" totalcount="3819" maxexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((201-EPSILONINT-0)/1+1)*partieEntiereInf((20-EPSILONINT-1)/1+1)">
+                                                <conditional id="IF-3"> <condition varcond="IF-3" line="106" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="!flag"> </condition>
+                                                    <case cond="1" executed="true" line="107" source="originaux/lms.c">
+                                                        <call name="fabs" numcall="1" line="110" source="originaux/lms.c" executed="true" extern="false">
+                                                            <function name="fabs">
+                                                                <conditional id="IF-1"> <condition varcond="IF-1" line="85" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                    <case cond="1" executed="true" line="85" source="originaux/lms.c">
+                                                                    </case>
+                                                                    <case cond="0" executed="true" line="86" source="originaux/lms.c">
+                                                                    </case>
+                                                                </conditional>
+                                                            </function>
+                                                        </call>
+                                                        <conditional id="IF-4"> <condition varcond="IF-4" line="110" source="originaux/lms.c" isexecuted="true" expcond="" expcondinit="call-fabs1&lt;=min_tol"> </condition>
+                                                            <case cond="1" executed="true" line="110" source="originaux/lms.c">
+                                                            </case>
+                                                            <case cond="0" executed="true" >
+                                                            </case>
+                                                        </conditional>
+                                                    </case>
+                                                    <case cond="0" executed="true" line="113" source="originaux/lms.c">
+                                                    </case>
+                                                </conditional>
+                                            </loop>
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                        </case>
+                        <case cond="0" executed="true" line="213" source="originaux/lms.c">
+                        </case>
+                    </conditional>
+                </function>
+            </call>
+        </loop>
+        <loop loopId="7" line="244" source="originaux/lms.c" exact="true" maxcount="201" totalcount="201" maxexpr="partieEntiereInf((201-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((201-EPSILONINT-0)/1+1)">
+            <call name="lms" numcall="14" line="245" source="originaux/lms.c" executed="true" extern="false">
+                <function name="lms">
+                    <loop loopId="8" line="290" source="originaux/lms.c" exact="true" maxcount="20" totalcount="4020" maxexpr="partieEntiereInf((20-1)/1+1)" totalexpr="partieEntiereInf((201-EPSILONINT-0)/1+1)*partieEntiereInf((20-1)/1+1)">
+                    </loop>
+                    <loop loopId="9" line="301" source="originaux/lms.c" exact="true" maxcount="21" totalcount="4221" maxexpr="partieEntiereInf((20-0)/1+1)" totalexpr="partieEntiereInf((201-EPSILONINT-0)/1+1)*partieEntiereInf((20-0)/1+1)">
+                    </loop>
+                    <loop loopId="10" line="304" source="originaux/lms.c" exact="true" maxcount="20" totalcount="4020" maxexpr="partieEntiereInf((1-20)/-1+1)" totalexpr="partieEntiereInf((201-EPSILONINT-0)/1+1)*partieEntiereInf((1-20)/-1+1)">
+                    </loop>
+                </function>
+            </call>
+        </loop>
+    </function>
+</flowfacts>
+

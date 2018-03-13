@@ -1,0 +1,752 @@
+//
+// GLISS V2 -- used registers extension
+// Copyright (c) 2010, IRIT - UPS <casse@irit.fr>
+//
+// This file is part of GLISS2.
+//
+// GLISS2 is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// GLISS2 is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with GLISS2; if not, write to the Free Software
+// Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+//
+
+macro writeR(i)    = "write"(R[i])
+macro readR (i)    = "read" (R[i])
+macro writeS(i)    = "write"(S[i])
+macro readS (i)    = "read" (S[i]) 
+macro writeD(i)    = "write"(S[(i) * 2]); "write"(S[(i) * 2 + 1])
+macro readD (i)    = "read" (S[(i) * 2]);  "read"(S[(i) * 2 + 1])
+macro writeFPSCR() = "write"(FPSCR)
+macro readFPSCR()  = "read" (FPSCR)
+macro writeCPSR()  = "write"(CPSR)
+macro readCPSR()   = "read" (CPSR)
+
+
+
+// modes
+
+extend condition, full_condition
+	used_regs = { if value < 14 then "read"(Ucpsr); endif; }
+
+extend setS
+	used_regs = { if set then "write"(CPSR); endif; }
+
+extend regShift
+	used_regs = { "read"(GPR[shiftAmt.number]); "read"(GPR[r.number]); }
+
+extend immShift
+	used_regs = { "read"(GPR[r.number]); }
+
+extend loadstoreSpecifiedShift
+	used_regs = { "read"(GPR[r.number]); if shiftKind == ROR && shiftAmt == 0 then "read"(CPSR); endif; }
+
+
+// data processing instructions
+
+extend ADD_shr, ADC_shr, AND_shr, BIC_shr, EOR_shr, ORR_shr, RSB_shr, RSC_shr, SBC_shr, SUB_shr
+	used_regs = {
+		if cond.value < 14 then "read"(Ucpsr); endif;
+		"read"(GPR[rn.number]);
+		"write"(GPR[rd.number]);
+		shifter_operand.used_regs;
+		sets.used_regs;
+	}
+
+extend ADD_imm, ADC_imm, AND_imm, BIC_imm, EOR_imm, ORR_imm, RSB_imm, RSC_imm, SBC_imm, SUB_imm
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"write"(GPR[rd.number]);
+		sets.used_regs;
+	}
+
+extend CMN_shr, CMP_shr, TEQ_shr, TST_shr
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		shifter_operand.used_regs;
+		"write"(Ucpsr);
+	}
+
+extend CMN_imm, CMP_imm, TEQ_imm, TST_imm
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"write"(Ucpsr);
+	}
+
+
+extend MOV_shr, MVN_shr
+	used_regs = {
+		cond.used_regs;
+		"write"(GPR[rd.number]);
+		shifter_operand.used_regs;
+		sets.used_regs;
+	}
+
+extend MOV_imm, MVN_imm
+	used_regs = {
+		cond.used_regs;
+		"write"(GPR[rd.number]);
+		sets.used_regs;
+	}
+
+extend CLZ
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rm.number]);
+		"write"(GPR[rd.number]);
+	}
+
+// TODO! Remove when the bug in automatic finding is fixed
+extend MOV_ORR_imm_T2_thumb2
+	used_regs = {
+		if rn.number != 15 then
+			// ORR_imm
+			"read"(GPR[rn.number]);
+		endif;
+		"write"(GPR[rd.number]);
+		S.used_regs;
+	}
+
+// TODO! Remove when the bug in automatic finding is fixed
+extend BIC_imm_thumb2
+	used_regs = {
+		"read"(GPR[rn.number]);
+		"write"(GPR[rd.number]);
+		S.used_regs;
+	}
+	
+// TODO! Remove when the bug in automatic finding is fixed
+extend BIC_reg_thumb2
+	used_regs = {
+		"read"(GPR[rm.number]);
+		"read"(GPR[rn.number]);
+		"write"(GPR[rd.number]);
+		S.used_regs;
+	}
+
+	
+// ****** control instructions ******
+
+extend B_Cond
+	used_regs = { cond.used_regs; if setl then "write"(GPR[14]); endif; "write"(GPR[14]); }
+
+extend BX_ARM
+	used_regs = { cond.used_regs; "read"(GPR[rd.number]); "write"(PC); }
+
+extend SWI
+	used_regs = { "write"(LR_static); "write"(SPSR); "write"(PC); "write"(CPSR); }
+
+
+// ****** memory instructions ******
+
+extend LDR_imm, LDRH_imm, LDRSB_imm, LDRSH_imm
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"write"(GPR[rd.number]);
+		if setpre == 0 || setw == 1 then "write"(GPR[rn.number]); endif;
+	}
+
+extend STR_imm, STRH_imm
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"read"(GPR[rd.number]);
+		if setpre == 0 || setw == 1 then "write"(GPR[rn.number]); endif;
+	}
+
+extend LDR_shr
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"write"(GPR[rd.number]);
+		shifter_operand.used_regs;
+		if setpre == 0 || setw == 1 then "write"(GPR[rn.number]); endif;
+	}
+
+extend LDRH_shr, LDRSB_shr, LDRSH_shr
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"write"(GPR[rd.number]);
+		"read"(GPR[rm.number]);
+		if setpre == 0 || setw == 1 then "write"(GPR[rn.number]); endif;
+	}
+
+extend STR_shr
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"read"(GPR[rd.number]);
+		shifter_operand.used_regs;
+		if setpre == 0 || setw == 1 then "write"(GPR[rn.number]); endif;
+	}
+
+extend STRH_shr
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"read"(GPR[rd.number]);
+		"read"(GPR[rm.number]);
+		if setpre == 0 || setw == 1 then "write"(GPR[rn.number]); endif;
+	}
+
+
+extend SWP
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		"read"(GPR[rm.number]);
+		"write"(GPR[rd.number]);
+	}
+
+
+// ****** multiplication instructions ******
+
+extend MLA
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rm.number]);
+		"read"(GPR[rs.number]);
+		"read"(GPR[rn.number]);
+		"write"(GPR[rd.number]);
+		sets.used_regs;
+	}
+
+extend MUL
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rm.number]);
+		"read"(GPR[rs.number]);
+		"write"(GPR[rd.number]);
+		sets.used_regs;
+	}
+
+extend SMULL, UMULL, SMLAL, UMLAL
+	used_regs = {
+		cond.used_regs;
+		"read"(GPR[rm.number]);
+		"read"(GPR[rs.number]);
+		"write"(GPR[rdhi.number]);
+		"write"(GPR[rdlo.number]);
+		sets.used_regs;
+	}
+
+
+// ****** system instructions ******
+
+extend MSR_imm
+	used_regs = {
+		cond.used_regs;
+		"write"(CPSR);
+	}
+
+extend MSR_shr
+	used_regs = {
+		cond.used_regs;
+		"write"(CPSR);
+		"read"(GPR[rn.number]);
+	}
+
+extend MRS
+	used_regs = {
+		cond.used_regs;
+		"read"(CPSR);
+		"write"(GPR[rn.number]);
+	}
+
+
+// ****** multiple memory instructions ******
+
+extend LDM
+	used_regs = {
+		"count"(2, 19);
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		if setw == 1 then "write"(GPR[rn.number]); endif;
+		i = 0;
+		used_regs_rec;
+	}
+	used_regs_rec = {
+		if i <= 15 then
+			if reglist<i..i> == 1 then "write"(GPR[i]); endif;
+			i = i + 1;
+			used_regs_rec;
+		endif;
+	}
+
+extend STM
+	used_regs = {
+		"count"(18, 1);
+		cond.used_regs;
+		"read"(GPR[rn.number]);
+		if setw == 1 then "write"(GPR[rn.number]); endif;
+		i = 0;
+		used_regs_rec;
+	}
+	used_regs_rec = {
+		if i <= 15 then
+			if reglist<i..i> == 1 then "read"(GPR[i]); endif;
+			i = i + 1;
+			used_regs_rec;
+		endif;
+	}
+
+extend STMDB_T1
+	used_regs = {
+		"read"(GPR[n]);
+		if wback then "write"(GPR[n]); endif;
+		i = 0;
+		used_regs_rec;
+	}
+	used_regs_rec = {
+		if i <= 15 then
+			if registers<i..i> == 1 then "read"(GPR[i]); endif;
+			i = i + 1;
+			used_regs_rec;
+		endif;
+	}
+	
+extend PUSH_thumb
+	used_regs = {
+		"read"(GPR[13]);
+		"write"(GPR[13]);
+		if P then "read"(GPR[14]); endif;
+		i = 0;
+		used_regs_rec;
+	}
+	used_regs_rec = {
+		if i <= 7 then
+			if llist<i..i> == 1 then "read"(GPR[i]); endif;
+			i = i + 1;
+			used_regs_rec;
+		endif;
+	}
+	
+extend POP_thumb
+	used_regs = {
+		"read"(GPR[13]);
+		"write"(GPR[13]);
+		if P then "write"(GPR[15]); endif;
+		i = 0;
+		used_regs_rec;
+	}
+	used_regs_rec = {
+		if i <= 7 then
+			if llist<i..i> == 1 then "write"(GPR[i]); endif;
+			i = i + 1;
+			used_regs_rec;
+		endif;
+	}
+	
+extend LDM_T2
+	used_regs = {
+		"read"(GPR[n]);
+		if wback then "write"(GPR[n]); endif;
+		i = 0;
+		used_regs_rec;
+	}
+	used_regs_rec = {
+		if i <= 15 then
+			if registers<i..i> == 1 then "write"(GPR[i]); endif;
+			i = i + 1;
+			used_regs_rec;
+		endif;
+	}
+	
+extend LDMIA_thumb
+	used_regs = {
+		"read"(GPR[n]);
+		"write"(GPR[n]);
+		i = 0;
+		used_regs_rec;
+	}
+	used_regs_rec = {
+		if i <= 7 then
+			if llist<i..i> == 1 then "write"(GPR[i]); endif;
+			i = i + 1;
+			used_regs_rec;
+		endif;
+	}
+	
+extend STMIA_thumb
+	used_regs = {
+		"read"(GPR[n]);
+		"write"(GPR[n]);
+		i = 0;
+		used_regs_rec;
+	}
+	used_regs_rec = {
+		if i <= 7 then
+			if llist<i..i> == 1 then "read"(GPR[i]); endif;
+			i = i + 1;
+			used_regs_rec;
+		endif;
+	}
+	
+	
+// floating-point operations
+extend VSTR_A1, VSTR_T1
+	used_regs = { "read"(R[n]); "read"(S[d * 2]); "read"(S[d * 2 + 1]); }
+
+extend VSTR_A2, VSTR_T2
+	used_regs = { "read"(R[n]); "read"(S[d]); }
+
+extend VLDR_A1, VLDR_T1
+	used_regs = { "read"(R[n]); "write"(S[d * 2]); "write"(S[d * 2 + 1]); }
+
+extend VLDR_A2, VLDR_T2
+	used_regs = { "read"(R[n]); "write"(S[d]); }
+
+extend VMOV_imm_A2_32
+	used_regs = { "write"(S[d]); }
+
+extend VMOV_imm_A2_64
+	used_regs = { "write"(S[d * 2]); "write"(S[d * 2 + 1]); }
+
+extend VMOV_reg_A2_32
+	used_regs = { "write"(S[d]); "read"(S[m]); }
+
+extend VMOV_reg_A2_32
+	used_regs = { "write"(S[d]); "read"(S[m]); }
+
+extend VMOV_creg_spreg_A1
+	used_regs = {
+		if to_arm_register then
+			"write"(R[t]); "read"(S[n]);
+		else
+			"write"(S[n]); "read"(R[t]);
+		endif;
+	}
+
+extend VMOV_arm_2creg_dereg_A1
+	used_regs = {
+		if to_arm_registers then
+			"write"(R[t]); "write"(R[t2]); "read"(S[m * 2]); "read"(S[m * 2 + 1]);
+		else
+			"write"(S[m * 2]); "write"(S[m * 2 + 1]); "read"(R[t]); "read"(R[t2]);			
+		endif;
+	}
+
+	
+extend VMOV_thumb_imm
+	used_regs = {
+		if x.single_register then
+			"write"(S[x.d]);
+		else
+			"write"(S[x.d * 2]); "write"(S[x.d * 2 + 1]);
+			if x.regs == 2 then
+				"write"(S[x.d * 2 + 2]); "write"(S[x.d * 2 + 3]);
+			endif;
+		endif;
+	}
+
+extend VMOV_thumb_reg
+	used_regs = {
+		if x.single_register then
+			writeS(x.d); readS(x.m); 
+		else
+			writeD(x.d); readD(x.m);
+			if x.regs == 2 then
+				writeD(x.d + 1); readD(x.m + 1);
+			endif;
+		endif;
+	}
+
+extend VMOV_creg_spreg_T1
+	used_regs = {
+		if to_arm_register then
+			readR(t); writeS(n);
+		else
+			writeS(n); readR(t);
+		endif;
+	}
+
+extend VMOV_thumb_2creg_dereg_A1
+	used_regs = {
+		if to_arm_registers then
+			writeR(t); writeR(t2); readD(m);
+		else
+			writeD(m); readR(t); readR(t2);
+		endif;
+	}
+
+extend VSUB_thumb_fp
+	used_regs = {
+		if x.advsimd then
+			// TODO
+		else
+			if x.dp_operation then
+				writeD(x.d); readD(x.n); readD(x.m);
+			else
+				writeS(x.d); readS(x.n); readS(x.m);
+			endif;
+		endif;
+	}
+
+extend VMUL_arm_fp
+	used_regs = {
+		if x.advsimd then
+			// TODO
+		else
+			if x.dp_operation then
+				writeD(x.d); readD(x.n); readD(x.m);
+			else
+				writeS(x.d); readS(x.n); readS(x.m);
+			endif;
+		endif;
+	}
+
+extend VMUL_thumb_fp
+	used_regs = {
+		if x.advsimd then
+			// TODO
+		else
+			if x.dp_operation then
+				writeD(x.d); readD(x.n); readD(x.m);
+			else
+				writeS(x.d); readS(x.n); readS(x.m);
+			endif;
+		endif;
+	}
+
+extend VDIV_arm
+	used_regs = {
+		if x.dp_operation then
+			writeD(x.d); readD(x.n); readD(x.m);
+		else
+			writeS(x.d); readS(x.n); readS(x.m);
+		endif;
+	}
+
+extend VDIV_thumb
+	used_regs = {
+		if x.dp_operation then
+			writeD(x.d); readD(x.n); readD(x.m);
+		else
+			writeS(x.d); readS(x.n); readS(x.m);
+		endif;
+	}
+
+extend VMRS_T1
+	used_regs = {
+		if t!= 15 then
+			writeR(t); readFPSCR();
+		else
+			writeCPSR(); readFPSCR();
+		endif;
+	}
+
+extend VCVT_arm_if_A1
+	used_regs = {
+		if to_integer then
+			if dp_operation then
+				writeS(d); readD(m);
+			else
+				writeS(d); readS(m);
+			endif;
+		else
+			if dp_operation then
+				writeD(d); readS(m);
+			else
+				writeS(d); readS(m);
+			endif;
+		endif;		
+	}
+
+extend VCVT_arm_ff_A1
+	used_regs = {
+		if double_to_single then
+			writeS(d); readD(m);
+		else
+			writeD(d); readS(m);
+		endif;
+	}
+
+extend VCVT_VCVTR_thumb_fp_int_fp
+	used_regs = {
+		if x.to_integer then
+			if x.dp_operation then
+				writeS(x.d); readD(x.m);
+			else
+				writeS(x.d); readS(x.m);
+			endif;
+		else
+			if x.dp_operation then
+				writeD(x.d); readS(x.m); 
+			else
+				writeS(x.d); readS(x.m);
+			endif;
+		endif;		
+	}
+
+extend VADD_arm_fp
+	used_regs = {
+		if x.advsimd then
+			// TODO
+		else
+			if x.dp_operation then
+				writeD(x.d); readD(x.n); readD(x.m);
+			else
+				writeS(x.d); readS(x.n); readS(x.m);
+			endif;
+		endif;
+	}
+
+extend VADD_thumb_fp
+	used_regs = {
+		if x.advsimd then
+			// TODO
+		else
+			if x.dp_operation then
+				writeD(x.d); readD(x.n); readD(x.m);
+			else
+				writeS(x.d); readS(x.n); readS(x.m);
+			endif;
+		endif;
+	}
+
+
+extend VMLA_VMLS_arm_fp
+	used_regs = {
+		if x.advsimd then
+			// TODO
+		else
+			if x.dp_operation then
+				writeD(x.d); readD(x.n); readD(x.m); readD(x.d);
+			else
+				writeS(x.d); readS(x.n); readS(x.m); readS(x.d);
+			endif;
+		endif;
+	}
+
+extend VMLA_VMLS_thumb_fp
+	used_regs = {
+		if x.advsimd then
+			// TODO
+		else
+			if x.dp_operation then
+				writeD(x.d); readD(x.n); readD(x.m); readD(x.d);
+			else
+				writeS(x.d); readS(x.n); readS(x.m); readS(x.d);
+			endif;
+		endif;
+	}
+
+extend VSTM_A1_01
+	used_regs = {
+		readR(n);
+		if wback then writeR(n); endif;
+		for r in 0 .. 31 do
+			if r < regs then
+				if single_regs then
+					readS(d + r);
+				else
+					readD(d + r);
+				endif;
+			endif;
+		enddo;
+	}
+
+extend VSTM_A1_10
+	used_regs = {
+		readR(n);
+		if wback then writeR(n); endif;
+		for r in 0 .. 31 do
+			if r < regs then
+				if single_regs then
+					readS(d + r);
+				else
+					readD(d + r);
+				endif;
+			endif;
+		enddo;
+	}
+
+extend VSTM_A2_01
+	used_regs = {
+		readR(n);
+		if wback then writeR(n); endif;
+		for r in 0 .. 31 do
+			if r < regs then
+				if single_regs then
+					readS(d + r);
+				else
+					readD(d + r);
+				endif;
+			endif;
+		enddo;
+	}
+
+extend VSTM_A2_10
+	used_regs = {
+		readR(n);
+		if wback then writeR(n); endif;
+		for r in 0 .. 31 do
+			if r < regs then
+				if single_regs then
+					readS(d + r);
+				else
+					readD(d + r);
+				endif;
+			endif;
+		enddo;
+	}
+
+extend VLDM_arm_A1_01
+	used_regs = {
+		readR(n);
+		if wback then writeR(n); endif;
+		for r in 0 .. 31 do
+			if r < regs then
+				if single_regs then
+					writeS(d + r);
+				else
+					writeD(d + r);
+				endif;
+			endif;
+		enddo;
+	}
+
+extend VLDM_arm_A1_10
+	used_regs = {
+		readR(n);
+		if wback then writeR(n); endif;
+		for r in 0 .. 31 do
+			if r < regs then
+				if single_regs then
+					writeS(d + r);
+				else
+					writeD(d + r);
+				endif;
+			endif;
+		enddo;
+	}
+
+extend VLDM_arm_A2_01
+	used_regs = {
+		readR(n);
+		if wback then writeR(n); endif;
+		for r in 0 .. 31 do
+			if r < regs then
+				if single_regs then
+					writeS(d + r);
+				else
+					writeD(d + r);
+				endif;
+			endif;
+		enddo;
+	}
+
+

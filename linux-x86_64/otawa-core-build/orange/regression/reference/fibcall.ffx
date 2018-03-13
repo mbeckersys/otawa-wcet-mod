@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="fib" numcall="1" line="87" source="originaux/fibcall.c" executed="true" extern="false">
+            <function name="fib">
+                <loop loopId="1" line="71" source="originaux/fibcall.c" exact="true" maxcount="29" totalcount="29" maxexpr="partieEntiereInf((30-2)/1+1)" totalexpr="partieEntiereInf((30-2)/1+1)">
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

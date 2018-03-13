@@ -1,0 +1,218 @@
+/* Thomas Jerabek (thomas.jerabek attechnikum-wien.at) */
+
+macro sysm_syntax(r) = \
+		switch (r) {	\
+				case 0:"apsr"	\
+				case 1:"iapsr" \
+				case 2:"eapsr" \
+				case 3:"xpsr" \
+				case 5:"ipsr" \
+				case 6:"epsr" \
+				case 7:"iepsr" \
+				case 8:"msp" \
+				case 9:"psp" \
+				case 16:"primask" \
+				case 17:"basepri"  \
+				case 18:"basepri_max" \
+				case 19:"faultmask" \
+				case 20:"control"\
+				default: ""\
+			}
+
+
+macro msr_bit_syntax(mask) = \
+	switch (mask) { \
+		case 0b00: "" \
+		case 0b01: "_g" \
+		case 0b10: "_nzvcq" \
+		case 0b11: "_nzcvqg" \
+		default: ""  \
+	}
+
+
+macro IT_xyz_syntax(firstcond, mask) = \
+	if mask == 0b1000 then \
+		"" \
+	else \
+		if(firstcond<0..0> == 0b1) then \
+			switch (mask<3..0>) { \
+			case 0b1100: "t" \
+			case 0b0100: "e" \
+			case 0b1110: "tt" \
+			case 0b0110: "et" \
+			case 0b1010: "te"\
+			case 0b0010: "ee"\
+			case 0b1111: "ttt"\
+			case 0b0111: "ett"\
+			case 0b1011: "tet"\
+			case 0b0011: "eet"\
+			case 0b1101: "tte"\
+			case 0b0101: "ete"\
+			case 0b1001: "tee"\
+			case 0b0001: "eee"\
+			default: "xyz"  \
+			} \
+		else \
+			switch (mask<3..0>) { \
+			case 0b0100: "t" \
+			case 0b1100: "e" \
+			case 0b0010: "tt" \
+			case 0b1010: "et" \
+			case 0b0110: "te"\
+			case 0b1110: "ee"\
+			case 0b0001: "ttt"\
+			case 0b1001: "ett"\
+			case 0b0101: "tet"\
+			case 0b1101: "eet"\
+			case 0b0011: "tte"\
+			case 0b1011: "ete"\
+			case 0b0111: "tee"\
+			case 0b1111: "eee"\
+			default: "xyz"  \
+			} \
+		endif \
+	endif
+
+macro op_cond_syntax(cond) = \
+	switch (cond) { \
+		case 0b0000: "eq" \
+		case 0b0001: "ne" \
+		case 0b0010: "cs" \
+		case 0b0011: "cc" \
+		case 0b0100: "mi" \
+		case 0b0101: "pl" \
+		case 0b0110: "vs" \
+		case 0b0111: "vc" \
+		case 0b1000: "hi" \
+		case 0b1001: "ls" \
+		case 0b1010: "ge" \
+		case 0b1011: "lt" \
+		case 0b1100: "gt" \
+		case 0b1101: "le" \
+		case 0b1110: "" \
+		default: ""  \
+	}
+	
+macro op_cond_syntax_old(cond) = \
+	if cond == 0b00000000 then \
+		"" \
+	else \
+		switch (cond<7..4>) { \
+			case 0b0000: "eq" \
+			case 0b0001: "ne" \
+			case 0b0010: "cs" \
+			case 0b0011: "cc" \
+			case 0b0100: "mi" \
+			case 0b0101: "pl" \
+			case 0b0110: "vs" \
+			case 0b0111: "vc" \
+			case 0b1000: "hi" \
+			case 0b1001: "ls" \
+			case 0b1010: "ge" \
+			case 0b1011: "lt" \
+			case 0b1100: "gt" \
+			case 0b1101: "le" \
+			case 0b1110: "" \
+			default: ""  \
+		}	\
+	endif \
+
+macro op_cond_syntax_new(cond) = \
+	if "f_get_ITSTATE"() == 0b00000000 then \
+		"" \
+	else \
+		switch (cond<7..4>) { \
+			case 0b0000: "eq" \
+			case 0b0001: "ne" \
+			case 0b0010: "cs" \
+			case 0b0011: "cc" \
+			case 0b0100: "mi" \
+			case 0b0101: "pl" \
+			case 0b0110: "vs" \
+			case 0b0111: "vc" \
+			case 0b1000: "hi" \
+			case 0b1001: "ls" \
+			case 0b1010: "ge" \
+			case 0b1011: "lt" \
+			case 0b1100: "gt" \
+			case 0b1101: "le" \
+			case 0b1110: "" \
+			default: ""  \
+		}	\
+	endif \
+
+macro op_cond_syntax_16(cond) = \
+	if "f_get_ITSTATE"() == 0b00000000 then \
+		"s" \
+	else \
+		switch (cond<7..4>) { \
+			case 0b0000: "eq" \
+			case 0b0001: "ne" \
+			case 0b0010: "cs" \
+			case 0b0011: "cc" \
+			case 0b0100: "mi" \
+			case 0b0101: "pl" \
+			case 0b0110: "vs" \
+			case 0b0111: "vc" \
+			case 0b1000: "hi" \
+			case 0b1001: "ls" \
+			case 0b1010: "ge" \
+			case 0b1011: "lt" \
+			case 0b1100: "gt" \
+			case 0b1101: "le" \
+			case 0b1110: "" \
+			default: ""  \
+		}	\
+	endif \
+
+
+// From Jerabek
+macro condition_syntax(cond) = \
+	switch (cond) { \
+		case 0: "eq" \
+		case 1: "ne" \
+		case 2: "cs" \
+		case 3: "cc" \
+		case 4: "mi" \
+		case 5: "pl" \
+		case 6: "vs" \
+		case 7: "vc" \
+		case 8: "hi" \
+		case 9: "ls" \
+		case 10: "ge" \
+		case 11: "lt" \
+		case 12: "gt" \
+		case 13: "le" \
+		case 14: "" \
+		case 15: "nv" \
+		default: "" \
+	} \
+
+
+// add imm-value to syntax in correct form(if value available)
+macro imm_syntax(imm) = \
+	if(imm != 0) then \
+		format(", #%d",imm) \
+	else \
+		"" \
+endif
+
+//add negative imm-value to syntax in correct form(if value available)
+macro imm_neg_syntax(imm) = \
+	if(imm != 0) then \
+		format(", #-%d",imm) \
+	else \
+		"" \
+endif
+
+//add shiftoperation and value correctly to syntax
+macro DecodeImmShift_syntax(t, imm5) = \
+	switch (coerce(card(3), t)) { \
+	case 0: if (imm5 == 0b00000) then "" else format(", lsl #%d",imm5) endif \
+	case 1: format(", lsr #%d",imm5) \
+	case 2: if (imm5 == 0b00000) then ", asr #32" else format(", asr #%d",imm5) endif \
+	case 3: if (imm5 == 0b00000) then ", rrx"  else format(", ror #%d",imm5) endif \
+	case 4: format(", ror #%d",imm5) \
+	default: ""  \
+	}
+
