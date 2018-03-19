@@ -60,17 +60,27 @@ public:
 	FlowFactLoader(p::declare& r = reg);
 
 protected:
+
+    typedef enum {
+        FLOW_EQ,
+        FLOW_NE,
+        FLOW_LE,
+        FLOW_GE,
+        FLOW_LT,
+        FLOW_GT
+    } flow_cons_e;
+
 	inline WorkSpace *workSpace(void) const { return _fw; }
 
 	Address addressOf(const string& label);
 	MemArea addressOf(const string& file, int line) throw(ProcessorException);
 	void onError(const string& message);
 	void onWarning(const string& message);
-    void onInfo(const string& message);
 
 	virtual void onCheckSum(const String& name, t::uint32 sum);
 	virtual void onLibrary(void);
 	virtual void onLoop(address_t addr, int count, int total, const ContextualPath& path);
+    virtual void onFlowConstraint(address_t addr, const flow_cons_e& relation, unsigned long count, const ContextualPath& path);
 	virtual void onReturn(address_t addr);
 	virtual void onNoReturn(address_t addr);
 	virtual void onNoReturn(String name);

@@ -20,6 +20,7 @@
  *	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
+#include <climits>
 #include <stdio.h>
 #include <otawa/util/FlowFactLoader.h>
 #include <otawa/prog/WorkSpace.h>
@@ -702,12 +703,6 @@ void FlowFactLoader::onWarning(const string& message) {
 	warn(_ << current << ": " << fft_line << ": " << message);
 }
 
-
-void FlowFactLoader::onInfo(const string& message) {
-	warn(_ << current << ": " << fft_line << ": " << message);
-}
-
-
 /**
  * Called when an "ignore entry" command is found. This ensures that
  * the symbol is not considered as a code entry during decoding phase.
@@ -727,6 +722,58 @@ void FlowFactLoader::onIgnoreEntry(string name) {
 	// else produces a warning
 	if(!lib)
 		onWarning(_ << "symbol \"" << name << "\" cannot be found.");
+}
+
+void FlowFactLoader::onFlowConstraint
+(address_t addr, const flow_cons_e& relation, unsigned long count, const ContextualPath& path) {
+	if (!addr)
+		return;
+
+	Inst *inst = _fw->process()->findInstAt(addr);
+	if(!inst)
+		onError(_ << "unmarked flow constraint because instruction at " << addr << " not found");
+
+	switch (relation) {
+		case FLOW_EQ:
+			path.ref(TOTAL_ITERATION, inst) = count;
+			if(logFor(LOG_BB))
+				log << "\t" << path << "(TOTAL_ITERATION," << inst->address() << ") = " 
+				    << count << io::endl;
+			break;
+
+		case FLOW_NE:
+			onError( _ << "Flow relation NE not implemented, yet");
+			break;
+
+		case FLOW_LT:
+			if (count == 0)
+				onError( _ << "Infeasible flow constraint LT 0");
+			count--;
+			// fallthrough
+
+		case FLOW_LE:
+			path.ref(MAX_ITERATION, inst) = count;
+			if(logFor(LOG_BB))
+				log << "\t" << path << "(MAX_ITERATION," << inst->address() << ") = " 
+				    << count << io::endl;
+			break;
+
+		case FLOW_GT:
+			if (count == ULONG_MAX)
+				onError( _ << "Infeasible flow constraint GT INTMAX");
+			count++;
+			// fallthrough
+
+		case FLOW_GE:
+			path.ref(MIN_ITERATION, inst) = count;
+			if(logFor(LOG_BB))
+				log << "\t" << path << "(MIN_ITERATION," << inst->address() << ") = " 
+				    << count << io::endl;
+			break;
+
+		default:
+			onError(_ << "Flow relation not implemented");
+	}
 }
 
 /**
@@ -1161,6 +1208,8 @@ throw(ProcessorException) {
 				scanXFun(element, cpath);
 			else if(name == "block")
 				scanXBlock(element, cpath);
+			else if(name == "control-constraint")
+				scanXControlCons(element, cpath);
 			else if(name == "noreturn") {
 				Address addr = scanAddress(element, cpath).address();
 				if(!addr.isNull())
@@ -1571,7 +1620,7 @@ throw(ProcessorException) {
 }
 
 
-void FlowFactLoader::scanXBlock(xom::Element *element, ContextualPath& path) 
+void FlowFactLoader::scanXBlock(xom::Element *element, ContextualPath& path)
 throw(ProcessorException) {
 	// block has only attrs
 	Address addr = scanAddress(element, path).address();
@@ -1586,7 +1635,7 @@ throw(ProcessorException) {
 	if(refs.hasKey(ref))
 		onError(_ << "Duplicate block declaration in "<< xline(element));
 	refs.put(ref, addr);
-	onInfo(_ << "New block declaration '" << ref << "' at " << addr);
+	//onWarning(_ << "New block declaration '" << ref << "' at " << addr);
 }
 
 /**
@@ -1594,7 +1643,7 @@ throw(ProcessorException) {
  * @li contains a list of called functions,
  * @li contains a function content (compatibility with old syntax).
  */
-void FlowFactLoader::scanXCall(xom::Element *element, ContextualPath& path) 
+void FlowFactLoader::scanXCall(xom::Element *element, ContextualPath& path)
 throw(ProcessorException) {
 
 	// look for functions
@@ -1902,6 +1951,8 @@ void FlowFactLoader::scanXControlFormula
 				} catch(io::IOException& e) {
 					onError(_ << "Invalid value for integer in " << xline(element));
 				}
+				if (cnt < 0)
+					onError(_ << "Negative integer value not allowed in " << xline(element));
 			}
 			else
 				onError(_ << "unsupported control formula in " << xline(element));
@@ -1909,29 +1960,27 @@ void FlowFactLoader::scanXControlFormula
 	}
 	if (ref.isEmpty())
 		onError(_ << "reference missing in " << xline(element));
-	
+
 	// get address from ref (=check whether ref was declared)
 	if (!refs.hasKey(ref))
 		onError(_ << "block '" << ref << "' undeclared in " << xline(element));
 	const Address addr = refs.get(ref);
-	onInfo(_ << "Flow Fact: " << ref << " (" << addr << ") " << which << " " << cnt);
-	
-	#if 0
 	if(which == "eq")
-		scanXControlFormula(element, path, name);
+		onFlowConstraint(addr, FLOW_EQ, cnt, path);
 	else if(which == "ne")
-		scanXControlFormula(element, path, name);
+		onFlowConstraint(addr, FLOW_NE, cnt, path);
 	else if(which == "lt")
-		scanXControlFormula(element, path, name);
+		onFlowConstraint(addr, FLOW_LT, cnt, path);
 	else if(which == "le")
-		scanXControlFormula(element, path, name);
+		onFlowConstraint(addr, FLOW_LE, cnt, path);
 	else if(which == "gt")
-		scanXControlFormula(element, path, name);
+		onFlowConstraint(addr, FLOW_GT, cnt, path);
 	else if(which == "ge")
-		scanXControlFormula(element, path, name);
-	else 
+		onFlowConstraint(addr, FLOW_GE, cnt, path);
+	else
 		onError(_ << "unsupported control relation in " << xline(element));
-	#endif
+	log << "INFO: Flow constraint " << path << "(FLOW CONSTRAINT," << addr << ") "
+	    << which << " " << cnt << io::endl;
 }
 
 
