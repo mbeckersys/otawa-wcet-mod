@@ -30,6 +30,7 @@
 #include <otawa/prop/Identifier.h>
 #include <otawa/proc/Feature.h>
 #include <elm/genstruct/Vector.h>
+#include <elm/genstruct/SortedBinMap.h>
 #include <otawa/prop/ContextualProperty.h>
 #include <elm/types.h>
 #include <otawa/dfa/State.h>
@@ -65,6 +66,7 @@ protected:
 	MemArea addressOf(const string& file, int line) throw(ProcessorException);
 	void onError(const string& message);
 	void onWarning(const string& message);
+    void onInfo(const string& message);
 
 	virtual void onCheckSum(const String& name, t::uint32 sum);
 	virtual void onLibrary(void);
@@ -99,6 +101,7 @@ private:
 	bool checksummed;
 	genstruct::Vector<Path> paths;
 	genstruct::Vector<xom::Element *> nodes;
+    genstruct::SortedBinMap<cstring, Address> refs;
 	Path current;
 	bool mandatory;
 	bool lines_available;
@@ -114,6 +117,8 @@ private:
 	void scanXLoop(xom::Element *element, ContextualPath& path) throw(ProcessorException);
 	void scanXFun(xom::Element *element, ContextualPath& path) throw(ProcessorException);
 	void scanXConditional(xom::Element *element, ContextualPath& path) throw(ProcessorException);
+    void scanXControlCons(xom::Element *element, ContextualPath& path) throw(ProcessorException);
+    void scanXControlFormula(xom::Element *element, ContextualPath& path, const xom::String& which) throw(ProcessorException);
 	MemArea scanAddress(xom::Element *element, ContextualPath& path, bool call = false) throw(ProcessorException);
 	int findCall(cstring file, int line, Address& r);
 	Option<long> scanInt(xom::Element *element, cstring name) throw(ProcessorException);
@@ -122,6 +127,7 @@ private:
 	void scanXContent(xom::Element *element, ContextualPath& path) throw(ProcessorException);
 	void scanXBody(xom::Element *element, ContextualPath& path) throw(ProcessorException);
 	void scanXCall(xom::Element *element, ContextualPath& path) throw(ProcessorException);
+    void scanXBlock(xom::Element *element, ContextualPath& path) throw(ProcessorException);
 	string xline(xom::Node *element);
 	void scanNoInline(xom::Element *element, ContextualPath& cpath, bool no_inline);
 	void scanIgnoreEntry(xom::Element *element);

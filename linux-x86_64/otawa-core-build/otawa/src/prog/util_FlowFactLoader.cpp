@@ -526,7 +526,7 @@ extern int fft_line;
  * @author H. Cassé <casse@irit.fr>
  */
 
-p::declare FlowFactLoader::reg = p::init("otawa::util::FlowFactLoader", Version(1, 4, 0))
+p::declare FlowFactLoader::reg = p::init("otawa::util::FlowFactLoader", Version(1, 4, 1))
 	.maker<FlowFactLoader>()
 	.require(dfa::INITIAL_STATE_FEATURE)
 	.provide(FLOW_FACTS_FEATURE)
@@ -699,6 +699,11 @@ void FlowFactLoader::onError(const string& message) {
  * @param fmt	Message.
  */
 void FlowFactLoader::onWarning(const string& message) {
+	warn(_ << current << ": " << fft_line << ": " << message);
+}
+
+
+void FlowFactLoader::onInfo(const string& message) {
 	warn(_ << current << ": " << fft_line << ": " << message);
 }
 
@@ -1154,6 +1159,8 @@ throw(ProcessorException) {
 				scanXLoop(element, cpath);
 			else if(name == "function")
 				scanXFun(element, cpath);
+			else if(name == "block")
+				scanXBlock(element, cpath);
 			else if(name == "noreturn") {
 				Address addr = scanAddress(element, cpath).address();
 				if(!addr.isNull())
@@ -1564,12 +1571,31 @@ throw(ProcessorException) {
 }
 
 
+void FlowFactLoader::scanXBlock(xom::Element *element, ContextualPath& path) 
+throw(ProcessorException) {
+	// block has only attrs
+	Address addr = scanAddress(element, path).address();
+	if(addr.isNull()) {
+		onWarning(_ << "ignoring this block which has no address: "<< xline(element));
+		return;
+	}
+	const Option<xom::String> id = element->getAttributeValue("id");
+	if (!id)
+		onError(_ << "Block definition without id in "<< xline(element));
+	const cstring ref = id;
+	if(refs.hasKey(ref))
+		onError(_ << "Duplicate block declaration in "<< xline(element));
+	refs.put(ref, addr);
+	onInfo(_ << "New block declaration '" << ref << "' at " << addr);
+}
+
 /**
  * Scan a call element that may have possibly two forms:
  * @li contains a list of called functions,
  * @li contains a function content (compatibility with old syntax).
  */
-void FlowFactLoader::scanXCall(xom::Element *element, ContextualPath& path) throw(ProcessorException) {
+void FlowFactLoader::scanXCall(xom::Element *element, ContextualPath& path) 
+throw(ProcessorException) {
 
 	// look for functions
 	xom::Elements *elems = element->getChildElements("function");
@@ -1839,12 +1865,92 @@ throw(ProcessorException) {
 				scanXCall(element, path);
 			else if(name == "conditional")
 				scanXConditional(element, path);
+			else if(name == "block")
+				scanXBlock(element, path);
 			else if(name == "function")
 				this->scanXFun(element, path);
+			else if(name == "control-constraint")
+				this->scanXControlCons(element, path);
 		}
 	}
 }
 
+
+void FlowFactLoader::scanXControlFormula
+(xom::Element *element, ContextualPath& path, const xom::String& which) throw(ProcessorException) {
+	// for now, we only accept "count" and "int"
+	cstring ref;
+	long cnt = 0;
+	for(int i = 0; i < element->getChildCount(); i++) {
+		xom::Node *child = element->getChild(i);
+		if(child->kind() == xom::Node::ELEMENT) {
+			xom::Element *element = (xom::Element *)child;
+			xom::String name = element->getLocalName();
+			if(name == "count") {
+				Option<xom::String> id = element->getAttributeValue("id");
+				if (id)
+					ref = id;
+			}
+			else if(name == "int") {
+				Option<xom::String> val = element->getValue();
+				if(!val)
+					onError(_ << "Missing text for count attribute in " << xline(element));
+				io::BlockInStream buf(val);
+				io::Input in(buf);
+				try {
+					in >> cnt;
+				} catch(io::IOException& e) {
+					onError(_ << "Invalid value for integer in " << xline(element));
+				}
+			}
+			else
+				onError(_ << "unsupported control formula in " << xline(element));
+		}
+	}
+	if (ref.isEmpty())
+		onError(_ << "reference missing in " << xline(element));
+	
+	// get address from ref (=check whether ref was declared)
+	if (!refs.hasKey(ref))
+		onError(_ << "block '" << ref << "' undeclared in " << xline(element));
+	const Address addr = refs.get(ref);
+	onInfo(_ << "Flow Fact: " << ref << " (" << addr << ") " << which << " " << cnt);
+	
+	#if 0
+	if(which == "eq")
+		scanXControlFormula(element, path, name);
+	else if(which == "ne")
+		scanXControlFormula(element, path, name);
+	else if(which == "lt")
+		scanXControlFormula(element, path, name);
+	else if(which == "le")
+		scanXControlFormula(element, path, name);
+	else if(which == "gt")
+		scanXControlFormula(element, path, name);
+	else if(which == "ge")
+		scanXControlFormula(element, path, name);
+	else 
+		onError(_ << "unsupported control relation in " << xline(element));
+	#endif
+}
+
+
+/**
+ * @brief Called to scan a "control-constraint" element
+ */
+void FlowFactLoader::scanXControlCons(xom::Element *element, ContextualPath& path)
+throw(ProcessorException) {
+	if (1 < element->getChildCount())
+		onError(_ << "no support for multiple child elements in " << xline(element));
+	else if (1 > element->getChildCount())
+		onError(_ << "control relation missing in " << xline(element));
+	xom::Node *child = element->getChild(0);
+	if(child->kind() == xom::Node::ELEMENT) {
+		xom::Element *element = (xom::Element *)child;
+		xom::String relation = element->getLocalName();
+		scanXControlFormula(element, path, relation);
+	}
+}
 
 /**
  * Called to scan an "if" element.
