@@ -41,6 +41,8 @@ public:
 
 protected:
 	virtual void processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb);
+    virtual void processLoop(WorkSpace *ws, CFG *cfg, BasicBlock *bb);
+    virtual void processFlowCons(WorkSpace *ws, CFG *cfg, BasicBlock *bb);
 	virtual void setup(WorkSpace *ws);
 private:
 	ilp::System *system;

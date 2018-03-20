@@ -527,6 +527,7 @@ extern int fft_line;
  * @author H. Cassé <casse@irit.fr>
  */
 
+
 p::declare FlowFactLoader::reg = p::init("otawa::util::FlowFactLoader", Version(1, 4, 1))
 	.maker<FlowFactLoader>()
 	.require(dfa::INITIAL_STATE_FEATURE)
@@ -2141,8 +2142,17 @@ Identifier<bool> NO_RETURN("otawa::NO_RETURN", false);
 
 
 /**
+ * Identifier for marking basic blocks that have flow constraints
+ *
+ * @par Hooks
+ * @li @ref BasicBlock
+ */
+Identifier<bool> FLOW_CONSTRAINT("otawa::FLOW_CONSTRAINT", false);
+
+/**
  * Put on the first instruction of a loop, it gives the maximum number of
- * iteration of this loop.
+ * iteration of this loop. Otherwise, put on any instruction together 
+ * with FLOW_CONSTRAINT.
  * @ingroup ff
  *
  * @par Hooks
@@ -2257,7 +2267,8 @@ Identifier<bool> PRESERVED("otawa::PRESERVED", false);
 
 /**
  * Put on the first instruction of a loop, it gives the minimal
- * number of iterations.
+ * number of iterations. Otherwise, put on any instruction together 
+ * with FLOW_CONSTRAINT.
  *
  * @par Features
  * @li @ref MKFF_PRESERVATION_FEATURE
@@ -2271,7 +2282,9 @@ Identifier<int> MIN_ITERATION("otawa::MIN_ITERATION", -1);
 /**
  * Put on the first instruction of a loop, it gives the total
  * number of iterations during the whole execution of the program.
- *
+ * Otherwise, put on any instruction together 
+ * with FLOW_CONSTRAINT.
+ * 
  * @par Features
  * @li @ref MKFF_PRESERVATION_FEATURE
  * @par Hooks

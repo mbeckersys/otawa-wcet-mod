@@ -33,16 +33,18 @@ protected:
 	virtual void setup(WorkSpace *ws);
 	virtual void cleanup (WorkSpace *fw);
 	virtual void processBB(WorkSpace *fw, CFG *cfg, BasicBlock *bb);
+    virtual void processLoop(WorkSpace *fw, CFG *cfg, BasicBlock *bb);
+    virtual void processFlowCons(WorkSpace *fw, CFG *cfg, BasicBlock *bb);
 	virtual void enteringCall (WorkSpace *ws, CFG *cfg, BasicBlock *caller, BasicBlock *callee);
 	virtual void leavingCall (WorkSpace *ws, CFG *cfg, BasicBlock *to);
 
 private:
 	bool lines_available;
-	int total_loop, found_loop, line_loop;
+	int total_loop, found_loop, line_loop, flow_cons;
 	int max, total, min;
 	ContextualPath path;
 
-	bool transfer(Inst *source, BasicBlock *bb);
+	unsigned int transfer(Inst *source, BasicBlock *bb, bool* boundup);
 	bool lookLineAt(Inst *source, BasicBlock *bb);
 };
 

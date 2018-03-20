@@ -47,7 +47,7 @@ namespace otawa { namespace ipet {
  * @li @ref ipet::FLOW_FACTS_FEATURE
  */
 
-p::declare FlowFactLoader::reg = p::init("otawa::ipet::FlowFactLoader", Version(1, 1, 1))
+p::declare FlowFactLoader::reg = p::init("otawa::ipet::FlowFactLoader", Version(1, 1, 2))
 	.base(ContextualProcessor::reg)
 	.maker<FlowFactLoader>()
 	.require(LOOP_HEADERS_FEATURE)
@@ -64,6 +64,7 @@ FlowFactLoader::FlowFactLoader(p::declare& r)
  	total_loop(0),
  	found_loop(0),
  	line_loop(0),
+ 	flow_cons(0),
  	max(0),
  	total(0),
  	min(0)
@@ -103,20 +104,21 @@ void FlowFactLoader::leavingCall(WorkSpace *ws, CFG *cfg, BasicBlock *to) {
  * Transfer flow information from the given source instruction to the given BB.
  * @param source	Source instruction.
  * @param bb		Target BB.
- * @return			True if some loop bound information has been found, false else.
+ * @param boundup	true if upper bounds have been transferred
+ * @return			True if an upper bound has been found
  */
-bool FlowFactLoader::transfer(Inst *source, BasicBlock *bb) {
-	bool all = true;
+unsigned int FlowFactLoader::transfer(Inst *source, BasicBlock *bb, bool* boundup) {
+	unsigned int transferred = 0;
+	if (boundup) *boundup = false;
 
+	//log << "\t\t\FlowFactLoader::transfer(): " << bb << io::endl;
 	// look for MAX_ITERATION
 	if(max < 0) {
 		max = path(MAX_ITERATION, source);
-		if(max < 0)
-			all = false;
-		else {
+		if(max >= 0) {
+			transferred++;
+			if (boundup) *boundup = true;
 			MAX_ITERATION(bb) = max;
-			if(total < 0)
-				found_loop++;
 			if(logFor(LOG_BB))
 				log << "\t\t\tMAX_ITERATION(" << path << ":" << bb << ") = " << max << io::endl;
 		}
@@ -125,9 +127,8 @@ bool FlowFactLoader::transfer(Inst *source, BasicBlock *bb) {
 	// look for MIN_ITERATION
 	if(min < 0) {
 		min = path(MIN_ITERATION, source);
-		if(min < 0)
-			all = false;
-		else {
+		if(min >= 0) {
+			transferred++;
 			MIN_ITERATION(bb) = min;
 			if(logFor(LOG_BB))
 				log << "\t\t\tMIN_ITERATION(" << path << ":" << bb << ") = " << min << io::endl;
@@ -137,17 +138,16 @@ bool FlowFactLoader::transfer(Inst *source, BasicBlock *bb) {
 	// look for TOTAL_ITERATION
 	if(total < 0){
 		total = path(TOTAL_ITERATION, source);
-		if(total < 0)
-			all = false;
-		else {
+		if(total >= 0) {
+			transferred++;
+			if (boundup) *boundup = true;
 			TOTAL_ITERATION(bb) = total;
-			if(max < 0)
-				found_loop++;
 			if(logFor(LOG_BB))
 				log << "\t\t\tTOTAL_ITERATION(" << path << ":" << bb << ") = " << total << io::endl;
 		}
 	}
-	return all;
+	flow_cons += transferred;
+	return transferred;
 }
 
 
@@ -158,6 +158,7 @@ void FlowFactLoader::setup(WorkSpace *ws) {
 	total_loop = 0;
 	found_loop = 0;
 	line_loop = 0;
+	flow_cons = 0;
 }
 
 
@@ -172,6 +173,7 @@ void FlowFactLoader::cleanup(WorkSpace *ws) {
 			log << "\tfound loop = " << found_loop << " (" << ((float)found_loop * 100 / total_loop) << "%)\n";
 			log << "\tline loop = " << line_loop << " (" << ((float)line_loop * 100 / total_loop) << "%)\n";
 		}
+		log << "\tflow cons = " << flow_cons << "\n";
 	}
 }
 
@@ -181,7 +183,7 @@ void FlowFactLoader::cleanup(WorkSpace *ws) {
  * found on the instruction.
  * @param inst	Instruction to look in.
  * @param bb	BB to put the bound to.
- * @return		True if the bound has been found, false else.
+ * @return		True if upper bound has been found, false else.
  */
 bool FlowFactLoader::lookLineAt(Inst *inst, BasicBlock *bb) {
 	if(!lines_available)
@@ -201,25 +203,13 @@ bool FlowFactLoader::lookLineAt(Inst *inst, BasicBlock *bb) {
 	ASSERT(line_inst);
 
 	// perform transfer
-	bool trans = transfer(line_inst, bb);
-	if(trans)
-		line_loop++;
-	return trans;
+	bool boundup;
+	(void) transfer(line_inst, bb, &boundup);
+	return boundup;
 }
 
 
-/**
- */
-void FlowFactLoader::processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
-	ASSERT(ws);
-	ASSERT(cfg);
-	ASSERT(bb);
-
-	// only for loop headers
-	if(bb->isEnd() || !LOOP_HEADER(bb))
-		return;
-	total_loop++;
-
+void FlowFactLoader::processLoop(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
 	// initialization
 	max = -1;
 	total = -1;
@@ -228,30 +218,83 @@ void FlowFactLoader::processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
 	// Look in the first instruction of the BB
 	BasicBlock::InstIter iter(bb);
 	ASSERT(iter);
-	if(transfer(iter, bb))
+	bool boundup;
+	(void) transfer(iter, bb, &boundup);
+	if(boundup) {
+		found_loop++;
 		return;
+	}
 
 	// Attempt to look at the start of the matching source line
-	if(lookLineAt(bb->firstInst(), bb))
+	if(lookLineAt(bb->firstInst(), bb)) {
+		found_loop++;
+		line_loop++;
 		return;
+	}
 
 	// Look all instruction in the header
 	// (in case of aggregation in front of the header)
 	for(BasicBlock::InstIter inst(bb); inst; inst++)
-		if(lookLineAt(inst, bb))
+		if(lookLineAt(inst, bb)) {
+			found_loop++;
+			line_loop++;
 			return;
+		}
 
 	// look in back edge in case of "while() ..." to "do ... while(...)" optimization
 	for(BasicBlock::InIterator edge(bb); edge; edge++)
 		if(Dominance::isBackEdge(edge))
 			for(BasicBlock::InstIter inst(edge->source()); inst; inst++)
-				if(lookLineAt(inst, bb))
+				if(lookLineAt(inst, bb)) {
+					line_loop++;
+					found_loop++;
 					return;
+				}
 
 	// warning for lacking loops
 	if(max < 0 && total < 0) {
 		warn(_ << "no limit for the loop at " << str(path.getEnclosingFunction(), bb->address()) << ".");
 		warn(_ << " in the context " << path);
+	}
+}
+
+/**
+ * @brief check each Inst in BB for constraints and make BB-constraint
+ */
+
+void FlowFactLoader::processFlowCons(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
+	max = -1;
+	total = -1;
+	min = -1;
+	
+	for(BasicBlock::InstIter inst(bb); inst; inst++) {
+		const unsigned int new_cons = transfer(inst, bb, NULL);
+		if (new_cons) {
+			FLOW_CONSTRAINT(bb) = true;
+			if(logFor(LOG_BB)) {
+				log << "\t\t\tFound non-loop flow constraints for " << bb << io::endl;
+			}
+		}
+	}
+}
+
+
+/**
+ * Modified so that we also accept flow facts for non-loop headers
+ */
+void FlowFactLoader::processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
+	ASSERT(ws);
+	ASSERT(cfg);
+	ASSERT(bb);
+
+	if(bb->isEnd())
+		return;
+
+	if (LOOP_HEADER(bb)) {
+		total_loop++;
+		processLoop(ws, cfg, bb);
+	} else {
+		processFlowCons(ws, cfg, bb);
 	}
 }
 
