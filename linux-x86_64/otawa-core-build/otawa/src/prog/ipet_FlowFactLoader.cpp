@@ -268,11 +268,13 @@ void FlowFactLoader::processFlowCons(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
 	min = -1;
 	
 	for(BasicBlock::InstIter inst(bb); inst; inst++) {
-		const unsigned int new_cons = transfer(inst, bb, NULL);
-		if (new_cons) {
-			FLOW_CONSTRAINT(bb) = true;
-			if(logFor(LOG_BB)) {
-				log << "\t\t\tFound non-loop flow constraints for " << bb << io::endl;
+		if (FLOW_CONSTRAINT_USER(inst)) {
+			const unsigned int new_cons = transfer(inst, bb, NULL);
+			if (new_cons) {
+				FLOW_CONSTRAINT_USER(bb) = true;
+				if(logFor(LOG_BB)) {
+					log << "\t\t\tFound user flow constraints for " << bb << io::endl;
+				}
 			}
 		}
 	}

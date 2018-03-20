@@ -80,15 +80,49 @@ void FlowFactConstraintBuilder::setup(WorkSpace *ws) {
 }
 
 
-void FlowFactConstraintBuilder::processFlowCons(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
-	// TODO: build IPET constraint
+void FlowFactConstraintBuilder::processFlowConsUser(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
+	if(logFor(LOG_BB))
+		log << "\t\tlooking up user flow constraint for " << bb << io::endl;
+
+	int max = MAX_ITERATION(bb),
+		total = TOTAL_ITERATION(bb),
+		min = MIN_ITERATION(bb);
+
+	if(logFor(LOG_BB)) {
+		if(max >= 0)
+			log << "\t\tuser max = " << max << io::endl;
+		if(min >= 0)
+			log << "\t\tuser min = " << min << io::endl;
+	}
+
+	// constraint for MAX_ITERATION
+	if(max >= 0) {
+		string label;
+		if(_explicit)
+			label = _ << "user flow constraint on BB" << INDEX(bb) << "/" << cfg->label();
+		otawa::ilp::Constraint *cons = system->newConstraint(label, otawa::ilp::Constraint::LE);
+		otawa::ilp::Var *var = VAR(bb);
+		cons->addLeft(1, var);
+		cons->addRight(max, NULL);
+	}
+
+	// constraint for MIN_ITERATION
+	if(min >= 0) {
+		string label;
+		if(_explicit)
+			label = _ << "user flow constraint on BB" << INDEX(bb) << "/" << cfg->label();
+		otawa::ilp::Constraint *cons = system->newConstraint(label, otawa::ilp::Constraint::GE);
+		otawa::ilp::Var *var = VAR(bb);
+		cons->addLeft(1, var);
+		cons->addRight(min, NULL);
+	}
 }
 
 
 void FlowFactConstraintBuilder::processLoop(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
 	// look bounds
 	if(logFor(LOG_BB))
-		log << "\t\tlooking bound for " << bb << io::endl;
+		log << "\t\tlooking up loop bound for " << bb << io::endl;
 	int max = MAX_ITERATION(bb),
 		total = TOTAL_ITERATION(bb),
 		min = MIN_ITERATION(bb);
@@ -239,8 +273,8 @@ void FlowFactConstraintBuilder::processBB(WorkSpace *ws, CFG *cfg, BasicBlock *b
 	if (LOOP_HEADER(bb)) {
 		processLoop(ws, cfg, bb);
 	}
-	if (FLOW_CONSTRAINT(bb)) {
-		processFlowCons(ws, cfg, bb);
+	if (FLOW_CONSTRAINT_USER(bb)) {
+		processFlowConsUser(ws, cfg, bb);
 	}
 }
 

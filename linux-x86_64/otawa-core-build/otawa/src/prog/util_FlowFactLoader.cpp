@@ -732,13 +732,17 @@ void FlowFactLoader::onFlowConstraint
 
 	Inst *inst = _fw->process()->findInstAt(addr);
 	if(!inst)
-		onError(_ << "unmarked flow constraint because instruction at " << addr << " not found");
+		onError(_ << "unmarked user flow constraint because instruction at " << addr << " not found");
 
+	FLOW_CONSTRAINT_USER(inst) = true;
 	switch (relation) {
 		case FLOW_EQ:
-			path.ref(TOTAL_ITERATION, inst) = count;
+			path.ref(MIN_ITERATION, inst) = count;
+			path.ref(MAX_ITERATION, inst) = count;
 			if(logFor(LOG_BB))
-				log << "\t" << path << "(TOTAL_ITERATION," << inst->address() << ") = " 
+				log << "\t" << path << "(MIN_ITERATION," << inst->address() << ") = " 
+				    << count << io::endl;
+				log << "\t" << path << "(MAX_ITERATION," << inst->address() << ") = " 
 				    << count << io::endl;
 			break;
 
@@ -774,6 +778,7 @@ void FlowFactLoader::onFlowConstraint
 
 		default:
 			onError(_ << "Flow relation not implemented");
+			FLOW_CONSTRAINT_USER(inst) = false;
 	}
 }
 
@@ -1980,7 +1985,7 @@ void FlowFactLoader::scanXControlFormula
 		onFlowConstraint(addr, FLOW_GE, cnt, path);
 	else
 		onError(_ << "unsupported control relation in " << xline(element));
-	log << "INFO: Flow constraint " << path << "(FLOW CONSTRAINT," << addr << ") "
+	log << "INFO: User flow constraint " << path << "(FLOW CONSTRAINT," << addr << ") "
 	    << which << " " << cnt << io::endl;
 }
 
@@ -2142,17 +2147,17 @@ Identifier<bool> NO_RETURN("otawa::NO_RETURN", false);
 
 
 /**
- * Identifier for marking basic blocks that have flow constraints
+ * Identifier for marking basic blocks and instructions that have flow constraints
  *
  * @par Hooks
  * @li @ref BasicBlock
  */
-Identifier<bool> FLOW_CONSTRAINT("otawa::FLOW_CONSTRAINT", false);
+Identifier<bool> FLOW_CONSTRAINT_USER("otawa::FLOW_CONSTRAINT_USER", false);
 
 /**
  * Put on the first instruction of a loop, it gives the maximum number of
  * iteration of this loop. Otherwise, put on any instruction together 
- * with FLOW_CONSTRAINT.
+ * with FLOW_CONSTRAINT_USER.
  * @ingroup ff
  *
  * @par Hooks
@@ -2268,7 +2273,7 @@ Identifier<bool> PRESERVED("otawa::PRESERVED", false);
 /**
  * Put on the first instruction of a loop, it gives the minimal
  * number of iterations. Otherwise, put on any instruction together 
- * with FLOW_CONSTRAINT.
+ * with FLOW_CONSTRAINT_USER.
  *
  * @par Features
  * @li @ref MKFF_PRESERVATION_FEATURE
@@ -2282,8 +2287,6 @@ Identifier<int> MIN_ITERATION("otawa::MIN_ITERATION", -1);
 /**
  * Put on the first instruction of a loop, it gives the total
  * number of iterations during the whole execution of the program.
- * Otherwise, put on any instruction together 
- * with FLOW_CONSTRAINT.
  * 
  * @par Features
  * @li @ref MKFF_PRESERVATION_FEATURE

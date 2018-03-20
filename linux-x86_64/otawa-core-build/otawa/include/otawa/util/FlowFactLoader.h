@@ -164,7 +164,7 @@ extern p::feature MKFF_PRESERVATION_FEATURE;
 // Annotations
 extern Identifier<bool> IS_RETURN;
 extern Identifier<bool> NO_RETURN;
-extern Identifier<bool> FLOW_CONSTRAINT;
+extern Identifier<bool> FLOW_CONSTRAINT_USER;
 extern Identifier<int> MAX_ITERATION;
 extern Identifier<int> MIN_ITERATION;
 extern Identifier<int> TOTAL_ITERATION;
