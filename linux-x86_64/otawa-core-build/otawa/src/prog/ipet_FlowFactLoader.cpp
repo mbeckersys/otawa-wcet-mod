@@ -269,6 +269,10 @@ void FlowFactLoader::processFlowCons(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
 	
 	for(BasicBlock::InstIter inst(bb); inst; inst++) {
 		if (FLOW_CONSTRAINT_USER(inst)) {
+			if (LOOP_HEADER(bb)) {
+				log << "\t\t\tUnmarked loop header due to user flow constraint for " << bb << io::endl;
+				LOOP_HEADER(bb) = false;
+			}
 			const unsigned int new_cons = transfer(inst, bb, NULL);
 			if (new_cons) {
 				FLOW_CONSTRAINT_USER(bb) = true;
@@ -292,11 +296,10 @@ void FlowFactLoader::processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
 	if(bb->isEnd())
 		return;
 
+	processFlowCons(ws, cfg, bb);
 	if (LOOP_HEADER(bb)) {
 		total_loop++;
 		processLoop(ws, cfg, bb);
-	} else {
-		processFlowCons(ws, cfg, bb);
 	}
 }
 

@@ -26,7 +26,7 @@ long_line_column=100
 current_page=17
 FILE_NAME_0=429;Make;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2FMakefile;0;4
 FILE_NAME_1=765;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Fotawa%2Fcfg.xml;0;4
-FILE_NAME_2=23978;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2Flinux-x86_64%2Fotawa-core-build%2Fotawa%2Fsrc%2Fprog%2Futil_FlowFactLoader.cpp;0;4
+FILE_NAME_2=30984;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2Flinux-x86_64%2Fotawa-core-build%2Fotawa%2Fsrc%2Fprog%2Futil_FlowFactLoader.cpp;0;4
 FILE_NAME_3=6625;C;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2Flinux-x86_64%2Fotawa-core-build%2Fotawa%2Finclude%2Fotawa%2Futil%2FFlowFactLoader.h;0;4
 FILE_NAME_4=275;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Fotawa%2Fmain.elf.ffx;0;4
 FILE_NAME_5=20044;ASM;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Fotawa%2Fmain.asm;0;4
@@ -41,8 +41,17 @@ FILE_NAME_13=5761;C++;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fot
 FILE_NAME_14=7441;ASM;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Fotawa-simple%2Fmain.elf.asm;0;4
 FILE_NAME_15=201;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Fotawa-simple%2Fmain.elf.ffx;0;4
 FILE_NAME_16=4034;XML;0;EISO-8859-1;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Fotawa-complex%2Fotawa_script.osx;0;4
-FILE_NAME_17=147;None;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Ftmp%2Fcompilers.txt;0;4
+FILE_NAME_17=4605;None;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Ftmp%2Fcompilers.txt;0;4
 FILE_NAME_18=84928;ASM;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Fotawa-float%2Fmain.asm;0;4
+FILE_NAME_19=147;C;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fmain.c;0;4
+FILE_NAME_20=2149;Make;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2FMakefile;0;4
+FILE_NAME_21=868;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fmain.elf.ffx;0;4
+FILE_NAME_22=17112;ASM;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fmain.asm;0;4
+FILE_NAME_23=8618;ASM;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fmain_fdo.asm;0;4
+FILE_NAME_24=342;C;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fsort.c;0;4
+FILE_NAME_25=0;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fcfg_fdo.xml;0;4
+FILE_NAME_26=794;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fmain_fdo.elf.ffx;0;4
+FILE_NAME_27=1;None;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fmain_fdo.txt;0;4
 
 [build-menu]
 MakeFT_00_LB=make
