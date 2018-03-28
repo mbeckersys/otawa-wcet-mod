@@ -272,7 +272,7 @@ void FlowFactConstraintBuilder::processBB(WorkSpace *ws, CFG *cfg, BasicBlock *b
 
 	if (FLOW_CONSTRAINT_USER(bb)) {
 		processFlowConsUser(ws, cfg, bb);
-	} else // mutually exclusive to avoid clashes
+	}
 	if (LOOP_HEADER(bb)) {
 		processLoop(ws, cfg, bb);
 	}
