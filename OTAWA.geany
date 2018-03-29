@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=20
+current_page=19
 FILE_NAME_0=429;Make;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2FMakefile;0;4
 FILE_NAME_1=765;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Fotawa%2Fcfg.xml;0;4
 FILE_NAME_2=23902;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2Flinux-x86_64%2Fotawa-core-build%2Fotawa%2Fsrc%2Fprog%2Futil_FlowFactLoader.cpp;0;4
@@ -43,8 +43,10 @@ FILE_NAME_15=84928;ASM;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fw
 FILE_NAME_16=147;C;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fmain.c;0;4
 FILE_NAME_17=342;C;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fsort.c;0;4
 FILE_NAME_18=868;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fmain.elf.ffx;0;4
-FILE_NAME_19=5495;XML;0;EISO-8859-1;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fotawa_script.osx;0;4
+FILE_NAME_19=4497;XML;0;EISO-8859-1;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fotawa_script.osx;0;4
 FILE_NAME_20=252;Make;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2FMakefile;0;4
+FILE_NAME_21=98;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fotawa-cacheconfig.xml;0;4
+FILE_NAME_22=0;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbubblesort%2Ftarget-arm%2Fotawa-pipelineconfig.xml;0;4
 
 [build-menu]
 MakeFT_00_LB=make
