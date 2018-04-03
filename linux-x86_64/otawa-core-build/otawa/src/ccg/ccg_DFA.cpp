@@ -18,6 +18,7 @@
  *	along with OTAWA; if not, write to the Free Software
  *	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
+#include <elm/log/Log.h>
 #include <elm/assert.h>
 #include <otawa/cfg.h>
 #include <otawa/instruction.h>
@@ -36,7 +37,6 @@ using namespace otawa::ipet;
 
 namespace otawa { namespace ccg {
 
-
 /**
  */
 int Problem::vars = 0;
@@ -45,7 +45,8 @@ int Problem::vars = 0;
 /**
  */
 Domain *Problem::gen(CFG *cfg, BasicBlock *bb) {
-	/*int length =*/ ccggraph->count();
+	int length = ccggraph->count();
+	ELM_DBGLN("Number of L-Blocks in " << cfg->label() << ": " << length);
 	Domain *bitset = empty();
 	if(bb->isEntry() && (cfg == ENTRY_CFG(fw))) {
 		bitset->add(0);
@@ -53,16 +54,25 @@ Domain *Problem::gen(CFG *cfg, BasicBlock *bb) {
 	}
 	else {
 		address_t adlbloc;
-	    int identif = 0;
+		int identif = 0;
 		for(BasicBlock::InstIter inst(bb); inst; inst++) {
 			adlbloc = inst->address();
+			ELM_DBGLN("\tGetting L-block of " << adlbloc << "...");
 			for (LBlockSet::Iterator lbloc(*ccggraph); lbloc; lbloc++) {
+				ASSERT(!lbloc.ended());
+				if (0 == lbloc->size()) {
+					ELM_DBGLN("Skipping empty L-BLock: " << lbloc->index());
+					continue;
+				}
 				address_t address = lbloc->address();
-				if(adlbloc == address && lbloc->bb()== bb)
+				//ELB_DBGLN("\t\t\taddr=" << address.offset());
+				if(adlbloc == address && lbloc->bb()== bb) {
 					identif = lbloc->id();
+					ELM_DBGLN("\t\tL-Block for " << adlbloc << " is << " << lbloc->id());
+				}
 			}
 		}
-
+		ELM_DBGLN("\tL-Block is " << identif);
 		if(identif != 0)
 		 	bitset->add(identif);
 		return bitset;
@@ -76,7 +86,7 @@ Domain *Problem::preserve(CFG *cfg, BasicBlock *bb) {
 	bool testnotconflit = false;
 	bool visit = false;
 	address_t adlbloc;
-    int identif1 = 0;
+	int identif1 = 0;
 
 	for(BasicBlock::InstIter inst(bb); inst; inst++) {
 		visit = false;

@@ -47,7 +47,8 @@ Identifier<LBlock**> LAST_LBLOCK("otawa::LAST_LBLOCK", NULL);
 
  /**
  * This property tells if the lblock is the first of its BasicBlock (for its cache line)
- * This information is useful, because if it's false, then, the lblock is always a miss.
+ * This information is useful, because if it's false, then, the lblock is always a miss
+ * (MBe: shouldn't that mean hit?!)
  *
  * @par Hooks
  * @li @ref LBlock
@@ -115,7 +116,7 @@ void FirstLastBuilder::processCFG(WorkSpace *fw, CFG *cfg) {
 				ASSERT(lblocks[i] != NULL);
 				int line = cache->line(lblocks[i]->address());
 
-
+				// memorize largest address of all l-blocks (for this BB and line)
 				if ((max_lblock[line] == NULL) || (lblocks[i]->address() > max_addr[line])) {
 					max_addr[line] = lblocks[i]->address();
 					max_lblock[line] = lblocks[i];
@@ -127,7 +128,7 @@ void FirstLastBuilder::processCFG(WorkSpace *fw, CFG *cfg) {
 			}
 		}
 		for (int line = 0; line < cache->rowCount(); line++) {
-			/* XXX TODO: pas coh�rent */
+			/* XXX TODO: pas coh�rent (no if-wrapper for LAST_LBLOCK, but not needed since its simply sets NULL) */
 			LAST_LBLOCK(bb)[line] = max_lblock[line];
 			if (min_lblock[line] != NULL)
 				LBLOCK_ISFIRST(min_lblock[line]) = true;

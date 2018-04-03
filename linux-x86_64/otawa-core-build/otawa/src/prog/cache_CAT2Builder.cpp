@@ -99,7 +99,7 @@ Registration<CAT2Builder> CAT2Builder::reg(
  */
 
 /**
- * !!TODO!!
+ * @brief called for each cache line: determines guaranteed hits/misses
  */
 void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard::Cache *cache) {
 	int line = lbset->line();
@@ -111,15 +111,20 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 		if ((lblock->id() == 0) || (lblock->id() == lbset->count() - 1))
 			continue;
 
+		// if l-block is the first of its BB in the current cache line
 		if (LBLOCK_ISFIRST(lblock)) {
+
+			// MUST analysis: determine whether must be in cache (hit)
 			MUSTProblem::Domain *must = CACHE_ACS_MUST(lblock->bb())->get(line);
+			// MAY analysis: determine whether may be in cache (if not, miss)
 			MAYProblem::Domain *may = NULL;
 			if (CACHE_ACS_MAY(lblock->bb()) != NULL)
 				may = CACHE_ACS_MAY(lblock->bb())->get(line);
-			BasicBlock *header;
 			if (may) {
+				// may or may not be in cache (depending on exec path)
 				cache::CATEGORY(lblock) = cache::NOT_CLASSIFIED;
 			} else {
+				// not may be in cache, i.e., never in cache.
 				cache::CATEGORY(lblock) = cache::ALWAYS_MISS;
 			}
 
@@ -128,10 +133,16 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 			} else if (may && !may->contains(lblock->cacheblock())) {
 				cache::CATEGORY(lblock) = cache::ALWAYS_MISS;
 			} else if (firstmiss_level != FML_NONE) {
+				// for loops only
+				BasicBlock *header;
 				if (LOOP_HEADER(lblock->bb()))
 					header = lblock->bb();
-			  	else header = ENCLOSING_LOOP_HEADER(lblock->bb());
+				else
+					header = ENCLOSING_LOOP_HEADER(lblock->bb());
 
+				// Persistence analysis: is L-Block in cache after first loop iteration?
+				// TODO: Puschner claims that persistence analysis prior to 2009 was unsound
+				// https://ti.tuwien.ac.at/cps/teaching/courses/wcet/slides/wcet04_hw_modeling_2.pdf
 				bool is_pers = false;
 				PERSProblem::Domain *pers = CACHE_ACS_PERS(lblock->bb())->get(line);
 
@@ -163,13 +174,20 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 
 				if(is_pers) {
 					cache::CATEGORY(lblock) = cache::FIRST_MISS;
+					ASSERT(header != NULL); ///< MBe: this fails. Possibly because loop is irreducible?
 					cache::CATEGORY_HEADER(lblock) = header;
 				}
 				else
 					cache::CATEGORY(lblock) = cache::NOT_CLASSIFIED;
 			} /* of category condition test */
-		} else
+		} else {
+			// this l-block is NOT the first in its BB (for this cache line).
+			// hypothesis: that may only happen if the BB is non-contiguous in memory,
+			// e.g., by JMP, *and* if the JMP is not "glued together" by the flow analyzer.
+			// TODO: However, shouldn't it then be a hit?
 			cache::CATEGORY(lblock) = cache::ALWAYS_MISS;
+			ASSERT(false); ///< we don't trust this classification; give us an example
+		}
 
 		// record stats
 		total_cnt++;

@@ -4,7 +4,7 @@
  *
  *	This file is part of OTAWA
  *	Copyright (c) 2003-07, IRIT UPS.
- * 
+ *
  *	OTAWA is free software; you can redistribute it and/or modify
  *	it under the terms of the GNU General Public License as published by
  *	the Free Software Foundation; either version 2 of the License, or
@@ -16,12 +16,13 @@
  *	GNU General Public License for more details.
  *
  *	You should have received a copy of the GNU General Public License
- *	along with OTAWA; if not, write to the Free Software 
+ *	along with OTAWA; if not, write to the Free Software
  *	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 #include <stdio.h>
 #include <elm/io.h>
+#include <elm/log/Log.h>
 #include <otawa/cache/LBlockSet.h>
 #include <otawa/util/LBlockBuilder.h>
 #include <otawa/ilp.h>
@@ -43,7 +44,7 @@ using namespace otawa::ilp;
 using namespace otawa::ipet;
 
 namespace otawa {
-	
+
 using namespace cache;
 
 
@@ -270,11 +271,16 @@ void CAT2OnlyConstraintBuilder::processWorkSpace(otawa::WorkSpace *fw) {
 	ilp::System *system = SYSTEM(fw);
 	LBlockSet **lbsets = LBLOCKS(fw);
 
+	ELM_DBGLN("I-Cache lines=" << cache->rowCount());
+
 	// generate the constraints
 	for (int i = 0 ; i < cache->rowCount(); i++) {
+		ELM_DBGLN("Cache line " << i << " ...");
 		for (LBlockSet::Iterator lblock(*lbsets[i]); lblock; lblock++) {
 			if ((lblock->id() == 0) || (lblock->id() == (lbsets[i]->count() - 1)))
 				continue; /* Skip first / last l-blocks */
+
+			ELM_DBGLN("\tL-Block=" << lblock->id() << " " << &(*lblock) << ", addr=" << lblock->address());
 
 			// create x_miss variable
 			StringBuffer buf1;
@@ -288,6 +294,7 @@ void CAT2OnlyConstraintBuilder::processWorkSpace(otawa::WorkSpace *fw) {
 			// add the constraint depending on the lblock category
 			switch(cache::CATEGORY(lblock)) {
 			case cache::ALWAYS_HIT: {
+				ELM_DBGLN("\t\tAlways hit");
 				// Add constraint: xmiss = 0
 				Constraint *cons2 = system->newConstraint(ah_msg, Constraint::EQ,0);
 				if (_explicit) {
@@ -300,6 +307,7 @@ void CAT2OnlyConstraintBuilder::processWorkSpace(otawa::WorkSpace *fw) {
 			break;
 			case cache::FIRST_HIT:
 			case cache::NOT_CLASSIFIED: {
+				ELM_DBGLN("\t\tFirst Hit/Not classified");
 				if (_explicit) {
 					buf1 << "_NC";
 					String name1 = buf1.toString();
@@ -312,6 +320,7 @@ void CAT2OnlyConstraintBuilder::processWorkSpace(otawa::WorkSpace *fw) {
 			}
 			break;
 			case cache::ALWAYS_MISS: {
+				ELM_DBGLN("\t\tAlways miss");
 				// Add constraint: xmiss = x
 				Constraint *cons3 = system->newConstraint(am_msg, Constraint::EQ);
 				if (_explicit) {
@@ -324,14 +333,21 @@ void CAT2OnlyConstraintBuilder::processWorkSpace(otawa::WorkSpace *fw) {
 			}
 			break;
 			case cache::FIRST_MISS: {
+				ELM_DBGLN("\t\tFirst miss");
 				if (_explicit) {
 					buf1 << "_FMISS";
 					String name1 = buf1.toString();
 					miss = system->newVar(name1);
 				}
 
+				ASSERT(lblock->id() != 0); ///< MBe added this
+				//ELM_DBGLN("\t\t\t...size=" << lblock->size());
+
+				// In the case of a FIRST_HIT (or FIRST_MISS) property, contains the header of
+				// the loop causing the HIT (or MISS) at the first iteration
 				BasicBlock *header = cache::CATEGORY_HEADER(lblock);
 				ASSERT(header != NULL);
+				ELM_DBGLN("\t\t\t...loop hdr=" << header);
 
 				if (LINKED_BLOCKS(lblock) != NULL) {
 					/* linked l-blocks first-miss */
