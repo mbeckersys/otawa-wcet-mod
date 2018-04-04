@@ -114,9 +114,9 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 		// if l-block is the first of its BB in the current cache line
 		if (LBLOCK_ISFIRST(lblock)) {
 
-			// MUST analysis: determine whether must be in cache (hit)
+			// read results from MUST analysis: determine whether must be in cache (hit)
 			MUSTProblem::Domain *must = CACHE_ACS_MUST(lblock->bb())->get(line);
-			// MAY analysis: determine whether may be in cache (if not, miss)
+			// read results from MAY analysis: determine whether may be in cache (if not, miss)
 			MAYProblem::Domain *may = NULL;
 			if (CACHE_ACS_MAY(lblock->bb()) != NULL)
 				may = CACHE_ACS_MAY(lblock->bb())->get(line);
@@ -133,40 +133,62 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 			} else if (may && !may->contains(lblock->cacheblock())) {
 				cache::CATEGORY(lblock) = cache::ALWAYS_MISS;
 			} else if (firstmiss_level != FML_NONE) {
-				// for loops only
+				// for loops only, and only if persistence analysis is enabled
 				BasicBlock *header;
 				if (LOOP_HEADER(lblock->bb()))
 					header = lblock->bb();
 				else
 					header = ENCLOSING_LOOP_HEADER(lblock->bb());
 
-				// Persistence analysis: is L-Block in cache after first loop iteration?
-				// TODO: Puschner claims that persistence analysis prior to 2009 was unsound
-				// https://ti.tuwien.ac.at/cps/teaching/courses/wcet/slides/wcet04_hw_modeling_2.pdf
+				// Persistence analysis: does L-Block stay in cache, one it's loaded?
+				// this part finds the loop header w.r.t. that it is persistent
 				bool is_pers = false;
 				PERSProblem::Domain *pers = CACHE_ACS_PERS(lblock->bb())->get(line);
 
 				if(pers->length() >= 1)
+
+					// loop-level-precision of the First Miss computation (inner, outer, multi-level). Default=MULTI
 					switch(firstmiss_level) {
-					case FML_OUTER:
-						is_pers = pers->isPersistent(lblock->cacheblock(), 0);
+					case FML_OUTER: // C. Ferdinand (overapproximates for nested loops, but pretty good overall)
+						// a block is outer-persistent, if once loaded, it is never evicted
+						// again in the program (i.e., by NO outer loop)
+						is_pers = pers->isPersistent(lblock->cacheblock(), 0); // must be newest element in the cache
 						while(ENCLOSING_LOOP_HEADER(header))
 							header = ENCLOSING_LOOP_HEADER(header);
 						break;
-					case FML_INNER:
+
+					case FML_INNER: // C. Ballabriga 2008 (weaker than FML_OUTER when outer-persistence is the case)
+						// a block is inner-persistent, if it cannot be replaced within
+						// body of inner-most loop containing it.
 						is_pers = pers->isPersistent(lblock->cacheblock(), pers->length() - 1);
 						break;
-					case FML_MULTI:
+
+					case FML_MULTI: // C. Ballabriga 2008 (optimal persistence scope)
+						// find the maximum scope where it is persistent.
 						for (int k = pers->length() - 1 ; k >= 0; k--) {
 							if(pers->isPersistent(lblock->cacheblock(), k)) {
-								if (is_pers)
-									header = ENCLOSING_LOOP_HEADER(header);
+								if (is_pers) {
+									if (ENCLOSING_LOOP_HEADER(header)) {
+										header = ENCLOSING_LOOP_HEADER(header);
+									} else {
+										// MBe: this happens for nasty loops (irreducible ones?)
+										// we cannot go to any more outer scopes.
+										if(logFor(LOG_BB))
+											log << "\t\t" << lblock->address() << ": "
+											    << "persistence cannot be pinned "
+											    << "to any more outer loops than " << header
+											    << io::endl;
+										break;
+									}
+									ASSERT(header != NULL);
+								}
 								is_pers = true;
 							}
 							else
 								break;
 						}
 						break;
+
 					default:
 						ASSERT(0);
 						break;
@@ -174,11 +196,12 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 
 				if(is_pers) {
 					cache::CATEGORY(lblock) = cache::FIRST_MISS;
-					ASSERT(header != NULL); ///< MBe: this fails. Possibly because loop is irreducible?
+					ASSERT(header != NULL);
 					cache::CATEGORY_HEADER(lblock) = header;
-				}
-				else
+
+				} else {
 					cache::CATEGORY(lblock) = cache::NOT_CLASSIFIED;
+				}
 			} /* of category condition test */
 		} else {
 			// this l-block is NOT the first in its BB (for this cache line).
