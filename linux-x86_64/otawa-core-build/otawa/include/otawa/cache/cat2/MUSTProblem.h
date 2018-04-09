@@ -4,7 +4,7 @@
  *
  *	This file is part of OTAWA
  *	Copyright (c) 2007, IRIT UPS.
- * 
+ *
  *	OTAWA is free software; you can redistribute it and/or modify
  *	it under the terms of the GNU General Public License as published by
  *	the Free Software Foundation; either version 2 of the License, or
@@ -16,7 +16,7 @@
  *	GNU General Public License for more details.
  *
  *	You should have received a copy of the GNU General Public License
- *	along with OTAWA; if not, write to the Free Software 
+ *	along with OTAWA; if not, write to the Free Software
  *	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  *	02110-1301  USA
  */
@@ -37,21 +37,21 @@ namespace otawa {
 
 
 class MUSTProblem {
-	
+
 	// Types
 	public:
 
 	class Domain {
 			int A, size;
-						
-			public:		
+
+			public:
 					/**
 			 * @class Result
 			 *
 			 * Class to hold the results (for each basic block) of the abstract interpretation.
 			 */
-			
-		
+
+
 			inline Domain(const int _size, const int _A)
 			: A (_A), size(_size)
 			{
@@ -59,35 +59,35 @@ class MUSTProblem {
 				for (int i = 0; i < size; i++)
 					age[i] = 0;
 			}
-			
+
 			inline ~Domain() {
 				delete [] age;
 			}
-			
+
 			inline Domain(const Domain &source) : A(source.A), size(source.size) {
 				age = new int [size];
 				for (int i = 0; i < size; i++)
 					age[i] = source.age[i];
 
-			} 
-		
+			}
+
 			inline Domain& operator=(const Domain &src) {
 				ASSERT((A == src.A) && (size == src.size));
 				for (int i = 0; i < size ; i++)
 					age[i] = src.age[i];
 				return(*this);
-				
+
 			}
-			 
+
 			inline void glb(const Domain &dom) {
 				ASSERT((A == dom.A) && (size == dom.size));
-				
+
 				for (int i = 0; i < size; i++) {
 					if (((age[i] > dom.age[i]) && (dom.age[i] != -1)) || (age[i] == -1))
 						age[i] = dom.age[i];
 				}
 			}
-			
+
 			inline void lub(const Domain &dom) {
 				ASSERT((A == dom.A) && (size == dom.size));
 
@@ -96,11 +96,11 @@ class MUSTProblem {
 						age[i] = dom.age[i];
 				}
 			}
-			
+
 			inline int getSize(void) {
 				return size;
 			}
-			
+
 			inline void addDamage(const int id, const int damage) {
 				ASSERT((id >= 0) && (id < size));
 				if (age[id] == -1)
@@ -109,7 +109,7 @@ class MUSTProblem {
 				if (age[id] >= A)
 					age[id] = -1;
 			}
-			
+
 			inline bool equals(const Domain &dom) const {
 				ASSERT((A == dom.A) && (size == dom.size));
 				for (int i = 0; i < size; i++)
@@ -117,37 +117,49 @@ class MUSTProblem {
 						return false;
 				return true;
 			}
-			
+
 			inline void empty() {
 				for (int i = 0; i < size; i++)
 					age[i] = -1;
-				
+
 			}
-			
+
 			inline bool contains(const int id) {
 				ASSERT((id < size) && (id >= 0));
-				return(age[id] != -1);				
+				return(age[id] != -1);
 			}
-			
-			
+
+			/**
+			 * @brief update concrete cache set state of a fully associative set,
+			 * i.e., this cache has 'size' lines, and an item which belongs to this
+			 * set could be in any of them. Each conflicting potential item has a unique ID (element in age)
+			 * and here we track age of these IDs.
+			 *
+			 * If multiple L-Blocks are on the same line and not conflicting, they have the same ID.
+			 *
+			 * If memory 'id' is accessed, then all elements in the cache set
+			 * do 'aging' by one, and m becomes youngest.
+			 */
 			inline void inject(const int id) {
 				if (contains(id)) {
+					// [Ferdinand99], p.11: all items before m age by one, m becomes first
 					for (int i = 0; i < size; i++) {
 						if ((age[i] < age[id]) && (age[i] != -1))
-							age[i]++;						
+							age[i]++;
 					}
-					age[id] = 0;
+					age[id] = 0; ///< unnecessary. Done few lines down anyway.
 				} else {
+					// [Ferdinand99], p.11: all items age by one, m becomes first
 					for (int i = 0; i < size; i++) {
-						if (age[i] != -1) 
+						if (age[i] != -1)
 							age[i]++;
 						if (age[i] == A)
-							age[i] = -1;
+							age[i] = -1; // this is evicted.
 					}
 				}
-				age[id] = 0;				
+				age[id] = 0;
 			}
-			
+
 			inline void print(elm::io::Output &output) const {
 				bool first = true;
 				output << "[";
@@ -156,40 +168,40 @@ class MUSTProblem {
 						if (!first) {
 							output << ", ";
 						}
-						// output << i << ":" << age[i];
-						output << i;
-						output << ":";
-						output << age[i];
-						
+						output << i << ":" << age[i];
+						//output << i;
+						//output << ":";
+						//output << age[i];
+
 						first = false;
 					}
 				}
 				output << "]";
-				
+
 			}
-			
+
 			inline int getAge(int id) const {
 				ASSERT(id < size);
 				return(age[id]);
 			}
-			
+
 			inline void setAge(const int id, const int _age) {
 				ASSERT(id < size);
 				ASSERT((_age < A) || (_age == -1));
 				age[id] = _age;
 			}
-			
-		
+
+
 			/*
-			 * For each cache block belonging to the set: 
+			 * For each cache block belonging to the set:
 			 * age[block] represents its age, from 0 (newest) to A-1 (oldest).
 			 * The value -1 means that the block is not in the set.
-			 */  
+			 */
 			int *age;
 	};
-	
+
 	private:
-	
+
 	// Fields
 	LBlockSet *lbset;
 	WorkSpace *fw;
@@ -197,24 +209,24 @@ class MUSTProblem {
 	const hard::Cache *cache;
 	Domain bot;
 	Domain ent;
-	
+
 	public:
 	Domain callstate;
 
 	// Public fields
-	
+
 	// Constructors
 	MUSTProblem(const int _size, LBlockSet *_lbset, WorkSpace *_fw, const hard::Cache *_cache, const int _A);
-	
+
 	// Destructors
 	~MUSTProblem();
-	
+
 	// Problem methods
 	const Domain& bottom(void) const;
 	const Domain& entry(void) const;
-		
-		
-	
+
+
+
 	inline void lub(Domain &a, const Domain &b) const {
 		a.lub(b);
 	}
@@ -224,7 +236,7 @@ class MUSTProblem {
 	inline bool equals(const Domain &a, const Domain &b) const {
 		return (a.equals(b));
 	}
-	
+
 
 	void update(Domain& out, const Domain& in, BasicBlock* bb);
 	inline void enterContext(Domain &dom, BasicBlock *header, hai_context_t ctx) {
@@ -233,7 +245,7 @@ class MUSTProblem {
 
 	inline void leaveContext(Domain &dom, BasicBlock *header, hai_context_t ctx) {
 
-	}		
+	}
 
 };
 

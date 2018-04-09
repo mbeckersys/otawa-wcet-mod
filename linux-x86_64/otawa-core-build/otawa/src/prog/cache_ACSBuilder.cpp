@@ -170,10 +170,10 @@ otawa::Output& operator<<(otawa::Output& out, const fmlevel_t &fml) {
  * The MUST cache state lists the ID of cache blocks which must be in the cache and is useful to determine
  * ALWAYS_HIT blocks.
  * The PERS cache state lists the ID of cache blocks which may be in the cache, but cannot be replaced once
- * they have been loaded. It is useful to determine the FIRST_MISS blocks.
+ * they have been loaded. It is useful to determine the FIRST_MISS blocks. Only used for loops.
  *
  * The Persistence can be computed in 3 ways:
- * - Outer: A block is FIRST_MISS if it can not be replaced within the whole program
+ * - Outer: A block is FIRST_MISS if it can not be replaced within the whole program (outermost scope).
  * - Inner: A block is FIRST_MISS if it can not be replaced from the inner-most loop containing it.
  * - Multi: The FIRST_MISS is parametrized by a variable L, representing the outer-most loop whose execution does not replace the block.
  *
@@ -224,6 +224,8 @@ ACSBuilder::ACSBuilder(p::declare& r) : Processor(r), level(FML_NONE), unrolling
 void ACSBuilder::processLBlockSet(WorkSpace *fw, LBlockSet *lbset, const hard::Cache *cache) {
 
 	int line = lbset->line();
+	if(logFor(LOG_CFG))
+		log << "\tSET " << line << io::endl;
 	/*
 	 * Solve the problem for the current cache line:
 	 * Now that the first/last lblock are detected, execute the analysis.
@@ -266,6 +268,7 @@ void ACSBuilder::processLBlockSet(WorkSpace *fw, LBlockSet *lbset, const hard::C
 			MUSTPERS mustpers(lbset->cacheBlockCount(), lbset, fw, cache, cache->wayCount());
 			UnrollingListener<MUSTPERS> mustpersList( fw, mustpers);
 			FirstUnrollingFixPoint<UnrollingListener<MUSTPERS> > mustpersFp(mustpersList);
+			// fix-point parameter is the class (fix-point algo) used for loops
 			HalfAbsInt<FirstUnrollingFixPoint<UnrollingListener<MUSTPERS> > > mustHai(mustpersFp, *fw);
 			MUSTPERS::Domain entry(
 					must_entry ? *must_entry->get(line) : mustpers.entry().getMust(),
@@ -314,7 +317,7 @@ void ACSBuilder::configure(const PropList &props) {
 	unrolling = PSEUDO_UNROLLING(props);
 	must_entry = CACHE_ACS_MUST_ENTRY(props);
 
-	pers_entry = CACHE_ACS_PERS(props);
+	pers_entry = CACHE_ACS_PERS_ENTRY(props); ///< was: CACHE_ACS_PERS()
 	if(logFor(LOG_FUN)) {
 		log << "\tlevel = " << level << io::endl;
 		log << "\tunrolling = " << unrolling << io::endl;
@@ -339,6 +342,7 @@ void ACSBuilder::processWorkSpace(WorkSpace *fw) {
 	LBlockSet **lbsets = LBLOCKS(fw);
 	const hard::Cache *cache = hard::CACHE_CONFIGURATION(fw)->instCache();
 
+	// for each cache set
 	for (int i = 0; i < cache->rowCount(); i++) {
 		processLBlockSet(fw, lbsets[i], cache);
 	}

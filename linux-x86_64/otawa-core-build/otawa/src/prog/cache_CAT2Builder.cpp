@@ -160,7 +160,8 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 						if(logFor(LOG_BB))
 							log << "\t\tWARNING: L-Block " << lblock->address() << " has no loop header, skipping persistence analysis" << io::endl;
 						// we don't try to analyze for persistence, then. But why did it happen?
-					} else {
+					} /* else */ // TODO: should be there to prevent internal inconsistencies, but for debugging it's off
+					{
 						// loop-level-precision of the First Miss computation (inner, outer, multi-level). Default=MULTI
 						switch(firstmiss_level) {
 						case FML_OUTER: // C. Ferdinand (overapproximates for nested loops, but pretty good overall)

@@ -88,7 +88,7 @@ void LBlockBuilder::setup(WorkSpace *fw) {
 	LBLOCKS(fw) = lbsets;
 	for(int i = 0; i < cache->rowCount(); i++) {
 		lbsets[i] = new LBlockSet(i, cache);
-		new LBlock(lbsets[i], 0, 0, 0, 0);
+		new LBlock(lbsets[i], 0, 0, 0, 0); ///< creates one dummy L-block for each blockset
 		ASSERT(lbsets[i]->cacheBlockCount() == 1);
 	}
 }
@@ -114,7 +114,7 @@ void LBlockBuilder::cleanup(WorkSpace *fw) {
  */
 void LBlockBuilder::addLBlock(BasicBlock *bb, Inst *inst, int& index, genstruct::AllocatedTable<LBlock*> *lblocks) {
 
-	// test if the l-block is cacheable
+	// test if the l-block/BB is cacheable
 	Address addr = inst->address();
 	const hard::Bank *bank = mem->get(addr);
 	if(!bank)
@@ -125,12 +125,13 @@ void LBlockBuilder::addLBlock(BasicBlock *bb, Inst *inst, int& index, genstruct:
 		return;
 	}
 
-	// compute the cache block ID
-	LBlockSet *lbset = lbsets[cache->set(addr)];
+	// compute the cache block ID (may be the same as an existing one, if it doesn't overlap)
+	const unsigned int setno = cache->set(addr);
+	LBlockSet *lbset = lbsets[setno]; // get set by insn addr
 	ot::mask block = cache->block(inst->address());
-	int cid = block_map.get(block, -1);
+	int cid = block_map.get(block, -1); // check if we already have a cid
 	if(cid < 0) {
-		cid = lbset->cacheBlockCount();
+		cid = lbset->cacheBlockCount(); // otherwise create one
 		block_map.put(block, cid);
 	}
 
@@ -145,6 +146,7 @@ void LBlockBuilder::addLBlock(BasicBlock *bb, Inst *inst, int& index, genstruct:
 	if(isVerbose())
 		log << "\t\t\t\tblock at " << addr << " size " << top-addr
 			<< " (cache block " << cache->round(inst->address())
+			<< ", set = " << setno
 			<< ", cid = " << cid << ")\n";
 	index++;
 }
