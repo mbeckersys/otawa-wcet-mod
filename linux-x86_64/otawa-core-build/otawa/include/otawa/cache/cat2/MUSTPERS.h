@@ -3,7 +3,7 @@
  *
  *	This file is part of OTAWA
  *	Copyright (c) 2007, IRIT UPS.
- * 
+ *
  *	OTAWA is free software; you can redistribute it and/or modify
  *	it under the terms of the GNU General Public License as published by
  *	the Free Software Foundation; either version 2 of the License, or
@@ -15,7 +15,7 @@
  *	GNU General Public License for more details.
  *
  *	You should have received a copy of the GNU General Public License
- *	along with OTAWA; if not, write to the Free Software 
+ *	along with OTAWA; if not, write to the Free Software
  *	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  *	02110-1301  USA
  */
@@ -23,6 +23,7 @@
 #ifndef CACHE_MUSTPERS_H_
 #define CACHE_MUSTPERS_H_
 
+#include <elm/log/Log.h>
 #include <elm/io.h>
 #include <otawa/prog/WorkSpace.h>
 #include <otawa/cache/LBlockSet.h>
@@ -33,6 +34,9 @@
 
 namespace otawa {
 
+/**
+ * @brief mainly a wrapper/double delegator to use MUST and PERS domains simultaneously
+ */
 class MUSTPERS {
 public:
 
@@ -42,11 +46,11 @@ public:
 		inline Domain(const int _size, const int _A)
 			: pers(PERSProblem::Domain(_size, _A)), must(MUSTProblem::Domain(_size, _A))
 			{ }
-			
+
 			inline Domain(const Domain &source) : pers(source.pers), must(source.must) { }
 			inline Domain(const MUSTProblem::Domain& m, const PERSProblem::Domain& p)
 				: pers(p), must(m) { }
-			
+
 			inline Domain& operator=(const Domain &src)
 				{ pers = src.pers; must = src.must; return *this; }
 			inline const MUSTProblem::Domain& getMust(void) const { return must; }
@@ -65,7 +69,7 @@ public:
 				{ return(pers.isPersistent(id, index)); }
 			inline void inject(const int id)
 				{ pers.inject(&must, id); must.inject(id); }
-			
+
 			inline void print(elm::io::Output &output) const {
 				output << "PERS=[ ";
 				pers.print(output);
@@ -78,31 +82,31 @@ public:
 		PERSProblem::Domain pers;
 		MUSTProblem::Domain must;
 	};
-	
+
 public:
-	
+
 	MUSTPERS(const int _size, LBlockSet *_lbset, WorkSpace *_fw, const hard::Cache *_cache, const int _A);
 
 	const Domain& bottom(void) const;
 	const Domain& entry(void) const;
-		
-	inline void lub(Domain &a, const Domain &b) const { a.lub(b); }
+
+	inline void lub(Domain &a, const Domain &b) const { a.lub(b); } // AbsInt JOIN function
 	inline void assign(Domain &a, const Domain &b) const { a = b; }
 	inline bool equals(const Domain &a, const Domain &b) const { return (a.equals(b)); }
 
-	void update(Domain& out, const Domain& in, BasicBlock* bb);
-	
+	void update(Domain& out, const Domain& in, BasicBlock* bb); // AsbInt UPDATE function
+
 	inline void enterContext(Domain &dom, BasicBlock *header, hai_context_t ctx) {
+		ELM_DBGLN("\tEntering loop " << header);
 		persProb.enterContext(dom.pers, header, ctx);
 		mustProb.enterContext(dom.must, header, ctx);
-		
 	}
 
 	inline void leaveContext(Domain &dom, BasicBlock *header, hai_context_t ctx) {
+		ELM_DBGLN("\tLeaving loop " << header << " dom=" << &dom);
 		persProb.leaveContext(dom.pers, header, ctx);
 		mustProb.leaveContext(dom.must, header, ctx);
-
-	}		
+	}
 
 private:
 	MUSTProblem mustProb;

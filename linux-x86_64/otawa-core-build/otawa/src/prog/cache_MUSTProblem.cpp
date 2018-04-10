@@ -29,6 +29,9 @@ using namespace otawa::ipet;
  * Problem for computing the cache MUST ACS.
  * This implements Ferdinand's Must analysis.
  *
+ * This is instantiated once per cache set.
+ * size is the number of conflicting L-blocks that belong to this BB (FIXME: why not use _lbset->size()?
+ *
  * Each cache set is modeled as one cache line, which
  * holds A (number of ways) elements, sorted by age (youngest first).
  *

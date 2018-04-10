@@ -166,7 +166,7 @@ otawa::Output& operator<<(otawa::Output& out, const fmlevel_t &fml) {
 /**
  * @class ACSBuilder
  *
- * This processor builds the MUST and PERS cache states before each basic block.
+ * This processor builds the MUST and PERS abstract cache states before each basic block.
  * The MUST cache state lists the ID of cache blocks which must be in the cache and is useful to determine
  * ALWAYS_HIT blocks.
  * The PERS cache state lists the ID of cache blocks which may be in the cache, but cannot be replaced once
@@ -227,8 +227,13 @@ void ACSBuilder::processLBlockSet(WorkSpace *fw, LBlockSet *lbset, const hard::C
 	if(logFor(LOG_CFG))
 		log << "\tSET " << line << io::endl;
 	/*
-	 * Solve the problem for the current cache line:
+	 * Solve the problem for the current cache set only (it's called line here, but line
+	 * quals set if assoc=1)
 	 * Now that the first/last lblock are detected, execute the analysis.
+	 *
+	 * Note that the AbsInt is over BBs. Since update and join cannot distinguish
+	 * between different cache sets, we need to run AbsInt multiple times; once for each
+	 * cache set.
 	 */
 
 #ifdef DEBUG
@@ -283,7 +288,7 @@ void ACSBuilder::processLBlockSet(WorkSpace *fw, LBlockSet *lbset, const hard::C
 					CACHE_ACS_MUST(bb)->add(new MUSTProblem::Domain(must));
 					CACHE_ACS_PERS(bb)->add(new PERSProblem::Domain(pers));
 
-				}
+			}
 		} else {
 
 			/* Do combined MUST/PERS analysis */

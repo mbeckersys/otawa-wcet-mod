@@ -24,17 +24,17 @@ using namespace otawa::ipet;
 using namespace elm;
 
 namespace otawa {
-	
+
 /**
  * @class PERSProblem
- * 
- * Problem for computing the PERS ACS of L-blocks. 
+ *
+ * Problem for computing the PERS ACS of L-blocks.
  * This implements Ferdinand's Persistence analysis.
  */
 
 
-	
-PERSProblem::PERSProblem(const int _size, LBlockSet *_lbset, WorkSpace *_fw, const hard::Cache *_cache, const int _A) 
+
+PERSProblem::PERSProblem(const int _size, LBlockSet *_lbset, WorkSpace *_fw, const hard::Cache *_cache, const int _A)
 :	callstate(_size, _A),
 	lbset(_lbset),
 	fw(_fw),
@@ -51,7 +51,7 @@ PERSProblem::PERSProblem(const int _size, LBlockSet *_lbset, WorkSpace *_fw, con
 #endif
 
 }
-	
+
 PERSProblem::~PERSProblem() {
 
 }
@@ -67,7 +67,7 @@ void PERSProblem::update(Domain& out, const Domain& in, BasicBlock* bb)  {
 		cerr << "FATAL: PERSProblem is not to be used directly, use MUSTPERS instead.\n";
 		ASSERT(false);
 }
-	
+
 
 elm::io::Output& operator<<(elm::io::Output& output, const PERSProblem::Domain& dom) {
 	dom.print(output);

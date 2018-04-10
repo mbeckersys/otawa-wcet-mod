@@ -49,6 +49,8 @@ class MUSTProblem {
 			 * @class Result
 			 *
 			 * Class to hold the results (for each basic block) of the abstract interpretation.
+			 * @param A associativity.
+			 * @param size number of conflicting L-blocks for cache line where this L-blockset goes
 			 */
 
 
@@ -88,10 +90,14 @@ class MUSTProblem {
 				}
 			}
 
+			/**
+			 * @brief join two abstract cache states (merge dom into this)
+			 */
 			inline void lub(const Domain &dom) {
 				ASSERT((A == dom.A) && (size == dom.size));
 
 				for (int i = 0; i < size; i++) {
+					// take max age of both (-1 signals "evicted")
 					if (((age[i] < dom.age[i]) && (age[i] != -1))|| (dom.age[i] == -1))
 						age[i] = dom.age[i];
 				}
@@ -101,6 +107,9 @@ class MUSTProblem {
 				return size;
 			}
 
+			/**
+			 * @brief increment age of element 'id' by 'damage'
+			 */
 			inline void addDamage(const int id, const int damage) {
 				ASSERT((id >= 0) && (id < size));
 				if (age[id] == -1)
@@ -130,15 +139,22 @@ class MUSTProblem {
 			}
 
 			/**
-			 * @brief update concrete cache set state of a fully associative set,
-			 * i.e., this cache has 'size' lines, and an item which belongs to this
-			 * set could be in any of them. Each conflicting potential item has a unique ID (element in age)
+			 * @brief update abstract cache set state of a fully associative set,
+			 * i.e., this cache has 'A' lines, and an item which belongs to this
+			 * set could be in any of these lines.
+			 *
+			 * Each potential conflicting cache item has a unique ID (from LBlockBuilder)
 			 * and here we track age of these IDs.
 			 *
-			 * If multiple L-Blocks are on the same line and not conflicting, they have the same ID.
+			 * Actually, abstract cache states are sets (one per age), but since every
+			 * item can occur at most once per set [Ferdinand99, (4)], it is
+			 * enough to store the age of each ID here. Consequently, all IDs with the same age
+			 * then belong to the same set
 			 *
 			 * If memory 'id' is accessed, then all elements in the cache set
 			 * do 'aging' by one, and m becomes youngest.
+			 *
+			 * Ferdinand calls this "abstract set update function"
 			 */
 			inline void inject(const int id) {
 				if (contains(id)) {
@@ -149,7 +165,9 @@ class MUSTProblem {
 					}
 					age[id] = 0; ///< unnecessary. Done few lines down anyway.
 				} else {
-					// [Ferdinand99], p.11: all items age by one, m becomes first
+					// [Ferdinand99], p.11: all items age by one, m becomes first. The set subtraction
+					// is not required, since we don't use sets in this implementation, but rather
+					// track the age of each concrete memory block.
 					for (int i = 0; i < size; i++) {
 						if (age[i] != -1)
 							age[i]++;
@@ -168,7 +186,7 @@ class MUSTProblem {
 						if (!first) {
 							output << ", ";
 						}
-						output << i << ":" << age[i];
+						output << "cid=" << i << ":" << age[i];
 						//output << i;
 						//output << ":";
 						//output << age[i];
@@ -193,9 +211,9 @@ class MUSTProblem {
 
 
 			/*
-			 * For each cache block belonging to the set:
+			 * For each cache block (cid) belonging to the set:
 			 * age[block] represents its age, from 0 (newest) to A-1 (oldest).
-			 * The value -1 means that the block is not in the set.
+			 * The value -1 means that the cache block is not in the set.
 			 */
 			int *age;
 	};

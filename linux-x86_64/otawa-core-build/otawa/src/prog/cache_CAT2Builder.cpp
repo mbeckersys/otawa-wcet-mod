@@ -106,7 +106,7 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 	if(logFor(LOG_CFG) && lbset->count() > 2)
 		log << "\tSET " << lbset->line() << io::endl;
 
-	// Use the results to set the categorization
+	// Use the results to set the categorization for each l-block
 	for (LBlockSet::Iterator lblock(*lbset); lblock; lblock++) {
 		if ((lblock->id() == 0) || (lblock->id() == lbset->count() - 1))
 			continue;
@@ -116,16 +116,14 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 
 			// read results from MUST analysis: determine whether must be in cache (hit)
 			MUSTProblem::Domain *must = CACHE_ACS_MUST(lblock->bb())->get(line);
-			// read results from MAY analysis (if there): determine it may be in cache (if not, miss)
+			// see whether we have MAY analysis. If yes, default = NC, otherwise AM
 			MAYProblem::Domain *may = NULL;
 			if (CACHE_ACS_MAY(lblock->bb()) != NULL)
 				may = CACHE_ACS_MAY(lblock->bb())->get(line);
 			if (may) {
-				// may analysis is present, set to NOT_CLASSIFIED by default
 				cache::CATEGORY(lblock) = cache::NOT_CLASSIFIED;
 
 			} else {
-				// no MAY analysis, set to ALWAYS_MISS by default
 				cache::CATEGORY(lblock) = cache::ALWAYS_MISS;
 			}
 
@@ -137,7 +135,7 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 				cache::CATEGORY(lblock) = cache::ALWAYS_MISS;
 
 			} else if (firstmiss_level != FML_NONE) {
-				// that is reached by all blocks that are still unclassified
+				// that is reached by all blocks that are still unclassified if PERS analysis is enabled
 				BasicBlock *header;
 				if (LOOP_HEADER(lblock->bb())) {
 					header = lblock->bb();
@@ -152,13 +150,13 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 				PERSProblem::Domain *pers = CACHE_ACS_PERS(lblock->bb())->get(line);
 
 				if(pers->length() >= 1) {
-					// this should only be reached for BBs in loops
+					// FIXME: this should only be reached for BBs in loops, no???
 
 					if (!header) {
 						// MBe added this (reached in ndes/FDO: one BB is in persistence analysis,
 						// but there is definitely no loop (it's the entry block of des)
 						if(logFor(LOG_BB))
-							log << "\t\tWARNING: L-Block " << lblock->address() << " has no loop header, skipping persistence analysis" << io::endl;
+							log << "\t\tWARNING: L-Block " << lblock->address() << " has no loop header, ignoring result of persistence analysis" << io::endl;
 						// we don't try to analyze for persistence, then. But why did it happen?
 					} /* else */ // TODO: should be there to prevent internal inconsistencies, but for debugging it's off
 					{
@@ -181,6 +179,7 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 						case FML_MULTI: // C. Ballabriga 2008 (optimal persistence scope)
 							// find the maximum scope where it is persistent.
 							for (int k = pers->length() - 1 ; k >= 0; k--) {
+								// is cacheblock persistent at level k?
 								if(pers->isPersistent(lblock->cacheblock(), k)) {
 									if (is_pers) {
 										if (ENCLOSING_LOOP_HEADER(header)) {
