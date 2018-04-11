@@ -36,7 +36,7 @@
 #include <otawa/prop/Identifier.h>
 #include <otawa/prog/WorkSpace.h>
 
-#define HAI_DEBUG
+//#define HAI_DEBUG
 
 // debugging
 #if defined(NDEBUG) || !defined(HAI_DEBUG)

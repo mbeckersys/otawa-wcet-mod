@@ -20,6 +20,7 @@
  *	02110-1301  USA
  */
 
+#include <stdlib.h>
 #include <elm/io.h>
 #include <otawa/cache/LBlockSet.h>
 #include <otawa/util/LBlockBuilder.h>
@@ -155,9 +156,11 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 					if (!header) {
 						// MBe added this (reached in ndes/FDO: one BB is in persistence analysis,
 						// but there is definitely no loop (it's the entry block of des)
-						if(logFor(LOG_BB))
-							log << "\t\tWARNING: L-Block " << lblock->address() << " has no loop header, ignoring result of persistence analysis" << io::endl;
+						log << "\t\ERROR: L-Block " << lblock->address()
+						    << " has no loop header, persistence analysis is inconsistent" << io::endl;
 						// we don't try to analyze for persistence, then. But why did it happen?
+						exit(42);
+
 					} /* else */ // TODO: should be there to prevent internal inconsistencies, but for debugging it's off
 					{
 						// loop-level-precision of the First Miss computation (inner, outer, multi-level). Default=MULTI
@@ -187,12 +190,10 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 										} else {
 											// MBe: this happens for nasty loops (irreducible ones?)
 											// workaround: we stop when we run out of enclosing loops
-											if(logFor(LOG_BB))
-												log << "\t\t" << lblock->address() << ": "
-													<< "persistence cannot be pinned "
-													<< "to any more outer loops than " << header
-													<< io::endl;
-											break;
+											log << "\t\t" << lblock->address() << ": "
+												<< "persistence analysis is inconsistent"
+												<< io::endl;
+											exit(42);
 										}
 										ASSERT(header != NULL);
 									}

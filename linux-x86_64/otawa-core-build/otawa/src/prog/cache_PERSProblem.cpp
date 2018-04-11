@@ -52,7 +52,7 @@ PERSProblem::PERSProblem(const int _size, LBlockSet *_lbset, WorkSpace *_fw, con
 
 }
 
-PERSProblem::~PERSProblem() {
+PERSProblem::~PERSProblem(){
 
 }
 const PERSProblem::Domain& PERSProblem::bottom(void) const {

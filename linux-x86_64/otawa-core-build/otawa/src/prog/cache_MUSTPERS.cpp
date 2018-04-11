@@ -92,7 +92,7 @@ using namespace otawa::ipet;
  *
  */
 
-namespace otawa {
+namespace otawa  {
 
 
 MUSTPERS::MUSTPERS(const int _size, LBlockSet *_lbset, WorkSpace *_fw, const hard::Cache *_cache, const int _A)
