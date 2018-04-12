@@ -1,0 +1,39 @@
+0. start simulavr in gdbserver mode
+  simulavr -l0 -datmega128  -ttrace -f des.elf -g
+1. start gdb
+  avr-gdb des.elf
+  target remote:1212
+  load
+2. set brk where variable shall be manipulated
+  break ndes.c:231
+3. given list of variable names to be randomized (via custom python function)
+  pi vars = vars_setup(['inp','key'])
+4. register a command to be executed when this breakpoint is reached:
+  command 1
+pi vars_rand(vars)
+set $cnt+=1
+c
+end
+5. reset counter and turn paginatin off
+  set $cnt=1
+  set pagination off
+6. (optional) set a breakpoint after the call and place backjump
+  break ndes.c:236 (return)
+  command 2
+printf "run %d done\n", $cnt
+if $cnt < 10
+	set $pc=0xfac
+	c
+else
+	p "all done"
+end
+end
+
+7. c
+
+8. disconnect
+
+9. evaluate simulavr trace:
+~/async/WCET_gitlab/scripts/simulavr2times.py -ttrace -e des.elf
+
+ET(des)=[
