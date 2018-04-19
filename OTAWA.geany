@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=25
+current_page=29
 FILE_NAME_0=7469;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fndes%2Ftarget-arm%2Fmain.elf.ffx;0;4
 FILE_NAME_1=2031;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fndes%2Ftarget-arm%2Fndes.c;0;4
 FILE_NAME_2=834;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2Flinux-x86_64%2Fotawa-core-build%2Fotawa%2Fsrc%2Fprog%2Fcache_CAT2Builder.cpp;0;4
@@ -48,9 +48,12 @@ FILE_NAME_20=1134;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotaw
 FILE_NAME_21=3589;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2Flinux-x86_64%2Fotawa-core-build%2Fotawa%2Finclude%2Fotawa%2Fcache%2Fcat2%2FMAYProblem.h;0;4
 FILE_NAME_22=6744;XML;0;EISO-8859-1;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fsqrt%2Ftarget-arm%2Ffdo_singlepath%2Fotawa_script.osx;0;4
 FILE_NAME_23=951;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fsync%2Fdata%2Fgdb-py-tricks;0;4
-FILE_NAME_24=28068;C;0;EISO-8859-1;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fadpcm%2Fmain.c;0;4
-FILE_NAME_25=413;Ada;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fadpcm%2Ftarget-avr%2Ffdo_maxleaf%2Floopinfo.txt;0;4
-FILE_NAME_26=242526;ASM;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fadpcm%2Ftarget-avr%2Ffdo_maxleaf%2Fmain.asm;0;4
+FILE_NAME_24=20243;XML;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcompress%2Ftarget-arm%2Fcompress.elf.ffx;0;4
+FILE_NAME_25=85080;ASM;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcompress%2Ftarget-arm%2Fcompress.asm;0;4
+FILE_NAME_26=51377;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fstatemate%2Ftarget-avr%2Fstatemate.c;0;4
+FILE_NAME_27=2294;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-lib%2Favr%2Flibc-1.8.0%2Fatmega128%2Fwcet.lib;0;4
+FILE_NAME_28=10057;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcompress%2Ftarget-avr%2Fcompress.c;0;4
+FILE_NAME_29=265;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fsync%2Fdata%2Fcompilers.txt;0;4
 
 [build-menu]
 MakeFT_00_LB=make
