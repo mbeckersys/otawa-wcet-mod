@@ -80,7 +80,8 @@ FILE_NAME_52=1008032;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%
 FILE_NAME_53=5467;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fadpcm%2Ftarget-arm%2Fcache-sets.log;0;4
 FILE_NAME_54=29765;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fadpcm-decode%2Ftarget-arm%2Ffdo_wcetleaf%2Fmain.c.064i.afdo;0;4
 FILE_NAME_55=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fsync%2Flehre%2Fseminar%2Fss2018%2Fdata%2Fgigamove.txt;0;4
-FILE_NAME_56=319;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-modes%2Fbenchmarks%2Ftuk-test%2Ftest.c;0;4
+FILE_NAME_56=1991;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-modes%2Fbenchmarks%2Ftuk-test%2Ftest.c;0;4
+FILE_NAME_57=592;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-modes%2Fbenchmarks%2Ftuk-test%2Ftest_i.c;0;4
 
 [build-menu]
 MakeFT_00_LB=make
