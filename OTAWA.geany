@@ -23,9 +23,9 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=63
+current_page=65
 FILE_NAME_0=7469;XML;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fndes%2Ftarget-arm%2Fmain.elf.ffx;0;4
-FILE_NAME_1=1405;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fndes%2Ftarget-arm%2Fndes.c;0;4
+FILE_NAME_1=1399;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fndes%2Ftarget-arm%2Fndes.c;0;4
 FILE_NAME_2=3034;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2Flinux-x86_64%2Fotawa-core-build%2Fotawa%2Fsrc%2Fprog%2Fcache_CAT2Builder.cpp;0;4
 FILE_NAME_3=4909;XML;0;EISO-8859-1;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fndes%2Ftarget-arm%2Ffdo_singlepath%2Fotawa_script.osx;0;4
 FILE_NAME_4=7105;C++;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotawa%2Flinux-x86_64%2Fotawa-core-build%2Fotawa%2Fsrc%2Fprog%2Fcache_ACSBuilder.cpp;0;4
@@ -88,6 +88,8 @@ FILE_NAME_60=1596;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fotaw
 FILE_NAME_61=113;XML;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fwcet-benchmarks%2Fbenchmarks%2Fcrc%2Favrcache.xml;0;4
 FILE_NAME_62=0;Markdown;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fsync%2Fforschung%2Fdiss%2Farguments.md;0;4
 FILE_NAME_63=20757;C;0;EISO-8859-1;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fadpcm%2Ftarget-arm%2Ffdo_wcetleaf%2Fmain.c;0;4
+FILE_NAME_64=974;Ada;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fndes%2Ftarget-avr-O0%2Floopinfo.txt;0;4
+FILE_NAME_65=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Finsertsort%2Ftarget-avr-O0%2Finsertsort.c;0;4
 
 [build-menu]
 MakeFT_00_LB=make
