@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=38
+current_page=35
 FILE_NAME_0=12187;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fauto-profile.c;0;4
 FILE_NAME_1=22516;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.c;0;4
 FILE_NAME_2=10470;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.h;0;4
@@ -59,10 +59,7 @@ FILE_NAME_31=5161;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fwcet-benchmarks%2F
 FILE_NAME_32=3573;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fwcet-benchmarks%2Fbenchmarks%2Fbs%2Fbs.c;0;4
 FILE_NAME_33=3809;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fsqrt%2Fhost%2Fsqrt.c;0;4
 FILE_NAME_34=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fsqrt%2Fhost%2Fsqrt.c.093t.cunrolli;0;4
-FILE_NAME_35=913;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fsqrt%2Fhost%2Fsqrt.c.161t.cunroll;0;4
-FILE_NAME_36=424;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbzip2%2Frun_test.sh;0;4
-FILE_NAME_37=15031;C;0;EISO-8859-1;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fwcet-benchmarks%2Fbenchmarks%2Fcalls_libc%2Fadpcm.c;0;4
-FILE_NAME_38=18162;C;0;EISO-8859-1;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fwcet-benchmarks%2Fbenchmarks%2Fcalls_libc%2Fadpcm_i.c;0;4
+FILE_NAME_35=761;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fsqrt%2Fhost%2Fsqrt.c.161t.cunroll;0;4
 
 [build-menu]
 MakeFT_00_LB=make
