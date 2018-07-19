@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=26
+current_page=30
 FILE_NAME_0=12187;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fauto-profile.c;0;4
 FILE_NAME_1=22516;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.c;0;4
 FILE_NAME_2=10470;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.h;0;4
@@ -51,6 +51,10 @@ FILE_NAME_23=13717;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7
 FILE_NAME_24=5161;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fwcet-benchmarks%2Fbenchmarks%2Fud%2Fud.c;0;4
 FILE_NAME_25=3573;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fwcet-benchmarks%2Fbenchmarks%2Fbs%2Fbs.c;0;4
 FILE_NAME_26=3809;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fsqrt%2Fhost%2Fsqrt.c;0;4
+FILE_NAME_27=91947;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fmadplay-0.15.2b%2Fconfig.log;0;4
+FILE_NAME_28=11981;Make;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fmadplay-nolib%2FMakefile.in;0;4
+FILE_NAME_29=786616;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fmadplay-nolib%2Fconfigure;0;4
+FILE_NAME_30=3081;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fmadplay-nolib%2Fconfigure.ac;0;4
 
 [build-menu]
 MakeFT_00_LB=make
