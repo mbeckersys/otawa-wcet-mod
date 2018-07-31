@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=37
+current_page=38
 FILE_NAME_0=12187;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fauto-profile.c;0;4
 FILE_NAME_1=22516;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.c;0;4
 FILE_NAME_2=10470;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.h;0;4
@@ -62,6 +62,8 @@ FILE_NAME_34=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-b
 FILE_NAME_35=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fbuild_for_valgrind.sh;0;4
 FILE_NAME_36=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fcalc_size.sh;0;4
 FILE_NAME_37=18;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Frun_all_perf.sh;0;4
+FILE_NAME_38=221;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_test%2Fsummarize.py;0;4
+FILE_NAME_39=9409;Python;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Fdominators.py;0;4
 
 [build-menu]
 MakeFT_00_LB=make
