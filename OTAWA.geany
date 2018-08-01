@@ -62,8 +62,10 @@ FILE_NAME_34=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-b
 FILE_NAME_35=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fbuild_for_valgrind.sh;0;4
 FILE_NAME_36=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fcalc_size.sh;0;4
 FILE_NAME_37=18;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Frun_all_perf.sh;0;4
-FILE_NAME_38=221;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_test%2Fsummarize.py;0;4
-FILE_NAME_39=9409;Python;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Fdominators.py;0;4
+FILE_NAME_38=6976;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_vary_cachesize_compare.py;0;4
+FILE_NAME_39=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbzip2%2Fcachetest%2Fbare%2Fcallgrind_cache_004.prof.sum;0;4
+FILE_NAME_40=1369;Python;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_vary_cachesize_summarize.py;0;4
+FILE_NAME_41=962;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_vary_cachesize.sh;0;4
 
 [build-menu]
 MakeFT_00_LB=make
