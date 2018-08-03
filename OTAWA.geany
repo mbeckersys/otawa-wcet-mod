@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=40
+current_page=42
 FILE_NAME_0=12187;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fauto-profile.c;0;4
 FILE_NAME_1=22516;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.c;0;4
 FILE_NAME_2=10470;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.h;0;4
@@ -65,6 +65,8 @@ FILE_NAME_37=10153;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%
 FILE_NAME_38=4426;Python;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_vary_cachesize_summarize.py;0;4
 FILE_NAME_39=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbzip2%2Fperf_prof_bare.prof;0;4
 FILE_NAME_40=450;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fgnupg-1.4.22%2Fcachetest%2Fcachegrind_special.sh;0;4
+FILE_NAME_41=0;C;0;EISO-8859-1;1;1;0;%2Ftmp%2Fmozilla_becker0%2Fadpcm.c;0;4
+FILE_NAME_42=321;C;0;EISO-8859-1;1;1;0;%2Ftmp%2Fmozilla_becker0%2Fadpcm_i.c;0;4
 
 [build-menu]
 MakeFT_00_LB=make
