@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=35
+current_page=36
 FILE_NAME_0=12187;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fauto-profile.c;0;4
 FILE_NAME_1=22516;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.c;0;4
 FILE_NAME_2=10470;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.h;0;4
@@ -56,10 +56,11 @@ FILE_NAME_28=40771;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwce
 FILE_NAME_29=245;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fperf_wrapper.sh;0;4
 FILE_NAME_30=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Faddpaths.sh;0;4
 FILE_NAME_31=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fcalc_size.sh;0;4
-FILE_NAME_32=4982;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_vary_cachesize_compare.py;0;4
+FILE_NAME_32=9789;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_vary_cachesize_compare.py;0;4
 FILE_NAME_33=4426;Python;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fcachegrind_vary_cachesize_summarize.py;0;4
 FILE_NAME_34=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbzip2%2Fperf_prof_bare.prof;0;4
 FILE_NAME_35=729;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fgnupg-1.4.22%2Fcachetest%2Fcachegrind_special.sh;0;4
+FILE_NAME_36=516;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fperf_compare.py;0;4
 
 [build-menu]
 MakeFT_00_LB=make
