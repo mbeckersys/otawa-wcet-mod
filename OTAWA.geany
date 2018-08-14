@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=42
+current_page=50
 FILE_NAME_0=11819;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fauto-profile.c;0;4
 FILE_NAME_1=22516;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.c;0;4
 FILE_NAME_2=10470;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.h;0;4
@@ -67,6 +67,15 @@ FILE_NAME_39=304;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2F
 FILE_NAME_40=3486;Python;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fbench%2Fprofileserver.py;0;4
 FILE_NAME_41=1034;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fcachetest%2Frun_bare.sh;0;4
 FILE_NAME_42=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ffirefox%2Fcachetest%2Fbare%2Fcallgrind_cache_001.prof.sum;0;4
+FILE_NAME_43=2687;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fpagetest%2Fperf_cachetrash.log.out;0;4
+FILE_NAME_44=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fpagetest%2Fperf_cpu.log.out;0;4
+FILE_NAME_45=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fpagetest%2Fperf_disk.log.out;0;4
+FILE_NAME_46=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fpagetest%2Fperf_sleep.log.out;0;4
+FILE_NAME_47=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fpagetest%2Fperf_swap.log.out;0;4
+FILE_NAME_48=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fpagetest%2Fperf_vm.log.out;0;4
+FILE_NAME_49=4026;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fpagetest%2Fperf_slowwalk.log.out;0;4
+FILE_NAME_50=1055;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fperf_model_snb.mdl;0;4
+FILE_NAME_51=159;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fperf_rewrite.py;0;4
 
 [build-menu]
 MakeFT_00_LB=make
