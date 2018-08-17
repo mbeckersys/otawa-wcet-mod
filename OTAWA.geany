@@ -23,7 +23,7 @@ long_line_behaviour=1
 long_line_column=100
 
 [files]
-current_page=54
+current_page=53
 FILE_NAME_0=11819;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fauto-profile.c;0;4
 FILE_NAME_1=22516;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.c;0;4
 FILE_NAME_2=10470;C;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2Fgcc-7.2.0%2Fgcc-7.2.0%2Fgcc%2Fipa-inline.h;0;4
@@ -78,7 +78,6 @@ FILE_NAME_50=1055;None;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fw
 FILE_NAME_51=504;Python;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fperf_rewrite.py;0;4
 FILE_NAME_52=882;C;0;EUTF-8;0;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Ftoplev_test%2Fsum.c;0;4
 FILE_NAME_53=4028;Make;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fbzip2%2FMakefile.prof;0;4
-FILE_NAME_54=2194;Make;0;EUTF-8;1;1;0;%2Fhome%2Fbecker%2Fasync%2FWCET_gitlab%2Fwcet-block-criticality%2Fwcet-suite-tool%2Ftests%2Ftest-autofdo-synthetic%2Fpagetest%2FMakefile;0;4
 
 [build-menu]
 MakeFT_00_LB=make
