@@ -19,6 +19,8 @@
  *	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 #include <elm/xom/Serializer.h>
+#include <elm/io/Output.h>
+#include <elm/io/OutStream.h>
 #include <otawa/cfgio/Output.h>
 #include <otawa/proc/ProcessorPlugin.h>
 #include <otawa/ipet/features.h>
@@ -152,11 +154,23 @@ void Output::processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
 		processProps(bb_node, *bb);
 
 		// make the list of instruction
+		io::BlockOutStream bos;
+		io::Output oput(bos);
 		for(BasicBlock::InstIter inst(bb); inst; inst++) {
 			xom::Element *inst_node = new xom::Element("inst");
 			bb_node->appendChild(inst_node);
 			string addr = _ << inst->address();
 			inst_node->addAttribute(new xom::Attribute("address", &addr));
+			{
+				// MBe: add raw assembly
+				xom::Element *asm_node = new xom::Element("asm");
+				inst_node->appendChild(asm_node);
+				inst->dump(oput);
+				string strasm = bos.toString(); // elm::String
+				elm::xom::String stresc(&strasm);  // to escape it, convert to xom::string
+				asm_node->appendChild(&stresc.escape());
+				bos.clear();
+			}
 			Option<Pair<cstring, int> > line_info = ws->process()->getSourceLine(inst->address());
 			if(line_info) {
 				string line = _ << (*line_info).snd;
