@@ -128,10 +128,10 @@ void MUSTPERS::update(Domain& out, const Domain& in, BasicBlock* bb) {
 		lblock = LAST_LBLOCK(bb)[line];
 		if (lblock != NULL) {
 			const unsigned int cid = lblock->cacheblock();
-			ELM_DBGLN("\t\t\taccess cid=" << cid);
+			//ELM_DBGLN("\t\t\taccess cid=" << cid);
 			out.inject(cid);
 		} else {
-			ELM_DBGLN("\t\t\tNot in this set");
+			//ELM_DBGLN("\t\t\tNot in this set");
 		}
 
 }

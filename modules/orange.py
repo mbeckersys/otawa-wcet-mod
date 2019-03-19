@@ -17,6 +17,7 @@ def get(path, env, pack):
 	else:
 		f = DEFAULT
 	_flags = env.get("orange-FLAGS", "NATIVE=1")
+	env.set("orange-REV", "5d3ce6c0449a")
 	return buildlib.Module(
 		name = "orange",
 		path = path,

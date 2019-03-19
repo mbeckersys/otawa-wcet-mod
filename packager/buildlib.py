@@ -180,8 +180,8 @@ CONFIG_MATRIX = {
 	(base.OS_LINUX_64, base.OS_LINUX_32): 	config_linux_64_to_32,
 	(base.OS_LINUX_64, base.OS_WINDOWS_32):	config_no,
 	(base.OS_LINUX_64, base.OS_WINDOWS_64): config_no
-}	
-	
+}
+
 class MakeMaker(pack.Maker):
 	"""Simple maker: make"""
 
@@ -239,11 +239,11 @@ class CopyInstaller(pack.Installer):
 	to the installation directory."""
 	files = None
 	target = None
-	
+
 	def __init__(self, target = "", files = ""):
 		self.target = target
 		self.files = files
-	
+
 	def gen(self, mod, env):
 		return [
 			"mkdir -p $(PREFIX)/%s" % self.target,
@@ -258,10 +258,11 @@ class MercurialDownloader(pack.Downloader):
 	* target: archive to download from,
 	* dev_target: development archive to download from
 	* interactive: to run hg in interactive mode (usually to enter user/password).
-	
+
 	Parameters:
 	* <mod_name>-REPO: 		repository to use,
-	* <mod_name>-BRANCH:	branch to use (replaced final trunk in repository).
+	* <mod_name>-BRANCH:	branch to use (replaced final trunk in repository),
+	* <mod_name>-REV:		revision to check out.
 	"""
 	target = None
 	dev_target = None
@@ -275,10 +276,16 @@ class MercurialDownloader(pack.Downloader):
 		self.interactive = interactive
 
 	def proceed(self, mod, env):
+		rev = env.get("%s-REV" % mod.name)
+		if rev:
+			flagrev = "--rev {}".format(rev)
+			env.info("Cloning specific revision: {}".format(rev))
+		else:
+			flagrev = ""
 		if os.path.exists(mod.name):
 			env.info("module %s already downloaded" % mod.name)
 		elif env.user and not self.public:
-			env.execute("hg clone %s %s" % (self.dev_target, mod.name))
+			env.execute("hg clone %s %s %s" % (flagrev, self.dev_target, mod.name))
 		else:
 			repo = env.get("%s-REPO" % mod.name, self.target)
 			branch = env.get("%s-BRANCH" % mod.name)
@@ -287,7 +294,8 @@ class MercurialDownloader(pack.Downloader):
 					repo = "%s/%s" % (repo[0:-6], branch)
 				else:
 					raise base.BuildException("branch %s used with repo without trunk: %s" % (repo, branch))
-			env.execute("hg clone %s %s" % (repo, mod.name), interactive = self.interactive)
+
+			env.execute("hg clone %s %s %s" % (flagrev, repo, mod.name), interactive = self.interactive)
 
 
 class BazaarDownloader(pack.Downloader):
@@ -396,7 +404,7 @@ class ArchiveDownloader(pack.Downloader):
 				path = path[idx + 1 :]
 		if path <> mod.name:
 			os.rename(path, mod.name)
-			
+
 		# cleanup the archive
 		if arc:
 			env.remove(arc)
@@ -430,11 +438,11 @@ class CommandPatch(pack.Downloader):
 	"""Perform a download and then some commands to do a patch"""
 	cmds = None
 	donwloader = None
-	
+
 	def __init__(self, cmds, downloader = pack.NULL_DOWNLOADER):
 		self.cmds = cmds
 		self.downloader = downloader
-	
+
 	def proceed(self, mod, env):
 
 		# perform sub-download
@@ -451,10 +459,10 @@ class CommandPatch(pack.Downloader):
 class CopyDownloader(pack.Downloader):
 	"""Build a module by copying files."""
 	files = None
-	
+
 	def __init__(self, files = []):
 		self.files = files
-	
+
 	def proceed(self, mod, env):
 		if os.path.exists(mod.name):
 			try:
@@ -477,7 +485,7 @@ class CopyDownloader(pack.Downloader):
 				raise base.BuildException("cannot copy %s to %s: %s" % (file, mod.name, e))
 			except OSError, e:
 				raise base.BuildException("cannot copy %s to %s: %s" % (file, mod.name, e))
-			
+
 
 class CommandSetup(pack.Setup):
 	"""A setup one or several Unix commands.
@@ -507,7 +515,7 @@ class Copy(pack.Addon):
 	"""File copying add-on."""
 	path = None
 	rename = None
-	
+
 	def __init__(self, path, rename = None):
 		"""Build the copy add-on of a file.
 		path: path of file or directory to copy
@@ -515,7 +523,7 @@ class Copy(pack.Addon):
 		rename: possible renaming of the file."""
 		self.path = path
 		self.rename = rename
-	
+
 	def makeCommand(self, pack):
 		s = self.path
 		if not os.path.isabs(s):
@@ -524,10 +532,10 @@ class Copy(pack.Addon):
 		if self.rename != None:
 			t = os.path.join(t, self.rename)
 		return "cp -R %s %s" % (s, t)
-	
+
 	def onSourceDist(self, pack):
 		pack.env.execute(self.makeCommand(pack))
-	
+
 	def onBinDist(self, pack):
 		pack.env.execute(self.makeCommand(pack))
 
@@ -536,7 +544,7 @@ class Rebase(pack.Addon):
 	"""Move libraries from normal installation directory to another."""
 	files = None
 	dir = None
-	
+
 	def __init__(self, files, dir):
 		"""Build the rebase add-on of a file.
 		files: files or directories to move.
@@ -545,27 +553,27 @@ class Rebase(pack.Addon):
 		self.dir = dir
 
 	def makeCommand(self, pack):
-		
+
 		# get destination directory
 		if not os.path.isabs(self.dir):
 			adir = os.path.join(pack.path, self.dir)
 		else:
 			adir = self.dir
-		
+
 		# make the commands
 		afiles = " ".join([os.path.join(pack.path, f) for f in self.files])
 		return [
 			"cp -R %s %s" % (afiles, adir),
 			"rm -rf %s" % afiles
 		]
-	
+
 	def execute(self, pack):
 		for cmd in self.makeCommand(pack):
 			pack.env.execute(cmd)
-			
+
 	def onSourceDist(self, pack):
 		self.execute(pack)
-	
+
 	def onBinDist(self, pack):
 		self.execute(pack)
 
@@ -573,13 +581,13 @@ class Rebase(pack.Addon):
 class OnlySource(pack.Addon):
 	"""Add-on working only for source distribution."""
 	addon = None
-	
+
 	def __init__(self, addon):
 		self.addon = addon
-	
+
 	def onSourceDist(self, pack):
 		self.addon.onSourceDist(pack)
-	
+
 	def onBinDist(self, pack):
 		pass
 
@@ -587,13 +595,13 @@ class OnlySource(pack.Addon):
 class OnlyDist(pack.Addon):
 	"""Add-on working only for binary distribution."""
 	addon = None
-	
+
 	def __init__(self, addon):
 		self.addon = addon
-	
+
 	def onBinDist(self, pack):
 		self.addon.onSourceDist(pack)
-	
+
 	def onSourceDist(self, pack):
 		pass
 

@@ -1,0 +1,14 @@
+# Manipulating ILP System manually
+E.g., if constraints are not expressive enough.
+
+1. run owcet with -i (--dump-ilp)
+ => creates *.lp file
+
+2. modify file:
+  get BB numbers from graphs (<step processor="otawa::display::CFGOutput"/>)
+
+3. run lp_solve manually
+/usr/bin/lp_solve < *.lp
+
+# ISS Simulator
+Gliss...TODO

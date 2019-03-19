@@ -2,6 +2,7 @@
 from buildlib import *
 
 def get(path, env, pack):
+	env.set("gliss2-REV", "42e3623d1ad5")
 	return Module(
 		name = "gliss2",
 		path = path,

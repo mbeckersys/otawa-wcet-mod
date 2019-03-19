@@ -203,7 +203,7 @@ FLEX_EXECUTABLE:FILEPATH=/usr/bin/flex
 FL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libfl.so
 
 //Path to a program.
-HG_PATH:FILEPATH=/usr/bin/hg
+HG_PATH:FILEPATH=/usr/local/bin/hg
 
 //Type of installation (a ',' separated combination of bin, lib,
 // inc, doc).
