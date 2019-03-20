@@ -11,6 +11,8 @@
 #include <otawa/cfg/features.h>
 #include "GenericSimulator.h"
 
+#include <stack>
+
 // just for debugging
 #include <assert.h>
 #include <cstdlib>
@@ -31,13 +33,13 @@ public:
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
 		iVerboseLevel(option::ValueOption<int>::Make(*this).cmd("-vl").cmd("--verboseLevel").description("verbose level for simulation")),
 		process(0),
-		lastCFG(0),
 		current(0),
 		start(0),
 		exit(0),
 		state(0),
 		coll(0),
-		cfgInfo(0)
+		cfgInfo(0),
+		call_pending(false)
 		{ }
 
 	virtual Inst *nextInstruction (sim::State &state, Inst *inst) {
@@ -57,42 +59,46 @@ public:
 		return current;
 	}
 
+	/**
+	 * @brief write cycle, function, offset, and so on to output
+	 */
 	void emit_trace() {
-		// elf, addr, cycle ...
+
+		if (call_pending) {
+			CFG *jj = cfgInfo->findCFG(current); // only finds the first insn/addr of each function
+			if (jj) {
+				callstack.push(jj);
+				// cout << ";; Callstack: " << callstack << io::endl;
+				call_pending = false;
+			}
+		}
+
+		// PRINT elf, addr, cycle ...
 		cout << process->program()->name() << " " << current->address() << ": "
 			 << sstate->cycle() << ": ";
+
 		// ... function and offset
-		//const int line = process->getSourceLine(current->address()); //< incorrect
-		CFG *jj = cfgInfo->findCFG(current); // only finds the first insn/addr of each function
-		if (jj) {
-			lastCFG = jj;
-		}
-		if (lastCFG) {
-			const Address::offset_t off = current->address() - lastCFG->address();
-			cout << lastCFG->name() << "+" << io::hex(off) << "\t";
+		CFG* currCFG = (!callstack.empty()) ? callstack.top() : NULL;
+		if (currCFG) {
+			const Address::offset_t off = current->address() - currCFG->address();
+			cout << currCFG->name() << "+" << io::hex(off) << "\t";
 		} else {
 			cout << "??+??\t";
 		}
-		// ... assembly
-		cout << current << io::endl;
 
-		#if 0
-		if (jj) {
-			for(CFG::BBIterator bb(jj); bb; ++bb)
-			{
-				for(BasicBlock::InstIter instx(bb); instx; ++instx)
-				{
-					if(instx->address() == current->address())
-					{
-						// FIXME: neither line nor bb number are correct
-						cout << process->program()->name() << ": [" << jj->name() << ":" << line
-							 << "] BB " <<  bb->number() << "\n";
-						break;
-					}
-				}
-			}
+		// ... assembly ...
+		cout << current;
+
+		// ... additional comments ...
+		if (current->isCall()) {
+			cout << "\t;; CALL";
+			call_pending = true;
+
+		} else if (current->isReturn()) {
+			cout << "\t;; RETURN";
+			callstack.pop();
 		}
-		#endif
+		cout << io::endl;
 	}
 
 	virtual void terminateInstruction(sim::State &state, Inst *inst) {
@@ -194,14 +200,15 @@ private:
 	SimState *state;
 	sim::State *sstate;
 	Process *process;
-	CFG *lastCFG;
 	Inst *start, *current, *exit;
 	option::ValueOption<string> proc;
 	option::ValueOption<string> cache;
 	option::ValueOption<string> mem;
 	option::ValueOption<int> iVerboseLevel;
 	CFGInfo *cfgInfo;
+	std::stack<CFG*> callstack;
 	const CFGCollection *coll;
+	bool call_pending;
 };
 
 OTAWA_RUN(Simulator);
