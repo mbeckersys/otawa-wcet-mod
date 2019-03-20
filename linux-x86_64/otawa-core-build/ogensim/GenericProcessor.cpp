@@ -214,7 +214,7 @@ GenericProcessor::GenericProcessor(
 				}
 				else
 				{
-					std::cout << "Running generic in-order execution" << std::endl;
+					std::cout << "Running generic in-order execution" << std::endl << std::flush;
 					execute_stage = new ExecuteInOrderStageIQ((sc_module_name) (stage_conf->name()), iports, sim_state,
 											rename_tables, conf->functionalUnitsList());
 				}

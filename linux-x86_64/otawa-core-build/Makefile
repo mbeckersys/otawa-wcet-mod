@@ -76,11 +76,11 @@ export BASE_otawa = $(PREFIX)
 export BASE_orange = $(PREFIX)
 export BASE_thot = $(PREFIX)
 export BASE_gliss2 = $(PREFIX)
-export BASE_armv7t = $(PREFIX)
+export BASE_armv5t = $(PREFIX)
 export BASE_ppc2 = $(PREFIX)
 export BASE_lp_solve5 = $(PREFIX)
 export BASE_frontc = $(PREFIX)
-all: gel-all elm-all otawa-all orange-all thot-all gliss2-all armv7t-all ppc2-all lp_solve5-all frontc-all
+all: gel-all elm-all otawa-all orange-all thot-all gliss2-all armv5t-all ppc2-all lp_solve5-all frontc-all
 
 install: gel-install elm-install otawa-install orange-install frontc-install
 
@@ -111,7 +111,7 @@ elm-install: elm-all
 	cd otawa; cmake .  -DCMAKE_INSTALL_PREFIX:PATH=$(PREFIX)
 	cd otawa; date > ../$@
 
-otawa-all: elm-install gel-install ppc2-all lp_solve5-all thot-all armv7t-all .setup-otawa
+otawa-all: elm-install gel-install ppc2-all lp_solve5-all thot-all armv5t-all .setup-otawa
 	@cd otawa; echo "*** making otawa ***"
 	cd otawa; make $(P_JOBS)   all
 
@@ -142,12 +142,12 @@ gliss2-all: thot-all .setup-gliss2
 	@cd gliss2; echo "*** making gliss2 ***"
 	cd gliss2; make   all
 
-.setup-armv7t: 
-	cd armv7t; date > ../$@
+.setup-armv5t: 
+	cd armv5t; date > ../$@
 
-armv7t-all: gliss2-all .setup-armv7t
-	@cd armv7t; echo "*** making armv7t ***"
-	cd armv7t; make WITH_DYNLIB=1 WITH_FAST_STATE=1  all
+armv5t-all: gliss2-all .setup-armv5t
+	@cd armv5t; echo "*** making armv5t ***"
+	cd armv5t; make WITH_DYNLIB=1 WITH_FAST_STATE=1  all
 
 .setup-ppc2: 
 	cd ppc2; date > ../$@

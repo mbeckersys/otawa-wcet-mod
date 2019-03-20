@@ -21,7 +21,7 @@ ARM_LIB:FILEPATH=/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-bu
 ARM_PATH:PATH=ARM_PATH-NOTFOUND
 
 //Compile in the ARM functional simulator
-ARM_SIM:BOOL=OFF
+ARM_SIM:BOOL=ON
 
 //path to the bison executable
 BISON_EXECUTABLE:FILEPATH=/usr/bin/bison
@@ -234,7 +234,7 @@ PPC_PATH:PATH=/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build
 THOT_PATH:FILEPATH=/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/thot/thot.py
 
 //Dependencies for the target
-arm_LIB_DEPENDS:STATIC=general;/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core/lib/libelm.so;general;otawa;general;/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/otawa/../armv7t/src/libarm.a;
+arm_LIB_DEPENDS:STATIC=general;/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core/lib/libelm.so;general;otawa;general;/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/otawa/../armv5t/src/libarm.a;
 
 //Dependencies for the target
 ast_LIB_DEPENDS:STATIC=general;otawa;
