@@ -34,6 +34,7 @@ Seems that armv7t is incompatible
  => back to OTAWA build: make -> builds!
  => the makefile loop persists... "can's cd to armv7t" -> sed -i 's/armv7/armv5/g' linux-x86_64/otawa-core-build/Makefile
 
+==> ogensim starts executing, but crashes with a segfault.
 
 # Manipulating ILP System manually
 E.g., if constraints are not expressive enough.

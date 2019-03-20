@@ -25,7 +25,7 @@ int debugVerbose = 0;
 class Simulator: public otawa::Application, public sim::Driver {
 public:
 	Simulator(void):
-		Application("ogensim", Version(1, 0, 0)),
+		Application("ogensim", Version(1, 0, 1)),
 		proc(option::ValueOption<string>::Make(this).cmd("-p").description("Processor description.")),
 		cache(option::ValueOption<string>::Make(this).cmd("-c").description("Cache description.")),
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
@@ -46,11 +46,20 @@ public:
 			return start;
 		}
 
+		if (current == exit)
+		{
+			return NULL;
+		}
 		cerr << current->address() << '\t' << current << io::endl;
 		current = this->state->execute(current); // for arm: otawa/src/arm2/arm.cpp
 
+		//do_stuff();
 
-			//BasicBlock *bbbb = cfgInfo->findBB(current);
+		return current;
+	}
+
+	void do_stuff() {
+					//BasicBlock *bbbb = cfgInfo->findBB(current);
 			//printf("[%s:%d] bbbb = 0x%X\n", __FILE__, __LINE__, bbbb);
 
 
@@ -93,9 +102,6 @@ public:
 			// cfgInfo->findBB(current) is the BB of the current instruction
 			//printf("[%s:%d] BB index = %d\n", __FILE__, __LINE__, cfgInfo->findBB(current)->number());
 */
-
-
-		return current;
 	}
 
 	virtual void terminateInstruction(sim::State &state, Inst *inst) {
@@ -197,12 +203,13 @@ protected:
 		exit = process->findInstAt("_exit");
 		if(!exit)
 			throw elm::MessageException("no _exit label to stop simulation");
+		cout << "Exiting at " << exit << endl;
 
 		//current = process->findInstAt("main");
 
 		// someone can make use of this to decide where the heap starts
-		Inst* aa = process->findInstAt("errno"); // +4
-		cerr << aa->address()+4  << io::endl;
+		//Inst* aa = process->findInstAt("errno"); // +4
+		//cerr << aa->address()+4  << io::endl;
 
 		// run the simulation
 		sstate->run(*this); // defined in GenericState.h
