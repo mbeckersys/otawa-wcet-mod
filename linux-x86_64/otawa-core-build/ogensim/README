@@ -1,0 +1,16 @@
+====== Read Me ======
+
+===== Running the simulation =====
+
+Use the following command:
+
+<code sh>
+> ./ogensim EXEC -p PROC -m MEM
+</code>
+
+Where:
+  * EXEC is the path to the executable binary,
+  * PROC is the path to the OTAWA XML description of the pipeline,
+  * MEM is the path to the OTAWA XML description of the memory.
+
+LPC2138 example of PROC and MEM is given in proc.xml and mem.xml.

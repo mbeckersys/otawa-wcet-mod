@@ -23,5 +23,5 @@ def get(path, env, pack):
 		maker = MakeMaker(),
 		installer = MakeInstaller(),
 		requires = [ "elm1", "gel" ],
-		uses = [ "ppc", "ppc2", "arm", "lp_solve5", "thot", "arm2", "armv7t" ]
+		uses = [ "ppc", "ppc2", "arm", "lp_solve5", "thot", "arm2", "armv7t", "ogensim"]
 	)
