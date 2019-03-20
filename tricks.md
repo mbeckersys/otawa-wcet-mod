@@ -1,3 +1,12 @@
+# initial build
+run build.sh
+
+# Incremental Build
+run make install
+
+# ISS Simulator
+Gliss...TODO
+
 # Manipulating ILP System manually
 E.g., if constraints are not expressive enough.
 
@@ -10,5 +19,4 @@ E.g., if constraints are not expressive enough.
 3. run lp_solve manually
 /usr/bin/lp_solve < *.lp
 
-# ISS Simulator
-Gliss...TODO
+
