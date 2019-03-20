@@ -31,6 +31,7 @@ public:
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
 		iVerboseLevel(option::ValueOption<int>::Make(*this).cmd("-vl").cmd("--verboseLevel").description("verbose level for simulation")),
 		process(0),
+		lastCFG(0),
 		current(0),
 		start(0),
 		exit(0),
@@ -50,58 +51,48 @@ public:
 		{
 			return NULL;
 		}
-		cerr << current->address() << '\t' << current << io::endl;
+
+		emit_trace();
 		current = this->state->execute(current); // for arm: otawa/src/arm2/arm.cpp
-
-		//do_stuff();
-
 		return current;
 	}
 
-	void do_stuff() {
-					//BasicBlock *bbbb = cfgInfo->findBB(current);
-			//printf("[%s:%d] bbbb = 0x%X\n", __FILE__, __LINE__, bbbb);
+	void emit_trace() {
+		// elf, addr, cycle ...
+		cout << process->program()->name() << " " << current->address() << ": "
+			 << sstate->cycle() << ": ";
+		// ... function and offset
+		//const int line = process->getSourceLine(current->address()); //< incorrect
+		CFG *jj = cfgInfo->findCFG(current); // only finds the first insn/addr of each function
+		if (jj) {
+			lastCFG = jj;
+		}
+		if (lastCFG) {
+			const Address::offset_t off = current->address() - lastCFG->address();
+			cout << lastCFG->name() << "+" << io::hex(off) << "\t";
+		} else {
+			cout << "??+??\t";
+		}
+		// ... assembly
+		cout << current << io::endl;
 
-
-
-
-/*
-//			CodeBasicBlock *asdfg = BB(inst);
-//			assert(asdfg);
-
-			CFG *jj = cfgInfo->findCFG(current);
-			// assert(jj);
-			if(jj != 0) printf("[%s:%d] CFG BB count = %d\n", __FILE__, __LINE__, jj->countBB());
-
-
-			for(CFGCollection::Iterator cfg(coll); cfg; cfg++)
+		#if 0
+		if (jj) {
+			for(CFG::BBIterator bb(jj); bb; ++bb)
 			{
-				for(CFG::BBIterator bb(cfg); bb; bb++)
+				for(BasicBlock::InstIter instx(bb); instx; ++instx)
 				{
-//					cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "\t\tprocess BB " << bb->number()
-//									<< " (" << ot::address(bb->address()) << ")\n";
-
-					for(BasicBlock::InstIter instx(bb); instx; instx++)
+					if(instx->address() == current->address())
 					{
-						//cout << instx->address() << "\n";
-						if(instx->address() == current->address())
-						{
-							cout << "[" << __FILE__ << ":" << __LINE__ << "] " << " BB index = " <<  bb->number() << "\n";
-							//return bb;
-						} // end of if(instx->address() == inst->address())
-					} // end of for(BasicBlock::InstIter instx(bb); instx; instx++)
-				} // end of for(CFG::BBIterator bb(cfgToFind); bb; bb++)
-
+						// FIXME: neither line nor bb number are correct
+						cout << process->program()->name() << ": [" << jj->name() << ":" << line
+							 << "] BB " <<  bb->number() << "\n";
+						break;
+					}
+				}
 			}
-
-			//std::exit(1);
-
-			//CFG *jj = cfgInfo->findCFG(current);
-			//assert(jj);
-
-			// cfgInfo->findBB(current) is the BB of the current instruction
-			//printf("[%s:%d] BB index = %d\n", __FILE__, __LINE__, cfgInfo->findBB(current)->number());
-*/
+		}
+		#endif
 	}
 
 	virtual void terminateInstruction(sim::State &state, Inst *inst) {
@@ -133,11 +124,7 @@ public:
 
 protected:
 	virtual void work(PropList &props) throw (elm::Exception) {
-
 		debugVerbose = iVerboseLevel;
-
-		// acquire the CFG
-		// .......
 
 		// install the hardware
 		if(!*proc)
@@ -160,26 +147,20 @@ protected:
 		cfgInfo = CFGInfo::ID(workspace());
 		assert(cfgInfo);
 
-
-
-
 		// prepare the functional simulation
 		process = workspace()->process();
 
-		// initialize the arm iss
+		// initialize the arm *functional* iss
 		// arm.cpp implements newState which create simState (also implemented in arm.cpp)
 		state = process->newState();
 		if(!state)
 			throw MessageException("no functional simulator with the current loader");
 
-		// prepare the temporal simulation
+		// prepare the *temporal* simulation
 		// which creates the systemC modules
 		gensim::GenericSimulator gsim;
 		// this returns a GenericState, which extends from the sim::State
-		sim::State *sstate = gsim.instantiate(workspace());
-
-		cout << "we passed gsim.instantiate(workspace());\n";
-
+		sstate = gsim.instantiate(workspace());
 
 		// start() is implemented in arm.cpp, which returns the start instruction
 		// the start instruction is identified when loading the binary file
@@ -193,12 +174,6 @@ protected:
 		// BasicBlock* bb = cfgInfo->findBB(current);
 		// printf("[%s:%d] BB index = %d\n", __FILE__, __LINE__, bb->number());
 
-
-		//std::exit(0);
-
-
-		cout << "we passed process->start();\n";
-
 		ASSERT(start);
 		exit = process->findInstAt("_exit");
 		if(!exit)
@@ -206,7 +181,6 @@ protected:
 		cout << "Exiting at " << exit << endl;
 
 		//current = process->findInstAt("main");
-
 		// someone can make use of this to decide where the heap starts
 		//Inst* aa = process->findInstAt("errno"); // +4
 		//cerr << aa->address()+4  << io::endl;
@@ -218,7 +192,9 @@ protected:
 
 private:
 	SimState *state;
+	sim::State *sstate;
 	Process *process;
+	CFG *lastCFG;
 	Inst *start, *current, *exit;
 	option::ValueOption<string> proc;
 	option::ValueOption<string> cache;
