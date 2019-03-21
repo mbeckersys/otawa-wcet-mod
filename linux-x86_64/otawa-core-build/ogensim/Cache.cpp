@@ -10,7 +10,7 @@ Cache::Cache(sc_module_name name) {
 }
 
 void Cache::action() {
-
+    elm::cout << "cache access";
 }
 
 } } // otawa::gensim

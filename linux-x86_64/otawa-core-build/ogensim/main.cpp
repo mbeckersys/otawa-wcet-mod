@@ -8,6 +8,7 @@
 #include <elm/option/ValueOption.h>
 #include <otawa/hard/Processor.h>
 #include <otawa/hard/Memory.h>
+#include <otawa/hard/CacheConfiguration.h>
 #include <otawa/cfg/features.h>
 #include "GenericSimulator.h"
 
@@ -132,14 +133,23 @@ protected:
 	virtual void work(PropList &props) throw (elm::Exception) {
 		debugVerbose = iVerboseLevel;
 
-		// install the hardware
+		// "install" the hardware
 		if(!*proc)
 			throw elm::MessageException("no processor provided");
 		otawa::PROCESSOR_PATH(props) = *proc;
-		if(mem)
-			otawa::MEMORY_PATH(props) = *mem;
 		workspace()->require(hard::PROCESSOR_FEATURE, props);
-		workspace()->require(hard::MEMORY_FEATURE);
+		cout << "Processor: " << otawa::PROCESSOR_PATH(props) << io::endl;
+		if(mem) {
+			// FIXME: subsumes cache?
+			otawa::MEMORY_PATH(props) = *mem;
+			workspace()->require(hard::MEMORY_FEATURE);
+			cout << "Memory: " << otawa::MEMORY_PATH(props) << io::endl;
+		}
+		if (cache) {
+			otawa::CACHE_CONFIG_PATH(props) = *cache;
+			workspace()->require(hard::CACHE_CONFIGURATION_FEATURE);
+			cout << "Cache: " << otawa::CACHE_CONFIG_PATH(props) << io::endl;
+		}
 
 		// decode the CFGs
 		workspace()->require(otawa::CFG_INFO_FEATURE, props);
@@ -171,15 +181,6 @@ protected:
 		// start() is implemented in arm.cpp, which returns the start instruction
 		// the start instruction is identified when loading the binary file
 		start = process->start();
-
-		// lets try to get basic block with the instruction
-		CFG *jj = cfgInfo->findCFG(start);
-		assert(jj);
-		printf("[%s:%d] CFG BB count = %d\n", __FILE__, __LINE__, jj->countBB());
-
-		// BasicBlock* bb = cfgInfo->findBB(current);
-		// printf("[%s:%d] BB index = %d\n", __FILE__, __LINE__, bb->number());
-
 		ASSERT(start);
 		exit = process->findInstAt("_exit");
 		if(!exit)
