@@ -17,13 +17,14 @@ namespace otawa { namespace gensim {
 class GenericSimulator: public sim::Simulator {
 public:
 	GenericSimulator(void);
-	
+
 	// Simulator overload
 	sim::State *instantiate(WorkSpace *fw,
 		const PropList& props = PropList::EMPTY);
 };
 
 extern Identifier<int> DEGREE;
+extern Identifier<bool> TRACE_CACHES;
 
 } } // otawa::gensim
 

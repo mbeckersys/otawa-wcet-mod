@@ -6,6 +6,7 @@
  */
 #include <otawa/app/Application.h>
 #include <elm/option/ValueOption.h>
+#include <elm/option/BoolOption.h>
 #include <otawa/hard/Processor.h>
 #include <otawa/hard/Memory.h>
 #include <otawa/hard/CacheConfiguration.h>
@@ -28,11 +29,12 @@ int debugVerbose = 0;
 class Simulator: public otawa::Application, public sim::Driver {
 public:
 	Simulator(void):
-		Application("ogensim", Version(1, 0, 1)),
+		Application("ogensim", Version(1, 0, 2)),
 		proc(option::ValueOption<string>::Make(this).cmd("-p").description("Processor description.")),
 		cache(option::ValueOption<string>::Make(this).cmd("-c").description("Cache description.")),
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
 		iVerboseLevel(option::ValueOption<int>::Make(*this).cmd("-vl").cmd("--verboseLevel").description("verbose level for simulation")),
+		traceCache(*this, 't', "traceCache", "enable cache protocol", false),
 		process(0),
 		current(0),
 		start(0),
@@ -138,17 +140,21 @@ protected:
 			throw elm::MessageException("no processor provided");
 		otawa::PROCESSOR_PATH(props) = *proc;
 		workspace()->require(hard::PROCESSOR_FEATURE, props);
-		cout << "Processor: " << otawa::PROCESSOR_PATH(props) << io::endl;
+		cout << "Processor from " << otawa::PROCESSOR_PATH(props) << io::endl;
 		if(mem) {
 			// FIXME: subsumes cache?
 			otawa::MEMORY_PATH(props) = *mem;
 			workspace()->require(hard::MEMORY_FEATURE);
-			cout << "Memory: " << otawa::MEMORY_PATH(props) << io::endl;
+			cout << "Memory from " << otawa::MEMORY_PATH(props) << io::endl;
 		}
 		if (cache) {
 			otawa::CACHE_CONFIG_PATH(props) = *cache;
-			workspace()->require(hard::CACHE_CONFIGURATION_FEATURE);
-			cout << "Cache: " << otawa::CACHE_CONFIG_PATH(props) << io::endl;
+			workspace()->require(hard::CACHE_CONFIGURATION_FEATURE, props);
+			cout << "Cache from " << otawa::CACHE_CONFIG_PATH(props) << io::endl;
+
+		}
+		if (traceCache) {
+			TRACE_CACHES(workspace()) = true;
 		}
 
 		// decode the CFGs
@@ -166,6 +172,19 @@ protected:
 		// prepare the functional simulation
 		process = workspace()->process();
 
+		/**************
+		 * show config
+		 **************/
+		const hard::CacheConfiguration *cc = otawa::hard::CACHE_CONFIGURATION(workspace());
+		if (cc) {
+			cout << "Cache: I-cache=" << cc->hasInstCache() << endl;
+			cout << "Cache: D-cache=" << cc->hasDataCache() << endl;
+		}
+		const hard::Processor *oproc = otawa::hard::PROCESSOR(workspace());
+		if (oproc) {
+			elm::cout << "Processor: " << oproc->getModel() << io::endl;
+		}
+
 		// initialize the arm *functional* iss
 		// arm.cpp implements newState which create simState (also implemented in arm.cpp)
 		state = process->newState();
@@ -175,6 +194,7 @@ protected:
 		// prepare the *temporal* simulation
 		// which creates the systemC modules
 		gensim::GenericSimulator gsim;
+
 		// this returns a GenericState, which extends from the sim::State
 		sstate = gsim.instantiate(workspace());
 
@@ -206,6 +226,7 @@ private:
 	option::ValueOption<string> cache;
 	option::ValueOption<string> mem;
 	option::ValueOption<int> iVerboseLevel;
+	option::BoolOption traceCache;
 	CFGInfo *cfgInfo;
 	std::stack<CFG*> callstack;
 	const CFGCollection *coll;

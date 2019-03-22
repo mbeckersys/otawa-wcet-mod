@@ -33,6 +33,8 @@ class GenericState: public sim::State {
 public:
 	sim::Driver *driver;
 
+	WorkSpace* workspace() { return fw; }
+
 	GenericState(WorkSpace *framework):
 	fw(framework), _cycle(0), driver(NULL) {
 	}

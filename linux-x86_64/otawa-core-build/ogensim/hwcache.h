@@ -141,7 +141,8 @@ class HWCache {
                 const std::string& name,
                 unsigned int lines,  ///< number of cache lines
                 unsigned int linesize,
-                unsigned int assoc,  ///< associativity
+                unsigned int assoc,  ///< associativity/ways
+                unsigned int miss_penalty,
                 bool trace_on=false);
 
         virtual ~HWCache();

@@ -31,6 +31,7 @@ namespace otawa { namespace gensim {
 
 
 Identifier<int> DEGREE("otawa::gensim::degree", 1);
+Identifier<bool> TRACE_CACHES("otawa::gensim::trace_caches", false);
 
 
 /**
@@ -156,8 +157,8 @@ void GenericState::init() {
 
 	// Get the processor description
 	const hard::Processor *oproc = otawa::hard::PROCESSOR(fw);
-	 if(!oproc)
-	 	throw LoadException("no processor description available.");
+	if(!oproc)
+		throw LoadException("no processor description available.");
 
 	// Build the queues
 	elm::genstruct::Vector<InstructionQueueConfiguration *> queues;
@@ -289,7 +290,7 @@ void GenericState::init() {
 
 	// Create the processor
 	processor = new GenericProcessor("GenericProcessor",&conf, this, fw->platform(),
-                                     hard::MEMORY(fw), hard::CACHE_CONFIGURATION(fw));
+									 hard::MEMORY(fw), hard::CACHE_CONFIGURATION(fw));
 }
 
 
@@ -307,13 +308,13 @@ void GenericState::step(void) {
 
 void GenericState::stop(void)
 {
-    running = false;
-    elm::cerr << "Simulation stopped" << io::endl;
-    processor->printStats();
+	running = false;
+	elm::cerr << "Simulation stopped" << io::endl;
+	processor->printStats();
 }
 
 GenericState::~GenericState() {
-    delete processor;
+	delete processor;
 }
 
 } } // otawa::gensim

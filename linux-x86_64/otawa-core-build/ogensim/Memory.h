@@ -86,6 +86,10 @@ private:
 
 	int getDataLatency(Address address, size_t size);
 	int getInstLatency(Address address, size_t size);
+
+	void _make_caches_icache(const hard::Cache *cconfig, const std::string& name);
+	void _make_caches_dcache(const hard::Cache *cconfig, const std::string& name);
+	void _make_caches(const hard::CacheConfiguration *caches);
 	int _data_fill_latency;
 
 };

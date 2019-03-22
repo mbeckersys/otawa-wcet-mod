@@ -65,8 +65,6 @@ GenericProcessor::GenericProcessor(
 			(*rename_tables)[i].table->set(j,NULL);
 	}
 
-
-
 	for (elm::genstruct::SLList<InstructionQueueConfiguration *>::Iterator queue_conf(*(conf->instructionQueuesList())) ;
 			queue_conf ; queue_conf++) {
 		std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "creating instruction queue " << &(queue_conf->name()) << std::endl;

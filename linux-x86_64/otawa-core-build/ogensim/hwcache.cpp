@@ -29,6 +29,7 @@ HWCache::HWCache(GenericState *gen_state,
                  unsigned int lines,
                  unsigned int linesize,
                  unsigned int assoc,
+                 unsigned int miss_penalty,
                  bool trace_on):
     sim_state(gen_state),
     cache_name(name),
@@ -39,7 +40,7 @@ HWCache::HWCache(GenericState *gen_state,
     cache_config_linesize(linesize),
     cache_config_assoc(assoc),
     cacheHitCycles(0),
-    cacheMissCycles(3),
+    cacheMissCycles(miss_penalty),
     cacheWritethroughCycles(5),
     cacheWritebackCycles(5)
 {
@@ -109,9 +110,12 @@ void HWCache::_init_cache_model(void) {
 
     // verbose config
     std::stringstream ss;
-    ss << "Cache config: lines=" << cache_config_nlines << " each " << cache_config_linesize
+    ss << "Cache '" << cache_name << "' config: lines="
+       << cache_config_nlines << " each " << cache_config_linesize
        << "bytes (" << cache_offsetbits << "bits), assoc=" << cache_config_assoc
-       << ", sets=" << cache_config_nsets << ", policy=LRU";
+       << ", sets=" << cache_config_nsets
+       << ", miss penalty=" << cacheMissCycles
+       << ", policy=LRU";
     const char* msg = ss.str().c_str();
     trace(msg);
     elm::cerr << msg << io::endl;

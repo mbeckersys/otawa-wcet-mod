@@ -36,9 +36,9 @@ namespace otawa { namespace gensim {
 /**
  * Constructor.
  */
-MemorySystem::MemorySystem(sc_module_name name, GenericState * gen_state,
+MemorySystem::MemorySystem(sc_module_name name, GenericState *gen_state,
 	const hard::Memory *memory,
-	const hard::CacheConfiguration *cache):
+	const hard::CacheConfiguration *caches):
 	_inst_cache_state(READY),
 	_inst_fill_latency(0),
 	_data_cache_state(READY),
@@ -49,17 +49,50 @@ MemorySystem::MemorySystem(sc_module_name name, GenericState * gen_state,
 {
 	sim_state = gen_state;
 
-	// FIXME: assert LRU, handle multi-level
-	if (cache->hasInstCache()) {
-		const otawa::hard::Cache* icc = cache->instCache();
-		const std::string cname = cache->cacheName(icc).chars();
-		_inst_cache = new HWCache(sim_state, cname, 128, 64, 4);  // TODO: from hard::Cache
-	}
+	_make_caches(caches);
 
 	dumpDataAccess = false;
 	dumpInstAccess = false;
 	SC_METHOD(action);
 	sensitive_neg << in_clock;
+}
+
+void MemorySystem::_make_caches_icache(const hard::Cache *cc, const std::string& name) {
+	assert(!cc->nextLevel() && "no support for multi-level cache");
+	const hard::Cache::replace_policy_t pol = cc->replacementPolicy();
+	assert(pol == hard::Cache::LRU && "only supporting LRU");
+	assert(cc->setCount() == cc->blockCount() / cc->wayCount());
+	const bool do_trace = TRACE_CACHES(sim_state->workspace());
+	_inst_cache = new HWCache(sim_state, name,
+								cc->blockCount(),
+								cc->blockSize(),
+								cc->wayCount(),
+								cc->missPenalty(),
+								do_trace);
+}
+
+void MemorySystem::_make_caches_dcache(const hard::Cache *cconfig, const std::string& name) {
+	assert(false && "Not implemented");
+}
+
+void MemorySystem::_make_caches(const hard::CacheConfiguration *caches) {
+	assert(caches->isHarvard() && "no support for unified memory");
+
+	if (caches->hasInstCache()) {
+		const otawa::hard::Cache* icc = caches->instCache();
+		const std::string cname = caches->cacheName(icc).chars();
+		_make_caches_icache(icc, cname);
+	} else {
+		TRACEX(1, elm::cout << "No instruction cache specified" << io::endl;)
+	}
+
+	if (caches->hasDataCache()) {
+		const otawa::hard::Cache* dcc = caches->dataCache();
+		const std::string cname = caches->cacheName(dcc).chars();
+		_make_caches_dcache(dcc, cname);
+	} else {
+		TRACEX(1, elm::cout << "No data cache specified" << io::endl;)
+	}
 }
 
 void MemorySystem::printStats(void) const {
@@ -160,6 +193,7 @@ int MemorySystem::getInstLatency(Address address, size_t size) {
 		throw Exception(_ << "latency : access out of defined banks for address " << address);
 	int lat;
 	if (bank->isCached() && _inst_cache) {
+		// TODO: shouldn't miss penalty be that of the bank, rather than cache?
 		lat = _inst_cache->access(address, size, false); // lat defined by cache access
 	} else {
 		lat = bank->latency(); // this is the default latency. FIXME: size > word width = multiple?
