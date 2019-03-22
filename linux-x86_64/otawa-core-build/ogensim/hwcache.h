@@ -22,6 +22,23 @@ class HWCache {
         /*************
          * TYPES
          *************/
+
+        //! return info short type
+        typedef enum {
+          ACCESS_HIT,  ///< exactly one hit
+          ACCESS_MISS,  ///< exactly one miss
+          ACCESS_OTHER,  ///< something else happened. see access_stats_t.
+        } access_type_t;
+
+        //! return information about access
+        typedef struct {
+          unsigned short hit; ///< number of hits
+          unsigned short miss;
+          unsigned short writeback;
+          unsigned short stall; ///< e.g., on clear. The number of cycles are given by CpuCycles()
+          unsigned short ignored;
+        } access_info_t;
+
         //! bits in ctrl register
         enum {
           CTRL_UNINITIALIZED = 0,
@@ -102,13 +119,10 @@ class HWCache {
         unsigned int cache_config_linesize;
         unsigned int cache_config_assoc;
         // model properties:
-        int cacheHitCycles;
-        int cacheMissCycles;
-        int cacheWritethroughCycles;
-        int cacheWritebackCycles;
         int cacheClearTime;  ///< time, not clocks
         // computed:
         unsigned int cache_config_nsets;
+        unsigned int cache_config_totalbytes;
         unsigned int cache_offsetbits;
         // data for model:
         cache_entry_t* cache_model_lines;
@@ -122,11 +136,15 @@ class HWCache {
          *************/
 
         void _init_cache_model(void);
-        int _serve_access(hwcache_addr_t addr, unsigned char len, bool write, bool allow_update);
-        inline int _access_set(unsigned int set, unsigned int tag, bool write, bool allow_update);
-        inline int _update_set_lru(unsigned set, cache_entry_t* prev_item,
-                                   cache_entry_t* accessed_item, cache_entry_t* checked_item,
-                                   unsigned tag, bool write);
+        inline access_type_t _serve_access(access_info_t& ret_info, hwcache_addr_t addr,
+                                           unsigned char len, bool write, bool allow_update);
+        inline access_type_t _access_set(unsigned set, unsigned tag, bool write, bool allow_update);
+        inline access_type_t _update_set_lru(unsigned set, cache_entry_t* prev_item,
+                                             cache_entry_t* accessed_item,
+                                             cache_entry_t* checked_item,
+                                             unsigned tag, bool write);
+        inline void _clear_retinfo(access_info_t& ret_info);
+        inline void _update_retinfo(access_info_t& ret_info, const access_type_t& ret);
         void _clear_cache(void);
         void _cleanup_cache_model(void);
         void trace(const char *fmt, ...);
@@ -139,10 +157,9 @@ class HWCache {
 
         HWCache(GenericState *gen_state,
                 const std::string& name,
-                unsigned int lines,  ///< number of cache lines
-                unsigned int linesize,
+                unsigned int lines,  ///< total number of cache lines
+                unsigned int linesize, ///< bytes in each line (= block size)
                 unsigned int assoc,  ///< associativity/ways
-                unsigned int miss_penalty,
                 bool trace_on=false);
 
         virtual ~HWCache();
@@ -150,8 +167,9 @@ class HWCache {
         //! returns >0 if CPU shall be halted
         unsigned int CpuHoldCycle();
 
-        //! returns number of cpu cycles taken to access data item
-        int access(hwcache_addr_t addr, unsigned char len, bool write=false);
+        //! consult ret iff return value is ACCESS_OTHER
+        access_type_t access
+        (access_info_t& ret_info, hwcache_addr_t addr, unsigned char len, bool write=false);
 
         std::string get_stats(void);
         void print_stats(void);

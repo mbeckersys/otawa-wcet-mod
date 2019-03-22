@@ -63,11 +63,12 @@ void MemorySystem::_make_caches_icache(const hard::Cache *cc, const std::string&
 	assert(pol == hard::Cache::LRU && "only supporting LRU");
 	assert(cc->setCount() == cc->blockCount() / cc->wayCount());
 	const bool do_trace = TRACE_CACHES(sim_state->workspace());
+	const unsigned total_size = cc->cacheSize();
+	assert(total_size == cc->blockCount() * cc->blockSize());
 	_inst_cache = new HWCache(sim_state, name,
 								cc->blockCount(),
 								cc->blockSize(),
 								cc->wayCount(),
-								cc->missPenalty(),
 								do_trace);
 }
 
@@ -193,8 +194,20 @@ int MemorySystem::getInstLatency(Address address, size_t size) {
 		throw Exception(_ << "latency : access out of defined banks for address " << address);
 	int lat;
 	if (bank->isCached() && _inst_cache) {
-		// TODO: shouldn't miss penalty be that of the bank, rather than cache?
-		lat = _inst_cache->access(address, size, false); // lat defined by cache access
+		HWCache::access_info_t rinfo;
+		HWCache::access_type_t ret = _inst_cache->access(rinfo, address, size, false);
+		switch (ret) {
+			case HWCache::ACCESS_HIT:
+				lat = 1;
+				break;
+			case HWCache::ACCESS_MISS:
+				lat = bank->latency();
+				break;
+			default:
+				// unaligned, etc.
+				assert(false && "unexpected access for an i-cache");
+				break;
+			}
 	} else {
 		lat = bank->latency(); // this is the default latency. FIXME: size > word width = multiple?
 	}
