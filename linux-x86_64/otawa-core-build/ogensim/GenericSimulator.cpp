@@ -51,7 +51,6 @@ GenericSimulator::GenericSimulator(void)
 : Simulator("gensim", Version(0, 3, 0), OTAWA_SIMULATOR_VERSION) {
 }
 
-
 /**
  */
 sim::State *GenericSimulator::instantiate(WorkSpace *fw, const PropList& props) {
@@ -302,6 +301,17 @@ void GenericState::step(void) {
 	// check if the activeInstruction is empty or not....
 	//running = running & (! processor->isEmpty()); // bit-update fashion
 
+}
+
+void GenericState::stop(void)
+{
+    running = false;
+    elm::cerr << "Simulation stopped" << io::endl;
+    processor->printStats();
+}
+
+GenericState::~GenericState() {
+    delete processor;
 }
 
 } } // otawa::gensim

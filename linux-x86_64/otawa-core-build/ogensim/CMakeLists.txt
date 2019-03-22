@@ -14,6 +14,7 @@ set(SOURCES
 	Memory.cpp
 	FunctionalUnit.cpp
 	ExecuteLPC2138.cpp
+	hwcache.cpp
 	main.cpp)
 set(SYSTEMC_INC "/usr/include")
 set(SYSTEMC_LIB "-L/usr/lib-linux64 -lsystemc -Wl,-rpath -Wl,/usr/lib-linux64")

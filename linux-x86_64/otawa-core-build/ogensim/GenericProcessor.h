@@ -56,6 +56,7 @@ SC_MODULE(GenericProcessor)
 public:
 	bool isEmpty(void);
 	void step(void);
+	void reset(void);
 	void Flush(void);
 	bool endOfExecution(void);
 
@@ -65,7 +66,9 @@ public:
   		GenericState * sim_state,
   		otawa::hard::Platform *pf,
   		const hard::Memory *mem);
-  	~GenericProcessor() { }
+  	~GenericProcessor();
+
+    void printStats(void) const;
 
 private:
 

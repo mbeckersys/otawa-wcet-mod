@@ -36,20 +36,20 @@ GenericProcessor::GenericProcessor(
 	sc_signal<int> * nb;
 
 	// init memory system
-    memory = new MemorySystem("memory", sim_state, mem ? mem : &pf->memory());
-    memory->in_clock(clock);
+	memory = new MemorySystem("memory", sim_state, mem ? mem : &pf->memory()); // either user-provided memory config or platform memory config. Why are there two?
+	memory->in_clock(clock);
 
 	// interface to data port
-    sc_signal<address_t> * in_data_address_sc = new sc_signal<address_t>;
-    memory->in_data_address(*in_data_address_sc);
-    sc_signal<otawa::sim::CacheDriver::action_t> * in_data_access_type_sc = new sc_signal<otawa::sim::CacheDriver::action_t>;
-    memory->in_data_access_type(*in_data_access_type_sc);
-    sc_signal<int> * in_data_size_sc = new sc_signal<int>;
-    memory->in_data_size(*in_data_size_sc);
-    sc_signal<bool> * in_data_request_sc = new sc_signal<bool>;
-    memory->in_data_request(*in_data_request_sc);
-    sc_signal<bool> * out_data_wait_sc = new sc_signal<bool>;
-    memory->out_data_wait(*out_data_wait_sc);
+	sc_signal<address_t> * in_data_address_sc = new sc_signal<address_t>;
+	memory->in_data_address(*in_data_address_sc);
+	sc_signal<otawa::sim::CacheDriver::action_t> * in_data_access_type_sc = new sc_signal<otawa::sim::CacheDriver::action_t>;
+	memory->in_data_access_type(*in_data_access_type_sc);
+	sc_signal<int> * in_data_size_sc = new sc_signal<int>;
+	memory->in_data_size(*in_data_size_sc);
+	sc_signal<bool> * in_data_request_sc = new sc_signal<bool>;
+	memory->in_data_request(*in_data_request_sc);
+	sc_signal<bool> * out_data_wait_sc = new sc_signal<bool>;
+	memory->out_data_wait(*out_data_wait_sc);
 
 	// init rename tables
 	rename_tables = new elm::genstruct::AllocatedTable<rename_table_t>(pf->banks().count());
@@ -331,8 +331,17 @@ GenericProcessor::GenericProcessor(
 //	TRACE(dump(elm::cout);)
 }
 
+GenericProcessor::~GenericProcessor() {
+    elm::cout << "~GenericProcessor()" << io::endl;
+	delete memory;
+}
+
 bool GenericProcessor::isEmpty() {
 	return (active_instructions.count() == 0);
+}
+
+void GenericProcessor::printStats(void) const {
+    memory->printStats();
 }
 
 void GenericProcessor::step() {
@@ -342,6 +351,11 @@ void GenericProcessor::step() {
 	TRACE(elm::cout << "----- GenericProcessor->Step() : falling edge \n";)
 	clock.write(0);
 	sc_start(0.5, sc_core::SC_US);
+}
+
+void GenericProcessor::reset() {
+    memory->reset();
+    // TODO: clear pipeline
 }
 
 void GenericProcessor::Flush() {

@@ -28,6 +28,7 @@
 /* #include "SimulatedInstruction.h" */
 #include <otawa/otawa.h>
 #include "GenericState.h"
+#include "hwcache.h"
 #include <otawa/sim/CacheDriver.h>
 #include <otawa/sim/AbstractCacheDriver.h>
 
@@ -56,11 +57,15 @@ public:
 	sc_out<bool> out_data_wait;
 
 	MemorySystem(sc_module_name name, GenericState * gen_state, const hard::Memory *mem);
+	~MemorySystem();
 	void processInstPort(void);
 	void processDataPort(void);
 
+	void printStats(void) const;
+
 	SC_HAS_PROCESS(MemorySystem);
 	void action(void);
+	void reset(void);
 
 private:
 	GenericState *sim_state;
@@ -69,11 +74,12 @@ private:
 	int _inst_fill_latency;
 	memory_state_t _data_cache_state;
 	const hard::Memory *mem;
+	HWCache* _inst_cache;
 	bool dumpDataAccess;
 	bool dumpInstAccess;
 
-	int getLatency(Address address) const;
-	bool isCached(Address address) const;
+	int getDataLatency(Address address, size_t size);
+	int getInstLatency(Address address, size_t size);
 	int _data_fill_latency;
 
 };

@@ -23,31 +23,33 @@ class GenericState: public sim::State {
 	friend class GenericSimulator;
 	WorkSpace *fw;
 	int _cycle;
-	GenericProcessor* processor;	
+	GenericProcessor* processor;
 	bool running;
 
 	// implemented in GenericSimulator.cpp
 	void step(void);
-	
-	
+
+
 public:
 	sim::Driver *driver;
 
 	GenericState(WorkSpace *framework):
 	fw(framework), _cycle(0), driver(NULL) {
 	}
-	
+
 	GenericState(const GenericState& state):
 	fw(state.fw), _cycle(state._cycle), driver(NULL) {
 	}
-	
+
+	~GenericState();
+
 	void init();
-	
+
 	// State overload
 	virtual State *clone(void) {
-		return new GenericState(*this);	
+		return new GenericState(*this);
 	}
-		
+
 	virtual void run(sim::Driver& driver) {
 		this->driver = &driver;
 		running = true;
@@ -58,22 +60,20 @@ public:
 			TRACEX(1, elm::cerr << "cycle = " << cycle() << io::endl;);
 		}
 	}
-	
-	virtual void stop(void) {
-		running = false;
-	}
-	
+
+	virtual void stop(void);
+
 	virtual void flush(void) {
 	}
-	
+
 	virtual int cycle(void) {
 		return _cycle;
 	}
-	
+
 	virtual void reset(void) {
 		_cycle = 0;
 	}
-	
+
 	virtual Process *process(void) {
 		ASSERTP(false, "should not have been called");
 		return 0;

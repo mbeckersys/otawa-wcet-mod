@@ -2,6 +2,8 @@
 #include "GenericState.h"
 #include "debug.h"
 
+// TODO: wrap hwcache
+
 namespace otawa { namespace gensim {
 
 Cache::Cache(sc_module_name name) {
