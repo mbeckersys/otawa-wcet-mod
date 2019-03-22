@@ -65,7 +65,8 @@ public:
   		ProcessorConfiguration * conf,
   		GenericState * sim_state,
   		otawa::hard::Platform *pf,
-  		const hard::Memory *mem);
+  		const hard::Memory *mem,
+  		const hard::CacheConfiguration *cache);
   	~GenericProcessor();
 
     void printStats(void) const;

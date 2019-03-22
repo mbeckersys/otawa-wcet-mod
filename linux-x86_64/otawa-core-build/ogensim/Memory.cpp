@@ -22,7 +22,6 @@
 
 #include "Memory.h"
 #include "GenericState.h"
-#include <otawa/hard/Memory.h>
 #include "GenericSimulator.h"
 #include <elm/string/String.h>
 #include <otawa/sim/CacheDriver.h>
@@ -37,16 +36,25 @@ namespace otawa { namespace gensim {
 /**
  * Constructor.
  */
-MemorySystem::MemorySystem(sc_module_name name, GenericState * gen_state, const hard::Memory *memory):
+MemorySystem::MemorySystem(sc_module_name name, GenericState * gen_state,
+	const hard::Memory *memory,
+	const hard::CacheConfiguration *cache):
 	_inst_cache_state(READY),
 	_inst_fill_latency(0),
 	_data_cache_state(READY),
 	_data_fill_latency(0),
-	mem(memory)
+	mem(memory),
+	_inst_cache(NULL),
+	_data_cache(NULL)
 {
 	sim_state = gen_state;
 
-	_inst_cache = new HWCache(sim_state, "i-cache", 128, 64, 4);  // TODO: from hard::Cache
+	// FIXME: assert LRU, handle multi-level
+	if (cache->hasInstCache()) {
+		const otawa::hard::Cache* icc = cache->instCache();
+		const std::string cname = cache->cacheName(icc).chars();
+		_inst_cache = new HWCache(sim_state, cname, 128, 64, 4);  // TODO: from hard::Cache
+	}
 
 	dumpDataAccess = false;
 	dumpInstAccess = false;
@@ -59,11 +67,16 @@ void MemorySystem::printStats(void) const {
 		std::string stats = _inst_cache->get_stats();
 		elm::cout << stats.c_str() << io::endl;
 	}
+	if (_data_cache) {
+		std::string stats = _data_cache->get_stats();
+		elm::cout << stats.c_str() << io::endl;
+	}
 }
 
 MemorySystem::~MemorySystem()
 {
 	if (_inst_cache) delete _inst_cache;
+	if (_data_cache) delete _data_cache;
 }
 
 /**
@@ -76,7 +89,7 @@ void MemorySystem::processInstPort(void) {
 	case READY:
 		if(in_inst_request.read() == true) {
 			address_t address = in_inst_address.read();
-			const unsigned size = 4; // FIXME: instruction length
+			const unsigned size = 4; // FIXME: read instruction length from somewhere
 			_inst_fill_latency =  getInstLatency(address, size);
 			_inst_cache_state = BUSY;
 			out_inst_wait.write(true);
@@ -133,6 +146,7 @@ void MemorySystem::action() {
 
 void MemorySystem::reset() {
 	if (_inst_cache) _inst_cache->Reset();
+	if (_data_cache) _data_cache->Reset();
 }
 
 /**
@@ -145,7 +159,7 @@ int MemorySystem::getInstLatency(Address address, size_t size) {
 	if(!bank)
 		throw Exception(_ << "latency : access out of defined banks for address " << address);
 	int lat;
-	if (bank->isCached()) {
+	if (bank->isCached() && _inst_cache) {
 		lat = _inst_cache->access(address, size, false); // lat defined by cache access
 	} else {
 		lat = bank->latency(); // this is the default latency. FIXME: size > word width = multiple?
@@ -159,7 +173,7 @@ int MemorySystem::getDataLatency(Address address, size_t size) {
 	if(!bank)
 		throw Exception(_ << "latency : access out of defined banks for address " << address);
 	int lat;
-	if (bank->isCached()) {
+	if (bank->isCached() && _data_cache) {
 		lat = bank->latency(); // TODO: add d-cache model
 	} else {
 		lat = bank->latency(); // this is the default latency

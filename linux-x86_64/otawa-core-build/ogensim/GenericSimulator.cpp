@@ -14,6 +14,7 @@
 #include <otawa/hard/Processor.h>
 #include <otawa/hard/Platform.h>
 #include <otawa/hard/Memory.h>
+#include <otawa/hard/CacheConfiguration.h>
 
 int sc_main(int argc, char *argv[]) {
 	int err = dup(2);
@@ -287,7 +288,8 @@ void GenericState::init() {
 	}
 
 	// Create the processor
-	processor = new GenericProcessor("GenericProcessor",&conf, this, fw->platform(), hard::MEMORY(fw));
+	processor = new GenericProcessor("GenericProcessor",&conf, this, fw->platform(),
+                                     hard::MEMORY(fw), hard::CACHE_CONFIGURATION(fw));
 }
 
 

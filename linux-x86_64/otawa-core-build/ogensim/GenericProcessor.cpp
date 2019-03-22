@@ -26,7 +26,8 @@ GenericProcessor::GenericProcessor(
 	sc_module_name name,
 	ProcessorConfiguration * conf,
 	GenericState * sim_state, otawa::hard::Platform *pf,
-	const hard::Memory *mem
+	const hard::Memory *mem,
+    const hard::CacheConfiguration *cache
 ):	memory(0) {
 
 	int iports,oports;
@@ -36,7 +37,9 @@ GenericProcessor::GenericProcessor(
 	sc_signal<int> * nb;
 
 	// init memory system
-	memory = new MemorySystem("memory", sim_state, mem ? mem : &pf->memory()); // either user-provided memory config or platform memory config. Why are there two?
+	memory = new MemorySystem("memory", sim_state,
+                              mem ? mem : &pf->memory(),
+                              cache ? cache : &pf->cache()); // either user-provided memory config or platform memory config. Why are there two?
 	memory->in_clock(clock);
 
 	// interface to data port

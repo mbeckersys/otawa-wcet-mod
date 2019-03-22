@@ -27,6 +27,8 @@
 /* #include "InstructionQueue.h" */
 /* #include "SimulatedInstruction.h" */
 #include <otawa/otawa.h>
+#include <otawa/hard/Memory.h>
+#include <otawa/hard/CacheConfiguration.h>
 #include "GenericState.h"
 #include "hwcache.h"
 #include <otawa/sim/CacheDriver.h>
@@ -56,7 +58,10 @@ public:
 	sc_in<bool> in_data_request;
 	sc_out<bool> out_data_wait;
 
-	MemorySystem(sc_module_name name, GenericState * gen_state, const hard::Memory *mem);
+	MemorySystem(sc_module_name name,
+				 GenericState * gen_state,
+	             const hard::Memory *mem,
+	             const hard::CacheConfiguration *cache);
 	~MemorySystem();
 	void processInstPort(void);
 	void processDataPort(void);
@@ -75,6 +80,7 @@ private:
 	memory_state_t _data_cache_state;
 	const hard::Memory *mem;
 	HWCache* _inst_cache;
+	HWCache* _data_cache;
 	bool dumpDataAccess;
 	bool dumpInstAccess;
 
