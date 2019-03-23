@@ -3,6 +3,6 @@
 
 #define _RELEASE_VERSION	"1.0"
 #define OTAWA_VERSION		"4215"
-#define OTAWA_DATE			"20/03/2019"
+#define OTAWA_DATE			"23/03/2019"
 
 #endif	// OTAWA_CONFIG_H

@@ -10,6 +10,7 @@
 #include <otawa/hard/Processor.h>
 #include <otawa/hard/Memory.h>
 #include <otawa/hard/CacheConfiguration.h>
+#include <otawa/display/ConfigOutput.h>
 #include <otawa/cfg/features.h>
 #include "GenericSimulator.h"
 
@@ -35,6 +36,7 @@ public:
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
 		iVerboseLevel(option::ValueOption<int>::Make(*this).cmd("-vl").cmd("--verboseLevel").description("verbose level for simulation")),
 		traceCache(*this, 't', "traceCache", "enable cache protocol", false),
+		dumpConfig(*this, 'd', "dumpConfig", "write platform config to HTML file", false),
 		process(0),
 		current(0),
 		start(0),
@@ -182,9 +184,16 @@ protected:
 			TRACE_CACHES(workspace()) = true;
 		}
 
-		// decode the CFGs
+		// decode the CFGs and stuff
 		workspace()->require(otawa::CFG_INFO_FEATURE, props);
 		workspace()->require(otawa::COLLECTED_CFG_FEATURE, props);
+
+		// dump the config, if requested
+		if (dumpConfig) {
+			cout << "Dumping config..." << endl;
+			display::ConfigOutput output;
+			output.process(workspace(), props);
+		}
 
 		coll = INVOLVED_CFGS(workspace());
 		assert(coll);
@@ -196,19 +205,6 @@ protected:
 
 		// prepare the functional simulation
 		process = workspace()->process();
-
-		/**************
-		 * show config
-		 **************/
-		const hard::CacheConfiguration *cc = otawa::hard::CACHE_CONFIGURATION(workspace());
-		if (cc) {
-			cout << "Cache: I-cache=" << cc->hasInstCache() << endl;
-			cout << "Cache: D-cache=" << cc->hasDataCache() << endl;
-		}
-		const hard::Processor *oproc = otawa::hard::PROCESSOR(workspace());
-		if (oproc) {
-			elm::cout << "Processor: " << oproc->getModel() << io::endl;
-		}
 
 		// initialize the arm *functional* iss
 		// arm.cpp implements newState which create simState (also implemented in arm.cpp)
@@ -270,6 +266,7 @@ private:
 	option::ValueOption<string> mem;
 	option::ValueOption<int> iVerboseLevel;
 	option::BoolOption traceCache;
+	option::BoolOption dumpConfig;
 	CFGInfo *cfgInfo;
 	std::stack<CFG*> callstack;
 	const CFGCollection *coll;

@@ -35,8 +35,10 @@ execute_process(COMMAND "${OTAWA_CONFIG}" --cflags ${MODULES} OUTPUT_VARIABLE OT
 execute_process(COMMAND "${OTAWA_CONFIG}" --libs ${MODULES} --rpath OUTPUT_VARIABLE OTAWA_LDFLAGS OUTPUT_STRIP_TRAILING_WHITESPACE)
 execute_process(COMMAND "${OTAWA_CONFIG}" --prefix OUTPUT_VARIABLE OTAWA_PREFIX OUTPUT_STRIP_TRAILING_WHITESPACE)
 
+message("OTAWA_LDFLAGS=" ${OTAWA_LDFLAGS})
+
 # plugin definition
 include_directories("${CMAKE_SOURCE_DIR}" "." "${SYSTEMC_INC}")
 add_executable(${EXEC} ${SOURCES})
 set_property(TARGET ${EXEC} PROPERTY COMPILE_FLAGS "${OTAWA_CFLAGS}")
-target_link_libraries(${EXEC} "${OTAWA_LDFLAGS}" "${SYSTEMC_LIB}")
+target_link_libraries(${EXEC} "${OTAWA_LDFLAGS} -lodisplay" "${SYSTEMC_LIB}")

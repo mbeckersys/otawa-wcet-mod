@@ -333,6 +333,33 @@ display_CFGOutput.cpp.s:
 	cd /home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/otawa && $(MAKE) -f src/odisplay/CMakeFiles/odisplay.dir/build.make src/odisplay/CMakeFiles/odisplay.dir/display_CFGOutput.cpp.s
 .PHONY : display_CFGOutput.cpp.s
 
+display_ConfigOutput.o: display_ConfigOutput.cpp.o
+
+.PHONY : display_ConfigOutput.o
+
+# target to build an object file
+display_ConfigOutput.cpp.o:
+	cd /home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/otawa && $(MAKE) -f src/odisplay/CMakeFiles/odisplay.dir/build.make src/odisplay/CMakeFiles/odisplay.dir/display_ConfigOutput.cpp.o
+.PHONY : display_ConfigOutput.cpp.o
+
+display_ConfigOutput.i: display_ConfigOutput.cpp.i
+
+.PHONY : display_ConfigOutput.i
+
+# target to preprocess a source file
+display_ConfigOutput.cpp.i:
+	cd /home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/otawa && $(MAKE) -f src/odisplay/CMakeFiles/odisplay.dir/build.make src/odisplay/CMakeFiles/odisplay.dir/display_ConfigOutput.cpp.i
+.PHONY : display_ConfigOutput.cpp.i
+
+display_ConfigOutput.s: display_ConfigOutput.cpp.s
+
+.PHONY : display_ConfigOutput.s
+
+# target to generate assembly for a file
+display_ConfigOutput.cpp.s:
+	cd /home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/otawa && $(MAKE) -f src/odisplay/CMakeFiles/odisplay.dir/build.make src/odisplay/CMakeFiles/odisplay.dir/display_ConfigOutput.cpp.s
+.PHONY : display_ConfigOutput.cpp.s
+
 display_GenDrawer.o: display_GenDrawer.cpp.o
 
 .PHONY : display_GenDrawer.o
@@ -661,6 +688,9 @@ help:
 	@echo "... display_CFGOutput.o"
 	@echo "... display_CFGOutput.i"
 	@echo "... display_CFGOutput.s"
+	@echo "... display_ConfigOutput.o"
+	@echo "... display_ConfigOutput.i"
+	@echo "... display_ConfigOutput.s"
 	@echo "... display_GenDrawer.o"
 	@echo "... display_GenDrawer.i"
 	@echo "... display_GenDrawer.s"

@@ -44,6 +44,9 @@ class GenericState;
 
 class MemorySystem : public sc_module {
 public:
+	/***********
+	 * ATTRS
+	 ***********/
 	sc_in<bool> in_clock;
 
 	// interface to instruction port
@@ -58,6 +61,9 @@ public:
 	sc_in<bool> in_data_request;
 	sc_out<bool> out_data_wait;
 
+	/***********
+	 * METHODS
+	 ***********/
 	MemorySystem(sc_module_name name,
 				 GenericState * gen_state,
 	             const hard::Memory *mem,
@@ -73,6 +79,9 @@ public:
 	void reset(void);
 
 private:
+	/***********
+	 * ATTRS
+	 ***********/
 	GenericState *sim_state;
 	typedef enum { READY = 0, BUSY = 1 } memory_state_t;
 	memory_state_t _inst_cache_state;
@@ -81,17 +90,18 @@ private:
 	const hard::Memory *mem;
 	HWCache* _inst_cache;
 	HWCache* _data_cache;
-	bool dumpDataAccess;
-	bool dumpInstAccess;
+	int _data_fill_latency;
 
+	/***********
+	 * METHODS
+	 ***********/
 	int getDataLatency(Address address, size_t size);
 	int getInstLatency(Address address, size_t size);
 
 	void _make_caches_icache(const hard::Cache *cconfig, const std::string& name);
 	void _make_caches_dcache(const hard::Cache *cconfig, const std::string& name);
 	void _make_caches(const hard::CacheConfiguration *caches);
-	int _data_fill_latency;
-
+	void _verbose_config(void) const;
 };
 
 }

@@ -49,12 +49,23 @@ MemorySystem::MemorySystem(sc_module_name name, GenericState *gen_state,
 {
 	sim_state = gen_state;
 
+	_verbose_config();
 	_make_caches(caches);
 
-	dumpDataAccess = false;
-	dumpInstAccess = false;
 	SC_METHOD(action);
 	sensitive_neg << in_clock;
+}
+
+void MemorySystem::_verbose_config(void) const {
+	elm::cout << "Memory:" << io::endl;
+	const Table<const otawa::hard::Bank*> & banks = mem->banks();
+	for(Table<const otawa::hard::Bank*>::Iterator it(banks); it; ++it) {
+		elm::cout << " - bank '" << it->name() << "': "
+				  << "size=" << it->size() << " B, "
+				  << "latency=" << it->latency() << ", "
+				  << "cached=" << it->isCached()
+				  << io::endl;
+	}
 }
 
 void MemorySystem::_make_caches_icache(const hard::Cache *cc, const std::string& name) {
@@ -77,14 +88,14 @@ void MemorySystem::_make_caches_dcache(const hard::Cache *cconfig, const std::st
 }
 
 void MemorySystem::_make_caches(const hard::CacheConfiguration *caches) {
-	assert(caches->isHarvard() && "no support for unified memory");
+	//assert(caches->isHarvard() && "no support for unified memory");
 
 	if (caches->hasInstCache()) {
 		const otawa::hard::Cache* icc = caches->instCache();
 		const std::string cname = caches->cacheName(icc).chars();
 		_make_caches_icache(icc, cname);
 	} else {
-		TRACEX(1, elm::cout << "No instruction cache specified" << io::endl;)
+		TRACEX(0, elm::cout << "No instruction cache specified" << io::endl;)
 	}
 
 	if (caches->hasDataCache()) {
@@ -92,7 +103,7 @@ void MemorySystem::_make_caches(const hard::CacheConfiguration *caches) {
 		const std::string cname = caches->cacheName(dcc).chars();
 		_make_caches_dcache(dcc, cname);
 	} else {
-		TRACEX(1, elm::cout << "No data cache specified" << io::endl;)
+		TRACEX(0, elm::cout << "No data cache specified" << io::endl;)
 	}
 }
 
@@ -209,7 +220,7 @@ int MemorySystem::getInstLatency(Address address, size_t size) {
 				break;
 			}
 	} else {
-		lat = bank->latency(); // this is the default latency. FIXME: size > word width = multiple?
+		lat = bank->latency(); // this is the default latency. FIXME: size > word width => multiple?
 	}
 	return lat > 0 ? lat : 1;
 }

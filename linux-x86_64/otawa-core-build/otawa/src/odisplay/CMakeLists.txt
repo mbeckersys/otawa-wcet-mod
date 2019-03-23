@@ -8,6 +8,7 @@ set(libodisplay_la_SOURCES
 	"display_AbstractDrawer.cpp"
 	"display_CFGAdapter.cpp"
 	"display_CFGOutput.cpp"
+	"display_ConfigOutput.cpp"
 	"display_GenDrawer.cpp"
 	"display_Graph.cpp"
 	"display_graphviz.cpp"
