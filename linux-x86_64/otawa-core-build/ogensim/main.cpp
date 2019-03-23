@@ -63,6 +63,24 @@ public:
 	}
 
 	/**
+	 * @brief also fails for functions prior to main
+	 */
+	CFG* _try_find_cfg(Address addr) {
+		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
+		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
+			cout << "? CFG " << cfg->name() << endl;
+			for(CFG::BBIterator bb(cfg); bb; ++bb) {
+				for(BasicBlock::InstIterator inst(bb); inst; ++inst) {
+					if (inst->address() == addr) {
+						return cfg;
+					}
+				}
+			}
+		}
+		return NULL;
+	}
+
+	/**
 	 * @brief write cycle, function, offset, and so on to output
 	 */
 	void emit_trace() {
@@ -82,6 +100,11 @@ public:
 
 		// ... function and offset
 		CFG* currCFG = (!callstack.empty()) ? callstack.top() : NULL;
+		#if 0
+		if (!currCFG) {
+			CFG*jj = _try_find_cfg(current->address());
+		}
+		#endif
 		if (currCFG) {
 			const Address::offset_t off = current->address() - currCFG->address();
 			cout << currCFG->name() << "+" << io::hex(off) << "\t";
@@ -99,7 +122,9 @@ public:
 
 		} else if (current->isReturn()) {
 			cout << "\t;; RETURN";
-			callstack.pop();
+			if (!callstack.empty()) {
+				callstack.pop();
+			}
 		}
 		cout << io::endl;
 	}
@@ -198,10 +223,26 @@ protected:
 		// this returns a GenericState, which extends from the sim::State
 		sstate = gsim.instantiate(workspace());
 
+		/*************
+		 * BEGIN/EXIT
+		 *************/
 		// start() is implemented in arm.cpp, which returns the start instruction
 		// the start instruction is identified when loading the binary file
 		start = process->start();
 		ASSERT(start);
+		Symbol* sym = process->findSymbolAt(start->address());
+		if (sym) {
+			cout << "Start at " << sym->name() << endl;
+		} else {
+			Option<Pair<cstring,int> > info = process->getSourceLine(start->address());
+			if(info) {
+				cstring file = (*info).fst;
+				int line = (*info).snd;
+				cout << "Start at " << start->address() << " (" << file << ":" << line << ")" << endl;
+			} else {
+				cout << "Start at " << start->address() << " (no info)" << endl;
+			}
+		}
 		exit = process->findInstAt("_exit");
 		if(!exit)
 			throw elm::MessageException("no _exit label to stop simulation");
@@ -212,7 +253,9 @@ protected:
 		//Inst* aa = process->findInstAt("errno"); // +4
 		//cerr << aa->address()+4  << io::endl;
 
-		// run the simulation
+		/********
+		 * RUN!
+		 ********/
 		sstate->run(*this); // defined in GenericState.h
 		cerr << "cycles = " << sstate->cycle() << endl;
 	}
