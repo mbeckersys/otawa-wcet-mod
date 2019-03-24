@@ -194,7 +194,7 @@ void ConfigOutput::dump_memory(void) {
 void ConfigOutput::processWorkSpace(WorkSpace *ws) {
 
 	if(!path)
-		path = _ << ENTRY_CFG(ws)->label() << "-config.html";
+		path = _ << "platform-config.html";
 	io::OutStream *file;
 	try {
 		file = elm::system::System::createFile(path);

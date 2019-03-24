@@ -88,7 +88,7 @@ void MemorySystem::_make_caches_dcache(const hard::Cache *cconfig, const std::st
 }
 
 void MemorySystem::_make_caches(const hard::CacheConfiguration *caches) {
-	//assert(caches->isHarvard() && "no support for unified memory");
+	assert(!caches->isUnified() && "No support for unified L1 cache");
 
 	if (caches->hasInstCache()) {
 		const otawa::hard::Cache* icc = caches->instCache();

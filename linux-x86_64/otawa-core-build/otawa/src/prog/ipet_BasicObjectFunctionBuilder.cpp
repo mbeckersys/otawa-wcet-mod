@@ -40,7 +40,7 @@ namespace otawa { namespace ipet {
  * @p where
  * <dl>
  * 	<dt>tk</dt><dd>Time of execution of basic block k.</dd>
- *  <dt>nk</dt><dd>Count of execution if basic block k.</dd>
+ *  <dt>nk</dt><dd>Count of execution of basic block k.</dd>
  * </dl>
  *
  * @par Required Features

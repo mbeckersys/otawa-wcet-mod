@@ -34,7 +34,65 @@ Seems that armv7t is incompatible
  => back to OTAWA build: make -> builds!
  => the makefile loop persists... "can's cd to armv7t" -> sed -i 's/armv7/armv5/g' linux-x86_64/otawa-core-build/Makefile
 
-==> ogensim starts executing, but crashes with a segfault.
+DONE! Now we only need to complete ogensim (because it isn't).
+
+# Simulator timing vs OTAWA timing
+## Pitfalls
+Caches:
+ * Caches and backing memory are configured independently. Therefore, cache miss penalty should
+be checked for consistency with memory bank latency. Default values are consistent, thought
+ * caches are only modeled if bank has "isCached" property (enabled by default).
+   * TODO: Otherwise what?
+     * no L-blocks created
+     * ==> ??
+ * Multi-level caches could be modeled, but it's unclear whether analysis supports it
+ * simulator and analyzer disagree when no caches configured:
+   * OTAWA assumes always hit, i.e., memory bank is never accessed
+   * simulation: memory bank is always accessed
+   * telling OTAWA that bank is not cached will not work (segfault in L-block builder)
+
+Basic Blocks:
+ * by default, OTAWA assumes each insn takes one clock cycle to execute (modulo d-cache, if any)
+ * alternatively, simulator can be used (timing from where?)
+
+## Simulator
+Fetch time:
+ * accesses a memory bank (DRAM, by default)
+ * if cache config present, it tries to read cache first
+ * cache miss -> bank latency
+
+Exec time:
+ * TODO
+
+## OTWA
+Fetch time:
+ * if caches are on: cache hit time or cache miss penalty, read from cacheConfig
+   * thus, if there is a memory bank accessed, cache config must have the correct miss penalty set.
+   * hit time: NONE?
+ * if caches are off:
+   * always hit.
+
+BB Timings:
+ * NO: GraphBBTime: execution graph method for superscalar processors.
+  * TBD: tsim::BBTimeSimulator: uses simulator to get BB exec time (reset, run , read off) -> where timing???
+
+IPET:
+ * YES: ipet::TrivialBBTime: insn * pipeline depth => good enough for us.
+   * default: depth=5
+ * ipet_CacheSupport
+   * NO: TrivialInstCacheManager: (provides INST_CACHE_SUPPORT_FEATURE): each code line blocks cause a miss <=> only same L-blocks do not miss
+   * YES: CacheSupport: requires ICACHE_ACS_FEATURE, CAT2_FEATURE, ICACHE_ONLY_CONSTRAINT2_FEATURE and so on. Same for D-cache
+     * ACS: abstract cache model (ferdinand, MUST/MAY)
+     * CAT2: take results of MUST/MAY and categorize (AM, AH, ...)
+     * ICACHE_ONLY_CONSTRAINT2_FEATURE: adds constraints.
+       * MISS PENALTY: taken from cache config (cache->missPenalty), defaults to 10. Not connected to DRAM bank!!!
+
+ILP Obj Fcn Builder (requries BB_TIME_FEATURE)
+ * uses edge time, if available, otherwise BB time
+
+TODO:
+StandardEventBuilder?
+
 
 # Manipulating ILP System manually
 E.g., if constraints are not expressive enough.
