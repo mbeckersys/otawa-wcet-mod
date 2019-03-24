@@ -71,6 +71,8 @@ void MemorySystem::_verbose_config(void) const {
 void MemorySystem::_make_caches_icache(const hard::Cache *cc, const std::string& name) {
 	assert(!cc->nextLevel() && "no support for multi-level cache");
 	const hard::Cache::replace_policy_t pol = cc->replacementPolicy();
+	_icache_miss_penalty = cc->missPenalty();
+
 	assert(pol == hard::Cache::LRU && "only supporting LRU");
 	assert(cc->setCount() == cc->blockCount() / cc->wayCount());
 	const bool do_trace = TRACE_CACHES(sim_state->workspace());
@@ -88,7 +90,9 @@ void MemorySystem::_make_caches_dcache(const hard::Cache *cconfig, const std::st
 }
 
 void MemorySystem::_make_caches(const hard::CacheConfiguration *caches) {
-	assert(!caches->isUnified() && "No support for unified L1 cache");
+	if (caches->hasInstCache() && caches->hasDataCache()) {
+		assert(!caches->isUnified() && "No support for unified L1 cache");
+	}
 
 	if (caches->hasInstCache()) {
 		const otawa::hard::Cache* icc = caches->instCache();
@@ -213,6 +217,9 @@ int MemorySystem::getInstLatency(Address address, size_t size) {
 				break;
 			case HWCache::ACCESS_MISS:
 				lat = bank->latency();
+				if (lat != _icache_miss_penalty) {
+					elm::cerr << "Bank latency and i-cache miss penalty disagree" << io::endl;
+				}
 				break;
 			default:
 				// unaligned, etc.

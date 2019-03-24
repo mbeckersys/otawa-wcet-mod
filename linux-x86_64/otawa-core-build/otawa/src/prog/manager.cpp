@@ -196,7 +196,16 @@ Loader *Manager::findLoader(CString name) {
  * @param name	Name of the simulator to load.
  */
 sim::Simulator *Manager::findSimulator(elm::CString name) {
-	return (sim::Simulator *)sim_plugger.plug(name);
+	sim::Simulator* s = (sim::Simulator*) sim_plugger.plug(name);
+	if (!s) {
+		Output log(io::err);
+		log << "WARN: Simulator " << name << " not found. Only have the following " << io::endl;
+		for(elm::system::Plugger::Iterator it(sim_plugger); it; it++) {
+			log << " - " << it.item() << io::endl;
+		}
+		log << "end of simulator list." << io::endl;
+	}
+	return s;
 }
 
 
@@ -610,7 +619,8 @@ Identifier<sim::Simulator *> SIMULATOR("otawa::SIMULATOR", 0);
 /**
  * Name of the simulator to use.
  */
-Identifier<elm::CString> SIMULATOR_NAME("otawa::SIMULATOR_NAME", "");
+//Identifier<elm::CString> SIMULATOR_NAME("otawa::SIMULATOR_NAME", "");
+Identifier<elm::CString> SIMULATOR_NAME("otawa::SIMULATOR_NAME", "None"); // as a plugin
 
 
 /**

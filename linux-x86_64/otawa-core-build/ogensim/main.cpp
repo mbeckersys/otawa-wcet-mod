@@ -169,9 +169,8 @@ protected:
 		workspace()->require(hard::PROCESSOR_FEATURE, props);
 		cout << "Processor from " << otawa::PROCESSOR_PATH(props) << io::endl;
 		if(mem) {
-			// FIXME: subsumes cache?
 			otawa::MEMORY_PATH(props) = *mem;
-			workspace()->require(hard::MEMORY_FEATURE);
+			workspace()->require(hard::MEMORY_FEATURE, props);
 			cout << "Memory from " << otawa::MEMORY_PATH(props) << io::endl;
 		}
 		if (cache) {

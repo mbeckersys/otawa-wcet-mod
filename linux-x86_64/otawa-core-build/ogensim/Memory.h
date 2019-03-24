@@ -91,6 +91,7 @@ private:
 	HWCache* _inst_cache;
 	HWCache* _data_cache;
 	int _data_fill_latency;
+	int _icache_miss_penalty;
 
 	/***********
 	 * METHODS

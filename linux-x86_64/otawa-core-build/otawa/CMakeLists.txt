@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 project("otawa")
 set(PACKAGE "otawa")
+SET(CMAKE_BUILD_TYPE Debug)
 
 # debugging activated
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -g")
@@ -62,7 +63,7 @@ endif(WIN32)
 
 add_definitions(-DILP_PATHS=\"${PROJECT_BINARY_DIR}/lib/otawa/ilp\")
 add_definitions(-DLOADER_PATHS=\"${PROJECT_BINARY_DIR}/lib/otawa/loader:${CMAKE_INSTALL_PREFIX}/lib/otawa/loader\")
-add_definitions(-DSIMULATOR_PATHS=\"${PROJECT_BINARY_DIR}/lib/otawa/sim\")
+add_definitions(-DSIMULATOR_PATHS=\"${PROJECT_BINARY_DIR}/lib/otawa/sim:${CMAKE_INSTALL_PREFIX}/lib/otawa/sim\")
 add_definitions(-DPROC_PATHS=\"${PROJECT_BINARY_DIR}/lib/otawa/proc\")
 add_definitions(-DHAS_RELOCATION)
 add_definitions(-DOTAWA_CMAKE)
@@ -72,7 +73,7 @@ set(ARM5_PATH "${CMAKE_SOURCE_DIR}/../armv5t")
 set(ARM7_PATH "${CMAKE_SOURCE_DIR}/../armv7t")
 set(ARM_PATH "ARM_PATH-NOTFOUND" CACHE PATH "path to GLISS ARM path")
 set(ARM_LIB "ARM_LIB-NOTFOUND" CACHE PATH "path to ARM library")
-set(ARM_SIM OFF CACHE BOOL "Compile in the ARM functional simulator")
+set(ARM_SIM ON CACHE BOOL "Compile in the ARM functional simulator")
 
 if(EXISTS "${ARM7_PATH}")
 	set(ARM_PATH "${ARM7_PATH}")
