@@ -320,7 +320,7 @@ void Process::semInit(sem::Block& block) const {
  * @return	A simulator for the current process or null if none is found.
  */
 sim::Simulator *Process::simulator(void) {
-	//cerr << "otawa::Process::simulator()\n";
+	cerr << "Looking for simulator..." << endl;
 
 	// Look just in configuration
 	sim::Simulator *sim = SIMULATOR(this);
@@ -329,8 +329,12 @@ sim::Simulator *Process::simulator(void) {
 
 	// Look for a name
 	CString name = SIMULATOR_NAME(this);
-	if(!name)
-		return 0;
+	if(!name) {
+		name = "libgensim"; // MBe: workaround. The property is otherwise not propagated from workspace
+		//return 0;
+	}
+	cerr << "No simulator loaded. Trying plugins by name '" << name << "'" << endl;
+
 	sim = manager()->findSimulator(name);
 	if(!sim)
 		throw LoadException(_ << "cannot get the simulator \"" << name << "\".");

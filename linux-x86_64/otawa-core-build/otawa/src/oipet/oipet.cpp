@@ -163,7 +163,7 @@ class Command: public elm::option::Manager {
 	otawa::Manager manager;
 	WorkSpace *fw;
 	#ifdef	HAS_SYSTEMC
-		gensim::GenericSimulator sim;
+		//otawa::gensim::GenericSimulator sim; // MBe: missing def
 	#endif
 public:
 	Command(void);
@@ -368,6 +368,7 @@ void Command::compute(String fun) {
 	case bbtime_sim:
 	case bbtime_delta:
 		{
+			cerr << "INFO: BBTime: sim!" << endl;
 			tsim::BBTimeSimulator bbts;
 			bbts.process(fw, props);
 		}
@@ -404,6 +405,8 @@ void Command::compute(String fun) {
 		ASSERT(false);
 		break;
 	};
+
+	cerr << "INFO: BB time done" << endl;
 
 	// Trivial data cache
 	TrivialDataCacheManager dcache;
@@ -560,8 +563,11 @@ void Command::run(void) throw(elm::Exception) {
 	NO_SYSTEM(props) = true;
 	if(::proc) {
 		PROCESSOR_PATH(props) = ::proc.value();
-#		ifdef HAS_SYSTEMC
+#if 0 //#		ifdef HAS_SYSTEMC
+			cerr << "INFO: System-C Simulator set!" << endl;
 			SIMULATOR(props) = &sim;
+#else
+			cerr << "WARN: No simulator available" << endl;
 #		endif
 	}
 	if(::cache)

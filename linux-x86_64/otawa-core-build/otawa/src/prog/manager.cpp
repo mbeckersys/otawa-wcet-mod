@@ -164,7 +164,8 @@ Manager::Manager(void):
 		buildPaths("ilp", ILP_PATHS)),
 	loader_plugger(OTAWA_LOADER_NAME, OTAWA_LOADER_VERSION,
 		buildPaths("loader", LOADER_PATHS)),
-	sim_plugger(OTAWA_SIMULATOR_NAME, OTAWA_SIMULATOR_VERSION, CSTR(SIMULATOR_PATHS))
+	sim_plugger(OTAWA_SIMULATOR_NAME, OTAWA_SIMULATOR_VERSION,
+		buildPaths("sim", SIMULATOR_PATHS))
 {
 	resetVerbosity();
 }
@@ -196,14 +197,21 @@ Loader *Manager::findLoader(CString name) {
  * @param name	Name of the simulator to load.
  */
 sim::Simulator *Manager::findSimulator(elm::CString name) {
+	Output log(io::err);
+	if (isVerbose() || true) {
+		log << "INFO: Looking for simulators in paths: " << io::endl;
+		for (elm::system::Plugger::PathIterator pit(sim_plugger); pit; pit++) {
+			log << " - " << *pit << io::endl;
+		}
+		log << "INFO: end of search paths." << io::endl;
+	}
 	sim::Simulator* s = (sim::Simulator*) sim_plugger.plug(name);
 	if (!s) {
-		Output log(io::err);
-		log << "WARN: Simulator " << name << " not found. Only have the following " << io::endl;
+		log << "WARN: Simulator '" << name << "' not found. Only have the following:" << io::endl;
 		for(elm::system::Plugger::Iterator it(sim_plugger); it; it++) {
 			log << " - " << it.item() << io::endl;
 		}
-		log << "end of simulator list." << io::endl;
+		log << "WARN: End of simulator list." << io::endl;
 	}
 	return s;
 }
@@ -619,8 +627,7 @@ Identifier<sim::Simulator *> SIMULATOR("otawa::SIMULATOR", 0);
 /**
  * Name of the simulator to use.
  */
-//Identifier<elm::CString> SIMULATOR_NAME("otawa::SIMULATOR_NAME", "");
-Identifier<elm::CString> SIMULATOR_NAME("otawa::SIMULATOR_NAME", "None"); // as a plugin
+Identifier<elm::CString> SIMULATOR_NAME("otawa::SIMULATOR_NAME", "");
 
 
 /**

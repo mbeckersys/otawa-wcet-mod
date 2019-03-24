@@ -233,6 +233,9 @@ PPC_PATH:PATH=/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build
 //Path to a program.
 THOT_PATH:FILEPATH=/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/thot/thot.py
 
+//links systemc into otawa
+USE_SYSTEMC:BOOL=ON
+
 //Dependencies for the target
 arm_LIB_DEPENDS:STATIC=general;/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core/lib/libelm.so;general;otawa;general;/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/otawa/../armv5t/src/libarm.a;
 

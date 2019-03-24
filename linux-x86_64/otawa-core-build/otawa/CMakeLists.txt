@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 project("otawa")
 set(PACKAGE "otawa")
 SET(CMAKE_BUILD_TYPE Debug)
+SET(USE_SYSTEMC ON CACHE BOOL "links systemc into otawa")
 
 # debugging activated
 set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -g")
@@ -50,6 +51,7 @@ endif()
 set(PLUGDIR      "${CMAKE_INSTALL_PREFIX}/lib/otawa")
 set(PROCDIR      "${PLUGDIR}/proc")
 set(LOADERDIR    "${PLUGDIR}/loader")
+set(SIMDIR       "${PLUGDIR}/sim")
 set(ILPDIR       "${PLUGDIR}/ilp")
 
 
@@ -67,6 +69,13 @@ add_definitions(-DSIMULATOR_PATHS=\"${PROJECT_BINARY_DIR}/lib/otawa/sim:${CMAKE_
 add_definitions(-DPROC_PATHS=\"${PROJECT_BINARY_DIR}/lib/otawa/proc\")
 add_definitions(-DHAS_RELOCATION)
 add_definitions(-DOTAWA_CMAKE)
+
+if (USE_SYSTEMC)
+	add_definitions(-DHAS_SYSTEMC)
+	set(SYSTEMC_INC "/usr/include")
+	include_directories(${SYSTEMC_INC})
+	set(SYSTEMC_LIB "-L/usr/lib-linux64 -lsystemc -Wl,-rpath -Wl,/usr/lib-linux64")
+endif()
 
 # looking for ARM loader
 set(ARM5_PATH "${CMAKE_SOURCE_DIR}/../armv5t")
