@@ -1,6 +1,10 @@
 #!/bin/sh
 
 PREFIX=$(otawa-config --prefix)
+if [ -z "$PREFIX" ]; then
+	PREFIX="/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core"
+fi
+
 PLUGIN_PATH=$PREFIX/lib/otawa/sim
 INSTALL_PATH=$PREFIX/bin
 BUILDDIR=objdir

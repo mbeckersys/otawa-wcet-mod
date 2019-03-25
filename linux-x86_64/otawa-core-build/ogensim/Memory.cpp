@@ -135,24 +135,35 @@ MemorySystem::~MemorySystem()
 void MemorySystem::processInstPort(void) {
 	switch (_inst_cache_state) {
 
+	// evaluate state
 	case READY:
 		if(in_inst_request.read() == true) {
 			address_t address = in_inst_address.read();
 			const unsigned size = 4; // FIXME: read instruction length from somewhere
-			_inst_fill_latency =  getInstLatency(address, size);
-			_inst_cache_state = BUSY;
-			out_inst_wait.write(true);
+			_inst_fill_latency = getInstLatency(address, size);
+			if (_inst_fill_latency > 0) {
+				_inst_cache_state = BUSY;
+				TRACEX(3, elm::cout << __SOURCE_INFO__ << "i-stall" << io::endl;)
+			}
 		}
 		break;
 
 	case BUSY:
 		_inst_fill_latency--;
-		TRACEX(3, elm::cout << __SOURCE_INFO__ << "i-stall" << io::endl;)
-		if(_inst_fill_latency == 0) {
+		if(_inst_fill_latency <= 0) {
 			TRACEX(3, elm::cout << __SOURCE_INFO__ << "    i-ready" << io::endl;)
-			out_inst_wait.write(false);
 			_inst_cache_state = READY;
 		}
+		break;
+	}
+
+	// handle state (signalling to fetch stage)
+	switch (_inst_cache_state) {
+	case READY:
+		out_inst_wait.write(false);
+		break;
+	default:
+		out_inst_wait.write(true);
 		break;
 	}
 }

@@ -51,13 +51,9 @@ void ExecuteInOrderStageIQ::action() {
 		TRACE10(elm::cout << "\tready instruction: " << inst->inst()->address();
 			elm::cout << " [FU pipelined=" << fu->isPipelined() << " - width=" << fu->width();
 			elm::cout << " - new=" << fu->newInstructions() << " - pending=" << fu->pendingInstructions() << "]\n";)
-		if (  ( fu->isPipelined()
-				&&
-				(fu->newInstructions() < fu->width()) )
-			||
-				( !fu->isPipelined())
-				&&
-				(fu->pendingInstructions() < fu->width()) ) {
+		if ((fu->isPipelined() && (fu->newInstructions() < fu->width()))
+			|| (!fu->isPipelined()) && (fu->pendingInstructions() < fu->width()))
+		{
 			fu->addInstruction();
 			inst->setState(EXECUTING);
 			inst->setTimeToFinish(fu->latency());

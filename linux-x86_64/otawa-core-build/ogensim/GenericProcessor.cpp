@@ -21,6 +21,22 @@ void ProcessorConfiguration::dump(elm::io::Output& out_stream) {
 
 }
 
+InstructionQueue*
+GenericProcessor::_find_queue(const elm::genstruct::SLList<InstructionQueue *> li,
+const InstructionQueueConfiguration* iqc) const
+{
+	assert(iqc);
+	InstructionQueue* q = NULL;
+	for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(li); iq ; iq++) {
+		if (iq->configuration() == iqc) {
+			q = iq;
+			std::cout << "INFO: output queue " << &(iq->configuration()->nameOfTheQueue())
+			          << " was found" << std::endl;
+			break;
+		}
+	}
+	return q;
+}
 
 GenericProcessor::GenericProcessor(
 	sc_module_name name,
@@ -36,10 +52,12 @@ GenericProcessor::GenericProcessor(
 	bool found;
 	sc_signal<int> * nb;
 
-	// init memory system
+	/************************
+	 * memory
+	 ************************/
 	memory = new MemorySystem("memory", sim_state,
                               mem ? mem : &pf->memory(),
-                              cache ? cache : &pf->cache()); // either user-provided memory config or platform memory config. Why are there two?
+                              cache ? cache : &pf->cache());
 	memory->in_clock(clock);
 
 	// interface to data port
@@ -54,7 +72,9 @@ GenericProcessor::GenericProcessor(
 	sc_signal<bool> * out_data_wait_sc = new sc_signal<bool>;
 	memory->out_data_wait(*out_data_wait_sc);
 
-	// init rename tables
+	/************************
+	 * rename tables
+	 ************************/
 	rename_tables = new elm::genstruct::AllocatedTable<rename_table_t>(pf->banks().count());
 	int reg_bank_count = pf->banks().count();
 	for(int i = 0; i <reg_bank_count ; i++) {
@@ -65,39 +85,31 @@ GenericProcessor::GenericProcessor(
 			(*rename_tables)[i].table->set(j,NULL);
 	}
 
+	/************************
+	 * queues between stages
+	 ************************/
+	std::cout << "================ Creating queues =============" << std::endl;
 	for (elm::genstruct::SLList<InstructionQueueConfiguration *>::Iterator queue_conf(*(conf->instructionQueuesList())) ;
 			queue_conf ; queue_conf++) {
-		std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "creating instruction queue " << &(queue_conf->name()) << std::endl;
+		std::cout << "INFO: queue " << &(queue_conf->name()) << " ..." << std::endl;
 		InstructionQueue * new_queue = new InstructionQueue((sc_module_name) (queue_conf->name().toCString()), *queue_conf);
 		instruction_queues.addLast(new_queue);
 		new_queue->in_clock(clock);
 	}
 
 	for (elm::genstruct::SLList<PipelineStageConfiguration *>::Iterator stage_conf(*(conf->pipelineStagesList())) ;
-			stage_conf ; stage_conf++) {
-		std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "========================= stage " <<  *(stage_conf->name()) << " =====================" << std::endl;
+			stage_conf ; stage_conf++)
+	{
+		std::cout << "================ Stage " <<  *(stage_conf->name()) << " =====================" << std::endl;
 		switch(stage_conf->type()) {
 			case FETCH:	{
-				assert(stage_conf->outputQueue());
-				found = false;
-				// trying to find the match of the queue's name and stage name
-				for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(instruction_queues) ; iq ; iq++) {
-
-					std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "looking at queue " << &(iq->configuration()->nameOfTheQueue()) << std::endl;
-					if (iq->configuration() == stage_conf->outputQueue()) {
-						oports = iq->configuration()->numberOfWritePorts();
-						output_queue = iq;
-						found = true;
-						std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " <<  "output queue " << &(iq->configuration()->nameOfTheQueue()) << " is found" << std::endl;
-						break;
-					}
-				}
-				assert(found);
+				output_queue = _find_queue(instruction_queues, stage_conf->outputQueue());
+				assert(output_queue);
+				oports = output_queue->configuration()->numberOfWritePorts();
 
 				FetchStage * fetch_stage = new FetchStage((sc_module_name) (stage_conf->name()),
 															oports, sim_state, rename_tables, &active_instructions);
 				pipeline_stages.addLast(fetch_stage);
-
 				fetch_stage->in_clock(clock);
 
 				// binding between the queue and the stage
@@ -129,33 +141,12 @@ GenericProcessor::GenericProcessor(
 			} break;
 
 			case LAZYIQIQ: {
-				assert(stage_conf->inputQueue());
-				found = false;
-				for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(instruction_queues) ; iq ; iq++) {
-					std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " <<  "LAZYIQIQ looking at queue " << &(iq->configuration()->nameOfTheQueue()) << std::endl;
-					if (iq->configuration() == stage_conf->inputQueue()) {
-						iports = iq->configuration()->numberOfReadPorts();
-						input_queue = iq;
-						found = true;
-						std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "input queue for LAZYIQIQ " << &(iq->configuration()->nameOfTheQueue()) << " is found" << std::endl;
-						break;
-					}
-				}
-				assert(found);
-				assert(stage_conf->outputQueue());
-				found = false;
-				for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(instruction_queues) ; iq ; iq++) {
-
-					std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "LAZYIQIQ looking at queue " << &(iq->configuration()->nameOfTheQueue()) << std::endl;
-					if (iq->configuration() == stage_conf->outputQueue()) {
-						oports = iq->configuration()->numberOfWritePorts();
-						output_queue = iq;
-						found = true;
-						std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "output queue " << &(iq->configuration()->nameOfTheQueue()) << " is found" << std::endl;
-						break;
-					}
-				}
-				assert(found);
+				input_queue = _find_queue(instruction_queues, stage_conf->inputQueue());
+				assert(input_queue);
+				iports = input_queue->configuration()->numberOfReadPorts();
+				output_queue = _find_queue(instruction_queues, stage_conf->outputQueue());
+				assert(output_queue);
+				oports = output_queue->configuration()->numberOfWritePorts();
 
 				LazyStageIQIQ * lazy_stage = new LazyStageIQIQ((sc_module_name) (stage_conf->name()), stage_conf->width());
 				pipeline_stages.addLast(lazy_stage);
@@ -192,30 +183,21 @@ GenericProcessor::GenericProcessor(
 			} break;
 
 			case EXECUTE_IN_ORDER: {
-				assert(stage_conf->inputQueue());
-				found = false;
-				for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(instruction_queues) ; iq ; iq++) {
-					std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "EXECUTE_IN_ORDER looking at queue " << &(iq->configuration()->nameOfTheQueue()) << std::endl;
-					if (iq->configuration() == stage_conf->inputQueue()) {
-						iports = iq->configuration()->numberOfReadPorts();
-						input_queue = iq;
-						found = true;
-						std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "intput queue for EXECUTE_IN_ORDER " << &(iq->configuration()->nameOfTheQueue()) << " is found" << std::endl;
-						break;
-					}
-				}
-				assert(found);
+				input_queue = _find_queue(instruction_queues, stage_conf->inputQueue());
+				assert(input_queue);
+				iports = input_queue->configuration()->numberOfReadPorts();
 
 				ExecuteStage * execute_stage;
 
 				if((stage_conf->name()).compare("EX_LPC2138") == 0)
 				{
+					std::cout << "INFO: using LPC2138 execution stage" << std::endl << std::flush;
 					execute_stage = new ExecuteStageLPC2138((sc_module_name) (stage_conf->name()), iports, sim_state,
 																rename_tables);
 				}
 				else
 				{
-					std::cout << "Running generic in-order execution" << std::endl << std::flush;
+					std::cout << "INFO: using generic in-order execution" << std::endl << std::flush;
 					execute_stage = new ExecuteInOrderStageIQ((sc_module_name) (stage_conf->name()), iports, sim_state,
 											rename_tables, conf->functionalUnitsList());
 				}
@@ -230,19 +212,9 @@ GenericProcessor::GenericProcessor(
 				}
 
 				// ================== the extra wiring
-				assert(stage_conf->outputQueue());
-				found = false;
-				for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(instruction_queues) ; iq ; iq++) {
-
-					std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "EXECUTE_IN_ORDER looking at queue " << &(iq->configuration()->nameOfTheQueue()) << std::endl;
-					if (iq->configuration() == stage_conf->outputQueue()) {
-						oports = iq->configuration()->numberOfWritePorts();
-						output_queue = iq;
-						found = true;
-						std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "output queue for EXECUTE_IN_ORDER " << &(iq->configuration()->nameOfTheQueue()) << " is found" << std::endl;
-					}
-				}
-				assert(found);
+				output_queue = _find_queue(instruction_queues, stage_conf->outputQueue());
+				assert(output_queue);
+				oports = output_queue->configuration()->numberOfWritePorts();
 
 				for (int i=0 ; i<oports ; i++) {
 					sc_signal<SimulatedInstruction *> * instruction = new sc_signal<SimulatedInstruction *>;
@@ -258,10 +230,6 @@ GenericProcessor::GenericProcessor(
 				output_queue->out_number_of_accepted_ins(*nb);
 				// ==========================================================
 
-
-
-
-
 				nb = new sc_signal<int>;
 				nb->write(0);
 				execute_stage->in_number_of_ins(*nb);
@@ -273,8 +241,13 @@ GenericProcessor::GenericProcessor(
 			} break;
 
 			case EXECUTE_OUT_OF_ORDER: {
-				found = false;
 				InstructionQueue * rob;
+#if 1
+				rob = _find_queue(instruction_queues, stage_conf->instructionBuffer());
+				assert(rob);
+
+#else
+				found = false;
 				for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(instruction_queues) ; iq ; iq++) {
 					if (iq->configuration() == stage_conf->instructionBuffer()) {
 						rob = iq;
@@ -282,6 +255,8 @@ GenericProcessor::GenericProcessor(
 					}
 				}
 				assert(found);
+#endif
+
 				ExecuteOOOStage * execute_stage =
 					new ExecuteOOOStage((sc_module_name) (stage_conf->name()), (stage_conf->width()), rob,
 										rename_tables, conf->functionalUnitsList());
@@ -290,23 +265,13 @@ GenericProcessor::GenericProcessor(
 			} break;
 
 			case COMMIT: {
-				assert(stage_conf->inputQueue());
-				found = false;
-				for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(instruction_queues) ; iq ; iq++) {
-					std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "looking at queue " << &(iq->configuration()->nameOfTheQueue()) << std::endl;
-					if (iq->configuration() == stage_conf->inputQueue()) {
-						iports = iq->configuration()->numberOfReadPorts();
-						input_queue = iq;
-						found = true;
-						std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "input queue " << &(iq->configuration()->nameOfTheQueue()) << " is found\n" << std::endl;
-					}
-				}
-				assert(found);
+				input_queue = _find_queue(instruction_queues, stage_conf->inputQueue());
+				assert(input_queue);
+				iports = input_queue->configuration()->numberOfReadPorts();
 				CommitStage * commit_stage =
 					new CommitStage((sc_module_name) (stage_conf->name()), iports, sim_state);
 				pipeline_stages.addLast(commit_stage);
 				commit_stage->in_clock(clock);
-
 
 				for (int i=0 ; i<iports ; i++) {
 					sc_signal<SimulatedInstruction *> * instruction = new sc_signal<SimulatedInstruction *>;

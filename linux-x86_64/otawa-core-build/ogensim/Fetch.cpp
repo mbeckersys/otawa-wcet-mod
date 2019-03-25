@@ -57,7 +57,7 @@ void FetchStage::fetch() {
 		fetched_instructions.removeFirst();
 	}
 
-	// now we need to know how many fetched instruction that we have know
+	// now we need to know how many fetched instruction that we have now
 	nb_fetched = fetched_instructions.count();
 
 

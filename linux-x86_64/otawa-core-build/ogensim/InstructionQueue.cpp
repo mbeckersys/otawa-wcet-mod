@@ -11,7 +11,7 @@ InstructionQueueConfiguration::InstructionQueueConfiguration(
 )
 :	cap(capacity),
 	number_of_write_ports(0),
-	number_of_read_ports(0), 
+	number_of_read_ports(0),
 	queue_name(name),
 	leaving_condition(condition)
 {
@@ -69,7 +69,7 @@ void InstructionQueueConfiguration::dump(elm::io::Output& out_stream) {
 			break;
 		default:
 			out_stream << "ERROR\n";
-			break;			
+			break;
 	}
 }
 
@@ -88,12 +88,11 @@ InstructionQueue::InstructionQueue(sc_module_name name, InstructionQueueConfigur
 	out_ports = conf->numberOfReadPorts();
 	assert(out_ports);
 	out_instruction = new sc_out<SimulatedInstruction *>[out_ports];
-	buffer = new SimulatedInstruction*[cap]; 
+	buffer = new SimulatedInstruction*[cap];
 	SC_METHOD(action);
-	//sensitive_neg << in_clock;
 	sensitive << in_clock.neg();
 
-	std::cout << "[" << __FILE__ << ":" << __LINE__ << "] " << "instruction queue "<< name << " has in_ports = " << in_ports << ", out_ports = " << out_ports << std::endl;
+	std::cout << "INFO: instruction queue "<< name << " has in_ports = " << in_ports << ", out_ports = " << out_ports << std::endl;
 
 
 }
@@ -122,7 +121,7 @@ SimulatedInstruction* InstructionQueue::get() {
 	is_full = false;
 	return buffer[res];
 }
-		
+
 SimulatedInstruction* InstructionQueue::read(int index){
 	return buffer[ (head + index) & (cap - 1) ];
 }
@@ -145,7 +144,7 @@ InstructionQueueConfiguration * InstructionQueue::configuration() {
 bool InstructionQueue::isEmpty() {
 	return ((head == tail) && !is_full);
 }
-	
+
 void InstructionQueue::action() {
 	TRACE(elm::cout << this->name() << "->action():\n";)
 
@@ -193,14 +192,14 @@ void InstructionQueue::action() {
 
 	outs = 0;
 	while ( (outs < size()) && (outs < out_ports) && (read(outs)->state() >= conf->leavingCondition())) {
-		out_instruction[outs] = read(outs);	
+		out_instruction[outs] = read(outs);
 		outs++;
 	}
 //	if ((outs < size()) && (outs < out_ports) )
 //		elm::cout << "\tcannot send inst " << read(outs)->inst()->address() << " because its state is " << read(outs)->state() << "\n";
 	out_number_of_outs.write(outs);
 	TRACE(elm::cout << "\tout_number_of_outs=" << outs << "\n";)
-	
+
 }
 
 } } // otawa::gensim

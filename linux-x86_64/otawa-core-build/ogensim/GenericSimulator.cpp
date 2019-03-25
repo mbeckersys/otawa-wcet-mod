@@ -15,11 +15,21 @@
 #include <otawa/hard/Platform.h>
 #include <otawa/hard/Memory.h>
 #include <otawa/hard/CacheConfiguration.h>
+#include <sysc/tracing/sc_trace.h>
 
 int sc_main(int argc, char *argv[]) {
 	int err = dup(2);
 	close(2);
+#ifdef TRACE_SYSC
+	sc_core::sc_trace* tf;
+	tf = sc_create_vcd_trace_file("traces");
+	((vcd_trace_file*)tf)->sc_set_vcd_time_unit(-9);
+#endif
+
 	sc_core::sc_elab_and_sim(argc, argv);
+#ifdef TRACE_SYSC
+	sc_close_vcd_trace_file(tf);
+#endif
 	dup2(err,2);
 	close(err);
 	return 0;
@@ -69,91 +79,6 @@ sim::State *GenericSimulator::instantiate(WorkSpace *fw, const PropList& props) 
 
 void GenericState::init() {
 	ProcessorConfiguration conf;
-
-	#if 0
-	int degree = DEGREE(fw->process());
-	int cache_line_size = 8;
-
-	// config. 3 stages, in-order execution
-
-	InstructionQueueConfiguration *fetch_queue =
-		new InstructionQueueConfiguration("FetchQueue", degree + 1, NONE);
-	conf.addInstructionQueue(fetch_queue);
-
-	InstructionQueueConfiguration *issue_queue =
-		new InstructionQueueConfiguration("IssueQueue", degree + 1, READY);
-	conf.addInstructionQueue(issue_queue);
-
-	PipelineStageConfiguration * fetch_stage =
-		new PipelineStageConfiguration("FetchStage", FETCH, NULL, fetch_queue, cache_line_size);
-	conf.addPipelineStage(fetch_stage);
-
-	PipelineStageConfiguration * decode_stage =
-		new PipelineStageConfiguration("DecodeStage", LAZYIQIQ, fetch_queue, issue_queue, degree);
-	conf.addPipelineStage(decode_stage);
-
-	PipelineStageConfiguration * execute_stage =
-		new PipelineStageConfiguration("ExecuteStage", EXECUTE_IN_ORDER, issue_queue, NULL, degree);
-	conf.addPipelineStage(execute_stage);
-
-	// config. 	5 stages, ooo execution
-
-	InstructionQueueConfiguration *fetch_queue =
-		new InstructionQueueConfiguration("FetchQueue", degree + 1, NONE);
-	conf.addInstructionQueue(fetch_queue);
-
-	InstructionQueueConfiguration * rob =
-		new InstructionQueueConfiguration("ROB", degree + 3, EXECUTED);
-	conf.addInstructionQueue(rob);
-
-	PipelineStageConfiguration * fetch_stage =
-		new PipelineStageConfiguration("FetchStage", FETCH, NULL, fetch_queue, 1 << (degree + 1));
-	conf.addPipelineStage(fetch_stage);
-
-	PipelineStageConfiguration * decode_stage =
-		new PipelineStageConfiguration("DecodeStage", LAZYIQIQ, fetch_queue, rob, 1 << degree);
-	conf.addPipelineStage(decode_stage);
-
-	PipelineStageConfiguration * execute_stage =
-		new PipelineStageConfiguration("ExecuteStage", EXECUTE_OUT_OF_ORDER, rob, 1 << degree);
-	conf.addPipelineStage(execute_stage);
-
-	PipelineStageConfiguration * commit_stage =
-		new PipelineStageConfiguration("CommitStage", COMMIT, rob, NULL, 1 << degree);
-	conf.addPipelineStage(commit_stage);
-
-	FunctionalUnitConfiguration * functional_unit =
-		new FunctionalUnitConfiguration(true, 5, 1);
-	functional_unit->addInstructionType(LOAD);
-	functional_unit->addInstructionType(STORE);
-	conf.addFunctionalUnit(functional_unit);
-
-	functional_unit =
-		new FunctionalUnitConfiguration(false, 1, 2);
-	functional_unit->addInstructionType(COND_BRANCH);
-	functional_unit->addInstructionType(UNCOND_BRANCH);
-	functional_unit->addInstructionType(CALL);
-	functional_unit->addInstructionType(RETURN);
-	functional_unit->addInstructionType(TRAP);
-	functional_unit->addInstructionType(IALU);
-	functional_unit->addInstructionType(OTHER);
-	conf.addFunctionalUnit(functional_unit);
-
-	functional_unit =
-		new FunctionalUnitConfiguration(true, 3, 1);
-	functional_unit->addInstructionType(FALU);
-	conf.addFunctionalUnit(functional_unit);
-
-	functional_unit =
-		new FunctionalUnitConfiguration(true, 6, 1);
-	functional_unit->addInstructionType(MUL);
-	conf.addFunctionalUnit(functional_unit);
-
-	functional_unit =
-		new FunctionalUnitConfiguration(false, 15, 1);
-	functional_unit->addInstructionType(DIV);
-	conf.addFunctionalUnit(functional_unit);
-	#endif // 0
 
 	// Get the processor description
 	const hard::Processor *oproc = otawa::hard::PROCESSOR(fw);

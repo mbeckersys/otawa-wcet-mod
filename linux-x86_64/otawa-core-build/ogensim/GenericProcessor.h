@@ -73,6 +73,15 @@ public:
 
 private:
 
+	/************
+	 * METHODS
+	 ************/
+	InstructionQueue * _find_queue(const elm::genstruct::SLList<InstructionQueue*> li,
+								   const InstructionQueueConfiguration* iqc) const;
+
+	/************
+	 * ATTRS
+	 ************/
 	// signals
 	sc_signal<bool> clock;
 

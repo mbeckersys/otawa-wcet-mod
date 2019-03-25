@@ -15,10 +15,10 @@
 
 namespace otawa { namespace gensim {
 
-typedef enum {	FETCH, 
-				EXECUTE_IN_ORDER, 
-				EXECUTE_OUT_OF_ORDER, 
-				COMMIT, 
+typedef enum {	FETCH,
+				EXECUTE_IN_ORDER,
+				EXECUTE_OUT_OF_ORDER,
+				COMMIT,
 				LAZYIQIQ} pipeline_stage_t;
 
 class PipelineStageConfiguration {
@@ -37,8 +37,8 @@ class PipelineStageConfiguration {
 			int width);
 		PipelineStageConfiguration(CString name, pipeline_stage_t type,
 			InstructionQueueConfiguration * buffer, int width);
-		
-		
+
+
 		pipeline_stage_t type();
 		CString name();
 		InstructionQueueConfiguration * inputQueue();
@@ -59,7 +59,7 @@ class PipelineStage : public sc_module {
 };
 
 
-class LazyStageIQIQ : public PipelineStage {
+class LazyStageIQIQ : public PipelineStage { // DECODE
 	public:
 		// signals
 		sc_in<bool> in_clock;
@@ -69,16 +69,16 @@ class LazyStageIQIQ : public PipelineStage {
 		sc_out<SimulatedInstruction *> * out_instruction;
 		sc_out<int> out_number_of_outs;
 		sc_in<int> in_number_of_accepted_outs;
-		
+
 	private:
 		// variables
 		int stage_width;
 		elm::genstruct::SLList<SimulatedInstruction *> leaving_instructions;
-		
+
 	public:
 		LazyStageIQIQ(sc_module_name name, int width);
 		inline int stageWidth();
-		
+
 		SC_HAS_PROCESS(LazyStageIQIQ);
 		void action();
 };
