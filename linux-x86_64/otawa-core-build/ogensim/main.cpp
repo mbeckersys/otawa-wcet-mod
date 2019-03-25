@@ -31,20 +31,21 @@ class Simulator: public otawa::Application, public sim::Driver {
 public:
 	Simulator(void):
 		Application("ogensim", Version(1, 0, 2)),
+		state(0),
+		process(0),
+		start(0),
+		current(0),
+		exit(0),
 		proc(option::ValueOption<string>::Make(this).cmd("-p").description("Processor description.")),
 		cache(option::ValueOption<string>::Make(this).cmd("-c").description("Cache description.")),
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
+		events(option::ValueOption<string>::Make(*this).cmd("-e").cmd("--event").description("which event to trace: 2^{f,d,e,c}")),
 		iVerboseLevel(option::ValueOption<int>::Make(*this).cmd("-vl").cmd("--verboseLevel").description("verbose level for simulation")),
 		traceCache(*this, 't', "traceCache", "enable cache protocol", false),
 		dumpConfig(*this, 'd', "dumpConfig", "write platform config to HTML file", false),
-		process(0),
-		current(0),
-		start(0),
-		exit(0),
-		state(0),
-		coll(0),
 		cfgInfo(0),
-		call_pending(false)
+		coll(0),
+		call_pending(false), ev_fetch(false), ev_decode(false), ev_exec(false), ev_commit(false)
 		{ }
 
 	virtual Inst *nextInstruction (sim::State &state, Inst *inst) {
@@ -59,10 +60,15 @@ public:
 			return NULL;
 		}
 
-		emit_trace();
+		if (ev_fetch) emit_trace(inst, "F");
 		current = this->state->execute(current); // for arm: otawa/src/arm2/arm.cpp
 		return current;
 	}
+
+	virtual void terminateInstruction(sim::State &state, Inst *inst) {
+		if (ev_commit) emit_trace(inst, "C");
+	}
+
 
 	/**
 	 * @brief also fails for functions prior to main
@@ -85,10 +91,10 @@ public:
 	/**
 	 * @brief write cycle, function, offset, and so on to output
 	 */
-	void emit_trace() {
+	void emit_trace(otawa::Inst*curr, const string& what) {
 
 		if (call_pending) {
-			CFG *jj = cfgInfo->findCFG(current); // only finds the first insn/addr of each function
+			CFG *jj = cfgInfo->findCFG(curr); // only finds the first insn/addr of each function
 			if (jj) {
 				callstack.push(jj);
 				// cout << ";; Callstack: " << callstack << io::endl;
@@ -97,41 +103,39 @@ public:
 		}
 
 		// PRINT elf, addr, cycle ...
-		cout << process->program()->name() << " " << current->address() << ": "
+		cout << process->program()->name() << " " << curr->address() << ": "
+			 << what << ": "
 			 << sstate->cycle() << ": ";
 
 		// ... function and offset
 		CFG* currCFG = (!callstack.empty()) ? callstack.top() : NULL;
 		#if 0
 		if (!currCFG) {
-			CFG*jj = _try_find_cfg(current->address());
+			CFG*jj = _try_find_cfg(curr->address());
 		}
 		#endif
 		if (currCFG) {
-			const Address::offset_t off = current->address() - currCFG->address();
+			const Address::offset_t off = curr->address() - currCFG->address();
 			cout << currCFG->name() << "+" << io::hex(off) << "\t";
 		} else {
 			cout << "??+??\t";
 		}
 
 		// ... assembly ...
-		cout << current;
+		cout << curr;
 
 		// ... additional comments ...
-		if (current->isCall()) {
+		if (curr->isCall()) {
 			cout << "\t;; CALL";
 			call_pending = true;
 
-		} else if (current->isReturn()) {
+		} else if (curr->isReturn()) {
 			cout << "\t;; RETURN";
 			if (!callstack.empty()) {
 				callstack.pop();
 			}
 		}
 		cout << io::endl;
-	}
-
-	virtual void terminateInstruction(sim::State &state, Inst *inst) {
 	}
 
 	virtual Address lowerRead(void) {
@@ -181,6 +185,21 @@ protected:
 		}
 		if (traceCache) {
 			TRACE_CACHES(workspace()) = true;
+		}
+		if (events) {
+			string strev = *events;
+			if (strev.indexOf('f') >= 0) ev_fetch = true;
+			if (strev.indexOf('d') >= 0) {
+				ev_decode = true;
+				cerr << "WARN: event 'decode' not supported, yet" << endl;
+			}
+			if (strev.indexOf('e') >= 0) {
+				ev_exec = true;
+				cerr << "WARN: event 'execute' not supported, yet" << endl;
+			}
+			if (strev.indexOf('c') >= 0) ev_commit = true;
+		} else {
+			ev_fetch = true;
 		}
 
 		// decode the CFGs and stuff
@@ -263,6 +282,7 @@ private:
 	option::ValueOption<string> proc;
 	option::ValueOption<string> cache;
 	option::ValueOption<string> mem;
+	option::ValueOption<string> events;
 	option::ValueOption<int> iVerboseLevel;
 	option::BoolOption traceCache;
 	option::BoolOption dumpConfig;
@@ -270,6 +290,10 @@ private:
 	std::stack<CFG*> callstack;
 	const CFGCollection *coll;
 	bool call_pending;
+	bool ev_fetch;
+	bool ev_decode;
+	bool ev_exec;
+	bool ev_commit;
 };
 
 OTAWA_RUN(Simulator);

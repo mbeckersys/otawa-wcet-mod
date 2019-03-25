@@ -87,7 +87,7 @@ void FetchStage::action()
 	if (_fetch_state == READY)
 	{
 		const int nbuffered = fetchBuffer.count();
-		if (true || nbuffered < 2*out_ports) { // even while enough buffered, we can still read next
+		if (nbuffered < 2*out_ports) { // even while enough buffered, we can still read next
 			if(!_currInstToFetch) {
 				// the very first instruction does not execute anything...skip ahead
 				_currInstToFetch = sim_state->driver->nextInstruction(*sim_state, _currInstToFetch);
