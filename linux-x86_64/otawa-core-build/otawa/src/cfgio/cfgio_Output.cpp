@@ -63,6 +63,7 @@ Output::Output(void): BBProcessor(reg), root(0), cfg_node(0), last_bb(0), outstr
 void Output::configure(const PropList &props) {
 	CFGProcessor::configure(props);
 	outstream = OUTPUT(props);
+	with_asm = true;
 }
 
 /**
@@ -165,7 +166,7 @@ void Output::processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb) {
 			bb_node->appendChild(inst_node);
 			string addr = _ << inst->address();
 			inst_node->addAttribute(new xom::Attribute("address", &addr));
-			{
+			if (with_asm) {
 				// MBe: add raw assembly
 				xom::Element *asm_node = new xom::Element("asm");
 				inst_node->appendChild(asm_node);

@@ -10,6 +10,7 @@
 #include <otawa/hard/Processor.h>
 #include <otawa/hard/Memory.h>
 #include <otawa/hard/CacheConfiguration.h>
+#include <otawa/ipet/IPET.h>
 #include <otawa/display/ConfigOutput.h>
 #include <otawa/cfgio/Output.h>
 #include <otawa/proc/DynProcessor.h>
@@ -30,6 +31,24 @@ using namespace gensim;
 
 int debugVerbose = 0;
 
+class SimContext {
+public:
+	SimContext() : call_pending(false), begin_of_func(false), curr_bb(NULL), pre_bb(NULL),
+		last_in_bb(NULL) {}
+
+	/*********
+	 * ATTRS
+	 *********/
+	std::stack<CFG*> callstack;
+	bool call_pending;
+	bool begin_of_func;
+	bool begin_of_bb;
+	otawa::BasicBlock* curr_bb;
+	otawa::BasicBlock* pre_bb;
+	otawa::Inst* last_in_bb;
+	int time_bb_enter;
+};
+
 class Simulator: public otawa::Application, public sim::Driver {
 public:
 	Simulator(void):
@@ -44,12 +63,12 @@ public:
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
 		events(option::ValueOption<string>::Make(*this).cmd("-e").cmd("--event").description("which event to trace: 2^{f,d,e,c}")),
 		iVerboseLevel(option::ValueOption<int>::Make(*this).cmd("-vl").cmd("--verboseLevel").description("verbose level for simulation")),
-		outputCfg(option::ValueOption<string>::Make(*this).cmd("-o").cmd("--dumpCfg").description("output annotated CFGs to given file")),
+		dumpCfg(option::ValueOption<string>::Make(*this).cmd("-o").cmd("--dumpCfg").description("output annotated CFGs to given file")),
 		traceCache(*this, 't', "traceCache", "enable cache protocol", false),
 		dumpConfig(*this, 'd', "dumpConfig", "write platform config to HTML file", false),
 		cfgInfo(0),
 		coll(0),
-		call_pending(false), ev_fetch(false), ev_decode(false), ev_exec(false), ev_commit(false)
+		ev_fetch(false), ev_decode(false), ev_exec(false), ev_commit(false)
 		{ }
 
 	virtual Inst *nextInstruction (sim::State &state, Inst *inst) {
@@ -64,15 +83,87 @@ public:
 			return NULL;
 		}
 
-		if (ev_fetch) emit_trace(inst, "F");
+		track_context(ctx_fetch, inst);
+		if (ev_fetch) emit_trace(ctx_fetch, inst, "F");
+
 		current = this->state->execute(current); // for arm: otawa/src/arm2/arm.cpp
 		return current;
 	}
 
-	virtual void terminateInstruction(sim::State &state, Inst *inst) {
-		if (ev_commit) emit_trace(inst, "C");
+	void annotate_cfg(SimContext& ctx, Inst *inst) {
+		if (!ctx.callstack.empty()) {
+			CFG*fun = ctx.callstack.top();
+			if (ctx.begin_of_func) {
+				otawa::ipet::COUNT(fun) = otawa::ipet::COUNT(fun) + 1;
+			}
+			if (ctx.begin_of_bb) {
+				otawa::ipet::COUNT(ctx.curr_bb) = otawa::ipet::COUNT(ctx.curr_bb) + 1;
+				const int now = sstate->cycle();
+				if (ctx.pre_bb) {
+					const int duration = now - ctx.time_bb_enter;
+					otawa::ipet::TIME(ctx.pre_bb) = duration;
+				}
+				ctx.time_bb_enter = now;
+			}
+		}
 	}
 
+	virtual void terminateInstruction(sim::State &state, Inst *inst) {
+		track_context(ctx_commit, inst);
+		if (ev_commit) emit_trace(ctx_commit, inst, "C");
+		if (dumpCfg) annotate_cfg(ctx_commit, inst);
+	}
+
+	/**
+	 * @brief keep track of currently running function, and so on
+	 */
+	void track_context(SimContext& ctx, otawa::Inst*curr) const {
+		if (ctx.call_pending) {
+			ctx.begin_of_func = true;
+			CFG *jj = cfgInfo->findCFG(curr); // only finds the first insn/addr of each function
+			if (jj) {
+				ctx.callstack.push(jj);
+				// cout << ";; Callstack: " << callstack << io::endl;
+			}
+			ctx.call_pending = false;
+		} else {
+			ctx.begin_of_func = false;
+		}
+		// ... additional comments ...
+		if (curr->isCall()) {
+			ctx.call_pending = true;
+
+		} else if (curr->isReturn()) {
+			if (!ctx.callstack.empty()) {
+				ctx.callstack.pop();
+			}
+		}
+		// BB track
+		ctx.begin_of_bb = false;
+		if (!ctx.callstack.empty()) {
+			CFG*fun = ctx.callstack.top();
+			// FIXME/performance: turn off iteration until last insn of BB was encountered?
+			for(CFG::BBIterator bb(fun); bb; ++bb) {
+				if (bb->address() == curr->address()) {
+					ctx.pre_bb = ctx.curr_bb;
+					ctx.curr_bb = bb;
+					ctx.begin_of_bb = true;
+					//ctx.last_in_bb = last_insn;
+					break;
+				}
+			}
+		}
+	}
+
+	void predecorate_cfgs(void) {
+		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
+		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
+			otawa::ipet::COUNT(cfg) = 0;
+			for(CFG::BBIterator bb(cfg); bb; ++bb) {
+				otawa::ipet::COUNT(bb) = 0;
+			}
+		}
+	}
 
 	/**
 	 * @brief also fails for functions prior to main
@@ -95,24 +186,14 @@ public:
 	/**
 	 * @brief write cycle, function, offset, and so on to output
 	 */
-	void emit_trace(otawa::Inst*curr, const string& what) {
-
-		if (call_pending) {
-			CFG *jj = cfgInfo->findCFG(curr); // only finds the first insn/addr of each function
-			if (jj) {
-				callstack.push(jj);
-				// cout << ";; Callstack: " << callstack << io::endl;
-				call_pending = false;
-			}
-		}
-
+	void emit_trace(SimContext& ctx, otawa::Inst*curr, const string& what) const {
 		// PRINT elf, addr, cycle ...
 		cout << process->program()->name() << " " << curr->address() << ": "
 			 << what << ": "
 			 << sstate->cycle() << ": ";
 
 		// ... function and offset
-		CFG* currCFG = (!callstack.empty()) ? callstack.top() : NULL;
+		CFG* currCFG = (!ctx.callstack.empty()) ? ctx.callstack.top() : NULL;
 		#if 0
 		if (!currCFG) {
 			CFG*jj = _try_find_cfg(curr->address());
@@ -131,12 +212,12 @@ public:
 		// ... additional comments ...
 		if (curr->isCall()) {
 			cout << "\t;; CALL";
-			call_pending = true;
+			ctx.call_pending = true;
 
 		} else if (curr->isReturn()) {
 			cout << "\t;; RETURN";
-			if (!callstack.empty()) {
-				callstack.pop();
+			if (!ctx.callstack.empty()) {
+				ctx.callstack.pop();
 			}
 		}
 		cout << io::endl;
@@ -220,6 +301,9 @@ protected:
 		coll = INVOLVED_CFGS(workspace());
 		assert(coll);
 		assert(coll->get(0));
+		if (dumpCfg) {
+			predecorate_cfgs();
+		}
 
 		// obtain the CFG info
 		cfgInfo = CFGInfo::ID(workspace());
@@ -280,9 +364,9 @@ protected:
 		/*********
 		 * OUTPUT
 		 *********/
-		if (outputCfg) {
-			cout << "Dumping CFG to file " << *outputCfg << endl;
-			io::OutFileStream stream(*outputCfg);
+		if (dumpCfg) {
+			cout << "Dumping CFG to file " << *dumpCfg << endl;
+			io::OutFileStream stream(*dumpCfg);
 			otawa::cfgio::Output::OUTPUT(props) = &stream;
 			DynProcessor dis("otawa::cfgio::Output");
 			dis.process(workspace(), props);
@@ -299,17 +383,17 @@ private:
 	option::ValueOption<string> mem;
 	option::ValueOption<string> events;
 	option::ValueOption<int> iVerboseLevel;
-	option::ValueOption<string> outputCfg;
+	option::ValueOption<string> dumpCfg;
 	option::BoolOption traceCache;
 	option::BoolOption dumpConfig;
 	CFGInfo *cfgInfo;
-	std::stack<CFG*> callstack;
 	const CFGCollection *coll;
-	bool call_pending;
 	bool ev_fetch;
 	bool ev_decode;
 	bool ev_exec;
 	bool ev_commit;
+	SimContext ctx_fetch;
+	SimContext ctx_commit;
 };
 
 OTAWA_RUN(Simulator);
