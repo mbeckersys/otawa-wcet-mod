@@ -12,8 +12,10 @@ FetchStage::FetchStage(
 	elm::genstruct::AllocatedTable<rename_table_t> * _rename_tables,
 	elm::genstruct::SLList<SimulatedInstruction *> * _active_instructions)
 :	PipelineStage(name),
-	_nextInstructionToFetch(0),
-	_currentInstructionToFetch(0),
+	_nextInstToFetch(0),
+	_currInstToFetch(0),
+	_nextInstToMem(0),
+	_currInstToMem(0),
 	_fetch_state(READY)
 {
 	out_fetched_instruction = new sc_out<SimulatedInstruction *>[number_of_out_ports];
@@ -28,6 +30,8 @@ FetchStage::FetchStage(
 /**
  * @brief this actually triggers the functional execution (although it should go in the execute
  * stage), because we need to know the successor instruction to be fetched
+ * @todo Although this works for multi-issue, it will just stall, because it fetches
+ * the instructions insn one by one at the moment. Would need bpred to do more.
  */
 void FetchStage::action()
 {
@@ -70,48 +74,49 @@ void FetchStage::action()
 		// is received from the Memory, depending on the latency
 		// of the memory.
 		if(in_wait.read()) {
-			// means still waiting for mem, do nothing......
 			TRACE10(elm::cout << "\tstall" << io::endl;)
 		} else {
 			_fetch_state = READY;
-			TRACE10(elm::cout << "\tREADY again" << io::endl;)
+			TRACE10(elm::cout << "\tdone" << io::endl;)
 
 			// create the SimulatedInstruction for the other stages
-			_makeSimulatedInstruction(_currentInstructionToFetch, _nextInstructionToFetch);
+			_makeSimulatedInstruction(_currInstToMem, _nextInstToMem);
 		}
-	} else // TODO: removing this "else" requires to save _currentInsn and _nextInsn before we overwrite
+	}
 
 	if (_fetch_state == READY)
 	{
 		const int nbuffered = fetchBuffer.count();
-		if (true || nbuffered < 2*out_ports) {
-			if(!_currentInstructionToFetch) {
+		if (true || nbuffered < 2*out_ports) { // even while enough buffered, we can still read next
+			if(!_currInstToFetch) {
 				// the very first instruction does not execute anything...skip ahead
-				_currentInstructionToFetch = sim_state->driver->nextInstruction(*sim_state, _currentInstructionToFetch);
+				_currInstToFetch = sim_state->driver->nextInstruction(*sim_state, _currInstToFetch);
 			} else {
 				// the one we executed before has given us the next one. TODO: so we have no branch penalty or anything.
-				_currentInstructionToFetch = _nextInstructionToFetch;
+				_currInstToFetch = _nextInstToFetch;
 			}
 
 			// FUNCTIONAL: now we get the next instruction (by executing the ISS with the current instruction)
-			_nextInstructionToFetch = sim_state->driver->nextInstruction(*sim_state, _currentInstructionToFetch);
+			_nextInstToFetch = sim_state->driver->nextInstruction(*sim_state, _currInstToFetch);
 
-			if(!_nextInstructionToFetch) {
+			if(!_nextInstToFetch) {
 				sim_state->stop();
 				_fetch_state = END;
 			} else {
 				TRACEX(4,
 					elm::cout
-							<< "\t_currentInstructionToFetch= [" << _currentInstructionToFetch
-							<< "] @" << _currentInstructionToFetch->address()
-							<< ", _nextInstructionToFetch=[" << _nextInstructionToFetch
-							<< "] @" << _nextInstructionToFetch->address()
+							<< "\t_currentInstructionToFetch= [" << _currInstToFetch
+							<< "] @" << _currInstToFetch->address()
+							<< ", _nextInstToFetch=[" << _nextInstToFetch
+							<< "] @" << _nextInstToFetch->address()
 							<< io::endl;
 				)
 			}
 
 			// start to simulate memory access for fetch
-			_doInstRequest(_currentInstructionToFetch->address());
+			_doInstRequest(_currInstToFetch->address());
+			_currInstToMem = _currInstToFetch;
+			_nextInstToMem = _nextInstToFetch;
 			_fetch_state = WAITING;
 
 		} else {
@@ -139,6 +144,7 @@ void FetchStage::action()
  * @param addr	Requested address.
  */
 void FetchStage::_doInstRequest(Address addr) {
+	TRACE10(elm::cout << "\trequest @" << addr << io::endl;)
 	out_address.write(addr);
 	out_request.write(true);
 }
@@ -149,7 +155,8 @@ void FetchStage::_doInstRequest(Address addr) {
  */
 void FetchStage::_makeSimulatedInstruction(otawa::Inst*this_insn, otawa::Inst*next_insn) {
 	int * intInstructionInitialLocation = new int(0);
-
+	TRACE10(elm::cout << "\tcreate insn=[" <<  this_insn << "] @" << this_insn->address()
+	                  << ", next=[" << next_insn << "] @ " << next_insn->address() << io::endl;)
 	_inst = new SimulatedInstruction(this_insn, next_insn,
 										active_instructions, intInstructionInitialLocation);
 	_inst->renameOperands(rename_tables);

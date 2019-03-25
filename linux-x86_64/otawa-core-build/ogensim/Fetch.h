@@ -70,8 +70,10 @@ private:
 	elm::genstruct::SLList<SimulatedInstruction *> *active_instructions;
 
 	// state
-	otawa::Inst* _nextInstructionToFetch;
-	otawa::Inst* _currentInstructionToFetch;
+	otawa::Inst* _nextInstToFetch;
+	otawa::Inst* _currInstToFetch;
+	otawa::Inst* _nextInstToMem;
+	otawa::Inst* _currInstToMem;
 
 	SimulatedInstruction* _inst;
 	//bool *_ended;
@@ -88,8 +90,8 @@ private:
 	 * METHODS
 	 **********/
 	// tool function
-	void _doInstRequest(Address addr);
-	void _makeSimulatedInstruction(otawa::Inst*this_insn, otawa::Inst*next_insn);
+	inline void _doInstRequest(Address addr);
+	inline void _makeSimulatedInstruction(otawa::Inst*this_insn, otawa::Inst*next_insn);
 };
 
 } } // otawa::gensim

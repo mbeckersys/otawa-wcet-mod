@@ -139,11 +139,14 @@ void MemorySystem::processInstPort(void) {
 	case READY:
 		if(in_inst_request.read() == true) {
 			address_t address = in_inst_address.read();
+			TRACE10(elm::cout << "\trequest for " << address << io::endl;)
 			const unsigned size = 4; // FIXME: read instruction length from somewhere
 			_inst_fill_latency = getInstLatency(address, size);
 			if (_inst_fill_latency > 0) {
 				_inst_cache_state = BUSY;
-				TRACEX(3, elm::cout << __SOURCE_INFO__ << "i-stall" << io::endl;)
+				TRACE10(elm::cout << "\twait" << address << io::endl;) // basically only when cache hit
+			} else {
+				TRACE10(elm::cout << "\tpresent" << io::endl;)
 			}
 		}
 		break;
@@ -151,8 +154,10 @@ void MemorySystem::processInstPort(void) {
 	case BUSY:
 		_inst_fill_latency--;
 		if(_inst_fill_latency <= 0) {
-			TRACEX(3, elm::cout << __SOURCE_INFO__ << "    i-ready" << io::endl;)
 			_inst_cache_state = READY;
+			TRACE10(elm::cout << "\tREADY again" << io::endl;)
+		} else {
+			TRACE10(elm::cout << "\twait" << io::endl;)
 		}
 		break;
 	}
@@ -179,7 +184,7 @@ void MemorySystem::processDataPort(void) {
 		if(in_data_request.read() == true) {
 			address_t address = in_data_address.read();
 			int size = in_data_size.read();
-			otawa::sim::CacheDriver::action_t type = in_data_access_type.read();
+			//otawa::sim::CacheDriver::action_t type = in_data_access_type.read();
 			_data_fill_latency = getDataLatency(address, size);
 			_data_cache_state = BUSY;
 			out_data_wait.write(true);
@@ -200,6 +205,7 @@ void MemorySystem::processDataPort(void) {
 /**
  */
 void MemorySystem::action() {
+	TRACE10(elm::cout << "Memory->action():" << io::endl;)
 	processInstPort();
 	processDataPort();
 }
@@ -224,7 +230,7 @@ int MemorySystem::getInstLatency(Address address, size_t size) {
 		HWCache::access_type_t ret = _inst_cache->access(rinfo, address, size, false);
 		switch (ret) {
 			case HWCache::ACCESS_HIT:
-				lat = 1;
+				lat = 0;
 				break;
 			case HWCache::ACCESS_MISS:
 				lat = bank->latency();
@@ -240,7 +246,7 @@ int MemorySystem::getInstLatency(Address address, size_t size) {
 	} else {
 		lat = bank->latency(); // this is the default latency. FIXME: size > word width => multiple?
 	}
-	return lat > 0 ? lat : 1;
+	return lat;
 }
 
 
@@ -254,8 +260,7 @@ int MemorySystem::getDataLatency(Address address, size_t size) {
 	} else {
 		lat = bank->latency(); // this is the default latency
 	}
-	if (lat == 0) lat = 1;
-	return lat > 0 ? lat : 1;
+	return lat;
 }
 
 } } // otawa::gensim

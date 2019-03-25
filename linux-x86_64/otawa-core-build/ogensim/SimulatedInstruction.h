@@ -35,7 +35,6 @@ typedef enum {
 	// FIXME : should be read from framework
 instruction_type_t convertInstType(Inst::kind_t kind);
 
-
 class SimulatedInstruction;
 
 typedef struct rename_table_t {
@@ -139,7 +138,6 @@ inline Inst::kind_t SimulatedInstruction::type() {
 	return _type;
 }
 
-
 inline void SimulatedInstruction::addSourceInstruction(SimulatedInstruction * source_inst) {
 	source_instructions.addLast(source_inst);
 }
@@ -147,7 +145,6 @@ inline void SimulatedInstruction::addSourceInstruction(SimulatedInstruction * so
 inline void SimulatedInstruction::removeSourceInstruction(SimulatedInstruction * source_inst) {
 	source_instructions.remove(source_inst);
 }
-
 
 inline elm::genstruct::SLList<SimulatedInstruction *> * SimulatedInstruction::sourceInstructions() {
 	return &source_instructions;
@@ -162,8 +159,11 @@ inline void SimulatedInstruction::renameOperands(elm::genstruct::AllocatedTable<
 			if ((*rename_tables)[b].reg_bank == reads[i]->bank()) {
 				SimulatedInstruction * producing_inst = (*rename_tables)[b].table->get(reads[i]->number());
 				if (producing_inst != NULL) {
-					this->removeSourceInstruction(producing_inst); // FIXME
-					this->addSourceInstruction(producing_inst);
+					if (this->sourceInstructions()->contains(producing_inst)) {
+						// MBe: does this implicitly push element to end of list?
+						this->removeSourceInstruction(producing_inst);
+						this->addSourceInstruction(producing_inst);
+					}
 					this->setState(WAITING);
 				}
 			}
@@ -182,9 +182,11 @@ inline void SimulatedInstruction::renameOperands(elm::genstruct::AllocatedTable<
 }
 
 inline void SimulatedInstruction::notifyResult(elm::genstruct::AllocatedTable<rename_table_t> * rename_tables) {
+	// for all instructions in flight: remove their dep on this one and set state to READY if finished
 	for (elm::genstruct::SLList<SimulatedInstruction *>::Iterator inst(*active_instructions) ; inst ; inst++) {
 		if (inst->state() == WAITING) {
-			inst->sourceInstructions()->remove(this);
+			if (inst->sourceInstructions()->contains(this))
+				inst->sourceInstructions()->remove(this); // notify that this finished
 			if (inst->sourceInstructions()->isEmpty()) {
 				inst->setState(READY);
 				TRACE(elm::cout << "\t\tinst " << inst->inst()->address() << " is ready now \n");
@@ -216,8 +218,8 @@ inline void SimulatedInstruction::setTimeToFinish(int time) {
 inline int SimulatedInstruction::decrementTimeToFinish() {
 	time_to_finish_execution--;
 	TRACEX(2,
-	elm::cout << __SOURCE_INFO__
-		<< "time to finish executing "
+	elm::cout
+		<< "\ttime to finish executing "
 		<< inst() // print out the instruction
 		<< " = "
 		<< time_to_finish_execution
