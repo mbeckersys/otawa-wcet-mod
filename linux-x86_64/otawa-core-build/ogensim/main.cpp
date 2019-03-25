@@ -33,13 +33,15 @@ int debugVerbose = 0;
 
 class SimContext {
 public:
-	SimContext() : call_pending(false), begin_of_func(false), curr_bb(NULL), pre_bb(NULL),
-		last_in_bb(NULL) {}
+	SimContext() : pre_fun(NULL), call_pending(false), begin_of_func(false), curr_bb(NULL),
+					pre_bb(NULL), last_in_bb(NULL) {}
 
 	/*********
 	 * ATTRS
 	 *********/
 	std::stack<CFG*> callstack;
+	CFG* pre_fun;
+
 	bool call_pending;
 	bool begin_of_func;
 	bool begin_of_bb;
@@ -47,6 +49,7 @@ public:
 	otawa::BasicBlock* pre_bb;
 	otawa::Inst* last_in_bb;
 	int time_bb_enter;
+	int time_fun_enter;
 };
 
 class Simulator: public otawa::Application, public sim::Driver {
@@ -95,13 +98,25 @@ public:
 			CFG*fun = ctx.callstack.top();
 			if (ctx.begin_of_func) {
 				otawa::ipet::COUNT(fun) = otawa::ipet::COUNT(fun) + 1;
+				const int now = sstate->cycle();
+				if (ctx.pre_fun) {
+					const int duration = now - ctx.time_fun_enter;
+					if (duration > otawa::ipet::WCET(ctx.pre_fun)) {
+						otawa::ipet::WCET(ctx.pre_fun) = duration;
+					}
+				}
+				ctx.time_fun_enter = now;
 			}
 			if (ctx.begin_of_bb) {
 				otawa::ipet::COUNT(ctx.curr_bb) = otawa::ipet::COUNT(ctx.curr_bb) + 1;
 				const int now = sstate->cycle();
 				if (ctx.pre_bb) {
 					const int duration = now - ctx.time_bb_enter;
-					otawa::ipet::TIME(ctx.pre_bb) = duration;
+					// time is cumulative incl. all cache and pipeline effects
+					otawa::ipet::TOTAL_TIME(ctx.pre_bb) = otawa::ipet::TOTAL_TIME(ctx.pre_bb) + duration;
+					if (duration > otawa::ipet::WCET(ctx.pre_bb)) {
+						otawa::ipet::WCET(ctx.pre_bb) = duration;
+					}
 				}
 				ctx.time_bb_enter = now;
 			}
@@ -120,6 +135,7 @@ public:
 	void track_context(SimContext& ctx, otawa::Inst*curr) const {
 		if (ctx.call_pending) {
 			ctx.begin_of_func = true;
+			if (!ctx.callstack.empty()) ctx.pre_fun = ctx.callstack.top();
 			CFG *jj = cfgInfo->findCFG(curr); // only finds the first insn/addr of each function
 			if (jj) {
 				ctx.callstack.push(jj);
@@ -158,9 +174,12 @@ public:
 	void predecorate_cfgs(void) {
 		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
 		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
+			otawa::ipet::TOTAL_TIME(cfg) = 0;
+			otawa::ipet::WCET(cfg) = 0;
 			otawa::ipet::COUNT(cfg) = 0;
 			for(CFG::BBIterator bb(cfg); bb; ++bb) {
 				otawa::ipet::COUNT(bb) = 0;
+				otawa::ipet::TOTAL_TIME(bb) = 0;
 			}
 		}
 	}

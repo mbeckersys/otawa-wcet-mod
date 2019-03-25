@@ -49,6 +49,7 @@ extern Identifier<string> ILP_PLUGIN_NAME;
 extern Feature<NoProcessor> INTERBLOCK_SUPPORT_FEATURE;
 
 extern SilentFeature BB_TIME_FEATURE;
+extern Identifier<ot::time> TOTAL_TIME;
 extern Identifier<ot::time> TIME;
 extern Identifier<ot::time> TIME_DELTA;
 

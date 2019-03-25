@@ -74,6 +74,11 @@ Identifier<ot::time> TIME("otawa::ipet::TIME", -1,
 	idDesc("execution time (in cycles)"),
 	0);
 
+Identifier<ot::time> TOTAL_TIME("otawa::ipet::TOTAL_TIME", -1,
+	idLabel("total_time"),
+	idDesc("total execution time (in cycles)"),
+	0);
+
 
 /**
  * This identifier is used for storing in basic blocks and edges the variables

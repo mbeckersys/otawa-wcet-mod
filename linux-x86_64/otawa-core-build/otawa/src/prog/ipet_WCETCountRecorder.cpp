@@ -54,10 +54,21 @@ void WCETCountRecorder::processBB(WorkSpace *fw, CFG *cfg, BasicBlock *bb) {
 	ASSERT(cfg);
 	ASSERT(bb);
 
+	// FIXME: annotate CFG, as well.
+#if 0
+	if (bb == cfg->entry()) {
+		ilp::Var *var = VAR(cfg);
+		COUNT(cfg) = (int)system->valueOf(var);
+	}
+#endif
+
 	// Record BB var count
 	ilp::Var *var = VAR(bb);
-	if(var)
+	if(var) {
 		COUNT(bb) = (int)system->valueOf(var);
+		// also sum up overall contrib to WCET
+		TOTAL_TIME(bb) = COUNT(bb) * TIME(bb); // TODO: cache?
+	}
 
 	// Record out var count
 	for(BasicBlock::OutIterator edge(bb); edge; edge++) {
