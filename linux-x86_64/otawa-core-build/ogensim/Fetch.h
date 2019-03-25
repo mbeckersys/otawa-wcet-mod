@@ -16,6 +16,7 @@
 #include <vector>
 #include <utility> // for pair
 
+//#define DEBUG_TRACK_INSN ///< define to show at each clock cycle what every insn is doing (slow!)
 
 namespace otawa { namespace gensim {
 
@@ -28,6 +29,9 @@ class GenericState;
 
 class FetchStage : public PipelineStage {
 public:
+	/**********
+	 * ATTRS
+	 **********/
 	// interface to next stage
 	sc_in<bool> in_clock;
 	sc_out<SimulatedInstruction *> * out_fetched_instruction;
@@ -39,41 +43,53 @@ public:
 	sc_out<bool> out_request;
 	sc_in<bool> in_wait;
 
+	/**********
+	 * METHODS
+	 **********/
 	FetchStage(sc_module_name name, int number_of_out_ports, GenericState *gen_state,
 			elm::genstruct::AllocatedTable<rename_table_t> *rename_tables,
 			elm::genstruct::SLList<SimulatedInstruction *> *_active_instructions);
 
 	SC_HAS_PROCESS(FetchStage);
-	void fetch();
+	void action();
 
 
 private:
 
+	/**********
+	 * ATTRS
+	 **********/
+#ifdef DEBUG_TRACK_INSN
 	std::vector<std::pair <otawa::Inst *,int* > > vMonitoringFetchedInstructions;
+#endif
 
 	// parameters
 	GenericState *sim_state;
 	int out_ports;
-	elm::genstruct::SLList<SimulatedInstruction *> fetched_instructions;
+	elm::genstruct::SLList<SimulatedInstruction *> fetchBuffer;
 	elm::genstruct::SLList<SimulatedInstruction *> *active_instructions;
 
 	// state
 	otawa::Inst* _nextInstructionToFetch;
 	otawa::Inst* _currentInstructionToFetch;
 
-    SimulatedInstruction* _inst;
+	SimulatedInstruction* _inst;
 	//bool *_ended;
 	elm::genstruct::AllocatedTable<rename_table_t> *rename_tables;
-    typedef enum {
-        READY = 0,
-        WAITING = 1,
-        BRANCH_PEN = 2
-    } fetch_state_t;
-    fetch_state_t _fetch_state;
+	typedef enum {
+		READY = 0,
+		WAITING = 1,
+		BRANCH_PEN = 2,
+		END = 3
+	} fetch_state_t;
+	fetch_state_t _fetch_state;
 
+	/**********
+	 * METHODS
+	 **********/
 	// tool function
-	void doInstRequest(Address addr);
-	void fetchInstruction(void);
+	void _doInstRequest(Address addr);
+	void _makeSimulatedInstruction(otawa::Inst*this_insn, otawa::Inst*next_insn);
 };
 
 } } // otawa::gensim

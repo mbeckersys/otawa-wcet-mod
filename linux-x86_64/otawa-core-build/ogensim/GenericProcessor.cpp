@@ -30,8 +30,6 @@ const InstructionQueueConfiguration* iqc) const
 	for (elm::genstruct::SLList<InstructionQueue *>::Iterator iq(li); iq ; iq++) {
 		if (iq->configuration() == iqc) {
 			q = iq;
-			std::cout << "INFO: output queue " << &(iq->configuration()->nameOfTheQueue())
-			          << " was found" << std::endl;
 			break;
 		}
 	}
@@ -49,7 +47,6 @@ GenericProcessor::GenericProcessor(
 	int iports,oports;
 	InstructionQueue * input_queue;
 	InstructionQueue * output_queue;
-	bool found;
 	sc_signal<int> * nb;
 
 	/************************
@@ -105,6 +102,8 @@ GenericProcessor::GenericProcessor(
 			case FETCH:	{
 				output_queue = _find_queue(instruction_queues, stage_conf->outputQueue());
 				assert(output_queue);
+				std::cout << "INFO: output queue: "
+						  << &(output_queue->configuration()->nameOfTheQueue()) << std::endl;
 				oports = output_queue->configuration()->numberOfWritePorts();
 
 				FetchStage * fetch_stage = new FetchStage((sc_module_name) (stage_conf->name()),
@@ -143,9 +142,13 @@ GenericProcessor::GenericProcessor(
 			case LAZYIQIQ: {
 				input_queue = _find_queue(instruction_queues, stage_conf->inputQueue());
 				assert(input_queue);
+				std::cout << "INFO: input queue: "
+						  << &(input_queue->configuration()->nameOfTheQueue()) << std::endl;
 				iports = input_queue->configuration()->numberOfReadPorts();
 				output_queue = _find_queue(instruction_queues, stage_conf->outputQueue());
 				assert(output_queue);
+				std::cout << "INFO: output queue: "
+						  << &(output_queue->configuration()->nameOfTheQueue()) << std::endl;
 				oports = output_queue->configuration()->numberOfWritePorts();
 
 				LazyStageIQIQ * lazy_stage = new LazyStageIQIQ((sc_module_name) (stage_conf->name()), stage_conf->width());
@@ -185,6 +188,8 @@ GenericProcessor::GenericProcessor(
 			case EXECUTE_IN_ORDER: {
 				input_queue = _find_queue(instruction_queues, stage_conf->inputQueue());
 				assert(input_queue);
+				std::cout << "INFO: input queue: "
+						  << &(input_queue->configuration()->nameOfTheQueue()) << std::endl;
 				iports = input_queue->configuration()->numberOfReadPorts();
 
 				ExecuteStage * execute_stage;
@@ -214,6 +219,8 @@ GenericProcessor::GenericProcessor(
 				// ================== the extra wiring
 				output_queue = _find_queue(instruction_queues, stage_conf->outputQueue());
 				assert(output_queue);
+				std::cout << "INFO: output queue: "
+						  << &(output_queue->configuration()->nameOfTheQueue()) << std::endl;
 				oports = output_queue->configuration()->numberOfWritePorts();
 
 				for (int i=0 ; i<oports ; i++) {
@@ -245,6 +252,8 @@ GenericProcessor::GenericProcessor(
 #if 1
 				rob = _find_queue(instruction_queues, stage_conf->instructionBuffer());
 				assert(rob);
+				std::cout << "INFO: input queue: "
+						  << &(rob->configuration()->nameOfTheQueue()) << std::endl;
 
 #else
 				found = false;
@@ -267,6 +276,8 @@ GenericProcessor::GenericProcessor(
 			case COMMIT: {
 				input_queue = _find_queue(instruction_queues, stage_conf->inputQueue());
 				assert(input_queue);
+				std::cout << "INFO: input queue: "
+						  << &(input_queue->configuration()->nameOfTheQueue()) << std::endl;
 				iports = input_queue->configuration()->numberOfReadPorts();
 				CommitStage * commit_stage =
 					new CommitStage((sc_module_name) (stage_conf->name()), iports, sim_state);
@@ -293,12 +304,11 @@ GenericProcessor::GenericProcessor(
 				break;
 		}
 	}
+	std::cout << "==============================================" << std::endl;
 	clock.write(0);
-//	TRACE(dump(elm::cout);)
 }
 
 GenericProcessor::~GenericProcessor() {
-    elm::cout << "~GenericProcessor()" << io::endl;
 	delete memory;
 }
 
@@ -333,10 +343,6 @@ void GenericProcessor::Flush() {
 }
 
 bool GenericProcessor::endOfExecution() {
-
-
-
-	// dummy function, maybe remove later
 	return isEmpty();
 }
 

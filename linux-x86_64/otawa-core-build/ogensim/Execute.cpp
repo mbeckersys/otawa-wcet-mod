@@ -60,9 +60,9 @@ void ExecuteInOrderStageIQ::action() {
 			executing_instructions.addLast(inst);
 			TRACE10(elm::cout << "\tstarting execution at " << inst->inst()->address() << " (duration=" << fu->latency() << ")\n";)
 			issued++;
-		}
-		else
+		} else {
 			ok = false;
+		}
 
 	}
 	elm::genstruct::SLList<SimulatedInstruction *> terminated_instructions;

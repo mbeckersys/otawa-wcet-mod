@@ -26,7 +26,7 @@ set(SYSTEMC_LIB "-L/usr/lib-linux64 -lsystemc -Wl,-rpath -Wl,/usr/lib-linux64")
 
 # script
 project(${EXEC})
-set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -g3 -rdynamic")
+set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -g3 -rdynamic -Wall")
 
 # look for OTAWA
 if(NOT OTAWA_CONFIG)
