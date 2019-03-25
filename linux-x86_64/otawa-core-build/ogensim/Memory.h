@@ -84,14 +84,14 @@ private:
 	 ***********/
 	GenericState *sim_state;
 	typedef enum { READY = 0, BUSY = 1 } memory_state_t;
-	memory_state_t _inst_cache_state;
-	int _inst_fill_latency;
-	memory_state_t _data_cache_state;
 	const hard::Memory *mem;
-	HWCache* _inst_cache;
-	HWCache* _data_cache;
+	memory_state_t _inst_cache_state;
+	memory_state_t _data_cache_state;
+	int _inst_fill_latency;
 	int _data_fill_latency;
 	int _icache_miss_penalty;
+	HWCache* _inst_cache;
+	HWCache* _data_cache;
 
 	/***********
 	 * METHODS

@@ -130,8 +130,13 @@ void FirstLastBuilder::processCFG(WorkSpace *fw, CFG *cfg) {
 		for (int line = 0; line < cache->rowCount(); line++) {
 			/* XXX TODO: pas coh�rent (no if-wrapper for LAST_LBLOCK, but not needed since its simply sets NULL) */
 			LAST_LBLOCK(bb)[line] = max_lblock[line];
-			if (min_lblock[line] != NULL)
+			if (min_lblock[line] != NULL) {
 				LBLOCK_ISFIRST(min_lblock[line]) = true;
+				if(isVerbose()) {
+					log << "\t\t\t\tlblock " << min_lblock[line]->address() << " is first in cache line\n";
+				}
+			}
+
 		}
 	}
 

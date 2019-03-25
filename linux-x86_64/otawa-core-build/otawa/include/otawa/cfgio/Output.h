@@ -34,10 +34,12 @@ class Output: public BBProcessor {
 public:
 	static p::declare reg;
 	Output(void);
+
 protected:
 	virtual void processWorkSpace(WorkSpace *ws);
 	virtual void processCFG(WorkSpace *ws, CFG *cfg);
 	virtual void processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb);
+	virtual void configure(const PropList &props);
 private:
 	string id(CFG *cfg);
 	string id(BasicBlock *bb);
@@ -45,6 +47,8 @@ private:
 	xom::Element *root, *cfg_node;
 	int last_bb;
 	genstruct::Vector<Edge *> edges;
+	string path;
+	io::OutStream* outstream;
 };
 
 } }	// otawa::cfgio

@@ -39,11 +39,11 @@ namespace otawa { namespace gensim {
 MemorySystem::MemorySystem(sc_module_name name, GenericState *gen_state,
 	const hard::Memory *memory,
 	const hard::CacheConfiguration *caches):
-	_inst_cache_state(READY),
-	_inst_fill_latency(0),
-	_data_cache_state(READY),
-	_data_fill_latency(0),
 	mem(memory),
+	_inst_cache_state(READY),
+	_data_cache_state(READY),
+	_inst_fill_latency(0),
+	_data_fill_latency(0),
 	_inst_cache(NULL),
 	_data_cache(NULL)
 {
@@ -235,7 +235,10 @@ int MemorySystem::getInstLatency(Address address, size_t size) {
 			case HWCache::ACCESS_MISS:
 				lat = bank->latency();
 				if (lat != _icache_miss_penalty) {
-					elm::cerr << "Bank latency and i-cache miss penalty disagree" << io::endl;
+					elm::cerr << "Bank latency (" << lat
+								<< ") and i-cache miss penalty ("
+								<< _icache_miss_penalty << ") disagree. Taking max." << io::endl;
+					lat = lat > _icache_miss_penalty ? lat : _icache_miss_penalty;
 				}
 				break;
 			default:

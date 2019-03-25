@@ -11,7 +11,10 @@
 #include <otawa/hard/Memory.h>
 #include <otawa/hard/CacheConfiguration.h>
 #include <otawa/display/ConfigOutput.h>
+#include <otawa/cfgio/Output.h>
+#include <otawa/proc/DynProcessor.h>
 #include <otawa/cfg/features.h>
+#include <elm/io/OutFileStream.h>
 #include "GenericSimulator.h"
 
 #include <stack>
@@ -41,6 +44,7 @@ public:
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
 		events(option::ValueOption<string>::Make(*this).cmd("-e").cmd("--event").description("which event to trace: 2^{f,d,e,c}")),
 		iVerboseLevel(option::ValueOption<int>::Make(*this).cmd("-vl").cmd("--verboseLevel").description("verbose level for simulation")),
+		outputCfg(option::ValueOption<string>::Make(*this).cmd("-o").cmd("--dumpCfg").description("output annotated CFGs to given file")),
 		traceCache(*this, 't', "traceCache", "enable cache protocol", false),
 		dumpConfig(*this, 'd', "dumpConfig", "write platform config to HTML file", false),
 		cfgInfo(0),
@@ -272,6 +276,17 @@ protected:
 		 ********/
 		sstate->run(*this); // defined in GenericState.h
 		cerr << "cycles = " << sstate->cycle() << endl;
+
+		/*********
+		 * OUTPUT
+		 *********/
+		if (outputCfg) {
+			cout << "Dumping CFG to file " << *outputCfg << endl;
+			io::OutFileStream stream(*outputCfg);
+			otawa::cfgio::Output::OUTPUT(props) = &stream;
+			DynProcessor dis("otawa::cfgio::Output");
+			dis.process(workspace(), props);
+		}
 	}
 
 private:
@@ -284,6 +299,7 @@ private:
 	option::ValueOption<string> mem;
 	option::ValueOption<string> events;
 	option::ValueOption<int> iVerboseLevel;
+	option::ValueOption<string> outputCfg;
 	option::BoolOption traceCache;
 	option::BoolOption dumpConfig;
 	CFGInfo *cfgInfo;

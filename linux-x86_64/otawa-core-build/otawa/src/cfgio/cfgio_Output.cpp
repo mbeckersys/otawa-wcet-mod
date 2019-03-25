@@ -57,9 +57,13 @@ p::declare Output::reg = p::init("otawa::cfgio::Output", Version(1, 0, 0))
 
 /**
  */
-Output::Output(void): BBProcessor(reg), root(0), cfg_node(0), last_bb(0) {
+Output::Output(void): BBProcessor(reg), root(0), cfg_node(0), last_bb(0), outstream(NULL) {
 }
 
+void Output::configure(const PropList &props) {
+	CFGProcessor::configure(props);
+	outstream = OUTPUT(props);
+}
 
 /**
  * Generate ID for a CFG.
@@ -216,7 +220,15 @@ void Output::processWorkSpace(WorkSpace *ws) {
 
 	// output the XML
 	xom::Document doc(root);
-	xom::Serializer serial(io::out);
+	//log << "CfgIO::Output::OUTPUT=" << otawa::cfgio::Output::OUTPUT(ws->props);
+	elm::io::OutStream* os;
+	if (outstream) {
+		os = outstream;
+	} else {
+		os = &io::out;
+	}
+	xom::Serializer serial(*os);
+
 	serial.write(&doc);
 	serial.flush();
 }

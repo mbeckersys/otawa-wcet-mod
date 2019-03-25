@@ -59,7 +59,7 @@ I-Fetch time:
  * cache miss -> bank latency
 
 Exec time:
- * TODO
+ * given by functional unit that is claimed. By default each takes one cycle.
 
 ## OTWA
 I-Fetch time:

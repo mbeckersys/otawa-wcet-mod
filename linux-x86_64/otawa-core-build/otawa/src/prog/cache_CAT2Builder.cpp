@@ -221,14 +221,19 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 				}
 			} /* of category condition test */
 		} else {
-			// this l-block is NOT the first in its BB (for this cache line).
-			// hypothesis: that may only happen if the BB is non-contiguous in memory,
+			// this l-block is NOT the first in the cache line (for this BB).
+			// in other words, the BB is so large, that different l-blocks are
+			// competing for the same cache line.
+			// Other possibility: if the BB is non-contiguous in memory,
 			// e.g., by JMP, *and* if the JMP is not "glued together" by the flow analyzer.
 			// rationale: by definition, L-blocks are subsets of BBs, only differing in their
 			// cache line.
-			// TODO: However, shouldn't it then be a hit?
-			cache::CATEGORY(lblock) = cache::ALWAYS_MISS;
-			ASSERT(false); ///< we don't trust this classification; give us an example
+			// How to categorize? Depends on associativity.
+			log << "\t\t" << lblock->address() << ": "
+												<< "suspicious l-block"
+												<< io::endl;
+			log << "\t\tBB:" << lblock->bb() << io::endl;
+			cache::CATEGORY(lblock) = cache::NOT_CLASSIFIED;
 		}
 
 		// record stats
