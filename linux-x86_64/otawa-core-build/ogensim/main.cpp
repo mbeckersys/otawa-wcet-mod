@@ -15,10 +15,13 @@
 #include <otawa/cfgio/Output.h>
 #include <otawa/proc/DynProcessor.h>
 #include <otawa/cfg/features.h>
+#include <otawa/prop/PropList.h>
 #include <elm/io/OutFileStream.h>
 #include "GenericSimulator.h"
 
+
 #include <stack>
+#include <set>
 
 // just for debugging
 #include <assert.h>
@@ -139,8 +142,11 @@ public:
 			const int now = sstate->cycle();
 			if (ctx.pre_bb) {
 				const int duration = now - ctx.time_bb_enter;
+				cout << "Annotating BB " << ctx.pre_bb->address() << ", dur=" << duration << endl;
 				// time is cumulative incl. all cache and pipeline effects
+				cout << "check before: PROP=" << otawa::ipet::TOTAL_TIME(ctx.pre_bb) << endl;
 				otawa::ipet::TOTAL_TIME(ctx.pre_bb) = otawa::ipet::TOTAL_TIME(ctx.pre_bb) + duration;
+				cout << "check after: PROP=" << otawa::ipet::TOTAL_TIME(ctx.pre_bb) << endl;
 				if (duration > otawa::ipet::WCET(ctx.pre_bb)) {
 					otawa::ipet::WCET(ctx.pre_bb) = duration;
 				}
@@ -198,9 +204,10 @@ public:
 		ctx.begin_of_bb = ctx._endofbb_pending;
 		if (ctx._endofbb_pending) {
 			ctx._endofbb_pending = false;
-			otawa::BasicBlock* next_bb = find_next_bb(ctx.curr_bb, curr);
 			ctx.pre_bb = ctx.curr_bb;
+			otawa::BasicBlock* next_bb = find_next_bb(ctx.curr_bb, curr);
 			ctx.curr_bb = next_bb;
+			if (ctx.pre_bb) cout << "bb @" << ctx.pre_bb->address() << " ended" << endl;
 		}
 		// search for upcoming end of BB and func return
 		if (curr->isCall()) {
@@ -242,6 +249,13 @@ public:
 		}
 	}
 
+	void rollup_bb_times(CFG* cfg) const {
+		otawa::ipet::TOTAL_TIME(cfg) = 0;
+		for(CFG::BBIterator bb(cfg); bb; ++bb) {
+			otawa::ipet::TOTAL_TIME(cfg) += otawa::ipet::TOTAL_TIME(bb);
+		}
+	}
+
 	void check_annotations() {
 		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
 		// correct cases where return was not detected; possibly some asm tricks.
@@ -249,35 +263,87 @@ public:
 			if (otawa::ipet::COUNT(cfg) > 0 &&
 				otawa::ipet::TOTAL_TIME(cfg) == 0)
 			{
-				// roll up BB times
 				cout << "WARN: Correcting annotations of " << cfg->name() << "..." << endl;
-				for(CFG::BBIterator bb(cfg); bb; ++bb) {
-					otawa::ipet::TOTAL_TIME(cfg) += otawa::ipet::TOTAL_TIME(bb);
-				}
+				rollup_bb_times(cfg);
 			}
-		}
-		// TODO: inlining also messes up with the times (they are not propagated)
-		if (inlineCalls) {
-			cout << "Inlining messes up with time annotations!" << endl;
 		}
 	}
 
-	/**
-	 * @brief also fails for functions prior to main
-	 */
-	CFG* _try_find_cfg(Address addr) {
-		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
-		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
-			cout << "? CFG " << cfg->name() << endl;
-			for(CFG::BBIterator bb(cfg); bb; ++bb) {
-				for(BasicBlock::InstIterator inst(bb); inst; ++inst) {
-					if (inst->address() == addr) {
-						return cfg;
+	void copy_bb_props(BasicBlock* dst, BasicBlock* src) {
+		cout << "Copying " << src->cfg()->name() << "." << src->number() << " to "
+				<< dst->cfg()->name() << "." << dst->number()
+				<< " sTIME=" << ipet::TOTAL_TIME(src)
+				<< " dTIME=" << ipet::TOTAL_TIME(dst) << endl;
+		ipet::TOTAL_TIME(dst) = ipet::TOTAL_TIME(src);
+		ipet::WCET(dst) = ipet::WCET(src);
+		ipet::COUNT(dst) = ipet::COUNT(src);
+	}
+
+	void verbose_cfg(CFG* cfg) {
+		cout << "CFG " << cfg->name() <<":" << endl;
+		for(CFG::BBIterator bb(cfg); bb; ++bb) {
+			cout << "\tBB" << bb->number() << ": "
+					<< "WCET=" << otawa::ipet::WCET(bb)
+					<< endl;
+			BasicBlock*bbb = bb;
+			const PropList& props = *bbb;
+			for(PropList::Iter prop(props); prop; prop++) {
+				if(prop->id()->name()) {
+					StringBuffer buf;
+					prop->id()->print(buf, *prop);
+					string s = buf.toString();
+					cout << "\tPROP " << prop->id()->name() << ": " << s << endl;
+				}
+			}
+		}
+	}
+
+	void copy_cfg_props(CFG* dst, CFG*src) {
+		std::set<CFG*> done;
+		cout << "\tcopying " << src->name() << " to main ..." << endl;
+		verbose_cfg(src);
+		for(CFG::BBIterator bb(src); bb; ++bb) {
+			// find equivalent virtual BB
+			BasicBlock* vbb = NULL;
+			for(CFG::BBIterator bb1(dst); bb1; ++bb1) {
+				if (bb1->address() == bb->address()) {
+					vbb = bb1;
+					break;
+				}
+			}
+			// copy props
+			if (vbb) {
+				copy_bb_props(vbb, bb);
+			} else {
+				cout << "WARN: cannot find equivalent BB for " << src->name() << "."
+						<< bb->number() << endl;
+			}
+			// handle callees
+			for(BasicBlock::OutIterator edge(bb); edge; edge++) {
+				if(edge->kind() == Edge::CALL && edge->calledCFG()) {
+					CFG* callee = edge->calledCFG();
+					if (done.find(callee) == done.end()) {
+						cout << "\t...calls " << callee->name() << endl;
+						copy_cfg_props(dst, callee);
+						done.insert(callee);
 					}
 				}
 			}
 		}
-		return NULL;
+	}
+
+	void correct_annotations_after_inlining(CFG* orig_entry) {
+		cout << "Applying annotations to inlined CFGs..." << endl;
+		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
+		assert(cfgs->count() == 1);
+		CFG* cfg0 = cfgs->get(0);
+		assert(cfg0->isVirtual());
+		VirtualCFG* vcfg = dynamic_cast<VirtualCFG*>(cfg0);
+		assert(vcfg);
+		assert(orig_entry);
+
+		copy_cfg_props(vcfg, orig_entry);
+		rollup_bb_times(cfg0);
 	}
 
 	/**
@@ -389,7 +455,7 @@ protected:
 
 		coll = INVOLVED_CFGS(workspace());
 		assert(coll);
-		assert(coll->get(0));
+		assert(coll->count() > 0);
 		if (dumpCfg) {
 			predecorate_cfgs();
 		}
@@ -453,14 +519,31 @@ protected:
 		/*********
 		 * OUTPUT
 		 *********/
+		cout << "immediately after run:" << endl;
+		if (dumpCfg) {
+			io::OutFileStream stream("before-inline.cfg");
+			otawa::cfgio::Output::OUTPUT(props) = &stream;
+			DynProcessor dis("otawa::cfgio::Output");
+			dis.process(workspace(), props);
+		}
+		verbose_cfg(coll->get(1));
+#if 0
 		if(inlineCalls) {
 			cout << "Virtualizing CFGs (inline calls)..." << endl;
+			// the following discards all our timing annotations ...
+			const CFGCollection *coll = INVOLVED_CFGS(workspace());
+			CFG* orig_entry = coll->get(0);
+			assert(orig_entry);
+
+			cout << "before inlining:" << endl;
+			verbose_cfg(coll->get(1));
+
 			workspace()->require(VIRTUALIZED_CFG_FEATURE, props);
+			correct_annotations_after_inlining(orig_entry);
 		}
 
 		if (dumpCfg) {
 			cout << "Dumping CFG to file " << *dumpCfg << endl;
-
 			check_annotations();
 
 			io::OutFileStream stream(*dumpCfg);
@@ -468,6 +551,7 @@ protected:
 			DynProcessor dis("otawa::cfgio::Output");
 			dis.process(workspace(), props);
 		}
+		#endif
 	}
 
 private:

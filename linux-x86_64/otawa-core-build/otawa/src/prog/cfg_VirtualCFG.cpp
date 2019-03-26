@@ -144,14 +144,14 @@ BasicBlock *exit) {
 					if(edge->kind() == Edge::CALL) {
 						called = edge->calledCFG();
 						if (NO_INLINE(called->firstInst()))
-							
+
 						        called = 0;
 					}
 
 			// Look edges
 			for(BasicBlock::OutIterator edge(bb); edge; edge++)
 				if(edge->kind() == Edge::CALL) {
-					if(!isInlined() || NO_INLINE(edge->calledCFG()->firstInst()))						
+					if(!isInlined() || NO_INLINE(edge->calledCFG()->firstInst()))
 						new Edge(src, edge->target(), Edge::CALL);
 				}
 				else if(edge->target()) {
