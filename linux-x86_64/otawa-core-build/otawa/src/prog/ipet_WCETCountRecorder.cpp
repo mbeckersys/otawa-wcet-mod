@@ -9,6 +9,9 @@
 #include <otawa/ipet/WCETCountRecorder.h>
 #include <otawa/ipet/WCETComputation.h>
 #include <otawa/ipet/IPET.h>
+#include <otawa/cache/LBlockSet.h>
+#include <otawa/cache/cat2/features.h>
+#include <otawa/hard/Platform.h>
 #include <otawa/ilp.h>
 #include <otawa/cfg/Edge.h>
 #include <otawa/cfg/features.h>
@@ -47,6 +50,45 @@ void WCETCountRecorder::cleanup(WorkSpace *fw) {
 	system = 0;
 }
 
+void WCETCountRecorder::processWorkSpace(WorkSpace *fw) {
+	// before doing anything, back-annotate all the i-cache misses, because they are
+	// global (per cache set) rather than per CFG
+	_icache = hard::CACHE_CONFIGURATION(fw)->instCache();
+	if(_icache) {
+		LBlockSet **lbsets = LBLOCKS(fw);
+		if (lbsets) {
+			for (int i = 0 ; i < _icache->rowCount(); i++) {
+				for (LBlockSet::Iterator lb(*lbsets[i]); lb; lb++) {
+					BasicBlock* bb = lb->bb();
+					if (bb) {
+						if (ilp::Var *mvar = MISS_VAR(lb)) {
+							if (ICACHE_MISSES(bb) < 0) ICACHE_MISSES(bb) = 0;
+							ICACHE_MISSES(bb) += int(system->valueOf(mvar));
+							CFG* cfg = bb->cfg();
+							if (cfg) {
+								if (ICACHE_MISSES(cfg) < 0) ICACHE_MISSES(cfg) = 0;
+								ICACHE_MISSES(cfg) += int(system->valueOf(mvar));
+							}
+						}
+					}
+				}
+			}
+		} else {
+			_icache = NULL; // to avoid any back-annotation
+			log << "\tCache present, but no cache analysis done" << io::endl;
+		}
+	}
+
+	// now all the CFGs
+	const CFGCollection *cfgs = INVOLVED_CFGS(fw);
+	ASSERT(cfgs);
+	for(CFGCollection::Iterator cfg(cfgs); cfg; cfg++) {
+		if(logFor(LOG_CFG))
+			log << "\tprocess CFG " << cfg->label() << io::endl;
+		processCFG(fw, cfg);
+	}
+}
+
 void WCETCountRecorder::processCFG(WorkSpace *fw, CFG *cfg) {
 	int wcet_cfg = 0;
 	for(CFG::BBIterator bb(cfg); bb; bb++) {
@@ -79,7 +121,11 @@ void WCETCountRecorder::processBB(WorkSpace *fw, CFG *cfg, BasicBlock *bb) {
 	if(var) {
 		COUNT(bb) = (int)system->valueOf(var);
 		// also sum up overall contrib to WCET
-		TOTAL_TIME(bb) = COUNT(bb) * TIME(bb); // TODO: cache?
+		TOTAL_TIME(bb) = COUNT(bb) * TIME(bb);
+		if (_icache) {
+			int cache_time = ICACHE_MISSES(bb) * _icache->missPenalty();
+			TOTAL_TIME(bb) += cache_time;
+		}
 	}
 
 	// Record out var count

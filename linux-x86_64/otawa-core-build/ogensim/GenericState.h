@@ -25,6 +25,7 @@ class GenericState: public sim::State {
 	int _cycle;
 	GenericProcessor* processor;
 	bool running;
+	int cycle_last_cache_miss;
 
 	// implemented in GenericSimulator.cpp
 	void step(void);
@@ -62,6 +63,18 @@ public:
 			TRACEX(1, elm::cerr << "cycle = " << cycle() << io::endl;);
 		}
 	}
+
+	// --- MBe/hack begin
+
+	virtual void markCacheMiss(void) { ///< call just before terminateInstruction()
+		cycle_last_cache_miss = cycle();
+	}
+
+	virtual bool terminatingHadCacheMiss(void) { ///< SimDriver can then use this...
+		return cycle() == cycle_last_cache_miss;
+	}
+
+	// --- MBe/hack end
 
 	virtual void stop(void);
 

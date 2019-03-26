@@ -75,7 +75,8 @@ void ExecuteInOrderStageIQ::action() {
 	while (!terminated_instructions.isEmpty()) {
 		inst = terminated_instructions.first();
 		inst->notifyResult(rename_tables);
-		sim_state->driver->terminateInstruction(*sim_state, inst->inst());
+		if (inst->cacheMiss()) sim_state->markCacheMiss(); // FIXME: hack
+		sim_state->driver->terminateInstruction(*sim_state, inst->inst()); // FIXME/MBe: why here and not in COMMIT?
 		//FunctionalUnit * fu = (*fu_bindings)[inst->type()];
 		FunctionalUnit * fu = findFU(inst->type());
 		fu->subInstruction();
@@ -215,7 +216,8 @@ void CommitStage::action() {
 		inst = in_instruction[i].read() ;
 		assert(inst->state() == EXECUTED);
 		TRACE10(elm::cout << "\tcommitting at " << inst->inst()->address() << "\n";)
-		sim_state->driver->terminateInstruction(*sim_state, inst->inst());
+		if (inst->cacheMiss()) sim_state->markCacheMiss(); // FIXME: hack
+		sim_state->driver->terminateInstruction(*sim_state, inst->inst()); // FIXME: why again in Execute stage?
 //		iss_free(inst->emulatedInst());
 		delete inst;
 	}

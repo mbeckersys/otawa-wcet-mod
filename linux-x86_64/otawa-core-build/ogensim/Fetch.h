@@ -74,6 +74,7 @@ private:
 	otawa::Inst* _currInstToFetch;
 	otawa::Inst* _nextInstToMem;
 	otawa::Inst* _currInstToMem;
+	bool         _last_fetch_stalled;
 
 	SimulatedInstruction* _inst;
 	//bool *_ended;
@@ -91,7 +92,7 @@ private:
 	 **********/
 	// tool function
 	inline void _doInstRequest(Address addr);
-	inline void _makeSimulatedInstruction(otawa::Inst*this_insn, otawa::Inst*next_insn);
+	inline void _makeSimulatedInstruction(otawa::Inst*this_insn, otawa::Inst*next_insn, bool miss);
 };
 
 } } // otawa::gensim

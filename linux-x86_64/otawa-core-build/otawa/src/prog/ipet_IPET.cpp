@@ -141,6 +141,14 @@ Identifier<int> COUNT("otawa::ipet::COUNT", -1,
 	idDesc("execution count in WCET"),
 	0);
 
+/**
+ * counts cache misses for entity
+ */
+Identifier<int> ICACHE_MISSES("otawa::ipet::ICACHE_MISSES", -1,
+	idLabel("icache_misses"),
+	idDesc("number of instruction cache misses for entity"),
+	0);
+
 
 /**
  * Get the system tied with the given CFG. If none exists, create ones.

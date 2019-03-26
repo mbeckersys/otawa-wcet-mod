@@ -18,6 +18,7 @@
 #include <otawa/prop/PropList.h>
 #include <elm/io/OutFileStream.h>
 #include "GenericSimulator.h"
+#include "GenericState.h"
 
 
 #include <stack>
@@ -119,39 +120,41 @@ public:
 	/**
 	 * @brief write back some stats to the CFG
 	 */
-	void annotate_cfg(SimContext& ctx, Inst *inst) {
+	void annotate_cfg(SimContext& ctx, Inst *inst, bool cache_miss=false) {
 		if (!ctx.callstack.empty()) {
 			SimContext::callstack_item cit = ctx.callstack.top();
 			if (ctx.begin_of_func) {
-				otawa::ipet::COUNT(cit.cfg) = otawa::ipet::COUNT(cit.cfg) + 1;
+				otawa::ipet::COUNT(cit.cfg) += 1;
 			}
 			if (ctx.end_of_func) {
-				// cout << "Function '" << ctx.returned_cfg->name() << "' returned after "
-				//	 << ctx.duration_returned_cfg << " cycles " << endl;
+				// elm::cout << "Function '" << ctx.returned_cfg->name() << "' returned after "
+				//	 << ctx.duration_returned_cfg << " cycles " << io::endl;
 				if (ctx.duration_returned_cfg > otawa::ipet::WCET(ctx.returned_cfg)) {
 					otawa::ipet::WCET(ctx.returned_cfg) = ctx.duration_returned_cfg;
 				}
-				otawa::ipet::TOTAL_TIME(ctx.returned_cfg) = otawa::ipet::TOTAL_TIME(ctx.returned_cfg)
-															+ ctx.duration_returned_cfg;
+				otawa::ipet::TOTAL_TIME(ctx.returned_cfg) += ctx.duration_returned_cfg;
 			}
 		}
 		if (ctx.begin_of_bb) {
 			if (ctx.curr_bb) {
-				otawa::ipet::COUNT(ctx.curr_bb) = otawa::ipet::COUNT(ctx.curr_bb) + 1;
+				otawa::ipet::COUNT(ctx.curr_bb) += 1;
 			}
 			const int now = sstate->cycle();
 			if (ctx.pre_bb) {
 				const int duration = now - ctx.time_bb_enter;
-				cout << "Annotating BB " << ctx.pre_bb->address() << ", dur=" << duration << endl;
+				//elm::cout << "Annotating BB " << ctx.pre_bb->address() << ", dur=" << duration << io::endl;
 				// time is cumulative incl. all cache and pipeline effects
-				cout << "check before: PROP=" << otawa::ipet::TOTAL_TIME(ctx.pre_bb) << endl;
-				otawa::ipet::TOTAL_TIME(ctx.pre_bb) = otawa::ipet::TOTAL_TIME(ctx.pre_bb) + duration;
-				cout << "check after: PROP=" << otawa::ipet::TOTAL_TIME(ctx.pre_bb) << endl;
+				//elm::cout << "check before: PROP=" << otawa::ipet::TOTAL_TIME(ctx.pre_bb) << io::endl;
+				otawa::ipet::TOTAL_TIME(ctx.pre_bb) += duration;
+				//elm::cout << "check after: PROP=" << otawa::ipet::TOTAL_TIME(ctx.pre_bb) << io::endl;
 				if (duration > otawa::ipet::WCET(ctx.pre_bb)) {
 					otawa::ipet::WCET(ctx.pre_bb) = duration;
 				}
 			}
 			ctx.time_bb_enter = now;
+		}
+		if (cache_miss && ctx.curr_bb) {
+			otawa::ipet::ICACHE_MISSES(ctx.curr_bb) += 1;
 		}
 	}
 
@@ -159,9 +162,16 @@ public:
 	 * @brief called whenever an instruction is committed
 	 */
 	virtual void terminateInstruction(sim::State &state, Inst *inst) {
+		// FIXME: remove this cache miss hack. find a better way to pass it back from Execute
+		bool cache_miss;
+		if (GenericState* gs = dynamic_cast<GenericState*>(&state)) {
+			cache_miss = gs->terminatingHadCacheMiss();
+		} else {
+			cache_miss = false;
+		}
 		track_context(ctx_commit, inst);
 		if (ev_commit) emit_trace(ctx_commit, inst, "C");
-		if (dumpCfg) annotate_cfg(ctx_commit, inst);
+		if (dumpCfg) annotate_cfg(ctx_commit, inst, cache_miss);
 	}
 
 	inline otawa::BasicBlock* find_next_bb(otawa::BasicBlock* curr_bb, otawa::Inst* next_inst) const {
@@ -207,7 +217,6 @@ public:
 			otawa::BasicBlock* next_bb = find_next_bb(ctx.pre_bb, curr);  // FIXME: why pre???
 			ctx.pre_bb = ctx.curr_bb;
 			ctx.curr_bb = next_bb;
-			if (ctx.pre_bb) cout << "bb @" << ctx.pre_bb->address() << " ended" << endl;
 		}
 		// search for upcoming end of BB and func return
 		if (curr->isCall()) {
@@ -242,17 +251,21 @@ public:
 			otawa::ipet::TOTAL_TIME(cfg) = 0;
 			otawa::ipet::WCET(cfg) = 0;
 			otawa::ipet::COUNT(cfg) = 0;
+			otawa::ipet::ICACHE_MISSES(cfg) = 0;
 			for(CFG::BBIterator bb(cfg); bb; ++bb) {
 				otawa::ipet::COUNT(bb) = 0;
 				otawa::ipet::TOTAL_TIME(bb) = 0;
+				otawa::ipet::ICACHE_MISSES(bb) = 0;
 			}
 		}
 	}
 
-	void rollup_bb_times(CFG* cfg) const {
+	void rollup_bb_props(CFG* cfg) const {
 		otawa::ipet::TOTAL_TIME(cfg) = 0;
+		otawa::ipet::ICACHE_MISSES(cfg) = 0;
 		for(CFG::BBIterator bb(cfg); bb; ++bb) {
 			otawa::ipet::TOTAL_TIME(cfg) += otawa::ipet::TOTAL_TIME(bb);
+			otawa::ipet::ICACHE_MISSES(cfg) += otawa::ipet::ICACHE_MISSES(bb);
 		}
 		otawa::ipet::COUNT(cfg) = otawa::ipet::COUNT(cfg->firstBB());
 	}
@@ -264,18 +277,18 @@ public:
 			if (otawa::ipet::COUNT(cfg) > 0 &&
 				otawa::ipet::TOTAL_TIME(cfg) == 0)
 			{
-				cout << "WARN: Correcting annotations of " << cfg->name() << "..." << endl;
-				rollup_bb_times(cfg);
+				elm::cout << "WARN: Correcting annotations of " << cfg->name() << "..." << io::endl;
+				rollup_bb_props(cfg);
 			}
 		}
 	}
 
 	void verbose_cfg(CFG* cfg) {
-		cout << "CFG " << cfg->name() <<":" << endl;
+		elm::cout << "CFG " << cfg->name() <<":" << io::endl;
 		for(CFG::BBIterator bb(cfg); bb; ++bb) {
-			cout << "\tBB" << bb->number() << ": "
+			elm::cout << "\tBB" << bb->number() << ": "
 					<< "WCET=" << otawa::ipet::WCET(bb)
-					<< endl;
+					<< io::endl;
 			BasicBlock*bbb = bb;
 			const PropList& props = *bbb;
 			for(PropList::Iter prop(props); prop; prop++) {
@@ -283,7 +296,7 @@ public:
 					StringBuffer buf;
 					prop->id()->print(buf, *prop);
 					string s = buf.toString();
-					cout << "\tPROP " << prop->id()->name() << ": " << s << endl;
+					elm::cout << "\tPROP " << prop->id()->name() << ": " << s << io::endl;
 				}
 			}
 		}
@@ -294,7 +307,7 @@ public:
 	 */
 	void emit_trace(SimContext& ctx, otawa::Inst*curr, const string& what) const {
 		// PRINT elf, addr, cycle ...
-		cout << process->program()->name() << " " << curr->address() << ": "
+		elm::cout << process->program()->name() << " " << curr->address() << ": "
 			 << what << ": "
 			 << sstate->cycle() << ": ";
 
@@ -302,23 +315,23 @@ public:
 		CFG* currCFG = (!ctx.callstack.empty()) ? ctx.callstack.top().cfg : NULL;
 		if (currCFG) {
 			const Address::offset_t off = curr->address() - currCFG->address();
-			cout << currCFG->name() << "+" << io::hex(off) << "\t";
+			elm::cout << currCFG->name() << "+" << io::hex(off) << "\t";
 		} else {
-			cout << "??+??\t";
+			elm::cout << "??+??\t";
 		}
 
 		// ... assembly ...
-		cout << curr;
+		elm::cout << curr;
 
 		// ... additional comments ...
 		if (curr->isCall()) {
-			cout << "\t;; CALL";
+			elm::cout << "\t;; CALL";
 			ctx._call_pending = true;
 
 		} else if (curr->isReturn()) {
-			cout << "\t;; RETURN";
+			elm::cout << "\t;; RETURN";
 		}
-		cout << io::endl;
+		elm::cout << io::endl;
 	}
 
 	virtual Address lowerRead(void) {
@@ -354,16 +367,16 @@ protected:
 			throw elm::MessageException("no processor provided");
 		otawa::PROCESSOR_PATH(props) = *proc;
 		workspace()->require(hard::PROCESSOR_FEATURE, props);
-		cout << "Processor from " << otawa::PROCESSOR_PATH(props) << io::endl;
+		elm::cout << "Processor from " << otawa::PROCESSOR_PATH(props) << io::endl;
 		if(mem) {
 			otawa::MEMORY_PATH(props) = *mem;
 			workspace()->require(hard::MEMORY_FEATURE, props);
-			cout << "Memory from " << otawa::MEMORY_PATH(props) << io::endl;
+			elm::cout << "Memory from " << otawa::MEMORY_PATH(props) << io::endl;
 		}
 		if (cache) {
 			otawa::CACHE_CONFIG_PATH(props) = *cache;
 			workspace()->require(hard::CACHE_CONFIGURATION_FEATURE, props);
-			cout << "Cache from " << otawa::CACHE_CONFIG_PATH(props) << io::endl;
+			elm::cout << "Cache from " << otawa::CACHE_CONFIG_PATH(props) << io::endl;
 
 		}
 		if (traceCache) {
@@ -374,11 +387,11 @@ protected:
 			if (strev.indexOf('f') >= 0) ev_fetch = true;
 			if (strev.indexOf('d') >= 0) {
 				ev_decode = true;
-				cerr << "WARN: event 'decode' not supported, yet" << endl;
+				elm::cerr << "WARN: event 'decode' not supported, yet" << io::endl;
 			}
 			if (strev.indexOf('e') >= 0) {
 				ev_exec = true;
-				cerr << "WARN: event 'execute' not supported, yet" << endl;
+				elm::cerr << "WARN: event 'execute' not supported, yet" << io::endl;
 			}
 			if (strev.indexOf('c') >= 0) ev_commit = true;
 		} else {
@@ -391,7 +404,7 @@ protected:
 
 		// dump the config, if requested
 		if (dumpConfig) {
-			cout << "Dumping config..." << endl;
+			elm::cout << "Dumping config..." << io::endl;
 			display::ConfigOutput output;
 			output.process(workspace(), props);
 		}
@@ -432,48 +445,48 @@ protected:
 		ASSERT(start);
 		Symbol* sym = process->findSymbolAt(start->address());
 		if (sym) {
-			cout << "Start at " << sym->name() << endl;
+			elm::cout << "Start at " << sym->name() << io::endl;
 		} else {
 			Option<Pair<cstring,int> > info = process->getSourceLine(start->address());
 			if(info) {
 				cstring file = (*info).fst;
 				int line = (*info).snd;
-				cout << "Start at " << start->address() << " (" << file << ":" << line << ")" << endl;
+				elm::cout << "Start at " << start->address() << " (" << file << ":" << line << ")" << io::endl;
 			} else {
-				cout << "Start at " << start->address() << " (no info)" << endl;
+				elm::cout << "Start at " << start->address() << " (no info)" << io::endl;
 			}
 		}
 		exit = process->findInstAt("_exit");
 		if(!exit)
 			throw elm::MessageException("no _exit label to stop simulation");
-		cout << "Exiting at " << exit << endl;
+		elm::cout << "Exiting at " << exit << io::endl;
 
 		//current = process->findInstAt("main");
 		// someone can make use of this to decide where the heap starts
 		//Inst* aa = process->findInstAt("errno"); // +4
-		//cerr << aa->address()+4  << io::endl;
+		//elm::cerr << aa->address()+4  << io::endl;
 
 		/********
 		 * RUN!
 		 ********/
 		sstate->run(*this); // defined in GenericState.h
-		cerr << "cycles = " << sstate->cycle() << endl;
+		elm::cerr << "cycles = " << sstate->cycle() << io::endl;
 
 		/*********
 		 * OUTPUT
 		 *********/
 		if(inlineCalls) {
-			cout << "Virtualizing CFGs (inline calls)..." << endl;
+			elm::cout << "Virtualizing CFGs (inline calls)..." << io::endl;
 
 			workspace()->require(VIRTUALIZED_CFG_FEATURE, props); // also propagates bb annotations
 			const CFGCollection *coll = INVOLVED_CFGS(workspace());
 			assert(coll->count() == 1);
 			CFG* entry = coll->get(0);
-			rollup_bb_times(entry);
+			rollup_bb_props(entry);
 		}
 
 		if (dumpCfg) {
-			cout << "Dumping CFG to file " << *dumpCfg << endl;
+			elm::cout << "Dumping CFG to file " << *dumpCfg << io::endl;
 			check_annotations();
 
 			io::OutFileStream stream(*dumpCfg);

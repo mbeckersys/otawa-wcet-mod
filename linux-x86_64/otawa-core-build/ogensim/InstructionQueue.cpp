@@ -127,13 +127,16 @@ SimulatedInstruction* InstructionQueue::read(int index){
 }
 
 int InstructionQueue::size() {
-	if (head == tail)
-		if (is_full == false)
+	if (head == tail) {
+		if (is_full == false) {
 			return 0;
-		else
+		} else {
 			return cap;
-	if (head < tail)
+		}
+	}
+	if (head < tail) {
 		return (tail - head);
+	}
 	return ( (cap - head) + tail ) ;
 }
 

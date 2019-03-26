@@ -74,6 +74,8 @@ public:
 	inline bool branchTaken(void);
 	inline Address currentAddress(void);
 	inline Address nextAddress(void);
+	inline bool cacheMiss(void);
+	inline void markCacheMiss(void);
 
 private:
 	elm::genstruct::SLList<SimulatedInstruction *> * active_instructions;
@@ -81,6 +83,7 @@ private:
 	otawa::Inst * nextInstruction;
 	simulated_instruction_state_t instruction_state;
 	int * instruction_location;
+	bool had_cache_miss;
 	elm::genstruct::SLList<SimulatedInstruction *> source_instructions;
 	int time_to_finish_execution;
 	Inst::kind_t _type;
@@ -100,7 +103,8 @@ inline SimulatedInstruction::SimulatedInstruction(
 	instruction(inst),
 	nextInstruction(next_inst),
 	instruction_state(READY),
-	instruction_location(_intInstructionInitialLocation)
+	instruction_location(_intInstructionInitialLocation),
+	had_cache_miss(false)
 {
 	active_instructions->addLast(this);
 	_type = inst->kind();
@@ -308,6 +312,15 @@ inline void SimulatedInstruction::dumpType(elm::io::Output& out_stream) {
 			out_stream << "OTHER";
 			break;
 	}
+}
+
+inline void SimulatedInstruction::markCacheMiss(void) {
+	had_cache_miss = true;
+}
+
+inline bool SimulatedInstruction::cacheMiss(void)
+{
+	return had_cache_miss;
 }
 
 inline bool SimulatedInstruction::branchTaken(void)

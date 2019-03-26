@@ -16,6 +16,7 @@ FetchStage::FetchStage(
 	_currInstToFetch(0),
 	_nextInstToMem(0),
 	_currInstToMem(0),
+	_last_fetch_stalled(false),
 	_fetch_state(READY)
 {
 	out_fetched_instruction = new sc_out<SimulatedInstruction *>[number_of_out_ports];
@@ -75,12 +76,13 @@ void FetchStage::action()
 		// of the memory.
 		if(in_wait.read()) {
 			TRACE10(elm::cout << "\tstall" << io::endl;)
+			_last_fetch_stalled = true;
 		} else {
 			_fetch_state = READY;
 			TRACE10(elm::cout << "\tdone" << io::endl;)
 
 			// create the SimulatedInstruction for the other stages
-			_makeSimulatedInstruction(_currInstToMem, _nextInstToMem);
+			_makeSimulatedInstruction(_currInstToMem, _nextInstToMem, _last_fetch_stalled);
 		}
 	}
 
@@ -114,6 +116,7 @@ void FetchStage::action()
 			}
 
 			// start to simulate memory access for fetch
+			_last_fetch_stalled = false;
 			_doInstRequest(_currInstToFetch->address());
 			_currInstToMem = _currInstToFetch;
 			_nextInstToMem = _nextInstToFetch;
@@ -149,16 +152,17 @@ void FetchStage::_doInstRequest(Address addr) {
 	out_request.write(true);
 }
 
-
 /**
  * Fetch an instruction and add it to the pipeline.
  */
-void FetchStage::_makeSimulatedInstruction(otawa::Inst*this_insn, otawa::Inst*next_insn) {
+void FetchStage::_makeSimulatedInstruction(otawa::Inst*this_insn, otawa::Inst*next_insn, bool miss)
+{
 	int * intInstructionInitialLocation = new int(0);
 	TRACE10(elm::cout << "\tcreate insn=[" <<  this_insn << "] @" << this_insn->address()
 	                  << ", next=[" << next_insn << "] @ " << next_insn->address() << io::endl;)
 	_inst = new SimulatedInstruction(this_insn, next_insn,
 										active_instructions, intInstructionInitialLocation);
+	if (miss) _inst->markCacheMiss();
 	_inst->renameOperands(rename_tables);
 	if(this_insn->isMem()) {
 		if(this_insn->isLoad()) {

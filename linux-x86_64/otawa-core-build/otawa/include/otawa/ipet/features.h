@@ -53,6 +53,7 @@ extern Identifier<ot::time> TOTAL_TIME;
 extern Identifier<ot::time> TIME;
 extern Identifier<ot::time> TIME_DELTA;
 
+extern Identifier<int> ICACHE_MISSES;
 extern Identifier<int> COUNT;
 
 extern SilentFeature ASSIGNED_VARS_FEATURE;
