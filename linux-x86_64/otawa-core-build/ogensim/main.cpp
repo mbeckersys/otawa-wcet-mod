@@ -490,6 +490,7 @@ protected:
 			check_annotations();
 
 			io::OutFileStream stream(*dumpCfg);
+			otawa::cfgio::Output::WITH_ASM(props) = false;
 			otawa::cfgio::Output::OUTPUT(props) = &stream;
 			DynProcessor dis("otawa::cfgio::Output");
 			dis.process(workspace(), props);

@@ -35,6 +35,8 @@ public:
 	static p::declare reg;
 	Output(void);
 
+	static Identifier<bool> WITH_ASM;
+
 protected:
 	virtual void processWorkSpace(WorkSpace *ws);
 	virtual void processCFG(WorkSpace *ws, CFG *cfg);
@@ -49,6 +51,7 @@ private:
 	genstruct::Vector<Edge *> edges;
 	string path;
 	io::OutStream* outstream;
+	bool with_asm;
 };
 
 } }	// otawa::cfgio

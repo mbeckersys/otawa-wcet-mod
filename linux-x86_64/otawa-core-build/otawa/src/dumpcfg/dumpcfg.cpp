@@ -26,10 +26,12 @@
 #include <elm/genstruct/DLList.h>
 #include <elm/options.h>
 
+#include <otawa/prop/DynIdentifier.h>
 #include <otawa/app/Application.h>
 #include <otawa/manager.h>
 #include <otawa/cfg/CFGCollector.h>
 #include <otawa/cfg/Virtualizer.h>
+#include <otawa/cfgio/Output.h>
 //#include <otawa/cfg/CFGBuilder.h>
 #include <otawa/util/FlowFactLoader.h>
 #include <otawa/proc/DynProcessor.h>
@@ -230,8 +232,10 @@ void DumpCFG::dump(CFG *cfg, PropList& props) {
 	// XML case (will become the generic case)
 	if(xml) {
 		//XMLDisplayer dis;
+		DynIdentifier<bool> WITH_ASM("otawa::cfgio::Output::WITH_ASM");
+		WITH_ASM(props) = true; // not working because plugin
 		DynProcessor dis("otawa::cfgio::Output");
-		dis.process(my_ws);
+		dis.process(my_ws, props);
 	}
 
 	// Dump the CFG
