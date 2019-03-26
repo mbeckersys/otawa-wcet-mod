@@ -33,7 +33,8 @@ int debugVerbose = 0;
 
 class SimContext {
 public:
-	SimContext() : _call_pending(false), last_in_bb(NULL), begin_of_func(false), end_of_func(false),
+	SimContext() : _call_pending(false), _endofbb_pending(false),
+					begin_of_func(false), end_of_func(false),
 					curr_bb(NULL), pre_bb(NULL), returned_cfg(NULL) {}
 
 	/*********
@@ -53,7 +54,7 @@ public:
 
 	// rather not for user
 	bool _call_pending;
-	otawa::Inst* last_in_bb;
+	bool _endofbb_pending;
 
 	// for user
 	bool begin_of_func;
@@ -87,6 +88,7 @@ public:
 		dumpCfg(option::ValueOption<string>::Make(*this).cmd("-o").cmd("--dumpCfg").description("output annotated CFGs to given file")),
 		traceCache(*this, 't', "traceCache", "enable cache protocol", false),
 		dumpConfig(*this, 'd', "dumpConfig", "write platform config to HTML file", false),
+		inlineCalls(*this, 'i', "inlineCalls", "Inline the function calls when dumping CFG (not affecting simulation).", false),
 		cfgInfo(0),
 		coll(0),
 		ev_fetch(false), ev_decode(false), ev_exec(false), ev_commit(false)
@@ -121,25 +123,29 @@ public:
 				otawa::ipet::COUNT(cit.cfg) = otawa::ipet::COUNT(cit.cfg) + 1;
 			}
 			if (ctx.end_of_func) {
+				// cout << "Function '" << ctx.returned_cfg->name() << "' returned after "
+				//	 << ctx.duration_returned_cfg << " cycles " << endl;
 				if (ctx.duration_returned_cfg > otawa::ipet::WCET(ctx.returned_cfg)) {
 					otawa::ipet::WCET(ctx.returned_cfg) = ctx.duration_returned_cfg;
 				}
 				otawa::ipet::TOTAL_TIME(ctx.returned_cfg) = otawa::ipet::TOTAL_TIME(ctx.returned_cfg)
 															+ ctx.duration_returned_cfg;
 			}
-			if (ctx.begin_of_bb) {
+		}
+		if (ctx.begin_of_bb) {
+			if (ctx.curr_bb) {
 				otawa::ipet::COUNT(ctx.curr_bb) = otawa::ipet::COUNT(ctx.curr_bb) + 1;
-				const int now = sstate->cycle();
-				if (ctx.pre_bb) {
-					const int duration = now - ctx.time_bb_enter;
-					// time is cumulative incl. all cache and pipeline effects
-					otawa::ipet::TOTAL_TIME(ctx.pre_bb) = otawa::ipet::TOTAL_TIME(ctx.pre_bb) + duration;
-					if (duration > otawa::ipet::WCET(ctx.pre_bb)) {
-						otawa::ipet::WCET(ctx.pre_bb) = duration;
-					}
-				}
-				ctx.time_bb_enter = now;
 			}
+			const int now = sstate->cycle();
+			if (ctx.pre_bb) {
+				const int duration = now - ctx.time_bb_enter;
+				// time is cumulative incl. all cache and pipeline effects
+				otawa::ipet::TOTAL_TIME(ctx.pre_bb) = otawa::ipet::TOTAL_TIME(ctx.pre_bb) + duration;
+				if (duration > otawa::ipet::WCET(ctx.pre_bb)) {
+					otawa::ipet::WCET(ctx.pre_bb) = duration;
+				}
+			}
+			ctx.time_bb_enter = now;
 		}
 	}
 
@@ -152,22 +158,51 @@ public:
 		if (dumpCfg) annotate_cfg(ctx_commit, inst);
 	}
 
+	inline otawa::BasicBlock* find_next_bb(otawa::BasicBlock* curr_bb, otawa::Inst* next_inst) const {
+		if (curr_bb) {
+			otawa::BasicBlock*bb = curr_bb->getTaken();
+			if (bb && bb->firstInst() == next_inst) return bb;
+		}
+		if (curr_bb){
+			otawa::BasicBlock*bb = curr_bb->getNotTaken();
+			if (bb && bb->firstInst() == next_inst) return bb;
+		}
+		// still here? then maybe OTAWA is confused or we have >2 targets?
+		// scan all BBs in all CFGs
+		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
+		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
+			for(CFG::BBIterator bb(cfg); bb; ++bb) {
+				if (bb->firstInst() == next_inst) {
+					return bb;
+				}
+			}
+		}
+		return NULL;
+	}
+
 	/**
 	 * @brief keep track of currently running function and so on
 	 */
 	void track_context(SimContext& ctx, otawa::Inst*curr) const {
-		// function call/return track
+		// new function begins. use callstack.
+		ctx.begin_of_func = ctx._call_pending;
 		if (ctx._call_pending) {
-			ctx.begin_of_func = true;
+			ctx._call_pending = false;
 			CFG *jj = cfgInfo->findCFG(curr); // only finds the first insn/addr of each function
 			if (jj) {
 				SimContext::callstack_item cit(jj, sstate->cycle());
 				ctx.callstack.push(cit);
 			}
-			ctx._call_pending = false;
-		} else {
-			ctx.begin_of_func = false;
 		}
+		// new BB begins. find it. Don't rely on callstack.
+		ctx.begin_of_bb = ctx._endofbb_pending;
+		if (ctx._endofbb_pending) {
+			ctx._endofbb_pending = false;
+			otawa::BasicBlock* next_bb = find_next_bb(ctx.curr_bb, curr);
+			ctx.pre_bb = ctx.curr_bb;
+			ctx.curr_bb = next_bb;
+		}
+		// search for upcoming end of BB and func return
 		if (curr->isCall()) {
 			ctx._call_pending = true;
 		}
@@ -184,21 +219,10 @@ public:
 		} else {
 			ctx.end_of_func = false;
 		}
-
-		// BB track
-		ctx.begin_of_bb = false;
-		if (!ctx.callstack.empty()) {
-			SimContext::callstack_item cit = ctx.callstack.top();
-			// FIXME/performance: turn off iteration until last insn of BB was encountered?
-			for(CFG::BBIterator bb(cit.cfg); bb; ++bb) {
-				if (bb->address() == curr->address()) {
-					ctx.pre_bb = ctx.curr_bb;
-					ctx.curr_bb = bb;
-					ctx.begin_of_bb = true;
-					//ctx.last_in_bb = last_insn;
-					break;
-				}
-			}
+		if (ctx.curr_bb) {
+			ctx._endofbb_pending = ctx.curr_bb->lastInst() == curr;
+		} else {
+			ctx._endofbb_pending = true; // next insn is scanned for BB...until we have one
 		}
 	}
 
@@ -215,6 +239,26 @@ public:
 				otawa::ipet::COUNT(bb) = 0;
 				otawa::ipet::TOTAL_TIME(bb) = 0;
 			}
+		}
+	}
+
+	void check_annotations() {
+		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
+		// correct cases where return was not detected; possibly some asm tricks.
+		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
+			if (otawa::ipet::COUNT(cfg) > 0 &&
+				otawa::ipet::TOTAL_TIME(cfg) == 0)
+			{
+				// roll up BB times
+				cout << "WARN: Correcting annotations of " << cfg->name() << "..." << endl;
+				for(CFG::BBIterator bb(cfg); bb; ++bb) {
+					otawa::ipet::TOTAL_TIME(cfg) += otawa::ipet::TOTAL_TIME(bb);
+				}
+			}
+		}
+		// TODO: inlining also messes up with the times (they are not propagated)
+		if (inlineCalls) {
+			cout << "Inlining messes up with time annotations!" << endl;
 		}
 	}
 
@@ -409,8 +453,16 @@ protected:
 		/*********
 		 * OUTPUT
 		 *********/
+		if(inlineCalls) {
+			cout << "Virtualizing CFGs (inline calls)..." << endl;
+			workspace()->require(VIRTUALIZED_CFG_FEATURE, props);
+		}
+
 		if (dumpCfg) {
 			cout << "Dumping CFG to file " << *dumpCfg << endl;
+
+			check_annotations();
+
 			io::OutFileStream stream(*dumpCfg);
 			otawa::cfgio::Output::OUTPUT(props) = &stream;
 			DynProcessor dis("otawa::cfgio::Output");
@@ -431,6 +483,7 @@ private:
 	option::ValueOption<string> dumpCfg;
 	option::BoolOption traceCache;
 	option::BoolOption dumpConfig;
+	option::BoolOption inlineCalls;
 	CFGInfo *cfgInfo;
 	const CFGCollection *coll;
 	bool ev_fetch;
