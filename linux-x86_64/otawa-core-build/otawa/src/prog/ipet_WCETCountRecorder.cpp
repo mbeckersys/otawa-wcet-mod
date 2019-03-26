@@ -11,6 +11,7 @@
 #include <otawa/ipet/IPET.h>
 #include <otawa/ilp.h>
 #include <otawa/cfg/Edge.h>
+#include <otawa/cfg/features.h>
 #include <otawa/ipet/ILPSystemGetter.h>
 
 namespace otawa { namespace ipet {
@@ -46,6 +47,25 @@ void WCETCountRecorder::cleanup(WorkSpace *fw) {
 	system = 0;
 }
 
+void WCETCountRecorder::processCFG(WorkSpace *fw, CFG *cfg) {
+	int wcet_cfg = 0;
+	for(CFG::BBIterator bb(cfg); bb; bb++) {
+		if(logFor(LOG_BB)) {
+			log << "\t\tprocess BB " << bb->number()
+				<< " (" << ot::address(bb->address()) << ")\n";
+		}
+		processBB(fw, cfg, bb);
+
+		// annotate CFG itself
+		if (COUNT(bb) >= 0) {
+			wcet_cfg += COUNT(bb);
+			if (bb == cfg->entry()) {
+				COUNT(cfg) = COUNT(bb);
+			}
+		}
+	}
+	WCET(cfg) = wcet_cfg;
+}
 
 /**
  */
@@ -53,14 +73,6 @@ void WCETCountRecorder::processBB(WorkSpace *fw, CFG *cfg, BasicBlock *bb) {
 	ASSERT(fw);
 	ASSERT(cfg);
 	ASSERT(bb);
-
-	// FIXME: annotate CFG, as well.
-#if 0
-	if (bb == cfg->entry()) {
-		ilp::Var *var = VAR(cfg);
-		COUNT(cfg) = (int)system->valueOf(var);
-	}
-#endif
 
 	// Record BB var count
 	ilp::Var *var = VAR(bb);
@@ -73,8 +85,9 @@ void WCETCountRecorder::processBB(WorkSpace *fw, CFG *cfg, BasicBlock *bb) {
 	// Record out var count
 	for(BasicBlock::OutIterator edge(bb); edge; edge++) {
 		ilp::Var *var = VAR(edge);
-		if(var)
+		if(var) {
 			COUNT(edge) = (int)system->valueOf(var);
+		}
 	}
 }
 

@@ -33,23 +33,41 @@ int debugVerbose = 0;
 
 class SimContext {
 public:
-	SimContext() : pre_fun(NULL), call_pending(false), begin_of_func(false), curr_bb(NULL),
-					pre_bb(NULL), last_in_bb(NULL) {}
+	SimContext() : _call_pending(false), last_in_bb(NULL), begin_of_func(false), end_of_func(false),
+					curr_bb(NULL), pre_bb(NULL), returned_cfg(NULL) {}
+
+	/*********
+	 * TYPES
+	 *********/
+	struct callstack_item_s {
+		CFG* cfg;
+		int  time_called;
+		callstack_item_s(CFG* c, int t) : cfg(c), time_called(t) {}
+	};
+	typedef struct callstack_item_s callstack_item;
 
 	/*********
 	 * ATTRS
 	 *********/
-	std::stack<CFG*> callstack;
-	CFG* pre_fun;
+	std::stack<callstack_item> callstack;
 
-	bool call_pending;
+	// rather not for user
+	bool _call_pending;
+	otawa::Inst* last_in_bb;
+
+	// for user
 	bool begin_of_func;
-	bool begin_of_bb;
+	bool end_of_func;
+	bool begin_of_bb;  ///< implies end of previous BB
 	otawa::BasicBlock* curr_bb;
 	otawa::BasicBlock* pre_bb;
-	otawa::Inst* last_in_bb;
+
 	int time_bb_enter;
 	int time_fun_enter;
+
+	// filled when end_of_func==true
+	CFG* returned_cfg;
+	int  duration_returned_cfg;
 };
 
 class Simulator: public otawa::Application, public sim::Driver {
@@ -93,19 +111,21 @@ public:
 		return current;
 	}
 
+	/**
+	 * @brief write back some stats to the CFG
+	 */
 	void annotate_cfg(SimContext& ctx, Inst *inst) {
 		if (!ctx.callstack.empty()) {
-			CFG*fun = ctx.callstack.top();
+			SimContext::callstack_item cit = ctx.callstack.top();
 			if (ctx.begin_of_func) {
-				otawa::ipet::COUNT(fun) = otawa::ipet::COUNT(fun) + 1;
-				const int now = sstate->cycle();
-				if (ctx.pre_fun) {
-					const int duration = now - ctx.time_fun_enter;
-					if (duration > otawa::ipet::WCET(ctx.pre_fun)) {
-						otawa::ipet::WCET(ctx.pre_fun) = duration;
-					}
+				otawa::ipet::COUNT(cit.cfg) = otawa::ipet::COUNT(cit.cfg) + 1;
+			}
+			if (ctx.end_of_func) {
+				if (ctx.duration_returned_cfg > otawa::ipet::WCET(ctx.returned_cfg)) {
+					otawa::ipet::WCET(ctx.returned_cfg) = ctx.duration_returned_cfg;
 				}
-				ctx.time_fun_enter = now;
+				otawa::ipet::TOTAL_TIME(ctx.returned_cfg) = otawa::ipet::TOTAL_TIME(ctx.returned_cfg)
+															+ ctx.duration_returned_cfg;
 			}
 			if (ctx.begin_of_bb) {
 				otawa::ipet::COUNT(ctx.curr_bb) = otawa::ipet::COUNT(ctx.curr_bb) + 1;
@@ -123,6 +143,9 @@ public:
 		}
 	}
 
+	/**
+	 * @brief called whenever an instruction is committed
+	 */
 	virtual void terminateInstruction(sim::State &state, Inst *inst) {
 		track_context(ctx_commit, inst);
 		if (ev_commit) emit_trace(ctx_commit, inst, "C");
@@ -130,36 +153,44 @@ public:
 	}
 
 	/**
-	 * @brief keep track of currently running function, and so on
+	 * @brief keep track of currently running function and so on
 	 */
 	void track_context(SimContext& ctx, otawa::Inst*curr) const {
-		if (ctx.call_pending) {
+		// function call/return track
+		if (ctx._call_pending) {
 			ctx.begin_of_func = true;
-			if (!ctx.callstack.empty()) ctx.pre_fun = ctx.callstack.top();
 			CFG *jj = cfgInfo->findCFG(curr); // only finds the first insn/addr of each function
 			if (jj) {
-				ctx.callstack.push(jj);
-				// cout << ";; Callstack: " << callstack << io::endl;
+				SimContext::callstack_item cit(jj, sstate->cycle());
+				ctx.callstack.push(cit);
 			}
-			ctx.call_pending = false;
+			ctx._call_pending = false;
 		} else {
 			ctx.begin_of_func = false;
 		}
-		// ... additional comments ...
 		if (curr->isCall()) {
-			ctx.call_pending = true;
-
-		} else if (curr->isReturn()) {
-			if (!ctx.callstack.empty()) {
-				ctx.callstack.pop();
-			}
+			ctx._call_pending = true;
 		}
+		if (curr->isReturn()) {
+			if (!ctx.callstack.empty()) {
+				SimContext::callstack_item cit = ctx.callstack.top();
+				ctx.callstack.pop();
+
+				const int duration = sstate->cycle() - cit.time_called;
+				ctx.end_of_func = true;
+				ctx.returned_cfg = cit.cfg;
+				ctx.duration_returned_cfg = duration;
+			}
+		} else {
+			ctx.end_of_func = false;
+		}
+
 		// BB track
 		ctx.begin_of_bb = false;
 		if (!ctx.callstack.empty()) {
-			CFG*fun = ctx.callstack.top();
+			SimContext::callstack_item cit = ctx.callstack.top();
 			// FIXME/performance: turn off iteration until last insn of BB was encountered?
-			for(CFG::BBIterator bb(fun); bb; ++bb) {
+			for(CFG::BBIterator bb(cit.cfg); bb; ++bb) {
 				if (bb->address() == curr->address()) {
 					ctx.pre_bb = ctx.curr_bb;
 					ctx.curr_bb = bb;
@@ -171,6 +202,9 @@ public:
 		}
 	}
 
+	/**
+	 * @brief initialize all CFG annotations
+	 */
 	void predecorate_cfgs(void) {
 		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
 		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
@@ -212,12 +246,7 @@ public:
 			 << sstate->cycle() << ": ";
 
 		// ... function and offset
-		CFG* currCFG = (!ctx.callstack.empty()) ? ctx.callstack.top() : NULL;
-		#if 0
-		if (!currCFG) {
-			CFG*jj = _try_find_cfg(curr->address());
-		}
-		#endif
+		CFG* currCFG = (!ctx.callstack.empty()) ? ctx.callstack.top().cfg : NULL;
 		if (currCFG) {
 			const Address::offset_t off = curr->address() - currCFG->address();
 			cout << currCFG->name() << "+" << io::hex(off) << "\t";
@@ -231,13 +260,10 @@ public:
 		// ... additional comments ...
 		if (curr->isCall()) {
 			cout << "\t;; CALL";
-			ctx.call_pending = true;
+			ctx._call_pending = true;
 
 		} else if (curr->isReturn()) {
 			cout << "\t;; RETURN";
-			if (!ctx.callstack.empty()) {
-				ctx.callstack.pop();
-			}
 		}
 		cout << io::endl;
 	}
