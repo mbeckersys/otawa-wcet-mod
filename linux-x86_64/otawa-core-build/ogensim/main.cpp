@@ -204,8 +204,8 @@ public:
 		ctx.begin_of_bb = ctx._endofbb_pending;
 		if (ctx._endofbb_pending) {
 			ctx._endofbb_pending = false;
+			otawa::BasicBlock* next_bb = find_next_bb(ctx.pre_bb, curr);  // FIXME: why pre???
 			ctx.pre_bb = ctx.curr_bb;
-			otawa::BasicBlock* next_bb = find_next_bb(ctx.curr_bb, curr);
 			ctx.curr_bb = next_bb;
 			if (ctx.pre_bb) cout << "bb @" << ctx.pre_bb->address() << " ended" << endl;
 		}
@@ -254,6 +254,7 @@ public:
 		for(CFG::BBIterator bb(cfg); bb; ++bb) {
 			otawa::ipet::TOTAL_TIME(cfg) += otawa::ipet::TOTAL_TIME(bb);
 		}
+		otawa::ipet::COUNT(cfg) = otawa::ipet::COUNT(cfg->firstBB());
 	}
 
 	void check_annotations() {
@@ -267,16 +268,6 @@ public:
 				rollup_bb_times(cfg);
 			}
 		}
-	}
-
-	void copy_bb_props(BasicBlock* dst, BasicBlock* src) {
-		cout << "Copying " << src->cfg()->name() << "." << src->number() << " to "
-				<< dst->cfg()->name() << "." << dst->number()
-				<< " sTIME=" << ipet::TOTAL_TIME(src)
-				<< " dTIME=" << ipet::TOTAL_TIME(dst) << endl;
-		ipet::TOTAL_TIME(dst) = ipet::TOTAL_TIME(src);
-		ipet::WCET(dst) = ipet::WCET(src);
-		ipet::COUNT(dst) = ipet::COUNT(src);
 	}
 
 	void verbose_cfg(CFG* cfg) {
@@ -296,54 +287,6 @@ public:
 				}
 			}
 		}
-	}
-
-	void copy_cfg_props(CFG* dst, CFG*src) {
-		std::set<CFG*> done;
-		cout << "\tcopying " << src->name() << " to main ..." << endl;
-		verbose_cfg(src);
-		for(CFG::BBIterator bb(src); bb; ++bb) {
-			// find equivalent virtual BB
-			BasicBlock* vbb = NULL;
-			for(CFG::BBIterator bb1(dst); bb1; ++bb1) {
-				if (bb1->address() == bb->address()) {
-					vbb = bb1;
-					break;
-				}
-			}
-			// copy props
-			if (vbb) {
-				copy_bb_props(vbb, bb);
-			} else {
-				cout << "WARN: cannot find equivalent BB for " << src->name() << "."
-						<< bb->number() << endl;
-			}
-			// handle callees
-			for(BasicBlock::OutIterator edge(bb); edge; edge++) {
-				if(edge->kind() == Edge::CALL && edge->calledCFG()) {
-					CFG* callee = edge->calledCFG();
-					if (done.find(callee) == done.end()) {
-						cout << "\t...calls " << callee->name() << endl;
-						copy_cfg_props(dst, callee);
-						done.insert(callee);
-					}
-				}
-			}
-		}
-	}
-
-	void correct_annotations_after_inlining(CFG* orig_entry) {
-		cout << "Applying annotations to inlined CFGs..." << endl;
-		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
-		assert(cfgs->count() == 1);
-		CFG* cfg0 = cfgs->get(0);
-		assert(cfg0->isVirtual());
-		VirtualCFG* vcfg = dynamic_cast<VirtualCFG*>(cfg0);
-		assert(vcfg);
-		assert(orig_entry);
-
-		copy_cfg_props(vcfg, orig_entry);
-		rollup_bb_times(cfg0);
 	}
 
 	/**
@@ -519,27 +462,14 @@ protected:
 		/*********
 		 * OUTPUT
 		 *********/
-		cout << "immediately after run:" << endl;
-		if (dumpCfg) {
-			io::OutFileStream stream("before-inline.cfg");
-			otawa::cfgio::Output::OUTPUT(props) = &stream;
-			DynProcessor dis("otawa::cfgio::Output");
-			dis.process(workspace(), props);
-		}
-		verbose_cfg(coll->get(1));
-#if 0
 		if(inlineCalls) {
 			cout << "Virtualizing CFGs (inline calls)..." << endl;
-			// the following discards all our timing annotations ...
+
+			workspace()->require(VIRTUALIZED_CFG_FEATURE, props); // also propagates bb annotations
 			const CFGCollection *coll = INVOLVED_CFGS(workspace());
-			CFG* orig_entry = coll->get(0);
-			assert(orig_entry);
-
-			cout << "before inlining:" << endl;
-			verbose_cfg(coll->get(1));
-
-			workspace()->require(VIRTUALIZED_CFG_FEATURE, props);
-			correct_annotations_after_inlining(orig_entry);
+			assert(coll->count() == 1);
+			CFG* entry = coll->get(0);
+			rollup_bb_times(entry);
 		}
 
 		if (dumpCfg) {
@@ -551,7 +481,6 @@ protected:
 			DynProcessor dis("otawa::cfgio::Output");
 			dis.process(workspace(), props);
 		}
-		#endif
 	}
 
 private:
