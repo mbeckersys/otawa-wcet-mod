@@ -70,6 +70,16 @@ void Output::configure(const PropList &props) {
 	if (with_asm) {
 		log << "cfgio::Output::WITH_ASM=true" << endl;
 	}
+	// declare useless properties to be suppressed
+	blacklist_props.insert("otawa::REVERSE_DOM");
+	blacklist_props.insert("otawa::CACHE_ACS_PERS");
+	blacklist_props.insert("otawa::CACHE_ACS_MUST");
+	blacklist_props.insert("otawa::CACHE_ACS_MAY");
+	blacklist_props.insert("otawa::REVERSE_DOM");
+	blacklist_props.insert("otawa::LAST_LBLOCK");
+	blacklist_props.insert("otawa::BB_LBLOCKS");
+	blacklist_props.insert("otawa::EXIT_LIST");
+	blacklist_props.insert("otawa::ipet::CALLING_CONSTRAINT");
 }
 
 /**
@@ -241,22 +251,28 @@ void Output::processWorkSpace(WorkSpace *ws) {
 }
 
 
+
 /**
  * Output the properties.
  * @param parent	Parent element.
  * @param props		Properties to output.
  */
 void Output::processProps(xom::Element *parent, PropList& props) {
-	for(PropList::Iter prop(props); prop; prop++)
+	for(PropList::Iter prop(props); prop; prop++) {
 		if(prop->id()->name()) {
-			xom::Element *prop_node = new xom::Element("property");
-			parent->appendChild(prop_node);
-			prop_node->addAttribute(new xom::Attribute("identifier", &prop->id()->name()));
-			StringBuffer buf;
-			prop->id()->print(buf, *prop);
-			string s = buf.toString();
-			prop_node->appendChild(&s);
+			bool not_blacklisted = blacklist_props.find(prop->id()->name()) == blacklist_props.end();
+			//log << "cfgio:: Prop " << prop->id()->name() << " is not blacklisted: " << not_blacklisted << endl;
+			if (not_blacklisted) {
+				xom::Element *prop_node = new xom::Element("property");
+				parent->appendChild(prop_node);
+				prop_node->addAttribute(new xom::Attribute("identifier", &prop->id()->name()));
+				StringBuffer buf;
+				prop->id()->print(buf, *prop);
+				string s = buf.toString();
+				prop_node->appendChild(&s);
+			}
 		}
+	}
 }
 
 

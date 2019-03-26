@@ -25,6 +25,7 @@
 #include <otawa/proc/BBProcessor.h>
 #include <elm/xom.h>
 #include <elm/genstruct/Vector.h>
+#include <set>
 
 namespace otawa { namespace cfgio {
 
@@ -51,6 +52,7 @@ private:
 	genstruct::Vector<Edge *> edges;
 	string path;
 	io::OutStream* outstream;
+	std::set<string> blacklist_props;
 	bool with_asm;
 };
 
