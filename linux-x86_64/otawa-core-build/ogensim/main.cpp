@@ -16,6 +16,7 @@
 #include <otawa/proc/DynProcessor.h>
 #include <otawa/cfg/features.h>
 #include <otawa/prop/PropList.h>
+#include <otawa/prop/DynIdentifier.h>
 #include <elm/io/OutFileStream.h>
 #include "GenericSimulator.h"
 #include "GenericState.h"
@@ -255,6 +256,7 @@ public:
 			for(CFG::BBIterator bb(cfg); bb; ++bb) {
 				otawa::ipet::COUNT(bb) = 0;
 				otawa::ipet::TOTAL_TIME(bb) = 0;
+				//otawa::ipet::TIME(bb) = -1;
 				otawa::ipet::ICACHE_MISSES(bb) = 0;
 			}
 		}
@@ -489,9 +491,11 @@ protected:
 			elm::cout << "Dumping CFG to file " << *dumpCfg << io::endl;
 			check_annotations();
 
-			io::OutFileStream stream(*dumpCfg);
-			otawa::cfgio::Output::WITH_ASM(props) = false;
-			otawa::cfgio::Output::OUTPUT(props) = &stream;
+			//io::OutFileStream stream(*dumpCfg);
+			//otawa::cfgio::Output::OUTPUT(props) = &stream;
+
+			DynIdentifier<string> FILENAME("otawa::cfgio::Output::FILENAME");
+			FILENAME(props) = *dumpCfg;
 			DynProcessor dis("otawa::cfgio::Output");
 			dis.process(workspace(), props);
 		}

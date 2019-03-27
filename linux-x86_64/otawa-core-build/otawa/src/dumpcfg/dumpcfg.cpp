@@ -233,7 +233,7 @@ void DumpCFG::dump(CFG *cfg, PropList& props) {
 	if(xml) {
 		//XMLDisplayer dis;
 		DynIdentifier<bool> WITH_ASM("otawa::cfgio::Output::WITH_ASM");
-		WITH_ASM(props) = true; // not working because plugin
+		WITH_ASM(props) = true;
 		DynProcessor dis("otawa::cfgio::Output");
 		dis.process(my_ws, props);
 	}

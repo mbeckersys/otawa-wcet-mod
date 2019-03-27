@@ -100,7 +100,7 @@ void WCETCountRecorder::processCFG(WorkSpace *fw, CFG *cfg) {
 
 		// annotate CFG itself
 		if (COUNT(bb) >= 0) {
-			wcet_cfg += COUNT(bb);
+			wcet_cfg += TOTAL_TIME(bb);
 			if (bb == cfg->entry()) {
 				COUNT(cfg) = COUNT(bb);
 			}

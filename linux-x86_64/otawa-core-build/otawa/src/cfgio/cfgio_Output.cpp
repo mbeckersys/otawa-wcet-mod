@@ -21,6 +21,8 @@
 #include <elm/xom/Serializer.h>
 #include <elm/io/Output.h>
 #include <elm/io/OutStream.h>
+#include <elm/io/OutFileStream.h>
+#include <elm/genstruct/SortedSLList.h>
 #include <otawa/cfgio/Output.h>
 #include <otawa/proc/ProcessorPlugin.h>
 #include <otawa/ipet/features.h>
@@ -51,6 +53,8 @@ p::declare Output::reg = p::init("otawa::cfgio::Output", Version(1, 0, 0))
 
 Identifier<bool> Output::WITH_ASM("otawa::cfgio::Output::WITH_ASM", false);
 
+Identifier<string> Output::FILENAME("otawa::cfgio::Output::FILENAME", "");
+
 /**
  * @class Output
  * Output the current CFG collection in XML matching the DTA ${OTAWA_HOME}/share/Otawa/dtd/cfg.dtd .
@@ -63,9 +67,22 @@ Output::Output(void): BBProcessor(reg), root(0), cfg_node(0), last_bb(0), outstr
 with_asm(false)
 {}
 
+void Output::cleanup(WorkSpace* ws) {
+	if (filename) delete outstream;
+}
+
 void Output::configure(const PropList &props) {
 	CFGProcessor::configure(props);
-	outstream = OUTPUT(props);
+
+	filename = FILENAME(props);
+	if (filename) {
+		outstream = new io::OutFileStream(&filename);
+		log << "cfgio::Output: FILENAME=" << filename << endl;
+	} else {
+		outstream = OUTPUT(props);
+		log << "cfgio::Output: OUTPUT=" << OUTPUT << endl;
+	}
+
 	with_asm = WITH_ASM(props);
 	if (with_asm) {
 		log << "cfgio::Output::WITH_ASM=true" << endl;
@@ -250,7 +267,18 @@ void Output::processWorkSpace(WorkSpace *ws) {
 	serial.flush();
 }
 
-
+class PropOrder {
+	public:
+	static inline int compare(Property *e1, Property *e2) {
+		if (e1->id() && e2->id()) {
+			const string n1 = e1->id()->name();
+			const string n2 = e2->id()->name();
+			return n1.compare(n2);
+		} else {
+			return 0;
+		}
+	}
+};
 
 /**
  * Output the properties.
@@ -258,19 +286,25 @@ void Output::processWorkSpace(WorkSpace *ws) {
  * @param props		Properties to output.
  */
 void Output::processProps(xom::Element *parent, PropList& props) {
+
+	// sorting
+	elm::genstruct::SortedSLList<Property*, PropOrder> sortedProps;
 	for(PropList::Iter prop(props); prop; prop++) {
-		if(prop->id()->name()) {
-			bool not_blacklisted = blacklist_props.find(prop->id()->name()) == blacklist_props.end();
-			//log << "cfgio:: Prop " << prop->id()->name() << " is not blacklisted: " << not_blacklisted << endl;
-			if (not_blacklisted) {
-				xom::Element *prop_node = new xom::Element("property");
-				parent->appendChild(prop_node);
-				prop_node->addAttribute(new xom::Attribute("identifier", &prop->id()->name()));
-				StringBuffer buf;
-				prop->id()->print(buf, *prop);
-				string s = buf.toString();
-				prop_node->appendChild(&s);
-			}
+		if (prop->id() && prop->id()->name())
+			sortedProps.add(prop);
+	}
+
+	for (SortedSLList<Property*, PropOrder>::Iterator prop(sortedProps); prop; prop++) {
+		bool not_blacklisted = blacklist_props.find(prop->id()->name()) == blacklist_props.end();
+		//log << "cfgio:: Prop " << prop->id()->name() << " is not blacklisted: " << not_blacklisted << endl;
+		if (not_blacklisted) {
+			xom::Element *prop_node = new xom::Element("property");
+			parent->appendChild(prop_node);
+			prop_node->addAttribute(new xom::Attribute("identifier", &prop->id()->name()));
+			StringBuffer buf;
+			prop->id()->print(buf, *prop);
+			string s = buf.toString();
+			prop_node->appendChild(&s);
 		}
 	}
 }

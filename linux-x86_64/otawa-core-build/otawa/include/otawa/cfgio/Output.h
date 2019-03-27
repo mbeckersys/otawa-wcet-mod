@@ -37,12 +37,14 @@ public:
 	Output(void);
 
 	static Identifier<bool> WITH_ASM;
+	static Identifier<string> FILENAME;
 
 protected:
 	virtual void processWorkSpace(WorkSpace *ws);
 	virtual void processCFG(WorkSpace *ws, CFG *cfg);
 	virtual void processBB(WorkSpace *ws, CFG *cfg, BasicBlock *bb);
 	virtual void configure(const PropList &props);
+	virtual void cleanup(WorkSpace* ws);
 private:
 	string id(CFG *cfg);
 	string id(BasicBlock *bb);
@@ -54,6 +56,7 @@ private:
 	io::OutStream* outstream;
 	std::set<string> blacklist_props;
 	bool with_asm;
+	string filename;
 };
 
 } }	// otawa::cfgio
