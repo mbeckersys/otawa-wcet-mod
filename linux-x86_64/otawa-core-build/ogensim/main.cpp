@@ -20,10 +20,10 @@
 #include <elm/io/OutFileStream.h>
 #include "GenericSimulator.h"
 #include "GenericState.h"
+#include "SimContext.h"
 
-
-#include <stack>
 #include <set>
+#include <map>
 
 // just for debugging
 #include <assert.h>
@@ -35,46 +35,6 @@ using namespace otawa;
 using namespace gensim;
 
 int debugVerbose = 0;
-
-class SimContext {
-public:
-	SimContext() : _call_pending(false), _endofbb_pending(false),
-					begin_of_func(false), end_of_func(false),
-					curr_bb(NULL), pre_bb(NULL), returned_cfg(NULL) {}
-
-	/*********
-	 * TYPES
-	 *********/
-	struct callstack_item_s {
-		CFG* cfg;
-		int  time_called;
-		callstack_item_s(CFG* c, int t) : cfg(c), time_called(t) {}
-	};
-	typedef struct callstack_item_s callstack_item;
-
-	/*********
-	 * ATTRS
-	 *********/
-	std::stack<callstack_item> callstack;
-
-	// rather not for user
-	bool _call_pending;
-	bool _endofbb_pending;
-
-	// for user
-	bool begin_of_func;
-	bool end_of_func;
-	bool begin_of_bb;  ///< implies end of previous BB
-	otawa::BasicBlock* curr_bb;
-	otawa::BasicBlock* pre_bb;
-
-	int time_bb_enter;
-	int time_fun_enter;
-
-	// filled when end_of_func==true
-	CFG* returned_cfg;
-	int  duration_returned_cfg;
-};
 
 class Simulator: public otawa::Application, public sim::Driver {
 public:
@@ -96,84 +56,119 @@ public:
 		inlineCalls(*this, 'i', "inlineCalls", "Inline the function calls when dumping CFG (not affecting simulation).", false),
 		cfgInfo(0),
 		coll(0),
-		ev_fetch(false), ev_decode(false), ev_exec(false), ev_commit(false)
-		{ }
+		ctx_fetch(NULL), ctx_commit(NULL)
+	{ }
+
+	~Simulator() {
+		delete_contexts();
+	}
+
+	/***************
+	 * init stuff
+	 ***************/
+
+	void create_contexts(void) {
+		string strev = events ? *events : "f";
+
+		sim_contexts['f'] = &ctx_fetch;
+		sim_contexts['d'] = NULL;
+		sim_contexts['e'] = NULL;
+		sim_contexts['c'] = &ctx_commit;
+
+		unsigned num_ctx = 0;
+		for (std::map<char, SimContext**>::const_iterator it = sim_contexts.begin();
+			it != sim_contexts.end();
+			++it)
+		{
+			if (strev.indexOf(it->first) >= 0) {
+				if (it->second) {
+					num_ctx++;
+					*(it->second) = new SimContext(string::make(it->first));
+					elm::cout << "INFO: Tracking event '" << it->first << "'" << io::endl;
+				} else {
+					elm::cerr << "WARN: event '" << it->first << "' not supported, yet" << io::endl;
+				}
+			}
+		}
+		// we always need the commit stage for internal purposes.
+		if (!ctx_commit) {
+			ctx_commit = new SimContext("c", false, false);
+		}
+
+		if (dumpCfg && num_ctx > 1) {
+			elm::cerr << "WARN: --dumpCFG with multiple events doesn't work! Turning it off" << io::endl;
+			for (std::map<char, SimContext**>::const_iterator it = sim_contexts.begin();
+				it != sim_contexts.end();
+				++it)
+			{
+				(*it->second)->annotate_cfg = false;
+			}
+		}
+	}
+
+	void delete_contexts(void) {
+		for (std::map<char, SimContext**>::const_iterator it = sim_contexts.begin();
+			it != sim_contexts.end();
+			++it)
+		{
+			if (it->second) {
+				delete *it->second;
+			}
+		}
+	}
+
+	/*************************
+	 * Simulation control
+	 *************************/
 
 	virtual Inst *nextInstruction (sim::State &state, Inst *inst) {
-		if(inst == NULL) // first instruction
-		{
+		if(inst == NULL) { // first instruction
 			current = start;
 			return start;
 		}
+		if (current == exit) return NULL;
 
-		if (current == exit)
-		{
-			return NULL;
+		if (ctx_fetch) {
+			track_context(ctx_fetch, inst);
+			if (ctx_fetch->emit_trace) emit_trace(ctx_fetch, inst);
+			if (ctx_fetch->annotate_cfg) annotate_cfg(ctx_fetch, inst);
 		}
 
-		track_context(ctx_fetch, inst);
-		if (ev_fetch) emit_trace(ctx_fetch, inst, "F");
-
+		// triggers to functionally execute the instruction to get the next
 		current = this->state->execute(current); // for arm: otawa/src/arm2/arm.cpp
 		return current;
 	}
 
 	/**
-	 * @brief write back some stats to the CFG
-	 */
-	void annotate_cfg(SimContext& ctx, Inst *inst, bool cache_miss=false) {
-		if (!ctx.callstack.empty()) {
-			SimContext::callstack_item cit = ctx.callstack.top();
-			if (ctx.begin_of_func) {
-				otawa::ipet::COUNT(cit.cfg) += 1;
-			}
-			if (ctx.end_of_func) {
-				// elm::cout << "Function '" << ctx.returned_cfg->name() << "' returned after "
-				//	 << ctx.duration_returned_cfg << " cycles " << io::endl;
-				if (ctx.duration_returned_cfg > otawa::ipet::WCET(ctx.returned_cfg)) {
-					otawa::ipet::WCET(ctx.returned_cfg) = ctx.duration_returned_cfg;
-				}
-				otawa::ipet::TOTAL_TIME(ctx.returned_cfg) += ctx.duration_returned_cfg;
-			}
-		}
-		if (ctx.begin_of_bb) {
-			if (ctx.curr_bb) {
-				otawa::ipet::COUNT(ctx.curr_bb) += 1;
-			}
-			const int now = sstate->cycle();
-			if (ctx.pre_bb) {
-				const int duration = now - ctx.time_bb_enter;
-				//elm::cout << "Annotating BB " << ctx.pre_bb->address() << ", dur=" << duration << io::endl;
-				// time is cumulative incl. all cache and pipeline effects
-				//elm::cout << "check before: PROP=" << otawa::ipet::TOTAL_TIME(ctx.pre_bb) << io::endl;
-				otawa::ipet::TOTAL_TIME(ctx.pre_bb) += duration;
-				//elm::cout << "check after: PROP=" << otawa::ipet::TOTAL_TIME(ctx.pre_bb) << io::endl;
-				if (duration > otawa::ipet::WCET(ctx.pre_bb)) {
-					otawa::ipet::WCET(ctx.pre_bb) = duration;
-				}
-			}
-			ctx.time_bb_enter = now;
-		}
-		if (cache_miss && ctx.curr_bb) {
-			otawa::ipet::ICACHE_MISSES(ctx.curr_bb) += 1;
-		}
-	}
-
-	/**
 	 * @brief called whenever an instruction is committed
+	 * We now have additional information, like cache misses
 	 */
 	virtual void terminateInstruction(sim::State &state, Inst *inst) {
-		// FIXME: remove this cache miss hack. find a better way to pass it back from Execute
-		bool cache_miss;
-		if (GenericState* gs = dynamic_cast<GenericState*>(&state)) {
-			cache_miss = gs->terminatingHadCacheMiss();
-		} else {
-			cache_miss = false;
-		}
+		assert(ctx_commit); // needed to get extra info about retired instructions
 		track_context(ctx_commit, inst);
-		if (ev_commit) emit_trace(ctx_commit, inst, "C");
-		if (dumpCfg) annotate_cfg(ctx_commit, inst, cache_miss);
+
+		// get post-execution info about instruction for statistics
+		if (GenericState* gs = dynamic_cast<GenericState*>(&state)) {
+			SimulatedInstruction* sInst = gs->getTerminatingInstruction();
+			assert(sInst);
+			const bool cache_miss = sInst->cacheMiss();
+			if (cache_miss && ctx_commit->curr_bb) {
+				annotate_cache_miss(ctx_commit->curr_bb);
+				#if 0
+				elm::cout << "Inst " << sInst->inst()->address()
+							<< " (BB=" << ctx_commit->curr_bb->address() << ")"
+							<< " has cache miss " << io::endl;
+				#endif
+			}
+		}
+
+		if (ctx_commit->emit_trace) emit_trace(ctx_commit, inst);
+		if (ctx_commit->annotate_cfg) annotate_cfg(ctx_commit, inst);
 	}
+
+	/*************************
+	 * Tracking Execution
+	 *************************/
 
 	inline otawa::BasicBlock* find_next_bb(otawa::BasicBlock* curr_bb, otawa::Inst* next_inst) const {
 		if (curr_bb) {
@@ -200,48 +195,84 @@ public:
 	/**
 	 * @brief keep track of currently running function and so on
 	 */
-	void track_context(SimContext& ctx, otawa::Inst*curr) const {
+	void track_context(SimContext* ctx, otawa::Inst*curr) const {
 		// new function begins. use callstack.
-		ctx.begin_of_func = ctx._call_pending;
-		if (ctx._call_pending) {
-			ctx._call_pending = false;
+		ctx->begin_of_func = ctx->_call_pending;
+		if (ctx->_call_pending) {
+			ctx->_call_pending = false;
 			CFG *jj = cfgInfo->findCFG(curr); // only finds the first insn/addr of each function
 			if (jj) {
 				SimContext::callstack_item cit(jj, sstate->cycle());
-				ctx.callstack.push(cit);
+				ctx->callstack.push(cit);
 			}
 		}
 		// new BB begins. find it. Don't rely on callstack.
-		ctx.begin_of_bb = ctx._endofbb_pending;
-		if (ctx._endofbb_pending) {
-			ctx._endofbb_pending = false;
-			otawa::BasicBlock* next_bb = find_next_bb(ctx.pre_bb, curr);  // FIXME: why pre???
-			ctx.pre_bb = ctx.curr_bb;
-			ctx.curr_bb = next_bb;
+		ctx->begin_of_bb = ctx->_endofbb_pending;
+		if (ctx->_endofbb_pending) {
+			ctx->_endofbb_pending = false;
+			otawa::BasicBlock* next_bb = find_next_bb(ctx->pre_bb, curr);  // FIXME: why pre???
+			ctx->pre_bb = ctx->curr_bb;
+			ctx->curr_bb = next_bb;
 		}
 		// search for upcoming end of BB and func return
 		if (curr->isCall()) {
-			ctx._call_pending = true;
+			ctx->_call_pending = true;
 		}
 		if (curr->isReturn()) {
-			if (!ctx.callstack.empty()) {
-				SimContext::callstack_item cit = ctx.callstack.top();
-				ctx.callstack.pop();
+			if (!ctx->callstack.empty()) {
+				SimContext::callstack_item cit = ctx->callstack.top();
+				ctx->callstack.pop();
 
 				const int duration = sstate->cycle() - cit.time_called;
-				ctx.end_of_func = true;
-				ctx.returned_cfg = cit.cfg;
-				ctx.duration_returned_cfg = duration;
+				ctx->end_of_func = true;
+				ctx->returned_cfg = cit.cfg;
+				ctx->duration_returned_cfg = duration;
 			}
 		} else {
-			ctx.end_of_func = false;
+			ctx->end_of_func = false;
 		}
-		if (ctx.curr_bb) {
-			ctx._endofbb_pending = ctx.curr_bb->lastInst() == curr;
+		if (ctx->curr_bb) {
+			ctx->_endofbb_pending = ctx->curr_bb->lastInst() == curr;
 		} else {
-			ctx._endofbb_pending = true; // next insn is scanned for BB...until we have one
+			ctx->_endofbb_pending = true; // next insn is scanned for BB...until we have one
 		}
 	}
+
+	/**
+	 * @brief write cycle, function, offset, and so on to output
+	 */
+	void emit_trace(SimContext* ctx, otawa::Inst*curr) const {
+		// PRINT elf, addr, cycle ...
+		elm::cout << process->program()->name() << " " << curr->address() << ": "
+			 << ctx->name << ": "
+			 << sstate->cycle() << ": ";
+
+		// ... function and offset
+		CFG* currCFG = (!ctx->callstack.empty()) ? ctx->callstack.top().cfg : NULL;
+		if (currCFG) {
+			const Address::offset_t off = curr->address() - currCFG->address();
+			elm::cout << currCFG->name() << "+" << io::hex(off) << "\t";
+		} else {
+			elm::cout << "??+??\t";
+		}
+
+		// ... assembly ...
+		elm::cout << curr;
+
+		// ... additional comments ...
+		if (curr->isCall()) {
+			elm::cout << "\t;; CALL";
+			ctx->_call_pending = true;
+
+		} else if (curr->isReturn()) {
+			elm::cout << "\t;; RETURN";
+		}
+		elm::cout << io::endl;
+	}
+
+	/*************************
+	 * Back-annotation of CFG
+	 *************************/
 
 	/**
 	 * @brief initialize all CFG annotations
@@ -259,6 +290,51 @@ public:
 				//otawa::ipet::TIME(bb) = -1;
 				otawa::ipet::ICACHE_MISSES(bb) = 0;
 			}
+		}
+	}
+
+	inline void annotate_cache_miss(BasicBlock *bb) {
+		otawa::ipet::ICACHE_MISSES(bb) += 1;
+	}
+
+	/**
+	 * @brief write back some stats to the CFG
+	 */
+	void annotate_cfg(SimContext* ctx, Inst *inst) {
+		/*****************
+		 * function stats
+		 *****************/
+		if (!ctx->callstack.empty()) {
+			SimContext::callstack_item cit = ctx->callstack.top();
+			if (ctx->begin_of_func) {
+				otawa::ipet::COUNT(cit.cfg) += 1;
+			}
+			if (ctx->end_of_func) {
+				// elm::cout << "Function '" << ctx->returned_cfg->name() << "' returned after "
+				//	 << ctx->duration_returned_cfg << " cycles " << io::endl;
+				if (ctx->duration_returned_cfg > otawa::ipet::WCET(ctx->returned_cfg)) {
+					otawa::ipet::WCET(ctx->returned_cfg) = ctx->duration_returned_cfg;
+				}
+				otawa::ipet::TOTAL_TIME(ctx->returned_cfg) += ctx->duration_returned_cfg;
+			}
+		}
+		/*****************
+		 * BB stats
+		 *****************/
+		if (ctx->begin_of_bb) {
+			if (ctx->curr_bb) {
+				otawa::ipet::COUNT(ctx->curr_bb) += 1;
+			}
+			const int now = sstate->cycle();
+			if (ctx->pre_bb) {
+				const int duration = now - ctx->time_bb_enter;
+				// time is cumulative incl. all cache and pipeline effects
+				otawa::ipet::TOTAL_TIME(ctx->pre_bb) += duration;
+				if (duration > otawa::ipet::WCET(ctx->pre_bb)) {
+					otawa::ipet::WCET(ctx->pre_bb) = duration;
+				}
+			}
+			ctx->time_bb_enter = now;
 		}
 	}
 
@@ -302,38 +378,6 @@ public:
 				}
 			}
 		}
-	}
-
-	/**
-	 * @brief write cycle, function, offset, and so on to output
-	 */
-	void emit_trace(SimContext& ctx, otawa::Inst*curr, const string& what) const {
-		// PRINT elf, addr, cycle ...
-		elm::cout << process->program()->name() << " " << curr->address() << ": "
-			 << what << ": "
-			 << sstate->cycle() << ": ";
-
-		// ... function and offset
-		CFG* currCFG = (!ctx.callstack.empty()) ? ctx.callstack.top().cfg : NULL;
-		if (currCFG) {
-			const Address::offset_t off = curr->address() - currCFG->address();
-			elm::cout << currCFG->name() << "+" << io::hex(off) << "\t";
-		} else {
-			elm::cout << "??+??\t";
-		}
-
-		// ... assembly ...
-		elm::cout << curr;
-
-		// ... additional comments ...
-		if (curr->isCall()) {
-			elm::cout << "\t;; CALL";
-			ctx._call_pending = true;
-
-		} else if (curr->isReturn()) {
-			elm::cout << "\t;; RETURN";
-		}
-		elm::cout << io::endl;
 	}
 
 	virtual Address lowerRead(void) {
@@ -384,21 +428,9 @@ protected:
 		if (traceCache) {
 			TRACE_CACHES(workspace()) = true;
 		}
-		if (events) {
-			string strev = *events;
-			if (strev.indexOf('f') >= 0) ev_fetch = true;
-			if (strev.indexOf('d') >= 0) {
-				ev_decode = true;
-				elm::cerr << "WARN: event 'decode' not supported, yet" << io::endl;
-			}
-			if (strev.indexOf('e') >= 0) {
-				ev_exec = true;
-				elm::cerr << "WARN: event 'execute' not supported, yet" << io::endl;
-			}
-			if (strev.indexOf('c') >= 0) ev_commit = true;
-		} else {
-			ev_fetch = true;
-		}
+
+		// create contexts for events to be tracked
+		create_contexts();
 
 		// decode the CFGs and stuff
 		workspace()->require(otawa::CFG_INFO_FEATURE, props);
@@ -517,12 +549,9 @@ private:
 	option::BoolOption inlineCalls;
 	CFGInfo *cfgInfo;
 	const CFGCollection *coll;
-	bool ev_fetch;
-	bool ev_decode;
-	bool ev_exec;
-	bool ev_commit;
-	SimContext ctx_fetch;
-	SimContext ctx_commit;
+	SimContext *ctx_fetch;
+	SimContext *ctx_commit;
+	std::map<char, SimContext**> sim_contexts;
 };
 
 OTAWA_RUN(Simulator);

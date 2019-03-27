@@ -8,6 +8,7 @@
 #define OTAWA_GENSIM_GENERIC_STATE_H
 
 #include "GenericProcessor.h"
+#include "SimulatedInstruction.h"
 #include <otawa/sim/Simulator.h>
 #include <otawa/sim/State.h>
 #include <otawa/otawa.h>
@@ -25,7 +26,7 @@ class GenericState: public sim::State {
 	int _cycle;
 	GenericProcessor* processor;
 	bool running;
-	int cycle_last_cache_miss;
+	SimulatedInstruction* _terminating_inst;
 
 	// implemented in GenericSimulator.cpp
 	void step(void);
@@ -37,7 +38,7 @@ public:
 	WorkSpace* workspace() { return fw; }
 
 	GenericState(WorkSpace *framework):
-	fw(framework), _cycle(0), driver(NULL) {
+	fw(framework), _cycle(0), _terminating_inst(NULL), driver(NULL) {
 	}
 
 	GenericState(const GenericState& state):
@@ -64,17 +65,13 @@ public:
 		}
 	}
 
-	// --- MBe/hack begin
-
-	virtual void markCacheMiss(void) { ///< call just before terminateInstruction()
-		cycle_last_cache_miss = cycle();
+	virtual void setTerminatingInstruction(SimulatedInstruction* inst) {
+		_terminating_inst = inst;
 	}
 
-	virtual bool terminatingHadCacheMiss(void) { ///< SimDriver can then use this...
-		return cycle() == cycle_last_cache_miss;
+	virtual SimulatedInstruction* getTerminatingInstruction(void) const {
+		return _terminating_inst;
 	}
-
-	// --- MBe/hack end
 
 	virtual void stop(void);
 
