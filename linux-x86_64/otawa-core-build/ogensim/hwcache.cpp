@@ -294,22 +294,25 @@ HWCache::_serve_access
 (access_info_t& ret_info, hwcache_addr_t addr, unsigned char len, bool write, bool allow_update)
 {
     assert(len <= cache_config_linesize);
-    access_type_t ret1;
+
     // compute set & check alignment
     const unsigned block = addr >> cache_offsetbits;
     const unsigned offset = addr - (block << cache_offsetbits);
     const unsigned set = block % cache_config_nsets;
+
+    const bool unaligned = offset + len > cache_config_linesize;
+    trace("%c 0x%x +%d (s=%d)%s", !write ? 'R' : 'W', addr, len, set, unaligned ? " U" : "");
+
+    // first access
+    access_type_t ret1;
     ret1 = _access_set(set, block, write, allow_update);
     if (ret1 == ACCESS_OTHER) {
         _clear_retinfo(ret_info);
         _update_retinfo(ret_info, ret1);
     }
 
-    const bool unaligned = offset + len > cache_config_linesize;
-    trace("%c 0x%x +%d (s=%d)%s", !write ? 'R' : 'W', addr, len, set, unaligned ? " U" : "");
-
+    // unaligned access - another access is required
     if (unaligned) {
-        // unaligned access - another access is required
         const unsigned next_block = block + 1;
         const unsigned next_set = next_block % cache_config_nsets;
         access_type_t ret2 = _access_set(next_set, next_block, write, allow_update);

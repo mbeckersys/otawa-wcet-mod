@@ -78,6 +78,7 @@ void MemorySystem::_make_caches_icache(const hard::Cache *cc, const std::string&
 	const bool do_trace = TRACE_CACHES(sim_state->workspace());
 	const unsigned total_size = cc->cacheSize();
 	assert(total_size == cc->blockCount() * cc->blockSize());
+	assert(cc->setCount() == cc->blockCount() / cc->wayCount());
 	_inst_cache = new HWCache(sim_state, name,
 								cc->blockCount(),
 								cc->blockSize(),
