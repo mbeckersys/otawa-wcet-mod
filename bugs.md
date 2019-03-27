@@ -1,3 +1,11 @@
+# PERS cache analysis
+Is incorrect. See https://scholarbank.nus.edu.sg/bitstream/10635/22089/1/HuynhBachKhoa.pdf.
+Implements classic analysis which can underestimate the WCET by failing to see that loop 
+body can evict itself (or its header).
+Workaround: turn off PERS analysis by setting FML_NONE.
+Example: take fdct and run it through the simulator. It's a single-path program, so 
+we really see the bug here.
+
 # ndes/FDO
 
 HalfAbsInt somehow has BB24 (0x8274) in PERS set (SET/line 39, cid=1), but it's not in a loop

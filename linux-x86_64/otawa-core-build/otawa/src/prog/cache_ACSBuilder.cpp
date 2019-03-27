@@ -322,7 +322,7 @@ void ACSBuilder::configure(const PropList &props) {
 	unrolling = PSEUDO_UNROLLING(props);
 	must_entry = CACHE_ACS_MUST_ENTRY(props);
 
-	pers_entry = CACHE_ACS_PERS_ENTRY(props); ///< was: CACHE_ACS_PERS()
+	pers_entry = CACHE_ACS_PERS_ENTRY(props); ///< was: CACHE_ACS_PERS(). makes no difference.
 	if(logFor(LOG_FUN)) {
 		log << "\tlevel = " << level << io::endl;
 		log << "\tunrolling = " << unrolling << io::endl;

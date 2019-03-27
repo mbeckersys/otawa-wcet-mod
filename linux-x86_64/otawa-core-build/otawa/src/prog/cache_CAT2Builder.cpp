@@ -136,7 +136,7 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 				cache::CATEGORY(lblock) = cache::ALWAYS_MISS;
 
 			} else if (firstmiss_level != FML_NONE) {
-				// that is reached by all blocks that are still unclassified if PERS analysis is enabled
+				// MBe: this is reached by all blocks that are still unclassified if PERS analysis is enabled
 				BasicBlock *header;
 				if (LOOP_HEADER(lblock->bb())) {
 					header = lblock->bb();
