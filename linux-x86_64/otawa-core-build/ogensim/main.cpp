@@ -170,21 +170,45 @@ public:
 	 * Tracking Execution
 	 *************************/
 
+	 /*
+	  * We track basic blocks independently of the callstacks.
+	  *  - Callstacks are tracked on unprocessed CFGs, to enable call counters when virtual inlining is off
+	  *  - BBs are tracked via CFG edges as opposed to callstacks, since we want to follow virtual inlining when on
+	  *
+	  * Comment about CFG collections:
+	  *  - CFGCollection *cfgs = INVOLVED_CFGS(workspace());  ///< only sees inlined
+	  *  - CFGCollection::Iter cfg(cfgInfo)  ///< finds all cfgs as they are in the binary
+	  */
+
 	inline otawa::BasicBlock* find_next_bb(otawa::BasicBlock* curr_bb, otawa::Inst* next_inst) const {
 		if (curr_bb) {
-			otawa::BasicBlock*bb = curr_bb->getTaken();
-			if (bb && bb->firstInst() == next_inst) return bb;
+			/*
+			elm::cout << "next bb for "
+						<< curr_bb->cfg()->name() << "."
+						<< curr_bb->number()
+						<< " @" << curr_bb->address()
+						<< " starting with address " << next_inst->address()
+						<< io::endl;
+			*/
+			for(BasicBlock::OutIterator edge(curr_bb); edge; edge++) {
+				otawa::BasicBlock* cand = edge->target();
+				if (cand) {
+					if (debugVerbose)
+						elm::cout << "next bb: " << cand->address() << "?" << io::endl;
+					if (cand->firstInst() == next_inst) {
+						return cand;
+					}
+				}
+			}
 		}
-		if (curr_bb){
-			otawa::BasicBlock*bb = curr_bb->getNotTaken();
-			if (bb && bb->firstInst() == next_inst) return bb;
-		}
+
 		// still here? then maybe OTAWA is confused or we have >2 targets?
 		// scan all BBs in all CFGs
-		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
+		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());  ///< only sees inlined
 		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
 			for(CFG::BBIterator bb(cfg); bb; ++bb) {
 				if (bb->firstInst() == next_inst) {
+					elm::cout << "WARN: had lost track of BBs, recovered now." << io::endl;
 					return bb;
 				}
 			}
@@ -206,15 +230,23 @@ public:
 				ctx->callstack.push(cit);
 			}
 		}
-		// new BB begins. find it. Don't rely on callstack.
+		// new BB begins. find it. Don't rely on callstack, because it might be virtualized.
 		ctx->begin_of_bb = ctx->_endofbb_pending;
 		if (ctx->_endofbb_pending) {
 			ctx->_endofbb_pending = false;
-			otawa::BasicBlock* next_bb = find_next_bb(ctx->pre_bb, curr);  // FIXME: why pre???
+			if (debugVerbose)
+				elm::cout << ctx->name << ": next bb?" << io::endl;
+			otawa::BasicBlock* next_bb = find_next_bb(ctx->curr_bb, curr);
+			if (debugVerbose && next_bb) {
+				elm::cout << ctx->name << ": " << next_bb->cfg()->name() << "."
+							<< next_bb->number()
+							<< " @" << next_bb->address()
+							<< " begins" << io::endl;
+			}
 			ctx->pre_bb = ctx->curr_bb;
 			ctx->curr_bb = next_bb;
 		}
-		// search for upcoming end of BB and func return
+		// search for upcoming callstack changes and end of BB
 		if (curr->isCall()) {
 			ctx->_call_pending = true;
 		}
@@ -280,21 +312,21 @@ public:
 	void predecorate_cfgs(void) {
 		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
 		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
-			otawa::ipet::TOTAL_TIME(cfg) = 0;
-			otawa::ipet::WCET(cfg) = 0;
-			otawa::ipet::COUNT(cfg) = 0;
-			otawa::ipet::ICACHE_MISSES(cfg) = 0;
+			ipet::TOTAL_TIME(cfg) = 0;
+			ipet::WCET(cfg) = 0;
+			ipet::COUNT(cfg) = 0;
+			ipet::ICACHE_MISSES(cfg) = 0;
 			for(CFG::BBIterator bb(cfg); bb; ++bb) {
-				otawa::ipet::COUNT(bb) = 0;
-				otawa::ipet::TOTAL_TIME(bb) = 0;
-				//otawa::ipet::TIME(bb) = -1;
-				otawa::ipet::ICACHE_MISSES(bb) = 0;
+				ipet::COUNT(bb) = 0;
+				ipet::TOTAL_TIME(bb) = 0;
+				//ipet::TIME(bb) = -1;
+				ipet::ICACHE_MISSES(bb) = 0;
 			}
 		}
 	}
 
 	inline void annotate_cache_miss(BasicBlock *bb) {
-		otawa::ipet::ICACHE_MISSES(bb) += 1;
+		ipet::ICACHE_MISSES(bb) += 1;
 	}
 
 	/**
@@ -307,15 +339,18 @@ public:
 		if (!ctx->callstack.empty()) {
 			SimContext::callstack_item cit = ctx->callstack.top();
 			if (ctx->begin_of_func) {
-				otawa::ipet::COUNT(cit.cfg) += 1;
+				ipet::COUNT(cit.cfg) += 1;
+				if (debugVerbose)
+					elm::cout << ctx->name << ": Function " << cit.cfg->name()
+								<< " is called" << io::endl;
 			}
 			if (ctx->end_of_func) {
 				// elm::cout << "Function '" << ctx->returned_cfg->name() << "' returned after "
 				//	 << ctx->duration_returned_cfg << " cycles " << io::endl;
-				if (ctx->duration_returned_cfg > otawa::ipet::WCET(ctx->returned_cfg)) {
-					otawa::ipet::WCET(ctx->returned_cfg) = ctx->duration_returned_cfg;
+				if (ctx->duration_returned_cfg > ipet::WCET(ctx->returned_cfg)) {
+					ipet::WCET(ctx->returned_cfg) = ctx->duration_returned_cfg;
 				}
-				otawa::ipet::TOTAL_TIME(ctx->returned_cfg) += ctx->duration_returned_cfg;
+				ipet::TOTAL_TIME(ctx->returned_cfg) += ctx->duration_returned_cfg;
 			}
 		}
 		/*****************
@@ -323,15 +358,15 @@ public:
 		 *****************/
 		if (ctx->begin_of_bb) {
 			if (ctx->curr_bb) {
-				otawa::ipet::COUNT(ctx->curr_bb) += 1;
+				ipet::COUNT(ctx->curr_bb) += 1;
 			}
 			const int now = sstate->cycle();
 			if (ctx->pre_bb) {
 				const int duration = now - ctx->time_bb_enter;
 				// time is cumulative incl. all cache and pipeline effects
-				otawa::ipet::TOTAL_TIME(ctx->pre_bb) += duration;
-				if (duration > otawa::ipet::WCET(ctx->pre_bb)) {
-					otawa::ipet::WCET(ctx->pre_bb) = duration;
+				ipet::TOTAL_TIME(ctx->pre_bb) += duration;
+				if (duration > ipet::WCET(ctx->pre_bb)) {
+					ipet::WCET(ctx->pre_bb) = duration;
 				}
 			}
 			ctx->time_bb_enter = now;
@@ -339,22 +374,39 @@ public:
 	}
 
 	void rollup_bb_props(CFG* cfg) const {
-		otawa::ipet::TOTAL_TIME(cfg) = 0;
-		otawa::ipet::ICACHE_MISSES(cfg) = 0;
+		ipet::TOTAL_TIME(cfg) = 0;
+		ipet::ICACHE_MISSES(cfg) = 0;
 		for(CFG::BBIterator bb(cfg); bb; ++bb) {
-			otawa::ipet::TOTAL_TIME(cfg) += otawa::ipet::TOTAL_TIME(bb);
-			otawa::ipet::ICACHE_MISSES(cfg) += otawa::ipet::ICACHE_MISSES(bb);
+			if (ipet::TOTAL_TIME(bb) >= 0) {
+				ipet::TOTAL_TIME(cfg) += ipet::TOTAL_TIME(bb);
+				ipet::ICACHE_MISSES(cfg) += ipet::ICACHE_MISSES(bb);
+				#if 0
+					// sanity check
+					int expected_time = ipet::COUNT(bb) * bb->countInsts();
+					if (cache) {
+						const unsigned cache_penalty = 10;
+						expected_time += ipet::ICACHE_MISSES(bb) * cache_penalty;
+					}
+					if (expected_time != ipet::TOTAL_TIME(bb)) {
+						elm::cout << "WARN: " << cfg->name() << ".BB #" << bb->number() << " "
+									<< bb->address() << " might have too much time "
+									<< "(" << ipet::TOTAL_TIME(bb) << " instead of "
+									<< expected_time << ")" << io::endl;
+					}
+				#endif
+			}
 		}
-		otawa::ipet::COUNT(cfg) = otawa::ipet::COUNT(cfg->firstBB());
+		ipet::COUNT(cfg) = ipet::COUNT(cfg->firstBB());
+		if (1 == ipet::COUNT(cfg)) {
+			ipet::WCET(cfg) = ipet::TOTAL_TIME(cfg);
+		}
 	}
 
 	void check_annotations() {
 		const CFGCollection *cfgs = INVOLVED_CFGS(workspace());
 		// correct cases where return was not detected; possibly some asm tricks.
 		for(CFGCollection::Iterator cfg(cfgs); cfg; ++cfg) {
-			if (otawa::ipet::COUNT(cfg) > 0 &&
-				otawa::ipet::TOTAL_TIME(cfg) == 0)
-			{
+			if (ipet::COUNT(cfg) > 0 && ipet::TOTAL_TIME(cfg) == 0) {
 				elm::cout << "WARN: Correcting annotations of " << cfg->name() << "..." << io::endl;
 				rollup_bb_props(cfg);
 			}
@@ -364,9 +416,7 @@ public:
 	void verbose_cfg(CFG* cfg) {
 		elm::cout << "CFG " << cfg->name() <<":" << io::endl;
 		for(CFG::BBIterator bb(cfg); bb; ++bb) {
-			elm::cout << "\tBB" << bb->number() << ": "
-					<< "WCET=" << otawa::ipet::WCET(bb)
-					<< io::endl;
+			elm::cout << "\tBB" << bb->number() << ": " << "WCET=" << ipet::WCET(bb) << io::endl;
 			BasicBlock*bbb = bb;
 			const PropList& props = *bbb;
 			for(PropList::Iter prop(props); prop; prop++) {
@@ -408,6 +458,10 @@ protected:
 	virtual void work(PropList &props) throw (elm::Exception) {
 		debugVerbose = iVerboseLevel;
 
+		/*******************
+		 * Platform config
+		 *******************/
+
 		// "install" the hardware
 		if(!*proc)
 			throw elm::MessageException("no processor provided");
@@ -429,18 +483,29 @@ protected:
 			TRACE_CACHES(workspace()) = true;
 		}
 
-		// create contexts for events to be tracked
-		create_contexts();
-
-		// decode the CFGs and stuff
-		workspace()->require(otawa::CFG_INFO_FEATURE, props);
-		workspace()->require(otawa::COLLECTED_CFG_FEATURE, props);
-
 		// dump the config, if requested
 		if (dumpConfig) {
 			elm::cout << "Dumping config..." << io::endl;
 			display::ConfigOutput output;
 			output.process(workspace(), props);
+		}
+
+		// create contexts for events to be tracked
+		create_contexts();
+
+		/*******************
+		 * Get CFGs
+		 *******************/
+
+		// decode the CFGs and stuff
+		workspace()->require(otawa::CFG_INFO_FEATURE, props);
+		workspace()->require(otawa::COLLECTED_CFG_FEATURE, props);
+
+		if (inlineCalls) {
+			elm::cout << "Virtualizing CFGs (inline calls)..." << io::endl;
+			workspace()->require(VIRTUALIZED_CFG_FEATURE, props);
+			const CFGCollection *coll = INVOLVED_CFGS(workspace());
+			assert(coll->count() == 1);
 		}
 
 		coll = INVOLVED_CFGS(workspace());
@@ -453,6 +518,10 @@ protected:
 		// obtain the CFG info
 		cfgInfo = CFGInfo::ID(workspace());
 		assert(cfgInfo);
+
+		/***********
+		 * init sim
+		 ***********/
 
 		// prepare the functional simulation
 		process = workspace()->process();
@@ -479,15 +548,16 @@ protected:
 		ASSERT(start);
 		Symbol* sym = process->findSymbolAt(start->address());
 		if (sym) {
-			elm::cout << "Start at " << sym->name() << io::endl;
+			elm::cout << "Starting at " << sym->name() << io::endl;
 		} else {
 			Option<Pair<cstring,int> > info = process->getSourceLine(start->address());
+			elm::cout << "Starting at " << start->address();
 			if(info) {
 				cstring file = (*info).fst;
 				int line = (*info).snd;
-				elm::cout << "Start at " << start->address() << " (" << file << ":" << line << ")" << io::endl;
+				elm::cout << " (" << file << ":" << line << ")" << io::endl;
 			} else {
-				elm::cout << "Start at " << start->address() << " (no info)" << io::endl;
+				elm::cout << " (no info)" << io::endl;
 			}
 		}
 		exit = process->findInstAt("_exit");
@@ -509,12 +579,8 @@ protected:
 		/*********
 		 * OUTPUT
 		 *********/
-		if(inlineCalls) {
-			elm::cout << "Virtualizing CFGs (inline calls)..." << io::endl;
-
-			workspace()->require(VIRTUALIZED_CFG_FEATURE, props); // also propagates bb annotations
+		if (inlineCalls) {
 			const CFGCollection *coll = INVOLVED_CFGS(workspace());
-			assert(coll->count() == 1);
 			CFG* entry = coll->get(0);
 			rollup_bb_props(entry);
 		}

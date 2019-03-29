@@ -222,15 +222,15 @@ void CAT2Builder::processLBlockSet(otawa::CFG *cfg, LBlockSet *lbset, const hard
 			} /* of category condition test */
 		} else {
 			// this l-block is NOT the first in the cache line (for this BB).
-			// in other words, the BB is so large, that different l-blocks are
+			// in other words, the BB is so large, that its l-blocks are
 			// competing for the same cache line.
 			// Other possibility: if the BB is non-contiguous in memory,
 			// e.g., by JMP, *and* if the JMP is not "glued together" by the flow analyzer.
 			// rationale: by definition, L-blocks are subsets of BBs, only differing in their
 			// cache line.
-			// How to categorize? Depends on associativity.
+			// How to categorize? Depends on associativity. Go for safety here.
 			log << "\t\t" << lblock->address() << ": "
-												<< "suspicious l-block"
+												<< "pessimistically classified l-block"
 												<< io::endl;
 			log << "\t\tBB:" << lblock->bb() << io::endl;
 			cache::CATEGORY(lblock) = cache::NOT_CLASSIFIED;

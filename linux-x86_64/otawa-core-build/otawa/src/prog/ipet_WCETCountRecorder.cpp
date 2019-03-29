@@ -74,7 +74,7 @@ void WCETCountRecorder::processWorkSpace(WorkSpace *fw) {
 				}
 			}
 		} else {
-			_icache = NULL; // to avoid any back-annotation
+			_icache = NULL; // to avoid any back-annotation of cache stats
 			log << "\tCache present, but no cache analysis done" << io::endl;
 		}
 	}
@@ -121,11 +121,21 @@ void WCETCountRecorder::processBB(WorkSpace *fw, CFG *cfg, BasicBlock *bb) {
 	if(var) {
 		COUNT(bb) = (int)system->valueOf(var);
 		// also sum up overall contrib to WCET
-		TOTAL_TIME(bb) = COUNT(bb) * TIME(bb);
-		if (_icache) {
-			int cache_time = ICACHE_MISSES(bb) * _icache->missPenalty();
+		TOTAL_TIME(bb) = COUNT(bb) >= 0 ? COUNT(bb) * TIME(bb) : 0;
+		if (_icache && ICACHE_MISSES(bb) >=0) {
+			const int cache_time = ICACHE_MISSES(bb) * _icache->missPenalty();
 			TOTAL_TIME(bb) += cache_time;
 		}
+		if(logFor(LOG_BB))
+				log << "\t\tBB " << bb->number()
+					<< " COUNT=" << COUNT(bb)
+					<< " TOTAL_TIME=" << TOTAL_TIME(bb) << ", "
+					<< "\n";
+		ASSERT(TOTAL_TIME(bb) >= 0);
+
+	} else {
+		COUNT(bb) = -1;
+		TOTAL_TIME(bb) = -1;
 	}
 
 	// Record out var count
