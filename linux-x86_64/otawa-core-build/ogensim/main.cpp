@@ -2,7 +2,8 @@
  * main.cpp
  *
  *  Created on: 27 nov. 2014
- *      Author: casse
+ *      Author: casse, Martin Becker
+ * FIXME: ignore flow constraints, because we don't need it for sim.
  */
 #include <otawa/app/Application.h>
 #include <elm/option/ValueOption.h>
@@ -22,6 +23,7 @@
 #include "GenericState.h"
 #include "SimContext.h"
 
+#include <unistd.h>
 #include <set>
 #include <map>
 
@@ -42,15 +44,16 @@ public:
 		Application("ogensim", Version(1, 0, 2)),
 		state(0),
 		process(0),
-		start(0),
+		startInst(0),
 		current(0),
-		exit(0),
+		exitInst(0),
 		proc(option::ValueOption<string>::Make(this).cmd("-p").description("Processor description.")),
 		cache(option::ValueOption<string>::Make(this).cmd("-c").description("Cache description.")),
 		mem(option::ValueOption<string>::Make(*this).cmd("-m").cmd("--memory").description("memory description for simulation")),
 		events(option::ValueOption<string>::Make(*this).cmd("-e").cmd("--event").description("which event to trace: 2^{f,d,e,c}")),
 		iVerboseLevel(option::ValueOption<int>::Make(*this).cmd("-vl").cmd("--verboseLevel").description("verbose level for simulation")),
-		dumpCfg(option::ValueOption<string>::Make(*this).cmd("-o").cmd("--dumpCfg").description("output annotated CFGs to given file")),
+		dumpCfg(option::ValueOption<string>::Make(*this).cmd("-o").cmd("--dumpCfg").description("output annotated CFGs of chosen function to given file")),
+		dumpFcn(option::ValueOption<string>::Make(*this).cmd("-O").cmd("--dumpFcn").description("Only dump CFG for given function and callees (used with --dumpCfg)")),
 		traceCache(*this, 't', "traceCache", "enable cache protocol", false),
 		dumpConfig(*this, 'd', "dumpConfig", "write platform config to HTML file", false),
 		inlineCalls(*this, 'i', "inlineCalls", "Inline the function calls when dumping CFG (not affecting simulation).", false),
@@ -123,10 +126,10 @@ public:
 
 	virtual Inst *nextInstruction (sim::State &state, Inst *inst) {
 		if(inst == NULL) { // first instruction
-			current = start;
-			return start;
+			current = startInst;
+			return startInst;
 		}
-		if (current == exit) return NULL;
+		if (current == exitInst) return NULL;
 
 		if (ctx_fetch) {
 			track_context(ctx_fetch, inst);
@@ -498,8 +501,20 @@ protected:
 		 *******************/
 
 		// decode the CFGs and stuff
-		workspace()->require(otawa::CFG_INFO_FEATURE, props);
-		workspace()->require(otawa::COLLECTED_CFG_FEATURE, props);
+		workspace()->require(otawa::CFG_INFO_FEATURE, props);  ///< builds CFGs
+		cfgInfo = CFGInfo::ID(workspace());
+		assert(cfgInfo);
+		if (dumpFcn) {
+			// non-default entry requested (important for inlining)
+			CFG* cfg_entry = cfgInfo->findCFG(dumpFcn);
+			if (!cfg_entry) {
+				elm::cerr << "ERROR: dumpFcn function '" << dumpFcn << "' not found!" << io::endl;
+				exit(1);
+			}
+			elm::cout << "INFO: dumpFcn function=" << cfg_entry->name() << io::endl;
+			ENTRY_CFG(props) = cfg_entry;
+		}
+		workspace()->require(otawa::COLLECTED_CFG_FEATURE, props);  ///< creates INVOLVED_CFGs
 
 		if (inlineCalls) {
 			elm::cout << "Virtualizing CFGs (inline calls)..." << io::endl;
@@ -514,10 +529,6 @@ protected:
 		if (dumpCfg) {
 			predecorate_cfgs();
 		}
-
-		// obtain the CFG info
-		cfgInfo = CFGInfo::ID(workspace());
-		assert(cfgInfo);
 
 		/***********
 		 * init sim
@@ -542,16 +553,16 @@ protected:
 		/*************
 		 * BEGIN/EXIT
 		 *************/
-		// start() is implemented in arm.cpp, which returns the start instruction
-		// the start instruction is identified when loading the binary file
-		start = process->start();
-		ASSERT(start);
-		Symbol* sym = process->findSymbolAt(start->address());
+		// start() is implemented in arm.cpp, which returns the startInst instruction
+		// the startInst instruction is identified when loading the binary file
+		startInst = process->start();
+		ASSERT(startInst);
+		Symbol* sym = process->findSymbolAt(startInst->address());
 		if (sym) {
 			elm::cout << "Starting at " << sym->name() << io::endl;
 		} else {
-			Option<Pair<cstring,int> > info = process->getSourceLine(start->address());
-			elm::cout << "Starting at " << start->address();
+			Option<Pair<cstring,int> > info = process->getSourceLine(startInst->address());
+			elm::cout << "Starting at " << startInst->address();
 			if(info) {
 				cstring file = (*info).fst;
 				int line = (*info).snd;
@@ -560,10 +571,10 @@ protected:
 				elm::cout << " (no info)" << io::endl;
 			}
 		}
-		exit = process->findInstAt("_exit");
-		if(!exit)
+		exitInst = process->findInstAt("_exit");
+		if(!exitInst)
 			throw elm::MessageException("no _exit label to stop simulation");
-		elm::cout << "Exiting at " << exit << io::endl;
+		elm::cout << "Exiting at " << exitInst << io::endl;
 
 		//current = process->findInstAt("main");
 		// someone can make use of this to decide where the heap starts
@@ -581,8 +592,8 @@ protected:
 		 *********/
 		if (inlineCalls) {
 			const CFGCollection *coll = INVOLVED_CFGS(workspace());
-			CFG* entry = coll->get(0);
-			rollup_bb_props(entry);
+			CFG* dumpFcn = coll->get(0);
+			rollup_bb_props(dumpFcn);
 		}
 
 		if (dumpCfg) {
@@ -603,16 +614,19 @@ private:
 	SimState *state;
 	sim::State *sstate;
 	Process *process;
-	Inst *start, *current, *exit;
+	Inst *startInst, *current, *exitInst;
+
 	option::ValueOption<string> proc;
 	option::ValueOption<string> cache;
 	option::ValueOption<string> mem;
 	option::ValueOption<string> events;
 	option::ValueOption<int> iVerboseLevel;
 	option::ValueOption<string> dumpCfg;
+	option::ValueOption<string> dumpFcn;
 	option::BoolOption traceCache;
 	option::BoolOption dumpConfig;
 	option::BoolOption inlineCalls;
+
 	CFGInfo *cfgInfo;
 	const CFGCollection *coll;
 	SimContext *ctx_fetch;
