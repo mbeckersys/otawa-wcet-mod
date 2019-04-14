@@ -176,7 +176,8 @@ class HWCache {
         void fprint_stats(FILE* fp);
         void fprint_set(FILE* fp, unsigned set) const;
 
-        void Reset();
+        void Reset(void); // simulates hardware reset
+        void Clear(void); // evict/flush everything
 
         void SetCcr(unsigned char);
         unsigned char GetCcr() { return ccr; }

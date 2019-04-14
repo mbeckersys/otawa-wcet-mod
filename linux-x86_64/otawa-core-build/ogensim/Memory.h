@@ -76,7 +76,8 @@ public:
 
 	SC_HAS_PROCESS(MemorySystem);
 	void action(void);
-	void reset(void);
+	void reset(void); // simulate HW reset
+	void clear(void); // drop buffers and caches
 
 private:
 	/***********

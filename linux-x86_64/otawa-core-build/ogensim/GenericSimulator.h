@@ -13,6 +13,8 @@
 
 namespace otawa { namespace gensim {
 
+class GenericState;
+
 // GenericSimulator class
 class GenericSimulator: public sim::Simulator {
 public:
@@ -21,6 +23,12 @@ public:
 	// Simulator overload
 	sim::State *instantiate(WorkSpace *fw,
 		const PropList& props = PropList::EMPTY);
+
+	void clearCaches(void);
+
+private:
+	static bool initialized;
+	static GenericState* state;
 };
 
 extern Identifier<int> DEGREE;

@@ -55,6 +55,7 @@ public:
 		dumpCfg(option::ValueOption<string>::Make(*this).cmd("-o").cmd("--dumpCfg").description("output annotated CFGs of chosen function to given file")),
 		dumpFcn(option::ValueOption<string>::Make(*this).cmd("-O").cmd("--dumpFcn").description("Only dump CFG for given function and callees (used with --dumpCfg)")),
 		traceCache(*this, 't', "traceCache", "enable cache protocol", false),
+		clearCacheOn(option::ValueOption<string>::Make(*this).cmd("-C").cmd("--clearCacheOn").description("Clear the caches when entering given functions")),
 		dumpConfig(*this, 'd', "dumpConfig", "write platform config to HTML file", false),
 		inlineCalls(*this, 'i', "inlineCalls", "Inline the function calls when dumping CFG (not affecting simulation).", false),
 		cfgInfo(0),
@@ -120,10 +121,46 @@ public:
 		}
 	}
 
+	void get_clearCachePoints(void) {
+		const CFGCollection *coll = INVOLVED_CFGS(workspace());
+		string list = clearCacheOn;
+		int pos = 0, lastpos = 0;
+		while (pos >= 0) {
+			pos = list.indexOf(',', lastpos);
+			int tail;
+			if (pos < 0) {
+				tail = list.length();
+			} else {
+				tail = pos;
+			}
+			const string fcn = list.substring(lastpos, tail-lastpos).trim();
+
+			bool found = false;
+			for (CFGCollection::Iterator cfg(coll); cfg; ++cfg) {
+				if (fcn == cfg->name()) {
+					address_t addr = cfg->address();
+					clearCachePoints.insert(addr);
+					elm::cout << "INFO: clearing cache when '" << fcn << "' ("
+								<< addr << ") is entered" << io::endl;
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				elm::cout << "WARN: cannot clear cache when '" << fcn << "' is entered (not found)"
+							<< io::endl;
+			}
+			lastpos = pos+1;
+		}
+	}
+
 	/*************************
 	 * Simulation control
 	 *************************/
 
+	/**
+	 * @brief wraps the functional simulator
+	 */
 	virtual Inst *nextInstruction (sim::State &state, Inst *inst) {
 		if(inst == NULL) { // first instruction
 			current = startInst;
@@ -139,6 +176,7 @@ public:
 
 		// triggers to functionally execute the instruction to get the next
 		current = this->state->execute(current); // for arm: otawa/src/arm2/arm.cpp
+		if (!clearCachePoints.empty()) check_clearCacheOn(current);
 		return current;
 	}
 
@@ -167,6 +205,15 @@ public:
 
 		if (ctx_commit->emit_trace) emit_trace(ctx_commit, inst);
 		if (ctx_commit->annotate_cfg) annotate_cfg(ctx_commit, inst);
+	}
+
+	/**
+	 * @brief check whether user requested to clear cache for this insn
+	 */
+	inline void check_clearCacheOn(Inst* insn) {
+		if (clearCachePoints.find(insn->address()) != clearCachePoints.end()) {
+			gsim.clearCaches();
+		}
 	}
 
 	/*************************
@@ -516,6 +563,10 @@ protected:
 		}
 		workspace()->require(otawa::COLLECTED_CFG_FEATURE, props);  ///< creates INVOLVED_CFGs
 
+		if (clearCacheOn) {
+			get_clearCachePoints();
+		}
+
 		if (inlineCalls) {
 			elm::cout << "Virtualizing CFGs (inline calls)..." << io::endl;
 			workspace()->require(VIRTUALIZED_CFG_FEATURE, props);
@@ -545,14 +596,13 @@ protected:
 
 		// prepare the *temporal* simulation
 		// which creates the systemC modules
-		gensim::GenericSimulator gsim;
-
 		// this returns a GenericState, which extends from the sim::State
 		sstate = gsim.instantiate(workspace());
 
 		/*************
 		 * BEGIN/EXIT
 		 *************/
+
 		// start() is implemented in arm.cpp, which returns the startInst instruction
 		// the startInst instruction is identified when loading the binary file
 		startInst = process->start();
@@ -611,6 +661,7 @@ protected:
 	}
 
 private:
+	gensim::GenericSimulator gsim;
 	SimState *state;
 	sim::State *sstate;
 	Process *process;
@@ -624,6 +675,7 @@ private:
 	option::ValueOption<string> dumpCfg;
 	option::ValueOption<string> dumpFcn;
 	option::BoolOption traceCache;
+	option::ValueOption<string> clearCacheOn;
 	option::BoolOption dumpConfig;
 	option::BoolOption inlineCalls;
 
@@ -632,6 +684,7 @@ private:
 	SimContext *ctx_fetch;
 	SimContext *ctx_commit;
 	std::map<char, SimContext**> sim_contexts;
+	std::set<otawa::address_t> clearCachePoints;
 };
 
 OTAWA_RUN(Simulator);

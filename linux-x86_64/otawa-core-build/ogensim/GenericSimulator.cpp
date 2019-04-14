@@ -56,6 +56,9 @@ Identifier<int> INSTRUCTION_TIME("otawa::gensim::instruction_time");
  */
 
 
+bool GenericSimulator::initialized = false;
+GenericState* GenericSimulator::state = NULL;
+
 /**
  * Build an Generic simulator.
  */
@@ -66,8 +69,6 @@ GenericSimulator::GenericSimulator(void)
 /**
  */
 sim::State *GenericSimulator::instantiate(WorkSpace *fw, const PropList& props) {
-	static GenericState* state;
-	static bool initialized = false;
 	if(!initialized){
 		state = new GenericState(fw);
 		state->init();
@@ -76,6 +77,15 @@ sim::State *GenericSimulator::instantiate(WorkSpace *fw, const PropList& props) 
 	assert(fw == state->fw);
 	return state;
 }
+
+void GenericSimulator::clearCaches(void) {
+	state->clearCaches();
+}
+
+void GenericState::clearCaches(void) {
+	processor->clearCaches();
+}
+
 
 void GenericState::init() {
 	ProcessorConfiguration conf;

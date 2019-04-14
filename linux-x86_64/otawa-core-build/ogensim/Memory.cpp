@@ -211,7 +211,12 @@ void MemorySystem::action() {
 	processDataPort();
 }
 
-void MemorySystem::reset() {
+void MemorySystem::clear(void) {
+	if (_inst_cache) _inst_cache->Clear();
+	if (_data_cache) _data_cache->Clear();
+}
+
+void MemorySystem::reset(void) {
 	if (_inst_cache) _inst_cache->Reset();
 	if (_data_cache) _data_cache->Reset();
 }

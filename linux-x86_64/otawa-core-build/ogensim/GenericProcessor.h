@@ -69,7 +69,9 @@ public:
   		const hard::CacheConfiguration *cache);
   	~GenericProcessor();
 
-    void printStats(void) const;
+
+	void clearCaches(void);
+	void printStats(void) const;
 
 private:
 

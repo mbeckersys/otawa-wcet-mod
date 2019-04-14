@@ -320,6 +320,10 @@ void GenericProcessor::printStats(void) const {
     memory->printStats();
 }
 
+void GenericProcessor::clearCaches(void) {
+	memory->clear();
+}
+
 void GenericProcessor::step() {
 	TRACE(elm::cout << "----- GenericProcessor->Step() : rising edge \n";)
 	clock.write(1);

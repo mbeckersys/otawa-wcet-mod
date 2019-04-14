@@ -61,7 +61,11 @@ HWCache::HWCache(GenericState *gen_state,
     _init_cache_model();
 }
 
-void HWCache::Reset() {
+void HWCache::Clear(void) {
+    _clear_cache();
+}
+
+void HWCache::Reset(void) {
     cpuHoldCycles = 0;
 
     // by default: cache ON
@@ -99,7 +103,7 @@ void HWCache::_init_cache_model(void) {
     cache_model_sets = new cache_set_t[cache_config_nsets];
     cache_model_lines = new cache_entry_t[cache_config_nsets * (cache_config_assoc + 1)];
     cache_entry_t* ce = cache_model_lines;
-    for (int k = 0; k < cache_config_nsets; ++k, ce += (cache_config_assoc + 1)) {
+    for (unsigned k = 0; k < cache_config_nsets; ++k, ce += (cache_config_assoc + 1)) {
         cache_model_sets[k].begin = ce;
     }
     _clear_cache();
@@ -121,7 +125,7 @@ std::string HWCache::get_stats(void)
 {
     std::stringstream ss;
     unsigned lines_used = 0;
-    for (int set = 0; set < cache_config_nsets; ++set) {
+    for (unsigned set = 0; set < cache_config_nsets; ++set) {
         unsigned ne = cache_model_sets[set].num_entries;
         lines_used += ne;
     }
@@ -148,7 +152,7 @@ void HWCache::fprint_set(FILE* fp, unsigned set) const {
     fprintf(fp, "SET %d:", set);
     cache_entry_t* oldest_item = cache_model_sets[set].begin;  ///< begin is the dummy item
     unsigned int size = 0;
-    for (int k = 0; k < cache_config_assoc; ++k) {
+    for (unsigned k = 0; k < cache_config_assoc; ++k) {
         if (NULL == oldest_item->next) break;
         size++;
         oldest_item = oldest_item->next;
@@ -341,7 +345,7 @@ HWCache::access_type_t HWCache::access
 }
 
 void HWCache::_clear_cache(void) {
-    for (int k = 0; k < cache_config_nsets; ++k) {
+    for (unsigned k = 0; k < cache_config_nsets; ++k) {
         cache_model_sets[k].num_entries = 0;
     }
     // each set has one leading dummy entry

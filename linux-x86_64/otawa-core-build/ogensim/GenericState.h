@@ -73,6 +73,8 @@ public:
 		return _terminating_inst;
 	}
 
+	virtual void clearCaches(void);
+
 	virtual void stop(void);
 
 	virtual void flush(void) {
