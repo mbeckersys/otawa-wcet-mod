@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>OTAWA Development Manual</title>
+	<meta name="AUTHOR" content="H. Cassé &lt;casse@irit.fr&gt;">
+	<meta name="GENERATOR" content="Thot - HTML">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="dev-imports/../css/manual.css">
+</head>
+<body>
+<div class="main">
+<div class="header">
+	<div class="title">OTAWA Development Manual</div>
+	<div class="authors"><a href="mailto:casse@irit.fr">H. Cassé </a></div>
+</div><div class="toc">
+<h1><a name="toc">Content</name></h1>
+  <ul class="toc">
+  <li>
+  <a href="dev-0.html">1  Script Development  </a>
+  </li>
+  <li>
+  <a href="dev-1.html">2  Development of Loader  </a>
+  </li>
+  <li>
+  <a href="dev-2.html">3  Analyzer Development  </a>
+  </li>
+  <li>
+  <a href="dev-3.html">4  ILP Solver Development  </a>
+  </li>
+  </ul>
+</div>
+<div class="page">
+<p>
+<a href="http://www.otawa.fr">OTAWA</a> is dedicated to the development and experimentation of Worst Case Execution Time (WCET) computation methods. OTAWA is a framework composed of a main library, <i>libotawa</i>, with several sub-libraries and plugins that may be automatically invoked by <i>libotawa</i>. This makes the framework very versatile and easy to extend. </p>
+<p>
+The goal of this manual is mainly to describe how extensions can be developed for OTAWA.  The following extensions are described : </p>
+<ul >
+<li><p>
+ <i> scripts</i>: to provide a new computation methods or adaptation to new micro-architectures (usually matching a specific microprocessor model). </p>
+</li>
+<li><p>
+ <i>loaders</i>: to adapt a new Instruction Set Architecture (ISA), </p>
+</li>
+<li><p>
+ <i>analyzers</i> (or code processor in OTAWA terminology): to provide new or more specific analyzes,  </p>
+</li>
+<li><p>
+ <i>ilp solvers</i>: to connect OTAWA with a new solver, </p>
+</li>
+</ul>
+<p>
+Before reading this manual, it is advised to master the OTAWA framework whose details are given in the <a href="../manua/manual.html">OTAWA manual</a>. It is also a good idea to have an access to the API documentation (also called autodoc): prefer the up-to-date auto-documentation delivered with your OTAWA package although this documentation may be also obtained from <a href="http://www.otawa.fr/doku/autodoc">here</a>. </p>
+<p>
+For any problem or question, you may ask the OTAWA developers from the site <a href="http://www.otawa.fr">http://www.otawa.fr</a>. </p>
+</div>
+</div>
+</body>
+</html>

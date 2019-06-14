@@ -1,0 +1,6 @@
+/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/gel/src/util.c:554: warning: argument 'hash' of command @param is not found in the argument list of gel_hash_enum_end(gel_hash_enum_t *en, gel_hash_t htab)
+/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/gel/src/util.c:554: warning: The following parameters of gel_hash_enum_end(gel_hash_enum_t *en, gel_hash_t htab) are not documented:
+  parameter 'htab'
+/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/gel/src/util.c:554: warning: argument 'hash' of command @param is not found in the argument list of gel_hash_enum_end(gel_hash_enum_t *en, gel_hash_t htab)
+/home/becker/async/WCET_gitlab/otawa/linux-x86_64/otawa-core-build/gel/src/util.c:554: warning: The following parameters of gel_hash_enum_end(gel_hash_enum_t *en, gel_hash_t htab) are not documented:
+  parameter 'htab'

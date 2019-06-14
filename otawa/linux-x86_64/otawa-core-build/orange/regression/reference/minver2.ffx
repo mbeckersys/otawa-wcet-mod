@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="71" source="originaux/minver2.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)">
+            <loop loopId="2" line="72" source="originaux/minver2.c" exact="true" maxcount="3" totalcount="9" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)*partieEntiereInf((3-EPSILONINT-0)/1+1)">
+            </loop>
+        </loop>
+        <call name="minver" numcall="1" line="75" source="originaux/minver2.c" executed="true" extern="false">
+            <function name="minver">
+                <conditional id="IF-5"> <condition varcond="IF-5" line="114" source="originaux/minver2.c" isexecuted="true" expcond="3&lt;2||3&gt;500||1.0e-6&lt;=0.0" expcondinit="row&lt;2||row&gt;500||eps_0&lt;=0.0"> </condition>
+                    <case cond="1" executed="false" line="114" source="originaux/minver2.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-6"> <condition varcond="IF-6" line="117" source="originaux/minver2.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0___0"> </condition>
+                    <case cond="1" executed="true" line="115" source="originaux/minver2.c">
+                        <loop loopId="8" line="116" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)">
+                        </loop>
+                        <loop loopId="9" line="117" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)">
+                            <loop loopId="10" line="120" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="6" maxexpr="MAX(bIt-9,partieEntiereInf((3-EPSILONINT-0)/1+1)-1,partieEntiereInf((3-EPSILONINT-(0+1*(bIt-9-1+1)))/1+1))" totalexpr="SYGMA(bIt-9,partieEntiereInf((3-EPSILONINT-0)/1+1)-1,partieEntiereInf((3-EPSILONINT-(0+1*(bIt-9-1+1)))/1+1))">
+                                <call name="fabs" numcall="3" line="122" source="originaux/minver2.c" executed="true" extern="false">
+                                    <function name="fabs">
+                                        <conditional id="IF-1"> <condition varcond="IF-1" line="59" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                            <case cond="1" executed="true" line="59" source="originaux/minver2.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="60" source="originaux/minver2.c">
+                                            </case>
+                                        </conditional>
+                                    </function>
+                                </call>
+                                <conditional id="IF-7"> <condition varcond="IF-7" line="123" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="w_0&gt;wmax"> </condition>
+                                    <case cond="1" executed="true" line="123" source="originaux/minver2.c">
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                            </loop>
+                            <call name="fabs" numcall="4" line="126" source="originaux/minver2.c" executed="true" extern="false">
+                                <function name="fabs">
+                                    <conditional id="IF-1"> <condition varcond="IF-1" line="59" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                        <case cond="1" executed="true" line="59" source="originaux/minver2.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="60" source="originaux/minver2.c">
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <conditional id="IF-8"> <condition varcond="IF-8" line="127" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="api&lt;=eps_0"> </condition>
+                                <case cond="1" executed="true" line="127" source="originaux/minver2.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-9"> <condition varcond="IF-9" line="130" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___0"> </condition>
+                                <case cond="1" executed="true" line="128" source="originaux/minver2.c">
+                                    <conditional id="IF-10"> <condition varcond="IF-10" line="131" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="r!=k_0"> </condition>
+                                        <case cond="1" executed="true" line="133" source="originaux/minver2.c">
+                                            <loop loopId="11" line="137" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="9" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)*partieEntiereInf((3-EPSILONINT-0)/1+1)">
+                                            </loop>
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <loop loopId="12" line="146" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="9" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)*partieEntiereInf((3-EPSILONINT-0)/1+1)">
+                                    </loop>
+                                    <loop loopId="13" line="147" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="9" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)*partieEntiereInf((3-EPSILONINT-0)/1+1)">
+                                        <conditional id="IF-11"> <condition varcond="IF-11" line="149" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="i4!=k_0"> </condition>
+                                            <case cond="1" executed="true" line="151" source="originaux/minver2.c">
+                                                <conditional id="IF-12"> <condition varcond="IF-12" line="154" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="w_0!=0.0"> </condition>
+                                                    <case cond="1" executed="true" line="156" source="originaux/minver2.c">
+                                                        <loop loopId="14" line="156" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="27" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)*(partieEntiereInf((3-EPSILONINT-0)/1+1)*partieEntiereInf((3-EPSILONINT-0)/1+1))">
+                                                            <conditional id="IF-13"> <condition varcond="IF-13" line="157" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="j2!=k_0"> </condition>
+                                                                <case cond="1" executed="true" line="157" source="originaux/minver2.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" >
+                                                                </case>
+                                                            </conditional>
+                                                        </loop>
+                                                    </case>
+                                                    <case cond="0" executed="true" >
+                                                    </case>
+                                                </conditional>
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </loop>
+                        <conditional id="IF-14"> <condition varcond="IF-14" line="165" source="originaux/minver2.c" isexecuted="true" expcond="!SET(ABSTRACTINTER(0,SET(0,0)),)" expcondinit="!__tmp_0___0"> </condition>
+                            <case cond="1" executed="true" line="166" source="originaux/minver2.c">
+                                <loop loopId="15" line="166" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)">
+                                    <loop loopId="16" line="168" source="originaux/minver2.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                        <conditional id="IF-15"> <condition varcond="IF-15" line="171" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="k_0==i5"> </condition>
+                                            <case cond="1" executed="true" line="171" source="originaux/minver2.c">
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                        <conditional id="IF-16"> <condition varcond="IF-16" line="172" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="!__tmp_1__"> </condition>
+                                            <case cond="1" executed="true" line="172" source="originaux/minver2.c">
+                                                <loop loopId="17" line="175" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="NOCOMP" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="NODEF">
+                                                </loop>
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                </loop>
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-17"> <condition varcond="IF-17" line="187" source="originaux/minver2.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___0"> </condition>
+                    <case cond="1" executed="true" line="188" source="originaux/minver2.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <loop loopId="3" line="76" source="originaux/minver2.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)">
+            <loop loopId="4" line="77" source="originaux/minver2.c" exact="true" maxcount="3" totalcount="9" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)*partieEntiereInf((3-EPSILONINT-0)/1+1)">
+            </loop>
+        </loop>
+        <call name="mmul" numcall="2" line="80" source="originaux/minver2.c" executed="true" extern="false">
+            <function name="mmul">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="92" source="originaux/minver2.c" isexecuted="true" expcond="3&lt;1||3&lt;1||3&lt;1||3!=3" expcondinit="row_c&lt;1||row_b&lt;1||col_c&lt;1||col_a!=row_b"> </condition>
+                    <case cond="1" executed="false" line="92" source="originaux/minver2.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-3"> <condition varcond="IF-3" line="95" source="originaux/minver2.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="93" source="originaux/minver2.c">
+                        <loop loopId="5" line="93" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)">
+                            <loop loopId="6" line="95" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="9" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)*partieEntiereInf((3-EPSILONINT-0)/1+1)">
+                                <loop loopId="7" line="98" source="originaux/minver2.c" exact="false" maxcount="3" totalcount="27" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)*(partieEntiereInf((3-EPSILONINT-0)/1+1)*partieEntiereInf((3-EPSILONINT-0)/1+1))">
+                                </loop>
+                            </loop>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-4"> <condition varcond="IF-4" line="103" source="originaux/minver2.c" isexecuted="true" expcond="!ABSTRACTINTER(0,SET(0,0))" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="104" source="originaux/minver2.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

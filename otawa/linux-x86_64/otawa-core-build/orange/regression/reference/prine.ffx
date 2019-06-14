@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="prine" numcall="1" line="24" source="originaux/prine.c" executed="true" extern="false">
+            <function name="prine">
+                <conditional id="IF-1"> <condition varcond="IF-1" line="8" source="originaux/prine.c" isexecuted="true" expcond="513239%2==0" expcondinit="n%2==0"> </condition>
+                    <case cond="1" executed="false" line="8" source="originaux/prine.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-2"> <condition varcond="IF-2" line="11" source="originaux/prine.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="10" source="originaux/prine.c">
+                        <loop loopId="1" line="10" source="originaux/prine.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="12" source="originaux/prine.c" isexecuted="true" expcond="" expcondinit="i%n==0"> </condition>
+                                <case cond="1" executed="true" line="12" source="originaux/prine.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-4"> <condition varcond="IF-4" line="14" source="originaux/prine.c" isexecuted="true" expcond="!SET(ABSTRACTINTER(0,SET(0,0)),)" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="15" source="originaux/prine.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <call name="prine" numcall="2" line="25" source="originaux/prine.c" executed="true" extern="false">
+            <function name="prine">
+                <conditional id="IF-1"> <condition varcond="IF-1" line="8" source="originaux/prine.c" isexecuted="true" expcond="21649%2==0" expcondinit="n%2==0"> </condition>
+                    <case cond="1" executed="false" line="8" source="originaux/prine.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-2"> <condition varcond="IF-2" line="11" source="originaux/prine.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="10" source="originaux/prine.c">
+                        <loop loopId="1" line="10" source="originaux/prine.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                            <conditional id="IF-3"> <condition varcond="IF-3" line="12" source="originaux/prine.c" isexecuted="true" expcond="" expcondinit="i%n==0"> </condition>
+                                <case cond="1" executed="true" line="12" source="originaux/prine.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-4"> <condition varcond="IF-4" line="14" source="originaux/prine.c" isexecuted="true" expcond="!SET(ABSTRACTINTER(0,SET(0,0)),)" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="15" source="originaux/prine.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

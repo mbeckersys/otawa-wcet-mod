@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="5" source="calipso/conf2.c" exact="true" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)">
+            <loop loopId="2" line="8" source="calipso/conf2.c" exact="false" maxcount="10" totalcount="55" maxexpr="MAX(bIt-1,partieEntiereInf((10-EPSILON-0)/1+1)-1,partieEntiereInf((10-(0+1*(bIt-1-1+1)+1))/1+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((10-EPSILON-0)/1+1)-1,partieEntiereInf((10-(0+1*(bIt-1-1+1)+1))/1+1))">
+                <loop loopId="3" line="11" source="calipso/conf2.c" exact="false" maxcount="5" totalcount="275" maxexpr="MAX(bIt-1,partieEntiereInf((10-EPSILON-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-0)/2+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((10-EPSILON-0)/1+1)-1,partieEntiereInf((10-(0+1*(bIt-1-1+1)+1))/1+1)*partieEntiereInf((0+1*(bIt-1-1+1)-0)/2+1))">
+                </loop>
+            </loop>
+        </loop>
+        <loop loopId="4" line="15" source="calipso/conf2.c" exact="true" maxcount="19" totalcount="19" maxexpr="partieEntiereInf((2*(0+1*(9-1+1))-0)/1+1)" totalexpr="partieEntiereInf((2*(0+1*(9-1+1))-0)/1+1)">
+        </loop>
+        <loop loopId="5" line="20" source="calipso/conf2.c" exact="true" maxcount="19" totalcount="19" maxexpr="partieEntiereInf((0-2*(0+1*(9-1+1)))/-1+1)" totalexpr="partieEntiereInf((0-2*(0+1*(9-1+1)))/-1+1)">
+        </loop>
+    </function>
+</flowfacts>
+

@@ -1,0 +1,7 @@
+#### Façon d'effectuer les tests par le passé.  ####
+
+lancer le script
+faire un grep des lignes  total de tous les ffx obtenus.
+Comparer avec les résultats précédents
+
+~/autresTests/analyses/alltest$ grep total *.ffx > resall

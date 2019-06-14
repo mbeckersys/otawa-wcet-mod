@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="105" source="originaux/lcdnum.c" exact="true" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)">
+            <conditional id="IF-48"> <condition varcond="IF-48" line="111" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="i&lt;5"> </condition>
+                <case cond="1" executed="true" line="115" source="originaux/lcdnum.c">
+                    <call name="num_to_lcd" numcall="1" line="117" source="originaux/lcdnum.c" executed="true" extern="false">
+                        <function name="num_to_lcd">
+                            <conditional id="IF-1"> <condition varcond="IF-1" line="47" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x00"> </condition>
+                                <case cond="1" executed="true" line="48" source="originaux/lcdnum.c">
+                                </case>
+                                <case cond="0" executed="true" line="51" source="originaux/lcdnum.c">
+                                    <conditional id="IF-2"> <condition varcond="IF-2" line="51" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x01"> </condition>
+                                        <case cond="1" executed="true" line="52" source="originaux/lcdnum.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="55" source="originaux/lcdnum.c">
+                                            <conditional id="IF-3"> <condition varcond="IF-3" line="55" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x02"> </condition>
+                                                <case cond="1" executed="true" line="56" source="originaux/lcdnum.c">
+                                                </case>
+                                                <case cond="0" executed="true" line="59" source="originaux/lcdnum.c">
+                                                    <conditional id="IF-4"> <condition varcond="IF-4" line="59" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x03"> </condition>
+                                                        <case cond="1" executed="true" line="60" source="originaux/lcdnum.c">
+                                                        </case>
+                                                        <case cond="0" executed="true" line="63" source="originaux/lcdnum.c">
+                                                            <conditional id="IF-5"> <condition varcond="IF-5" line="63" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x04"> </condition>
+                                                                <case cond="1" executed="true" line="64" source="originaux/lcdnum.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" line="67" source="originaux/lcdnum.c">
+                                                                    <conditional id="IF-6"> <condition varcond="IF-6" line="67" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x05"> </condition>
+                                                                        <case cond="1" executed="true" line="68" source="originaux/lcdnum.c">
+                                                                        </case>
+                                                                        <case cond="0" executed="true" line="71" source="originaux/lcdnum.c">
+                                                                            <conditional id="IF-7"> <condition varcond="IF-7" line="71" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x06"> </condition>
+                                                                                <case cond="1" executed="true" line="72" source="originaux/lcdnum.c">
+                                                                                </case>
+                                                                                <case cond="0" executed="true" line="75" source="originaux/lcdnum.c">
+                                                                                    <conditional id="IF-8"> <condition varcond="IF-8" line="75" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x07"> </condition>
+                                                                                        <case cond="1" executed="true" line="76" source="originaux/lcdnum.c">
+                                                                                        </case>
+                                                                                        <case cond="0" executed="true" line="79" source="originaux/lcdnum.c">
+                                                                                            <conditional id="IF-9"> <condition varcond="IF-9" line="79" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x08"> </condition>
+                                                                                                <case cond="1" executed="true" line="80" source="originaux/lcdnum.c">
+                                                                                                </case>
+                                                                                                <case cond="0" executed="true" line="83" source="originaux/lcdnum.c">
+                                                                                                    <conditional id="IF-10"> <condition varcond="IF-10" line="83" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x09"> </condition>
+                                                                                                        <case cond="1" executed="true" line="84" source="originaux/lcdnum.c">
+                                                                                                        </case>
+                                                                                                        <case cond="0" executed="true" line="87" source="originaux/lcdnum.c">
+                                                                                                            <conditional id="IF-11"> <condition varcond="IF-11" line="87" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x0A"> </condition>
+                                                                                                                <case cond="1" executed="true" line="88" source="originaux/lcdnum.c">
+                                                                                                                </case>
+                                                                                                                <case cond="0" executed="true" line="91" source="originaux/lcdnum.c">
+                                                                                                                    <conditional id="IF-12"> <condition varcond="IF-12" line="91" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x0B"> </condition>
+                                                                                                                        <case cond="1" executed="true" line="92" source="originaux/lcdnum.c">
+                                                                                                                        </case>
+                                                                                                                        <case cond="0" executed="true" line="95" source="originaux/lcdnum.c">
+                                                                                                                            <conditional id="IF-13"> <condition varcond="IF-13" line="95" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x0C"> </condition>
+                                                                                                                                <case cond="1" executed="true" line="96" source="originaux/lcdnum.c">
+                                                                                                                                </case>
+                                                                                                                                <case cond="0" executed="true" line="99" source="originaux/lcdnum.c">
+                                                                                                                                    <conditional id="IF-14"> <condition varcond="IF-14" line="99" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x0D"> </condition>
+                                                                                                                                        <case cond="1" executed="true" line="100" source="originaux/lcdnum.c">
+                                                                                                                                        </case>
+                                                                                                                                        <case cond="0" executed="true" line="103" source="originaux/lcdnum.c">
+                                                                                                                                            <conditional id="IF-15"> <condition varcond="IF-15" line="103" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tag_0__==0x0E"> </condition>
+                                                                                                                                                <case cond="1" executed="true" line="104" source="originaux/lcdnum.c">
+                                                                                                                                                </case>
+                                                                                                                                                <case cond="0" executed="true" line="106" source="originaux/lcdnum.c">
+                                                                                                                                                </case>
+                                                                                                                                            </conditional>
+                                                                                                                                        </case>
+                                                                                                                                    </conditional>
+                                                                                                                                </case>
+                                                                                                                            </conditional>
+                                                                                                                        </case>
+                                                                                                                    </conditional>
+                                                                                                                </case>
+                                                                                                            </conditional>
+                                                                                                        </case>
+                                                                                                    </conditional>
+                                                                                                </case>
+                                                                                            </conditional>
+                                                                                        </case>
+                                                                                    </conditional>
+                                                                                </case>
+                                                                            </conditional>
+                                                                        </case>
+                                                                    </conditional>
+                                                                </case>
+                                                            </conditional>
+                                                        </case>
+                                                    </conditional>
+                                                </case>
+                                            </conditional>
+                                        </case>
+                                    </conditional>
+                                </case>
+                            </conditional>
+                            <conditional id="IF-16"> <condition varcond="IF-16" line="125" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="__tmp_1__||(__tmp_2__||(__tmp_3__||(__tmp_4__||(__tmp_5__||(__tmp_6__||(__tmp_7__||(__tmp_8__||(__tmp_9__||(__tmp_10__||(__tmp_11__||(__tmp_12__||(__tmp_13__||(__tmp_14__||(__tmp_15__||(__tmp_16__||0)))))))))))))))"> </condition>
+                                <case cond="1" executed="true" line="48" source="originaux/lcdnum.c">
+                                    <conditional id="IF-17"> <condition varcond="IF-17" line="48" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_16__"> </condition>
+                                        <case cond="1" executed="true" line="50" source="originaux/lcdnum.c">
+                                            <conditional id="IF-18"> <condition varcond="IF-18" line="50" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_15__"> </condition>
+                                                <case cond="1" executed="true" line="52" source="originaux/lcdnum.c">
+                                                    <conditional id="IF-19"> <condition varcond="IF-19" line="52" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_14__"> </condition>
+                                                        <case cond="1" executed="true" line="54" source="originaux/lcdnum.c">
+                                                            <conditional id="IF-20"> <condition varcond="IF-20" line="54" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_13__"> </condition>
+                                                                <case cond="1" executed="true" line="56" source="originaux/lcdnum.c">
+                                                                    <conditional id="IF-21"> <condition varcond="IF-21" line="56" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_12__"> </condition>
+                                                                        <case cond="1" executed="true" line="58" source="originaux/lcdnum.c">
+                                                                            <conditional id="IF-22"> <condition varcond="IF-22" line="58" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_11__"> </condition>
+                                                                                <case cond="1" executed="true" line="60" source="originaux/lcdnum.c">
+                                                                                    <conditional id="IF-23"> <condition varcond="IF-23" line="60" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_10__"> </condition>
+                                                                                        <case cond="1" executed="true" line="62" source="originaux/lcdnum.c">
+                                                                                            <conditional id="IF-24"> <condition varcond="IF-24" line="62" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_9__"> </condition>
+                                                                                                <case cond="1" executed="true" line="64" source="originaux/lcdnum.c">
+                                                                                                    <conditional id="IF-25"> <condition varcond="IF-25" line="64" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_8__"> </condition>
+                                                                                                        <case cond="1" executed="true" line="66" source="originaux/lcdnum.c">
+                                                                                                            <conditional id="IF-26"> <condition varcond="IF-26" line="66" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_7__"> </condition>
+                                                                                                                <case cond="1" executed="true" line="68" source="originaux/lcdnum.c">
+                                                                                                                    <conditional id="IF-27"> <condition varcond="IF-27" line="68" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_6__"> </condition>
+                                                                                                                        <case cond="1" executed="true" line="70" source="originaux/lcdnum.c">
+                                                                                                                            <conditional id="IF-28"> <condition varcond="IF-28" line="70" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_5__"> </condition>
+                                                                                                                                <case cond="1" executed="true" line="72" source="originaux/lcdnum.c">
+                                                                                                                                    <conditional id="IF-29"> <condition varcond="IF-29" line="72" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_4__"> </condition>
+                                                                                                                                        <case cond="1" executed="true" line="74" source="originaux/lcdnum.c">
+                                                                                                                                            <conditional id="IF-30"> <condition varcond="IF-30" line="74" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_3__"> </condition>
+                                                                                                                                                <case cond="1" executed="true" line="76" source="originaux/lcdnum.c">
+                                                                                                                                                    <conditional id="IF-31"> <condition varcond="IF-31" line="76" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_2__"> </condition>
+                                                                                                                                                        <case cond="1" executed="true" line="49" source="originaux/lcdnum.c">
+                                                                                                                                                        </case>
+                                                                                                                                                        <case cond="0" executed="true" >
+                                                                                                                                                        </case>
+                                                                                                                                                    </conditional>
+                                                                                                                                                    <conditional id="IF-32"> <condition varcond="IF-32" line="52" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                                                                                        <case cond="1" executed="true" line="51" source="originaux/lcdnum.c">
+                                                                                                                                                        </case>
+                                                                                                                                                        <case cond="0" executed="true" >
+                                                                                                                                                        </case>
+                                                                                                                                                    </conditional>
+                                                                                                                                                </case>
+                                                                                                                                                <case cond="0" executed="true" >
+                                                                                                                                                </case>
+                                                                                                                                            </conditional>
+                                                                                                                                            <conditional id="IF-33"> <condition varcond="IF-33" line="55" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                                                                                <case cond="1" executed="true" line="53" source="originaux/lcdnum.c">
+                                                                                                                                                </case>
+                                                                                                                                                <case cond="0" executed="true" >
+                                                                                                                                                </case>
+                                                                                                                                            </conditional>
+                                                                                                                                        </case>
+                                                                                                                                        <case cond="0" executed="true" >
+                                                                                                                                        </case>
+                                                                                                                                    </conditional>
+                                                                                                                                    <conditional id="IF-34"> <condition varcond="IF-34" line="57" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                                                                        <case cond="1" executed="true" line="55" source="originaux/lcdnum.c">
+                                                                                                                                        </case>
+                                                                                                                                        <case cond="0" executed="true" >
+                                                                                                                                        </case>
+                                                                                                                                    </conditional>
+                                                                                                                                </case>
+                                                                                                                                <case cond="0" executed="true" >
+                                                                                                                                </case>
+                                                                                                                            </conditional>
+                                                                                                                            <conditional id="IF-35"> <condition varcond="IF-35" line="59" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                                                                <case cond="1" executed="true" line="57" source="originaux/lcdnum.c">
+                                                                                                                                </case>
+                                                                                                                                <case cond="0" executed="true" >
+                                                                                                                                </case>
+                                                                                                                            </conditional>
+                                                                                                                        </case>
+                                                                                                                        <case cond="0" executed="true" >
+                                                                                                                        </case>
+                                                                                                                    </conditional>
+                                                                                                                    <conditional id="IF-36"> <condition varcond="IF-36" line="61" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                                                        <case cond="1" executed="true" line="59" source="originaux/lcdnum.c">
+                                                                                                                        </case>
+                                                                                                                        <case cond="0" executed="true" >
+                                                                                                                        </case>
+                                                                                                                    </conditional>
+                                                                                                                </case>
+                                                                                                                <case cond="0" executed="true" >
+                                                                                                                </case>
+                                                                                                            </conditional>
+                                                                                                            <conditional id="IF-37"> <condition varcond="IF-37" line="64" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                                                <case cond="1" executed="true" line="61" source="originaux/lcdnum.c">
+                                                                                                                </case>
+                                                                                                                <case cond="0" executed="true" >
+                                                                                                                </case>
+                                                                                                            </conditional>
+                                                                                                        </case>
+                                                                                                        <case cond="0" executed="true" >
+                                                                                                        </case>
+                                                                                                    </conditional>
+                                                                                                    <conditional id="IF-38"> <condition varcond="IF-38" line="66" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                                        <case cond="1" executed="true" line="63" source="originaux/lcdnum.c">
+                                                                                                        </case>
+                                                                                                        <case cond="0" executed="true" >
+                                                                                                        </case>
+                                                                                                    </conditional>
+                                                                                                </case>
+                                                                                                <case cond="0" executed="true" >
+                                                                                                </case>
+                                                                                            </conditional>
+                                                                                            <conditional id="IF-39"> <condition varcond="IF-39" line="67" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                                <case cond="1" executed="true" line="65" source="originaux/lcdnum.c">
+                                                                                                </case>
+                                                                                                <case cond="0" executed="true" >
+                                                                                                </case>
+                                                                                            </conditional>
+                                                                                        </case>
+                                                                                        <case cond="0" executed="true" >
+                                                                                        </case>
+                                                                                    </conditional>
+                                                                                    <conditional id="IF-40"> <condition varcond="IF-40" line="69" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                        <case cond="1" executed="true" line="67" source="originaux/lcdnum.c">
+                                                                                        </case>
+                                                                                        <case cond="0" executed="true" >
+                                                                                        </case>
+                                                                                    </conditional>
+                                                                                </case>
+                                                                                <case cond="0" executed="true" >
+                                                                                </case>
+                                                                            </conditional>
+                                                                            <conditional id="IF-41"> <condition varcond="IF-41" line="71" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                                <case cond="1" executed="true" line="69" source="originaux/lcdnum.c">
+                                                                                </case>
+                                                                                <case cond="0" executed="true" >
+                                                                                </case>
+                                                                            </conditional>
+                                                                        </case>
+                                                                        <case cond="0" executed="true" >
+                                                                        </case>
+                                                                    </conditional>
+                                                                    <conditional id="IF-42"> <condition varcond="IF-42" line="73" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                        <case cond="1" executed="true" line="71" source="originaux/lcdnum.c">
+                                                                        </case>
+                                                                        <case cond="0" executed="true" >
+                                                                        </case>
+                                                                    </conditional>
+                                                                </case>
+                                                                <case cond="0" executed="true" >
+                                                                </case>
+                                                            </conditional>
+                                                            <conditional id="IF-43"> <condition varcond="IF-43" line="75" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                <case cond="1" executed="true" line="73" source="originaux/lcdnum.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" >
+                                                                </case>
+                                                            </conditional>
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                    <conditional id="IF-44"> <condition varcond="IF-44" line="78" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                        <case cond="1" executed="true" line="75" source="originaux/lcdnum.c">
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                </case>
+                                                <case cond="0" executed="true" >
+                                                </case>
+                                            </conditional>
+                                            <conditional id="IF-45"> <condition varcond="IF-45" line="80" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                <case cond="1" executed="true" line="77" source="originaux/lcdnum.c">
+                                                </case>
+                                                <case cond="0" executed="true" >
+                                                </case>
+                                            </conditional>
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-46"> <condition varcond="IF-46" line="81" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                        <case cond="1" executed="true" line="79" source="originaux/lcdnum.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-47"> <condition varcond="IF-47" line="83" source="originaux/lcdnum.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                <case cond="1" executed="true" line="84" source="originaux/lcdnum.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </function>
+                    </call>
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+    </function>
+</flowfacts>
+

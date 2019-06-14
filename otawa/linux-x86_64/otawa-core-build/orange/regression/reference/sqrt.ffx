@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="sqrt" numcall="2" line="77" source="originaux/sqrt.c" executed="true" extern="false">
+            <function name="sqrt">
+                <conditional id="IF-1"> <condition varcond="IF-1" line="58" source="originaux/sqrt.c" isexecuted="true" expcond="5==0" expcondinit="val==0"> </condition>
+                    <case cond="1" executed="false" line="58" source="originaux/sqrt.c">
+                    </case>
+                    <case cond="0" executed="true" line="60" source="originaux/sqrt.c">
+                        <loop loopId="1" line="60" source="originaux/sqrt.c" exact="false" maxcount="19" totalcount="19" maxexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)" totalexpr="partieEntiereInf((20-EPSILONINT-1)/1+1)">
+                            <conditional id="IF-2"> <condition varcond="IF-2" line="62" source="originaux/sqrt.c" isexecuted="true" expcond="" expcondinit="!flag"> </condition>
+                                <case cond="1" executed="true" line="63" source="originaux/sqrt.c">
+                                    <call name="fabs" numcall="1" line="66" source="originaux/sqrt.c" executed="true" extern="true">
+                                        <function name="fabs">
+                                        </function>
+                                    </call>
+                                    <conditional id="IF-3"> <condition varcond="IF-3" line="66" source="originaux/sqrt.c" isexecuted="true" expcond="" expcondinit="fabs(diff)&lt;=min_tol"> </condition>
+                                        <case cond="1" executed="true" line="66" source="originaux/sqrt.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </case>
+                                <case cond="0" executed="true" line="69" source="originaux/sqrt.c">
+                                </case>
+                            </conditional>
+                        </loop>
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="9" source="calipso/Hugues.c" exact="false" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((10-EPSILONINT-0)/(MINIMUM(2,3)+1)+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/(MINIMUM(2,3)+1)+1)">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="13" source="calipso/Hugues.c" isexecuted="true" expcond="" expcondinit="b"> </condition>
+                <case cond="1" executed="true" line="13" source="calipso/Hugues.c">
+                </case>
+                <case cond="0" executed="true" line="13" source="calipso/Hugues.c">
+                </case>
+            </conditional>
+        </loop>
+        <loop loopId="2" line="19" source="calipso/Hugues.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((10-EPSILONINT-3)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-3)/1+1)">
+        </loop>
+        <loop loopId="3" line="24" source="calipso/Hugues.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+            <conditional id="IF-2"> <condition varcond="IF-2" line="26" source="calipso/Hugues.c" isexecuted="true" expcond="" expcondinit="i&gt;=10"> </condition>
+                <case cond="1" executed="true" line="26" source="calipso/Hugues.c">
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+        <loop loopId="4" line="32" source="calipso/Hugues.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((0-EPSILONINT-(0-10))/2+1)" totalexpr="partieEntiereInf((0-EPSILONINT-(0-10))/2+1)">
+        </loop>
+    </function>
+</flowfacts>
+

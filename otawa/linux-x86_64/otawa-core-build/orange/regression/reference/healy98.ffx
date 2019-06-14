@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="6" source="originaux/healy98.c" exact="false" maxcount="100" totalcount="100" maxexpr="partieEntiereInf((100-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((100-EPSILONINT-0)/1+1)">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="8" source="originaux/healy98.c" isexecuted="true" expcond="" expcondinit="j&gt;75&amp;&amp;semecond||j&gt;300"> </condition>
+                <case cond="1" executed="true" line="8" source="originaux/healy98.c">
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+    </function>
+</flowfacts>
+

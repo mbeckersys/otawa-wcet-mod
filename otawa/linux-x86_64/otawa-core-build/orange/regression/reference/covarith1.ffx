@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="6" source="calipso/covarith1.c" exact="false" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((0+EPSILONINT-(10-0))/-1+1)" totalexpr="partieEntiereInf((0+EPSILONINT-(10-0))/-1+1)">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="8" source="calipso/covarith1.c" isexecuted="true" expcond="" expcondinit="k&gt;0"> </condition>
+                <case cond="1" executed="true" line="10" source="calipso/covarith1.c">
+                </case>
+                <case cond="0" executed="true" line="14" source="calipso/covarith1.c">
+                </case>
+            </conditional>
+        </loop>
+    </function>
+</flowfacts>
+

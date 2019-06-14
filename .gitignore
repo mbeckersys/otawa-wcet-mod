@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prerequisites
 *.d
 
@@ -30,3 +31,8 @@
 *.exe
 *.out
 *.app
+=======
+linux-x86_64/
+*.pyc
+build.log
+>>>>>>> 05ecff8c9a3eb49a8265fb887611e74edae31736

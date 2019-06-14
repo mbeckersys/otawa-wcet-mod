@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="Initialize" numcall="1" line="111" source="originaux/bsort100.c" executed="true" extern="false">
+            <function name="Initialize">
+                <loop loopId="1" line="60" source="originaux/bsort100.c" exact="true" maxcount="100" totalcount="100" maxexpr="partieEntiereInf((100-1)/1+1)" totalexpr="partieEntiereInf((100-1)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="BubbleSort" numcall="2" line="113" source="originaux/bsort100.c" executed="true" extern="false">
+            <function name="BubbleSort">
+                <loop loopId="2" line="72" source="originaux/bsort100.c" exact="true" maxcount="99" totalcount="99" maxexpr="partieEntiereInf((100-1-1)/1+1)" totalexpr="partieEntiereInf((100-1-1)/1+1)">
+                    <loop loopId="3" line="75" source="originaux/bsort100.c" exact="true" maxcount="99" totalcount="9801" maxexpr="partieEntiereInf((100-1-1)/1+1)" totalexpr="partieEntiereInf((100-1-1)/1+1)*partieEntiereInf((100-1-1)/1+1)">
+                        <conditional id="IF-1"> <condition varcond="IF-1" line="79" source="originaux/bsort100.c" isexecuted="true" expcond="" expcondinit="Array_0[Index]&gt;Array_0[Index+1]"> </condition>
+                            <case cond="1" executed="true" line="81" source="originaux/bsort100.c">
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </loop>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

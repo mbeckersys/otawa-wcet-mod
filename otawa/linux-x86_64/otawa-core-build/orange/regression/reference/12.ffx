@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="5" source="calipso/12.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="2" line="8" source="calipso/12.c" exact="true" maxcount="100" totalcount="100" maxexpr="partieEntiereInf((100-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((100-EPSILONINT-0)/1+1)">
+        </loop>
+    </function>
+</flowfacts>
+

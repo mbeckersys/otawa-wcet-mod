@@ -33,6 +33,7 @@ def get(path, env, pack):
 	reqs = []
 	if env.get_target_arch() in [buildlib.OS_WINDOWS_32, buildlib.OS_WINDOWS_64]:
 		reqs = ["win"]
+	env.set("elm-REV", "c64e70238c56")
 	return buildlib.Module(
 		name = "elm",
 		path = path,

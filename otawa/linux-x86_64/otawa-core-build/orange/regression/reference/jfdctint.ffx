@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="3" line="735" source="originaux/jfdctint.c" exact="true" maxcount="64" totalcount="64" maxexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)">
+        </loop>
+        <call name="jpeg_fdct_islow" numcall="1" line="745" source="originaux/jfdctint.c" executed="true" extern="false">
+            <function name="jpeg_fdct_islow">
+                <loop loopId="1" line="437" source="originaux/jfdctint.c" exact="true" maxcount="8" totalcount="8" maxexpr="partieEntiereInf((0-(8-1))/-1+1)" totalexpr="partieEntiereInf((0-(8-1))/-1+1)">
+                </loop>
+                <loop loopId="2" line="567" source="originaux/jfdctint.c" exact="true" maxcount="8" totalcount="8" maxexpr="partieEntiereInf((0-(8-1))/-1+1)" totalexpr="partieEntiereInf((0-(8-1))/-1+1)">
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

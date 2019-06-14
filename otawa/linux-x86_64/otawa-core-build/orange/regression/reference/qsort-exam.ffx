@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="sort" numcall="1" line="126" source="originaux/qsort-exam.c" executed="true" extern="false">
+            <function name="sort">
+                <loop loopId="1" line="64" source="originaux/qsort-exam.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                    <conditional id="IF-1"> <condition varcond="IF-1" line="66" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="ir-l&lt;7"> </condition>
+                        <case cond="1" executed="true" line="68" source="originaux/qsort-exam.c">
+                            <loop loopId="2" line="68" source="originaux/qsort-exam.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((ir-j)/1+1)">
+                                <loop loopId="3" line="71" source="originaux/qsort-exam.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((l-i)/-1+1)">
+                                    <conditional id="IF-2"> <condition varcond="IF-2" line="73" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="arr[i]&lt;=a"> </condition>
+                                        <case cond="1" executed="true" line="73" source="originaux/qsort-exam.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-3"> <condition varcond="IF-3" line="74" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                        <case cond="1" executed="true" line="74" source="originaux/qsort-exam.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </loop>
+                            </loop>
+                            <conditional id="IF-4"> <condition varcond="IF-4" line="78" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="jstack==0"> </condition>
+                                <case cond="1" executed="true" line="78" source="originaux/qsort-exam.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-5"> <condition varcond="IF-5" line="79" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="!__tmp_1__"> </condition>
+                                <case cond="1" executed="true" line="79" source="originaux/qsort-exam.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </case>
+                        <case cond="0" executed="true" line="83" source="originaux/qsort-exam.c">
+                            <conditional id="IF-6"> <condition varcond="IF-6" line="85" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="arr[l]&gt;arr[ir]"> </condition>
+                                <case cond="1" executed="true" line="87" source="originaux/qsort-exam.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-7"> <condition varcond="IF-7" line="89" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="arr[l+1]&gt;arr[ir]"> </condition>
+                                <case cond="1" executed="true" line="91" source="originaux/qsort-exam.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-8"> <condition varcond="IF-8" line="93" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="arr[l]&gt;arr[l+1]"> </condition>
+                                <case cond="1" executed="true" line="95" source="originaux/qsort-exam.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <loop loopId="4" line="100" source="originaux/qsort-exam.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                <loop loopId="5" line="102" source="originaux/qsort-exam.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((20-1-i)/1+1)">
+                                </loop>
+                                <loop loopId="6" line="103" source="originaux/qsort-exam.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((0-j)/-1+1)">
+                                </loop>
+                                <conditional id="IF-9"> <condition varcond="IF-9" line="104" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="j&lt;i"> </condition>
+                                    <case cond="1" executed="true" line="104" source="originaux/qsort-exam.c">
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                                <conditional id="IF-10"> <condition varcond="IF-10" line="105" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="!__tmp_2__"> </condition>
+                                    <case cond="1" executed="true" line="105" source="originaux/qsort-exam.c">
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                            </loop>
+                            <conditional id="IF-11"> <condition varcond="IF-11" line="111" source="originaux/qsort-exam.c" isexecuted="true" expcond="" expcondinit="ir-i+1&gt;=j-l"> </condition>
+                                <case cond="1" executed="true" line="112" source="originaux/qsort-exam.c">
+                                </case>
+                                <case cond="0" executed="true" line="116" source="originaux/qsort-exam.c">
+                                </case>
+                            </conditional>
+                        </case>
+                    </conditional>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

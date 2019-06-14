@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="9" source="originaux/indirect.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((10-0)/2+1)" totalexpr="partieEntiereInf((10-0)/2+1)">
+        </loop>
+        <loop loopId="2" line="11" source="originaux/indirect.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="3" line="13" source="originaux/indirect.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((10-0)/2+1)+1" totalexpr="partieEntiereInf((10-0)/2+1)+1">
+        </loop>
+        <loop loopId="4" line="15" source="originaux/indirect.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((0-10)/-2+1)+1" totalexpr="partieEntiereInf((0-10)/-2+1)+1">
+        </loop>
+        <loop loopId="5" line="19" source="originaux/indirect.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((10-0)/2+1)" totalexpr="partieEntiereInf((10-0)/2+1)">
+        </loop>
+        <loop loopId="6" line="23" source="originaux/indirect.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="7" line="27" source="originaux/indirect.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((10-0)/2+1)+1" totalexpr="partieEntiereInf((10-0)/2+1)+1">
+        </loop>
+        <loop loopId="8" line="31" source="originaux/indirect.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((0-10)/-2+1)+1" totalexpr="partieEntiereInf((0-10)/-2+1)+1">
+        </loop>
+        <loop loopId="9" line="35" source="originaux/indirect.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((10-0)/2+1)" totalexpr="partieEntiereInf((10-0)/2+1)">
+        </loop>
+        <loop loopId="10" line="39" source="originaux/indirect.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="11" line="43" source="originaux/indirect.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((10-0)/2+1)+1" totalexpr="partieEntiereInf((10-0)/2+1)+1">
+        </loop>
+        <loop loopId="12" line="47" source="originaux/indirect.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((0-10)/-2+1)+1" totalexpr="partieEntiereInf((0-10)/-2+1)+1">
+        </loop>
+        <loop loopId="13" line="49" source="originaux/indirect.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)">
+        </loop>
+        <loop loopId="14" line="51" source="originaux/indirect.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="15" line="53" source="originaux/indirect.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1">
+        </loop>
+        <loop loopId="16" line="55" source="originaux/indirect.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+        <loop loopId="17" line="59" source="originaux/indirect.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)">
+        </loop>
+        <loop loopId="18" line="63" source="originaux/indirect.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="19" line="67" source="originaux/indirect.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1">
+        </loop>
+        <loop loopId="20" line="71" source="originaux/indirect.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+        <loop loopId="21" line="75" source="originaux/indirect.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)">
+        </loop>
+        <loop loopId="22" line="79" source="originaux/indirect.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="23" line="83" source="originaux/indirect.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1">
+        </loop>
+        <loop loopId="24" line="87" source="originaux/indirect.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+    </function>
+</flowfacts>
+

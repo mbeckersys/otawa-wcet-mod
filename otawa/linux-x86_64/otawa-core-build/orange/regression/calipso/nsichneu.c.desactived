@@ -1,0 +1,4069 @@
+int  volatile P1_is_marked = 3;
+long int  volatile P1_marking_member_0[3];
+int  volatile P2_is_marked = 5;
+long int  volatile P2_marking_member_0[5];
+int  volatile P3_is_marked = 0;
+long int  volatile P3_marking_member_0[6];
+
+int main()
+{
+	int dummy_i;
+# 59 "originaux/nsichneu.c"
+	dummy_i = 2;
+# 61 "originaux/nsichneu.c"
+	while(dummy_i > 0)
+# 61 "originaux/nsichneu.c"
+	{
+# 63 "originaux/nsichneu.c"
+		dummy_i--;
+# 66 "originaux/nsichneu.c"
+		if(P1_is_marked >= 3 && P3_is_marked + 3 <= 6 &&
+			P1_marking_member_0[1] == P1_marking_member_0[2])
+# 68 "originaux/nsichneu.c"
+		{
+			long int x;
+			long int y;
+			long int z;
+# 74 "originaux/nsichneu.c"
+			x = P1_marking_member_0[0];
+# 75 "originaux/nsichneu.c"
+			y = P1_marking_member_0[1];
+# 78 "originaux/nsichneu.c"
+			if(x < y)
+# 78 "originaux/nsichneu.c"
+			{
+# 81 "originaux/nsichneu.c"
+				P1_is_marked -= 3;
+# 84 "originaux/nsichneu.c"
+				z = x - y;
+# 87 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = x;
+# 88 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = y;
+# 89 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = z;
+# 90 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 97 "originaux/nsichneu.c"
+		if(P1_is_marked >= 3 && P3_is_marked + 3 <= 6 &&
+			P1_marking_member_0[2] == P1_marking_member_0[1])
+# 99 "originaux/nsichneu.c"
+		{
+			long int x;
+			long int y;
+			long int z;
+# 105 "originaux/nsichneu.c"
+			x = P1_marking_member_0[0];
+# 106 "originaux/nsichneu.c"
+			y = P1_marking_member_0[2];
+# 109 "originaux/nsichneu.c"
+			if(x < y)
+# 109 "originaux/nsichneu.c"
+			{
+# 113 "originaux/nsichneu.c"
+				P1_is_marked -= 3;
+# 116 "originaux/nsichneu.c"
+				z = x - y;
+# 119 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = x;
+# 120 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = y;
+# 121 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = z;
+# 122 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 129 "originaux/nsichneu.c"
+		if(P1_is_marked >= 3 && P3_is_marked + 3 <= 6 &&
+			P1_marking_member_0[0] == P1_marking_member_0[2])
+# 131 "originaux/nsichneu.c"
+		{
+			long int x;
+			long int y;
+			long int z;
+# 137 "originaux/nsichneu.c"
+			x = P1_marking_member_0[1];
+# 138 "originaux/nsichneu.c"
+			y = P1_marking_member_0[0];
+# 141 "originaux/nsichneu.c"
+			if(x < y)
+# 141 "originaux/nsichneu.c"
+			{
+# 145 "originaux/nsichneu.c"
+				P1_is_marked -= 3;
+# 148 "originaux/nsichneu.c"
+				z = x - y;
+# 151 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = x;
+# 152 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = y;
+# 153 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = z;
+# 154 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 161 "originaux/nsichneu.c"
+		if(P1_is_marked >= 3 && P3_is_marked + 3 <= 6 &&
+			P1_marking_member_0[2] == P1_marking_member_0[0])
+# 163 "originaux/nsichneu.c"
+		{
+			long int x;
+			long int y;
+			long int z;
+# 169 "originaux/nsichneu.c"
+			x = P1_marking_member_0[1];
+# 170 "originaux/nsichneu.c"
+			y = P1_marking_member_0[2];
+# 173 "originaux/nsichneu.c"
+			if(x < y)
+# 173 "originaux/nsichneu.c"
+			{
+# 177 "originaux/nsichneu.c"
+				P1_is_marked -= 3;
+# 180 "originaux/nsichneu.c"
+				z = x - y;
+# 183 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = x;
+# 184 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = y;
+# 185 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = z;
+# 186 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 193 "originaux/nsichneu.c"
+		if(P1_is_marked >= 3 && P3_is_marked + 3 <= 6 &&
+			P1_marking_member_0[0] == P1_marking_member_0[1])
+# 195 "originaux/nsichneu.c"
+		{
+			long int x;
+			long int y;
+			long int z;
+# 200 "originaux/nsichneu.c"
+			x = P1_marking_member_0[2];
+# 201 "originaux/nsichneu.c"
+			y = P1_marking_member_0[0];
+# 204 "originaux/nsichneu.c"
+			if(x < y)
+# 204 "originaux/nsichneu.c"
+			{
+# 207 "originaux/nsichneu.c"
+				P1_is_marked -= 3;
+# 210 "originaux/nsichneu.c"
+				z = x - y;
+# 213 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = x;
+# 214 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = y;
+# 215 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = z;
+# 216 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 223 "originaux/nsichneu.c"
+		if(P1_is_marked >= 3 && P3_is_marked + 3 <= 6 &&
+			P1_marking_member_0[1] == P1_marking_member_0[0])
+# 225 "originaux/nsichneu.c"
+		{
+			long int x;
+			long int y;
+			long int z;
+# 230 "originaux/nsichneu.c"
+			x = P1_marking_member_0[2];
+# 231 "originaux/nsichneu.c"
+			y = P1_marking_member_0[1];
+# 234 "originaux/nsichneu.c"
+			if(x < y)
+# 234 "originaux/nsichneu.c"
+			{
+# 237 "originaux/nsichneu.c"
+				P1_is_marked -= 3;
+# 240 "originaux/nsichneu.c"
+				z = x - y;
+# 243 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = x;
+# 244 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = y;
+# 245 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = z;
+# 246 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 253 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[2] &&
+			P2_marking_member_0[1] == P2_marking_member_0[3])))
+# 256 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 261 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 262 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 265 "originaux/nsichneu.c"
+			if(b > a)
+# 265 "originaux/nsichneu.c"
+			{
+# 268 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 271 "originaux/nsichneu.c"
+				c = a + b;
+# 274 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 275 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 276 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 277 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 284 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[3] &&
+			P2_marking_member_0[1] == P2_marking_member_0[2])))
+# 287 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 292 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 293 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 296 "originaux/nsichneu.c"
+			if(b > a)
+# 296 "originaux/nsichneu.c"
+			{
+# 299 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 302 "originaux/nsichneu.c"
+				c = a + b;
+# 305 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 306 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 307 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 308 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 315 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[1] &&
+			P2_marking_member_0[2] == P2_marking_member_0[3])))
+# 318 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 323 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 324 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 327 "originaux/nsichneu.c"
+			if(b > a)
+# 327 "originaux/nsichneu.c"
+			{
+# 330 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 333 "originaux/nsichneu.c"
+				c = a + b;
+# 336 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 337 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 338 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 339 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 346 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[3] &&
+			P2_marking_member_0[2] == P2_marking_member_0[1])))
+# 349 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 354 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 355 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 358 "originaux/nsichneu.c"
+			if(b > a)
+# 358 "originaux/nsichneu.c"
+			{
+# 361 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 364 "originaux/nsichneu.c"
+				c = a + b;
+# 367 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 368 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 369 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 370 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 377 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[1] &&
+			P2_marking_member_0[3] == P2_marking_member_0[2])))
+# 380 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 385 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 386 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 389 "originaux/nsichneu.c"
+			if(b > a)
+# 389 "originaux/nsichneu.c"
+			{
+# 392 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 395 "originaux/nsichneu.c"
+				c = a + b;
+# 398 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 399 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 400 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 401 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 408 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[2] &&
+			P2_marking_member_0[3] == P2_marking_member_0[1])))
+# 411 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 416 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 417 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 420 "originaux/nsichneu.c"
+			if(b > a)
+# 420 "originaux/nsichneu.c"
+			{
+# 423 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 426 "originaux/nsichneu.c"
+				c = a + b;
+# 429 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 430 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 431 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 432 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 439 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[2] &&
+			P2_marking_member_0[0] == P2_marking_member_0[3])))
+# 442 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 447 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 448 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 451 "originaux/nsichneu.c"
+			if(b > a)
+# 451 "originaux/nsichneu.c"
+			{
+# 454 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 457 "originaux/nsichneu.c"
+				c = a + b;
+# 460 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 461 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 462 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 463 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 470 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[3] &&
+			P2_marking_member_0[0] == P2_marking_member_0[2])))
+# 473 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 478 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 479 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 482 "originaux/nsichneu.c"
+			if(b > a)
+# 482 "originaux/nsichneu.c"
+			{
+# 485 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 488 "originaux/nsichneu.c"
+				c = a + b;
+# 491 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 492 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 493 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 494 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 501 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[0] &&
+			P2_marking_member_0[2] == P2_marking_member_0[3])))
+# 504 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 509 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 510 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 513 "originaux/nsichneu.c"
+			if(b > a)
+# 513 "originaux/nsichneu.c"
+			{
+# 516 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 519 "originaux/nsichneu.c"
+				c = a + b;
+# 522 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 523 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 524 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 525 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 532 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[3] &&
+			P2_marking_member_0[2] == P2_marking_member_0[0])))
+# 535 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 540 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 541 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 544 "originaux/nsichneu.c"
+			if(b > a)
+# 544 "originaux/nsichneu.c"
+			{
+# 546 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 549 "originaux/nsichneu.c"
+				c = a + b;
+# 552 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 553 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 554 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 555 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 562 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[0] &&
+			P2_marking_member_0[3] == P2_marking_member_0[2])))
+# 565 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 570 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 571 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 574 "originaux/nsichneu.c"
+			if(b > a)
+# 574 "originaux/nsichneu.c"
+			{
+# 576 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 579 "originaux/nsichneu.c"
+				c = a + b;
+# 582 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 583 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 584 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 585 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 593 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[2] &&
+			P2_marking_member_0[3] == P2_marking_member_0[0])))
+# 596 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 601 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 602 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 605 "originaux/nsichneu.c"
+			if(b > a)
+# 605 "originaux/nsichneu.c"
+			{
+# 608 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 611 "originaux/nsichneu.c"
+				c = a + b;
+# 614 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 615 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 616 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 617 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 625 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[1] &&
+			P2_marking_member_0[0] == P2_marking_member_0[3])))
+# 628 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 633 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 634 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 637 "originaux/nsichneu.c"
+			if(b > a)
+# 637 "originaux/nsichneu.c"
+			{
+# 639 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 642 "originaux/nsichneu.c"
+				c = a + b;
+# 645 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 646 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 647 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 648 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 655 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[3] &&
+			P2_marking_member_0[0] == P2_marking_member_0[1])))
+# 658 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 663 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 664 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 667 "originaux/nsichneu.c"
+			if(b > a)
+# 667 "originaux/nsichneu.c"
+			{
+# 669 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 672 "originaux/nsichneu.c"
+				c = a + b;
+# 675 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 676 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 677 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 678 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 685 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[0] &&
+			P2_marking_member_0[1] == P2_marking_member_0[3])))
+# 688 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 693 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 694 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 697 "originaux/nsichneu.c"
+			if(b > a)
+# 697 "originaux/nsichneu.c"
+			{
+# 699 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 702 "originaux/nsichneu.c"
+				c = a + b;
+# 705 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 706 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 707 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 708 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 715 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[3] &&
+			P2_marking_member_0[1] == P2_marking_member_0[0])))
+# 718 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 723 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 724 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 727 "originaux/nsichneu.c"
+			if(b > a)
+# 727 "originaux/nsichneu.c"
+			{
+# 729 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 732 "originaux/nsichneu.c"
+				c = a + b;
+# 735 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 736 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 737 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 738 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 745 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[0] &&
+			P2_marking_member_0[3] == P2_marking_member_0[1])))
+# 748 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 753 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 754 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 757 "originaux/nsichneu.c"
+			if(b > a)
+# 757 "originaux/nsichneu.c"
+			{
+# 759 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 762 "originaux/nsichneu.c"
+				c = a + b;
+# 765 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 766 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 767 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 768 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 775 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[1] &&
+			P2_marking_member_0[3] == P2_marking_member_0[0])))
+# 778 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 783 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 784 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 787 "originaux/nsichneu.c"
+			if(b > a)
+# 787 "originaux/nsichneu.c"
+			{
+# 789 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 792 "originaux/nsichneu.c"
+				c = a + b;
+# 795 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 796 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 797 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 798 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 805 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[1] &&
+			P2_marking_member_0[0] == P2_marking_member_0[2])))
+# 808 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 813 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 814 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 817 "originaux/nsichneu.c"
+			if(b > a)
+# 817 "originaux/nsichneu.c"
+			{
+# 820 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 823 "originaux/nsichneu.c"
+				c = a + b;
+# 826 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 827 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 828 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 829 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 837 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[2] &&
+			P2_marking_member_0[0] == P2_marking_member_0[1])))
+# 840 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 846 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 847 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 850 "originaux/nsichneu.c"
+			if(b > a)
+# 850 "originaux/nsichneu.c"
+			{
+# 853 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 856 "originaux/nsichneu.c"
+				c = a + b;
+# 859 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 860 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 861 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 862 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 870 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[0] &&
+			P2_marking_member_0[1] == P2_marking_member_0[2])))
+# 873 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 879 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 880 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 883 "originaux/nsichneu.c"
+			if(b > a)
+# 883 "originaux/nsichneu.c"
+			{
+# 886 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 889 "originaux/nsichneu.c"
+				c = a + b;
+# 892 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 893 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 894 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 895 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 903 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[2] &&
+			P2_marking_member_0[1] == P2_marking_member_0[0])))
+# 906 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 912 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 913 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 916 "originaux/nsichneu.c"
+			if(b > a)
+# 916 "originaux/nsichneu.c"
+			{
+# 919 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 922 "originaux/nsichneu.c"
+				c = a + b;
+# 925 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 926 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 927 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 928 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 936 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[0] &&
+			P2_marking_member_0[2] == P2_marking_member_0[1])))
+# 939 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 945 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 946 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 949 "originaux/nsichneu.c"
+			if(b > a)
+# 949 "originaux/nsichneu.c"
+			{
+# 952 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 955 "originaux/nsichneu.c"
+				c = a + b;
+# 958 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 959 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 960 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 961 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 969 "originaux/nsichneu.c"
+		if(P2_is_marked >= 4 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[1] &&
+			P2_marking_member_0[2] == P2_marking_member_0[0])))
+# 972 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 978 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 979 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 982 "originaux/nsichneu.c"
+			if(b > a)
+# 982 "originaux/nsichneu.c"
+			{
+# 985 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 988 "originaux/nsichneu.c"
+				c = a + b;
+# 991 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 992 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 993 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 994 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1002 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[2] &&
+			P2_marking_member_0[1] == P2_marking_member_0[4])))
+# 1005 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1011 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1012 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 1015 "originaux/nsichneu.c"
+			if(b > a)
+# 1015 "originaux/nsichneu.c"
+			{
+# 1018 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1019 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1022 "originaux/nsichneu.c"
+				c = a + b;
+# 1025 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1026 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1027 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1028 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1036 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[3] &&
+			P2_marking_member_0[1] == P2_marking_member_0[4])))
+# 1039 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1045 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1046 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 1049 "originaux/nsichneu.c"
+			if(b > a)
+# 1049 "originaux/nsichneu.c"
+			{
+# 1052 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1053 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1056 "originaux/nsichneu.c"
+				c = a + b;
+# 1059 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1060 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1061 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1062 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1070 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[4] &&
+			P2_marking_member_0[1] == P2_marking_member_0[2])))
+# 1073 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1079 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1080 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 1083 "originaux/nsichneu.c"
+			if(b > a)
+# 1083 "originaux/nsichneu.c"
+			{
+# 1086 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1087 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1090 "originaux/nsichneu.c"
+				c = a + b;
+# 1093 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1094 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1095 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1096 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1104 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[4] &&
+			P2_marking_member_0[1] == P2_marking_member_0[3])))
+# 1107 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1113 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1114 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 1117 "originaux/nsichneu.c"
+			if(b > a)
+# 1117 "originaux/nsichneu.c"
+			{
+# 1120 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1121 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1124 "originaux/nsichneu.c"
+				c = a + b;
+# 1127 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1128 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1129 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1130 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1138 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[1] &&
+			P2_marking_member_0[2] == P2_marking_member_0[4])))
+# 1141 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1147 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1148 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 1151 "originaux/nsichneu.c"
+			if(b > a)
+# 1151 "originaux/nsichneu.c"
+			{
+# 1154 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1155 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1158 "originaux/nsichneu.c"
+				c = a + b;
+# 1161 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1162 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1163 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1164 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1172 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[3] &&
+			P2_marking_member_0[2] == P2_marking_member_0[4])))
+# 1175 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1181 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1182 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 1185 "originaux/nsichneu.c"
+			if(b > a)
+# 1185 "originaux/nsichneu.c"
+			{
+# 1188 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 1189 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1192 "originaux/nsichneu.c"
+				c = a + b;
+# 1195 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1196 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1197 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1198 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1206 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[4] &&
+			P2_marking_member_0[2] == P2_marking_member_0[1])))
+# 1209 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1215 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1216 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 1219 "originaux/nsichneu.c"
+			if(b > a)
+# 1219 "originaux/nsichneu.c"
+			{
+# 1222 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1223 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1226 "originaux/nsichneu.c"
+				c = a + b;
+# 1229 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1230 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1231 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1232 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1240 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[4] &&
+			P2_marking_member_0[2] == P2_marking_member_0[3])))
+# 1243 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1249 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1250 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 1253 "originaux/nsichneu.c"
+			if(b > a)
+# 1253 "originaux/nsichneu.c"
+			{
+# 1256 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 1257 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1260 "originaux/nsichneu.c"
+				c = a + b;
+# 1263 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1264 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1265 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1266 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1274 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[1] &&
+			P2_marking_member_0[3] == P2_marking_member_0[4])))
+# 1277 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1283 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1284 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 1287 "originaux/nsichneu.c"
+			if(b > a)
+# 1287 "originaux/nsichneu.c"
+			{
+# 1290 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1291 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1294 "originaux/nsichneu.c"
+				c = a + b;
+# 1297 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1298 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1299 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1300 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1308 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[2] &&
+			P2_marking_member_0[3] == P2_marking_member_0[4])))
+# 1311 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1317 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1318 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 1321 "originaux/nsichneu.c"
+			if(b > a)
+# 1321 "originaux/nsichneu.c"
+			{
+# 1324 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 1325 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1328 "originaux/nsichneu.c"
+				c = a + b;
+# 1331 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1332 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1333 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1334 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1342 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[4] &&
+			P2_marking_member_0[3] == P2_marking_member_0[1])))
+# 1345 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1351 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1352 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 1355 "originaux/nsichneu.c"
+			if(b > a)
+# 1355 "originaux/nsichneu.c"
+			{
+# 1358 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1359 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1362 "originaux/nsichneu.c"
+				c = a + b;
+# 1365 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1366 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1367 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1368 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1376 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[4] &&
+			P2_marking_member_0[3] == P2_marking_member_0[2])))
+# 1379 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1385 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1386 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 1389 "originaux/nsichneu.c"
+			if(b > a)
+# 1389 "originaux/nsichneu.c"
+			{
+# 1392 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 1393 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1396 "originaux/nsichneu.c"
+				c = a + b;
+# 1399 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1400 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1401 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1402 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1410 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[1] &&
+			P2_marking_member_0[4] == P2_marking_member_0[2])))
+# 1413 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1419 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1420 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 1423 "originaux/nsichneu.c"
+			if(b > a)
+# 1423 "originaux/nsichneu.c"
+			{
+# 1426 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1427 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1430 "originaux/nsichneu.c"
+				c = a + b;
+# 1433 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1434 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1435 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1436 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1444 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[1] &&
+			P2_marking_member_0[4] == P2_marking_member_0[3])))
+# 1447 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1453 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1454 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 1457 "originaux/nsichneu.c"
+			if(b > a)
+# 1457 "originaux/nsichneu.c"
+			{
+# 1460 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1461 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1464 "originaux/nsichneu.c"
+				c = a + b;
+# 1467 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1468 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1469 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1470 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1478 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[2] &&
+			P2_marking_member_0[4] == P2_marking_member_0[1])))
+# 1481 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1487 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1488 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 1491 "originaux/nsichneu.c"
+			if(b > a)
+# 1491 "originaux/nsichneu.c"
+			{
+# 1494 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1495 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1498 "originaux/nsichneu.c"
+				c = a + b;
+# 1501 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1502 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1503 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1504 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1512 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[2] &&
+			P2_marking_member_0[4] == P2_marking_member_0[3])))
+# 1515 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1521 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1522 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 1525 "originaux/nsichneu.c"
+			if(b > a)
+# 1525 "originaux/nsichneu.c"
+			{
+# 1528 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 1529 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1532 "originaux/nsichneu.c"
+				c = a + b;
+# 1535 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1536 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1537 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1538 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1546 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[3] &&
+			P2_marking_member_0[4] == P2_marking_member_0[1])))
+# 1549 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1555 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1556 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 1559 "originaux/nsichneu.c"
+			if(b > a)
+# 1559 "originaux/nsichneu.c"
+			{
+# 1562 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1563 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1566 "originaux/nsichneu.c"
+				c = a + b;
+# 1569 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1570 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1571 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1572 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1580 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[3] &&
+			P2_marking_member_0[4] == P2_marking_member_0[2])))
+# 1583 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1589 "originaux/nsichneu.c"
+			a = P2_marking_member_0[0];
+# 1590 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 1593 "originaux/nsichneu.c"
+			if(b > a)
+# 1593 "originaux/nsichneu.c"
+			{
+# 1596 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 1597 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1600 "originaux/nsichneu.c"
+				c = a + b;
+# 1603 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1604 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1605 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1606 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1614 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[2] &&
+			P2_marking_member_0[0] == P2_marking_member_0[4])))
+# 1617 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1623 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1624 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 1627 "originaux/nsichneu.c"
+			if(b > a)
+# 1627 "originaux/nsichneu.c"
+			{
+# 1630 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1631 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1634 "originaux/nsichneu.c"
+				c = a + b;
+# 1637 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1638 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1639 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1640 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1648 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[3] &&
+			P2_marking_member_0[0] == P2_marking_member_0[4])))
+# 1651 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1657 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1658 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 1661 "originaux/nsichneu.c"
+			if(b > a)
+# 1661 "originaux/nsichneu.c"
+			{
+# 1664 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1665 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1668 "originaux/nsichneu.c"
+				c = a + b;
+# 1671 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1672 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1673 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1674 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1682 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[4] &&
+			P2_marking_member_0[0] == P2_marking_member_0[2])))
+# 1685 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1691 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1692 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 1695 "originaux/nsichneu.c"
+			if(b > a)
+# 1695 "originaux/nsichneu.c"
+			{
+# 1698 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1699 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1702 "originaux/nsichneu.c"
+				c = a + b;
+# 1705 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1706 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1707 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1708 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1716 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[4] &&
+			P2_marking_member_0[0] == P2_marking_member_0[3])))
+# 1719 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1725 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1726 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 1729 "originaux/nsichneu.c"
+			if(b > a)
+# 1729 "originaux/nsichneu.c"
+			{
+# 1732 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1733 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1736 "originaux/nsichneu.c"
+				c = a + b;
+# 1739 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1740 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1741 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1742 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1750 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[0] &&
+			P2_marking_member_0[2] == P2_marking_member_0[4])))
+# 1753 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1759 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1760 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 1763 "originaux/nsichneu.c"
+			if(b > a)
+# 1763 "originaux/nsichneu.c"
+			{
+# 1766 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1767 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1770 "originaux/nsichneu.c"
+				c = a + b;
+# 1773 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1774 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1775 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1776 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1784 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[3] &&
+			P2_marking_member_0[2] == P2_marking_member_0[4])))
+# 1787 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1793 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1794 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 1797 "originaux/nsichneu.c"
+			if(b > a)
+# 1797 "originaux/nsichneu.c"
+			{
+# 1800 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1803 "originaux/nsichneu.c"
+				c = a + b;
+# 1806 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1807 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1808 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1809 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1817 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[4] &&
+			P2_marking_member_0[2] == P2_marking_member_0[0])))
+# 1820 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1826 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1827 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 1830 "originaux/nsichneu.c"
+			if(b > a)
+# 1830 "originaux/nsichneu.c"
+			{
+# 1833 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 1834 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1837 "originaux/nsichneu.c"
+				c = a + b;
+# 1840 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1841 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1842 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1843 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1851 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[4] &&
+			P2_marking_member_0[2] == P2_marking_member_0[3])))
+# 1854 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1860 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1861 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 1864 "originaux/nsichneu.c"
+			if(b > a)
+# 1864 "originaux/nsichneu.c"
+			{
+# 1867 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1870 "originaux/nsichneu.c"
+				c = a + b;
+# 1873 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1874 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1875 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1876 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1884 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[0] &&
+			P2_marking_member_0[3] == P2_marking_member_0[4])))
+# 1887 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1893 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1894 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 1897 "originaux/nsichneu.c"
+			if(b > a)
+# 1897 "originaux/nsichneu.c"
+			{
+# 1900 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1901 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1904 "originaux/nsichneu.c"
+				c = a + b;
+# 1907 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1908 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1909 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1910 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1918 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[2] &&
+			P2_marking_member_0[3] == P2_marking_member_0[4])))
+# 1921 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1927 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1928 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 1931 "originaux/nsichneu.c"
+			if(b > a)
+# 1931 "originaux/nsichneu.c"
+			{
+# 1934 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1937 "originaux/nsichneu.c"
+				c = a + b;
+# 1940 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1941 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1942 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1943 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1951 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[4] &&
+			P2_marking_member_0[3] == P2_marking_member_0[0])))
+# 1954 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1960 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1961 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 1964 "originaux/nsichneu.c"
+			if(b > a)
+# 1964 "originaux/nsichneu.c"
+			{
+# 1967 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 1968 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 1971 "originaux/nsichneu.c"
+				c = a + b;
+# 1974 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 1975 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 1976 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 1977 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 1985 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[4] &&
+			P2_marking_member_0[3] == P2_marking_member_0[2])))
+# 1988 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 1994 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 1995 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 1998 "originaux/nsichneu.c"
+			if(b > a)
+# 1998 "originaux/nsichneu.c"
+			{
+# 2001 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2004 "originaux/nsichneu.c"
+				c = a + b;
+# 2007 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2008 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2009 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2010 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2018 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[0] &&
+			P2_marking_member_0[4] == P2_marking_member_0[2])))
+# 2021 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2027 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 2028 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2031 "originaux/nsichneu.c"
+			if(b > a)
+# 2031 "originaux/nsichneu.c"
+			{
+# 2034 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 2035 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2038 "originaux/nsichneu.c"
+				c = a + b;
+# 2041 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2042 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2043 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2044 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2052 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[0] &&
+			P2_marking_member_0[4] == P2_marking_member_0[3])))
+# 2055 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2061 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 2062 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2065 "originaux/nsichneu.c"
+			if(b > a)
+# 2065 "originaux/nsichneu.c"
+			{
+# 2068 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 2069 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2072 "originaux/nsichneu.c"
+				c = a + b;
+# 2075 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2076 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2077 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2078 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2086 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[2] &&
+			P2_marking_member_0[4] == P2_marking_member_0[0])))
+# 2089 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2095 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 2096 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2099 "originaux/nsichneu.c"
+			if(b > a)
+# 2099 "originaux/nsichneu.c"
+			{
+# 2102 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 2103 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2106 "originaux/nsichneu.c"
+				c = a + b;
+# 2109 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2110 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2111 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2112 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2120 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[2] &&
+			P2_marking_member_0[4] == P2_marking_member_0[3])))
+# 2123 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2129 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 2130 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2133 "originaux/nsichneu.c"
+			if(b > a)
+# 2133 "originaux/nsichneu.c"
+			{
+# 2136 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2139 "originaux/nsichneu.c"
+				c = a + b;
+# 2142 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2143 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2144 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2145 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2153 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[3] &&
+			P2_marking_member_0[4] == P2_marking_member_0[0])))
+# 2156 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2162 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 2163 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2166 "originaux/nsichneu.c"
+			if(b > a)
+# 2166 "originaux/nsichneu.c"
+			{
+# 2169 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 2170 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2173 "originaux/nsichneu.c"
+				c = a + b;
+# 2176 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2177 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2178 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2179 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2187 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[3] &&
+			P2_marking_member_0[4] == P2_marking_member_0[2])))
+# 2190 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2196 "originaux/nsichneu.c"
+			a = P2_marking_member_0[1];
+# 2197 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2200 "originaux/nsichneu.c"
+			if(b > a)
+# 2200 "originaux/nsichneu.c"
+			{
+# 2203 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2206 "originaux/nsichneu.c"
+				c = a + b;
+# 2209 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2210 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2211 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2212 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2220 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[1] &&
+			P2_marking_member_0[0] == P2_marking_member_0[4])))
+# 2223 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2229 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2230 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 2233 "originaux/nsichneu.c"
+			if(b > a)
+# 2233 "originaux/nsichneu.c"
+			{
+# 2236 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 2237 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2240 "originaux/nsichneu.c"
+				c = a + b;
+# 2243 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2244 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2245 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2246 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2254 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[3] &&
+			P2_marking_member_0[0] == P2_marking_member_0[4])))
+# 2257 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2263 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2264 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 2267 "originaux/nsichneu.c"
+			if(b > a)
+# 2267 "originaux/nsichneu.c"
+			{
+# 2270 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 2271 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2274 "originaux/nsichneu.c"
+				c = a + b;
+# 2277 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2278 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2279 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2280 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2288 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[4] &&
+			P2_marking_member_0[0] == P2_marking_member_0[1])))
+# 2291 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2297 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2298 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 2301 "originaux/nsichneu.c"
+			if(b > a)
+# 2301 "originaux/nsichneu.c"
+			{
+# 2304 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 2305 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2308 "originaux/nsichneu.c"
+				c = a + b;
+# 2311 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2312 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2313 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2314 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2322 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[4] &&
+			P2_marking_member_0[0] == P2_marking_member_0[3])))
+# 2325 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2331 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2332 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 2335 "originaux/nsichneu.c"
+			if(b > a)
+# 2335 "originaux/nsichneu.c"
+			{
+# 2338 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 2339 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2342 "originaux/nsichneu.c"
+				c = a + b;
+# 2345 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2346 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2347 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2348 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2356 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[0] &&
+			P2_marking_member_0[1] == P2_marking_member_0[4])))
+# 2359 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2365 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2366 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 2369 "originaux/nsichneu.c"
+			if(b > a)
+# 2369 "originaux/nsichneu.c"
+			{
+# 2372 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 2373 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2376 "originaux/nsichneu.c"
+				c = a + b;
+# 2379 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2380 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2381 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2382 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2390 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[3] &&
+			P2_marking_member_0[1] == P2_marking_member_0[4])))
+# 2393 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2399 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2400 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 2403 "originaux/nsichneu.c"
+			if(b > a)
+# 2403 "originaux/nsichneu.c"
+			{
+# 2406 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2409 "originaux/nsichneu.c"
+				c = a + b;
+# 2412 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2413 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2414 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2415 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2423 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[4] &&
+			P2_marking_member_0[1] == P2_marking_member_0[0])))
+# 2426 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2432 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2433 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 2436 "originaux/nsichneu.c"
+			if(b > a)
+# 2436 "originaux/nsichneu.c"
+			{
+# 2439 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 2440 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2443 "originaux/nsichneu.c"
+				c = a + b;
+# 2446 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2447 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2448 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2449 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2457 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[4] &&
+			P2_marking_member_0[1] == P2_marking_member_0[3])))
+# 2460 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2466 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2467 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 2470 "originaux/nsichneu.c"
+			if(b > a)
+# 2470 "originaux/nsichneu.c"
+			{
+# 2473 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2476 "originaux/nsichneu.c"
+				c = a + b;
+# 2479 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2480 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2481 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2482 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2490 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[0] &&
+			P2_marking_member_0[3] == P2_marking_member_0[4])))
+# 2493 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2499 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2500 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 2503 "originaux/nsichneu.c"
+			if(b > a)
+# 2503 "originaux/nsichneu.c"
+			{
+# 2506 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 2507 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2510 "originaux/nsichneu.c"
+				c = a + b;
+# 2513 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2514 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2515 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2516 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2524 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[1] &&
+			P2_marking_member_0[3] == P2_marking_member_0[4])))
+# 2527 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2533 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2534 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 2537 "originaux/nsichneu.c"
+			if(b > a)
+# 2537 "originaux/nsichneu.c"
+			{
+# 2540 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2543 "originaux/nsichneu.c"
+				c = a + b;
+# 2546 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2547 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2548 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2549 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2557 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[4] &&
+			P2_marking_member_0[3] == P2_marking_member_0[0])))
+# 2560 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2566 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2567 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 2570 "originaux/nsichneu.c"
+			if(b > a)
+# 2570 "originaux/nsichneu.c"
+			{
+# 2573 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 2574 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2577 "originaux/nsichneu.c"
+				c = a + b;
+# 2580 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2581 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2582 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2583 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2591 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[4] &&
+			P2_marking_member_0[3] == P2_marking_member_0[1])))
+# 2594 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2600 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2601 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 2604 "originaux/nsichneu.c"
+			if(b > a)
+# 2604 "originaux/nsichneu.c"
+			{
+# 2607 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2610 "originaux/nsichneu.c"
+				c = a + b;
+# 2613 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2614 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2615 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2616 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2624 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[0] &&
+			P2_marking_member_0[4] == P2_marking_member_0[1])))
+# 2627 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2633 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2634 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2637 "originaux/nsichneu.c"
+			if(b > a)
+# 2637 "originaux/nsichneu.c"
+			{
+# 2640 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 2641 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2644 "originaux/nsichneu.c"
+				c = a + b;
+# 2647 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2648 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2649 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2650 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2658 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[0] &&
+			P2_marking_member_0[4] == P2_marking_member_0[3])))
+# 2661 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2667 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2668 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2671 "originaux/nsichneu.c"
+			if(b > a)
+# 2671 "originaux/nsichneu.c"
+			{
+# 2674 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 2675 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2678 "originaux/nsichneu.c"
+				c = a + b;
+# 2681 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2682 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2683 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2684 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2692 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[1] &&
+			P2_marking_member_0[4] == P2_marking_member_0[0])))
+# 2695 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2701 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2702 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2705 "originaux/nsichneu.c"
+			if(b > a)
+# 2705 "originaux/nsichneu.c"
+			{
+# 2708 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 2709 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2712 "originaux/nsichneu.c"
+				c = a + b;
+# 2715 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2716 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2717 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2718 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2726 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[1] &&
+			P2_marking_member_0[4] == P2_marking_member_0[3])))
+# 2729 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2735 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2736 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2739 "originaux/nsichneu.c"
+			if(b > a)
+# 2739 "originaux/nsichneu.c"
+			{
+# 2742 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2745 "originaux/nsichneu.c"
+				c = a + b;
+# 2748 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2749 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2750 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2751 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2759 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[3] &&
+			P2_marking_member_0[4] == P2_marking_member_0[0])))
+# 2762 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2768 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2769 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2772 "originaux/nsichneu.c"
+			if(b > a)
+# 2772 "originaux/nsichneu.c"
+			{
+# 2775 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 2776 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2779 "originaux/nsichneu.c"
+				c = a + b;
+# 2782 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2783 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2784 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2785 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2793 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[3] &&
+			P2_marking_member_0[4] == P2_marking_member_0[1])))
+# 2796 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2802 "originaux/nsichneu.c"
+			a = P2_marking_member_0[2];
+# 2803 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 2806 "originaux/nsichneu.c"
+			if(b > a)
+# 2806 "originaux/nsichneu.c"
+			{
+# 2809 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2812 "originaux/nsichneu.c"
+				c = a + b;
+# 2815 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2816 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2817 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2818 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2826 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[1] &&
+			P2_marking_member_0[0] == P2_marking_member_0[4])))
+# 2829 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2835 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 2836 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 2839 "originaux/nsichneu.c"
+			if(b > a)
+# 2839 "originaux/nsichneu.c"
+			{
+# 2842 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 2843 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2846 "originaux/nsichneu.c"
+				c = a + b;
+# 2849 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2850 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2851 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2852 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2860 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[2] &&
+			P2_marking_member_0[0] == P2_marking_member_0[4])))
+# 2863 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2869 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 2870 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 2873 "originaux/nsichneu.c"
+			if(b > a)
+# 2873 "originaux/nsichneu.c"
+			{
+# 2876 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 2877 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2880 "originaux/nsichneu.c"
+				c = a + b;
+# 2883 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2884 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2885 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2886 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2894 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[4] &&
+			P2_marking_member_0[0] == P2_marking_member_0[1])))
+# 2897 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2903 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 2904 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 2907 "originaux/nsichneu.c"
+			if(b > a)
+# 2907 "originaux/nsichneu.c"
+			{
+# 2910 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 2911 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2914 "originaux/nsichneu.c"
+				c = a + b;
+# 2917 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2918 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2919 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2920 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2928 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[4] &&
+			P2_marking_member_0[0] == P2_marking_member_0[2])))
+# 2931 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2937 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 2938 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 2941 "originaux/nsichneu.c"
+			if(b > a)
+# 2941 "originaux/nsichneu.c"
+			{
+# 2944 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 2945 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2948 "originaux/nsichneu.c"
+				c = a + b;
+# 2951 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2952 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2953 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2954 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2962 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[0] &&
+			P2_marking_member_0[1] == P2_marking_member_0[4])))
+# 2965 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 2971 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 2972 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 2975 "originaux/nsichneu.c"
+			if(b > a)
+# 2975 "originaux/nsichneu.c"
+			{
+# 2978 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 2979 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 2982 "originaux/nsichneu.c"
+				c = a + b;
+# 2985 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 2986 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 2987 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 2988 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 2996 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[2] &&
+			P2_marking_member_0[1] == P2_marking_member_0[4])))
+# 2999 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3005 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3006 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3009 "originaux/nsichneu.c"
+			if(b > a)
+# 3009 "originaux/nsichneu.c"
+			{
+# 3012 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3015 "originaux/nsichneu.c"
+				c = a + b;
+# 3018 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3019 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3020 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3021 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3029 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[4] &&
+			P2_marking_member_0[1] == P2_marking_member_0[0])))
+# 3032 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3038 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3039 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3042 "originaux/nsichneu.c"
+			if(b > a)
+# 3042 "originaux/nsichneu.c"
+			{
+# 3045 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 3046 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3049 "originaux/nsichneu.c"
+				c = a + b;
+# 3052 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3053 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3054 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3055 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3063 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[4] &&
+			P2_marking_member_0[1] == P2_marking_member_0[2])))
+# 3066 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3072 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3073 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3076 "originaux/nsichneu.c"
+			if(b > a)
+# 3076 "originaux/nsichneu.c"
+			{
+# 3079 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3082 "originaux/nsichneu.c"
+				c = a + b;
+# 3085 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3086 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3087 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3088 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3096 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[0] &&
+			P2_marking_member_0[2] == P2_marking_member_0[4])))
+# 3099 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3105 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3106 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3109 "originaux/nsichneu.c"
+			if(b > a)
+# 3109 "originaux/nsichneu.c"
+			{
+# 3112 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 3113 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3116 "originaux/nsichneu.c"
+				c = a + b;
+# 3119 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3120 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3121 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3122 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3130 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[1] &&
+			P2_marking_member_0[2] == P2_marking_member_0[4])))
+# 3133 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3139 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3140 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3143 "originaux/nsichneu.c"
+			if(b > a)
+# 3143 "originaux/nsichneu.c"
+			{
+# 3146 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3149 "originaux/nsichneu.c"
+				c = a + b;
+# 3152 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3153 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3154 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3155 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3163 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[4] &&
+			P2_marking_member_0[2] == P2_marking_member_0[0])))
+# 3166 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3172 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3173 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3176 "originaux/nsichneu.c"
+			if(b > a)
+# 3176 "originaux/nsichneu.c"
+			{
+# 3179 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 3180 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3183 "originaux/nsichneu.c"
+				c = a + b;
+# 3186 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3187 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3188 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3189 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3197 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[4] &&
+			P2_marking_member_0[2] == P2_marking_member_0[1])))
+# 3200 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3206 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3207 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3210 "originaux/nsichneu.c"
+			if(b > a)
+# 3210 "originaux/nsichneu.c"
+			{
+# 3213 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3216 "originaux/nsichneu.c"
+				c = a + b;
+# 3219 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3220 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3221 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3222 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3230 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[0] &&
+			P2_marking_member_0[4] == P2_marking_member_0[1])))
+# 3233 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3239 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3240 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 3243 "originaux/nsichneu.c"
+			if(b > a)
+# 3243 "originaux/nsichneu.c"
+			{
+# 3246 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 3247 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3250 "originaux/nsichneu.c"
+				c = a + b;
+# 3253 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3254 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3255 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3256 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3264 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[0] &&
+			P2_marking_member_0[4] == P2_marking_member_0[2])))
+# 3267 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3273 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3274 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 3277 "originaux/nsichneu.c"
+			if(b > a)
+# 3277 "originaux/nsichneu.c"
+			{
+# 3280 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 3281 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3284 "originaux/nsichneu.c"
+				c = a + b;
+# 3287 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3288 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3289 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3290 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3298 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[1] &&
+			P2_marking_member_0[4] == P2_marking_member_0[0])))
+# 3301 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3307 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3308 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 3311 "originaux/nsichneu.c"
+			if(b > a)
+# 3311 "originaux/nsichneu.c"
+			{
+# 3314 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 3315 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3318 "originaux/nsichneu.c"
+				c = a + b;
+# 3321 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3322 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3323 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3324 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3332 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[1] &&
+			P2_marking_member_0[4] == P2_marking_member_0[2])))
+# 3335 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3341 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3342 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 3345 "originaux/nsichneu.c"
+			if(b > a)
+# 3345 "originaux/nsichneu.c"
+			{
+# 3348 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3351 "originaux/nsichneu.c"
+				c = a + b;
+# 3354 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3355 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3356 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3357 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3365 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[2] &&
+			P2_marking_member_0[4] == P2_marking_member_0[0])))
+# 3368 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3374 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3375 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 3378 "originaux/nsichneu.c"
+			if(b > a)
+# 3378 "originaux/nsichneu.c"
+			{
+# 3381 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 3382 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3385 "originaux/nsichneu.c"
+				c = a + b;
+# 3388 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3389 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3390 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3391 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3399 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[4] == P2_marking_member_0[2] &&
+			P2_marking_member_0[4] == P2_marking_member_0[1])))
+# 3402 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3408 "originaux/nsichneu.c"
+			a = P2_marking_member_0[3];
+# 3409 "originaux/nsichneu.c"
+			b = P2_marking_member_0[4];
+# 3412 "originaux/nsichneu.c"
+			if(b > a)
+# 3412 "originaux/nsichneu.c"
+			{
+# 3415 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3418 "originaux/nsichneu.c"
+				c = a + b;
+# 3421 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3422 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3423 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3424 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3432 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[1] &&
+			P2_marking_member_0[0] == P2_marking_member_0[2])))
+# 3435 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3441 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3442 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 3445 "originaux/nsichneu.c"
+			if(b > a)
+# 3445 "originaux/nsichneu.c"
+			{
+# 3448 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 3449 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3452 "originaux/nsichneu.c"
+				c = a + b;
+# 3455 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3456 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3457 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3458 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3466 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[1] &&
+			P2_marking_member_0[0] == P2_marking_member_0[3])))
+# 3469 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3475 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3476 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 3479 "originaux/nsichneu.c"
+			if(b > a)
+# 3479 "originaux/nsichneu.c"
+			{
+# 3482 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 3483 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3486 "originaux/nsichneu.c"
+				c = a + b;
+# 3489 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3490 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3491 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3492 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3500 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[2] &&
+			P2_marking_member_0[0] == P2_marking_member_0[1])))
+# 3503 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3509 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3510 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 3513 "originaux/nsichneu.c"
+			if(b > a)
+# 3513 "originaux/nsichneu.c"
+			{
+# 3516 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 3517 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3520 "originaux/nsichneu.c"
+				c = a + b;
+# 3523 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3524 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3525 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3526 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3534 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[2] &&
+			P2_marking_member_0[0] == P2_marking_member_0[3])))
+# 3537 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3543 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3544 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 3547 "originaux/nsichneu.c"
+			if(b > a)
+# 3547 "originaux/nsichneu.c"
+			{
+# 3550 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 3551 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3554 "originaux/nsichneu.c"
+				c = a + b;
+# 3557 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3558 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3559 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3560 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3568 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[3] &&
+			P2_marking_member_0[0] == P2_marking_member_0[1])))
+# 3571 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3577 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3578 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 3581 "originaux/nsichneu.c"
+			if(b > a)
+# 3581 "originaux/nsichneu.c"
+			{
+# 3584 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 3585 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3588 "originaux/nsichneu.c"
+				c = a + b;
+# 3591 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3592 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3593 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3594 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3602 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[0] == P2_marking_member_0[3] &&
+			P2_marking_member_0[0] == P2_marking_member_0[2])))
+# 3605 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3611 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3612 "originaux/nsichneu.c"
+			b = P2_marking_member_0[0];
+# 3615 "originaux/nsichneu.c"
+			if(b > a)
+# 3615 "originaux/nsichneu.c"
+			{
+# 3618 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 3619 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3622 "originaux/nsichneu.c"
+				c = a + b;
+# 3625 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3626 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3627 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3628 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3636 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[0] &&
+			P2_marking_member_0[1] == P2_marking_member_0[2])))
+# 3639 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3645 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3646 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3649 "originaux/nsichneu.c"
+			if(b > a)
+# 3649 "originaux/nsichneu.c"
+			{
+# 3652 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 3653 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3656 "originaux/nsichneu.c"
+				c = a + b;
+# 3659 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3660 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3661 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3662 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3670 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[0] &&
+			P2_marking_member_0[1] == P2_marking_member_0[3])))
+# 3673 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3679 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3680 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3683 "originaux/nsichneu.c"
+			if(b > a)
+# 3683 "originaux/nsichneu.c"
+			{
+# 3686 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 3687 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3690 "originaux/nsichneu.c"
+				c = a + b;
+# 3693 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3694 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3695 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3696 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3704 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[2] &&
+			P2_marking_member_0[1] == P2_marking_member_0[0])))
+# 3707 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3713 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3714 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3717 "originaux/nsichneu.c"
+			if(b > a)
+# 3717 "originaux/nsichneu.c"
+			{
+# 3720 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 3721 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3724 "originaux/nsichneu.c"
+				c = a + b;
+# 3727 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3728 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3729 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3730 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3738 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[2] &&
+			P2_marking_member_0[1] == P2_marking_member_0[3])))
+# 3741 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3747 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3748 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3751 "originaux/nsichneu.c"
+			if(b > a)
+# 3751 "originaux/nsichneu.c"
+			{
+# 3754 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3757 "originaux/nsichneu.c"
+				c = a + b;
+# 3760 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3761 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3762 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3763 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3771 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[3] &&
+			P2_marking_member_0[1] == P2_marking_member_0[0])))
+# 3774 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3780 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3781 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3784 "originaux/nsichneu.c"
+			if(b > a)
+# 3784 "originaux/nsichneu.c"
+			{
+# 3787 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 3788 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3791 "originaux/nsichneu.c"
+				c = a + b;
+# 3794 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3795 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3796 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3797 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3805 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[1] == P2_marking_member_0[3] &&
+			P2_marking_member_0[1] == P2_marking_member_0[2])))
+# 3808 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3814 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3815 "originaux/nsichneu.c"
+			b = P2_marking_member_0[1];
+# 3818 "originaux/nsichneu.c"
+			if(b > a)
+# 3818 "originaux/nsichneu.c"
+			{
+# 3821 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3824 "originaux/nsichneu.c"
+				c = a + b;
+# 3827 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3828 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3829 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3830 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3838 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[0] &&
+			P2_marking_member_0[2] == P2_marking_member_0[1])))
+# 3841 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3847 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3848 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3851 "originaux/nsichneu.c"
+			if(b > a)
+# 3851 "originaux/nsichneu.c"
+			{
+# 3854 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 3855 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3858 "originaux/nsichneu.c"
+				c = a + b;
+# 3861 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3862 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3863 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3864 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3872 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[0] &&
+			P2_marking_member_0[2] == P2_marking_member_0[3])))
+# 3875 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3881 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3882 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3885 "originaux/nsichneu.c"
+			if(b > a)
+# 3885 "originaux/nsichneu.c"
+			{
+# 3888 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 3889 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3892 "originaux/nsichneu.c"
+				c = a + b;
+# 3895 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3896 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3897 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3898 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3906 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[1] &&
+			P2_marking_member_0[2] == P2_marking_member_0[0])))
+# 3909 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3915 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3916 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3919 "originaux/nsichneu.c"
+			if(b > a)
+# 3919 "originaux/nsichneu.c"
+			{
+# 3922 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[3];
+# 3923 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3926 "originaux/nsichneu.c"
+				c = a + b;
+# 3929 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3930 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3931 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3932 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3940 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[1] &&
+			P2_marking_member_0[2] == P2_marking_member_0[3])))
+# 3943 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3949 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3950 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3953 "originaux/nsichneu.c"
+			if(b > a)
+# 3953 "originaux/nsichneu.c"
+			{
+# 3956 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3959 "originaux/nsichneu.c"
+				c = a + b;
+# 3962 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3963 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3964 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3965 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 3973 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[3] &&
+			P2_marking_member_0[2] == P2_marking_member_0[0])))
+# 3976 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 3982 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 3983 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 3986 "originaux/nsichneu.c"
+			if(b > a)
+# 3986 "originaux/nsichneu.c"
+			{
+# 3989 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 3990 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 3993 "originaux/nsichneu.c"
+				c = a + b;
+# 3996 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 3997 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 3998 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 3999 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 4007 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[2] == P2_marking_member_0[3] &&
+			P2_marking_member_0[2] == P2_marking_member_0[1])))
+# 4010 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 4016 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 4017 "originaux/nsichneu.c"
+			b = P2_marking_member_0[2];
+# 4020 "originaux/nsichneu.c"
+			if(b > a)
+# 4020 "originaux/nsichneu.c"
+			{
+# 4023 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 4026 "originaux/nsichneu.c"
+				c = a + b;
+# 4029 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 4030 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 4031 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 4032 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 4040 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[0] &&
+			P2_marking_member_0[3] == P2_marking_member_0[1])))
+# 4043 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 4049 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 4050 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 4053 "originaux/nsichneu.c"
+			if(b > a)
+# 4053 "originaux/nsichneu.c"
+			{
+# 4056 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 4057 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 4060 "originaux/nsichneu.c"
+				c = a + b;
+# 4063 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 4064 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 4065 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 4066 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 4074 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[0] &&
+			P2_marking_member_0[3] == P2_marking_member_0[2])))
+# 4077 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 4083 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 4084 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 4087 "originaux/nsichneu.c"
+			if(b > a)
+# 4087 "originaux/nsichneu.c"
+			{
+# 4090 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 4091 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 4094 "originaux/nsichneu.c"
+				c = a + b;
+# 4097 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 4098 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 4099 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 4100 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 4108 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[1] &&
+			P2_marking_member_0[3] == P2_marking_member_0[0])))
+# 4111 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 4117 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 4118 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 4121 "originaux/nsichneu.c"
+			if(b > a)
+# 4121 "originaux/nsichneu.c"
+			{
+# 4124 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[2];
+# 4125 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 4128 "originaux/nsichneu.c"
+				c = a + b;
+# 4131 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 4132 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 4133 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 4134 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 4142 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[1] &&
+			P2_marking_member_0[3] == P2_marking_member_0[2])))
+# 4145 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 4151 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 4152 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 4155 "originaux/nsichneu.c"
+			if(b > a)
+# 4155 "originaux/nsichneu.c"
+			{
+# 4158 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 4161 "originaux/nsichneu.c"
+				c = a + b;
+# 4164 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 4165 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 4166 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 4167 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 4175 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[2] &&
+			P2_marking_member_0[3] == P2_marking_member_0[0])))
+# 4178 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 4184 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 4185 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 4188 "originaux/nsichneu.c"
+			if(b > a)
+# 4188 "originaux/nsichneu.c"
+			{
+# 4191 "originaux/nsichneu.c"
+				P2_marking_member_0[0] = P2_marking_member_0[1];
+# 4192 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 4195 "originaux/nsichneu.c"
+				c = a + b;
+# 4198 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 4199 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 4200 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 4201 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+# 4209 "originaux/nsichneu.c"
+		if(P2_is_marked >= 5 && P3_is_marked + 3 <= 6 &&
+			((P2_marking_member_0[3] == P2_marking_member_0[2] &&
+			P2_marking_member_0[3] == P2_marking_member_0[1])))
+# 4212 "originaux/nsichneu.c"
+		{
+			long int a;
+			long int b;
+			long int c;
+# 4218 "originaux/nsichneu.c"
+			a = P2_marking_member_0[4];
+# 4219 "originaux/nsichneu.c"
+			b = P2_marking_member_0[3];
+# 4222 "originaux/nsichneu.c"
+			if(b > a)
+# 4222 "originaux/nsichneu.c"
+			{
+# 4225 "originaux/nsichneu.c"
+				P2_is_marked -= 4;
+# 4228 "originaux/nsichneu.c"
+				c = a + b;
+# 4231 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 0] = a;
+# 4232 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 1] = b;
+# 4233 "originaux/nsichneu.c"
+				P3_marking_member_0[P3_is_marked + 2] = c;
+# 4234 "originaux/nsichneu.c"
+				P3_is_marked += 3;
+			}
+		}
+	}
+# 4241 "originaux/nsichneu.c"
+	dummy_i = 77;
+# 4243 "originaux/nsichneu.c"
+	return dummy_i;
+}
+

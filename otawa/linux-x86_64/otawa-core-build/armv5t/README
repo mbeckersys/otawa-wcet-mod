@@ -1,0 +1,35 @@
+====== ARMv5T ======
+
+This package provides ARM v5 T implementation based on GLISS v2 tool suite.
+It contains tools and libraries to decode, disassemble and simulate
+ARM v5 T executable in ELF format.
+
+===== Configuration =====
+
+The configuration of the built tool suite is contained in file ''config.mk''.
+If it doesn't exist, just copy it from ''default.mk''.
+By adding or removing comment tag ''#'' in front of options. 
+
+
+===== Installation =====
+
+To build this package, the GLISS v2 package is required and must be unpacked
+and compiled in the parent directory of this package. Optionaly, the exact path
+of GLISS v2 may be tuned in variable ''GLISS_PREFIX'' of ''Makefile''.
+
+To compile this package, just:
+	> make all
+
+
+===== Content =====
+
+Once the compiled is successful, the following tools are available:
+  * disasm/arm-disasm -- disassembler,
+  * sim/arm-sim -- functional simulator,
+  * lib/libarm.a, include/arm -- library and header files providing decoding, simulation and disassembly of ARM v5 T binary.
+
+
+===== Contact =====
+
+Contact us at mailto:casse@irit.fr.
+ 

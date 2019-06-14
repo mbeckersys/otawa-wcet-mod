@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="11" source="originaux/booltest.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+            <conditional id="IF-1"> <condition varcond="IF-1" line="15" source="originaux/booltest.c" isexecuted="true" expcond="" expcondinit="j&gt;75"> </condition>
+                <case cond="1" executed="true" line="15" source="originaux/booltest.c">
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+        <loop loopId="2" line="20" source="originaux/booltest.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+            <conditional id="IF-2"> <condition varcond="IF-2" line="24" source="originaux/booltest.c" isexecuted="true" expcond="" expcondinit="j&gt;75"> </condition>
+                <case cond="1" executed="true" line="24" source="originaux/booltest.c">
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+        <loop loopId="3" line="29" source="originaux/booltest.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+            <conditional id="IF-3"> <condition varcond="IF-3" line="33" source="originaux/booltest.c" isexecuted="true" expcond="" expcondinit="j&gt;75"> </condition>
+                <case cond="1" executed="true" line="33" source="originaux/booltest.c">
+                </case>
+                <case cond="0" executed="true" >
+                </case>
+            </conditional>
+        </loop>
+    </function>
+</flowfacts>
+

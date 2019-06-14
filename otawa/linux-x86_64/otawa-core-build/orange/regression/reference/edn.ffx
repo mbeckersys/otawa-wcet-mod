@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="vec_mpy1" numcall="1" line="275" source="originaux/edn.c" executed="true" extern="false">
+            <function name="vec_mpy1">
+                <loop loopId="1" line="35" source="originaux/edn.c" exact="true" maxcount="150" totalcount="150" maxexpr="partieEntiereInf((150-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((150-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="mac" numcall="2" line="276" source="originaux/edn.c" executed="true" extern="false">
+            <function name="mac">
+                <loop loopId="2" line="49" source="originaux/edn.c" exact="true" maxcount="150" totalcount="150" maxexpr="partieEntiereInf((150-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((150-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="fir" numcall="3" line="277" source="originaux/edn.c" executed="true" extern="false">
+            <function name="fir">
+                <loop loopId="3" line="67" source="originaux/edn.c" exact="true" maxcount="50" totalcount="50" maxexpr="partieEntiereInf((100-50-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((100-50-EPSILONINT-0)/1+1)">
+                    <loop loopId="4" line="69" source="originaux/edn.c" exact="true" maxcount="50" totalcount="2500" maxexpr="partieEntiereInf((50-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((100-50-EPSILONINT-0)/1+1)*partieEntiereInf((50-EPSILONINT-0)/1+1)">
+                    </loop>
+                </loop>
+            </function>
+        </call>
+        <call name="fir_no_red_ld" numcall="4" line="278" source="originaux/edn.c" executed="true" extern="false">
+            <function name="fir_no_red_ld">
+                <loop loopId="5" line="89" source="originaux/edn.c" exact="true" maxcount="50" totalcount="50" maxexpr="partieEntiereInf((100-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((100-EPSILONINT-0)/2+1)">
+                    <loop loopId="6" line="93" source="originaux/edn.c" exact="true" maxcount="16" totalcount="800" maxexpr="partieEntiereInf((32-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((100-EPSILONINT-0)/2+1)*partieEntiereInf((32-EPSILONINT-0)/2+1)">
+                    </loop>
+                </loop>
+            </function>
+        </call>
+        <call name="latsynth" numcall="5" line="279" source="originaux/edn.c" executed="true" extern="false">
+            <function name="latsynth">
+                <loop loopId="7" line="117" source="originaux/edn.c" exact="true" maxcount="99" totalcount="99" maxexpr="partieEntiereInf((0-(100-2))/-1+1)" totalexpr="partieEntiereInf((0-(100-2))/-1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="iir1" numcall="6" line="280" source="originaux/edn.c" executed="true" extern="false">
+            <function name="iir1">
+                <loop loopId="8" line="136" source="originaux/edn.c" exact="true" maxcount="50" totalcount="50" maxexpr="partieEntiereInf((50-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((50-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="codebook" numcall="7" line="281" source="originaux/edn.c" executed="true" extern="false">
+            <function name="codebook">
+                <loop loopId="9" line="162" source="originaux/edn.c" exact="true" maxcount="16" totalcount="16" maxexpr="partieEntiereInf((17-(1+1))/1+1)" totalexpr="partieEntiereInf((17-(1+1))/1+1)">
+                </loop>
+            </function>
+        </call>
+        <call name="jpegdct" numcall="8" line="282" source="originaux/edn.c" executed="true" extern="false">
+            <function name="jpegdct">
+                <loop loopId="10" line="190" source="originaux/edn.c" exact="true" maxcount="2" totalcount="2" maxexpr="partieEntiereInf((8-1)/7+1)" totalexpr="partieEntiereInf((8-1)/7+1)">
+                    <loop loopId="11" line="191" source="originaux/edn.c" exact="true" maxcount="8" totalcount="16" maxexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((8-1)/7+1)*partieEntiereInf((8-EPSILONINT-0)/1+1)">
+                        <loop loopId="12" line="192" source="originaux/edn.c" exact="true" maxcount="4" totalcount="64" maxexpr="partieEntiereInf((4-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((8-1)/7+1)*partieEntiereInf((8-EPSILONINT-0)/1+1)*4">
+                        </loop>
+                    </loop>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

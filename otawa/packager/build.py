@@ -27,14 +27,14 @@ class Site:
 	env = None
 	packages = None
 	changed = False
-	
+
 	def __init__(self, path, env):
 		self.path = os.path.abspath(path)
 		self.env = env
-	
+
 	def init(self):
 		self.packages = []
-	
+
 	def getPackages(self):
 		"""Get the packages of the site."""
 		if self.packages == None:
@@ -48,14 +48,14 @@ class Site:
 					else:
 						env.warn("package %s has possibly been removed: module base cleaned" % p)
 		return self.packages
-	
+
 	def get(self, name):
 		"""Get a pakcage by its name or return None."""
 		for p in self.getPackages():
 			if p.name == name:
 				return p
 		return None
-	
+
 	def remove(self, pack):
 		"""Remove a package from the site."""
 		self.getPackages()
@@ -67,7 +67,7 @@ class Site:
 		self.getPackages()
 		self.packages.append(pack)
 		self.changed = True
-	
+
 	def look(self, name):
 		"""Look for a module in the given packages.
 		Return the found module or None."""
@@ -109,7 +109,7 @@ parser.add_option("-u", "--user", dest="user", help="user name to perform connec
 
 # initialization
 env = base.Env()
-env.set("user", options.user)	
+env.set("user", options.user)
 if options.verbose:
 	env.verbose = True
 if options.builddir:

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="cyfun" numcall="1" line="190" source="originaux/ndes.c" executed="true" extern="false">
+            <function name="cyfun">
+                <loop loopId="1" line="178" source="originaux/ndes.c" exact="true" maxcount="16" totalcount="16" maxexpr="partieEntiereInf((1-16)/-1+1)" totalexpr="partieEntiereInf((1-16)/-1+1)">
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

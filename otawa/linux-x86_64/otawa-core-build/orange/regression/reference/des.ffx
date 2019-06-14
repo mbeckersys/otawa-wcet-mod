@@ -1,0 +1,666 @@
+DEBUG: cpp  "pretraites/des.c"
+DEBUG: cpp  "pretraites/des.c"
+printFile liste fonction NON vide 1
+orange step1
+000orange step1 analyse_defs terminé
+liste fonction non vide
+
+EVALUATION BEGIN
+
+EVALUATION END
+
+<loopsfacts>
+	 <loopId="1" maxcountAnyCalls=" 8" >
+	 <loopId="7" maxcountAnyCalls=" 7" >
+	 <loopId="6" maxcountAnyCalls=" 8" >
+	 <loopId="11" maxcountAnyCalls=" 64" >
+	 <loopId="5" maxcountAnyCalls=" 16" >
+	 <loopId="2" maxcountAnyCalls=" 16" >
+	 <loopId="10" maxcountAnyCalls=" 10" >
+	 <loopId="4" maxcountAnyCalls=" 16" >
+	 <loopId="9" maxcountAnyCalls=" 16" >
+	 <loopId="3" maxcountAnyCalls=" 16" >
+	 <loopId="8" maxcountAnyCalls=" 64" >
+</loopsfacts>
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="mergec_rename__0__selftest" numcall="66" line="1018" source="originaux/des.c" executed="true" extern="false">
+            <function name="mergec_rename__0__selftest">
+                <call name="printf" numcall="31" line="777" source="originaux/des.c" executed="true" extern="true">
+                    <function name="printf">
+                    </function>
+                </call>
+                <conditional id="IF-11"> <condition varcond="IF-11" line="778" source="originaux/des.c" isexecuted="true" expcond="SIZEOF_int!=4" expcondinit="SIZEOF_int!=4"> </condition>
+                    <case cond="1" executed="true" line="779" source="originaux/des.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-12"> <condition varcond="IF-12" line="782" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___2"> </condition>
+                    <case cond="1" executed="true" line="795" source="originaux/des.c">
+                        <loop loopId="8" line="795" source="originaux/des.c" exact="false" maxcount="64" totalcount="64" maxexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)">
+                            <call name="mergec_rename__0__des_setkey" numcall="32" line="797" source="originaux/des.c" executed="true" extern="false">
+                                <function name="mergec_rename__0__des_setkey">
+                                    <call name="printf" numcall="7" line="559" source="originaux/des.c" executed="true" extern="true">
+                                        <function name="printf">
+                                        </function>
+                                    </call>
+                                    <conditional id="IF-4"> <condition varcond="IF-4" line="560" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="selftest_failed"> </condition>
+                                        <case cond="1" executed="true" line="561" source="originaux/des.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-5"> <condition varcond="IF-5" line="564" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___0"> </condition>
+                                        <case cond="1" executed="true" line="563" source="originaux/des.c">
+                                            <call name="mergec_rename__0__des_key_schedule" numcall="8" line="563" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__des_key_schedule">
+                                                    <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="1024" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                    </loop>
+                                                    <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <loop loopId="3" line="565" source="originaux/des.c" exact="false" maxcount="16" totalcount="1024" maxexpr="partieEntiereInf((32-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)*partieEntiereInf((32-EPSILONINT-0)/2+1)">
+                                            </loop>
+                                            <call name="printf" numcall="9" line="569" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="printf" numcall="10" line="569" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-6"> <condition varcond="IF-6" line="571" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___0"> </condition>
+                                        <case cond="1" executed="true" line="572" source="originaux/des.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <call name="mergec_rename__0__des_ecb_crypt" numcall="33" line="798" source="originaux/des.c" executed="true" extern="false">
+                                <function name="mergec_rename__0__des_ecb_crypt">
+                                    <call name="printf" numcall="11" line="585" source="originaux/des.c" executed="true" extern="true">
+                                        <function name="printf">
+                                        </function>
+                                    </call>
+                                    <call name="printf" numcall="12" line="602" source="originaux/des.c" executed="true" extern="true">
+                                        <function name="printf">
+                                        </function>
+                                    </call>
+                                </function>
+                            </call>
+                            <call name="mergec_rename__0__des_ecb_crypt" numcall="34" line="799" source="originaux/des.c" executed="true" extern="false">
+                                <function name="mergec_rename__0__des_ecb_crypt">
+                                    <call name="printf" numcall="11" line="585" source="originaux/des.c" executed="true" extern="true">
+                                        <function name="printf">
+                                        </function>
+                                    </call>
+                                    <call name="printf" numcall="12" line="602" source="originaux/des.c" executed="true" extern="true">
+                                        <function name="printf">
+                                        </function>
+                                    </call>
+                                </function>
+                            </call>
+                            <call name="mergec_rename__0__des_setkey" numcall="35" line="800" source="originaux/des.c" executed="true" extern="false">
+                                <function name="mergec_rename__0__des_setkey">
+                                    <call name="printf" numcall="7" line="559" source="originaux/des.c" executed="true" extern="true">
+                                        <function name="printf">
+                                        </function>
+                                    </call>
+                                    <conditional id="IF-4"> <condition varcond="IF-4" line="560" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="selftest_failed"> </condition>
+                                        <case cond="1" executed="true" line="561" source="originaux/des.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-5"> <condition varcond="IF-5" line="564" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___0"> </condition>
+                                        <case cond="1" executed="true" line="563" source="originaux/des.c">
+                                            <call name="mergec_rename__0__des_key_schedule" numcall="8" line="563" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__des_key_schedule">
+                                                    <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="1024" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                    </loop>
+                                                    <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <loop loopId="3" line="565" source="originaux/des.c" exact="false" maxcount="16" totalcount="1024" maxexpr="partieEntiereInf((32-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)*partieEntiereInf((32-EPSILONINT-0)/2+1)">
+                                            </loop>
+                                            <call name="printf" numcall="9" line="569" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="printf" numcall="10" line="569" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <conditional id="IF-6"> <condition varcond="IF-6" line="571" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___0"> </condition>
+                                        <case cond="1" executed="true" line="572" source="originaux/des.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <call name="mergec_rename__0__des_ecb_crypt" numcall="36" line="801" source="originaux/des.c" executed="true" extern="false">
+                                <function name="mergec_rename__0__des_ecb_crypt">
+                                    <call name="printf" numcall="11" line="585" source="originaux/des.c" executed="true" extern="true">
+                                        <function name="printf">
+                                        </function>
+                                    </call>
+                                    <call name="printf" numcall="12" line="602" source="originaux/des.c" executed="true" extern="true">
+                                        <function name="printf">
+                                        </function>
+                                    </call>
+                                </function>
+                            </call>
+                            <call name="memcpy" numcall="37" line="802" source="originaux/des.c" executed="true" extern="true">
+                                <function name="memcpy">
+                                </function>
+                            </call>
+                            <call name="memcpy" numcall="38" line="803" source="originaux/des.c" executed="true" extern="true">
+                                <function name="memcpy">
+                                </function>
+                            </call>
+                        </loop>
+                        <call name="printf" numcall="39" line="804" source="originaux/des.c" executed="true" extern="true">
+                            <function name="printf">
+                            </function>
+                        </call>
+                        <call name="memcmp" numcall="40" line="805" source="originaux/des.c" executed="true" extern="true">
+                            <function name="memcmp">
+                            </function>
+                        </call>
+                        <conditional id="IF-13"> <condition varcond="IF-13" line="805" source="originaux/des.c" isexecuted="true" expcond="memcmp(temp3,result_1,8)" expcondinit="memcmp(temp3,result_1,8)"> </condition>
+                            <case cond="1" executed="true" line="806" source="originaux/des.c">
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                        <conditional id="IF-14"> <condition varcond="IF-14" line="810" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___2"> </condition>
+                            <case cond="1" executed="true" line="826" source="originaux/des.c">
+                                <loop loopId="9" line="826" source="originaux/des.c" exact="false" maxcount="16" totalcount="16" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                    <call name="mergec_rename__0__tripledes_set2keys" numcall="41" line="828" source="originaux/des.c" executed="true" extern="false">
+                                        <function name="mergec_rename__0__tripledes_set2keys">
+                                            <call name="printf" numcall="13" line="619" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="mergec_rename__0__des_key_schedule" numcall="14" line="620" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__des_key_schedule">
+                                                    <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                    </loop>
+                                                    <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <call name="mergec_rename__0__des_key_schedule" numcall="15" line="621" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__des_key_schedule">
+                                                    <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                    </loop>
+                                                    <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <loop loopId="4" line="623" source="originaux/des.c" exact="false" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((32-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)*partieEntiereInf((32-EPSILONINT-0)/2+1)">
+                                            </loop>
+                                            <call name="printf" numcall="16" line="636" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="printf" numcall="17" line="637" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                        </function>
+                                    </call>
+                                    <call name="mergec_rename__0__tripledes_ecb_crypt" numcall="42" line="829" source="originaux/des.c" executed="true" extern="false">
+                                        <function name="mergec_rename__0__tripledes_ecb_crypt">
+                                            <call name="printf" numcall="24" line="686" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="printf" numcall="25" line="721" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                        </function>
+                                    </call>
+                                    <call name="mergec_rename__0__tripledes_ecb_crypt" numcall="43" line="830" source="originaux/des.c" executed="true" extern="false">
+                                        <function name="mergec_rename__0__tripledes_ecb_crypt">
+                                            <call name="printf" numcall="24" line="686" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="printf" numcall="25" line="721" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                        </function>
+                                    </call>
+                                    <call name="mergec_rename__0__tripledes_set3keys" numcall="44" line="831" source="originaux/des.c" executed="true" extern="false">
+                                        <function name="mergec_rename__0__tripledes_set3keys">
+                                            <call name="printf" numcall="18" line="655" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="mergec_rename__0__des_key_schedule" numcall="19" line="656" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__des_key_schedule">
+                                                    <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                    </loop>
+                                                    <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <call name="mergec_rename__0__des_key_schedule" numcall="20" line="657" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__des_key_schedule">
+                                                    <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                    </loop>
+                                                    <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <call name="mergec_rename__0__des_key_schedule" numcall="21" line="658" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__des_key_schedule">
+                                                    <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                    </loop>
+                                                    <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <loop loopId="5" line="660" source="originaux/des.c" exact="false" maxcount="16" totalcount="256" maxexpr="partieEntiereInf((32-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)*partieEntiereInf((32-EPSILONINT-0)/2+1)">
+                                            </loop>
+                                            <call name="printf" numcall="22" line="670" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="printf" numcall="23" line="671" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                        </function>
+                                    </call>
+                                    <call name="mergec_rename__0__tripledes_ecb_crypt" numcall="45" line="832" source="originaux/des.c" executed="true" extern="false">
+                                        <function name="mergec_rename__0__tripledes_ecb_crypt">
+                                            <call name="printf" numcall="24" line="686" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                            <call name="printf" numcall="25" line="721" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="printf">
+                                                </function>
+                                            </call>
+                                        </function>
+                                    </call>
+                                </loop>
+                                <call name="printf" numcall="46" line="833" source="originaux/des.c" executed="true" extern="true">
+                                    <function name="printf">
+                                    </function>
+                                </call>
+                                <call name="memcmp" numcall="47" line="834" source="originaux/des.c" executed="true" extern="true">
+                                    <function name="memcmp">
+                                    </function>
+                                </call>
+                                <conditional id="IF-15"> <condition varcond="IF-15" line="834" source="originaux/des.c" isexecuted="true" expcond="memcmp(input,result_0,8)" expcondinit="memcmp(input,result_0,8)"> </condition>
+                                    <case cond="1" executed="true" line="835" source="originaux/des.c">
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                                <conditional id="IF-16"> <condition varcond="IF-16" line="839" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___2"> </condition>
+                                    <case cond="1" executed="true" line="911" source="originaux/des.c">
+                                        <loop loopId="10" line="911" source="originaux/des.c" exact="false" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((10*SIZEOF_struct_{int* 24,int* 8,int* 8}/SIZEOF_struct_{int* 24,int* 8,int* 8}-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10*SIZEOF_struct_{int* 24,int* 8,int* 8}/SIZEOF_struct_{int* 24,int* 8,int* 8}-EPSILONINT-0)/1+1)">
+                                            <call name="mergec_rename__0__tripledes_set3keys" numcall="48" line="912" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__tripledes_set3keys">
+                                                    <call name="printf" numcall="18" line="655" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="mergec_rename__0__des_key_schedule" numcall="19" line="656" source="originaux/des.c" executed="true" extern="false">
+                                                        <function name="mergec_rename__0__des_key_schedule">
+                                                            <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="160" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10*SIZEOF_struct_{int* 24,int* 8,int* 8}/SIZEOF_struct_{int* 24,int* 8,int* 8}-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                            </loop>
+                                                            <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                        </function>
+                                                    </call>
+                                                    <call name="mergec_rename__0__des_key_schedule" numcall="20" line="657" source="originaux/des.c" executed="true" extern="false">
+                                                        <function name="mergec_rename__0__des_key_schedule">
+                                                            <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="160" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10*SIZEOF_struct_{int* 24,int* 8,int* 8}/SIZEOF_struct_{int* 24,int* 8,int* 8}-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                            </loop>
+                                                            <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                        </function>
+                                                    </call>
+                                                    <call name="mergec_rename__0__des_key_schedule" numcall="21" line="658" source="originaux/des.c" executed="true" extern="false">
+                                                        <function name="mergec_rename__0__des_key_schedule">
+                                                            <call name="printf" numcall="4" line="474" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <loop loopId="2" line="495" source="originaux/des.c" exact="false" maxcount="16" totalcount="160" maxexpr="partieEntiereInf((16-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10*SIZEOF_struct_{int* 24,int* 8,int* 8}/SIZEOF_struct_{int* 24,int* 8,int* 8}-EPSILONINT-0)/1+1)*partieEntiereInf((16-EPSILONINT-0)/1+1)">
+                                                            </loop>
+                                                            <call name="printf" numcall="5" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <call name="printf" numcall="6" line="545" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                        </function>
+                                                    </call>
+                                                    <loop loopId="5" line="660" source="originaux/des.c" exact="false" maxcount="16" totalcount="160" maxexpr="partieEntiereInf((32-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((10*SIZEOF_struct_{int* 24,int* 8,int* 8}/SIZEOF_struct_{int* 24,int* 8,int* 8}-EPSILONINT-0)/1+1)*partieEntiereInf((32-EPSILONINT-0)/2+1)">
+                                                    </loop>
+                                                    <call name="printf" numcall="22" line="670" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="23" line="671" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <call name="mergec_rename__0__tripledes_ecb_crypt" numcall="49" line="914" source="originaux/des.c" executed="true" extern="false">
+                                                <function name="mergec_rename__0__tripledes_ecb_crypt">
+                                                    <call name="printf" numcall="24" line="686" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                    <call name="printf" numcall="25" line="721" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="printf">
+                                                        </function>
+                                                    </call>
+                                                </function>
+                                            </call>
+                                            <call name="memcmp" numcall="50" line="915" source="originaux/des.c" executed="true" extern="true">
+                                                <function name="memcmp">
+                                                </function>
+                                            </call>
+                                            <conditional id="IF-17"> <condition varcond="IF-17" line="915" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="memcmp((testdata[i]).cipher,result,8)"> </condition>
+                                                <case cond="1" executed="true" line="918" source="originaux/des.c">
+                                                    <call name="sprintf" numcall="51" line="916" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="sprintf">
+                                                        </function>
+                                                    </call>
+                                                </case>
+                                                <case cond="0" executed="true" >
+                                                </case>
+                                            </conditional>
+                                            <conditional id="IF-18"> <condition varcond="IF-18" line="920" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___2"> </condition>
+                                                <case cond="1" executed="true" line="923" source="originaux/des.c">
+                                                    <call name="mergec_rename__0__tripledes_ecb_crypt" numcall="52" line="920" source="originaux/des.c" executed="true" extern="false">
+                                                        <function name="mergec_rename__0__tripledes_ecb_crypt">
+                                                            <call name="printf" numcall="24" line="686" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <call name="printf" numcall="25" line="721" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                        </function>
+                                                    </call>
+                                                    <call name="memcmp" numcall="53" line="921" source="originaux/des.c" executed="true" extern="true">
+                                                        <function name="memcmp">
+                                                        </function>
+                                                    </call>
+                                                    <conditional id="IF-19"> <condition varcond="IF-19" line="921" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="memcmp((testdata[i]).plain,result,8)"> </condition>
+                                                        <case cond="1" executed="true" line="924" source="originaux/des.c">
+                                                            <call name="sprintf" numcall="54" line="922" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="sprintf">
+                                                                </function>
+                                                            </call>
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                    <conditional id="IF-20"> <condition varcond="IF-20" line="926" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___2"> </condition>
+                                                        <case cond="1" executed="true" line="924" source="originaux/des.c">
+                                                            <call name="printf" numcall="55" line="924" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                </case>
+                                                <case cond="0" executed="true" >
+                                                </case>
+                                            </conditional>
+                                        </loop>
+                                        <conditional id="IF-21"> <condition varcond="IF-21" line="928" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___2"> </condition>
+                                            <case cond="1" executed="true" line="936" source="originaux/des.c">
+                                                <loop loopId="11" line="936" source="originaux/des.c" exact="false" maxcount="64" totalcount="64" maxexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)">
+                                                    <call name="mergec_rename__0__is_weak_key" numcall="56" line="937" source="originaux/des.c" executed="true" extern="false">
+                                                        <function name="mergec_rename__0__is_weak_key">
+                                                            <call name="printf" numcall="26" line="738" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <loop loopId="6" line="740" source="originaux/des.c" exact="false" maxcount="8" totalcount="512" maxexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)*partieEntiereInf((8-EPSILONINT-0)/1+1)">
+                                                            </loop>
+                                                            <call name="printf" numcall="27" line="742" source="originaux/des.c" executed="true" extern="true">
+                                                                <function name="printf">
+                                                                </function>
+                                                            </call>
+                                                            <loop loopId="7" line="746" source="originaux/des.c" exact="false" maxcount="7" totalcount="448" maxexpr="partieEntiereInf((log(63-0)-log(partieEntiereSup(0+EPSILON)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)*(partieEntiereInf((log(63-0)-log(partieEntiereSup(0+EPSILON)))/log(1/0.5)+1)+1)">
+                                                                <call name="working_memcmp" numcall="28" line="750" source="originaux/des.c" executed="true" extern="false">
+                                                                    <function name="working_memcmp">
+                                                                        <call name="printf" numcall="1" line="134" source="originaux/des.c" executed="true" extern="true">
+                                                                            <function name="printf">
+                                                                            </function>
+                                                                        </call>
+                                                                        <loop loopId="1" line="135" source="originaux/des.c" exact="false" maxcount="8" totalcount="3584" maxexpr="partieEntiereInf((0+EPSILONINT-8)/-1+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/1+1)*(partieEntiereInf((log(63-0)-log(partieEntiereSup(0+EPSILON)))/log(1/0.5)+1)+1)*8">
+                                                                            <conditional id="IF-1"> <condition varcond="IF-1" line="136" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="*a!=*b"> </condition>
+                                                                                <case cond="1" executed="true" line="137" source="originaux/des.c">
+                                                                                </case>
+                                                                                <case cond="0" executed="true" >
+                                                                                </case>
+                                                                            </conditional>
+                                                                        </loop>
+                                                                        <conditional id="IF-2"> <condition varcond="IF-2" line="141" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                            <case cond="1" executed="true" line="137" source="originaux/des.c">
+                                                                                <call name="printf" numcall="2" line="137" source="originaux/des.c" executed="true" extern="true">
+                                                                                    <function name="printf">
+                                                                                    </function>
+                                                                                </call>
+                                                                                <call name="printf" numcall="3" line="137" source="originaux/des.c" executed="true" extern="true">
+                                                                                    <function name="printf">
+                                                                                    </function>
+                                                                                </call>
+                                                                            </case>
+                                                                            <case cond="0" executed="true" >
+                                                                            </case>
+                                                                        </conditional>
+                                                                        <conditional id="IF-3"> <condition varcond="IF-3" line="138" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                                                            <case cond="1" executed="true" line="139" source="originaux/des.c">
+                                                                            </case>
+                                                                            <case cond="0" executed="true" >
+                                                                            </case>
+                                                                        </conditional>
+                                                                    </function>
+                                                                </call>
+                                                                <conditional id="IF-7"> <condition varcond="IF-7" line="750" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!call-working_memcmp28"> </condition>
+                                                                    <case cond="1" executed="true" line="751" source="originaux/des.c">
+                                                                    </case>
+                                                                    <case cond="0" executed="true" line="753" source="originaux/des.c">
+                                                                        <conditional id="IF-8"> <condition varcond="IF-8" line="753" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="cmp_result&gt;0"> </condition>
+                                                                            <case cond="1" executed="true" line="754" source="originaux/des.c">
+                                                                            </case>
+                                                                            <case cond="0" executed="true" line="756" source="originaux/des.c">
+                                                                            </case>
+                                                                        </conditional>
+                                                                    </case>
+                                                                </conditional>
+                                                            </loop>
+                                                            <conditional id="IF-9"> <condition varcond="IF-9" line="759" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___1"> </condition>
+                                                                <case cond="1" executed="true" line="757" source="originaux/des.c">
+                                                                    <call name="printf" numcall="29" line="757" source="originaux/des.c" executed="true" extern="true">
+                                                                        <function name="printf">
+                                                                        </function>
+                                                                    </call>
+                                                                    <call name="printf" numcall="30" line="758" source="originaux/des.c" executed="true" extern="true">
+                                                                        <function name="printf">
+                                                                        </function>
+                                                                    </call>
+                                                                </case>
+                                                                <case cond="0" executed="true" >
+                                                                </case>
+                                                            </conditional>
+                                                            <conditional id="IF-10"> <condition varcond="IF-10" line="759" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___1"> </condition>
+                                                                <case cond="1" executed="true" line="760" source="originaux/des.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" >
+                                                                </case>
+                                                            </conditional>
+                                                        </function>
+                                                    </call>
+                                                    <conditional id="IF-22"> <condition varcond="IF-22" line="937" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!call-mergec_rename__0__is_weak_key56"> </condition>
+                                                        <case cond="1" executed="true" line="939" source="originaux/des.c">
+                                                        </case>
+                                                        <case cond="0" executed="true" >
+                                                        </case>
+                                                    </conditional>
+                                                </loop>
+                                                <conditional id="IF-23"> <condition varcond="IF-23" line="943" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___2"> </condition>
+                                                    <case cond="1" executed="true" line="938" source="originaux/des.c">
+                                                        <call name="printf" numcall="57" line="938" source="originaux/des.c" executed="true" extern="true">
+                                                            <function name="printf">
+                                                            </function>
+                                                        </call>
+                                                    </case>
+                                                    <case cond="0" executed="true" >
+                                                    </case>
+                                                </conditional>
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-24"> <condition varcond="IF-24" line="941" source="originaux/des.c" isexecuted="true" expcond="" expcondinit="!__tmp_0___2"> </condition>
+                    <case cond="1" executed="true" line="942" source="originaux/des.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

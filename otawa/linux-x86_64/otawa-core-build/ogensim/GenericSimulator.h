@@ -1,0 +1,43 @@
+/*
+ * $Id$
+ * Copyright (c) 2006, IRIT-UPS
+ *
+ * otawa/gensim/GenericSimulator.h -- GenericSimulator class interface
+ */
+#ifndef OTAWA_GENSIM_GENERIC_SIMULATOR_H
+#define OTAWA_GENSIM_GENERIC_SIMULATOR_H
+
+#include <otawa/sim/Simulator.h>
+#include <otawa/sim/State.h>
+#include <otawa/otawa.h>
+
+namespace otawa { namespace gensim {
+
+class GenericState;
+
+// GenericSimulator class
+class GenericSimulator: public sim::Simulator {
+public:
+	GenericSimulator(void);
+
+	// Simulator overload
+	sim::State *instantiate(WorkSpace *fw,
+		const PropList& props = PropList::EMPTY);
+
+	void clearCaches(void);
+
+private:
+	static bool initialized;
+	static GenericState* state;
+};
+
+extern Identifier<int> DEGREE;
+extern Identifier<bool> TRACE_CACHES;
+
+} } // otawa::gensim
+
+// Plugin access
+extern otawa::sim::Simulator& gensim_simulator;
+extern otawa::gensim::GenericSimulator OTAWA_SIMULATOR_HOOK;
+
+#endif // OTAWA_GENSIM_GENERIC_SIMULATOR_H

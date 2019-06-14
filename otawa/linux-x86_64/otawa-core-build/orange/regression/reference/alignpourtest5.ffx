@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="align" numcall="3" line="14" source="calipso/alignpourtest5.c" executed="true" extern="false">
+            <function name="align">
+                <conditional id="IF-1"> <condition varcond="IF-1" line="4" source="calipso/alignpourtest5.c" isexecuted="true" expcond="511!=0" expcondinit="i!=0"> </condition>
+                    <case cond="1" executed="true" line="5" source="calipso/alignpourtest5.c">
+                        <loop loopId="1" line="5" source="calipso/alignpourtest5.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="partieEntiereInf((SIZEOF_Of_i*8-4-0)/1+1)" totalexpr="partieEntiereInf((SIZEOF_Of_i*8-4-0)/1+1)" expinit="partieEntiereInf((SIZEOF_Of_i*8-4-BAND-i)/1+1)">
+                            <call name="printf" numcall="1" line="6" source="calipso/alignpourtest5.c" executed="true" extern="true">
+                                <function name="printf">
+                                </function>
+                            </call>
+                        </loop>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <call name="printf" numcall="2" line="7" source="calipso/alignpourtest5.c" executed="true" extern="true">
+                    <function name="printf">
+                    </function>
+                </call>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

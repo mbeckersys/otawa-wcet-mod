@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="5" source="originaux/conf.c" exact="true" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)">
+            <loop loopId="2" line="6" source="originaux/conf.c" exact="false" maxcount="10" totalcount="55" maxexpr="MAX(bIt-1,partieEntiereInf((10-EPSILON-0)/1+1)-1,partieEntiereInf((10-(0+1*(bIt-1-1+1)+1))/1+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((10-EPSILON-0)/1+1)-1,partieEntiereInf((10-(0+1*(bIt-1-1+1)+1))/1+1))">
+                <loop loopId="3" line="8" source="originaux/conf.c" exact="false" maxcount="10" totalcount="550" maxexpr="MAX(bIt-1,partieEntiereInf((10-EPSILON-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-0)/1+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((10-EPSILON-0)/1+1)-1,partieEntiereInf((10-(0+1*(bIt-1-1+1)+1))/1+1)*partieEntiereInf((0+1*(bIt-1-1+1)-0)/1+1))">
+                </loop>
+            </loop>
+        </loop>
+    </function>
+</flowfacts>
+

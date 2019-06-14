@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="83" source="originaux/ludcmp.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((5-0)/1+1)" totalexpr="partieEntiereInf((5-0)/1+1)">
+            <loop loopId="2" line="86" source="originaux/ludcmp.c" exact="true" maxcount="6" totalcount="36" maxexpr="partieEntiereInf((5-0)/1+1)" totalexpr="partieEntiereInf((5-0)/1+1)*partieEntiereInf((5-0)/1+1)">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="89" source="originaux/ludcmp.c" isexecuted="true" expcond="" expcondinit="i==j"> </condition>
+                    <case cond="1" executed="true" line="89" source="originaux/ludcmp.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </loop>
+        </loop>
+        <call name="ludcmp" numcall="1" line="95" source="originaux/ludcmp.c" executed="true" extern="false">
+            <function name="ludcmp">
+                <conditional id="IF-3"> <condition varcond="IF-3" line="105" source="originaux/ludcmp.c" isexecuted="true" expcond="5&gt;99||1.0e-6&lt;=0.0" expcondinit="n_1&gt;99||eps_0&lt;=0.0"> </condition>
+                    <case cond="1" executed="false" line="105" source="originaux/ludcmp.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-4"> <condition varcond="IF-4" line="108" source="originaux/ludcmp.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="106" source="originaux/ludcmp.c">
+                        <loop loopId="3" line="106" source="originaux/ludcmp.c" exact="false" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)">
+                            <call name="fabs" numcall="2" line="108" source="originaux/ludcmp.c" executed="true" extern="false">
+                                <function name="fabs">
+                                    <conditional id="IF-1"> <condition varcond="IF-1" line="70" source="originaux/ludcmp.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                        <case cond="1" executed="true" line="70" source="originaux/ludcmp.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="71" source="originaux/ludcmp.c">
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <conditional id="IF-5"> <condition varcond="IF-5" line="108" source="originaux/ludcmp.c" isexecuted="true" expcond="" expcondinit="call-fabs2&lt;=eps_0"> </condition>
+                                <case cond="1" executed="true" line="108" source="originaux/ludcmp.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                            <conditional id="IF-6"> <condition varcond="IF-6" line="111" source="originaux/ludcmp.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                <case cond="1" executed="true" line="109" source="originaux/ludcmp.c">
+                                    <loop loopId="4" line="109" source="originaux/ludcmp.c" exact="false" maxcount="5" totalcount="15" maxexpr="MAX(bIt-3,partieEntiereInf((5-EPSILONINT-0)/1+1)-1,partieEntiereInf((5-(0+1*(bIt-3-1+1)+1))/1+1))" totalexpr="SYGMA(bIt-3,partieEntiereInf((5-EPSILONINT-0)/1+1)-1,partieEntiereInf((5-(0+1*(bIt-3-1+1)+1))/1+1))">
+                                        <conditional id="IF-7"> <condition varcond="IF-7" line="112" source="originaux/ludcmp.c" isexecuted="true" expcond="" expcondinit="i_0!=0"> </condition>
+                                            <case cond="1" executed="true" line="113" source="originaux/ludcmp.c">
+                                                <loop loopId="5" line="113" source="originaux/ludcmp.c" exact="false" maxcount="4" totalcount="60" maxexpr="MAX(bIt-3,partieEntiereInf((5-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-3-1+1)-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-3,partieEntiereInf((5-EPSILONINT-0)/1+1)-1,partieEntiereInf((5-(0+1*(bIt-3-1+1)+1))/1+1)*partieEntiereInf((0+1*(bIt-3-1+1)-EPSILONINT-0)/1+1))">
+                                                </loop>
+                                            </case>
+                                            <case cond="0" executed="true" >
+                                            </case>
+                                        </conditional>
+                                    </loop>
+                                    <loop loopId="6" line="117" source="originaux/ludcmp.c" exact="false" maxcount="5" totalcount="15" maxexpr="MAX(bIt-3,partieEntiereInf((5-EPSILONINT-0)/1+1)-1,partieEntiereInf((5-(0+1*(bIt-3-1+1)+1))/1+1))" totalexpr="SYGMA(bIt-3,partieEntiereInf((5-EPSILONINT-0)/1+1)-1,partieEntiereInf((5-(0+1*(bIt-3-1+1)+1))/1+1))">
+                                        <loop loopId="7" line="120" source="originaux/ludcmp.c" exact="false" maxcount="5" totalcount="75" maxexpr="MAX(bIt-3,partieEntiereInf((5-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-3-1+1)-0)/1+1))" totalexpr="SYGMA(bIt-3,partieEntiereInf((5-EPSILONINT-0)/1+1)-1,partieEntiereInf((5-(0+1*(bIt-3-1+1)+1))/1+1)*partieEntiereInf((0+1*(bIt-3-1+1)-0)/1+1))">
+                                        </loop>
+                                    </loop>
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </loop>
+                        <conditional id="IF-8"> <condition varcond="IF-8" line="126" source="originaux/ludcmp.c" isexecuted="true" expcond="!SET(ABSTRACTINTER(0,SET(0,0)),)" expcondinit="!__tmp_0__"> </condition>
+                            <case cond="1" executed="true" line="125" source="originaux/ludcmp.c">
+                                <loop loopId="8" line="126" source="originaux/ludcmp.c" exact="false" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((5-1)/1+1)" totalexpr="partieEntiereInf((5-1)/1+1)">
+                                    <loop loopId="9" line="129" source="originaux/ludcmp.c" exact="false" maxcount="5" totalcount="15" maxexpr="MAX(bIt-8,partieEntiereInf((5-1)/1+1)-1,partieEntiereInf((1+1*(bIt-8-1+1)-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-8,partieEntiereInf((5-1)/1+1)-1,partieEntiereInf((1+1*(bIt-8-1+1)-EPSILONINT-0)/1+1))">
+                                    </loop>
+                                </loop>
+                                <loop loopId="10" line="134" source="originaux/ludcmp.c" exact="false" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((0-(5-1))/-1+1)" totalexpr="partieEntiereInf((0-(5-1))/-1+1)">
+                                    <loop loopId="11" line="137" source="originaux/ludcmp.c" exact="false" maxcount="5" totalcount="15" maxexpr="MAX(bIt-10,partieEntiereInf((0-(5-1))/-1+1)-1,partieEntiereInf((5-(5-1+-1*(bIt-10-1+1)+1))/1+1))" totalexpr="SYGMA(bIt-10,partieEntiereInf((0-(5-1))/-1+1)-1,partieEntiereInf((5-(5-1+-1*(bIt-10-1+1)+1))/1+1))">
+                                    </loop>
+                                </loop>
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-9"> <condition varcond="IF-9" line="141" source="originaux/ludcmp.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="142" source="originaux/ludcmp.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

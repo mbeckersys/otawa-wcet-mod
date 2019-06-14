@@ -2,6 +2,7 @@
 import buildlib
 
 def get(path, env, pack):
+	env.set("gel-REV", "e897635cf233")
 	return buildlib.Module(
 		name = "gel",
 		path = path,

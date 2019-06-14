@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="fdct" numcall="1" line="187" source="originaux/fdct2.c" executed="true" extern="false">
+            <function name="fdct">
+                <loop loopId="1" line="45" source="originaux/fdct2.c" exact="true" maxcount="8" totalcount="8" maxexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)">
+                </loop>
+                <loop loopId="2" line="116" source="originaux/fdct2.c" exact="true" maxcount="8" totalcount="8" maxexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)">
+                </loop>
+            </function>
+        </call>
+        <loop loopId="3" line="190" source="originaux/fdct2.c" exact="true" maxcount="32" totalcount="32" maxexpr="partieEntiereInf((64-EPSILONINT-0)/2+1)" totalexpr="partieEntiereInf((64-EPSILONINT-0)/2+1)">
+            <call name="printf" numcall="2" line="190" source="originaux/fdct2.c" executed="true" extern="true">
+                <function name="printf">
+                </function>
+            </call>
+        </loop>
+    </function>
+</flowfacts>
+

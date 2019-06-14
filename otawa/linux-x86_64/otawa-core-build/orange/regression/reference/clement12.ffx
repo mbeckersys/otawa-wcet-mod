@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="3" line="19" source="originaux/clement12.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)">
+            <loop loopId="4" line="21" source="originaux/clement12.c" exact="true" maxcount="10" totalcount="50" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)*partieEntiereInf((10-EPSILONINT-0)/1+1)">
+                <call name="pakonpozan" numcall="1" line="23" source="originaux/clement12.c" executed="true" extern="false">
+                    <function name="pakonpozan">
+                        <loop loopId="1" line="4" source="originaux/clement12.c" exact="false" maxcount="14" totalcount="475" maxexpr="MAX(bIt-4,partieEntiereInf((10-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-4-1+1)+5-EPSILONINT-0)/1+1))" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)*SYGMA(bIt-4,partieEntiereInf((10-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-4-1+1)+5-EPSILONINT-0)/1+1))">
+                        </loop>
+                        <loop loopId="2" line="7" source="originaux/clement12.c" exact="false" maxcount="18" totalcount="450" maxexpr="MAX(bIt-4,partieEntiereInf((10-EPSILONINT-0)/1+1)-1,partieEntiereInf(((0+1*(bIt-4-1+1))*2-EPSILONINT-0)/1+1))" totalexpr="partieEntiereInf((5-EPSILONINT-0)/1+1)*SYGMA(bIt-4,partieEntiereInf((10-EPSILONINT-0)/1+1)-1,partieEntiereInf(((0+1*(bIt-4-1+1))*2-EPSILONINT-0)/1+1))">
+                        </loop>
+                    </function>
+                </call>
+            </loop>
+        </loop>
+    </function>
+</flowfacts>
+

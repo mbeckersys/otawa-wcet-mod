@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="4" source="calipso/9.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((7-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((7-EPSILONINT-0)/1+1)">
+            <loop loopId="2" line="5" source="calipso/9.c" exact="false" maxcount="6" totalcount="42" maxexpr="MAX(bIt-1,partieEntiereInf((7-EPSILONINT-0)/1+1)-1,partieEntiereInf((SET(0,0+1*(5+1))-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((7-EPSILONINT-0)/1+1)-1,partieEntiereInf((SET(0,0+1*(5+1))-EPSILONINT-0)/1+1))">
+            </loop>
+            <loop loopId="3" line="7" source="calipso/9.c" exact="false" maxcount="6" totalcount="21" maxexpr="MAX(bIt-1,partieEntiereInf((7-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-1,partieEntiereInf((7-EPSILONINT-0)/1+1)-1,partieEntiereInf((0+1*(bIt-1-1+1)-EPSILONINT-0)/1+1))">
+            </loop>
+        </loop>
+    </function>
+</flowfacts>
+

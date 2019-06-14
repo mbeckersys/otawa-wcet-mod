@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="kompop" numcall="1" line="11" source="calipso/klem.c" executed="true" extern="true">
+            <function name="kompop">
+            </function>
+        </call>
+        <loop loopId="1" line="13" source="calipso/klem.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((3-EPSILONINT-0)/1+1)">
+        </loop>
+    </function>
+</flowfacts>
+

@@ -4,8 +4,8 @@ from buildlib import *
 
 DEFAULT="WITH_DYNLIB=1"
 CROSS_MATRIX = {
-	(base.OS_LINUX_64, base.OS_WINDOWS_32): "RANLIB=i686-w64-mingw32-ranlib", 
-	(base.OS_LINUX_64, base.OS_WINDOWS_64): "RANLIB=x86_64-w64-mingw32-ranlib" 
+	(base.OS_LINUX_64, base.OS_WINDOWS_32): "RANLIB=i686-w64-mingw32-ranlib",
+	(base.OS_LINUX_64, base.OS_WINDOWS_64): "RANLIB=x86_64-w64-mingw32-ranlib"
 }
 
 def get(path, env, pack):
@@ -13,6 +13,7 @@ def get(path, env, pack):
 		opts = DEFAULT
 	else:
 		opts = CROSS_MATRIX[env.get_cross_pair()]
+	env.set("armv7t-REV", "c5376e7be766")
 	return Module(
 		name = "armv7t",
 		path = path,

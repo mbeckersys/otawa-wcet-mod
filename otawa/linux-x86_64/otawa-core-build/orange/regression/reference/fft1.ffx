@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="4" line="118" source="originaux/fft1.c" exact="true" maxcount="8" totalcount="8" maxexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)">
+            <call name="cos" numcall="4" line="119" source="originaux/fft1.c" executed="true" extern="false">
+                <function name="cos">
+                    <call name="sin" numcall="3" line="105" source="originaux/fft1.c" executed="true" extern="false">
+                        <function name="sin">
+                            <loop loopId="1" line="81" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-4,partieEntiereInf((8-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(3.14159/2.0-2*3.14159*(0+1*(bIt-4-1+1))/8))/-6.28318+1))" totalexpr="SYGMA(bIt-4,partieEntiereInf((8-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(3.14159/2.0-2*3.14159*(0+1*(bIt-4-1+1))/8))/-6.28318+1))">
+                            </loop>
+                            <loop loopId="2" line="83" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-4,partieEntiereInf((8-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-(3.14159/2.0-2*3.14159*(0+1*(bIt-4-1+1))/8+-6.28318*(-1+1)))/6.28318+1))" totalexpr="SYGMA(bIt-4,partieEntiereInf((8-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-(3.14159/2.0-2*3.14159*(0+1*(bIt-4-1+1))/8+-6.28318*(-1+1)))/6.28318+1))">
+                            </loop>
+                            <call name="fabs" numcall="1" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                <function name="fabs">
+                                    <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                        <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                        </case>
+                                        <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                        </case>
+                                    </conditional>
+                                </function>
+                            </call>
+                            <loop loopId="3" line="90" source="originaux/fft1.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                <call name="fabs" numcall="2" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                    <function name="fabs">
+                                        <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                            <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                            </case>
+                                            <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                            </case>
+                                        </conditional>
+                                    </function>
+                                </call>
+                            </loop>
+                        </function>
+                    </call>
+                </function>
+            </call>
+        </loop>
+        <call name="fft1" numcall="5" line="123" source="originaux/fft1.c" executed="true" extern="false">
+            <function name="fft1">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="139" source="originaux/fft1.c" isexecuted="true" expcond="8&lt;2" expcondinit="n_2&lt;2"> </condition>
+                    <case cond="1" executed="false" line="139" source="originaux/fft1.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-3"> <condition varcond="IF-3" line="142" source="originaux/fft1.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="140" source="originaux/fft1.c">
+                        <call name="log" numcall="7" line="140" source="originaux/fft1.c" executed="true" extern="false">
+                            <function name="log">
+                            </function>
+                        </call>
+                        <call name="log" numcall="8" line="141" source="originaux/fft1.c" executed="true" extern="false">
+                            <function name="log">
+                            </function>
+                        </call>
+                        <loop loopId="5" line="147" source="originaux/fft1.c" exact="false" maxcount="1" totalcount="1" maxexpr="partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)">
+                        </loop>
+                        <call name="fabs" numcall="9" line="149" source="originaux/fft1.c" executed="true" extern="false">
+                            <function name="fabs">
+                                <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="8-1*pow(2,bIt-5+1)&gt;=0" expcondinit="n&gt;=0"> </condition>
+                                    <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                    </case>
+                                    <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                        <conditional id="IF-4"> <condition varcond="IF-4" line="149" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="call-fabs9&gt;1.0e-6"> </condition>
+                            <case cond="1" executed="true" line="150" source="originaux/fft1.c">
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                        <conditional id="IF-5"> <condition varcond="IF-5" line="153" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                            <case cond="1" executed="true" line="153" source="originaux/fft1.c">
+                                <loop loopId="6" line="155" source="originaux/fft1.c" exact="false" maxcount="1" totalcount="1" maxexpr="partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)">
+                                    <loop loopId="7" line="163" source="originaux/fft1.c" exact="false" maxcount="4" totalcount="4" maxexpr="MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1))">
+                                        <call name="cos" numcall="10" line="166" source="originaux/fft1.c" executed="true" extern="false">
+                                            <function name="cos">
+                                                <call name="sin" numcall="3" line="105" source="originaux/fft1.c" executed="true" extern="false">
+                                                    <function name="sin">
+                                                        <loop loopId="1" line="81" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))))/-6.28318+1)))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,SYGMA(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))))/-6.28318+1)))">
+                                                        </loop>
+                                                        <loop loopId="2" line="83" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAXIMUM(MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1))),MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1))))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,SYGMA(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1)))">
+                                                        </loop>
+                                                        <call name="fabs" numcall="1" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                                            <function name="fabs">
+                                                                <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                    <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                                                    </case>
+                                                                    <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                                                    </case>
+                                                                </conditional>
+                                                            </function>
+                                                        </call>
+                                                        <loop loopId="3" line="90" source="originaux/fft1.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                                            <call name="fabs" numcall="2" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                                                <function name="fabs">
+                                                                    <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                        <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                                                        </case>
+                                                                        <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                                                        </case>
+                                                                    </conditional>
+                                                                </function>
+                                                            </call>
+                                                        </loop>
+                                                    </function>
+                                                </call>
+                                            </function>
+                                        </call>
+                                        <call name="sin" numcall="11" line="167" source="originaux/fft1.c" executed="true" extern="false">
+                                            <function name="sin">
+                                                <loop loopId="1" line="81" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2)))/-6.28318+1)))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,SYGMA(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2)))/-6.28318+1)))">
+                                                </loop>
+                                                <loop loopId="2" line="83" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAXIMUM(MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-((0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1))),MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-((0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1))))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,SYGMA(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-((0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1)))">
+                                                </loop>
+                                                <call name="fabs" numcall="1" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                                    <function name="fabs">
+                                                        <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                            <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                                            </case>
+                                                            <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                                            </case>
+                                                        </conditional>
+                                                    </function>
+                                                </call>
+                                                <loop loopId="3" line="90" source="originaux/fft1.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                                    <call name="fabs" numcall="2" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                                        <function name="fabs">
+                                                            <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                                                </case>
+                                                            </conditional>
+                                                        </function>
+                                                    </call>
+                                                </loop>
+                                            </function>
+                                        </call>
+                                        <loop loopId="8" line="169" source="originaux/fft1.c" exact="false" maxcount="1" totalcount="4" maxexpr="MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,partieEntiereInf((8-8*pow(0.5,bIt-6-1+1))/(8*pow(0.5,bIt-6-1+1)+0)+1))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)*partieEntiereInf((8-8*pow(0.5,bIt-6-1+1))/(8*pow(0.5,bIt-6-1+1)+0)+1))">
+                                        </loop>
+                                    </loop>
+                                </loop>
+                                <loop loopId="9" line="195" source="originaux/fft1.c" exact="false" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((8-1-1)/1+1)" totalexpr="partieEntiereInf((8-1-1)/1+1)">
+                                    <conditional id="IF-6"> <condition varcond="IF-6" line="197" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="i_0&lt;j"> </condition>
+                                        <case cond="1" executed="true" line="199" source="originaux/fft1.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <loop loopId="10" line="207" source="originaux/fft1.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                    </loop>
+                                </loop>
+                                <conditional id="IF-7"> <condition varcond="IF-7" line="214" source="originaux/fft1.c" isexecuted="true" expcond="0==0" expcondinit="flag_0==0"> </condition>
+                                    <case cond="1" executed="true" line="214" source="originaux/fft1.c">
+                                    </case>
+                                    <case cond="0" executed="false" >
+                                    </case>
+                                </conditional>
+                                <conditional id="IF-8"> <condition varcond="IF-8" line="217" source="originaux/fft1.c" isexecuted="true" expcond="!(1!=0)" expcondinit="!__tmp_0__"> </condition>
+                                    <case cond="1" executed="false" line="215" source="originaux/fft1.c">
+                                        <loop loopId="11" line="216" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+                                        </loop>
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-9"> <condition varcond="IF-9" line="221" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="222" source="originaux/fft1.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+        <call name="fft1" numcall="6" line="127" source="originaux/fft1.c" executed="true" extern="false">
+            <function name="fft1">
+                <conditional id="IF-2"> <condition varcond="IF-2" line="139" source="originaux/fft1.c" isexecuted="true" expcond="8&lt;2" expcondinit="n_2&lt;2"> </condition>
+                    <case cond="1" executed="false" line="139" source="originaux/fft1.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+                <conditional id="IF-3"> <condition varcond="IF-3" line="142" source="originaux/fft1.c" isexecuted="true" expcond="!0" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="140" source="originaux/fft1.c">
+                        <call name="log" numcall="7" line="140" source="originaux/fft1.c" executed="true" extern="false">
+                            <function name="log">
+                            </function>
+                        </call>
+                        <call name="log" numcall="8" line="141" source="originaux/fft1.c" executed="true" extern="false">
+                            <function name="log">
+                            </function>
+                        </call>
+                        <loop loopId="5" line="147" source="originaux/fft1.c" exact="false" maxcount="1" totalcount="1" maxexpr="partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)">
+                        </loop>
+                        <call name="fabs" numcall="9" line="149" source="originaux/fft1.c" executed="true" extern="false">
+                            <function name="fabs">
+                                <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="8-1*pow(2,bIt-5+1)&gt;=0" expcondinit="n&gt;=0"> </condition>
+                                    <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                    </case>
+                                    <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                    </case>
+                                </conditional>
+                            </function>
+                        </call>
+                        <conditional id="IF-4"> <condition varcond="IF-4" line="149" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="call-fabs9&gt;1.0e-6"> </condition>
+                            <case cond="1" executed="true" line="150" source="originaux/fft1.c">
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                        <conditional id="IF-5"> <condition varcond="IF-5" line="153" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                            <case cond="1" executed="true" line="153" source="originaux/fft1.c">
+                                <loop loopId="6" line="155" source="originaux/fft1.c" exact="false" maxcount="1" totalcount="1" maxexpr="partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)">
+                                    <loop loopId="7" line="163" source="originaux/fft1.c" exact="false" maxcount="4" totalcount="4" maxexpr="MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1))">
+                                        <call name="cos" numcall="10" line="166" source="originaux/fft1.c" executed="true" extern="false">
+                                            <function name="cos">
+                                                <call name="sin" numcall="3" line="105" source="originaux/fft1.c" executed="true" extern="false">
+                                                    <function name="sin">
+                                                        <loop loopId="1" line="81" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))))/-6.28318+1)))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,SYGMA(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))))/-6.28318+1)))">
+                                                        </loop>
+                                                        <loop loopId="2" line="83" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAXIMUM(MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1))),MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1))))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,SYGMA(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-(3.14159/2.0-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1)))">
+                                                        </loop>
+                                                        <call name="fabs" numcall="1" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                                            <function name="fabs">
+                                                                <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                    <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                                                    </case>
+                                                                    <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                                                    </case>
+                                                                </conditional>
+                                                            </function>
+                                                        </call>
+                                                        <loop loopId="3" line="90" source="originaux/fft1.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                                            <call name="fabs" numcall="2" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                                                <function name="fabs">
+                                                                    <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                        <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                                                        </case>
+                                                                        <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                                                        </case>
+                                                                    </conditional>
+                                                                </function>
+                                                            </call>
+                                                        </loop>
+                                                    </function>
+                                                </call>
+                                            </function>
+                                        </call>
+                                        <call name="sin" numcall="11" line="167" source="originaux/fft1.c" executed="true" extern="false">
+                                            <function name="sin">
+                                                <loop loopId="1" line="81" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2)))/-6.28318+1)))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,SYGMA(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((2*3.14159+EPSILON-(0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2)))/-6.28318+1)))">
+                                                </loop>
+                                                <loop loopId="2" line="83" source="originaux/fft1.c" exact="false" maxcount="0" totalcount="0" maxexpr="MAXIMUM(MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-((0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1))),MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,MAX(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-((0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1))))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,SYGMA(bIt-7,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)-1,partieEntiereInf((-(2*3.14159)-EPSILON-((0+1*(bIt-7-1+1))*(3.14159/(8*pow(0.5,bIt-6-1+1)/2))+-6.28318*(-1+1)))/6.28318+1)))">
+                                                </loop>
+                                                <call name="fabs" numcall="1" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                                    <function name="fabs">
+                                                        <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                            <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                                            </case>
+                                                            <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                                            </case>
+                                                        </conditional>
+                                                    </function>
+                                                </call>
+                                                <loop loopId="3" line="90" source="originaux/fft1.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                                    <call name="fabs" numcall="2" line="90" source="originaux/fft1.c" executed="true" extern="false">
+                                                        <function name="fabs">
+                                                            <conditional id="IF-1"> <condition varcond="IF-1" line="62" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="n&gt;=0"> </condition>
+                                                                <case cond="1" executed="true" line="62" source="originaux/fft1.c">
+                                                                </case>
+                                                                <case cond="0" executed="true" line="63" source="originaux/fft1.c">
+                                                                </case>
+                                                            </conditional>
+                                                        </function>
+                                                    </call>
+                                                </loop>
+                                            </function>
+                                        </call>
+                                        <loop loopId="8" line="169" source="originaux/fft1.c" exact="false" maxcount="1" totalcount="4" maxexpr="MAX(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,partieEntiereInf((8-8*pow(0.5,bIt-6-1+1))/(8*pow(0.5,bIt-6-1+1)+0)+1))" totalexpr="SYGMA(bIt-6,partieEntiereInf((4.5/4.5-EPSILONINT-0)/1+1)-1,partieEntiereInf((8*pow(0.5,bIt-6-1+1)/2-EPSILONINT-0)/1+1)*partieEntiereInf((8-8*pow(0.5,bIt-6-1+1))/(8*pow(0.5,bIt-6-1+1)+0)+1))">
+                                        </loop>
+                                    </loop>
+                                </loop>
+                                <loop loopId="9" line="195" source="originaux/fft1.c" exact="false" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((8-1-1)/1+1)" totalexpr="partieEntiereInf((8-1-1)/1+1)">
+                                    <conditional id="IF-6"> <condition varcond="IF-6" line="197" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="i_0&lt;j"> </condition>
+                                        <case cond="1" executed="true" line="199" source="originaux/fft1.c">
+                                        </case>
+                                        <case cond="0" executed="true" >
+                                        </case>
+                                    </conditional>
+                                    <loop loopId="10" line="207" source="originaux/fft1.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF">
+                                    </loop>
+                                </loop>
+                                <conditional id="IF-7"> <condition varcond="IF-7" line="214" source="originaux/fft1.c" isexecuted="true" expcond="1==0" expcondinit="flag_0==0"> </condition>
+                                    <case cond="1" executed="false" line="214" source="originaux/fft1.c">
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                                <conditional id="IF-8"> <condition varcond="IF-8" line="217" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                                    <case cond="1" executed="true" line="215" source="originaux/fft1.c">
+                                        <loop loopId="11" line="216" source="originaux/fft1.c" exact="false" maxcount="8" totalcount="8" maxexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((8-EPSILONINT-0)/1+1)">
+                                        </loop>
+                                    </case>
+                                    <case cond="0" executed="true" >
+                                    </case>
+                                </conditional>
+                            </case>
+                            <case cond="0" executed="true" >
+                            </case>
+                        </conditional>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+                <conditional id="IF-9"> <condition varcond="IF-9" line="221" source="originaux/fft1.c" isexecuted="true" expcond="" expcondinit="!__tmp_0__"> </condition>
+                    <case cond="1" executed="true" line="222" source="originaux/fft1.c">
+                    </case>
+                    <case cond="0" executed="true" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

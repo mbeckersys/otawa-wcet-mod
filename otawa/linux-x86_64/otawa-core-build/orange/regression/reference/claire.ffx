@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="5" source="calipso/claire.c" exact="true" maxcount="5000" totalcount="5000" maxexpr="partieEntiereInf((0-EPSILONINT-(0*1000-10*1000))/2+1)" totalexpr="partieEntiereInf((0-EPSILONINT-(0*1000-10*1000))/2+1)">
+        </loop>
+        <loop loopId="2" line="10" source="calipso/claire.c" exact="true" maxcount="4500" totalcount="4500" maxexpr="partieEntiereInf((0-EPSILONINT-(1*1000-10*1000))/2+1)" totalexpr="partieEntiereInf((0-EPSILONINT-(1*1000-10*1000))/2+1)">
+        </loop>
+    </function>
+</flowfacts>
+

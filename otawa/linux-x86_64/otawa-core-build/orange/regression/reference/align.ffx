@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="align" numcall="1" line="15" source="originaux/align.c" executed="true" extern="false">
+            <function name="align">
+                <conditional id="IF-1"> <condition varcond="IF-1" line="5" source="originaux/align.c" isexecuted="true" expcond="511!=0" expcondinit="i!=0"> </condition>
+                    <case cond="1" executed="true" line="6" source="originaux/align.c">
+                        <loop loopId="1" line="6" source="originaux/align.c" exact="false" maxcount="25" totalcount="25" maxexpr="partieEntiereInf((24-0)/1+1)" totalexpr="partieEntiereInf((24-0)/1+1)">
+                        </loop>
+                    </case>
+                    <case cond="0" executed="false" >
+                    </case>
+                </conditional>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

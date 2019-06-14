@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <call name="fir_filter_int" numcall="1" line="195" source="originaux/fir.c" executed="true" extern="false">
+            <function name="fir_filter_int">
+                <loop loopId="1" line="247" source="originaux/fir.c" exact="true" maxcount="10" totalcount="10" maxexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)" totalexpr="partieEntiereInf((10-EPSILONINT-0)/1+1)">
+                    <loop loopId="2" line="258" source="originaux/fir.c" exact="false" maxcount="NOCOMP" totalcount="NOCOMP" maxexpr="NODEF" totalexpr="NODEF" expinit="partieEntiereInf((acc_length-EPSILONINT-j)/1+1)">
+                    </loop>
+                    <conditional id="IF-1"> <condition varcond="IF-1" line="269" source="originaux/fir.c" isexecuted="true" expcond="" expcondinit="in_ptr==in_end"> </condition>
+                        <case cond="1" executed="true" line="270" source="originaux/fir.c">
+                        </case>
+                        <case cond="0" executed="true" line="277" source="originaux/fir.c">
+                            <conditional id="IF-2"> <condition varcond="IF-2" line="277" source="originaux/fir.c" isexecuted="true" expcond="" expcondinit="acc_length&lt;coef_len"> </condition>
+                                <case cond="1" executed="true" line="277" source="originaux/fir.c">
+                                </case>
+                                <case cond="0" executed="true" >
+                                </case>
+                            </conditional>
+                        </case>
+                    </conditional>
+                </loop>
+            </function>
+        </call>
+    </function>
+</flowfacts>
+

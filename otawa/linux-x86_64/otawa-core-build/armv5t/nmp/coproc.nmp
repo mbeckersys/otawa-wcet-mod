@@ -1,0 +1,51 @@
+// value computation macro
+macro Align(x, n)		=	((x) & ~(n - 1))
+macro ZeroExtend(v, n) 	=	coerce(card(n), v)
+macro UInt(v)			=	coerce(card(32), v)
+macro SInt(v)			=	coerce(int(32), v)
+macro IsZeroBit(v)		=	(v) == 0
+macro IsOnesBit(v)		=	(~(v)) == 0
+
+
+op STC(cond: condition, D: bool, CRd: card(4), coproc: card(4), addr: CoproAddress)
+	syntax = format("stc%s%s %d, %d, %s", if cond.value == 0b1111 then '2' else cond.syntax endif, if D then "l" else "" endif, UInt(coproc), CRd, addr)
+	image = format("%s 110 %1b %1b %1b %1b 0 %4b %4b %4b %8b", cond.image, addr.P, addr.U, D, addr.W, addr.Rn, CRd, coproc, addr.imm8)  
+	// if P == '0' && U == '0' && D == '0' && W == '0' then UNDEFINED;
+	// if P == '0' && U == '0' && D == '1' && W == '0' then SEE MCRR, MCRR2;
+	n = UInt(addr.Rn)
+	cp = UInt(coproc)
+	imm32 = ZeroExtend(addr.imm8 :: 0b00, 32)
+	index = addr.P
+	add = addr.U
+	wback = addr.W
+	// if n == 15 then UNPREDICTABLE
+	action = {
+		// TODO!
+	}
+
+op LDC(cond: condition, D: bool, CRd: card(4), coproc: card(4), addr: CoproAddress)
+	// if Rn == '1111' then SEE LDC (literal) and if W == '1' || (P == '0' && CurrentInstrSet() != InstrSet_ARM) then UNPREDICTABLE;;
+	// if P == '0' && U == '0' && D == '0' && W == 0 then UNDEFINED
+	// if P == '0' && U == '0' && D == '1' && W == 0 then see MRRC, MRRC2
+	syntax = format("ldc%s%s %d, %d, %s", if cond.value == 0b1111 then '2' else cond.syntax endif, if D then "l" else "" endif, UInt(coproc), CRd, addr)
+	image = format("%s 110 %1b %1b %1b %1b 1 %4b %4b %4b %8b", cond.image, addr.P, addr.U, D, addr.W, addr.Rn, CRd, coproc, addr.imm8)  
+	n = UInt(addr.Rn)
+	cp = UInt(coproc)
+	imm32 = ZeroExtend(addr.imm8 :: 0b00, 32)
+	index = addr.P
+	add = addr.U
+	wback = addr.W
+	action = {
+		// TODO!
+	}
+
+op MRC(cond: condition, opc1: card(3), CRn: card(4), Rt: REG_INDEX, coproc: card(4), opc2: card(3), CRm: card(4))
+	syntax = format("mrc%s %d, %d, %s, cr%d, cr%d, %d", if cond.value == 0b1111 then '2' else cond.syntax endif, UInt(coproc), opc1, Rt, CRn, CRm, opc2)
+	image = format("%s 1110 %3b 1 %4b  %s %4b %3b 1 %4b", cond.image, opc1, CRn, Rt, coproc, opc2, CRm)
+	t = UInt(Rt)
+	cp = UInt(coproc)
+	//if t == 13 && (CurrentInstrSet() != InstrSet_ARM) then UNPREDICTABLE;
+	action = {
+		// TODO!
+	}
+	

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="2" line="18" source="originaux/facpretraiteNoelie.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((5-0)/1+1)" totalexpr="partieEntiereInf((5-0)/1+1)">
+            <call name="fac" numcall="1" line="19" source="originaux/facpretraiteNoelie.c" executed="true" extern="false">
+                <function name="fac">
+                    <loop loopId="1" line="7" source="originaux/facpretraiteNoelie.c" exact="false" maxcount="5" totalcount="15" maxexpr="MAX(bIt-2,partieEntiereInf((5-0)/1+1)-1,partieEntiereInf((0+EPSILONINT-(0+1*(bIt-2-1+1)))/-1+1))" totalexpr="SYGMA(bIt-2,partieEntiereInf((5-0)/1+1)-1,partieEntiereInf((0+EPSILONINT-(0+1*(bIt-2-1+1)))/-1+1))">
+                    </loop>
+                </function>
+            </call>
+        </loop>
+    </function>
+</flowfacts>
+

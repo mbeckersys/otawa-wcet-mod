@@ -1,0 +1,231 @@
+DEBUG: cpp  "calipsos/indirectb.c"
+DEBUG: cpp  "calipsos/indirectb.c"
+printFile liste fonction NON vide 1
+orange step1
+orange step1 analyse_defs terminé
+liste fonction non vide
+
+EVALUATION BEGIN
+
+EVALUATION END
+
+<loopsfacts>
+	 <loopId="70" maxcountAnyCalls=" 4" >
+	 <loopId="69" maxcountAnyCalls=" 4" >
+	 <loopId="68" maxcountAnyCalls=" 4" >
+	 <loopId="67" maxcountAnyCalls=" 4" >
+	 <loopId="66" maxcountAnyCalls=" 4" >
+	 <loopId="65" maxcountAnyCalls=" 4" >
+	 <loopId="64" maxcountAnyCalls=" 4" >
+	 <loopId="63" maxcountAnyCalls=" 4" >
+	 <loopId="62" maxcountAnyCalls=" 4" >
+	 <loopId="61" maxcountAnyCalls=" 4" >
+	 <loopId="60" maxcountAnyCalls=" 4" >
+	 <loopId="59" maxcountAnyCalls=" 4" >
+	 <loopId="58" maxcountAnyCalls=" 3" >
+	 <loopId="57" maxcountAnyCalls=" 3" >
+	 <loopId="56" maxcountAnyCalls=" 4" >
+	 <loopId="55" maxcountAnyCalls=" 4" >
+	 <loopId="54" maxcountAnyCalls=" 3" >
+	 <loopId="53" maxcountAnyCalls=" 3" >
+	 <loopId="52" maxcountAnyCalls=" 4" >
+	 <loopId="51" maxcountAnyCalls=" 4" >
+	 <loopId="50" maxcountAnyCalls=" 3" >
+	 <loopId="49" maxcountAnyCalls=" 3" >
+	 <loopId="48" maxcountAnyCalls=" 5" >
+	 <loopId="47" maxcountAnyCalls=" 5" >
+	 <loopId="46" maxcountAnyCalls=" 4" >
+	 <loopId="45" maxcountAnyCalls=" 4" >
+	 <loopId="44" maxcountAnyCalls=" 5" >
+	 <loopId="43" maxcountAnyCalls=" 0" >
+	 <loopId="42" maxcountAnyCalls=" 4" >
+	 <loopId="41" maxcountAnyCalls=" 0" >
+	 <loopId="40" maxcountAnyCalls=" 5" >
+	 <loopId="39" maxcountAnyCalls=" 0" >
+	 <loopId="38" maxcountAnyCalls=" 4" >
+	 <loopId="37" maxcountAnyCalls=" 0" >
+	 <loopId="36" maxcountAnyCalls=" 6" >
+	 <loopId="35" maxcountAnyCalls=" 7" >
+	 <loopId="34" maxcountAnyCalls=" 6" >
+	 <loopId="33" maxcountAnyCalls=" 6" >
+	 <loopId="32" maxcountAnyCalls=" 7" >
+	 <loopId="31" maxcountAnyCalls=" 0" >
+	 <loopId="30" maxcountAnyCalls=" 6" >
+	 <loopId="29" maxcountAnyCalls=" 0" >
+	 <loopId="28" maxcountAnyCalls=" 7" >
+	 <loopId="27" maxcountAnyCalls=" 0" >
+	 <loopId="26" maxcountAnyCalls=" 6" >
+	 <loopId="25" maxcountAnyCalls=" 0" >
+	 <loopId="24" maxcountAnyCalls=" 5" >
+	 <loopId="23" maxcountAnyCalls=" 5" >
+	 <loopId="22" maxcountAnyCalls=" 4" >
+	 <loopId="21" maxcountAnyCalls=" 4" >
+	 <loopId="20" maxcountAnyCalls=" 5" >
+	 <loopId="19" maxcountAnyCalls=" 5" >
+	 <loopId="18" maxcountAnyCalls=" 4" >
+	 <loopId="17" maxcountAnyCalls=" 4" >
+	 <loopId="16" maxcountAnyCalls=" 5" >
+	 <loopId="15" maxcountAnyCalls=" 5" >
+	 <loopId="14" maxcountAnyCalls=" 4" >
+	 <loopId="13" maxcountAnyCalls=" 4" >
+	 <loopId="12" maxcountAnyCalls=" 7" >
+	 <loopId="11" maxcountAnyCalls=" 7" >
+	 <loopId="10" maxcountAnyCalls=" 6" >
+	 <loopId="9" maxcountAnyCalls=" 6" >
+	 <loopId="8" maxcountAnyCalls=" 7" >
+	 <loopId="7" maxcountAnyCalls=" 7" >
+	 <loopId="6" maxcountAnyCalls=" 6" >
+	 <loopId="5" maxcountAnyCalls=" 6" >
+	 <loopId="4" maxcountAnyCalls=" 7" >
+	 <loopId="3" maxcountAnyCalls=" 7" >
+	 <loopId="2" maxcountAnyCalls=" 6" >
+	 <loopId="1" maxcountAnyCalls=" 6" >
+</loopsfacts>
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowfacts>
+    <function name="main" executed="true" extern="false">
+        <loop loopId="1" line="11" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((10-0)/2+1)" totalexpr="partieEntiereInf((10-0)/2+1)">
+        </loop>
+        <loop loopId="2" line="13" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="3" line="15" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((10-0)/2+1)+1" totalexpr="partieEntiereInf((10-0)/2+1)+1">
+        </loop>
+        <loop loopId="4" line="17" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((0-10)/-2+1)+1" totalexpr="partieEntiereInf((0-10)/-2+1)+1">
+        </loop>
+        <loop loopId="5" line="21" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((10-0)/2+1)" totalexpr="partieEntiereInf((10-0)/2+1)">
+        </loop>
+        <loop loopId="6" line="25" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="7" line="29" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((10-0)/2+1)+1" totalexpr="partieEntiereInf((10-0)/2+1)+1">
+        </loop>
+        <loop loopId="8" line="33" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((0-10)/-2+1)+1" totalexpr="partieEntiereInf((0-10)/-2+1)+1">
+        </loop>
+        <loop loopId="9" line="37" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((10-0)/2+1)" totalexpr="partieEntiereInf((10-0)/2+1)">
+        </loop>
+        <loop loopId="10" line="41" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="11" line="45" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((10-0)/2+1)+1" totalexpr="partieEntiereInf((10-0)/2+1)+1">
+        </loop>
+        <loop loopId="12" line="49" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((0-10)/-2+1)+1" totalexpr="partieEntiereInf((0-10)/-2+1)+1">
+        </loop>
+        <loop loopId="13" line="51" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)">
+        </loop>
+        <loop loopId="14" line="53" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="15" line="55" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1">
+        </loop>
+        <loop loopId="16" line="57" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+        <loop loopId="17" line="61" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)">
+        </loop>
+        <loop loopId="18" line="65" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="19" line="69" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1">
+        </loop>
+        <loop loopId="20" line="73" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+        <loop loopId="21" line="77" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)">
+        </loop>
+        <loop loopId="22" line="81" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="23" line="85" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1">
+        </loop>
+        <loop loopId="24" line="89" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+        <loop loopId="25" line="94" source="calipso/indirect2.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="26" line="96" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="27" line="98" source="calipso/indirect2.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="28" line="100" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((0-10)/-2+1)+1" totalexpr="partieEntiereInf((0-10)/-2+1)+1">
+        </loop>
+        <loop loopId="29" line="104" source="calipso/indirect2.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="30" line="108" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="31" line="112" source="calipso/indirect2.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="32" line="116" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((0-10)/-2+1)+1" totalexpr="partieEntiereInf((0-10)/-2+1)+1">
+        </loop>
+        <loop loopId="33" line="120" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((10-0)/2+1)" totalexpr="partieEntiereInf((10-0)/2+1)">
+        </loop>
+        <loop loopId="34" line="124" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0-10)/-2+1)" totalexpr="partieEntiereInf((0-10)/-2+1)">
+        </loop>
+        <loop loopId="35" line="128" source="calipso/indirect2.c" exact="true" maxcount="7" totalcount="7" maxexpr="partieEntiereInf((10-0)/2+1)+1" totalexpr="partieEntiereInf((10-0)/2+1)+1">
+        </loop>
+        <loop loopId="36" line="132" source="calipso/indirect2.c" exact="true" maxcount="6" totalcount="6" maxexpr="partieEntiereInf((0+EPSILONINT-10)/-2+1)+1" totalexpr="partieEntiereInf((0+EPSILONINT-10)/-2+1)+1">
+        </loop>
+        <loop loopId="37" line="134" source="calipso/indirect2.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="38" line="136" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="39" line="138" source="calipso/indirect2.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="40" line="140" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+        <loop loopId="41" line="144" source="calipso/indirect2.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="42" line="148" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="43" line="152" source="calipso/indirect2.c" exact="true" maxcount="0" totalcount="0" maxexpr="0" totalexpr="0">
+        </loop>
+        <loop loopId="44" line="156" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+        <loop loopId="45" line="160" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)">
+        </loop>
+        <loop loopId="46" line="164" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="47" line="168" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(2)+1)+1">
+        </loop>
+        <loop loopId="48" line="172" source="calipso/indirect2.c" exact="true" maxcount="5" totalcount="5" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)+1">
+        </loop>
+        <loop loopId="49" line="176" source="calipso/indirect2.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)">
+        </loop>
+        <loop loopId="50" line="178" source="calipso/indirect2.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)">
+        </loop>
+        <loop loopId="51" line="180" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)+1">
+        </loop>
+        <loop loopId="52" line="182" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)+1">
+        </loop>
+        <loop loopId="53" line="186" source="calipso/indirect2.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)">
+        </loop>
+        <loop loopId="54" line="190" source="calipso/indirect2.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)">
+        </loop>
+        <loop loopId="55" line="194" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)+1">
+        </loop>
+        <loop loopId="56" line="198" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)+1">
+        </loop>
+        <loop loopId="57" line="202" source="calipso/indirect2.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)">
+        </loop>
+        <loop loopId="58" line="206" source="calipso/indirect2.c" exact="true" maxcount="3" totalcount="3" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)">
+        </loop>
+        <loop loopId="59" line="210" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+1)))/log(3)+1)+1">
+        </loop>
+        <loop loopId="60" line="214" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)+1" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.333333)+1)+1">
+        </loop>
+        <loop loopId="61" line="216" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(2)+1)">
+        </loop>
+        <loop loopId="62" line="217" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(2)+1)">
+        </loop>
+        <loop loopId="63" line="220" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="64" line="221" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="65" line="226" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(2)+1)">
+        </loop>
+        <loop loopId="66" line="230" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="67" line="234" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(2)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(2)+1)">
+        </loop>
+        <loop loopId="68" line="238" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(0+EPSILONINT)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="69" line="243" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(1/0.5)+1)">
+        </loop>
+        <loop loopId="70" line="246" source="calipso/indirect2.c" exact="true" maxcount="4" totalcount="4" maxexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(1/0.5)+1)" totalexpr="partieEntiereInf((log(10)-log(partieEntiereSup(1)))/log(1/0.5)+1)">
+        </loop>
+    </function>
+</flowfacts>
+
