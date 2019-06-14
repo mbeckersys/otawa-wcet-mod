@@ -1,16 +1,10 @@
-====== Read Me ======
+# ogensim
+Generic cycle-accuarte ISS for ARM-ish platforms. Does not attempt to model
+any specific ARM processor. The goal is to have a simulation baseline for
+OTAWA's estimates.
 
-===== Running the simulation =====
+This simulator assumes each instruction takes one cycle to execution, plus cache effects.
+Currently only an LRU I-cache is supported.
 
-Use the following command:
-
-<code sh>
-> ./ogensim EXEC -p PROC -m MEM
-</code>
-
-Where:
-  * EXEC is the path to the executable binary,
-  * PROC is the path to the OTAWA XML description of the pipeline,
-  * MEM is the path to the OTAWA XML description of the memory.
-
-LPC2138 example of PROC and MEM is given in proc.xml and mem.xml.
+## Running the simulation
+See Makefile in subdirectory `example`. Requires ARM compiler.

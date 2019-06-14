@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache-config>
+    <!-- bs=2^block_bits, lines=2^(row_bits+way_bits), total=bs*lines -->
+	<icache>
+		<block_bits>4</block_bits>
+		<row_bits>4</row_bits>
+		<way_bits>1</way_bits>
+		<replace>LRU</replace>
+		<miss_penalty>10</miss_penalty>
+	</icache>
+    <!--
+	<dcache>
+		<block_bits>6</block_bits>
+		<row_bits>3</row_bits>
+		<way_bits>0</way_bits>
+		<replace>LRU</replace>
+	</dcache>
+    -->
+</cache-config>
